@@ -229,6 +229,35 @@
   .resume-footer-links a { font-size: 12px; color: var(--neutral-700); text-decoration: none; transition: color 0.15s ease; }
   .resume-footer-links a:hover { color: var(--neutral-1000); }
 
+  /* ─── Print ─── */
+  @media print {
+    @page { size: A4 portrait; margin: 12mm 16mm; }
+    * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    body { background: #fff !important; background-image: none !important; font-size: 10.5px; }
+    .site-nav, .download-btn, .resume-footer { display: none !important; }
+    .resume-page { padding: 0; max-width: 100%; }
+    .resume-header { margin-bottom: 14px; }
+    .resume-name { font-size: 24px; margin-bottom: 3px; }
+    .resume-title { font-size: 11px; margin-bottom: 6px; }
+    .resume-contact a, .resume-contact span { font-size: 10px; }
+    .resume-divider { margin: 10px 0; }
+    .resume-section-label { font-size: 9px; margin-bottom: 8px; }
+    .resume-summary { font-size: 10px; line-height: 1.5; }
+    .exp-list { gap: 10px; }
+    .exp-role { font-size: 11px; }
+    .exp-dates { font-size: 10px; }
+    .exp-company { font-size: 10px; }
+    .exp-projects { gap: 3px; }
+    .exp-project { grid-template-columns: 148px 1fr; gap: 8px; font-size: 10px; line-height: 1.45; }
+    .tag-grid { gap: 4px; }
+    .tag { font-size: 9.5px; padding: 2px 9px; }
+    .tag-tool { font-size: 9.5px; padding: 2px 8px; }
+    .edu-list { gap: 7px; }
+    .edu-institution { font-size: 11px; }
+    .edu-degree, .edu-dates { font-size: 10px; }
+    a { color: inherit !important; text-decoration: none !important; }
+  }
+
   /* ─── Mobile ─── */
   @media (max-width: 600px) {
     .resume-page { padding: 100px 24px 80px; }
