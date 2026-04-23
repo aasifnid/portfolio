@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aasif Anwar — UX Designer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,400&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/tokens.css">
+<style>
+
+  /* ─── Reset + Base ─── */
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+  html { font-size: 16px; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+  body {
+    font-family: var(--font-body);
+    color: var(--color-ink);
+    background-color: var(--color-bg);
+    background-image: radial-gradient(circle, rgba(0,0,0,0.07) 1px, transparent 1px);
+    background-size: 20px 20px;
+    line-height: 1.6;
+  }
+
+  /* ─── Nav ─── */
+  .site-nav {
+    position: sticky; top: 0; z-index: 100;
+    background: var(--color-bg);
+    border-bottom: 1px solid var(--color-border);
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 0 48px; height: 52px;
+  }
+  .nav-name {
+    font-family: var(--font-display); font-size: 14px; font-weight: 700;
+    color: var(--color-ink); text-decoration: none; letter-spacing: -0.02em;
+  }
+  .nav-links { display: flex; gap: 4px; align-items: center; }
+  .nav-links a {
+    font-family: var(--font-mono); font-size: 12px; font-weight: 400;
+    color: var(--color-ink-3); text-decoration: none;
+    letter-spacing: 0.04em; padding: 6px 12px;
+    border-radius: var(--r-sm);
+    transition: color var(--ease);
+  }
+  .nav-links a:hover { color: var(--color-ink); }
+  .nav-resume {
+    border: 1px solid var(--color-border);
+    color: var(--color-ink) !important;
+    margin-left: 8px;
+    transition: border-color var(--ease);
+  }
+  .nav-resume:hover { border-color: var(--color-border-2) !important; }
+
+  /* ─── Hero ─── */
+  .home-hero {
+    max-width: 960px; margin: 0 auto;
+    padding: 120px 48px 100px;
+  }
+  .hero-eyebrow {
+    font-family: var(--font-mono); font-size: var(--text-xs);
+    font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--gold-700); margin-bottom: 28px;
+  }
+  .hero-headline {
+    font-family: var(--font-display); font-size: clamp(40px, 5vw, 72px);
+    line-height: 1.08; font-weight: 800; letter-spacing: -0.03em;
+    color: var(--color-ink); margin-bottom: 28px; max-width: 820px;
+  }
+  .hero-rule {
+    width: 48px; height: 1px;
+    background: var(--gold-500); margin-bottom: 28px;
+  }
+  .hero-sub {
+    font-size: 18px; line-height: 1.65; color: var(--color-ink-2);
+    font-weight: 400; margin-bottom: 48px; max-width: 460px;
+  }
+  .hero-actions { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; }
+
+  /* ─── Buttons ─── */
+  .btn-primary {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: var(--color-ink); color: #FAFAF8;
+    font-family: var(--font-mono); font-size: 13px; font-weight: 500;
+    letter-spacing: 0.03em; text-decoration: none;
+    padding: 12px 22px; border-radius: var(--r-sm);
+    transition: background var(--ease);
+  }
+  .btn-primary:hover { background: #2D2B28; }
+  .btn-ghost {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: transparent; color: var(--color-ink-2);
+    font-family: var(--font-mono); font-size: 13px; font-weight: 500;
+    letter-spacing: 0.03em; text-decoration: none;
+    padding: 12px 22px;
+    border: 1px solid var(--color-border); border-radius: var(--r-sm);
+    transition: border-color var(--ease), color var(--ease);
+  }
+  .btn-ghost:hover { border-color: var(--color-border-2); color: var(--color-ink); }
+
+  /* ─── Sections ─── */
+  .home-section { max-width: 960px; margin: 0 auto; padding: 80px 48px; }
+  #work { padding-bottom: 100px; }
+  .home-section-label {
+    font-family: var(--font-mono); font-size: var(--text-xs);
+    font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--gold-700); margin-bottom: 32px;
+    display: flex; align-items: center; gap: 16px;
+  }
+  .home-section-label::after {
+    content: ''; flex: 1; height: 1px; background: var(--color-border);
+  }
+
+  /* ─── Work grid ─── */
+  .work-grid { display: flex; flex-direction: column; gap: 16px; }
+  .work-card {
+    display: grid; grid-template-columns: 2fr 3fr;
+    height: 320px;
+    text-decoration: none; color: inherit;
+    background: #fff;
+    border: 1px solid var(--color-border); border-radius: var(--r-md);
+    overflow: hidden;
+    transition: border-color var(--ease), transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  .work-card:hover {
+    border-color: var(--color-border-2);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+  }
+  .work-card-image {
+    width: 100%; height: 100%; object-fit: cover; display: block;
+    border-left: 1px solid var(--color-border);
+  }
+  .work-card-placeholder {
+    width: 100%; height: 100%;
+    background: var(--color-surface);
+    border-left: 1px solid var(--color-border);
+    display: flex; align-items: center; justify-content: center;
+  }
+  .work-card-placeholder span {
+    font-family: var(--font-mono); font-size: 11px;
+    color: var(--color-ink-3); letter-spacing: 0.06em;
+  }
+  .work-card-body {
+    padding: 40px 48px;
+    display: flex; flex-direction: column; justify-content: center;
+  }
+  .work-card-meta {
+    font-family: var(--font-mono); font-size: 11px;
+    letter-spacing: 0.08em; text-transform: uppercase;
+    color: var(--color-ink-3); margin-bottom: 12px;
+  }
+  .work-card-title {
+    font-family: var(--font-display); font-size: 24px;
+    font-weight: 700; letter-spacing: -0.02em; line-height: 1.2;
+    color: var(--color-ink); margin-bottom: 12px;
+  }
+  .work-card-desc {
+    font-size: 14px; line-height: 22px;
+    color: var(--color-ink-2); margin-bottom: 0;
+    display: -webkit-box; -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical; overflow: hidden;
+  }
+
+  /* ─── Recommendations ─── */
+  .recs-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .rec-card {
+    background: #fff; border-radius: var(--r-md); padding: 24px 28px;
+    border: 1px solid var(--color-border);
+    display: flex; flex-direction: column; gap: 16px;
+  }
+  .rec-card.rec-placeholder {
+    background: var(--color-surface);
+    border: 1px dashed var(--color-border);
+  }
+  .rec-header { display: flex; align-items: center; gap: 12px; }
+  .rec-avatar {
+    width: 42px; height: 42px; border-radius: 50%; flex-shrink: 0;
+    display: flex; align-items: center; justify-content: center;
+    font-family: var(--font-display); font-size: 13px; font-weight: 700;
+    color: #fff; letter-spacing: 0.04em;
+  }
+  .rec-name {
+    font-family: var(--font-display); font-size: 14px; font-weight: 700;
+    color: var(--color-ink); margin-bottom: 3px;
+  }
+  .rec-role {
+    font-family: var(--font-mono); font-size: 11px;
+    color: var(--color-ink-3); letter-spacing: 0.04em;
+  }
+  .rec-quote {
+    font-size: 14px; line-height: 22px; color: var(--color-ink-2);
+    font-style: italic; flex: 1;
+    display: -webkit-box; -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical; overflow: hidden;
+  }
+  .rec-quote.expanded { display: block; -webkit-line-clamp: unset; }
+  .rec-placeholder .rec-quote { color: var(--color-ink-3); font-style: normal; }
+  .rec-readmore {
+    font-family: var(--font-mono); font-size: 11px; font-weight: 500;
+    color: var(--gold-700); letter-spacing: 0.04em;
+    background: none; border: none; cursor: pointer;
+    padding: 0; text-align: left; display: none;
+  }
+  .rec-readmore.visible { display: block; }
+
+  /* ─── About ─── */
+  .about-layout {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 72px; align-items: start;
+  }
+  .about-belief {
+    border-left: 3px solid var(--gold-500);
+    padding: 4px 0 4px 28px; position: sticky; top: 72px;
+  }
+  .about-belief-quote {
+    font-family: var(--font-display); font-size: clamp(18px, 2vw, 24px);
+    font-weight: 700; letter-spacing: -0.02em; line-height: 1.4;
+    color: var(--color-ink); margin-bottom: 16px;
+  }
+  .about-belief-sub {
+    font-size: 15px; line-height: 26px; color: var(--color-ink-2);
+  }
+  .timeline { display: flex; flex-direction: column; }
+  .timeline-item { display: flex; gap: 16px; }
+  .timeline-marker {
+    display: flex; flex-direction: column; align-items: center;
+    flex-shrink: 0; padding-top: 2px;
+  }
+  .timeline-dot {
+    width: 10px; height: 10px; border-radius: 50%;
+    background: var(--gold-500); flex-shrink: 0;
+  }
+  .timeline-dot--open {
+    background: transparent; border: 2px solid var(--gold-500);
+  }
+  .timeline-connector {
+    width: 1px; flex: 1; background: var(--color-border);
+    min-height: 28px; margin: 4px 0;
+  }
+  .timeline-content { padding-bottom: 28px; }
+  .timeline-item:last-child .timeline-content { padding-bottom: 0; }
+  .timeline-item:last-child .timeline-connector { display: none; }
+  .timeline-label {
+    font-family: var(--font-display); font-size: 14px; font-weight: 600;
+    color: var(--color-ink); margin-bottom: 3px; line-height: 1.3;
+  }
+  .timeline-year {
+    font-family: var(--font-mono); font-size: 11px;
+    color: var(--color-ink-3); letter-spacing: 0.04em; line-height: 1.5;
+  }
+  .timeline-item--next .timeline-label { color: var(--gold-700); }
+  .timeline-item--next .timeline-year { color: var(--gold-700); }
+
+  /* ─── Footer ─── */
+  .home-footer {
+    max-width: 960px; margin: 0 auto;
+    padding: 28px 48px 52px;
+    border-top: 1px solid var(--color-border);
+    display: flex; justify-content: space-between; align-items: center; gap: 24px;
+  }
+  .footer-left { display: flex; align-items: center; gap: 16px; }
+  .footer-ai-credit {
+    font-family: var(--font-mono); font-size: 11px; color: var(--color-ink-3);
+    text-decoration: none; letter-spacing: 0.04em; transition: color var(--ease);
+  }
+  .footer-ai-credit:hover { color: var(--color-ink-2); }
+  .footer-sep { color: var(--color-border); }
+  .footer-copyright {
+    font-family: var(--font-mono); font-size: 11px;
+    color: var(--color-ink-3); letter-spacing: 0.04em;
+  }
+  .footer-links { display: flex; gap: 20px; align-items: center; }
+  .footer-link {
+    font-family: var(--font-mono); font-size: 12px; color: var(--color-ink-3);
+    text-decoration: none; letter-spacing: 0.04em; transition: color var(--ease);
+  }
+  .footer-link:hover { color: var(--color-ink); }
+
+  /* ─── Mobile ─── */
+  @media (max-width: 768px) {
+    .site-nav { padding: 0 20px; }
+    .home-hero { padding: 80px 24px 60px; }
+    .hero-headline { letter-spacing: -0.025em; }
+    .home-section { padding: 60px 24px; }
+    .recs-grid { grid-template-columns: 1fr; }
+    .work-card { grid-template-columns: 1fr; height: auto; }
+    .work-card-image { height: 200px; border-left: none; border-top: 1px solid var(--color-border); order: -1; }
+    .work-card-placeholder { height: 180px; border-left: none; border-top: 1px solid var(--color-border); order: -1; }
+    .work-card-body { padding: 24px; }
+    .about-layout { grid-template-columns: 1fr; gap: 40px; }
+    .about-belief { position: static; }
+    .about-belief-sub { max-width: 100%; }
+    .hero-actions { flex-direction: column; align-items: flex-start; }
+    .home-footer { flex-direction: column; gap: 12px; text-align: center; padding: 24px 24px 40px; }
+    .footer-left { flex-direction: column; gap: 4px; }
+  }
+
+</style>
+</head>
+<body>
+
+<!-- ══════════════════════════════════════ NAV ══════════════════════════════════════ -->
+<nav class="site-nav">
+  <a href="index.html" class="nav-name">Aasif Anwar</a>
+  <div class="nav-links">
+    <a href="#work">work</a>
+    <a href="#about">about</a>
+    <a href="resume/index.html" class="nav-resume">resume ↓</a>
+  </div>
+</nav>
+
+<!-- ══════════════════════════════════════ HERO ══════════════════════════════════════ -->
+<div class="home-hero">
+  <p class="hero-eyebrow">UX Designer · Game Design · NID</p>
+  <h1 class="hero-headline">Crafting designs that feel effortless — and worth coming back to.</h1>
+  <div class="hero-rule"></div>
+  <p class="hero-sub">5 years at Cuemath designing tools for students, tutors, and the space between them.</p>
+  <div class="hero-actions">
+    <a href="#work" class="btn-primary">View work →</a>
+    <a href="assets/aasif-anwar-resume.pdf" download="Aasif-Anwar-Resume.pdf" class="btn-ghost">Download resume ↓</a>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════ WORK ══════════════════════════════════════ -->
+<section class="home-section" id="work">
+  <p class="home-section-label">Selected Work</p>
+  <div class="work-grid">
+
+    <a href="work/leap-sel-tools/index.html" class="work-card">
+      <div class="work-card-body">
+        <p class="work-card-meta">2025–26 · 0→1</p>
+        <p class="work-card-title">Feel Check: SEL Tools</p>
+        <p class="work-card-desc">A student-led emotional check-in before every session — reads mood and routes to a regulation activity. Shipped to 417 students across 4 cohorts.</p>
+      </div>
+      <img class="work-card-image" src="work/leap-sel-tools/images/thumbnail.jpg" alt="Feel Check — SEL Tools">
+    </a>
+
+    <a href="work/new-trial-experience/" class="work-card">
+      <div class="work-card-body">
+        <p class="work-card-meta">2024</p>
+        <p class="work-card-title">New Trial Experience</p>
+        <p class="work-card-desc">Reduced AC intervention by 70% and lifted trial conversion by 50% — shifting the demo class to a fully teacher-led journey.</p>
+      </div>
+      <div class="work-card-placeholder"><span>[ coming soon ]</span></div>
+    </a>
+
+    <a href="work/leap-learning-system/index.html" class="work-card">
+      <div class="work-card-body">
+        <p class="work-card-meta">2024–25</p>
+        <p class="work-card-title">Learning System Architecture</p>
+        <p class="work-card-desc">Redesigned how teachers assign and track homework — removing tool-switching and surfacing what needs attention first.</p>
+      </div>
+      <div class="work-card-placeholder"><span>[ coming soon ]</span></div>
+    </a>
+
+    <a href="work/affiliate-partnership/" class="work-card">
+      <div class="work-card-body">
+        <p class="work-card-meta">2024 · 0→1</p>
+        <p class="work-card-title">Affiliate Partnership</p>
+        <p class="work-card-desc">A referral platform for community volunteers to earn by promoting Cuemath — from landing page to affiliate dashboard.</p>
+      </div>
+      <div class="work-card-placeholder"><span>[ coming soon ]</span></div>
+    </a>
+
+    <a href="work/cue-tutor-license/" class="work-card">
+      <div class="work-card-body">
+        <p class="work-card-meta">2024</p>
+        <p class="work-card-title">Cue Tutor License</p>
+        <p class="work-card-desc">New license system giving tutors preference-based trial allocation — reduced scheduled trial cancellations by 12%.</p>
+      </div>
+      <div class="work-card-placeholder"><span>[ coming soon ]</span></div>
+    </a>
+
+    <a href="work/curriculum-games/" class="work-card">
+      <div class="work-card-body">
+        <p class="work-card-meta">2022 · Game Design</p>
+        <p class="work-card-title">Curriculum Games</p>
+        <p class="work-card-desc">Educational games embedding computational thinking into coding curricula and problem-solving into Cuemath's v3 Math program.</p>
+      </div>
+      <div class="work-card-placeholder"><span>[ coming soon ]</span></div>
+    </a>
+
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════ RECOMMENDATIONS ══════════════════════════ -->
+<section class="home-section" id="recommendations">
+  <p class="home-section-label">Recommendations</p>
+  <div class="recs-grid">
+
+    <div class="rec-card">
+      <div class="rec-header">
+        <div class="rec-avatar" style="background:#C47A5A;">AG</div>
+        <div>
+          <p class="rec-name">Anushray Gupta</p>
+          <p class="rec-role">CPTO · Cuemath</p>
+        </div>
+      </div>
+      <p class="rec-quote">Beyond his technical expertise, Aasif is a fantastic collaborator. Always receptive to feedback, proactive in problem-solving, and committed to delivering quality designs, he made a significant impact on our team.</p>
+      <button class="rec-readmore">Read more ↓</button>
+    </div>
+
+    <div class="rec-card">
+      <div class="rec-header">
+        <div class="rec-avatar" style="background:#5A7A6A;">JV</div>
+        <div>
+          <p class="rec-name">Jigar Vora</p>
+          <p class="rec-role">Business Head (India) · Cuemath</p>
+        </div>
+      </div>
+      <p class="rec-quote">What truly sets Aasif apart is his ability to ask the right questions — always striving to understand the 'Why' behind our projects, ensuring that design decisions were aligned with business goals and user impact.</p>
+      <button class="rec-readmore">Read more ↓</button>
+    </div>
+
+    <div class="rec-card">
+      <div class="rec-header">
+        <div class="rec-avatar" style="background:#5A7A8A;">AA</div>
+        <div>
+          <p class="rec-name">Aman Awasthy</p>
+          <p class="rec-role">Senior Product Designer · Quizizz</p>
+        </div>
+      </div>
+      <p class="rec-quote">Whether it was collaborating on fast-paced product iterations or getting into the weeds of user problems, Aasif brought a rare mix of curiosity, humility, and sharp design thinking to every challenge he tackled.</p>
+      <button class="rec-readmore">Read more ↓</button>
+    </div>
+
+    <div class="rec-card">
+      <div class="rec-header">
+        <div class="rec-avatar" style="background:#7A5A8A;">AS</div>
+        <div>
+          <p class="rec-name">Ayush Singhal</p>
+          <p class="rec-role">SDE II · Cuemath</p>
+        </div>
+      </div>
+      <p class="rec-quote">I had the privilege of working with Aasif at Cuemath — one of the most dependable and thoughtful product designers I've worked with. He contributed significantly across high-impact initiatives including SEL tools, milestones, goals, puzzles, and several platform revamps, consistently improving user experience and bringing clarity to complex product problems. What truly sets him apart is his proactive mindset — any feedback was quickly acted upon with high quality and attention to detail. He has a strong sense of responsibility and always strives to raise the bar. Beyond his skills, he was always willing to step in and help others across teams whenever they were blocked.</p>
+      <button class="rec-readmore">Read more ↓</button>
+    </div>
+
+    <div class="rec-card">
+      <div class="rec-header">
+        <div class="rec-avatar" style="background:#8A7A5A;">SB</div>
+        <div>
+          <p class="rec-name">Sainath Bandapalli</p>
+          <p class="rec-role">Director (Curriculum) · Mastree</p>
+        </div>
+      </div>
+      <p class="rec-quote">Aasif has a good understanding of design and gameplay. He is diligent and hardworking, excelling in collaboration, efficiency, and time management. A valuable team member, both in the spotlight and behind the scenes.</p>
+      <button class="rec-readmore">Read more ↓</button>
+    </div>
+
+    <!-- Template — replace with real testimonial -->
+    <div class="rec-card rec-placeholder">
+      <div class="rec-header">
+        <div class="rec-avatar" style="background:#ABABAB;">?</div>
+        <div>
+          <p class="rec-name">Colleague Name</p>
+          <p class="rec-role">Role · Company</p>
+        </div>
+      </div>
+      <p class="rec-quote">Share the testimonial text to complete this card.</p>
+    </div>
+
+    <!-- Template — replace with real testimonial -->
+    <div class="rec-card rec-placeholder">
+      <div class="rec-header">
+        <div class="rec-avatar" style="background:#ABABAB;">?</div>
+        <div>
+          <p class="rec-name">Colleague Name</p>
+          <p class="rec-role">Role · Company</p>
+        </div>
+      </div>
+      <p class="rec-quote">Share the testimonial text to complete this card.</p>
+    </div>
+
+    <!-- Template — replace with real testimonial -->
+    <div class="rec-card rec-placeholder">
+      <div class="rec-header">
+        <div class="rec-avatar" style="background:#ABABAB;">?</div>
+        <div>
+          <p class="rec-name">Colleague Name</p>
+          <p class="rec-role">Role · Company</p>
+        </div>
+      </div>
+      <p class="rec-quote">Share the testimonial text to complete this card.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════ ABOUT ══════════════════════════════════════ -->
+<section class="home-section" id="about">
+  <p class="home-section-label">About</p>
+
+  <div class="about-layout">
+
+    <!-- Left — Philosophy -->
+    <div class="about-belief">
+      <p class="about-belief-quote">Game design taught me to treat engagement as a requirement, not a nice-to-have.</p>
+      <p class="about-belief-sub">I carry that into everything — making complexity feel simple, and making the experience worth coming back to.</p>
+    </div>
+
+    <!-- Right — Journey -->
+    <div class="timeline">
+
+      <div class="timeline-item">
+        <div class="timeline-marker">
+          <div class="timeline-dot"></div>
+          <div class="timeline-connector"></div>
+        </div>
+        <div class="timeline-content">
+          <p class="timeline-label">Mechanical Engineering</p>
+          <p class="timeline-year">2011 – 2015</p>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-marker">
+          <div class="timeline-dot"></div>
+          <div class="timeline-connector"></div>
+        </div>
+        <div class="timeline-content">
+          <p class="timeline-label">Design Research</p>
+          <p class="timeline-year">IIT Kanpur · 2017 – 18</p>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-marker">
+          <div class="timeline-dot"></div>
+          <div class="timeline-connector"></div>
+        </div>
+        <div class="timeline-content">
+          <p class="timeline-label">M.Des Industrial Design</p>
+          <p class="timeline-year">NID Gandhinagar · 2018 – 21</p>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-marker">
+          <div class="timeline-dot"></div>
+          <div class="timeline-connector"></div>
+        </div>
+        <div class="timeline-content">
+          <p class="timeline-label">Game Design</p>
+          <p class="timeline-year">Cuemath · 2021 – 22</p>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-marker">
+          <div class="timeline-dot"></div>
+          <div class="timeline-connector"></div>
+        </div>
+        <div class="timeline-content">
+          <p class="timeline-label">Product Design</p>
+          <p class="timeline-year">Cuemath · 2022 – 26</p>
+        </div>
+      </div>
+
+      <div class="timeline-item timeline-item--next">
+        <div class="timeline-marker">
+          <div class="timeline-dot timeline-dot--open"></div>
+          <div class="timeline-connector"></div>
+        </div>
+        <div class="timeline-content">
+          <p class="timeline-label">What's next</p>
+          <p class="timeline-year">Consumer · Scale</p>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════ FOOTER ══════════════════════════════════════ -->
+<footer class="home-footer">
+  <div class="footer-left">
+    <a href="https://claude.ai/code" target="_blank" rel="noopener" class="footer-ai-credit">Built with Claude Code ↗</a>
+    <span class="footer-sep">·</span>
+    <span class="footer-copyright">© 2026 Aasif Anwar</span>
+  </div>
+  <div class="footer-links">
+    <a href="https://www.linkedin.com/in/aasif-nid/" target="_blank" rel="noopener" class="footer-link">LinkedIn ↗</a>
+    <a href="mailto:aasif.nid@gmail.com" class="footer-link">Email ↗</a>
+  </div>
+</footer>
+
+<script>
+  document.querySelectorAll('.rec-card:not(.rec-placeholder)').forEach(function(card) {
+    var quote = card.querySelector('.rec-quote');
+    var btn = card.querySelector('.rec-readmore');
+    if (!btn) return;
+    if (quote.scrollHeight > quote.clientHeight + 2) {
+      btn.classList.add('visible');
+    }
+    btn.addEventListener('click', function(e) {
+      e.preventDefault();
+      e.stopPropagation();
+      if (quote.classList.contains('expanded')) {
+        quote.classList.remove('expanded');
+        btn.textContent = 'Read more ↓';
+      } else {
+        quote.classList.add('expanded');
+        btn.textContent = 'Read less ↑';
+      }
+    });
+  });
+</script>
+
+</body>
+</html>

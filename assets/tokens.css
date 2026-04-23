@@ -1,0 +1,75 @@
+/* ═══════════════════════════════════════════════════════════════
+   Design System — Aasif Anwar Portfolio
+   Single source of truth for all design tokens.
+   All pages should link this file before any other stylesheet.
+   ═══════════════════════════════════════════════════════════════ */
+
+:root {
+
+  /* ─── Surface ─── */
+  --color-bg:       #FAFAF8;   /* page background */
+  --color-surface:  #F2F0EB;   /* elevated: cards, placeholders */
+  --color-border:   #E2DDD6;   /* dividers, card edges */
+  --color-border-2: #CDCAC4;   /* hover border, stronger edge */
+
+  /* ─── Ink ─── */
+  --color-ink:      #1A1916;   /* primary text */
+  --color-ink-2:    #4A4744;   /* secondary text */
+  --color-ink-3:    #7A7571;   /* muted, labels, metadata */
+
+  /* ─── Gold ─── */
+  --gold-100: #FBF3E8;
+  --gold-400: #DFA44C;
+  --gold-500: #C4862A;
+  --gold-700: #9A6315;
+
+  /* ─── Typography ─── */
+  --font-display: 'Plus Jakarta Sans', -apple-system, system-ui, sans-serif;
+  --font-body:    'DM Sans', -apple-system, system-ui, sans-serif;
+  --font-mono:    'DM Mono', ui-monospace, 'Courier New', monospace;
+
+  /* ─── Type scale ─── */
+  --text-xs:   11px;
+  --text-sm:   13px;
+  --text-base: 16px;
+  --text-md:   17px;
+  --text-lg:   20px;
+  --text-xl:   24px;
+  --text-2xl:  32px;
+  --text-hero: clamp(44px, 6.5vw, 80px);
+
+  /* ─── Spacing (8px base) ─── */
+  --s1:  4px;
+  --s2:  8px;
+  --s3:  12px;
+  --s4:  16px;
+  --s5:  20px;
+  --s6:  24px;
+  --s8:  32px;
+  --s10: 40px;
+  --s12: 48px;
+  --s16: 64px;
+  --s20: 80px;
+  --s24: 96px;
+
+  /* ─── Border radius ─── */
+  --r-sm: 4px;
+  --r-md: 8px;
+  --r-lg: 12px;
+
+  /* ─── Transition ─── */
+  --ease: 0.15s ease;
+
+  /* ─── Legacy neutral aliases ─────────────────────────────────
+     Kept for backward compatibility with existing case study pages
+     that reference --neutral-XXX. Do not use for new pages.
+  ──────────────────────────────────────────────────────────── */
+  --neutral-100:  #FAF8F5;
+  --neutral-200:  #F3F0EB;
+  --neutral-300:  #E8E4DD;
+  --neutral-700:  #474543;
+  --neutral-800:  #43413E;
+  --neutral-900:  #33312F;
+  --neutral-1000: #292827;
+
+}
