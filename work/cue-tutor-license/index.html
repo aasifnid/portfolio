@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cue Tutor License — Aasif Anwar</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,400&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../assets/tokens.css">
+<link rel="stylesheet" href="../../assets/style.css">
+<style>
+
+  /* ─── Preference panel mockup ─── */
+  .pref-panel {
+    width: 320px;
+    background: var(--neutral-200);
+    border: 1px solid var(--neutral-300);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+  }
+  .pref-panel-header {
+    padding: 14px 18px;
+    background: var(--neutral-100);
+    border-bottom: 1px solid var(--neutral-300);
+    font-family: var(--font-display); font-size: 13px; font-weight: 700;
+    color: var(--neutral-1000);
+  }
+  .pref-row {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 12px 18px;
+    border-bottom: 1px solid var(--neutral-300);
+  }
+  .pref-row:last-child { border-bottom: none; }
+  .pref-row-label { font-size: 13px; color: var(--neutral-800); font-weight: 500; }
+  .pref-row-sub { font-size: 11px; color: var(--neutral-700); margin-top: 2px; }
+  .pref-toggle {
+    width: 36px; height: 20px; border-radius: 10px;
+    display: flex; align-items: center;
+    padding: 2px; flex-shrink: 0;
+  }
+  .pref-toggle.on { background: var(--gold-500); justify-content: flex-end; }
+  .pref-toggle.off { background: var(--neutral-300); justify-content: flex-start; }
+  .pref-toggle-dot {
+    width: 16px; height: 16px; border-radius: 50%; background: #fff;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+  }
+  .pref-chip {
+    font-size: 11px; font-weight: 600; padding: 3px 9px;
+    border-radius: 4px; background: var(--gold-100);
+    color: var(--gold-700); border: 1px solid var(--gold-400);
+    white-space: nowrap;
+  }
+  .pref-chip.off {
+    background: var(--neutral-200); color: var(--neutral-700);
+    border-color: var(--neutral-300);
+  }
+
+  /* ─── Reflect items ─── */
+  .reflect-wrap { display: flex; flex-direction: column; gap: 10px; margin-top: 8px; }
+  .reflect-item {
+    padding: 22px 24px;
+    background: var(--neutral-200); border: 1px solid var(--neutral-300);
+    border-left: 3px solid var(--gold-500); border-radius: 0 8px 8px 0;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+  }
+  .reflect-label {
+    font-family: var(--font-mono); font-size: 10px; font-weight: 700;
+    letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--gold-700); margin-bottom: 10px;
+  }
+  .reflect-item p:not(.reflect-label) { font-size: 15px; line-height: 25px; color: var(--neutral-800); margin-bottom: 0; }
+
+  /* ─── Mobile ─── */
+  @media (max-width: 640px) {
+    .pref-panel { width: 100%; }
+  }
+
+</style>
+</head>
+<body>
+
+<!-- ══════ NAV ══════ -->
+<nav class="site-nav">
+  <a href="../../index.html" class="nav-name">Aasif Anwar</a>
+  <div class="nav-links">
+    <a href="../../index.html#work">work</a>
+    <a href="../../index.html#about">about</a>
+  </div>
+</nav>
+
+<!-- ══════ COVER ══════ -->
+<div class="cover">
+  <p class="cover-eyebrow">Product Design · 2024</p>
+  <h1>Cue Tutor License</h1>
+  <p class="lede">Teachers at Cuemath had no say in which trial classes landed in their calendar. Assignments were algorithmic and top-down — no opt-out, no preference-setting, no signal for availability. Frequent rescheduling and cancellations were symptoms of a system that treated teachers as slots, not people. The redesign gave teachers control over their own allocation.</p>
+
+  <div class="cover-meta">
+    <div class="cover-meta-item">
+      <span class="cover-meta-label">My role</span>
+      <span class="cover-meta-value">Product Designer</span>
+    </div>
+    <div class="cover-meta-item">
+      <span class="cover-meta-label">Platform</span>
+      <span class="cover-meta-value">Cueteacher (Web)</span>
+    </div>
+    <div class="cover-meta-item">
+      <span class="cover-meta-label">Timeline</span>
+      <span class="cover-meta-value">4 weeks</span>
+    </div>
+    <div class="cover-meta-item">
+      <span class="cover-meta-label">Outcome</span>
+      <span class="cover-meta-value">−40% cancellations</span>
+    </div>
+  </div>
+
+  <div class="hero">
+    <div class="pref-panel">
+      <div class="pref-panel-header">Trial Allocation Preferences</div>
+      <div class="pref-row">
+        <div>
+          <div class="pref-row-label">Do Not Disturb</div>
+          <div class="pref-row-sub">Block 9pm – 7am</div>
+        </div>
+        <div class="pref-toggle on"><div class="pref-toggle-dot"></div></div>
+      </div>
+      <div class="pref-row">
+        <div>
+          <div class="pref-row-label">Subjects</div>
+          <div class="pref-row-sub" style="display:flex;gap:4px;margin-top:5px;">
+            <span class="pref-chip">Math</span>
+            <span class="pref-chip">Coding</span>
+            <span class="pref-chip off">English</span>
+          </div>
+        </div>
+      </div>
+      <div class="pref-row">
+        <div>
+          <div class="pref-row-label">Growth Interest</div>
+          <div class="pref-row-sub">Ready for more trials</div>
+        </div>
+        <div class="pref-toggle on"><div class="pref-toggle-dot"></div></div>
+      </div>
+      <div class="pref-row">
+        <div>
+          <div class="pref-row-label">Regional Allocation</div>
+          <div class="pref-row-sub">South India only</div>
+        </div>
+        <div class="pref-toggle off"><div class="pref-toggle-dot"></div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════ PAGE ══════ -->
+<div class="page">
+
+  <div class="overview">
+    <div class="overview-item">
+      <p class="overview-item-label">The problem</p>
+      <p class="overview-item-value">Teachers had zero input into trial assignments. Mismatches caused constant rescheduling and eroded trust.</p>
+    </div>
+    <div class="overview-item">
+      <p class="overview-item-label">My role</p>
+      <p class="overview-item-value">Product Designer</p>
+      <p class="overview-item-sub">Research · Preference system · Approval flow · Metrics dashboard</p>
+    </div>
+    <div class="overview-item">
+      <p class="overview-item-label">Outcome</p>
+      <p class="overview-item-value">−40% cancellations</p>
+      <p class="overview-item-sub">+25% satisfaction · +30% match accuracy</p>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- ══ 01 — THE PROBLEM ══ -->
+  <div class="section-head">
+    <span class="section-num">01</span>
+    <span class="section-label">The Problem</span>
+  </div>
+  <p class="section-title">The algorithm assigned. Teachers cancelled. Nobody fixed the root cause.</p>
+
+  <p class="large">Trial classes were allocated top-down by an algorithm that had no visibility into teacher availability, subject preference, or regional constraints. When mismatches happened — and they happened constantly — the only resolution was manual rescheduling. That cost time for teachers, support staff, and parents.</p>
+
+  <div class="challenges">
+    <div class="challenge-item">
+      <p class="challenge-title">No preference input</p>
+      <p class="challenge-desc">Teachers couldn't communicate availability windows, preferred subjects, or geographic constraints. Every assignment was a black box output.</p>
+    </div>
+    <div class="challenge-item">
+      <p class="challenge-title">High rescheduling load</p>
+      <p class="challenge-desc">Mismatched trials generated repeated cancellation and reschedule requests — creating friction for support staff and eroding parent confidence before the session even started.</p>
+    </div>
+    <div class="challenge-item">
+      <p class="challenge-title">No career signal</p>
+      <p class="challenge-desc">Teachers who wanted more trial classes — for income growth or performance targets — had no way to signal that interest. The system couldn't differentiate between a teacher at capacity and one actively seeking more work.</p>
+    </div>
+    <div class="challenge-item">
+      <p class="challenge-title">Work-life boundary erosion</p>
+      <p class="challenge-desc">Without Do Not Disturb controls, teachers received assignments at any hour. There was no system-level protection for time they'd designated as unavailable.</p>
+    </div>
+  </div>
+
+  <div class="divider-gold"></div>
+
+  <!-- ══ 02 — DISCOVERY ══ -->
+  <div class="section-head">
+    <span class="section-num">02</span>
+    <span class="section-label">Discovery</span>
+  </div>
+  <p class="section-title">Teachers didn't want fewer trials. They wanted trials that fit.</p>
+
+  <p>Interviews with educators revealed a consistent pattern: the frustration wasn't about workload — it was about predictability and fit. A teacher specialising in upper-primary maths didn't want coding trial classes. A teacher unavailable on Sunday evenings didn't want to keep manually rejecting Sunday evening slots. The system made them fight the algorithm repeatedly instead of configuring it once.</p>
+
+  <div class="narrative">
+    <p>The design implication was clear: the solution wasn't a better algorithm. It was giving teachers a preference layer that the algorithm could read. Teachers who set their preferences correctly should almost never need to manually cancel — the system should surface that mismatch before the assignment is made, not after.</p>
+  </div>
+
+  <div class="narrative">
+    <p>A second finding: teachers who wanted more trials had no way to signal readiness. The Growth Interest feature came directly from this — it wasn't in the original brief. Teachers described wanting a way to "put their hand up" for additional work without having to approach a manager. That signal belonged in the product.</p>
+  </div>
+
+  <blockquote>The system treated teachers as a supply pool. Teachers wanted to be treated as professionals with schedules.</blockquote>
+
+  <div class="divider"></div>
+
+  <!-- ══ 03 — KEY DECISIONS ══ -->
+  <div class="section-head">
+    <span class="section-num">03</span>
+    <span class="section-label">Key Decisions</span>
+  </div>
+  <p class="section-title">Five decisions that shifted assignment from top-down to preference-driven.</p>
+
+  <div class="decisions-list">
+
+    <div class="decision-item">
+      <p class="decision-item-num">Decision 01</p>
+      <p class="decision-item-title">Approve / decline at the point of assignment</p>
+      <p>Teachers could accept or decline algorithmically-generated trial assignments directly — without going through support staff. This wasn't just a UX convenience; it changed the operational model. Declined assignments re-entered the pool immediately and were reassigned automatically, reducing the lag that made rescheduling so costly before.</p>
+    </div>
+
+    <div class="decision-item">
+      <p class="decision-item-num">Decision 02</p>
+      <p class="decision-item-title">Do Not Disturb Hours — block time, not just time slots</p>
+      <p>Teachers could designate recurring time windows as unavailable. Not individual slot rejections — a persistent rule the algorithm would respect. Once set, assignments in those windows simply wouldn't happen. The difference: one configuration versus repeated manual rejections every week.</p>
+    </div>
+
+    <div class="decision-item">
+      <p class="decision-item-num">Decision 03</p>
+      <p class="decision-item-title">Program Preferences — subject and category opt-out</p>
+      <p>Teachers could exclude subjects or programme categories they didn't want to teach — or weren't qualified for. This resolved the most common source of mismatch: a maths specialist getting assigned a coding trial. The preference was permanent and updatable, not a one-time rejection.</p>
+    </div>
+
+    <div class="decision-item">
+      <p class="decision-item-num">Decision 04</p>
+      <p class="decision-item-title">Regional Preferences — geographic constraints made explicit</p>
+      <p>Teachers could opt out of specific geographic regions for trial allocation. This was particularly relevant for live, in-person or region-specific session formats. Rather than the algorithm guessing from session history, teachers stated their constraints directly.</p>
+    </div>
+
+    <div class="decision-item">
+      <p class="decision-item-num">Decision 05</p>
+      <p class="decision-item-title">Growth Interest — a proactive signal for teachers who want more</p>
+      <p>A single toggle that signalled readiness to take on additional trial classes. Not designed as part of the original brief — it emerged from research. Teachers who activated it were surfaced first when the algorithm distributed new trials. It gave motivated teachers a career lever, and gave the platform better signal about actual capacity.</p>
+    </div>
+
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- ══ 04 — THE BUILD ══ -->
+  <div class="section-head">
+    <span class="section-num">04</span>
+    <span class="section-label">The Build</span>
+  </div>
+  <p class="section-title">One control panel. Persistent preferences. Real-time assignment flow.</p>
+
+  <h2>Preference panel</h2>
+  <p>A dedicated settings surface in the Cueteacher account where teachers configured all allocation preferences in one place — Do Not Disturb Hours, program and regional preferences, and Growth Interest. Preferences were persistent by default and updatable at any time. The panel was designed to be set once and rarely revisited, not a dashboard requiring constant management.</p>
+
+  <div class="screen-featured">
+    <div class="screen-placeholder"></div>
+    <p class="caption">Preference panel — Do Not Disturb, subject opt-out, regional constraints, and Growth Interest toggle. Persistent settings the algorithm reads before making assignments.</p>
+  </div>
+
+  <h2>Trial assignment and approval flow</h2>
+  <p>When the algorithm generated a trial assignment, teachers received it directly through Cueteacher — with the option to accept or decline immediately. Declined trials were returned to the pool and reassigned without support staff involvement. The flow surfaced key details at the decision point: subject, timing, student level, and region.</p>
+
+  <div class="screen-featured">
+    <div class="screen-placeholder"></div>
+    <p class="caption">Assignment notification — trial details visible at the point of accept/decline. No support staff involvement needed for either outcome.</p>
+  </div>
+
+  <h2>Performance and metrics view</h2>
+  <p>Teachers could see their own trial metrics — assignments received, accepted, completed — alongside growth trajectory data. This gave teachers visibility into their own performance record, not just their workload, and connected daily decisions to longer-term progression.</p>
+
+  <div class="divider"></div>
+
+  <!-- ══ 05 — OUTCOMES ══ -->
+  <div class="section-head">
+    <span class="section-num">05</span>
+    <span class="section-label">Outcomes</span>
+  </div>
+  <p class="section-title">Fewer cancellations. Better matches. Teachers who stayed.</p>
+
+  <div class="outcome-stats">
+    <div class="stat featured">
+      <p class="stat-label">Reduction in rescheduled or cancelled trials</p>
+      <p class="stat-number">−40%</p>
+    </div>
+    <div class="stat featured">
+      <p class="stat-label">Improvement in teacher–trial matching accuracy</p>
+      <p class="stat-number">+30%</p>
+    </div>
+    <div class="stat">
+      <p class="stat-label">Increase in teacher satisfaction (Q1 internal survey)</p>
+      <p class="stat-number">+25%</p>
+    </div>
+    <div class="stat">
+      <p class="stat-label">Increase in teacher engagement with trial classes</p>
+      <p class="stat-number">+19%</p>
+    </div>
+    <div class="stat span-full">
+      <p class="stat-label">Boost in teacher retention attributed to flexibility and schedule control</p>
+      <p class="stat-number">+15%</p>
+    </div>
+  </div>
+
+  <div class="outcome-note">
+    <p>The cancellation reduction was the primary target. The retention and engagement lifts were secondary signals — they confirmed that preference-setting wasn't just operationally useful but genuinely changed how teachers related to their work on the platform.</p>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- ══ 06 — REFLECTION ══ -->
+  <div class="section-head">
+    <span class="section-num">06</span>
+    <span class="section-label">Reflection</span>
+  </div>
+  <p class="section-title">What I'd do differently.</p>
+
+  <div class="reflect-wrap">
+
+    <div class="reflect-item">
+      <p class="reflect-label">Growth Interest needed more design</p>
+      <p>The Growth Interest toggle was the most interesting feature in the system — a career signal built into a scheduling tool. But it shipped as a single toggle with minimal context. Teachers activating it deserved to understand exactly how it affected their assignment queue, what criteria the algorithm used, and whether it was working. I'd invest more in making that signal legible.</p>
+    </div>
+
+    <div class="reflect-item">
+      <p class="reflect-label">Preference conflicts were under-designed</p>
+      <p>What happens when a teacher's Do Not Disturb Hours, regional opt-outs, and subject exclusions together rule out most available trials? The system didn't communicate that conflict — it just assigned less. A teacher could configure themselves into a near-empty queue without knowing it. I'd add a live preview of how preferences affect incoming allocation volume before they're saved.</p>
+    </div>
+
+    <div class="reflect-item">
+      <p class="reflect-label">4 weeks was tight with parallel projects</p>
+      <p>The timeline compressed the research phase more than I'd have liked. We interviewed enough teachers to identify the core patterns, but a longer discovery phase would have surfaced edge cases earlier — particularly around teachers who teach across multiple subjects and regions, whose preference configurations were the most complex.</p>
+    </div>
+
+  </div>
+
+  <div class="divider-gold"></div>
+
+</div>
+
+<!-- ══════ FOOTER ══════ -->
+<div class="footer">
+  <span class="footer-name">Aasif Anwar</span>
+  <a href="../../index.html" class="footer-link">← Back to portfolio</a>
+</div>
+
+</body>
+</html>
