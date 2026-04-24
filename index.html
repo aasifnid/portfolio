@@ -36,7 +36,7 @@
   }
   .nav-links { display: flex; gap: 4px; align-items: center; }
   .nav-links a {
-    font-family: var(--font-mono); font-size: 12px; font-weight: 400;
+    font-family: var(--font-mono); font-size: 13px; font-weight: 400;
     color: var(--color-ink-3); text-decoration: none;
     letter-spacing: 0.04em; padding: 6px 12px;
     border-radius: var(--r-sm);
@@ -82,7 +82,7 @@
   /* ─── Buttons ─── */
   .btn-primary {
     display: inline-flex; align-items: center; gap: 8px;
-    background: var(--color-ink); color: #FAFAF8;
+    background: var(--color-ink); color: #F8F5EF;
     font-family: var(--font-mono); font-size: 13px; font-weight: 500;
     letter-spacing: 0.03em; text-decoration: none;
     padding: 12px 22px; border-radius: var(--r-sm);
@@ -119,16 +119,16 @@
     display: grid; grid-template-columns: 2fr 3fr;
     height: 320px;
     text-decoration: none; color: inherit;
-    background: #fff;
+    background: var(--color-surface);
     border: 1px solid var(--color-border); border-radius: var(--r-md);
     overflow: hidden;
-    transition: border-color var(--ease), box-shadow 0.2s ease;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
     transform-style: preserve-3d;
     will-change: transform;
   }
   .work-card:hover {
-    border-color: var(--color-border-2);
-    box-shadow: 0 12px 32px rgba(0,0,0,0.1);
+    border-color: var(--gold-500);
+    box-shadow: 0 20px 48px rgba(0,0,0,0.12), 0 4px 12px rgba(0,0,0,0.06);
   }
   .work-card-image {
     width: 100%; height: 100%; object-fit: cover; display: block;
@@ -171,7 +171,7 @@
   /* ─── Recommendations ─── */
   .recs-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
   .rec-card {
-    background: #fff; border-radius: var(--r-md); padding: 24px 28px;
+    background: var(--color-surface); border-radius: var(--r-md); padding: 24px 28px;
     border: 1px solid var(--color-border);
     display: flex; flex-direction: column; gap: 16px;
   }
@@ -345,14 +345,14 @@
   /* ─── CSS Thumbnails ─── */
   .cs-thumb {
     width: 100%; height: 100%;
-    background: var(--color-surface);
+    background: var(--color-bg);
     border-left: 1px solid var(--color-border);
     display: flex; align-items: center; justify-content: center;
     padding: 24px;
   }
   .cs-mini-card {
     width: 196px;
-    background: #fff;
+    background: var(--color-surface);
     border: 1px solid var(--color-border);
     border-radius: 8px;
     padding: 16px;
@@ -794,6 +794,20 @@
 </footer>
 
 <script>
+  /* ── Nav glass on scroll ── */
+  window.addEventListener('scroll', function() {
+    var nav = document.querySelector('.site-nav');
+    if (window.scrollY > 24) {
+      nav.style.background = 'rgba(248, 245, 239, 0.82)';
+      nav.style.backdropFilter = 'blur(16px)';
+      nav.style.webkitBackdropFilter = 'blur(16px)';
+    } else {
+      nav.style.background = '';
+      nav.style.backdropFilter = '';
+      nav.style.webkitBackdropFilter = '';
+    }
+  }, { passive: true });
+
   /* ── Scroll progress bar ── */
   var progressBar = document.getElementById('scroll-progress');
   window.addEventListener('scroll', function() {

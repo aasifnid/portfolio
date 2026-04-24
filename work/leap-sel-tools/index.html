@@ -40,17 +40,17 @@
     display: grid; grid-template-columns: repeat(4, 1fr);
     border: 1px solid var(--color-border);
     border-radius: var(--r-md); overflow: hidden;
-    margin: 40px 0 0;
+    margin: 48px 0 0; background: var(--color-surface);
   }
   .stat-strip-item {
-    padding: 20px 24px;
+    padding: 24px 24px;
     border-right: 1px solid var(--color-border);
   }
   .stat-strip-item:last-child { border-right: none; }
   .stat-strip-number {
-    font-family: var(--font-display); font-size: 28px;
-    font-weight: 700; letter-spacing: -0.03em;
-    color: var(--color-ink); margin-bottom: 4px; line-height: 1;
+    font-family: var(--font-display); font-size: 40px;
+    font-weight: 800; letter-spacing: -0.04em;
+    color: var(--color-ink); margin-bottom: 8px; line-height: 1;
   }
   .stat-strip-label {
     font-family: var(--font-mono); font-size: 11px;
@@ -79,15 +79,20 @@
   .phase-row span:last-child { border-right: none; }
   .phase-row .phase-next { color: var(--gold-700); font-style: italic; }
 
-  /* ─── Reflection item ─── */
-  .reflect-item { padding: 24px 0; border-bottom: 1px solid var(--color-border); }
-  .reflect-item:last-child { border-bottom: none; }
+  /* ─── Reflection item — card ─── */
+  .reflect-item {
+    padding: 22px 24px; margin-bottom: 10px;
+    background: var(--color-surface); border: 1px solid var(--color-border);
+    border-left: 3px solid var(--gold-500); border-radius: 0 8px 8px 0;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+  }
+  .reflect-item:last-child { margin-bottom: 0; }
   .reflect-label {
-    font-family: var(--font-mono); font-size: 11px; font-weight: 500;
-    letter-spacing: 0.1em; text-transform: uppercase;
+    font-family: var(--font-mono); font-size: 10px; font-weight: 700;
+    letter-spacing: 0.14em; text-transform: uppercase;
     color: var(--gold-700); margin-bottom: 10px;
   }
-  .reflect-item p { font-size: 15px; line-height: 26px; color: var(--color-ink-2); margin-bottom: 0; }
+  .reflect-item p { font-size: 15px; line-height: 25px; color: var(--color-ink-2); margin-bottom: 0; }
 
   /* ─── Screen placeholder ─── */
   .screen-placeholder {

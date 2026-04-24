@@ -7,21 +7,21 @@
 :root {
 
   /* ─── Surface ─── */
-  --color-bg:       #FAFAF8;   /* page background */
-  --color-surface:  #F2F0EB;   /* elevated: cards, placeholders */
-  --color-border:   #E2DDD6;   /* dividers, card edges */
-  --color-border-2: #CDCAC4;   /* hover border, stronger edge */
+  --color-bg:       #F8F5EF;   /* warm parchment */
+  --color-surface:  #FFFFFF;   /* white cards — pops against parchment */
+  --color-border:   #E0D9CF;   /* visible warm border */
+  --color-border-2: #C4BAB0;   /* strong hover / focus border */
 
   /* ─── Ink ─── */
-  --color-ink:      #1A1916;   /* primary text */
-  --color-ink-2:    #4A4744;   /* secondary text */
-  --color-ink-3:    #7A7571;   /* muted, labels, metadata */
+  --color-ink:      #141210;   /* near-black — maximum contrast */
+  --color-ink-2:    #4A4540;   /* warm dark secondary */
+  --color-ink-3:    #8A8480;   /* muted warm gray */
 
   /* ─── Gold ─── */
   --gold-100: #FBF3E8;
   --gold-400: #DFA44C;
   --gold-500: #C4862A;
-  --gold-700: #9A6315;
+  --gold-700: #A06820;
 
   /* ─── Typography ─── */
   --font-display: 'Plus Jakarta Sans', -apple-system, system-ui, sans-serif;
