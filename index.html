@@ -276,6 +276,78 @@
   }
   .footer-link:hover { color: var(--color-ink); }
 
+  /* ─── CSS Thumbnails ─── */
+  .cs-thumb {
+    width: 100%; height: 100%;
+    background: var(--color-surface);
+    border-left: 1px solid var(--color-border);
+    display: flex; align-items: center; justify-content: center;
+    padding: 24px;
+  }
+  .cs-mini-card {
+    width: 196px;
+    background: #fff;
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    padding: 16px;
+  }
+  .cs-mini-label {
+    font-family: var(--font-mono); font-size: 9px; font-weight: 500;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--gold-700); margin-bottom: 4px;
+  }
+  .cs-mini-title {
+    font-family: var(--font-display); font-size: 13px; font-weight: 700;
+    color: var(--color-ink); margin-bottom: 2px; line-height: 1.3;
+  }
+  .cs-mini-sub { font-size: 10px; color: var(--color-ink-3); margin-bottom: 10px; }
+  .cs-mini-divider { width: 100%; height: 1px; background: var(--color-border); margin: 10px 0; }
+  .cs-mini-stat { font-size: 11px; color: var(--color-ink-2); font-weight: 500; }
+
+  /* LSA — goal + homework */
+  .cs-mini-bar-row { display: flex; justify-content: space-between; margin-bottom: 5px; }
+  .cs-mini-bar-lbl { font-size: 10px; color: var(--color-ink-2); }
+  .cs-mini-bar-val { font-size: 10px; font-weight: 600; color: var(--gold-700); }
+  .cs-mini-bar { width: 100%; height: 3px; background: var(--color-border); border-radius: 2px; margin-bottom: 10px; }
+  .cs-mini-bar-fill { width: 60%; height: 3px; border-radius: 2px; background: var(--gold-500); }
+  .cs-mini-hw-lbl { font-size: 9px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--color-ink-3); margin-bottom: 5px; }
+  .cs-hw-item { background: var(--color-surface); border: 1px solid var(--color-border); border-radius: 3px; padding: 5px 8px; margin-bottom: 4px; }
+  .cs-hw-item:last-child { margin-bottom: 0; }
+  .cs-hw-type { font-size: 8px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; padding: 1px 4px; border-radius: 2px; display: inline-block; margin-bottom: 2px; }
+  .cs-hw-type.l { background: #EEF2FF; color: #3730A3; }
+  .cs-hw-type.p { background: #F0FDF4; color: #166534; }
+  .cs-hw-name { font-size: 10px; font-weight: 600; color: var(--color-ink); line-height: 1.3; }
+
+  /* Trial — steps + metrics */
+  .cs-mini-steps { display: flex; align-items: center; gap: 4px; margin: 10px 0; }
+  .cs-step { font-size: 10px; font-weight: 600; color: var(--color-ink-3); background: var(--color-surface); padding: 3px 7px; border-radius: 3px; }
+  .cs-step.done { color: #166534; background: #F0FDF4; }
+  .cs-step.active { color: var(--gold-700); background: var(--gold-100); }
+  .cs-step-sep { font-size: 10px; color: var(--color-border-2); }
+  .cs-metric-row { display: flex; gap: 16px; }
+  .cs-metric { display: flex; flex-direction: column; }
+  .cs-metric-num { font-family: var(--font-display); font-size: 18px; font-weight: 700; color: var(--color-ink); letter-spacing: -0.02em; line-height: 1.2; }
+  .cs-metric-lbl { font-size: 9px; color: var(--color-ink-3); }
+
+  /* Affiliate — earnings + status */
+  .cs-mini-earnings { font-family: var(--font-display); font-size: 22px; font-weight: 700; color: var(--color-ink); letter-spacing: -0.03em; margin: 4px 0 2px; }
+  .cs-status-row { display: flex; gap: 5px; }
+  .cs-status { font-size: 9px; font-weight: 600; padding: 3px 7px; border-radius: 3px; letter-spacing: 0.03em; }
+  .cs-status.pending { background: #FEF3C7; color: #92400E; }
+  .cs-status.active { background: #F0FDF4; color: #166534; }
+  .cs-status.paid { background: #EEF2FF; color: #3730A3; }
+
+  /* License — preference chips */
+  .cs-pref-row { display: flex; gap: 5px; margin: 10px 0; }
+  .cs-pref { font-size: 10px; font-weight: 600; padding: 4px 9px; border-radius: 3px; background: var(--color-surface); color: var(--color-ink-3); border: 1px solid var(--color-border); }
+  .cs-pref.selected { background: var(--gold-100); color: var(--gold-700); border-color: var(--gold-400); }
+
+  /* Games — dots + score */
+  .cs-dots { display: flex; gap: 5px; margin: 10px 0; }
+  .cs-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--color-border); }
+  .cs-dot.filled { background: var(--gold-500); }
+  .cs-score { font-family: var(--font-display); font-size: 20px; font-weight: 700; color: var(--gold-700); letter-spacing: -0.02em; }
+
   /* ─── Mobile ─── */
   @media (max-width: 768px) {
     .site-nav { padding: 0 20px; }
@@ -341,7 +413,18 @@
         <p class="work-card-title">Learning System Architecture</p>
         <p class="work-card-desc">Redesigned how teachers assign and track homework — removing tool-switching and surfacing what needs attention first.</p>
       </div>
-      <div class="work-card-placeholder"><span>[ coming soon ]</span></div>
+      <div class="cs-thumb">
+        <div class="cs-mini-card">
+          <div class="cs-mini-label">Goal</div>
+          <div class="cs-mini-title">Fractions Mastery</div>
+          <div class="cs-mini-sub">Grade 5 · Priya Sharma</div>
+          <div class="cs-mini-bar-row"><span class="cs-mini-bar-lbl">Progress</span><span class="cs-mini-bar-val">6 / 10</span></div>
+          <div class="cs-mini-bar"><div class="cs-mini-bar-fill"></div></div>
+          <div class="cs-mini-hw-lbl">Homework</div>
+          <div class="cs-hw-item"><span class="cs-hw-type l">Learning</span><div class="cs-hw-name">Fractions — Division</div></div>
+          <div class="cs-hw-item"><span class="cs-hw-type p">Practice</span><div class="cs-hw-name">Multiplication Fluency</div></div>
+        </div>
+      </div>
     </a>
 
     <a href="work/new-trial-experience/" class="work-card">
@@ -350,7 +433,24 @@
         <p class="work-card-title">New Trial Experience</p>
         <p class="work-card-desc">Reduced AC intervention by 70% and lifted trial conversion by 50% — shifting the demo class to a fully teacher-led journey.</p>
       </div>
-      <div class="work-card-placeholder"><span>[ coming soon ]</span></div>
+      <div class="cs-thumb">
+        <div class="cs-mini-card">
+          <div class="cs-mini-label">Demo Session</div>
+          <div class="cs-mini-title">Trial Experience</div>
+          <div class="cs-mini-steps">
+            <div class="cs-step done">✓ Intro</div>
+            <div class="cs-step-sep">→</div>
+            <div class="cs-step done">✓ Practice</div>
+            <div class="cs-step-sep">→</div>
+            <div class="cs-step active">Review</div>
+          </div>
+          <div class="cs-mini-divider"></div>
+          <div class="cs-metric-row">
+            <div class="cs-metric"><span class="cs-metric-num">+50%</span><span class="cs-metric-lbl">Conversion</span></div>
+            <div class="cs-metric"><span class="cs-metric-num">−70%</span><span class="cs-metric-lbl">AC calls</span></div>
+          </div>
+        </div>
+      </div>
     </a>
 
     <a href="work/affiliate-partnership/" class="work-card">
@@ -359,7 +459,19 @@
         <p class="work-card-title">Affiliate Partnership</p>
         <p class="work-card-desc">A referral platform for community volunteers to earn by promoting Cuemath — from landing page to affiliate dashboard.</p>
       </div>
-      <div class="work-card-placeholder"><span>[ coming soon ]</span></div>
+      <div class="cs-thumb">
+        <div class="cs-mini-card">
+          <div class="cs-mini-label">Affiliate Dashboard</div>
+          <div class="cs-mini-earnings">₹12,400</div>
+          <div class="cs-mini-sub">8 active referrals</div>
+          <div class="cs-mini-divider"></div>
+          <div class="cs-status-row">
+            <div class="cs-status pending">Pending</div>
+            <div class="cs-status active">Active</div>
+            <div class="cs-status paid">Paid</div>
+          </div>
+        </div>
+      </div>
     </a>
 
     <a href="work/cue-tutor-license/" class="work-card">
@@ -368,7 +480,19 @@
         <p class="work-card-title">Cue Tutor License</p>
         <p class="work-card-desc">New license system giving tutors preference-based trial allocation — reduced scheduled trial cancellations by 12%.</p>
       </div>
-      <div class="work-card-placeholder"><span>[ coming soon ]</span></div>
+      <div class="cs-thumb">
+        <div class="cs-mini-card">
+          <div class="cs-mini-label">Tutor License</div>
+          <div class="cs-mini-title">Trial Allocation</div>
+          <div class="cs-pref-row">
+            <div class="cs-pref selected">Math</div>
+            <div class="cs-pref selected">English</div>
+            <div class="cs-pref">Coding</div>
+          </div>
+          <div class="cs-mini-divider"></div>
+          <div class="cs-mini-stat">−12% scheduled cancellations</div>
+        </div>
+      </div>
     </a>
 
     <a href="work/curriculum-games/" class="work-card">
@@ -377,7 +501,22 @@
         <p class="work-card-title">Curriculum Games</p>
         <p class="work-card-desc">Educational games embedding computational thinking into coding curricula and problem-solving into Cuemath's v3 Math program.</p>
       </div>
-      <div class="work-card-placeholder"><span>[ coming soon ]</span></div>
+      <div class="cs-thumb">
+        <div class="cs-mini-card">
+          <div class="cs-mini-label">Game Design</div>
+          <div class="cs-mini-title">Fraction Quest</div>
+          <div class="cs-mini-sub">Level 3 · Multiplication</div>
+          <div class="cs-dots">
+            <div class="cs-dot filled"></div>
+            <div class="cs-dot filled"></div>
+            <div class="cs-dot filled"></div>
+            <div class="cs-dot"></div>
+            <div class="cs-dot"></div>
+          </div>
+          <div class="cs-mini-divider"></div>
+          <div class="cs-score">+480 pts</div>
+        </div>
+      </div>
     </a>
 
   </div>
