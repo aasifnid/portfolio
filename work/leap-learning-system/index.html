@@ -7,51 +7,14 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,400&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../assets/tokens.css">
+<link rel="stylesheet" href="../../assets/style.css">
 <style>
-  /* ─── Reset ─── */
-  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-  html { font-size: 16px; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+  /* ─── Screen grid — 2 col for LSA ─── */
+  .screen-grid { grid-template-columns: 1fr 1fr; gap: 16px; }
 
-  /* ─── Tokens (warm light palette) ─── */
-  :root {
-    --neutral-100: #F8F5EF;
-    --neutral-200: #FFFFFF;
-    --neutral-300: #E0D9CF;
-    --neutral-500: #8A8480;
-    --neutral-700: #6A6460;
-    --neutral-800: #4A4540;
-    --neutral-900: #2A2520;
-    --neutral-1000: #141210;
-    --gold-100: #FBF3E8;
-    --gold-400: #DFA44C;
-    --gold-500: #C4862A;
-    --gold-700: #A06820;
-    --font-display: 'Plus Jakarta Sans', -apple-system, system-ui, sans-serif;
-    --font-body: 'DM Sans', -apple-system, system-ui, sans-serif;
-    --font-mono: 'DM Mono', ui-monospace, monospace;
-  }
-
-  /* ─── Base ─── */
-  body { font-family: var(--font-body); font-weight: 400; color: var(--neutral-1000); background: var(--neutral-100); line-height: 1.6; }
-
-  /* ─── Layout ─── */
-  .cover { padding: 96px 32px 72px; max-width: 740px; margin: 0 auto; }
-  .page { max-width: 740px; margin: 0 auto; padding: 0 32px 120px; }
-
-  /* ─── Cover ─── */
-  .cover-eyebrow { font-family: var(--font-body); font-size: 12px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold-700); margin-bottom: 20px; }
-  .cover h1 { font-family: var(--font-display); font-size: clamp(40px, 6vw, 64px); line-height: 1.08; font-weight: 600; letter-spacing: -0.025em; color: var(--neutral-1000); margin-bottom: 20px; max-width: 620px; }
-  .lede { font-family: var(--font-body); font-size: 19px; line-height: 1.6; color: var(--neutral-700); max-width: 540px; margin-bottom: 28px; font-weight: 400; }
-  .cover-meta { display: flex; gap: 28px; flex-wrap: wrap; border-top: 1px solid var(--neutral-300); padding-top: 20px; }
-  .cover-meta-item { display: flex; flex-direction: column; gap: 6px; }
-  .cover-meta-label { font-size: 10px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold-700); }
-  .cover-meta-value { font-size: 14px; font-weight: 500; color: var(--neutral-1000); }
-
-  /* ─── Hero ─── */
-  .hero { margin-top: 48px; width: 100%; border-radius: 8px; background: var(--neutral-200); min-height: 480px; border: 1px solid var(--neutral-300); display: flex; align-items: center; justify-content: center; overflow: hidden; }
-
-  /* ─── Hero goal mockup ─── */
-  .goal-mockup { width: 340px; background: var(--neutral-200); border-radius: 8px; border: 1px solid var(--neutral-300); padding: 20px; }
+  /* ─── Hero goal mockup — LSA specific ─── */
+  .goal-mockup { width: 340px; background: var(--neutral-200); border-radius: 8px; border: 1px solid var(--neutral-300); padding: 20px; box-shadow: 0 2px 12px rgba(0,0,0,0.06); }
   .goal-mockup-header { font-family: var(--font-display); font-size: 15px; font-weight: 600; color: var(--neutral-1000); margin-bottom: 6px; }
   .goal-mockup-sub { font-size: 12px; color: var(--neutral-700); margin-bottom: 16px; padding-bottom: 14px; border-bottom: 1px solid var(--neutral-300); }
   .goal-progress-row { display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px; }
@@ -59,7 +22,7 @@
   .goal-progress-val { font-size: 13px; font-weight: 600; color: var(--gold-700); }
   .goal-progress-bar { width: 100%; height: 4px; background: var(--neutral-300); border-radius: 2px; margin-bottom: 16px; }
   .goal-progress-fill { height: 4px; border-radius: 2px; background: var(--gold-500); }
-  .goal-hw-label { font-size: 10px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--neutral-700); margin-bottom: 8px; }
+  .goal-hw-label { font-family: var(--font-mono); font-size: 10px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--neutral-700); margin-bottom: 8px; }
   .hw-card { background: var(--neutral-100); border: 1px solid var(--neutral-300); border-radius: 6px; padding: 10px 12px; margin-bottom: 6px; }
   .hw-card:last-of-type { margin-bottom: 0; }
   .hw-card-type { font-size: 10px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; padding: 2px 7px; border-radius: 3px; display: inline-block; margin-bottom: 4px; }
@@ -69,123 +32,7 @@
   .hw-card-due { font-size: 11px; color: var(--neutral-700); }
   .hw-card-due.warning { color: #B45309; }
 
-  /* ─── Dividers ─── */
-  .divider { width: 100%; height: 1px; background: var(--neutral-300); margin: 64px 0; }
-  .divider-gold { width: 40px; height: 2px; background: var(--gold-500); margin: 56px 0; }
-
-  /* ─── Overview strip ─── */
-  .overview { display: grid; grid-template-columns: 1fr 1fr 1fr; border: 1px solid var(--neutral-300); margin: 48px 0; }
-  .overview-item { padding: 22px 24px; border-right: 1px solid var(--neutral-300); }
-  .overview-item:last-child { border-right: none; }
-  .overview-item-label { font-size: 10px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--neutral-700); margin-bottom: 8px; }
-  .overview-item-value { font-family: var(--font-display); font-size: 15px; font-weight: 600; line-height: 22px; color: var(--neutral-1000); }
-  .overview-item-sub { font-size: 13px; line-height: 20px; color: var(--neutral-700); margin-top: 4px; }
-
-  /* ─── Section headers — architectural ─── */
-  .section-head { display: flex; align-items: center; gap: 20px; padding-top: 72px; margin-bottom: 20px; border-top: 2px solid var(--gold-500); }
-  .divider-gold + .section-head { padding-top: 48px; }
-  .section-num { font-family: var(--font-display); font-size: 56px; font-weight: 800; line-height: 1; letter-spacing: -0.05em; color: var(--gold-500); flex-shrink: 0; }
-  .section-label { font-family: var(--font-mono); font-size: 11px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--neutral-700); border-left: 1px solid var(--neutral-300); padding-left: 16px; }
-  .section-title { font-family: var(--font-display); font-size: clamp(28px, 4vw, 44px); line-height: 1.1; font-weight: 800; letter-spacing: -0.03em; color: var(--neutral-1000); margin-bottom: 36px; }
-  h2 { font-family: var(--font-display); font-size: 20px; line-height: 28px; font-weight: 700; color: var(--neutral-1000); margin-bottom: 14px; margin-top: 52px; letter-spacing: -0.02em; border-bottom: 1px solid var(--neutral-300); padding-bottom: 12px; }
-  .section-head + h2 { margin-top: 0; }
-
-  /* ─── Body text ─── */
-  p { font-family: var(--font-body); font-size: 17px; line-height: 28px; color: var(--neutral-800); margin-bottom: 18px; }
-  p.large { font-size: 20px; line-height: 32px; color: var(--neutral-800); font-weight: 300; }
-  p:last-child { margin-bottom: 0; }
-  strong { font-weight: 600; color: var(--neutral-1000); }
-
-  /* ─── Narrative block ─── */
-  .narrative { border-left: 2px solid var(--gold-400); padding: 20px 0 20px 24px; margin: 28px 0; }
-  .narrative p { font-size: 17px; line-height: 28px; color: var(--neutral-800); margin-bottom: 14px; }
-  .narrative p:last-child { margin-bottom: 0; }
-
-  /* ─── Pull quote ─── */
-  blockquote { font-family: var(--font-display); font-size: clamp(20px, 3vw, 26px); line-height: 1.4; font-weight: 600; color: var(--neutral-900); border-left: 3px solid var(--gold-500); padding-left: 24px; margin: 40px 0; max-width: 560px; }
-
-  /* ─── Highlight box ─── */
-  .highlight { background: var(--neutral-200); padding: 18px 22px; margin: 24px 0 28px; border-left: 3px solid var(--gold-500); }
-  .highlight p { font-size: 16px; line-height: 26px; color: var(--neutral-900); margin-bottom: 0; }
-
-  /* ─── Problem dimensions grid ─── */
-  .challenges { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--neutral-300); border: 1px solid var(--neutral-300); margin: 28px 0; }
-  .challenge-item { background: var(--neutral-100); padding: 18px 20px; }
-  .challenge-title { font-family: var(--font-display); font-size: 15px; font-weight: 600; color: var(--neutral-1000); margin-bottom: 6px; }
-  .challenge-desc { font-size: 14px; line-height: 22px; color: var(--neutral-700); margin-bottom: 0; }
-
-  /* ─── Chapter hierarchy diagram ─── */
-  .hierarchy { margin: 32px 0; display: flex; flex-direction: column; gap: 12px; }
-  .hier-card { border: 1px solid var(--neutral-300); padding: 18px 20px; background: var(--neutral-100); }
-  .hier-card.level-0 { border-left: 3px solid var(--gold-500); background: var(--gold-100); }
-  .hier-level-label { font-size: 10px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--neutral-700); margin-bottom: 6px; }
-  .hier-card-name { font-family: var(--font-display); font-size: 16px; font-weight: 600; color: var(--neutral-1000); margin-bottom: 4px; }
-  .hier-card-desc { font-size: 14px; line-height: 22px; color: var(--neutral-700); margin-bottom: 0; }
-  .hier-sub-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-left: 24px; }
-  .hier-sub-card { border: 1px solid var(--neutral-300); padding: 16px 18px; background: var(--neutral-100); }
-  .hier-sub-card.lessons { border-left: 3px solid var(--neutral-700); }
-  .hier-sub-card.resources { border-left: 3px solid var(--neutral-300); }
-
-  /* ─── Node states strip ─── */
-  .node-states { display: flex; align-items: center; gap: 8px; margin: 20px 0 28px; flex-wrap: wrap; }
-  .node-state { font-size: 13px; font-weight: 500; color: var(--neutral-700); background: var(--neutral-200); padding: 5px 12px; border-radius: 3px; }
-  .node-state.active { background: var(--gold-100); color: var(--gold-700); border: 1px solid var(--gold-400); }
-  .state-arrow { font-size: 14px; color: var(--neutral-300); }
-
-  /* ─── Homework lifecycle strip ─── */
-  .hw-lifecycle { display: flex; gap: 0; margin: 20px 0 28px; border: 1px solid var(--neutral-300); border-radius: 4px; overflow: hidden; }
-  .lifecycle-stage { flex: 1; padding: 14px 16px; border-right: 1px solid var(--neutral-300); background: var(--neutral-100); }
-  .lifecycle-stage:last-child { border-right: none; }
-  .lifecycle-stage.done { background: var(--gold-100); }
-  .lifecycle-label { font-size: 10px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--neutral-700); margin-bottom: 6px; }
-  .lifecycle-stage.done .lifecycle-label { color: var(--gold-700); }
-  .lifecycle-text { font-size: 12px; line-height: 18px; color: var(--neutral-800); }
-
-  /* ─── Decision list ─── */
-  .decisions-list { margin: 32px 0; display: flex; flex-direction: column; gap: 10px; }
-  .decision-item { background: var(--neutral-200); border: 1px solid var(--neutral-300); border-left: 3px solid var(--gold-500); border-radius: 0 8px 8px 0; padding: 28px 28px; box-shadow: 0 1px 4px rgba(0,0,0,0.06); }
-  .decision-item-num { font-family: var(--font-mono); font-size: 10px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold-500); margin-bottom: 8px; }
-  .decision-item-title { font-family: var(--font-display); font-size: 19px; line-height: 1.3; font-weight: 700; letter-spacing: -0.02em; color: var(--neutral-1000); margin-bottom: 12px; }
-  .decision-item p { font-size: 15px; line-height: 25px; color: var(--neutral-800); margin-bottom: 0; }
-
-  /* ─── Rules table ─── */
-  .rules-table { width: 100%; border-collapse: collapse; border: 1px solid var(--neutral-300); margin: 24px 0; }
-  .rules-table th { font-size: 11px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--neutral-700); background: var(--neutral-200); padding: 10px 16px; text-align: left; border-bottom: 1px solid var(--neutral-300); }
-  .rules-table td { font-size: 14px; line-height: 22px; color: var(--neutral-800); padding: 12px 16px; border-bottom: 1px solid var(--neutral-200); vertical-align: top; }
-  .rules-table td:first-child { font-weight: 500; color: var(--neutral-1000); width: 36%; }
-  .rules-table tr:last-child td { border-bottom: none; }
-
-  /* ─── Due date progression ─── */
-  .due-progression { display: flex; gap: 0; margin: 24px 0 32px; border: 1px solid var(--neutral-300); border-radius: 4px; overflow: hidden; }
-  .due-stage { flex: 1; padding: 14px 16px; border-right: 1px solid var(--neutral-300); background: var(--neutral-100); }
-  .due-stage:last-child { border-right: none; }
-  .due-stage.warning { background: #FFFBEB; }
-  .due-stage.critical { background: #FFF5F5; }
-  .due-stage-label { font-family: var(--font-mono); font-size: 10px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--neutral-700); margin-bottom: 6px; }
-  .due-stage.warning .due-stage-label { color: #B45309; }
-  .due-stage.critical .due-stage-label { color: #DC2626; }
-  .due-stage-text { font-size: 12px; line-height: 18px; color: var(--neutral-800); }
-
-  /* ─── Images ─── */
-  .screen-featured { margin: 36px 0; }
-  .screen-featured img { width: 100%; border-radius: 8px; display: block; }
-  .screen-placeholder { width: 100%; border-radius: 8px; background: var(--neutral-200); min-height: 400px; display: block; border: 1px solid var(--neutral-300); }
-  .screen-placeholder-sm { width: 100%; border-radius: 6px; background: var(--neutral-200); min-height: 240px; display: block; border: 1px solid var(--neutral-300); }
-  .caption { font-size: 13px; line-height: 20px; color: var(--neutral-700); margin-top: 10px; }
-
-  /* ─── Process grid ─── */
-  .screen-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 28px 0; }
-
-  /* ─── Outcome stats ─── */
-  .outcome-stats { display: grid; grid-template-columns: 1fr 1fr; border: 1px solid var(--neutral-300); margin: 32px 0; }
-  .stat { padding: 28px 24px; border-right: 1px solid var(--neutral-300); border-bottom: 1px solid var(--neutral-300); }
-  .stat:nth-child(even) { border-right: none; }
-  .stat:nth-last-child(-n+2) { border-bottom: none; }
-  .stat { display: flex; flex-direction: column; gap: 6px; }
-  .stat-label { font-family: var(--font-mono); font-size: 10px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--neutral-700); line-height: 1.5; order: -1; }
-  .stat-number { font-family: var(--font-display); font-size: clamp(26px, 3.5vw, 34px); line-height: 1; font-weight: 700; color: var(--neutral-1000); letter-spacing: -0.02em; }
-
-  /* ─── Reflection cards ─── */
+  /* ─── Reflection cards — LSA specific ─── */
   .r-label {
     font-family: var(--font-mono); font-size: 10px; font-weight: 700;
     letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold-700);
@@ -199,34 +46,6 @@
     padding: 0 20px 18px; font-size: 15px; line-height: 25px;
     color: var(--neutral-800); margin-bottom: 0;
     box-shadow: 0 1px 4px rgba(0,0,0,0.06);
-  }
-
-  /* ─── Outcome note ─── */
-  .outcome-note { background: var(--neutral-200); border: 1px solid var(--neutral-300); border-radius: 4px; padding: 18px 22px; margin: 28px 0; }
-  .outcome-note p { font-size: 15px; line-height: 24px; color: var(--neutral-700); margin-bottom: 0; }
-
-  /* ─── Footer ─── */
-  .footer { border-top: 1px solid var(--neutral-300); padding: 40px 32px; max-width: 740px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
-  .footer-name { font-family: var(--font-display); font-size: 15px; font-weight: 600; color: var(--neutral-1000); }
-  .footer-link { font-size: 14px; color: var(--gold-700); text-decoration: none; }
-  .footer-link:hover { text-decoration: underline; }
-
-  /* ─── Mobile ─── */
-  @media (max-width: 640px) {
-    .cover { padding: 72px 24px 56px; }
-    .page { padding: 0 24px 80px; }
-    .overview { grid-template-columns: 1fr 1fr; }
-    .overview-item:nth-child(2) { border-right: none; }
-    .overview-item:nth-child(3) { border-top: 1px solid var(--neutral-300); grid-column: 1 / -1; border-right: none; }
-    .challenges, .hier-sub-row { grid-template-columns: 1fr; }
-    .screen-grid { grid-template-columns: 1fr; }
-    .due-progression, .hw-lifecycle { flex-direction: column; }
-    .due-stage, .lifecycle-stage { border-right: none; border-bottom: 1px solid var(--neutral-300); }
-    .outcome-stats { grid-template-columns: 1fr; }
-    .stat { border-right: none; }
-    .footer { flex-direction: column; gap: 16px; text-align: center; }
-    .cover-meta { gap: 16px; }
-    p.large { font-size: 18px; line-height: 28px; }
   }
 </style>
 </head>
