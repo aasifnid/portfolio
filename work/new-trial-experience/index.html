@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>New Trial Experience — Aasif Anwar</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,400&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../assets/tokens.css">
+<link rel="stylesheet" href="../../assets/style.css">
+<style>
+
+  /* ─── Trial flow mockup — page specific ─── */
+  .trial-flow {
+    display: flex; align-items: stretch; gap: 0;
+    border: 1px solid var(--neutral-300); border-radius: 10px;
+    overflow: hidden; margin-top: 48px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.07);
+  }
+  .trial-step {
+    flex: 1; padding: 20px 18px;
+    background: var(--neutral-200);
+    border-right: 1px solid var(--neutral-300);
+    display: flex; flex-direction: column; gap: 8px;
+  }
+  .trial-step:last-child { border-right: none; }
+  .trial-step.active { background: var(--gold-100); }
+  .trial-step-num {
+    font-family: var(--font-mono); font-size: 10px; font-weight: 600;
+    letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--gold-700);
+  }
+  .trial-step.active .trial-step-num { color: var(--gold-500); }
+  .trial-step-label {
+    font-family: var(--font-display); font-size: 13px; font-weight: 700;
+    color: var(--neutral-1000); line-height: 1.3;
+  }
+  .trial-step-desc {
+    font-size: 12px; line-height: 17px; color: var(--neutral-700);
+  }
+
+  /* ─── Comms channel badge ─── */
+  .whatsapp-badge {
+    display: inline-flex; align-items: center; gap: 6px;
+    background: #E7F5E8; border: 1px solid #B5DEB7;
+    border-radius: 4px; padding: 4px 10px;
+    font-family: var(--font-mono); font-size: 11px; font-weight: 600;
+    color: #1A7E2C; letter-spacing: 0.04em;
+    margin-bottom: 16px;
+  }
+
+  /* ─── Reflection items ─── */
+  .reflect-wrap { display: flex; flex-direction: column; gap: 10px; margin-top: 8px; }
+  .reflect-item {
+    padding: 22px 24px;
+    background: var(--neutral-200); border: 1px solid var(--neutral-300);
+    border-left: 3px solid var(--gold-500); border-radius: 0 8px 8px 0;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+  }
+  .reflect-label {
+    font-family: var(--font-mono); font-size: 10px; font-weight: 700;
+    letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--gold-700); margin-bottom: 10px;
+  }
+  .reflect-item p:not(.reflect-label) { font-size: 15px; line-height: 25px; color: var(--neutral-800); margin-bottom: 0; }
+
+  /* ─── Mobile ─── */
+  @media (max-width: 640px) {
+    .trial-flow { flex-direction: column; }
+    .trial-step { border-right: none; border-bottom: 1px solid var(--neutral-300); }
+    .trial-step:last-child { border-bottom: none; }
+  }
+
+</style>
+</head>
+<body>
+
+<!-- ══════ NAV ══════ -->
+<nav class="site-nav">
+  <a href="../../index.html" class="nav-name">Aasif Anwar</a>
+  <div class="nav-links">
+    <a href="../../index.html#work">work</a>
+    <a href="../../index.html#about">about</a>
+  </div>
+</nav>
+
+<!-- ══════ COVER ══════ -->
+<div class="cover">
+  <p class="cover-eyebrow">Product Design · 2024 · 0→1</p>
+  <h1>New Trial Experience</h1>
+  <p class="lede">Academic Counselors were the bottleneck between a parent signing up and a child starting Cuemath. Every demo class required manual scheduling, follow-up calls, and intervention at scale. The brief: reduce AC involvement by 70% without losing conversion — by shifting the demo class into a largely self-directed journey with teachers at the centre.</p>
+
+  <div class="cover-meta">
+    <div class="cover-meta-item">
+      <span class="cover-meta-label">My role</span>
+      <span class="cover-meta-value">Product Designer</span>
+    </div>
+    <div class="cover-meta-item">
+      <span class="cover-meta-label">Platform</span>
+      <span class="cover-meta-value">Web · WhatsApp</span>
+    </div>
+    <div class="cover-meta-item">
+      <span class="cover-meta-label">Timeline</span>
+      <span class="cover-meta-value">8 weeks + iteration</span>
+    </div>
+    <div class="cover-meta-item">
+      <span class="cover-meta-label">Outcome</span>
+      <span class="cover-meta-value">70% AC reduction</span>
+    </div>
+  </div>
+
+  <div class="trial-flow">
+    <div class="trial-step">
+      <span class="trial-step-num">01</span>
+      <div class="trial-step-label">Sign-up</div>
+      <div class="trial-step-desc">WhatsApp verification. Slot selection within 24h.</div>
+    </div>
+    <div class="trial-step active">
+      <span class="trial-step-num">02</span>
+      <div class="trial-step-label">Auto-match</div>
+      <div class="trial-step-desc">Direct mapping to teacher by preference and capacity.</div>
+    </div>
+    <div class="trial-step active">
+      <span class="trial-step-num">03</span>
+      <div class="trial-step-label">In-trial</div>
+      <div class="trial-step-desc">Teacher-led demo. Structured class format comparison.</div>
+    </div>
+    <div class="trial-step">
+      <span class="trial-step-num">04</span>
+      <div class="trial-step-label">Post-trial</div>
+      <div class="trial-step-desc">Feedback + immediate enrolment or reschedule path.</div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════ PAGE ══════ -->
+<div class="page">
+
+  <div class="overview">
+    <div class="overview-item">
+      <p class="overview-item-label">The problem</p>
+      <p class="overview-item-value">ACs handled every touchpoint manually — scheduling, reminders, follow-up. Not scalable on thin margins.</p>
+    </div>
+    <div class="overview-item">
+      <p class="overview-item-label">My role</p>
+      <p class="overview-item-value">Sole Designer</p>
+      <p class="overview-item-sub">Sign-up flow · Auto-comms · In-trial · Post-trial enrolment</p>
+    </div>
+    <div class="overview-item">
+      <p class="overview-item-label">Outcome</p>
+      <p class="overview-item-value">70% AC reduction</p>
+      <p class="overview-item-sub">+50% QL-to-trial · +9.6% trial-to-paid</p>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- ══ 01 — THE PROBLEM ══ -->
+  <div class="section-head">
+    <span class="section-num">01</span>
+    <span class="section-label">The Problem</span>
+  </div>
+  <p class="section-title">Every demo class ran through a person. That person was the problem.</p>
+
+  <p class="large">Academic Counselors sat between every parent and their first Cuemath session. Scheduling, confirmation, reminder calls, rescheduling, follow-up — all manual. On India's thin EdTech margins, that cost didn't scale.</p>
+
+  <div class="challenges">
+    <div class="challenge-item">
+      <p class="challenge-title">High AC intervention cost</p>
+      <p class="challenge-desc">Every trial class required AC involvement at multiple touchpoints — slot selection, reminders, confirmation, post-trial follow-up. Manual at every step.</p>
+    </div>
+    <div class="challenge-item">
+      <p class="challenge-title">No self-serve path</p>
+      <p class="challenge-desc">Parents couldn't schedule, confirm, or proceed to enrolment independently. AC availability directly gated conversion.</p>
+    </div>
+    <div class="challenge-item">
+      <p class="challenge-title">Drop-off between sign-up and trial</p>
+      <p class="challenge-desc">Delays in manual slot assignment and follow-up meant parents disengaged before ever attending a session.</p>
+    </div>
+    <div class="challenge-item">
+      <p class="challenge-title">Teachers under-utilised for conversion</p>
+      <p class="challenge-desc">Teachers had the most credibility with parents but no structured role in the conversion journey — ACs carried that responsibility despite having less product depth.</p>
+    </div>
+  </div>
+
+  <div class="divider-gold"></div>
+
+  <!-- ══ 02 — DISCOVERY ══ -->
+  <div class="section-head">
+    <span class="section-num">02</span>
+    <span class="section-label">Discovery</span>
+  </div>
+  <p class="section-title">The first hypothesis was wrong. That was the finding.</p>
+
+  <p>The initial assumption going in: teachers could handle both instruction and conversion simultaneously. If they could demo the product during the trial and close the parent at the end, ACs wouldn't need to be involved at all.</p>
+
+  <div class="narrative">
+    <p>That hypothesis ran into a hard operational limit. Teachers found it nearly impossible to run a quality lesson, manage a student, and actively pitch to a parent at the same time. Splitting attention degraded both — the lesson suffered and the pitch felt unnatural.</p>
+    <p>The real model that emerged: <strong>distribute the conversion across the journey</strong>, not concentrate it in one person at one moment. System handles comms. Teachers handle credibility. ACs intervene only where human judgment is genuinely needed.</p>
+  </div>
+
+  <blockquote>The question shifted from "can teachers convert?" to "what does each stakeholder do best — and when?"</blockquote>
+
+  <div class="divider"></div>
+
+  <!-- ══ 03 — KEY DECISIONS ══ -->
+  <div class="section-head">
+    <span class="section-num">03</span>
+    <span class="section-label">Key Decisions</span>
+  </div>
+  <p class="section-title">Five decisions that moved responsibility from people to the system.</p>
+
+  <div class="decisions-list">
+
+    <div class="decision-item">
+      <p class="decision-item-num">Decision 01</p>
+      <p class="decision-item-title">WhatsApp as the primary communication channel</p>
+      <p>Parents in India don't reliably check emails or app notifications. WhatsApp does. Every touchpoint in the comms flow — verification, slot confirmation, teacher introduction, reminders, post-trial follow-up — was built on WhatsApp. Not as a workaround, but as the designed-for channel. Open rates and response rates are fundamentally different on WhatsApp versus any alternative.</p>
+    </div>
+
+    <div class="decision-item">
+      <p class="decision-item-num">Decision 02</p>
+      <p class="decision-item-title">Direct mapping — automatic slot assignment by algorithm</p>
+      <p>Previously, ACs manually matched parents to teachers. The direct mapping system automated this entirely — matching based on teacher preferences, capacity, and subject fit. Parents selected from available slots within 24 hours or on weekends. The match happened in the background. No AC needed for the most manual part of the process.</p>
+    </div>
+
+    <div class="decision-item">
+      <p class="decision-item-num">Decision 03</p>
+      <p class="decision-item-title">Teachers own in-trial credibility, not the full pitch</p>
+      <p>Instead of asking teachers to close the sale, we gave them a structured in-trial script focused on what they do best: demonstrating the product, explaining the 1:2 class format (compared to 1:4 and 1:1), and building personal rapport. The financial comparison and enrolment ask came through the post-trial flow — not from the teacher mid-lesson.</p>
+    </div>
+
+    <div class="decision-item">
+      <p class="decision-item-num">Decision 04</p>
+      <p class="decision-item-title">Automated drop-off recovery within 5 minutes</p>
+      <p>If a parent didn't select a slot within 5 minutes of phone verification, an automated WhatsApp message triggered — not a reminder from an AC, not an email. The 5-minute window was chosen because intent degrades fast at the sign-up stage. Catching parents before they closed the tab mattered more than sending a polished message an hour later.</p>
+    </div>
+
+    <div class="decision-item">
+      <p class="decision-item-num">Decision 05</p>
+      <p class="decision-item-title">Immediate post-trial enrolment path</p>
+      <p>Parents who attended a trial session could enrol directly from the post-trial screen — plan selection and payment without going back to an AC. For parents who weren't ready, the path to rescheduling or requesting another demo was equally direct. Conversion and consideration both had clear, unblocked routes forward.</p>
+    </div>
+
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- ══ 04 — THE BUILD ══ -->
+  <div class="section-head">
+    <span class="section-num">04</span>
+    <span class="section-label">The Build</span>
+  </div>
+  <p class="section-title">Four surfaces, one continuous journey.</p>
+
+  <h2>Sign-up and slot selection</h2>
+  <p>A streamlined registration form captured the child's name, class preference, and preferred timing. WhatsApp-based phone verification replaced email confirmation — matching parents where they already were. Slot selection surfaced options within 24 hours or on weekends, keeping the window tight enough to maintain momentum.</p>
+
+  <div class="screen-featured">
+    <div class="screen-placeholder"></div>
+    <p class="caption">Sign-up flow — WhatsApp verification, slot selection from available windows. Drop-off recovery triggered automatically at 5 minutes.</p>
+  </div>
+
+  <h2>Auto-communication flow</h2>
+
+  <div class="whatsapp-badge">WhatsApp</div>
+
+  <p>Once a slot was confirmed, a sequenced comms flow ran without AC involvement: slot confirmation, teacher profile introduction, pre-session reminder (T-24h), and post-trial follow-up. Teachers were prompted to send a personal WhatsApp message to parents one day before the session — establishing rapport without adding to AC workload.</p>
+
+  <div class="screen-featured">
+    <div class="screen-placeholder"></div>
+    <p class="caption">Auto-comms sequence — slot confirmation → teacher intro → 24h reminder → post-trial path. All triggered without AC action.</p>
+  </div>
+
+  <h2>In-trial experience</h2>
+  <p>Teachers received a structured flow for the trial session: demonstrate the customised learning path, walk through the curriculum, and present the class format comparison (1:2 vs 1:4 vs 1:1) using a structured side-by-side. The goal wasn't to make teachers salespeople — it was to give them a clear, repeatable script for the 5 minutes of the session that mattered most for parent confidence.</p>
+
+  <h2>Post-trial enrolment</h2>
+  <p>Both teachers and parents completed short feedback forms after each trial — informing product iteration and surfacing friction. Parents who were ready to enrol could do so immediately from the post-trial screen. Those who needed time had a clear path to reschedule or request further information — without calling an AC.</p>
+
+  <div class="screen-featured">
+    <div class="screen-placeholder"></div>
+    <p class="caption">Post-trial screen — feedback form, immediate plan selection, and reschedule path. Enrolment unblocked from the product.</p>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- ══ 05 — OUTCOMES ══ -->
+  <div class="section-head">
+    <span class="section-num">05</span>
+    <span class="section-label">Outcomes</span>
+  </div>
+  <p class="section-title">Hit the primary target. Conversion improved as a by-product.</p>
+
+  <p class="large">The 70% AC intervention reduction was the brief. The conversion lift wasn't — it came from making the journey faster and less dependent on AC availability at key moments.</p>
+
+  <div class="outcome-stats">
+    <div class="stat featured">
+      <p class="stat-label">AC intervention reduction</p>
+      <p class="stat-number">70%</p>
+    </div>
+    <div class="stat">
+      <p class="stat-label">QL-to-trial conversion lift</p>
+      <p class="stat-number">+50%</p>
+    </div>
+    <div class="stat">
+      <p class="stat-label">Trial-to-paid conversion lift</p>
+      <p class="stat-number">+9.6%</p>
+    </div>
+    <div class="stat">
+      <p class="stat-label">Timeline to first draft</p>
+      <p class="stat-number">8 wks</p>
+    </div>
+  </div>
+
+  <div class="outcome-note">
+    <p>The QL-to-trial lift came primarily from removing AC availability as a dependency — parents could schedule and confirm independently at any hour. The trial-to-paid lift came from the post-trial enrolment path removing friction at the moment of highest intent.</p>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- ══ 06 — REFLECTION ══ -->
+  <div class="section-head">
+    <span class="section-num">06</span>
+    <span class="section-label">Reflection</span>
+  </div>
+  <p class="section-title">What I'd do differently.</p>
+
+  <div class="reflect-wrap">
+
+    <div class="reflect-item">
+      <p class="reflect-label">The first hypothesis cost 3 weeks</p>
+      <p>The assumption that teachers could handle both teaching and conversion simultaneously wasn't tested early enough. We designed for it before validating it. A faster prototype of the in-trial script with 5–6 teachers would have surfaced the operational constraint in week 1, not week 4.</p>
+    </div>
+
+    <div class="reflect-item">
+      <p class="reflect-label">WhatsApp was right but under-designed</p>
+      <p>We chose WhatsApp correctly — but the messages themselves were functional, not warm. The teacher intro message and pre-session reminder worked, but they read like system output. With more iteration time, the copy and timing of those messages deserved more craft. They're the first human impression a parent gets of Cuemath.</p>
+    </div>
+
+    <div class="reflect-item">
+      <p class="reflect-label">Post-trial feedback wasn't instrumented</p>
+      <p>We collected feedback from both teachers and parents after every trial. But the data collection wasn't tied to a defined measurement framework — we knew what was being said, but not how to act on it systematically. I'd build the analysis layer before shipping the collection layer next time.</p>
+    </div>
+
+  </div>
+
+  <div class="divider-gold"></div>
+
+</div>
+
+<!-- ══════ FOOTER ══════ -->
+<div class="footer">
+  <span class="footer-name">Aasif Anwar</span>
+  <a href="../../index.html" class="footer-link">← Back to portfolio</a>
+</div>
+
+</body>
+</html>
