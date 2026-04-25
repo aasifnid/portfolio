@@ -130,13 +130,33 @@
     border-color: var(--gold-500);
     box-shadow: 0 20px 48px rgba(0,0,0,0.12), 0 4px 12px rgba(0,0,0,0.06);
   }
-  .work-card-image {
-    width: 100%; height: 100%; object-fit: cover; display: block;
-    border-left: 1px solid var(--color-border);
+  /* ─── Card visual panel ─── */
+  .work-card-visual {
+    width: 100%; height: 100%;
+    display: flex; align-items: flex-end; padding: 24px;
+    position: relative; overflow: hidden;
   }
-  .work-card-image--contain {
-    object-fit: contain; background: #fff;
+  .wv-watermark {
+    position: absolute; right: -16px; top: -20px;
+    font-family: var(--font-display); font-size: 180px; font-weight: 800;
+    line-height: 1; letter-spacing: -0.06em;
+    opacity: 0.13; color: #fff; user-select: none; pointer-events: none;
   }
+  .wv-badge {
+    font-family: var(--font-mono); font-size: 10px; font-weight: 600;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    background: rgba(255,255,255,0.18); color: #fff;
+    border: 1px solid rgba(255,255,255,0.28);
+    border-radius: 4px; padding: 5px 12px;
+    position: relative; z-index: 1;
+    backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px);
+  }
+  .wv--sel   { background: linear-gradient(135deg, #3D7A8A 0%, #235E6B 100%); }
+  .wv--lsa   { background: linear-gradient(135deg, #C4862A 0%, #9A6315 100%); }
+  .wv--trial { background: linear-gradient(135deg, #C4624A 0%, #A04430 100%); }
+  .wv--aff   { background: linear-gradient(135deg, #5A7A5A 0%, #3D5C3D 100%); }
+  .wv--ctl   { background: linear-gradient(135deg, #4A5A7A 0%, #2E3F5C 100%); }
+  .wv--games { background: linear-gradient(135deg, #7A5A8A 0%, #5C3D6E 100%); }
   .work-card-placeholder {
     width: 100%; height: 100%;
     background: var(--color-surface);
@@ -171,37 +191,24 @@
   /* ─── Recommendations ─── */
   .recs-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
   .rec-card {
-    background: var(--color-surface); border-radius: var(--r-md); padding: 24px 28px;
-    border: 1px solid var(--color-border);
-    display: flex; flex-direction: column; gap: 16px;
+    background: var(--color-surface); border-radius: 12px;
+    border: 1px solid var(--color-border); overflow: hidden;
+    display: flex; flex-direction: column;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+    transition: box-shadow 0.2s ease, transform 0.2s ease;
   }
-  .rec-card.rec-placeholder {
-    background: var(--color-surface);
-    border: 1px dashed var(--color-border);
-  }
-  .rec-header { display: flex; align-items: center; gap: 12px; }
-  .rec-avatar {
-    width: 42px; height: 42px; border-radius: 50%; flex-shrink: 0;
-    display: flex; align-items: center; justify-content: center;
-    font-family: var(--font-display); font-size: 13px; font-weight: 700;
-    color: #fff; letter-spacing: 0.04em;
-  }
-  .rec-name {
-    font-family: var(--font-display); font-size: 14px; font-weight: 700;
-    color: var(--color-ink); margin-bottom: 3px;
-  }
-  .rec-role {
-    font-family: var(--font-mono); font-size: 11px;
-    color: var(--color-ink-3); letter-spacing: 0.04em;
+  .rec-card { cursor: default; }
+  .rec-top {
+    padding: 24px 24px 44px;
+    display: flex; flex-direction: column; gap: 12px; flex: 1;
   }
   .rec-quote {
-    font-size: 14px; line-height: 22px; color: var(--color-ink-2);
-    font-style: italic; flex: 1;
+    font-size: 14px; line-height: 23px; color: var(--color-ink-2);
+    font-style: italic;
     display: -webkit-box; -webkit-line-clamp: 4;
     -webkit-box-orient: vertical; overflow: hidden;
   }
-  .rec-quote.expanded { display: block; -webkit-line-clamp: unset; }
-  .rec-placeholder .rec-quote { color: var(--color-ink-3); font-style: normal; }
+  .rec-quote.expanded { display: block; }
   .rec-readmore {
     font-family: var(--font-mono); font-size: 11px; font-weight: 500;
     color: var(--gold-700); letter-spacing: 0.04em;
@@ -209,6 +216,42 @@
     padding: 0; text-align: left; display: none;
   }
   .rec-readmore.visible { display: block; }
+  .rec-bottom {
+    padding: 16px 20px 18px; position: relative;
+    display: flex; align-items: center; gap: 0;
+  }
+  .rec-avatar {
+    width: 68px; height: 68px; border-radius: 50%; flex-shrink: 0;
+    display: flex; align-items: center; justify-content: center;
+    font-family: var(--font-display); font-size: 18px; font-weight: 800;
+    color: #fff; border: 3px solid #fff;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.15);
+    position: absolute; right: 20px; top: -34px;
+    text-decoration: none; overflow: hidden;
+  }
+  .rec-avatar img { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; display: block; }
+  a.rec-avatar::after {
+    content: 'in';
+    position: absolute; inset: 0; border-radius: 50%;
+    background: rgba(10, 102, 194, 0.88);
+    display: flex; align-items: center; justify-content: center;
+    font-family: var(--font-display); font-size: 22px; font-weight: 800; color: #fff;
+    opacity: 0; transition: opacity 0.2s ease;
+  }
+  a.rec-avatar:hover { cursor: pointer; }
+  a.rec-avatar:hover::after { opacity: 1; }
+  .rec-identity { padding-right: 80px; }
+  .rec-name {
+    font-family: var(--font-display); font-size: 14px; font-weight: 700;
+    color: #fff; margin-bottom: 3px; line-height: 1.3;
+  }
+  .rec-role {
+    font-family: var(--font-mono); font-size: 10px;
+    color: rgba(255,255,255,0.72); letter-spacing: 0.06em;
+  }
+  .rec-card.rec-placeholder { box-shadow: none; }
+  .rec-placeholder .rec-top { padding-bottom: 44px; }
+  .rec-placeholder .rec-quote { color: var(--color-ink-3); font-style: normal; }
 
   /* ─── About ─── */
   .about-layout {
@@ -503,7 +546,10 @@
         <p class="work-card-title">Feel Check: SEL Tools</p>
         <p class="work-card-desc">A student-led emotional check-in before every session — reads mood and routes to a regulation activity. Shipped to 417 students across 4 cohorts.</p>
       </div>
-      <img class="work-card-image work-card-image--contain" src="work/leap-sel-tools/images/thumbnail.jpg" alt="Feel Check — SEL Tools">
+      <div class="work-card-visual wv--sel">
+        <span class="wv-watermark">F</span>
+        <span class="wv-badge">0→1 · Edtech</span>
+      </div>
     </a>
 
     <a href="work/leap-learning-system/index.html" class="work-card">
@@ -512,17 +558,9 @@
         <p class="work-card-title">Learning System Architecture</p>
         <p class="work-card-desc">Redesigned how teachers assign and track homework — removing tool-switching and surfacing what needs attention first.</p>
       </div>
-      <div class="cs-thumb">
-        <div class="cs-mini-card">
-          <div class="cs-mini-label">Goal</div>
-          <div class="cs-mini-title">Fractions Mastery</div>
-          <div class="cs-mini-sub">Grade 5 · Priya Sharma</div>
-          <div class="cs-mini-bar-row"><span class="cs-mini-bar-lbl">Progress</span><span class="cs-mini-bar-val">6 / 10</span></div>
-          <div class="cs-mini-bar"><div class="cs-mini-bar-fill"></div></div>
-          <div class="cs-mini-hw-lbl">Homework</div>
-          <div class="cs-hw-item"><span class="cs-hw-type l">Learning</span><div class="cs-hw-name">Fractions — Division</div></div>
-          <div class="cs-hw-item"><span class="cs-hw-type p">Practice</span><div class="cs-hw-name">Multiplication Fluency</div></div>
-        </div>
+      <div class="work-card-visual wv--lsa">
+        <span class="wv-watermark">L</span>
+        <span class="wv-badge">Architecture</span>
       </div>
     </a>
 
@@ -532,23 +570,9 @@
         <p class="work-card-title">New Trial Experience</p>
         <p class="work-card-desc">Reduced AC intervention by 70% and lifted trial conversion by 50% — shifting the demo class to a fully teacher-led journey.</p>
       </div>
-      <div class="cs-thumb">
-        <div class="cs-mini-card">
-          <div class="cs-mini-label">Demo Session</div>
-          <div class="cs-mini-title">Trial Experience</div>
-          <div class="cs-mini-steps">
-            <div class="cs-step done">✓ Intro</div>
-            <div class="cs-step-sep">→</div>
-            <div class="cs-step done">✓ Practice</div>
-            <div class="cs-step-sep">→</div>
-            <div class="cs-step active">Review</div>
-          </div>
-          <div class="cs-mini-divider"></div>
-          <div class="cs-metric-row">
-            <div class="cs-metric"><span class="cs-metric-num">+50%</span><span class="cs-metric-lbl">Conversion</span></div>
-            <div class="cs-metric"><span class="cs-metric-num">−70%</span><span class="cs-metric-lbl">AC calls</span></div>
-          </div>
-        </div>
+      <div class="work-card-visual wv--trial">
+        <span class="wv-watermark">T</span>
+        <span class="wv-badge">Conversion</span>
       </div>
     </a>
 
@@ -558,18 +582,9 @@
         <p class="work-card-title">Affiliate Partnership</p>
         <p class="work-card-desc">A referral platform for community volunteers to earn by promoting Cuemath — from landing page to affiliate dashboard.</p>
       </div>
-      <div class="cs-thumb">
-        <div class="cs-mini-card">
-          <div class="cs-mini-label">Affiliate Dashboard</div>
-          <div class="cs-mini-earnings">₹12,400</div>
-          <div class="cs-mini-sub">8 active referrals</div>
-          <div class="cs-mini-divider"></div>
-          <div class="cs-status-row">
-            <div class="cs-status pending">Pending</div>
-            <div class="cs-status active">Active</div>
-            <div class="cs-status paid">Paid</div>
-          </div>
-        </div>
+      <div class="work-card-visual wv--aff">
+        <span class="wv-watermark">A</span>
+        <span class="wv-badge">0→1 · Referral</span>
       </div>
     </a>
 
@@ -579,18 +594,9 @@
         <p class="work-card-title">Cue Tutor License</p>
         <p class="work-card-desc">New license system giving tutors preference-based trial allocation — reduced scheduled trial cancellations by 12%.</p>
       </div>
-      <div class="cs-thumb">
-        <div class="cs-mini-card">
-          <div class="cs-mini-label">Tutor License</div>
-          <div class="cs-mini-title">Trial Allocation</div>
-          <div class="cs-pref-row">
-            <div class="cs-pref selected">Math</div>
-            <div class="cs-pref selected">English</div>
-            <div class="cs-pref">Coding</div>
-          </div>
-          <div class="cs-mini-divider"></div>
-          <div class="cs-mini-stat">−12% scheduled cancellations</div>
-        </div>
+      <div class="work-card-visual wv--ctl">
+        <span class="wv-watermark">C</span>
+        <span class="wv-badge">Licensing</span>
       </div>
     </a>
 
@@ -600,21 +606,9 @@
         <p class="work-card-title">Curriculum Games</p>
         <p class="work-card-desc">Educational games embedding computational thinking into coding curricula and problem-solving into Cuemath's v3 Math program.</p>
       </div>
-      <div class="cs-thumb">
-        <div class="cs-mini-card">
-          <div class="cs-mini-label">Game Design</div>
-          <div class="cs-mini-title">Fraction Quest</div>
-          <div class="cs-mini-sub">Level 3 · Multiplication</div>
-          <div class="cs-dots">
-            <div class="cs-dot filled"></div>
-            <div class="cs-dot filled"></div>
-            <div class="cs-dot filled"></div>
-            <div class="cs-dot"></div>
-            <div class="cs-dot"></div>
-          </div>
-          <div class="cs-mini-divider"></div>
-          <div class="cs-score">+480 pts</div>
-        </div>
+      <div class="work-card-visual wv--games">
+        <span class="wv-watermark">G</span>
+        <span class="wv-badge">Game Design</span>
       </div>
     </a>
 
@@ -634,100 +628,75 @@
   <div class="recs-grid">
 
     <div class="rec-card">
-      <div class="rec-header">
-        <div class="rec-avatar" style="background:#C47A5A;">AG</div>
-        <div>
-          <p class="rec-name">Anushray Gupta</p>
-          <p class="rec-role">CPTO · Cuemath</p>
-        </div>
+      <div class="rec-top">
+        <p class="rec-quote">I had the pleasure of working closely with Aasif at Cuemath, where he played a key role in multiple initiatives, including website development, the new trial experience, and enhancing the group class experience. What truly sets Aasif apart is his ability to ask the right questions — always striving to understand the 'why' behind our projects, ensuring that design decisions were aligned with business goals and user impact. Not only did he design with intent, but he also took ownership of tracking the impact of his work, constantly assessing how it influenced user engagement and business outcomes. Aasif has an incredible ability to maintain design consistency while being open to exploring new approaches when necessary. Beyond his technical expertise, he is a fantastic collaborator. If you're looking for a product designer who is thoughtful, impact-driven, and committed to crafting meaningful user experiences, I highly recommend Aasif.</p>
+        <button class="rec-readmore">Read more ↓</button>
       </div>
-      <p class="rec-quote">Beyond his technical expertise, Aasif is a fantastic collaborator. Always receptive to feedback, proactive in problem-solving, and committed to delivering quality designs, he made a significant impact on our team.</p>
-      <button class="rec-readmore">Read more ↓</button>
-    </div>
-
-    <div class="rec-card">
-      <div class="rec-header">
-        <div class="rec-avatar" style="background:#5A7A6A;">JV</div>
-        <div>
+      <div class="rec-bottom" style="background:#0A66C2;">
+        <a class="rec-avatar" href="https://www.linkedin.com/in/jigarvora01/" target="_blank" rel="noopener" title="View on LinkedIn"><img src="assets/Jigar.jpeg" alt="Jigar Vora"></a>
+        <div class="rec-identity">
           <p class="rec-name">Jigar Vora</p>
           <p class="rec-role">Business Head (India) · Cuemath</p>
         </div>
       </div>
-      <p class="rec-quote">What truly sets Aasif apart is his ability to ask the right questions — always striving to understand the 'Why' behind our projects, ensuring that design decisions were aligned with business goals and user impact.</p>
-      <button class="rec-readmore">Read more ↓</button>
     </div>
 
     <div class="rec-card">
-      <div class="rec-header">
-        <div class="rec-avatar" style="background:#5A7A8A;">AA</div>
-        <div>
+      <div class="rec-top">
+        <p class="rec-quote">I had the pleasure of working closely with Aasif during our time together at Cuemath, and I can confidently say he's one of the promising young designers I've come across. Aasif joined us as a game designer, but he never once limited himself to that label. Whether it was collaborating on fast-paced product iterations or getting into the weeds of user problems, Aasif brought a rare mix of curiosity, humility, and sharp design thinking to every challenge he tackled. He has a good sense of visual design from his game design roots, but what stood out most was his willingness to dive deep into the "why" behind every design decision. He was never afraid to ask questions, challenge assumptions, or seek feedback proactively — traits that I believe makes him a well rounded designer. Any team would be lucky to have him onboard!</p>
+        <button class="rec-readmore">Read more ↓</button>
+      </div>
+      <div class="rec-bottom" style="background:#0A66C2;">
+        <a class="rec-avatar" href="https://www.linkedin.com/in/aman-awasthy-74986971/" target="_blank" rel="noopener" title="View on LinkedIn"><img src="assets/Aman.jpeg" alt="Aman Awasthy"></a>
+        <div class="rec-identity">
           <p class="rec-name">Aman Awasthy</p>
-          <p class="rec-role">Senior Product Designer · Quizizz</p>
+          <p class="rec-role">Senior Product Designer · Cuemath</p>
         </div>
       </div>
-      <p class="rec-quote">Whether it was collaborating on fast-paced product iterations or getting into the weeds of user problems, Aasif brought a rare mix of curiosity, humility, and sharp design thinking to every challenge he tackled.</p>
-      <button class="rec-readmore">Read more ↓</button>
     </div>
 
     <div class="rec-card">
-      <div class="rec-header">
-        <div class="rec-avatar" style="background:#7A5A8A;">AS</div>
-        <div>
+      <div class="rec-top">
+        <p class="rec-quote">I had the privilege of working with Aasif at Cuemath — one of the most dependable and thoughtful product designers I've worked with. He contributed significantly across high-impact initiatives including SEL tools, milestones, goals, puzzles, and several platform revamps, consistently improving user experience and bringing clarity to complex product problems. What truly sets him apart is his proactive mindset — any feedback was quickly acted upon with high quality and attention to detail. He has a strong sense of responsibility and always strives to raise the bar. Beyond his skills, he was always willing to step in and help others across teams whenever they were blocked.</p>
+        <button class="rec-readmore">Read more ↓</button>
+      </div>
+      <div class="rec-bottom" style="background:#0A66C2;">
+        <a class="rec-avatar" href="https://www.linkedin.com/in/ayush-singhal-a238b513b/" target="_blank" rel="noopener" title="View on LinkedIn"><img src="assets/Ayush.jpeg" alt="Ayush Singhal"></a>
+        <div class="rec-identity">
           <p class="rec-name">Ayush Singhal</p>
-          <p class="rec-role">SDE II · Cuemath</p>
+          <p class="rec-role">Senior Software Engineer · Cuemath</p>
         </div>
       </div>
-      <p class="rec-quote">I had the privilege of working with Aasif at Cuemath — one of the most dependable and thoughtful product designers I've worked with. He contributed significantly across high-impact initiatives including SEL tools, milestones, goals, puzzles, and several platform revamps, consistently improving user experience and bringing clarity to complex product problems. What truly sets him apart is his proactive mindset — any feedback was quickly acted upon with high quality and attention to detail. He has a strong sense of responsibility and always strives to raise the bar. Beyond his skills, he was always willing to step in and help others across teams whenever they were blocked.</p>
-      <button class="rec-readmore">Read more ↓</button>
     </div>
 
     <div class="rec-card">
-      <div class="rec-header">
-        <div class="rec-avatar" style="background:#8A7A5A;">SB</div>
-        <div>
-          <p class="rec-name">Sainath Bandapalli</p>
-          <p class="rec-role">Director (Curriculum) · Mastree</p>
+      <div class="rec-top">
+        <p class="rec-quote">Aasif has a strong sense of Design and Art of making games, which helped us develop interesting and compelling concepts for mobile games. He is hard working and diligent when it comes to production. We have only collaborated for a month though, yet his productivity has proven worth and valuable to the team.</p>
+        <button class="rec-readmore">Read more ↓</button>
+      </div>
+      <div class="rec-bottom" style="background:#0A66C2;">
+        <a class="rec-avatar" href="https://www.linkedin.com/in/contact-rayan/" target="_blank" rel="noopener" title="View on LinkedIn"><img src="assets/Rayan.png" alt="Rayan Ghosh"></a>
+        <div class="rec-identity">
+          <p class="rec-name">Rayan Ghosh</p>
+          <p class="rec-role">Game Design Lead · IDZ Digital Pvt. Ltd.</p>
         </div>
       </div>
-      <p class="rec-quote">Aasif has a good understanding of design and gameplay. He is diligent and hardworking, excelling in collaboration, efficiency, and time management. A valuable team member, both in the spotlight and behind the scenes.</p>
-      <button class="rec-readmore">Read more ↓</button>
     </div>
 
-    <!-- Template — replace with real testimonial -->
-    <div class="rec-card rec-placeholder">
-      <div class="rec-header">
-        <div class="rec-avatar" style="background:#ABABAB;">?</div>
-        <div>
-          <p class="rec-name">Colleague Name</p>
-          <p class="rec-role">Role · Company</p>
+    <div class="rec-card">
+      <div class="rec-top">
+        <p class="rec-quote">I have been working with Aasif in the same team for the last 3.5 months and he has been a very diligent and hardworking team member. His core strengths would be collaboration, efficiency, time management and perfection. A very helpful member be it on the front or behind the scenes. It's always a pleasure working with you.</p>
+        <button class="rec-readmore">Read more ↓</button>
+      </div>
+      <div class="rec-bottom" style="background:#0A66C2;">
+        <a class="rec-avatar" href="https://www.linkedin.com/in/mahika-jain-b3b3b517b/" target="_blank" rel="noopener" title="View on LinkedIn"><img src="assets/Mahika.jpeg" alt="Mahika Jain"></a>
+        <div class="rec-identity">
+          <p class="rec-name">Mahika Jain</p>
+          <p class="rec-role">Illustrator · Mastree</p>
         </div>
       </div>
-      <p class="rec-quote">Share the testimonial text to complete this card.</p>
     </div>
 
-    <!-- Template — replace with real testimonial -->
-    <div class="rec-card rec-placeholder">
-      <div class="rec-header">
-        <div class="rec-avatar" style="background:#ABABAB;">?</div>
-        <div>
-          <p class="rec-name">Colleague Name</p>
-          <p class="rec-role">Role · Company</p>
-        </div>
-      </div>
-      <p class="rec-quote">Share the testimonial text to complete this card.</p>
-    </div>
-
-    <!-- Template — replace with real testimonial -->
-    <div class="rec-card rec-placeholder">
-      <div class="rec-header">
-        <div class="rec-avatar" style="background:#ABABAB;">?</div>
-        <div>
-          <p class="rec-name">Colleague Name</p>
-          <p class="rec-role">Role · Company</p>
-        </div>
-      </div>
-      <p class="rec-quote">Share the testimonial text to complete this card.</p>
-    </div>
 
   </div>
 </section>
