@@ -53,23 +53,26 @@
   --s24: 96px;
 
   /* ─── Border radius ─── */
-  --r-sm: 4px;
-  --r-md: 8px;
-  --r-lg: 12px;
+  --r-sm: 4px;    /* tags, small elements */
+  --r-md: 8px;    /* cards, components */
+  --r-lg: 10px;   /* hero, screens, large frames */
 
   /* ─── Transition ─── */
   --ease: 0.15s ease;
 
-  /* ─── Legacy neutral aliases ─────────────────────────────────
-     Kept for backward compatibility with existing case study pages
-     that reference --neutral-XXX. Do not use for new pages.
+  /* ─── Card system ─── */
+  --card-shadow: 0 1px 4px rgba(0,0,0,0.06), 0 0 0 1px var(--color-border);
+  --card-border: 1px solid var(--color-border);
+
+  /* ─── Neutral aliases (case study pages) ─────────────────────
+     Synced to the warm light palette. Single source of truth.
   ──────────────────────────────────────────────────────────── */
-  --neutral-100:  #FAF8F5;
-  --neutral-200:  #F3F0EB;
-  --neutral-300:  #E8E4DD;
-  --neutral-700:  #474543;
-  --neutral-800:  #43413E;
-  --neutral-900:  #33312F;
-  --neutral-1000: #292827;
+  --neutral-100:  #F8F5EF;   /* bg */
+  --neutral-200:  #FFFFFF;   /* surface */
+  --neutral-300:  #E0D9CF;   /* border */
+  --neutral-700:  #6A6460;   /* secondary text */
+  --neutral-800:  #4A4540;   /* body text */
+  --neutral-900:  #2A2520;   /* near-primary */
+  --neutral-1000: #141210;   /* primary ink */
 
 }
