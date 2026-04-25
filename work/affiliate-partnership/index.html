@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Affiliate Partnership — Aasif Anwar</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,400&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../assets/tokens.css">
+<link rel="stylesheet" href="../../assets/style.css">
+<style>
+
+  /* ─── Dashboard mockup ─── */
+  .dash-mockup {
+    width: 340px;
+    background: var(--neutral-200);
+    border-radius: var(--r-md);
+    border: 1px solid var(--neutral-300);
+    padding: 16px;
+    box-shadow: var(--card-shadow);
+  }
+  .dash-header {
+    font-family: var(--font-mono); font-size: 9px; font-weight: 600;
+    letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--gold-700); margin-bottom: 12px;
+  }
+  .dash-stats { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px; margin-bottom: 12px; }
+  .dash-stat {
+    background: var(--neutral-100); border: 1px solid var(--neutral-300);
+    border-radius: var(--r-sm); padding: 10px 10px;
+  }
+  .dash-stat-num {
+    font-family: var(--font-display); font-size: 18px; font-weight: 800;
+    color: var(--neutral-1000); letter-spacing: -0.03em; line-height: 1;
+    margin-bottom: 3px;
+  }
+  .dash-stat-lbl { font-size: 9px; color: var(--neutral-700); line-height: 1.4; }
+  .dash-earn {
+    background: var(--gold-100); border: 1px solid var(--gold-400);
+    border-radius: var(--r-sm); padding: 10px 12px;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .dash-earn-lbl { font-family: var(--font-mono); font-size: 9px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--gold-700); }
+  .dash-earn-val { font-family: var(--font-display); font-size: 20px; font-weight: 800; color: var(--gold-700); letter-spacing: -0.03em; }
+
+  /* ─── Three surfaces strip ─── */
+  .surfaces { display: flex; flex-direction: column; gap: 10px; margin: 32px 0; }
+  .surface-item {
+    display: flex; align-items: center; gap: 16px;
+    padding: 18px 20px;
+    background: var(--neutral-200); border: 1px solid var(--neutral-300);
+    border-left: 3px solid var(--gold-500);
+    border-radius: 0 var(--r-md) var(--r-md) 0;
+    box-shadow: var(--card-shadow);
+  }
+  .surface-num {
+    font-family: var(--font-mono); font-size: 10px; font-weight: 700;
+    letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold-500);
+    flex-shrink: 0; width: 24px;
+  }
+  .surface-title {
+    font-family: var(--font-display); font-size: 15px; font-weight: 700;
+    color: var(--neutral-1000); margin-bottom: 2px;
+  }
+  .surface-desc { font-size: 13px; color: var(--neutral-700); line-height: 1.5; }
+
+  /* ─── FAQ list ─── */
+  .faq-list { display: flex; flex-direction: column; gap: 10px; margin: 28px 0; }
+  .faq-item {
+    padding: 18px 20px;
+    background: var(--neutral-200); border: 1px solid var(--neutral-300);
+    border-radius: var(--r-md); box-shadow: var(--card-shadow);
+  }
+  .faq-q {
+    font-family: var(--font-display); font-size: 14px; font-weight: 700;
+    color: var(--neutral-1000); margin-bottom: 8px;
+  }
+  .faq-a { font-size: 14px; line-height: 22px; color: var(--neutral-700); margin-bottom: 0; }
+
+  /* ─── Reflect items ─── */
+  .reflect-wrap { display: flex; flex-direction: column; gap: 10px; margin-top: 8px; }
+  .reflect-item {
+    padding: 22px 24px;
+    background: var(--neutral-200); border: 1px solid var(--neutral-300);
+    border-left: 3px solid var(--gold-500); border-radius: 0 var(--r-md) var(--r-md) 0;
+    box-shadow: var(--card-shadow);
+  }
+  .reflect-label {
+    font-family: var(--font-mono); font-size: 10px; font-weight: 700;
+    letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--gold-700); margin-bottom: 10px;
+  }
+  .reflect-item p { font-size: 15px; line-height: 25px; color: var(--neutral-800); margin-bottom: 0; }
+
+</style>
+</head>
+<body>
+
+<!-- ══════ NAV ══════ -->
+<nav class="site-nav">
+  <a href="../../index.html" class="nav-name">Aasif Anwar</a>
+  <div class="nav-links">
+    <a href="../../index.html#work">work</a>
+    <a href="../../index.html#about">about</a>
+  </div>
+</nav>
+
+<!-- ══════ COVER ══════ -->
+<div class="cover">
+  <p class="cover-eyebrow">Product Design · 2024 · 0→1</p>
+  <h1>Affiliate Partnership</h1>
+  <p class="lede">Cuemath was running flagship math events across the US market but needed community reach to fill them. The solution: a structured affiliate programme — volunteers who promote events in their local networks and earn rewards for every registration. The brief was to design the full experience: from a stranger landing on the page to an active affiliate tracking earnings and referrals.</p>
+
+  <div class="cover-meta">
+    <div class="cover-meta-item">
+      <span class="cover-meta-label">My role</span>
+      <span class="cover-meta-value">Product Designer</span>
+    </div>
+    <div class="cover-meta-item">
+      <span class="cover-meta-label">Surfaces</span>
+      <span class="cover-meta-value">3 — Perf page · Affiliate dash · Admin dash</span>
+    </div>
+    <div class="cover-meta-item">
+      <span class="cover-meta-label">Type</span>
+      <span class="cover-meta-value">0→1</span>
+    </div>
+    <div class="cover-meta-item">
+      <span class="cover-meta-label">Platform</span>
+      <span class="cover-meta-value">Web</span>
+    </div>
+  </div>
+
+  <div class="hero">
+    <div class="dash-mockup">
+      <div class="dash-header">Affiliate Dashboard</div>
+      <div class="dash-stats">
+        <div class="dash-stat">
+          <div class="dash-stat-num">34</div>
+          <div class="dash-stat-lbl">Total referrals</div>
+        </div>
+        <div class="dash-stat">
+          <div class="dash-stat-num">12</div>
+          <div class="dash-stat-lbl">Conversions</div>
+        </div>
+        <div class="dash-stat">
+          <div class="dash-stat-num">3</div>
+          <div class="dash-stat-lbl">Pending</div>
+        </div>
+      </div>
+      <div class="dash-earn">
+        <span class="dash-earn-lbl">Total earned</span>
+        <span class="dash-earn-val">$240</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════ PAGE ══════ -->
+<div class="page">
+
+  <div class="overview">
+    <div class="overview-item">
+      <p class="overview-item-label">The problem</p>
+      <p class="overview-item-value">No community referral channel. Growth was direct and costly — needed volunteers to extend reach.</p>
+    </div>
+    <div class="overview-item">
+      <p class="overview-item-label">My role</p>
+      <p class="overview-item-value">Sole Designer</p>
+      <p class="overview-item-sub">Perf page · Affiliate dashboard · Admin dashboard</p>
+    </div>
+    <div class="overview-item">
+      <p class="overview-item-label">Outcome</p>
+      <p class="overview-item-value">0→1 shipped</p>
+      <p class="overview-item-sub">Full affiliate programme — landing to dashboard</p>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- ══ 01 — THE PROBLEM ══ -->
+  <div class="section-head">
+    <span class="section-num">01</span>
+    <span class="section-label">The Problem</span>
+  </div>
+  <p class="section-title">Growth was direct and expensive. Community reach was untapped.</p>
+
+  <p class="large">Cuemath was running flagship in-person math events across the US market — competitions, workshops, discovery sessions. But awareness was limited to paid reach. The affiliate programme was the answer: community volunteers who could promote these events in their local networks and get rewarded for every registration they drove.</p>
+
+  <div class="narrative">
+    <p>The events themselves were high-quality and credible — but word hadn't spread far enough. Cuemath needed people on the ground in local communities, parent groups, and schools who already trusted the brand and could vouch for it personally. A structured affiliate channel with transparent rewards was the mechanism to mobilise them.</p>
+  </div>
+
+  <div class="challenges">
+    <div class="challenge-item">
+      <p class="challenge-title">No referral infrastructure</p>
+      <p class="challenge-desc">No mechanism for community members to refer students or promote events. Word-of-mouth was happening informally but not being tracked or rewarded.</p>
+    </div>
+    <div class="challenge-item">
+      <p class="challenge-title">No affiliate identity</p>
+      <p class="challenge-desc">Volunteers had no dashboard, no unique link, no visibility into how their referrals were performing. Nothing to sustain engagement after signing up.</p>
+    </div>
+    <div class="challenge-item">
+      <p class="challenge-title">Trust gap with new affiliates</p>
+      <p class="challenge-desc">Potential partners needed to trust both the brand and the payout system before committing. No credibility surface existed to answer "will I actually get paid?"</p>
+    </div>
+    <div class="challenge-item">
+      <p class="challenge-title">No admin visibility</p>
+      <p class="challenge-desc">The internal team had no way to manage affiliates, track campaign performance, or process payouts systematically. Everything was manual.</p>
+    </div>
+  </div>
+
+  <div class="divider-gold"></div>
+
+  <!-- ══ 02 — SCOPE ══ -->
+  <div class="section-head">
+    <span class="section-num">02</span>
+    <span class="section-label">Scope</span>
+  </div>
+  <p class="section-title">Three surfaces, one programme.</p>
+
+  <p>The design covered the full affiliate journey — from a stranger landing on the page to an active affiliate managing their referrals and earnings, with an admin layer for the internal team to run the programme.</p>
+
+  <div class="surfaces">
+    <div class="surface-item">
+      <div class="surface-num">01</div>
+      <div>
+        <div class="surface-title">Affiliate Sign-up Perf Page</div>
+        <div class="surface-desc">Public-facing landing page. Converts interested visitors into registered affiliates. Hero, how it works, why partner, FAQs, and sign-up form.</div>
+      </div>
+    </div>
+    <div class="surface-item">
+      <div class="surface-num">02</div>
+      <div>
+        <div class="surface-title">Affiliate Dashboard</div>
+        <div class="surface-desc">Post-login experience for affiliates. Unique referral link, referral tracking, earnings summary, campaign materials, payout history.</div>
+      </div>
+    </div>
+    <div class="surface-item">
+      <div class="surface-num">03</div>
+      <div>
+        <div class="surface-title">Admin Dashboard</div>
+        <div class="surface-desc">Internal tool for the Cuemath team. Manage affiliates, track campaign performance, verify referrals, process payouts.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- ══ 03 — KEY DECISIONS ══ -->
+  <div class="section-head">
+    <span class="section-num">03</span>
+    <span class="section-label">Key Decisions</span>
+  </div>
+  <p class="section-title">Four decisions that shaped the programme.</p>
+
+  <div class="decisions-list">
+
+    <div class="decision-item">
+      <p class="decision-item-num">Decision 01</p>
+      <p class="decision-item-title">Lead with earnings transparency, not brand values</p>
+      <p>The landing page leads with "Earn up to $2000/mo" — not Cuemath's mission. Community volunteers are motivated by both impact and income; hiding the earning potential behind brand messaging creates friction. The FAQ section explicitly names the payout structure ($2–5 per event registration, $100–200 per direct admission) so potential affiliates know exactly what they're signing up for before they commit.</p>
+    </div>
+
+    <div class="decision-item">
+      <p class="decision-item-num">Decision 02</p>
+      <p class="decision-item-title">Trust signals before the form — not after</p>
+      <p>Trustpilot reviews, the "1000+ volunteers" community stat, and the 4.8+ rating are placed before the sign-up form, not as a footer afterthought. A new affiliate asking "is this legitimate?" needs those answers before they enter personal details. The payout note ("managed at Cuemath's discretion") is also surfaced early — being upfront about limitations builds more trust than hiding them.</p>
+    </div>
+
+    <div class="decision-item">
+      <p class="decision-item-num">Decision 03</p>
+      <p class="decision-item-title">Affiliate dashboard as the retention surface</p>
+      <p>The sign-up page gets affiliates in the door. The dashboard is what keeps them active. It surfaces referral count, conversion rate, earnings, and upcoming campaigns in a single view — so affiliates have a reason to log in, check progress, and keep sharing. A dashboard that shows nothing keeps no one engaged.</p>
+    </div>
+
+    <div class="decision-item">
+      <p class="decision-item-num">Decision 04</p>
+      <p class="decision-item-title">Flexible payout timing as a trust-builder</p>
+      <p>Payouts are processed flexibly — sometimes before an event ends. This was a deliberate product decision surfaced in the FAQ: early payout signals trust to the affiliate, reduces the "will I actually get paid?" anxiety, and encourages sustained participation. It's a trust mechanism, not just an operational detail.</p>
+    </div>
+
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- ══ 04 — THE BUILD ══ -->
+  <div class="section-head">
+    <span class="section-num">04</span>
+    <span class="section-label">The Build</span>
+  </div>
+  <p class="section-title">From landing to dashboard — the full journey.</p>
+
+  <h2>Affiliate sign-up landing page</h2>
+  <p>A performance page designed to convert interested community members into registered affiliates. The flow: hero (value prop + CTA) → how it works (3-step) → why partner (trust signals + earning potential) → who can join → Trustpilot reviews → FAQs → sign-up form. Each section earns the next — the visitor gets progressively more confident before being asked to commit.</p>
+
+  <div class="screen-featured">
+    <div class="screen-placeholder"></div>
+    <p class="caption">Affiliate landing page — hero to sign-up form. Trust signals (Trustpilot, community size, earning transparency) placed before the form, not after.</p>
+  </div>
+
+  <h2>Affiliate dashboard</h2>
+  <p>Post-login surface for active affiliates. Shows their unique referral link, total referrals, conversions, pending payouts, and earnings to date. Campaign materials (flyers, videos, copy) available directly from the dashboard. Payout history visible per campaign — affiliates can see exactly what each referral earned them.</p>
+
+  <div class="screen-featured">
+    <div class="screen-placeholder"></div>
+    <p class="caption">Affiliate dashboard — referral link, stats, campaign materials, and earnings all in one view.</p>
+  </div>
+
+  <h2>Admin dashboard</h2>
+  <p>Internal tool for the Cuemath team to manage the programme. Affiliate list with status, referral verification, campaign creation and tracking, payout processing. The admin view mirrors the affiliate view intentionally — what the affiliate sees in their dashboard corresponds to what the admin sees and can act on.</p>
+
+  <div class="screen-featured">
+    <div class="screen-placeholder"></div>
+    <p class="caption">Admin dashboard — affiliate management, campaign tracking, referral verification, payout processing.</p>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- ══ 05 — FAQ DESIGN ══ -->
+  <div class="section-head">
+    <span class="section-num">05</span>
+    <span class="section-label">FAQ Design</span>
+  </div>
+  <p class="section-title">15 questions. Every real objection answered.</p>
+
+  <p>The FAQ section wasn't filler — it was designed to handle every question a hesitant affiliate would have before signing up. Each question maps to a real conversion blocker.</p>
+
+  <div class="faq-list">
+    <div class="faq-item">
+      <p class="faq-q">What can I earn for?</p>
+      <p class="faq-a">Event promotions ($2–5 per successful registration) or direct referrals ($100–200 per admission to the tutoring programme).</p>
+    </div>
+    <div class="faq-item">
+      <p class="faq-q">When do I receive my payout?</p>
+      <p class="faq-a">Payouts are processed flexibly — sometimes before an event ends — to build trust and encourage continued participation.</p>
+    </div>
+    <div class="faq-item">
+      <p class="faq-q">Is there a minimum payout threshold?</p>
+      <p class="faq-a">Yes — $10. Once you reach this amount, you can request your payout.</p>
+    </div>
+    <div class="faq-item">
+      <p class="faq-q">What happens if someone clicks my link but signs up later?</p>
+      <p class="faq-a">Our tracking attributes the referral to you if they sign up within 30 days of clicking your link.</p>
+    </div>
+    <div class="faq-item">
+      <p class="faq-q">Is there any limit to how many people I can refer?</p>
+      <p class="faq-a">No upper limit. The more successful referrals you make, the more you earn.</p>
+    </div>
+  </div>
+
+  <a href="https://www.figma.com/design/k27AzLfhyS7AbuIZhLIFMY/Portfolio-2026?node-id=1-3&t=yvjzwxs7RcnQjOrj-1" target="_blank" rel="noopener" class="figma-link">View full design in Figma ↗</a>
+
+  <div class="divider"></div>
+
+  <!-- ══ 06 — OUTCOMES ══ -->
+  <div class="section-head">
+    <span class="section-num">06</span>
+    <span class="section-label">Outcome</span>
+  </div>
+  <p class="section-title">0→1 — Cuemath's first structured affiliate programme.</p>
+
+  <p class="large">Built from scratch. Three surfaces designed and shipped — a public landing page, an affiliate self-serve dashboard, and an admin tool for the internal team. For the first time, Cuemath had a structured, trackable community referral channel.</p>
+
+  <div class="outcome-stats">
+    <div class="stat">
+      <p class="stat-label">Surfaces designed and shipped</p>
+      <p class="stat-number">3</p>
+    </div>
+    <div class="stat">
+      <p class="stat-label">FAQ questions — every conversion blocker addressed</p>
+      <p class="stat-number">15</p>
+    </div>
+    <div class="stat span-full">
+      <p class="stat-label">First structured affiliate programme at Cuemath — community referrals now tracked, rewarded, and managed in-product</p>
+      <p class="stat-number">0→1</p>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- ══ 07 — REFLECTION ══ -->
+  <div class="section-head">
+    <span class="section-num">07</span>
+    <span class="section-label">Reflection</span>
+  </div>
+  <p class="section-title">What I'd do differently.</p>
+
+  <div class="reflect-wrap">
+    <div class="reflect-item">
+      <p class="reflect-label">No affiliate activation metric</p>
+      <p>We tracked sign-ups but not activation — how many affiliates actually shared their link after registering. A signed-up affiliate who never shares is a dead conversion. I'd instrument that gap before launch and build a nudge flow for affiliates who sign up but don't share within 48 hours.</p>
+    </div>
+    <div class="reflect-item">
+      <p class="reflect-label">Admin dashboard was designed last</p>
+      <p>The admin tool was scoped as the third surface and felt like it. It should have been designed in parallel with the affiliate dashboard — what the affiliate sees and what the admin manages need to be mirrors of each other. Designing them sequentially created reconciliation work at the end.</p>
+    </div>
+    <div class="reflect-item">
+      <p class="reflect-label">Payout trust needed more than copy</p>
+      <p>The FAQ addressed payout questions but in text only. A visual "how payouts work" timeline in the dashboard — showing assigned → verified → processed → paid — would have done more to reduce anxiety than any paragraph of copy. I'd add that in v2.</p>
+    </div>
+  </div>
+
+  <div class="divider-gold"></div>
+
+</div>
+
+<!-- ══════ FOOTER ══════ -->
+<div class="footer">
+  <span class="footer-name">Aasif Anwar</span>
+  <a href="../../index.html" class="footer-link">← Back to portfolio</a>
+</div>
+
+</body>
+</html>
