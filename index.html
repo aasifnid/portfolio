@@ -357,6 +357,45 @@
     color: var(--gold-700); letter-spacing: 0.04em; margin-top: 4px;
   }
 
+  /* ─── Intro overlay ─── */
+  #intro-overlay {
+    position: fixed; inset: 0; z-index: 99999;
+    background: #0F0E0C;
+    background-image: radial-gradient(circle, rgba(255,255,255,0.04) 1px, transparent 1px);
+    background-size: 24px 24px;
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    transition: opacity 0.7s ease;
+  }
+  #intro-overlay::after {
+    content: '';
+    position: absolute; top: 0; left: 0; right: 0; height: 2px;
+    background: var(--gold-500);
+  }
+  #intro-overlay.fade-out { opacity: 0; pointer-events: none; }
+
+  .intro-eyebrow {
+    font-family: var(--font-mono); font-size: 10px; font-weight: 500;
+    letter-spacing: 0.2em; text-transform: uppercase;
+    color: rgba(255,255,255,0.25); margin-bottom: 52px;
+  }
+  .intro-statement {
+    font-family: var(--font-display);
+    font-size: clamp(36px, 5vw, 56px);
+    font-weight: 300; letter-spacing: -0.02em; line-height: 1.15;
+    color: rgba(255,255,255,0.72); text-align: center;
+    margin-bottom: 8px;
+  }
+  .intro-statement strong {
+    font-weight: 800; color: #fff; display: block;
+  }
+  .intro-tools {
+    font-family: var(--font-mono); font-size: 12px; font-weight: 400;
+    letter-spacing: 0.16em; text-transform: uppercase;
+    color: var(--gold-400); margin-top: 52px;
+  }
+  .intro-tools-sep { color: rgba(255,255,255,0.2); margin: 0 10px; }
+
   /* ─── Scroll Progress Bar ─── */
   #scroll-progress {
     position: fixed; top: 0; left: 0; height: 3px; width: 0%;
@@ -510,6 +549,13 @@
 </style>
 </head>
 <body>
+<div id="intro-overlay">
+  <p class="intro-eyebrow">Aasif Anwar &nbsp;·&nbsp; Portfolio 2026</p>
+  <p class="intro-statement">Built entirely<strong>with AI.</strong></p>
+  <p class="intro-tools">
+    Figma <span class="intro-tools-sep">·</span> Claude Code <span class="intro-tools-sep">·</span> Vercel
+  </p>
+</div>
 <div id="scroll-progress"></div>
 <div id="cursor-dot"></div>
 
@@ -815,6 +861,19 @@
 </footer>
 
 <script>
+  /* ── Intro overlay ── */
+  (function() {
+    var overlay = document.getElementById('intro-overlay');
+    if (sessionStorage.getItem('intro-seen')) {
+      overlay.style.display = 'none'; return;
+    }
+    sessionStorage.setItem('intro-seen', '1');
+    setTimeout(function() {
+      overlay.classList.add('fade-out');
+      setTimeout(function() { overlay.style.display = 'none'; }, 700);
+    }, 2200);
+  })();
+
   /* ── Nav glass on scroll ── */
   window.addEventListener('scroll', function() {
     var nav = document.querySelector('.site-nav');
