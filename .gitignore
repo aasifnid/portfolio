@@ -2,3 +2,5 @@
 portfolio-2026/
 work/*/brief.md
 *.pdf.crdownload
+.vercel
+.env*.local
