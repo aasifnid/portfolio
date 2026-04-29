@@ -62,7 +62,7 @@
     color: var(--gold-700); margin-bottom: 28px;
   }
   .hero-headline {
-    font-family: var(--font-display); font-size: clamp(40px, 5vw, 72px);
+    font-family: var(--font-display); font-size: clamp(36px, 4.5vw, 64px);
     line-height: 1.08; font-weight: 800; letter-spacing: -0.03em;
     color: var(--color-ink); margin-bottom: 28px; max-width: 820px;
   }
@@ -117,7 +117,7 @@
   .work-grid { display: flex; flex-direction: column; gap: 16px; }
   .work-card {
     display: grid; grid-template-columns: 2fr 3fr;
-    height: 320px;
+    min-height: 280px;
     text-decoration: none; color: inherit;
     background: var(--color-surface);
     border: 1px solid var(--color-border); border-radius: var(--r-md);
@@ -151,7 +151,7 @@
     position: relative; z-index: 1;
     backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px);
   }
-  .wv--sel   { background: linear-gradient(135deg, #3D7A8A 0%, #235E6B 100%); }
+  .wv--sel   { background: linear-gradient(to bottom, transparent 50%, rgba(0,0,0,0.45) 100%), url('assets/sel-emotion-screen.jpg') center/cover no-repeat; }
   .wv--lsa   { background: linear-gradient(135deg, #C4862A 0%, #9A6315 100%); }
   .wv--trial { background: linear-gradient(135deg, #C4624A 0%, #A04430 100%); }
   .wv--aff   { background: linear-gradient(135deg, #5A7A5A 0%, #3D5C3D 100%); }
@@ -184,8 +184,7 @@
   .work-card-desc {
     font-size: 14px; line-height: 22px;
     color: var(--color-ink-2); margin-bottom: 0;
-    display: -webkit-box; -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical; overflow: hidden;
+
   }
 
   /* ─── Recommendations ─── */
@@ -333,126 +332,6 @@
   .timeline-item--next .timeline-label { color: var(--gold-700); }
   .timeline-item--next .timeline-year { color: var(--gold-700); }
 
-  /* ─── Chatbot ─── */
-  #chat-bubble {
-    position: fixed; bottom: 28px; right: 28px; z-index: 1000;
-    width: 52px; height: 52px; border-radius: 50%;
-    background: var(--color-ink); border: none; cursor: pointer;
-    display: flex; align-items: center; justify-content: center;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.18);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-  }
-  #chat-bubble:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(0,0,0,0.22); }
-  .chat-tooltip {
-    position: fixed; bottom: 92px; right: 28px;
-    transform: translateY(6px);
-    background: var(--color-ink); color: #fff;
-    border-radius: var(--r-md); padding: 10px 14px;
-    width: 172px; text-align: left;
-    opacity: 0; pointer-events: none;
-    transition: opacity 0.2s ease, transform 0.2s ease;
-    box-shadow: 0 4px 16px rgba(0,0,0,0.16);
-  }
-  .chat-tooltip.visible { opacity: 1; transform: translateY(0); }
-  .chat-tooltip::after {
-    content: ''; position: absolute; top: 100%; right: 18px;
-    border: 6px solid transparent;
-    border-top-color: var(--color-ink);
-  }
-  .chat-tooltip-hi {
-    font-family: var(--font-display); font-size: 13px; font-weight: 700;
-    margin-bottom: 3px;
-  }
-  .chat-tooltip-sub {
-    font-family: var(--font-body); font-size: 11px; color: rgba(255,255,255,0.6);
-    line-height: 1.4;
-  }
-  #chat-bubble svg { width: 22px; height: 22px; }
-  #chat-panel {
-    position: fixed; bottom: 92px; right: 28px; z-index: 1000;
-    width: 360px; max-height: 520px;
-    background: #fff; border-radius: var(--r-lg);
-    box-shadow: 0 8px 40px rgba(0,0,0,0.14), 0 2px 8px rgba(0,0,0,0.08);
-    display: flex; flex-direction: column;
-    overflow: hidden;
-    opacity: 0; transform: translateY(12px) scale(0.97);
-    pointer-events: none;
-    transition: opacity 0.22s ease, transform 0.22s ease;
-  }
-  #chat-panel.open { opacity: 1; transform: translateY(0) scale(1); pointer-events: all; }
-  .chat-header {
-    background: var(--color-ink); color: #fff;
-    padding: 14px 18px; display: flex; align-items: center; justify-content: space-between;
-    flex-shrink: 0;
-  }
-  .chat-header-left { display: flex; align-items: center; gap: 10px; }
-  .chat-header-dot {
-    width: 8px; height: 8px; border-radius: 50%; background: var(--gold-500);
-  }
-  .chat-header-title { font-family: var(--font-display); font-size: 14px; font-weight: 700; }
-  .chat-header-sub { font-family: var(--font-mono); font-size: 10px; color: rgba(255,255,255,0.45); margin-top: 1px; letter-spacing: 0.04em; }
-  .chat-close {
-    background: none; border: none; cursor: pointer; color: rgba(255,255,255,0.5);
-    padding: 4px; border-radius: 4px; transition: color 0.15s;
-    display: flex; align-items: center; justify-content: center;
-  }
-  .chat-close:hover { color: #fff; }
-  .chat-messages {
-    flex: 1; overflow-y: auto; padding: 16px;
-    display: flex; flex-direction: column; gap: 12px;
-    min-height: 200px;
-  }
-  .chat-msg { max-width: 88%; display: flex; flex-direction: column; gap: 3px; }
-  .chat-msg--user { align-self: flex-end; }
-  .chat-msg--bot  { align-self: flex-start; }
-  .chat-msg-bubble {
-    padding: 10px 14px; border-radius: 14px;
-    font-size: 14px; line-height: 1.55;
-  }
-  .chat-msg--user .chat-msg-bubble {
-    background: var(--color-ink); color: #fff;
-    border-bottom-right-radius: 4px;
-  }
-  .chat-msg--bot .chat-msg-bubble {
-    background: var(--color-surface); color: var(--color-ink);
-    border-bottom-left-radius: 4px;
-  }
-  .chat-msg-bubble.typing { color: var(--color-ink-3); font-style: italic; }
-  .chat-starters {
-    padding: 4px 16px 12px; display: flex; flex-wrap: wrap; gap: 8px;
-  }
-  .chat-chip {
-    font-family: var(--font-mono); font-size: 11px; font-weight: 500;
-    color: var(--gold-700); background: var(--gold-100);
-    border: 1px solid var(--gold-400); border-radius: 20px;
-    padding: 5px 12px; cursor: pointer; letter-spacing: 0.02em;
-    transition: background 0.15s;
-  }
-  .chat-chip:hover { background: #f0dfc0; }
-  .chat-input-row {
-    padding: 12px 14px; border-top: 1px solid var(--color-border);
-    display: flex; gap: 8px; flex-shrink: 0;
-  }
-  .chat-input {
-    flex: 1; border: 1px solid var(--color-border); border-radius: var(--r-sm);
-    padding: 9px 12px; font-family: var(--font-body); font-size: 14px;
-    color: var(--color-ink); outline: none; resize: none;
-    transition: border-color 0.15s;
-  }
-  .chat-input:focus { border-color: var(--color-border-2); }
-  .chat-send {
-    background: var(--color-ink); color: #fff;
-    border: none; border-radius: var(--r-sm); padding: 0 14px;
-    cursor: pointer; font-family: var(--font-mono); font-size: 13px;
-    transition: background 0.15s; flex-shrink: 0;
-  }
-  .chat-send:hover { background: #2D2B28; }
-  .chat-send:disabled { opacity: 0.4; cursor: not-allowed; }
-  @media (max-width: 480px) {
-    #chat-panel { width: calc(100vw - 24px); right: 12px; bottom: 80px; }
-    #chat-bubble { bottom: 16px; right: 16px; }
-  }
-
   /* ─── Footer ─── */
   .home-footer {
     max-width: 960px; margin: 0 auto;
@@ -465,6 +344,7 @@
     font-family: var(--font-mono); font-size: 11px; color: var(--color-ink-3);
     text-decoration: none; letter-spacing: 0.04em; transition: color var(--ease);
   }
+  .footer-ai-credit:hover { color: var(--color-ink-2); }
   .footer-sep { color: var(--color-border); }
   .footer-copyright {
     font-family: var(--font-mono); font-size: 11px;
@@ -723,7 +603,7 @@
 <!-- ══════════════════════════════════════ HERO ══════════════════════════════════════ -->
 <div class="home-hero">
   <p class="hero-eyebrow">UX Designer · Game Design · NID</p>
-  <h1 class="hero-headline">5 years at India's largest K–12 Math platform. Now designing for scale.</h1>
+  <h1 class="hero-headline">5 years at India's largest K-12 Math platform. Now designing for scale.</h1>
   <div class="hero-rule"></div>
   <p class="hero-sub">Designed tools for students, tutors, and the space between them. Research first — metrics to close the loop.</p>
   <div class="hero-actions">
@@ -738,80 +618,62 @@
   <div class="work-grid">
 
     <a href="work/leap-sel-tools/index.html" class="work-card">
-      <div class="work-card-body">
-        <p class="work-card-meta">2025–26 · 0→1</p>
-        <p class="work-card-title">Feel Check: SEL Tools</p>
-        <p class="work-card-desc">A student-led emotional check-in before every session — reads mood and routes to a regulation activity. Shipped to 417 students across 4 cohorts.</p>
+      <div class="work-card-body" style="background: linear-gradient(135deg, #3D7A8A 0%, #235E6B 100%); justify-content: flex-end; padding-bottom: 36px;">
+        <p class="work-card-meta" style="color: rgba(255,255,255,0.55);">2025–26 · 0→1</p>
+        <p class="work-card-title" style="color: #fff;">Feel Check: SEL Tools</p>
+        <p class="work-card-desc" style="color: rgba(255,255,255,0.75);">Designed the emotional check-in system for Cuemath's tutoring sessions — giving tutors sight into student readiness before instruction begins. Validated across 417 students and 120 tutors.</p>
       </div>
-      <div class="work-card-visual wv--sel">
-        <span class="wv-watermark">F</span>
-        <span class="wv-badge">0→1 · Edtech</span>
-      </div>
+      <div class="work-card-visual" style="background: url('assets/Case studies/SEL Feel Check/Card preview.jpg') center/cover no-repeat; padding: 0;"></div>
     </a>
 
     <a href="work/leap-learning-system/index.html" class="work-card">
-      <div class="work-card-body">
-        <p class="work-card-meta">2024–25</p>
-        <p class="work-card-title">Learning System Architecture</p>
-        <p class="work-card-desc">Redesigned how teachers assign and track homework — removing tool-switching and surfacing what needs attention first.</p>
+      <div class="work-card-body" style="background: linear-gradient(135deg, #C4862A 0%, #9A6315 100%); justify-content: flex-end; padding-bottom: 36px;">
+        <p class="work-card-meta" style="color: rgba(255,255,255,0.55);">2024–25</p>
+        <p class="work-card-title" style="color: #fff;">Learning System Architecture</p>
+        <p class="work-card-desc" style="color: rgba(255,255,255,0.75);">Redesigned how teachers assign and track homework — removing tool-switching and surfacing what needs attention first.</p>
       </div>
-      <div class="work-card-visual wv--lsa">
-        <span class="wv-watermark">L</span>
-        <span class="wv-badge">Architecture</span>
-      </div>
+      <div class="work-card-visual" style="background: url('work/leap-sel-tools/images/intro.jpg') center/cover no-repeat; border-left: 1px solid rgba(0,0,0,0.06);"></div>
     </a>
 
     <a href="work/new-trial-experience/index.html" class="work-card">
-      <div class="work-card-body">
-        <p class="work-card-meta">2024</p>
-        <p class="work-card-title">New Trial Experience</p>
-        <p class="work-card-desc">Reduced AC intervention by 70% and lifted trial conversion by 50% — shifting the demo class to a fully teacher-led journey.</p>
+      <div class="work-card-body" style="background: linear-gradient(135deg, #C4624A 0%, #A04430 100%); justify-content: flex-end; padding-bottom: 36px;">
+        <p class="work-card-meta" style="color: rgba(255,255,255,0.55);">2024</p>
+        <p class="work-card-title" style="color: #fff;">New Trial Experience</p>
+        <p class="work-card-desc" style="color: rgba(255,255,255,0.75);">Reduced AC intervention by 70% and lifted trial conversion by 50% — shifting the demo class to a fully teacher-led journey.</p>
       </div>
-      <div class="work-card-visual wv--trial">
-        <span class="wv-watermark">T</span>
-        <span class="wv-badge">Conversion</span>
-      </div>
+      <div class="work-card-visual" style="background: url('work/leap-sel-tools/images/senses.jpg') center/cover no-repeat; border-left: 1px solid rgba(0,0,0,0.06);"></div>
     </a>
 
     <a href="work/affiliate-partnership/index.html" class="work-card">
-      <div class="work-card-body">
-        <p class="work-card-meta">2024 · 0→1</p>
-        <p class="work-card-title">Affiliate Partnership</p>
-        <p class="work-card-desc">A referral platform for community volunteers to earn by promoting Cuemath — from landing page to affiliate dashboard.</p>
+      <div class="work-card-body" style="background: linear-gradient(135deg, #5A7A5A 0%, #3D5C3D 100%); justify-content: flex-end; padding-bottom: 36px;">
+        <p class="work-card-meta" style="color: rgba(255,255,255,0.55);">2024 · 0→1</p>
+        <p class="work-card-title" style="color: #fff;">Affiliate Partnership</p>
+        <p class="work-card-desc" style="color: rgba(255,255,255,0.75);">A referral platform for community volunteers to earn by promoting Cuemath — from landing page to affiliate dashboard.</p>
       </div>
-      <div class="work-card-visual wv--aff">
-        <span class="wv-watermark">A</span>
-        <span class="wv-badge">0→1 · Referral</span>
-      </div>
+      <div class="work-card-visual" style="background: url('work/leap-sel-tools/images/body.jpg') center/cover no-repeat; border-left: 1px solid rgba(0,0,0,0.06);"></div>
     </a>
 
     <a href="work/cue-tutor-license/index.html" class="work-card">
-      <div class="work-card-body">
-        <p class="work-card-meta">2024</p>
-        <p class="work-card-title">Cue Tutor License</p>
-        <p class="work-card-desc">New license system giving tutors preference-based trial allocation — reduced scheduled trial cancellations by 12%.</p>
+      <div class="work-card-body" style="background: linear-gradient(135deg, #4A5A7A 0%, #2E3F5C 100%); justify-content: flex-end; padding-bottom: 36px;">
+        <p class="work-card-meta" style="color: rgba(255,255,255,0.55);">2024</p>
+        <p class="work-card-title" style="color: #fff;">Cue Tutor License</p>
+        <p class="work-card-desc" style="color: rgba(255,255,255,0.75);">New license system giving tutors preference-based trial allocation — reduced scheduled trial cancellations by 40%.</p>
       </div>
-      <div class="work-card-visual wv--ctl">
-        <span class="wv-watermark">C</span>
-        <span class="wv-badge">Licensing</span>
-      </div>
+      <div class="work-card-visual" style="background: url('work/leap-sel-tools/images/zor.jpg') center/cover no-repeat; border-left: 1px solid rgba(0,0,0,0.06);"></div>
     </a>
 
-    <a href="work/curriculum-games/" class="work-card">
-      <div class="work-card-body">
-        <p class="work-card-meta">2022 · Game Design</p>
-        <p class="work-card-title">Curriculum Games</p>
-        <p class="work-card-desc">Educational games embedding computational thinking into coding curricula and problem-solving into Cuemath's v3 Math program.</p>
+    <a href="work/curriculum-games/index.html" class="work-card">
+      <div class="work-card-body" style="background: linear-gradient(135deg, #7A5A8A 0%, #5C3D6E 100%); justify-content: flex-end; padding-bottom: 36px;">
+        <p class="work-card-meta" style="color: rgba(255,255,255,0.55);">2021–22 · Game Design</p>
+        <p class="work-card-title" style="color: #fff;">Curriculum Games</p>
+        <p class="work-card-desc" style="color: rgba(255,255,255,0.75);">Educational games embedding computational thinking into coding curricula and problem-solving into Cuemath's v3 Math program.</p>
       </div>
-      <div class="work-card-visual wv--games">
-        <span class="wv-watermark">G</span>
-        <span class="wv-badge">Game Design</span>
-      </div>
+      <div class="work-card-visual" style="background: url('work/leap-sel-tools/images/heart.jpg') center/cover no-repeat; border-left: 1px solid rgba(0,0,0,0.06);"></div>
     </a>
 
     <a href="work/earlier-work/index.html" class="work-card--archive">
       <p class="archive-meta">2018–21 · NID Gandhinagar · Game & Physical Design</p>
-      <p class="archive-title">Earlier Work</p>
+      <p class="archive-title">Academic Work</p>
       <p class="archive-desc">Game design, physical product, and interaction design from NID — the foundation before product design at Cuemath.</p>
       <p class="archive-cta">View projects →</p>
     </a>
@@ -1101,168 +963,6 @@
       }
     });
   });
-</script>
-
-<!-- ══════════════════════════════════════ CHATBOT ══════════════════════════════════════ -->
-<div class="chat-tooltip" id="chat-tooltip">
-  <div class="chat-tooltip-hi">👋 Hi there!</div>
-  <div class="chat-tooltip-sub">Ask me about Aasif — his work, process & availability.</div>
-</div>
-<button id="chat-bubble" aria-label="Ask about Aasif">
-  <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
-    <!-- Antenna -->
-    <line x1="12" y1="2" x2="12" y2="5"/>
-    <circle cx="12" cy="1.5" r="1.2" fill="#C4862A" stroke="none"/>
-    <!-- Head -->
-    <rect x="3" y="5" width="18" height="14" rx="3.5"/>
-    <!-- Eyes -->
-    <circle cx="8.5" cy="10.5" r="1.8" fill="#fff" stroke="none"/>
-    <circle cx="15.5" cy="10.5" r="1.8" fill="#fff" stroke="none"/>
-    <!-- Pupils -->
-    <circle cx="8.5" cy="10.5" r="0.7" fill="#1A1916" stroke="none"/>
-    <circle cx="15.5" cy="10.5" r="0.7" fill="#1A1916" stroke="none"/>
-    <!-- Mouth -->
-    <path d="M8.5 14.5 Q12 16.5 15.5 14.5" stroke-width="1.7"/>
-    <!-- Ears -->
-    <line x1="3" y1="10.5" x2="1.5" y2="10.5"/>
-    <line x1="21" y1="10.5" x2="22.5" y2="10.5"/>
-  </svg>
-</button>
-
-<div id="chat-panel" role="dialog" aria-label="Chat with Aasif's assistant">
-  <div class="chat-header">
-    <div class="chat-header-left">
-      <div class="chat-header-dot"></div>
-      <div>
-        <div class="chat-header-title">Ask about Aasif</div>
-        <div class="chat-header-sub">Powered by Groq</div>
-      </div>
-    </div>
-    <button class="chat-close" id="chat-close-btn" aria-label="Close chat">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-    </button>
-  </div>
-  <div class="chat-messages" id="chat-messages">
-    <div class="chat-msg chat-msg--bot">
-      <div class="chat-msg-bubble">Hi! I'm here to answer any questions you have about Aasif — his work, process, background, or what he's looking for next. Ask anything.</div>
-    </div>
-  </div>
-  <div class="chat-starters" id="chat-starters">
-    <button class="chat-chip">What has he shipped?</button>
-    <button class="chat-chip">What's his design process?</button>
-    <button class="chat-chip">Is he open to new roles?</button>
-  </div>
-  <div class="chat-input-row">
-    <input class="chat-input" id="chat-input" type="text" placeholder="Ask a question…" autocomplete="off" />
-    <button class="chat-send" id="chat-send">Send</button>
-  </div>
-</div>
-
-<script>
-  (function() {
-    var bubble  = document.getElementById('chat-bubble');
-    var panel   = document.getElementById('chat-panel');
-    var closeBtn= document.getElementById('chat-close-btn');
-    var messages= document.getElementById('chat-messages');
-    var starters= document.getElementById('chat-starters');
-    var input   = document.getElementById('chat-input');
-    var sendBtn = document.getElementById('chat-send');
-    var tooltip = document.getElementById('chat-tooltip');
-    var history = [];
-    var isOpen  = false;
-
-    function togglePanel() {
-      isOpen = !isOpen;
-      panel.classList.toggle('open', isOpen);
-      tooltip.classList.remove('visible');
-      if (isOpen) input.focus();
-    }
-
-    bubble.addEventListener('mouseenter', function() {
-      if (!isOpen) tooltip.classList.add('visible');
-    });
-    bubble.addEventListener('mouseleave', function() {
-      tooltip.classList.remove('visible');
-    });
-
-    bubble.addEventListener('click', togglePanel);
-    closeBtn.addEventListener('click', togglePanel);
-
-    var quickAnswers = {
-      "What has he shipped?": "Aasif has shipped 6 products at Cuemath over 5 years — including SEL Tools (Feel Check), shipped to 417 students across 4 cohorts; a New Trial Experience that lifted conversion by 50%; a Learning System redesign that simplified homework tracking for teachers; an Affiliate Partnership platform built 0→1; Cue Tutor License which cut cancellations by 12%; and Curriculum Games for Math and coding. Full case studies are on the portfolio.",
-      "What's his design process?": "Aasif always starts with the 'why' — understanding the problem deeply before opening Figma. He asks a lot of questions, works closely with PMs and engineers, and takes ownership of measuring impact after shipping. His Game Design background means he treats engagement as a requirement, not an afterthought.",
-      "Is he open to new roles?": "Yes — Aasif is actively looking and available to join immediately with no notice period. He's looking for Product Design roles on consumer-facing products at scale, where design has real influence on product decisions. Open to both in-office and remote setups."
-    };
-
-    starters.querySelectorAll('.chat-chip').forEach(function(chip) {
-      chip.addEventListener('click', function() {
-        var question = chip.textContent;
-        var answer = quickAnswers[question];
-        if (answer) {
-          starters.style.display = 'none';
-          addMsg('user', question);
-          history.push({ role: 'user', content: question });
-          var reply = addMsg('bot', answer);
-          history.push({ role: 'model', content: answer });
-        } else {
-          sendMessage(question);
-        }
-      });
-    });
-
-    input.addEventListener('keydown', function(e) {
-      if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); sendMessage(input.value); }
-    });
-    sendBtn.addEventListener('click', function() { sendMessage(input.value); });
-
-    function addMsg(role, text, isTyping) {
-      var div = document.createElement('div');
-      div.className = 'chat-msg chat-msg--' + role;
-      var bubble = document.createElement('div');
-      bubble.className = 'chat-msg-bubble' + (isTyping ? ' typing' : '');
-      bubble.textContent = text;
-      div.appendChild(bubble);
-      messages.appendChild(div);
-      messages.scrollTop = messages.scrollHeight;
-      return bubble;
-    }
-
-    function sendMessage(text) {
-      text = (text || '').trim();
-      if (!text) return;
-
-      starters.style.display = 'none';
-      input.value = '';
-      sendBtn.disabled = true;
-
-      addMsg('user', text);
-      history.push({ role: 'user', content: text });
-
-      var typingBubble = addMsg('bot', 'Thinking…', true);
-
-      fetch('/api/chat', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ message: text, history: history.slice(0, -1) })
-      })
-      .then(function(r) { return r.json(); })
-      .then(function(data) {
-        var reply = data.reply || 'Sorry, something went wrong. Try again.';
-        typingBubble.textContent = reply;
-        typingBubble.classList.remove('typing');
-        history.push({ role: 'model', content: reply });
-        messages.scrollTop = messages.scrollHeight;
-      })
-      .catch(function() {
-        typingBubble.textContent = 'Something went wrong. Please try again.';
-        typingBubble.classList.remove('typing');
-      })
-      .finally(function() {
-        sendBtn.disabled = false;
-        input.focus();
-      });
-    }
-  })();
 </script>
 
 </body>
