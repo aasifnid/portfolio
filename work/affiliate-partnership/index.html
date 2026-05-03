@@ -106,6 +106,15 @@
   </div>
 </nav>
 
+<nav class="cs-section-nav" aria-label="Case study sections">
+  <a href="#problem">Situation</a>
+  <a href="#scope">Task</a>
+  <a href="#decisions">Action</a>
+  <a href="#build">Solution</a>
+  <a href="#outcome">Result</a>
+  <a href="#reflection">Reflection</a>
+</nav>
+
 <!-- ══════ COVER ══════ -->
 <div class="cover">
   <p class="cover-eyebrow">Product Design · 2024 · 0→1</p>
@@ -179,7 +188,7 @@
   <div class="divider"></div>
 
   <!-- ══ 01 — THE PROBLEM ══ -->
-  <div class="section-head">
+  <div class="section-head" id="problem">
     <span class="section-num">01</span>
     <span class="section-label">The Problem</span>
   </div>
@@ -210,10 +219,8 @@
     </div>
   </div>
 
-  <div class="divider-gold"></div>
-
   <!-- ══ 02 — SCOPE ══ -->
-  <div class="section-head">
+  <div class="section-head" id="scope">
     <span class="section-num">02</span>
     <span class="section-label">Scope</span>
   </div>
@@ -248,7 +255,7 @@
   <div class="divider"></div>
 
   <!-- ══ 03 — KEY DECISIONS ══ -->
-  <div class="section-head">
+  <div class="section-head" id="decisions">
     <span class="section-num">03</span>
     <span class="section-label">Key Decisions</span>
   </div>
@@ -285,7 +292,7 @@
   <div class="divider"></div>
 
   <!-- ══ 04 — THE BUILD ══ -->
-  <div class="section-head">
+  <div class="section-head" id="build">
     <span class="section-num">04</span>
     <span class="section-label">The Build</span>
   </div>
@@ -318,7 +325,7 @@
   <div class="divider"></div>
 
   <!-- ══ 05 — FAQ DESIGN ══ -->
-  <div class="section-head">
+  <div class="section-head" id="faq">
     <span class="section-num">05</span>
     <span class="section-label">FAQ Design</span>
   </div>
@@ -354,13 +361,13 @@
   <div class="divider"></div>
 
   <!-- ══ 06 — OUTCOMES ══ -->
-  <div class="section-head">
+  <div class="section-head" id="outcome">
     <span class="section-num">06</span>
     <span class="section-label">Outcome</span>
   </div>
   <p class="section-title">0→1 — Cuemath's first structured affiliate programme.</p>
 
-  <p class="large">Built from scratch. Three surfaces designed and shipped — a public landing page, an affiliate self-serve dashboard, and an admin tool for the internal team. For the first time, Cuemath had a structured, trackable community referral channel.</p>
+  <p class="large">Built from scratch. Three surfaces designed and shipped — a public landing page, an affiliate self-serve dashboard, and an admin tool for the internal team. For the first time, Cuemath had a structured, trackable community referral channel driving registrations to its flagship MathFit events across the US.</p>
 
   <div class="outcome-stats">
     <div class="stat">
@@ -371,8 +378,12 @@
       <p class="stat-label">FAQ questions — every conversion blocker addressed</p>
       <p class="stat-number">15</p>
     </div>
+    <div class="stat">
+      <p class="stat-label">MathFit event participants across the US — the programme this affiliate channel was built to serve</p>
+      <p class="stat-number">22K+</p>
+    </div>
     <div class="stat span-full">
-      <p class="stat-label">First structured affiliate programme at Cuemath — community referrals now tracked, rewarded, and managed in-product</p>
+      <p class="stat-label">First structured affiliate channel at Cuemath — community referrals now tracked, rewarded, and managed in-product across 200+ events in 50+ US cities</p>
       <p class="stat-number">0→1</p>
     </div>
   </div>
@@ -380,7 +391,7 @@
   <div class="divider"></div>
 
   <!-- ══ 07 — REFLECTION ══ -->
-  <div class="section-head">
+  <div class="section-head" id="reflection">
     <span class="section-num">07</span>
     <span class="section-label">Reflection</span>
   </div>
@@ -401,8 +412,6 @@
     </div>
   </div>
 
-  <div class="divider-gold"></div>
-
 </div>
 
 <!-- ══════ FOOTER ══════ -->
@@ -410,6 +419,46 @@
   <span class="footer-name">Aasif Anwar</span>
   <a href="../../index.html" class="footer-link">← Back to portfolio</a>
 </div>
+
+
+<script>
+  /* ── Scroll animations ── */
+  (function () {
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('[data-animate]').forEach(function (el) {
+      observer.observe(el);
+    });
+  })();
+
+  /* ── Section nav active state ── */
+  (function () {
+    var navLinks = document.querySelectorAll('.cs-section-nav a');
+    var sectionEls = [];
+    navLinks.forEach(function(link) {
+      var id = link.getAttribute('href').replace('#','');
+      var el = document.getElementById(id);
+      if (el) sectionEls.push(el);
+    });
+    if (!sectionEls.length) return;
+    var navObserver = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          navLinks.forEach(function(link) {
+            link.classList.toggle('active', link.getAttribute('href') === '#' + entry.target.id);
+          });
+        }
+      });
+    }, { rootMargin: '-40% 0px -55% 0px', threshold: 0 });
+    sectionEls.forEach(function(el) { navObserver.observe(el); });
+  })();
+</script>
 
 </body>
 </html>

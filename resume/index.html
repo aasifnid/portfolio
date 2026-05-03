@@ -11,262 +11,134 @@
 <link rel="stylesheet" href="../assets/style.css">
 <style>
 
+  /* ─── Reset shared CSS interference ─── */
+  /* The shared style.css sets p { margin-bottom: 26px } which breaks resume layout */
+  p { margin-bottom: 0; }
+
   /* ─── Page base ─── */
   body {
-    background-color: var(--color-bg);
-    background-image: radial-gradient(circle, rgba(0,0,0,0.07) 1px, transparent 1px);
-    background-size: 20px 20px;
+    background-color: var(--neutral-100);
+    background-image: radial-gradient(circle, rgba(0,0,0,0.045) 1px, transparent 1px);
+    background-size: 24px 24px;
   }
 
-  /* ─── Nav (top bar — matches homepage) ─── */
+  /* ─── Nav ─── */
   .site-nav {
     position: sticky; top: 0; z-index: 100;
-    background: var(--color-bg);
-    border-bottom: 1px solid var(--color-border);
+    background: var(--neutral-100);
+    border-bottom: 1px solid var(--neutral-300);
     display: flex; justify-content: space-between; align-items: center;
     padding: 0 48px; height: 52px;
   }
-  .nav-name { font-family: var(--font-display); font-size: 14px; font-weight: 700; color: var(--color-ink); text-decoration: none; letter-spacing: -0.02em; }
+  .nav-name { font-family: var(--font-display); font-size: 14px; font-weight: 700; color: var(--neutral-1000); text-decoration: none; letter-spacing: -0.02em; }
   .nav-links { display: flex; gap: 4px; align-items: center; }
-  .nav-links a { font-family: var(--font-mono); font-size: 12px; font-weight: 400; color: var(--color-ink-3); text-decoration: none; letter-spacing: 0.04em; padding: 6px 12px; border-radius: var(--r-sm); transition: color 0.15s ease; }
-  .nav-links a:hover { color: var(--color-ink); }
-  .nav-resume { border: 1px solid var(--color-border); color: var(--color-ink) !important; margin-left: 8px; }
+  .nav-links a { font-family: var(--font-mono); font-size: 12px; font-weight: 400; color: var(--neutral-700); text-decoration: none; letter-spacing: 0.04em; padding: 6px 12px; border-radius: var(--r-sm); transition: color 0.15s ease; }
+  .nav-links a:hover { color: var(--neutral-1000); }
+  .nav-resume { border: 1px solid var(--neutral-300); color: var(--neutral-1000) !important; margin-left: 8px; transition: border-color 0.15s ease; }
+  .nav-resume:hover { border-color: var(--neutral-800) !important; }
 
   /* ─── Page wrapper ─── */
-  .resume-page {
-    max-width: 780px;
-    margin: 0 auto;
-    padding: 64px 48px 80px;
-  }
+  .resume-page { max-width: 780px; margin: 0 auto; padding: 64px 48px 96px; }
 
-  /* ─── Header block ─── */
-  .resume-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    margin-bottom: 48px;
-    gap: 24px;
-  }
-  .resume-header-left {}
-  .resume-name {
-    font-family: var(--font-display);
-    font-size: clamp(32px, 4vw, 48px);
-    font-weight: 800;
-    letter-spacing: -0.03em;
-    line-height: 1.05;
-    color: var(--neutral-1000);
-    margin-bottom: 6px;
-  }
-  .resume-title {
-    font-size: 15px;
-    font-weight: 400;
-    color: var(--neutral-700);
-    margin-bottom: 20px;
-  }
-  .resume-contact {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 4px 16px;
-  }
-  .resume-contact a, .resume-contact span {
-    font-family: var(--font-mono);
-    font-size: 12px;
-    color: var(--color-ink-3);
-    text-decoration: none;
-    letter-spacing: 0.03em;
-    transition: color var(--ease);
-  }
-  .resume-contact a:hover { color: var(--color-ink); }
-  .resume-contact .contact-sep { color: var(--color-border); }
+  /* ─── Header ─── */
+  .resume-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 52px; gap: 24px; }
+  .resume-name { font-family: var(--font-display); font-size: clamp(32px, 4vw, 48px); font-weight: 800; letter-spacing: -0.03em; line-height: 1.05; color: var(--neutral-1000); margin-bottom: 6px; }
+  .resume-title { font-size: 15px; font-weight: 400; color: var(--neutral-700); margin-bottom: 20px; }
+  .resume-contact { display: flex; flex-wrap: wrap; gap: 4px 16px; }
+  .resume-contact a, .resume-contact span { font-family: var(--font-mono); font-size: 12px; color: var(--neutral-700); text-decoration: none; letter-spacing: 0.04em; transition: color 0.15s ease; }
+  .resume-contact a:hover { color: var(--neutral-1000); }
+  .resume-contact .contact-sep { color: var(--neutral-300); }
 
   /* ─── Download button ─── */
   .download-btn {
     display: inline-flex; align-items: center; gap: 8px;
-    font-family: var(--font-mono); font-size: 13px; font-weight: 500;
-    color: var(--color-ink);
-    border: 1px solid var(--color-border);
-    border-radius: var(--r-sm);
-    padding: 10px 20px;
-    background: #fff;
-    cursor: pointer;
-    text-decoration: none;
-    white-space: nowrap;
-    flex-shrink: 0;
-    letter-spacing: 0.03em;
-    transition: border-color var(--ease);
+    font-family: var(--font-mono); font-size: 12px; font-weight: 500;
+    color: var(--neutral-1000); letter-spacing: 0.04em;
+    border: 1px solid var(--neutral-300); border-radius: var(--r-sm);
+    padding: 10px 18px; background: var(--neutral-200);
+    cursor: pointer; text-decoration: none; white-space: nowrap; flex-shrink: 0;
+    transition: border-color 0.15s ease, background 0.15s ease;
   }
-  .download-btn:hover { border-color: var(--color-border-2); }
+  .download-btn:hover { border-color: var(--neutral-800); background: var(--neutral-100); }
   .download-btn svg { width: 14px; height: 14px; flex-shrink: 0; }
 
   /* ─── Section divider ─── */
-  .resume-divider {
-    width: 100%;
-    height: 1px;
-    background: var(--neutral-300);
-    margin: 40px 0;
-  }
+  .resume-divider { width: 100%; height: 1px; background: var(--neutral-300); margin: 44px 0; }
 
-  /* ─── Section label ─── */
+  /* ─── Section label — unified with design system ─── */
   .resume-section-label {
-    font-family: var(--font-mono);
-    font-size: 11px;
-    font-weight: 500;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--gold-700);
-    margin-bottom: 24px;
+    font-family: var(--font-mono); font-size: 10px; font-weight: 600;
+    letter-spacing: 0.10em; text-transform: uppercase;
+    color: var(--gold-700); margin-bottom: 20px;
   }
 
   /* ─── Summary ─── */
-  .resume-summary {
-    font-size: 15px;
-    line-height: 1.75;
-    color: var(--neutral-800);
-    max-width: 680px;
-  }
+  .resume-summary { font-size: 16px; line-height: 1.72; color: var(--neutral-800); max-width: 680px; }
   .resume-summary strong { color: var(--neutral-1000); font-weight: 600; }
 
   /* ─── Experience ─── */
-  .exp-list { display: flex; flex-direction: column; gap: 36px; }
-
-  .exp-item {}
-  .exp-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-    margin-bottom: 2px;
-    gap: 16px;
-  }
-  .exp-role {
-    font-family: var(--font-display);
-    font-size: 15px;
-    font-weight: 700;
-    color: var(--neutral-1000);
-    letter-spacing: -0.01em;
-  }
-  .exp-company {
-    font-size: 15px;
-    font-weight: 400;
-    color: var(--neutral-700);
-  }
-  .exp-sep { color: var(--neutral-300); margin: 0 6px; font-weight: 300; }
-  .exp-dates {
-    font-family: var(--font-mono);
-    font-size: 11px;
-    font-weight: 400;
-    color: var(--color-ink-3);
-    white-space: nowrap;
-    letter-spacing: 0.03em;
-  }
-  .exp-projects { display: flex; flex-direction: column; gap: 8px; }
-  .exp-project {
-    display: grid;
-    grid-template-columns: 180px 1fr;
-    gap: 12px;
-    font-size: 13.5px;
-    line-height: 1.6;
-  }
-  .exp-project-name {
-    font-weight: 600;
-    color: var(--neutral-1000);
-    padding-top: 0;
-  }
-  .exp-project-desc {
-    color: var(--neutral-700);
-  }
+  .exp-list { display: flex; flex-direction: column; gap: 40px; }
+  .exp-header { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 14px; gap: 16px; }
+  .exp-role { font-family: var(--font-display); font-size: 15px; font-weight: 700; color: var(--neutral-1000); letter-spacing: -0.01em; }
+  .exp-company { font-size: 15px; font-weight: 400; color: var(--neutral-700); }
+  .exp-sep { color: var(--neutral-300); margin: 0 6px; }
+  .exp-dates { font-family: var(--font-mono); font-size: 11px; font-weight: 400; color: var(--neutral-700); white-space: nowrap; letter-spacing: 0.04em; }
+  .exp-projects { display: flex; flex-direction: column; gap: 10px; }
+  .exp-project { display: grid; grid-template-columns: 172px 1fr; gap: 16px; font-size: 13px; line-height: 1.65; }
+  .exp-project-name { font-weight: 600; color: var(--neutral-900); }
+  .exp-project-desc { color: var(--neutral-700); }
   .exp-project-desc strong { color: var(--neutral-900); font-weight: 600; }
   .exp-project--full { grid-template-columns: 1fr; }
 
   /* ─── Skills & Tools ─── */
   .tag-grid { display: flex; flex-wrap: wrap; gap: 8px; }
   .tag {
-    font-family: var(--font-mono);
-    font-size: 11px; font-weight: 400;
-    color: var(--color-ink-2);
-    background: var(--color-surface);
-    border: 1px solid var(--color-border);
-    border-radius: var(--r-sm);
-    padding: 4px 12px;
-    letter-spacing: 0.03em;
+    font-family: var(--font-mono); font-size: 11px; font-weight: 500;
+    color: var(--neutral-800); background: var(--neutral-200);
+    border: 1px solid var(--neutral-300); border-radius: var(--r-sm);
+    padding: 5px 12px; letter-spacing: 0.04em;
   }
   .tag-tool {
-    font-family: var(--font-mono);
-    font-size: 11px; font-weight: 500;
-    color: var(--color-ink);
-    background: #fff;
-    border: 1px solid var(--color-border);
-    border-radius: var(--r-sm);
-    padding: 4px 12px;
-    letter-spacing: 0.03em;
+    font-family: var(--font-mono); font-size: 11px; font-weight: 600;
+    color: var(--neutral-1000); background: var(--neutral-200);
+    border: 1px solid var(--neutral-300); border-radius: var(--r-sm);
+    padding: 5px 12px; letter-spacing: 0.04em;
   }
 
   /* ─── Education ─── */
-  .edu-list { display: flex; flex-direction: column; gap: 16px; }
-  .edu-item {
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-    gap: 16px;
-  }
-  .edu-left {}
+  .edu-list { display: flex; flex-direction: column; gap: 18px; }
+  .edu-item { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; }
   .edu-institution { font-size: 14px; font-weight: 600; color: var(--neutral-1000); }
-  .edu-degree { font-size: 13px; color: var(--neutral-700); margin-top: 2px; }
-  .edu-dates { font-size: 12px; color: var(--neutral-700); white-space: nowrap; }
+  .edu-degree { font-size: 13px; color: var(--neutral-700); margin-top: 3px; }
+  .edu-dates { font-family: var(--font-mono); font-size: 11px; color: var(--neutral-700); white-space: nowrap; letter-spacing: 0.03em; }
 
   /* ─── Footer ─── */
-  .resume-footer {
-    margin-top: 64px;
-    padding-top: 28px;
-    border-top: 1px solid var(--neutral-300);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 16px;
-    flex-wrap: wrap;
-  }
-  .resume-footer-note { font-size: 12px; color: var(--neutral-700); }
+  .resume-footer { margin-top: 64px; padding-top: 28px; border-top: 1px solid var(--neutral-300); display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; }
+  .resume-footer-note { font-family: var(--font-mono); font-size: 11px; color: var(--neutral-700); letter-spacing: 0.03em; }
   .resume-footer-links { display: flex; gap: 20px; }
-  .resume-footer-links a { font-size: 12px; color: var(--neutral-700); text-decoration: none; transition: color 0.15s ease; }
+  .resume-footer-links a { font-family: var(--font-mono); font-size: 11px; color: var(--neutral-700); text-decoration: none; letter-spacing: 0.03em; transition: color 0.15s ease; }
   .resume-footer-links a:hover { color: var(--neutral-1000); }
 
-  /* ─── Print ─── */
-  @media print {
-    @page { size: A4 portrait; margin: 12mm 16mm; }
-    * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-    body { background: #fff !important; background-image: none !important; font-size: 10.5px; }
-    .site-nav, .download-btn, .resume-footer { display: none !important; }
-    .resume-page { padding: 0; max-width: 100%; }
-    .resume-header { margin-bottom: 14px; }
-    .resume-name { font-size: 24px; margin-bottom: 3px; }
-    .resume-title { font-size: 11px; margin-bottom: 6px; }
-    .resume-contact a, .resume-contact span { font-size: 10px; }
-    .resume-divider { margin: 10px 0; }
-    .resume-section-label { font-size: 9px; margin-bottom: 8px; }
-    .resume-summary { font-size: 10px; line-height: 1.5; }
-    .exp-list { gap: 10px; }
-    .exp-role { font-size: 11px; }
-    .exp-dates { font-size: 10px; }
-    .exp-company { font-size: 10px; }
-    .exp-projects { gap: 3px; }
-    .exp-project { grid-template-columns: 148px 1fr; gap: 8px; font-size: 10px; line-height: 1.45; }
-    .tag-grid { gap: 4px; }
-    .tag { font-size: 9.5px; padding: 2px 9px; }
-    .tag-tool { font-size: 9.5px; padding: 2px 8px; }
-    .edu-list { gap: 7px; }
-    .edu-institution { font-size: 11px; }
-    .edu-degree, .edu-dates { font-size: 10px; }
-    a { color: inherit !important; text-decoration: none !important; }
-  }
+  /* ─── Experience bullets ─── */
+  .exp-focus { font-size: 13px; line-height: 1.6; color: var(--neutral-700); font-style: italic; margin-bottom: 14px; }
+  .exp-bullets { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 9px; }
+  .exp-bullets li { font-size: 13px; line-height: 1.65; color: var(--neutral-700); padding-left: 18px; position: relative; }
+  .exp-bullets li::before { content: '–'; position: absolute; left: 0; color: var(--gold-500); font-weight: 500; }
+  .exp-bullets li strong { color: var(--neutral-900); font-weight: 600; }
+
+  /* ─── Skill categories ─── */
+  .skills-categories { display: flex; flex-direction: column; gap: 18px; }
+  .skills-cat { display: flex; flex-direction: column; gap: 10px; }
+  .skills-cat-label { font-family: var(--font-mono); font-size: 10px; font-weight: 600; letter-spacing: 0.10em; text-transform: uppercase; color: var(--neutral-700); }
 
   /* ─── Mobile ─── */
   @media (max-width: 600px) {
-    .resume-page { padding: 100px 24px 80px; }
+    .site-nav { padding: 0 20px; }
+    .resume-page { padding: 48px 24px 80px; }
     .resume-header { flex-direction: column; }
-    .exp-project { grid-template-columns: 1fr; gap: 2px; }
-    .exp-project-name { color: var(--neutral-900); }
-    .edu-item { flex-direction: column; gap: 2px; }
+    .exp-project { grid-template-columns: 1fr; gap: 3px; }
+    .edu-item { flex-direction: column; gap: 3px; }
   }
-
 
 </style>
 </head>
@@ -274,7 +146,7 @@
 
 <!-- ══════ NAV ══════ -->
 <nav class="site-nav">
-  <a href="https://aasifanwar.vercel.app" class="nav-name">Aasif Anwar</a>
+  <a href="../index.html" class="nav-name">Aasif Anwar</a>
   <div class="nav-links">
     <a href="../index.html#work">work</a>
     <a href="../index.html#about">about</a>
@@ -289,15 +161,15 @@
   <div class="resume-header">
     <div class="resume-header-left">
       <h1 class="resume-name">Aasif Anwar</h1>
-      <p class="resume-title">Product Designer II &nbsp;·&nbsp; UX Design &amp; Research</p>
+      <p class="resume-title">Product Designer II &nbsp;·&nbsp; UX Design, Product Design &amp; User Research</p>
       <div class="resume-contact">
+        <span>Gurugram, India</span>
+        <span class="contact-sep">·</span>
         <a href="mailto:aasif.nid@gmail.com">aasif.nid@gmail.com</a>
         <span class="contact-sep">·</span>
         <a href="https://www.linkedin.com/in/aasif-nid/" target="_blank" rel="noopener">LinkedIn ↗</a>
         <span class="contact-sep">·</span>
-        <a href="https://aasifanwar.vercel.app">Portfolio ↗</a>
-        <span class="contact-sep">·</span>
-        <span>Gurugram, India</span>
+        <a href="../index.html">Portfolio ↗</a>
       </div>
     </div>
     <a class="download-btn" href="../assets/aasif-anwar-resume.pdf" download="Aasif-Anwar-Resume.pdf">
@@ -312,9 +184,7 @@
 
   <!-- Summary -->
   <p class="resume-section-label">Summary</p>
-  <p class="resume-summary">
-    Product designer with <strong>4+ years at Cuemath</strong> — a global K–12 math platform serving 200,000+ students across 80+ countries. Designed across the full product stack: growth flows, platform redesigns, and in-class learning tools. Delivered measurable outcomes: <strong>9.6% lift in trial-to-paid conversion</strong>, 12% reduction in trial cancellations, 8% increase in qualified leads. Background in Industrial Design (NID) and design research (IIT Kanpur).
-  </p>
+  <p class="resume-summary">Product Designer with <strong>5 years of experience</strong> designing and scaling digital products in EdTech. Expertise in UX design, user research, interaction design, and conversion optimization, with a proven track record of improving business metrics, including a <strong>9.6% lift in trial-to-paid conversion</strong>. Skilled in cross-functional collaboration with product managers, engineers, and stakeholders to deliver user-centered, data-informed solutions.</p>
 
   <div class="resume-divider"></div>
 
@@ -327,32 +197,14 @@
         <p class="exp-role">Product Designer II <span class="exp-sep">·</span> <span class="exp-company">Cuemath</span></p>
         <p class="exp-dates">Apr 2025 – Apr 2026</p>
       </div>
-      <div class="exp-projects">
-        <div class="exp-project">
-          <span class="exp-project-name">LEAP Platform Redesign</span>
-          <span class="exp-project-desc">Owned UX for Cuemath's core tutoring platform; redesigned homepage and chapter view through user journey mapping and iterative stakeholder collaboration; improved session completion and engagement platform-wide.</span>
-        </div>
-        <div class="exp-project">
-          <span class="exp-project-name">SEL Tools</span>
-          <span class="exp-project-desc">Defined and shipped three pre-class tools used in every live session: Feel Check (mood check-in), Focus Zone (attention primer), Riddle Zone (cognitive warm-up); grounded in usability testing.</span>
-        </div>
-        <div class="exp-project">
-          <span class="exp-project-name">Math Fitness Assessment</span>
-          <span class="exp-project-desc">Monthly evaluation experience rolled out across all active students; reduced test anxiety through accessible, low-stakes framing validated through user feedback.</span>
-        </div>
-        <div class="exp-project">
-          <span class="exp-project-name">Goal Creator</span>
-          <span class="exp-project-desc">Mapped and shipped user journeys connecting short-term class goals to long-term learning milestones; drove goal-setting adoption across the student base.</span>
-        </div>
-        <div class="exp-project">
-          <span class="exp-project-name">Cuemath Partners</span>
-          <span class="exp-project-desc">Affiliate program for the US market; owned sign-up flow, affiliate dashboard, and admin controls; shipped cross-functionally with engineering and growth.</span>
-        </div>
-        <div class="exp-project">
-          <span class="exp-project-name">Puzzles &amp; Stickers</span>
-          <span class="exp-project-desc">In-class engagement features validated through A/B testing; increased student participation without disrupting the learning arc.</span>
-        </div>
-      </div>
+      <p class="exp-focus">Promoted to lead end-to-end UX design and 0→1 product development across the platform.</p>
+      <ul class="exp-bullets">
+        <li>Led 0→1 design of SEL system (Feel Check, Stickers, Take a Break) — shipped to 417 students and 120 tutors across 4 cohorts → <strong>73.1% of teachers observed improved student readiness to learn</strong></li>
+        <li>Redesigned core tutoring platform UX (Homepage &amp; Chapter View) for 200k+ users, improving information architecture, navigation, and accessibility</li>
+        <li>Conducted usability testing and iterative prototyping to design low-stakes assessment experiences, reducing test anxiety and improving completion rates</li>
+        <li>Designed goal-setting user flows and interaction patterns, aligning short-term actions with long-term learning outcomes</li>
+        <li>Collaborated with product managers, engineers, and stakeholders to ship scalable design solutions across growth and platform tracks</li>
+      </ul>
     </div>
 
     <div class="exp-item">
@@ -360,36 +212,14 @@
         <p class="exp-role">Product Designer I <span class="exp-sep">·</span> <span class="exp-company">Cuemath</span></p>
         <p class="exp-dates">Apr 2022 – Mar 2025</p>
       </div>
-      <div class="exp-projects">
-        <div class="exp-project">
-          <span class="exp-project-name">Trial Experience Redesign</span>
-          <span class="exp-project-desc">Mapped and redesigned the full trial user journey using data analysis and A/B testing; increased trial-to-paid conversion by <strong>9.6%</strong>.</span>
-        </div>
-        <div class="exp-project">
-          <span class="exp-project-name">CueTutor License</span>
-          <span class="exp-project-desc">New license system with tutor-level trial allocation preferences; reduced scheduled trial cancellations by <strong>12%</strong>; shipped cross-functionally with PMs and engineering.</span>
-        </div>
-        <div class="exp-project">
-          <span class="exp-project-name">CNA Flow</span>
-          <span class="exp-project-desc">Data-driven sign-up funnel redesign; introduced needs-capture to improve lead quality; boosted QL-to-trial by <strong>8%</strong> and QL-to-paid by <strong>4%</strong>.</span>
-        </div>
-        <div class="exp-project">
-          <span class="exp-project-name">Teacher Recruitment</span>
-          <span class="exp-project-desc">Led UX for the full tutor onboarding flow from application through first class; partnered with ops and recruitment stakeholders.</span>
-        </div>
-        <div class="exp-project">
-          <span class="exp-project-name">Performance Marketing</span>
-          <span class="exp-project-desc">Conversion-focused landing pages iterated using data and growth team feedback.</span>
-        </div>
-        <div class="exp-project">
-          <span class="exp-project-name">Admin Tools</span>
-          <span class="exp-project-desc">Internal tooling for curriculum ops and support; validated through usability testing with internal users.</span>
-        </div>
-        <div class="exp-project">
-          <span class="exp-project-name">Student Transfer System</span>
-          <span class="exp-project-desc">Bulk transfer feature that reduced churn caused by teacher transitions.</span>
-        </div>
-      </div>
+      <p class="exp-focus">Focused on growth design, user journeys, and conversion rate optimization (CRO).</p>
+      <ul class="exp-bullets">
+        <li>Redesigned end-to-end trial user journey using A/B testing, funnel analysis, and user behavior insights → <strong>+9.6% trial-to-paid conversion</strong></li>
+        <li>Designed tutor allocation system with preference-based scheduling → <strong>40% reduction in scheduled trial cancellations</strong></li>
+        <li>Improved sign-up funnel UX (Customer Needs Assessment flow) → <strong>+8% Qualified Lead to trial conversion</strong></li>
+        <li>Conducted usability testing and user research to optimize internal tools for operations and curriculum teams</li>
+        <li>Partnered with cross-functional teams to deliver data-driven design improvements across acquisition and retention flows</li>
+      </ul>
     </div>
 
     <div class="exp-item">
@@ -397,12 +227,9 @@
         <p class="exp-role">Associate Game Designer <span class="exp-sep">·</span> <span class="exp-company">Cuemath</span></p>
         <p class="exp-dates">May 2021 – Mar 2022</p>
       </div>
-      <div class="exp-projects">
-        <div class="exp-project exp-project--full">
-          <span class="exp-project-name"></span>
-          <span class="exp-project-desc">Built interactive games embedding computational thinking into coding lessons; drove gamification of Cuemath's v3 Math curriculum in collaboration with curriculum and engineering teams.</span>
-        </div>
-      </div>
+      <ul class="exp-bullets">
+        <li>Designed gamified user experiences and interaction patterns to improve engagement and retention in Cuemath's coding curriculum</li>
+      </ul>
     </div>
 
     <div class="exp-item">
@@ -410,12 +237,9 @@
         <p class="exp-role">Gamified Curriculum Designer <span class="exp-sep">·</span> <span class="exp-company">Mastree (Unacademy)</span></p>
         <p class="exp-dates">Nov 2020 – Apr 2021</p>
       </div>
-      <div class="exp-projects">
-        <div class="exp-project exp-project--full">
-          <span class="exp-project-name"></span>
-          <span class="exp-project-desc">Crafted interactive math lessons and gamified content for <em>Inspirational Maths</em> — India's first skill-based K–12 math program.</span>
-        </div>
-      </div>
+      <ul class="exp-bullets">
+        <li>Created interactive learning experiences using gamification frameworks and user-centered design principles for K–12 learners</li>
+      </ul>
     </div>
 
     <div class="exp-item">
@@ -423,12 +247,10 @@
         <p class="exp-role">Project Associate, Design <span class="exp-sep">·</span> <span class="exp-company">IIT Kanpur</span></p>
         <p class="exp-dates">Apr 2017 – Jun 2018</p>
       </div>
-      <div class="exp-projects">
-        <div class="exp-project exp-project--full">
-          <span class="exp-project-name"></span>
-          <span class="exp-project-desc">Led design and development of digital math games for primary school children in MP government schools; contributed to physical product design projects.</span>
-        </div>
-      </div>
+      <ul class="exp-bullets">
+        <li>Conducted design research and usability testing to develop digital learning tools for government schools in Madhya Pradesh</li>
+        <li>Designed accessible, age-appropriate interfaces for primary school students</li>
+      </ul>
     </div>
 
   </div>
@@ -437,30 +259,65 @@
 
   <!-- Skills -->
   <p class="resume-section-label">Skills</p>
-  <div class="tag-grid">
-    <span class="tag">Interaction Design</span>
-    <span class="tag">UX Research</span>
-    <span class="tag">User Journeys</span>
-    <span class="tag">Usability Testing</span>
-    <span class="tag">Information Architecture</span>
-    <span class="tag">Design Systems</span>
-    <span class="tag">A/B Testing</span>
-    <span class="tag">Funnel Optimisation</span>
-    <span class="tag">Wireframing</span>
-    <span class="tag">Prototyping</span>
-    <span class="tag">UI Design</span>
-    <span class="tag">Design Thinking</span>
-    <span class="tag">Gamification</span>
+  <div class="skills-categories">
+    <div class="skills-cat">
+      <span class="skills-cat-label">UX &amp; Product Design</span>
+      <div class="tag-grid">
+        <span class="tag">UX Design</span>
+        <span class="tag">Product Design</span>
+        <span class="tag">Interaction Design</span>
+        <span class="tag">Information Architecture</span>
+        <span class="tag">Wireframing</span>
+        <span class="tag">Prototyping</span>
+        <span class="tag">Design Systems</span>
+      </div>
+    </div>
+    <div class="skills-cat">
+      <span class="skills-cat-label">User Research &amp; Testing</span>
+      <div class="tag-grid">
+        <span class="tag">User Research</span>
+        <span class="tag">Usability Testing</span>
+        <span class="tag">User Interviews</span>
+        <span class="tag">Journey Mapping</span>
+        <span class="tag">Persona Creation</span>
+      </div>
+    </div>
+    <div class="skills-cat">
+      <span class="skills-cat-label">Growth &amp; Data</span>
+      <div class="tag-grid">
+        <span class="tag">A/B Testing</span>
+        <span class="tag">Funnel Analysis</span>
+        <span class="tag">Conversion Rate Optimisation</span>
+        <span class="tag">Data-Driven Design</span>
+      </div>
+    </div>
+    <div class="skills-cat">
+      <span class="skills-cat-label">Strategy &amp; Collaboration</span>
+      <div class="tag-grid">
+        <span class="tag">Systems Thinking</span>
+        <span class="tag">0→1 Product Design</span>
+        <span class="tag">Cross-functional Collaboration</span>
+        <span class="tag">Stakeholder Management</span>
+      </div>
+    </div>
+    <div class="skills-cat">
+      <span class="skills-cat-label">Accessibility</span>
+      <div class="tag-grid">
+        <span class="tag">Inclusive Design</span>
+        <span class="tag">WCAG Principles</span>
+      </div>
+    </div>
   </div>
 
-  <div style="height: 20px;"></div>
+  <div class="resume-divider"></div>
 
+  <!-- Tools -->
   <p class="resume-section-label">Tools</p>
   <div class="tag-grid">
     <span class="tag-tool">Figma</span>
-    <span class="tag-tool">Notion</span>
-    <span class="tag-tool">Mixpanel</span>
     <span class="tag-tool">Miro</span>
+    <span class="tag-tool">Mixpanel</span>
+    <span class="tag-tool">Notion</span>
     <span class="tag-tool">Slack</span>
   </div>
 
@@ -471,8 +328,8 @@
   <div class="edu-list">
     <div class="edu-item">
       <div class="edu-left">
-        <p class="edu-institution">National Institute of Design (NID)</p>
-        <p class="edu-degree">M.Des. in Industrial Design</p>
+        <p class="edu-institution">National Institute of Design (NID), Gandhinagar</p>
+        <p class="edu-degree">M.Des. in Industrial Design — Game &amp; Interaction Design</p>
       </div>
       <p class="edu-dates">2018 – 2021</p>
     </div>
@@ -486,10 +343,10 @@
   </div>
 
   <!-- Footer -->
-  <div class="resume-footer" data-html2canvas-ignore>
+  <div class="resume-footer">
     <span class="resume-footer-note">Last updated April 2026 · <a href="https://claude.ai/code" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;">Built with Claude Code ↗</a></span>
     <div class="resume-footer-links">
-      <a href="https://aasifanwar.vercel.app">← Portfolio</a>
+      <a href="../index.html">← Portfolio</a>
       <a href="mailto:aasif.nid@gmail.com">aasif.nid@gmail.com</a>
       <a href="https://www.linkedin.com/in/aasif-nid/" target="_blank" rel="noopener">LinkedIn ↗</a>
     </div>

@@ -90,6 +90,15 @@
   </div>
 </nav>
 
+<nav class="cs-section-nav" aria-label="Case study sections">
+  <a href="#problem">Situation</a>
+  <a href="#discovery">Task</a>
+  <a href="#decisions">Action</a>
+  <a href="#build">Solution</a>
+  <a href="#outcomes">Result</a>
+  <a href="#reflection">Reflection</a>
+</nav>
+
 <!-- ══════ COVER ══════ -->
 <div class="cover">
   <p class="cover-eyebrow">Product Design · 2024</p>
@@ -176,7 +185,7 @@
   <div class="divider"></div>
 
   <!-- ══ 01 — THE PROBLEM ══ -->
-  <div class="section-head">
+  <div class="section-head" id="problem">
     <span class="section-num">01</span>
     <span class="section-label">The Problem</span>
   </div>
@@ -203,10 +212,8 @@
     </div>
   </div>
 
-  <div class="divider-gold"></div>
-
   <!-- ══ 02 — DISCOVERY ══ -->
-  <div class="section-head">
+  <div class="section-head" id="discovery">
     <span class="section-num">02</span>
     <span class="section-label">Discovery</span>
   </div>
@@ -227,7 +234,7 @@
   <div class="divider"></div>
 
   <!-- ══ 03 — KEY DECISIONS ══ -->
-  <div class="section-head">
+  <div class="section-head" id="decisions">
     <span class="section-num">03</span>
     <span class="section-label">Key Decisions</span>
   </div>
@@ -270,7 +277,7 @@
   <div class="divider"></div>
 
   <!-- ══ 04 — THE BUILD ══ -->
-  <div class="section-head">
+  <div class="section-head" id="build">
     <span class="section-num">04</span>
     <span class="section-label">The Build</span>
   </div>
@@ -298,7 +305,7 @@
   <div class="divider"></div>
 
   <!-- ══ 05 — OUTCOMES ══ -->
-  <div class="section-head">
+  <div class="section-head" id="outcomes">
     <span class="section-num">05</span>
     <span class="section-label">Outcomes</span>
   </div>
@@ -334,7 +341,7 @@
   <div class="divider"></div>
 
   <!-- ══ 06 — REFLECTION ══ -->
-  <div class="section-head">
+  <div class="section-head" id="reflection">
     <span class="section-num">06</span>
     <span class="section-label">Reflection</span>
   </div>
@@ -359,8 +366,6 @@
 
   </div>
 
-  <div class="divider-gold"></div>
-
 </div>
 
 <!-- ══════ FOOTER ══════ -->
@@ -368,6 +373,46 @@
   <span class="footer-name">Aasif Anwar</span>
   <a href="../../index.html" class="footer-link">← Back to portfolio</a>
 </div>
+
+
+<script>
+  /* ── Scroll animations ── */
+  (function () {
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('[data-animate]').forEach(function (el) {
+      observer.observe(el);
+    });
+  })();
+
+  /* ── Section nav active state ── */
+  (function () {
+    var navLinks = document.querySelectorAll('.cs-section-nav a');
+    var sectionEls = [];
+    navLinks.forEach(function(link) {
+      var id = link.getAttribute('href').replace('#','');
+      var el = document.getElementById(id);
+      if (el) sectionEls.push(el);
+    });
+    if (!sectionEls.length) return;
+    var navObserver = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          navLinks.forEach(function(link) {
+            link.classList.toggle('active', link.getAttribute('href') === '#' + entry.target.id);
+          });
+        }
+      });
+    }, { rootMargin: '-40% 0px -55% 0px', threshold: 0 });
+    sectionEls.forEach(function(el) { navObserver.observe(el); });
+  })();
+</script>
 
 </body>
 </html>
