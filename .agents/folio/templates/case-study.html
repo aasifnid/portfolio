@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{{PROJECT_TITLE}} — Aasif Anwar</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,400&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../assets/tokens.css">
+<link rel="stylesheet" href="../../assets/style.css">
+<style>
+  /* Page-specific overrides go here */
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════
+     COVER
+     ═══════════════════════════════════════════ -->
+<div class="cover">
+  <p class="cover-eyebrow">{{YEAR}} · {{ROLE_LABEL}} · Cuemath</p>
+  <h1>{{PROJECT_TITLE}}</h1>
+  <p class="lede">{{ONE_LINE_PROBLEM_STATEMENT}}</p>
+
+  <div class="cover-meta">
+    <div class="cover-meta-item">
+      <span class="cover-meta-label">My role</span>
+      <span class="cover-meta-value">{{ROLE_SHORT}}</span>
+    </div>
+    <div class="cover-meta-item">
+      <span class="cover-meta-label">Platform</span>
+      <span class="cover-meta-value">{{PLATFORM}}</span>
+    </div>
+    <div class="cover-meta-item">
+      <span class="cover-meta-label">Timeline</span>
+      <span class="cover-meta-value">{{TIMELINE}}</span>
+    </div>
+    <div class="cover-meta-item">
+      <span class="cover-meta-label">Outcome</span>
+      <span class="cover-meta-value">{{OUTCOME_SHORT}}</span>
+    </div>
+  </div>
+
+  <!-- Hero image — replace placeholder with the strongest final design screen -->
+  <div class="hero">
+    <!-- INSERT: Hero screen — best-looking final design, full width -->
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     OVERVIEW
+     ═══════════════════════════════════════════ -->
+<div class="page">
+  <div class="overview">
+    <div class="overview-item">
+      <p class="overview-item-label">The problem</p>
+      <p class="overview-item-value">{{PROBLEM_SUMMARY_SHORT}}</p>
+    </div>
+    <div class="overview-item">
+      <p class="overview-item-label">My role</p>
+      <p class="overview-item-value">{{ROLE_SHORT}}</p>
+      <p class="overview-item-sub">{{TEAM_CONTEXT}}</p>
+    </div>
+    <div class="overview-item">
+      <p class="overview-item-label">Outcome</p>
+      <p class="overview-item-value">{{OUTCOME_SHORT}}</p>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- ═══════════════════════════════════════════
+       01 — CONTEXT & PROBLEM
+       ═══════════════════════════════════════════ -->
+  <div class="section-head">
+    <span class="section-num">01</span>
+    <span class="section-label">The Problem</span>
+  </div>
+  <h1 class="section-title">{{PROBLEM_SECTION_TITLE}}</h1>
+
+  <p class="large">{{PROBLEM_OPENING_PARAGRAPH}}</p>
+
+  <div class="narrative">
+    <p>{{CONTEXT_PARAGRAPH}}</p>
+    <p>{{PROBLEM_DETAIL_PARAGRAPH}}</p>
+  </div>
+
+  <!-- Supporting data point or observation (optional — delete if not applicable) -->
+  <div class="highlight">
+    <p><strong>{{DATA_POINT_LABEL}}</strong> — {{DATA_POINT_TEXT}}</p>
+  </div>
+
+  <div class="divider-gold"></div>
+
+  <!-- ═══════════════════════════════════════════
+       02 — MY ROLE
+       ═══════════════════════════════════════════ -->
+  <div class="section-head">
+    <span class="section-num">02</span>
+    <span class="section-label">My Role</span>
+  </div>
+  <h2 style="margin-top: 8px;">What I owned</h2>
+
+  <p>{{ROLE_FULL_PARAGRAPH}}</p>
+  <p class="large" style="color: var(--neutral-700); margin-top: 8px;">{{COLLABORATION_CONTEXT}}</p>
+
+  <div class="divider"></div>
+
+  <!-- ═══════════════════════════════════════════
+       03 — RESEARCH & DISCOVERY
+       ═══════════════════════════════════════════ -->
+  <div class="section-head">
+    <span class="section-num">03</span>
+    <span class="section-label">Research & Discovery</span>
+  </div>
+  <h1 class="section-title">{{DISCOVERY_SECTION_TITLE}}</h1>
+
+  <p>{{RESEARCH_METHODS_PARAGRAPH}}</p>
+
+  <!-- Use insight-callout when 2–3 distinct insights; use pull quote for single key insight -->
+
+  <!-- Option A: Single key insight (pull quote) -->
+  <blockquote>"{{KEY_INSIGHT_QUOTE}}"</blockquote>
+  <p>{{INSIGHT_CONSEQUENCE_PARAGRAPH}}</p>
+
+  <!-- Option B: Multiple insights (numbered callouts) — swap in when needed
+  <div class="insight-callout">
+    <span class="insight-number">01</span>
+    <div><strong>Insight headline</strong><p>What this means for the design direction.</p></div>
+  </div>
+  <div class="insight-callout">
+    <span class="insight-number">02</span>
+    <div><strong>Insight headline</strong><p>What this means for the design direction.</p></div>
+  </div>
+  -->
+
+  <!-- Research artifacts -->
+  <div class="screen-grid">
+    <div>
+      <!-- INSERT: Research artifact (affinity map, interview note, analytics screenshot) -->
+      <div class="screen-placeholder-sm"></div>
+      <p class="caption">{{PROCESS_IMAGE_1_CAPTION}}</p>
+    </div>
+    <div>
+      <!-- INSERT: Research artifact or insight visualisation -->
+      <div class="screen-placeholder-sm"></div>
+      <p class="caption">{{PROCESS_IMAGE_2_CAPTION}}</p>
+    </div>
+  </div>
+
+  <div class="divider-gold"></div>
+
+  <!-- ═══════════════════════════════════════════
+       04 — THE DECISION
+       ═══════════════════════════════════════════ -->
+  <div class="section-head">
+    <span class="section-num">04</span>
+    <span class="section-label">The Decision</span>
+  </div>
+  <h1 class="section-title">{{DECISION_SECTION_TITLE}}</h1>
+
+  <p>{{DECISION_CONTEXT_PARAGRAPH}}</p>
+
+  <!-- Decision comparison — use when 2+ real alternatives were considered -->
+  <div class="decision-grid">
+    <div class="decision-card rejected">
+      <span class="decision-label">Considered</span>
+      <strong>{{OPTION_A_NAME}}</strong>
+      <p>{{OPTION_A_DESCRIPTION}} — ruled out because {{OPTION_A_REJECTION_REASON}}.</p>
+    </div>
+    <div class="decision-card chosen">
+      <span class="decision-label">Chosen</span>
+      <strong>{{OPTION_B_NAME}}</strong>
+      <p>{{OPTION_B_DESCRIPTION}}. Trade-off: {{TRADE_OFF}}.</p>
+    </div>
+  </div>
+
+  <div class="narrative">
+    <p>{{DECISION_REASONING_PARAGRAPH}}</p>
+    <p>{{TRADE_OFF_PARAGRAPH}}</p>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- ═══════════════════════════════════════════
+       05 — THE SOLUTION
+       ═══════════════════════════════════════════ -->
+  <div class="section-head">
+    <span class="section-num">05</span>
+    <span class="section-label">The Solution</span>
+  </div>
+  <h1 class="section-title">{{SOLUTION_SECTION_TITLE}}</h1>
+
+  <p>{{SOLUTION_INTRO_PARAGRAPH}}</p>
+
+  <!-- Featured screen 1 — most important moment in the flow -->
+  <div class="screen-featured">
+    <!-- INSERT: Primary screen — the most important moment in the flow -->
+    <div class="screen-placeholder"></div>
+    <p class="caption">{{FEATURED_SCREEN_1_CAPTION}}</p>
+  </div>
+
+  <p>{{SOLUTION_EXPLANATION_PARAGRAPH}}</p>
+
+  <!-- Process / key screens grid -->
+  <div class="screen-grid">
+    <div>
+      <!-- INSERT: Key screen or state -->
+      <div class="screen-placeholder-sm"></div>
+      <p class="caption">{{SCREEN_GRID_1_CAPTION}}</p>
+    </div>
+    <div>
+      <!-- INSERT: Key screen or state (edge case, error state, or secondary moment) -->
+      <div class="screen-placeholder-sm"></div>
+      <p class="caption">{{SCREEN_GRID_2_CAPTION}}</p>
+    </div>
+  </div>
+
+  <!-- Featured screen 2 — edge case or key secondary moment -->
+  <div class="screen-featured">
+    <!-- INSERT: Edge case, empty state, or important secondary screen -->
+    <div class="screen-placeholder"></div>
+    <p class="caption">{{FEATURED_SCREEN_2_CAPTION}}</p>
+  </div>
+
+  <div class="divider-gold"></div>
+
+  <!-- ═══════════════════════════════════════════
+       06 — OUTCOME
+       ═══════════════════════════════════════════ -->
+  <div class="section-head">
+    <span class="section-num">06</span>
+    <span class="section-label">Outcome</span>
+  </div>
+  <h1 class="section-title">{{OUTCOME_SECTION_TITLE}}</h1>
+
+  <p class="large">{{OUTCOME_OPENING_PARAGRAPH}}</p>
+
+  <!-- Stats grid — use when numbers exist; delete if qualitative only -->
+  <div class="outcome-stats">
+    <div class="stat featured">
+      <p class="stat-number">{{STAT_1_NUMBER}}</p>
+      <p class="stat-label">{{STAT_1_LABEL}}</p>
+    </div>
+    <div class="stat">
+      <p class="stat-number">{{STAT_2_NUMBER}}</p>
+      <p class="stat-label">{{STAT_2_LABEL}}</p>
+    </div>
+  </div>
+
+  <p>{{OUTCOME_DETAIL_PARAGRAPH}}</p>
+
+  <div class="divider"></div>
+
+  <!-- ═══════════════════════════════════════════
+       07 — REFLECTION
+       ═══════════════════════════════════════════ -->
+  <div class="section-head">
+    <span class="section-num">07</span>
+    <span class="section-label">Reflection</span>
+  </div>
+  <h2 style="margin-top: 16px;">What I'd do differently</h2>
+
+  <p>{{REFLECTION_PARAGRAPH}}</p>
+
+  <div class="divider-gold"></div>
+
+  <p style="margin-top: 8px;">
+    <a href="/" class="footer-link">← Back to portfolio</a>
+  </p>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     FOOTER
+     ═══════════════════════════════════════════ -->
+<div class="footer">
+  <span class="footer-name">Aasif Anwar</span>
+  <a href="https://aasifanwar.vercel.app" class="footer-link">aasifanwar.vercel.app</a>
+</div>
+
+</body>
+</html>
