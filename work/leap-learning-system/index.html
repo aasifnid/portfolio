@@ -64,6 +64,8 @@
       <span class="cover-meta-value">One chapter architecture replacing multiple competing structures</span>
     </div>
   </div>
+
+  <a href="https://www.figma.com/design/YWYRU37PmSUchCStgCX96u/Leap-Revisions--Apr--25---Mar--26-?node-id=46InfDeii4Q97PkhzD12PL" target="_blank" rel="noopener" class="figma-link">View full designs in Figma →</a>
 </div>
 
 <div class="page">
@@ -110,15 +112,30 @@
 
   <p>We explored different progressions for surfacing this information, but this flow (goal type → grade/curriculum → chapters → timeline) felt most sensible based on patterns we observed with tutors. We considered allowing tutors to upload school curriculums and auto-surface chapters, but de-scoped it due to tech and timeline constraints.</p>
 
+  <div class="img-placeholder">
+    <span class="img-placeholder-tag">Figma</span>
+    <span class="img-placeholder-desc">Goal creation flow — three goal types (School Success, Test Prep, Enrichment) and the guided progression</span>
+  </div>
+
   <h2>What made the chapter system hard?</h2>
 
   <p>LEAP had 15+ different node and sheet types — Learn, Practice, Smart Practice, Video, Challenge Arena, Test, Puzzle, Recap, Custom Test, Project, Extra Practice, Download, Activity, Subjective, and more. Each subject had categorized them differently in the old system. We had to create one unified three-level hierarchy (Chapter → Block → Node) without breaking the existing system during migration.</p>
 
   <p>I worked closely with engineers to understand the data constraints. We couldn't deprecate existing structures; we had to accommodate them. Two block types emerged: Lessons (mandatory, count toward progress) and Resources (optional enrichment, don't count). Every sheet type fit into one of these categories. Nodes within each block had consistent properties — states (locked, unlocked, in-progress, completed), conditions (mandatory/optional), locations (in-class/anywhere). This unified structure let us handle new concepts like Competition Arena and Puzzles as resource blocks without fragmenting the system.</p>
 
+  <div class="img-placeholder">
+    <span class="img-placeholder-tag">System diagram</span>
+    <span class="img-placeholder-desc">Three-level hierarchy — Chapter, Block (Lessons vs Resources), and Node types with properties and states</span>
+  </div>
+
   <h2>Homepage priorities — what came first?</h2>
 
   <p>I surfaced homework at the top — it's critical for learning progress and ensures concept absorption. It was buried before; now it's the first thing students see. Below homework, I added recent chapters as quick navigation for students with multiple goals; they can jump back to ongoing content without scrolling or recalling which goal they were on. The goals section below shows the full picture — progress, breakdown of chapters/tests/resources.</p>
+
+  <div class="img-placeholder">
+    <span class="img-placeholder-tag">Screen</span>
+    <span class="img-placeholder-desc">Learning homepage — homework queue on top, recent chapters for navigation, goals section below</span>
+  </div>
 
   <h2>Key decisions that shaped the system</h2>
 
