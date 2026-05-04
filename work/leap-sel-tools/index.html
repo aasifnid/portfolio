@@ -12,24 +12,57 @@
 <noscript><style>[data-animate]{opacity:1!important;transform:none!important}</style></noscript>
 <style>
 
-  .cover-meta { display: block; border-top: 1px solid var(--neutral-300); padding-top: 28px; margin-top: 4px; }
-  .cover-meta-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; }
-  .cover-meta-grid + .cover-meta-grid { border-top: 1px solid var(--neutral-300); margin-top: 16px; padding-top: 16px; }
-  .cover-meta-cell { display: flex; flex-direction: column; gap: 8px; padding-right: 32px; }
+  /* Cover meta */
+  .cover-meta { border-top: 1px solid var(--neutral-300); padding-top: 28px; margin-top: 24px; }
+  .cover-meta-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0; }
+  .cover-meta-grid + .cover-meta-grid { border-top: 1px solid var(--neutral-300); margin-top: 20px; padding-top: 20px; }
+  .cover-meta-cell { display: flex; flex-direction: column; gap: 6px; padding-right: 32px; }
   .cover-meta-label { font-family: var(--font-mono); font-size: 10px; font-weight: 600; letter-spacing: 0.10em; text-transform: uppercase; color: var(--gold-700); }
-  .cover-meta-desc { font-size: 15px; line-height: 1.65; color: var(--neutral-700); font-weight: 400; margin-top: 4px; }
-  .cover-meta-desc strong { font-size: 15px; font-weight: 600; color: var(--neutral-1000); }
+  .cover-meta-desc { font-size: 15px; line-height: 1.6; color: var(--neutral-700); }
+  .cover-meta-desc strong { font-weight: 600; color: var(--neutral-1000); }
 
-  .phase-table { margin: 24px 0 32px; border: 1px solid var(--neutral-300); border-radius: 4px; overflow: hidden; }
-  .phase-row { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; border-bottom: 1px solid var(--neutral-300); }
-  .phase-row:last-child { border-bottom: none; }
-  .phase-row.phase-header span { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; color: var(--neutral-700); background: var(--neutral-200); padding: 10px 16px; }
-  .phase-row span { font-size: 14px; line-height: 20px; color: var(--neutral-800); padding: 12px 16px; border-right: 1px solid var(--neutral-300); }
-  .phase-row span:last-child { border-right: none; }
+  /* Decisions */
+  .decisions-list { display: flex; flex-direction: column; gap: 32px; margin: 40px 0; }
+  .decision-item { padding-left: 24px; border-left: 2px solid var(--gold-400); }
+  .decision-item-num { font-family: var(--font-mono); font-size: 10px; font-weight: 600; letter-spacing: 0.10em; text-transform: uppercase; color: var(--gold-700); margin-bottom: 6px; }
+  .decision-item-title { font-size: 18px; font-weight: 600; color: var(--neutral-1000); line-height: 1.3; margin-bottom: 12px; }
+  .decision-item p { margin-bottom: 10px; }
+  .decision-item p:last-child { margin-bottom: 0; }
 
+  /* Stats grid */
+  .stats-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; border: 1px solid var(--neutral-300); border-radius: 4px; overflow: hidden; margin: 32px 0; }
+  .stat-card { padding: 28px 24px; border-right: 1px solid var(--neutral-300); border-bottom: 1px solid var(--neutral-300); }
+  .stat-card:nth-child(3n) { border-right: none; }
+  .stat-card:nth-last-child(-n+3) { border-bottom: none; }
+  .stat-number { font-family: var(--font-display); font-size: clamp(36px, 4.5vw, 52px); font-weight: 700; color: var(--neutral-1000); line-height: 1; letter-spacing: -0.03em; margin-bottom: 10px; }
+  .stat-label { font-size: 13px; line-height: 1.55; color: var(--neutral-700); }
+
+  /* Observation block */
+  .observation-block { background: var(--neutral-200); border-radius: 4px; padding: 24px 28px; margin: 32px 0; }
+  .observation-label { font-family: var(--font-mono); font-size: 10px; font-weight: 600; letter-spacing: 0.10em; text-transform: uppercase; color: var(--gold-700); margin-bottom: 18px; }
+  .observation-item { margin-bottom: 16px; font-size: 15px; line-height: 1.65; color: var(--neutral-800); }
+  .observation-item:last-of-type { margin-bottom: 0; }
+  .observation-source { font-size: 12px; color: var(--neutral-600); margin-top: 20px; padding-top: 16px; border-top: 1px solid var(--neutral-300); }
+
+  /* Data gap */
+  .data-gap { padding: 20px 24px; border-left: 2px solid var(--neutral-400); margin: 32px 0; }
+  .data-gap-label { font-family: var(--font-mono); font-size: 10px; font-weight: 600; letter-spacing: 0.10em; text-transform: uppercase; color: var(--neutral-600); margin-bottom: 8px; }
+
+  /* Image placeholder */
+  .img-placeholder { width: 100%; aspect-ratio: 16/9; background: var(--neutral-200); border: 1px dashed var(--neutral-400); border-radius: 4px; display: flex; flex-direction: column; align-items: center; justify-content: center; margin: 24px 0; gap: 8px; }
+  .img-placeholder-tag { font-family: var(--font-mono); font-size: 10px; font-weight: 600; letter-spacing: 0.10em; text-transform: uppercase; color: var(--gold-700); }
+  .img-placeholder-desc { font-size: 13px; color: var(--neutral-600); text-align: center; max-width: 320px; line-height: 1.5; }
+
+  /* Figma link row */
+  .design-file-row { display: flex; align-items: center; gap: 12px; border-top: 1px solid var(--neutral-300); margin-top: 20px; padding-top: 16px; }
+
+  /* Mobile */
   @media (max-width: 640px) {
     .cover-meta-grid { grid-template-columns: 1fr 1fr; }
-    .phase-row { grid-template-columns: 1fr 1fr; }
+    .stats-grid { grid-template-columns: 1fr 1fr; }
+    .stat-card:nth-child(3n) { border-right: 1px solid var(--neutral-300); }
+    .stat-card:nth-child(2n) { border-right: none; }
+    .stat-card:nth-last-child(-n+2) { border-bottom: none; }
   }
 
 </style>
@@ -77,7 +110,7 @@
     <div class="cover-meta-grid">
       <div class="cover-meta-cell">
         <span class="cover-meta-label">Learning Readiness</span>
-        <span class="cover-meta-desc"><strong>65.64%</strong> — tutors observed improved student readiness after regulation</span>
+        <span class="cover-meta-desc"><strong>65.64%</strong> — tutors observed improved readiness after regulation</span>
       </div>
       <div class="cover-meta-cell">
         <span class="cover-meta-label">Student Independence</span>
@@ -88,14 +121,13 @@
         <span class="cover-meta-desc"><strong>3.4 min avg</strong> — within the 5-min spec</span>
       </div>
     </div>
-    <div style="border-top: 1px solid var(--neutral-300); margin-top: 16px; padding-top: 14px; display: flex; align-items: center; gap: 12px;">
+    <div class="design-file-row">
       <span class="cover-meta-label" style="flex-shrink:0;">Design File</span>
       <a href="https://www.figma.com/design/YWYRU37PmSUchCStgCX96u/Leap-Revisions--Apr--25---Mar--26-?node-id=7489-1220&t=pK6d9SdtPfN8lDdl-1" target="_blank" rel="noopener" style="font-size:13px;color:var(--gold-700);text-decoration:none;font-weight:600;">View full flow in Figma →</a>
     </div>
   </div>
 </div>
 
-<!-- PAGE -->
 <div class="page">
 
   <!-- 01 CONTEXT -->
@@ -142,21 +174,6 @@
 
   <p>The first build had no background audio on regulation activities. The assumption: visual content — breathing animations, calm sequences — would carry the regulation moment. It didn't. Tutors observed students tapping through activities quickly without settling. The experience felt like a screen, not a transition. Audio wasn't decorative; it was structural. I added ambient audio before external rollout. Average regulation time moved to 1.9 minutes of engaged time — students staying with the activity, not just completing it.</p>
 
-  <div class="pivot-block">
-    <div class="pivot-block-label">What we tried first — and changed</div>
-    <div class="pivot-block-title">Regulation activities shipped without audio. One pilot observation changed that.</div>
-    <div class="pivot-before-after">
-      <div class="pivot-before">
-        <div class="pivot-state-label">Before</div>
-        <p>No background audio. Students tapped through quickly — the experience felt like a screen, not a settling moment.</p>
-      </div>
-      <div class="pivot-after">
-        <div class="pivot-state-label">After</div>
-        <p>Ambient audio added before external rollout. Avg regulation session: <strong>1.9 min</strong> — students engaged with content, not just completing it.</p>
-      </div>
-    </div>
-  </div>
-
   <h2>What "Do It Your Way" revealed about student autonomy.</h2>
 
   <p>Post-launch, "Do It Your Way" was the dominant first choice across grade levels — 289 selections in the Green zone for G5–8 alone, ahead of every named activity. Students weren't confused or avoiding structure. They were choosing self-direction. This reframed how I thought about the regulation menu: autonomy wasn't a fallback to offer when nothing else worked — it was what students reached for first.</p>
@@ -170,106 +187,53 @@
   <p class="section-title" data-animate>Four decisions that defined how Feel Check works.</p>
 
   <div class="decisions-list">
+
     <div class="decision-item">
       <p class="decision-item-num">Decision 01</p>
       <p class="decision-item-title">Tutor as observer, not director</p>
       <p>Every selection belongs to the student. The tutor sees the same screen in real time but cannot tap or control anything. I considered a fully private design — no tutor view at all — but for a student who is dysregulated, being left alone with something unfamiliar adds load. The tutor-student relationship at Cuemath runs deep. I kept the tutor present but removed their control. Student owns the selection. Tutor owns the exit.</p>
       <p>Post-launch, 89.3% of students chose their emotion without tutor prompting, even with live AV throughout.</p>
     </div>
-  </div>
 
-  <div class="screen-featured" style="margin-bottom:36px;">
-    <div class="dashboard-frame"><div class="dashboard-chrome"><span class="chrome-dot"></span><span class="chrome-dot"></span><span class="chrome-dot"></span><span class="chrome-label">leap.cuemath.com</span></div><img src="images/embedded-10-10d85ac1.jpg" alt="Feel Check — student view full-screen, tutor panel read-only" style="width:100%;border-radius:8px;display:block;"></div>
-    <p class="caption">The student sees the full-screen interface. The tutor sees the same view — read-only, no controls.</p>
-  </div>
+    <div class="img-placeholder">
+      <span class="img-placeholder-tag">Screen</span>
+      <span class="img-placeholder-desc">Student view — full-screen interface. Tutor panel — read-only, no controls.</span>
+    </div>
 
-  <div class="decisions-list">
     <div class="decision-item">
       <p class="decision-item-num">Decision 02</p>
       <p class="decision-item-title">The sequence mirrors how awareness builds</p>
       <p>Feel Check runs as four stages: Senses → Body → Heart → Mind. Senses is environmental grounding — a warm-up before anything internal is named. Each stage progressively narrows: Body informs Heart, Heart informs Mind.</p>
       <p>I explored multiple layouts — geometric grids, modals, full-screen flows. I chose the circular form so the Wheel of Awareness could become the interface itself, not a reference diagram placed beside it.</p>
     </div>
-  </div>
 
-  <div class="screen-grid" style="margin-bottom:36px;">
-    <div>
-      <div class="dashboard-frame"><div class="dashboard-chrome"><span class="chrome-dot"></span><span class="chrome-dot"></span><span class="chrome-dot"></span><span class="chrome-label">leap.cuemath.com</span></div><img src="images/embedded-2-54dc6e31.jpg" alt="Senses — environmental warm-up" style="width:100%;border-radius:8px;display:block;"></div>
-      <p class="caption">Step 1 — Senses. Environmental warm-up. No filtering consequence.</p>
-    </div>
-    <div>
-      <div class="dashboard-frame"><div class="dashboard-chrome"><span class="chrome-dot"></span><span class="chrome-dot"></span><span class="chrome-dot"></span><span class="chrome-label">leap.cuemath.com</span></div><img src="images/embedded-12-c5782253.jpg" alt="Heart — options filtered by Body state" style="width:100%;border-radius:8px;display:block;"></div>
-      <p class="caption">Step 3 — Heart. Emotional awareness. Options filtered by Body state.</p>
-    </div>
-    <div>
-      <div class="dashboard-frame"><div class="dashboard-chrome"><span class="chrome-dot"></span><span class="chrome-dot"></span><span class="chrome-dot"></span><span class="chrome-label">leap.cuemath.com</span></div><img src="images/embedded-4-4f23360f.jpg" alt="Mind — options filtered by Heart state" style="width:100%;border-radius:8px;display:block;"></div>
-      <p class="caption">Step 4 — Mind. Cognitive awareness. Options filtered by Heart state.</p>
-    </div>
-  </div>
-
-  <div class="decisions-list">
     <div class="decision-item">
       <p class="decision-item-num">Decision 03</p>
       <p class="decision-item-title">Two grade bands, not simplified versions</p>
       <p>The same UI runs for G3–4 and G5–8. What differs is the set of emotional options and regulation activities — not the visual design, vocabulary, or flow structure. Grade differentiation is itself an accessibility decision: the same emotional framework, made accessible to different developmental stages by adjusting what appears, not how it looks.</p>
       <p>G1–2 was ruled out — self-directed emotional identification wasn't developmentally accessible at that age. Not a simplification problem. Deferred, not dropped.</p>
     </div>
-  </div>
 
-  <div class="screen-grid" style="margin-bottom:36px;">
-    <div>
-      <div class="dashboard-frame"><div class="dashboard-chrome"><span class="chrome-dot"></span><span class="chrome-dot"></span><span class="chrome-dot"></span><span class="chrome-label">leap.cuemath.com</span></div><img src="images/embedded-5-9858022f.jpg" alt="G3-4 — grade-appropriate options" style="width:100%;border-radius:8px;display:block;"></div>
-      <p class="caption">G3–4 — same UI as G5–8, with grade-appropriate emotional options and regulation activities.</p>
-    </div>
-    <div>
-      <div class="dashboard-frame"><div class="dashboard-chrome"><span class="chrome-dot"></span><span class="chrome-dot"></span><span class="chrome-dot"></span><span class="chrome-label">leap.cuemath.com</span></div><img src="images/embedded-13-9ee31b09.jpg" alt="G5-8 — different emotional options, same structure" style="width:100%;border-radius:8px;display:block;"></div>
-      <p class="caption">G5–8 — same UI as G3–4, with a different set of emotional options and regulation activities.</p>
-    </div>
-  </div>
-
-  <div class="decisions-list">
     <div class="decision-item">
       <p class="decision-item-num">Decision 04</p>
       <p class="decision-item-title">"Unsure" as a first-class option</p>
       <p>At every stage — Body, Heart, Mind — students could select "Unsure." Fixed in the UI, always present. Not a skip button. When all three stages resolved to "Unsure," students were routed to a curated set of regulation activities. No dead end.</p>
       <p>Post-launch: 20–22% of students selected "Unsure" at body awareness — the hardest dimension to name. 264 sessions followed the full Unsure path. Every one resolved.</p>
     </div>
-  </div>
 
-  <div class="screen-featured" style="margin-bottom:36px;">
-    <div class="dashboard-frame"><div class="dashboard-chrome"><span class="chrome-dot"></span><span class="chrome-dot"></span><span class="chrome-dot"></span><span class="chrome-label">leap.cuemath.com</span></div><img src="images/embedded-11-12e01dee.jpg" alt="Body awareness — Unsure always present as a fixed option"></div>
-    <p class="caption">"Unsure" is fixed at every stage — always present, always first-class, not a fallback.</p>
-  </div>
-
-  <div class="screen-featured" style="margin-bottom:36px;">
-    <div class="dashboard-frame"><div class="dashboard-chrome"><span class="chrome-dot"></span><span class="chrome-dot"></span><span class="chrome-dot"></span><span class="chrome-label" style="display:flex;align-items:center"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" style="flex-shrink:0;margin-right:5px"><rect width="14" height="14" rx="3" fill="#7856FF"/><path d="M2.5 10.5V3.5L7 8l4.5-4.5v7" stroke="white" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Mixpanel</span></div><div class="dashboard-crop"><img src="images/embedded-8-61be7dab.png" alt="Unsure rate — 20.51% Body, 13.01% Heart, 9.96% Mind" style="width:100%;display:block;"></div></div>
-    <p class="caption">Unsure drops at every stage — 20.51% at Body, 13.01% at Heart, 9.96% at Mind. Naming body sensation first reduces uncertainty at every stage that follows.</p>
-  </div>
-
-  <div class="screen-featured" style="margin-bottom:36px;">
-    <div class="dashboard-frame"><div class="dashboard-chrome"><span class="chrome-dot"></span><span class="chrome-dot"></span><span class="chrome-dot"></span><span class="chrome-label" style="display:flex;align-items:center"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" style="flex-shrink:0;margin-right:5px"><rect width="14" height="14" rx="3" fill="#7856FF"/><path d="M2.5 10.5V3.5L7 8l4.5-4.5v7" stroke="white" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Mixpanel</span></div><div class="dashboard-crop"><img src="images/embedded-9-8a8f7e64.png" alt="264 Unsure-path sessions — every one resolved"></div></div>
-    <p class="caption">264 sessions followed the full Unsure path. Every one resolved — no dead ends.</p>
-  </div>
-
-  <div class="video-block">
-    <div class="video-block-label">Feel Check in a real session</div>
-    <div style="width:100%;aspect-ratio:16/9;border-radius:var(--r-lg);overflow:hidden;border:1px solid var(--neutral-300);box-shadow:var(--card-shadow);">
-      <iframe src="https://drive.google.com/file/d/188rCDk088eSHwR7nTR9ldS2lKrNkuION/preview" width="100%" height="100%" style="border:none;display:block;" allow="autoplay" allowfullscreen></iframe>
-    </div>
-    <p class="caption">Class session recording · Cohort 3 · Jan–Mar 2026</p>
   </div>
 
   <h2>What shipping to four cohorts revealed.</h2>
 
   <div class="observation-block">
-    <div class="observation-block-label">What class recordings showed — 25 sessions, Feb 2026</div>
+    <div class="observation-label">What class recordings showed — 25 sessions, Feb 2026</div>
     <div class="observation-item">
-      <p><strong>Activity names were the primary friction point, not the flow.</strong> "Sparkling", "Affirmation", and "Set Intention" caused visible hesitation — students asked tutors what they meant or skipped them entirely. The flow worked; the vocabulary didn't. I revised before external rollout: "Affirmation" → "Get Ready!", "Set Intention" → "Set a Goal!"</p>
+      <strong>Activity names were the primary friction point, not the flow.</strong> "Sparkling", "Affirmation", and "Set Intention" caused visible hesitation — students asked tutors what they meant or skipped them entirely. The flow worked; the vocabulary didn't. I revised before external rollout: "Affirmation" → "Get Ready!", "Set Intention" → "Set a Goal!"
     </div>
     <div class="observation-item">
-      <p><strong>Read-only activity options were mistaken for interactive ones.</strong> Multiple students tapped the regulation activity options repeatedly, expecting them to respond. The affordance wasn't clear — options were meant to be read and then actioned, not clicked. Logged as a UX fix for the next iteration.</p>
+      <strong>Read-only activity options were mistaken for interactive ones.</strong> Multiple students tapped the regulation activity options repeatedly, expecting them to respond. The affordance wasn't clear — options were meant to be read and then actioned, not clicked. Logged as a UX fix for the next iteration.
     </div>
-    <p class="observation-source">Class session recordings · 25 sessions · Feb 2026 · 2 tutors (Sapna Golani, Monika Agrawal) · Researcher-monitored by Aasif</p>
+    <p class="observation-source">25 sessions · Feb 2026 · 2 tutors (Sapna Golani, Monika Agrawal) · Researcher-monitored by Aasif</p>
   </div>
 
 
@@ -283,99 +247,43 @@
 
   <p>Feel Check was validated with 417 students and 120 tutors across four initial cohorts. The rollout continued beyond validation — 3,234 sessions logged across G3–4 and G5–8 since launch. All metrics below are since-launch aggregates.</p>
 
-  <div class="phase-table">
-    <div class="phase-row phase-header">
-      <span>Phase</span>
-      <span>Date</span>
-      <span>Tutors</span>
-      <span>Students</span>
-    </div>
-    <div class="phase-row">
-      <span>1 — In-house</span>
-      <span>30 Jan</span>
-      <span>7</span>
-      <span>14</span>
-    </div>
-    <div class="phase-row">
-      <span>2</span>
-      <span>24 Feb</span>
-      <span>42</span>
-      <span>249</span>
-    </div>
-    <div class="phase-row">
-      <span>3</span>
-      <span>10 Mar</span>
-      <span>62</span>
-      <span>102</span>
-    </div>
-    <div class="phase-row">
-      <span>4</span>
-      <span>31 Mar</span>
-      <span>9</span>
-      <span>46</span>
-    </div>
-  </div>
-
-  <div class="outcome-stats">
-    <div class="stat">
+  <div class="stats-grid">
+    <div class="stat-card">
       <p class="stat-number">65.64%</p>
       <p class="stat-label">Tutors observed improved student readiness after regulation — the direct answer to the problem Feel Check was built to solve.</p>
     </div>
-    <div class="stat">
+    <div class="stat-card">
       <p class="stat-number">89.3%</p>
       <p class="stat-label">Students chose their emotion without tutor prompting — the student-led design held in practice.</p>
     </div>
-    <div class="stat">
+    <div class="stat-card">
       <p class="stat-number">3.4 min</p>
       <p class="stat-label">Average check-in duration — from check-in to learning ready. Within the 5-min spec.</p>
     </div>
-    <div class="stat">
+    <div class="stat-card">
       <p class="stat-number">95.38%</p>
       <p class="stat-label">Tutor feedback submitted per Feel Check. 3s average. The form never interrupted the session.</p>
     </div>
-    <div class="stat">
+    <div class="stat-card">
       <p class="stat-number">1.9 min</p>
-      <p class="stat-label">Average time on regulation — students staying with the activity, not just completing it. Reattempt rate dropped from 21.7% to 13.16% — students choosing the right activity on the first try, more often.</p>
+      <p class="stat-label">Average time on regulation. Reattempt rate dropped from 21.7% to 13.16% — students choosing the right activity on the first try, more often.</p>
     </div>
-    <div class="stat">
+    <div class="stat-card">
       <p class="stat-number">1 in 5</p>
       <p class="stat-label">Students couldn't name their body state — the hardest of the four stages. Unsure wasn't a fallback; it was the honest answer.</p>
     </div>
   </div>
 
-  <h2>The check-in runs in under a minute — regulation is where the time goes.</h2>
+  <p>Zone distribution showed Green as dominant across both grade bands — most students arrived calm. But 52% of G3–4 sessions and 40% of G5–8 sessions weren't Green. Feel Check's real value was surfacing that share and doing something about it before instruction began.</p>
 
-  <div class="screen-grid">
-    <div>
-      <div class="dashboard-frame"><div class="dashboard-chrome"><span class="chrome-dot"></span><span class="chrome-dot"></span><span class="chrome-dot"></span><span class="chrome-label" style="display:flex;align-items:center"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" style="flex-shrink:0;margin-right:5px"><rect width="14" height="14" rx="3" fill="#7856FF"/><path d="M2.5 10.5V3.5L7 8l4.5-4.5v7" stroke="white" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Mixpanel</span></div><div class="dashboard-crop"><img src="images/embedded-15-dc7b3d35.png" alt="WOA 42s · Zone processing 7s"></div></div>
-      <p class="caption">WOA: 42s · Zone processing: 7s — the check-in stage runs in under a minute</p>
-    </div>
-    <div>
-      <div class="dashboard-frame"><div class="dashboard-chrome"><span class="chrome-dot"></span><span class="chrome-dot"></span><span class="chrome-dot"></span><span class="chrome-label" style="display:flex;align-items:center"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" style="flex-shrink:0;margin-right:5px"><rect width="14" height="14" rx="3" fill="#7856FF"/><path d="M2.5 10.5V3.5L7 8l4.5-4.5v7" stroke="white" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Mixpanel</span></div><div class="dashboard-crop"><img src="images/embedded-16-acf57942.png" alt="13s emotion selection · 1.9 min regulation"></div></div>
-      <p class="caption">13s to choose an emotion · 1.9 min on regulation (avg, inclusive of reattempts)</p>
-    </div>
+  <div class="img-placeholder">
+    <span class="img-placeholder-tag">Mixpanel</span>
+    <span class="img-placeholder-desc">Zone of Regulation distribution — G3–4 (907 sessions) and G5–8 (2,327 sessions) since launch</span>
   </div>
 
-  <h2>What tutors observed</h2>
-  <p>After each Feel Check, tutors rated what they could observe directly — student behaviour, not inferred emotional state.</p>
-
-  <div class="screen-featured">
-    <div class="dashboard-frame"><div class="dashboard-chrome"><span class="chrome-dot"></span><span class="chrome-dot"></span><span class="chrome-dot"></span><span class="chrome-label" style="display:flex;align-items:center"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" style="flex-shrink:0;margin-right:5px"><rect width="14" height="14" rx="3" fill="#7856FF"/><path d="M2.5 10.5V3.5L7 8l4.5-4.5v7" stroke="white" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Mixpanel</span></div><div class="dashboard-crop"><img src="images/embedded-17-979294d1.png" alt="Tutor feedback — 89.3% emotion independence, 65.64% regulation readiness"></div></div>
-    <p class="caption">Emotion selection (left) and regulation outcome (right). Tutors rated visible behaviour — not interpretation.</p>
-  </div>
-
-  <h2>Most students arrived calm — the ones who didn't were the point.</h2>
-
-  <div class="screen-featured">
-    <div class="dashboard-frame"><div class="dashboard-chrome"><span class="chrome-dot"></span><span class="chrome-dot"></span><span class="chrome-dot"></span><span class="chrome-label" style="display:flex;align-items:center"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" style="flex-shrink:0;margin-right:5px"><rect width="14" height="14" rx="3" fill="#7856FF"/><path d="M2.5 10.5V3.5L7 8l4.5-4.5v7" stroke="white" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Mixpanel</span></div><div class="dashboard-crop"><img src="images/embedded-18-4c4d27a6.png" alt="Zone distribution — G3-4 and G5-8 since launch"></div></div>
-    <p class="caption">Zone distribution — G3–4 (907 sessions) and G5–8 (2,327 sessions) since launch. Green dominant across both bands — most students arrived calm. But 52% of G3–4 sessions and 40% of G5–8 sessions weren't Green. Feel Check's real value was surfacing that share and doing something about it before instruction began.</p>
-  </div>
-
-  <div class="observation-block">
-    <div class="observation-block-label">What the data couldn't tell us</div>
-    <div class="observation-item">
-      <p>Tutor qualitative feedback wasn't systematically retained — access to internal channels was lost after my tenure at Cuemath. The larger gap: Feel Check was built on the premise that emotional regulation before sessions would, over time, improve academic performance. No metric was ever instrumented to prove that connection. Whether the product moved learning outcomes remains unmeasured.</p>
-    </div>
+  <div class="data-gap">
+    <p class="data-gap-label">What the data couldn't tell us</p>
+    <p>Feel Check was built on the premise that emotional regulation before sessions would, over time, improve academic performance. No metric was ever instrumented to prove that connection. Whether the product moved learning outcomes remains unmeasured.</p>
   </div>
 
 
@@ -426,23 +334,6 @@
       });
     }, { rootMargin: '-40% 0px -55% 0px', threshold: 0 });
     els.forEach(function(el) { obs.observe(el); });
-  })();
-
-  (function () {
-    var overlay = document.getElementById('lightbox-overlay');
-    var lbImg = document.getElementById('lightbox-img');
-    var lbClose = document.getElementById('lightbox-close');
-    function open(src, alt) { lbImg.src = src; lbImg.alt = alt || ''; overlay.classList.add('active'); document.body.style.overflow = 'hidden'; }
-    function close() { overlay.classList.remove('active'); document.body.style.overflow = ''; lbImg.src = ''; }
-    document.querySelectorAll('img').forEach(function(img) {
-      if (!img.src || img.src === window.location.href) return;
-      img.classList.add('zoomable');
-      img.addEventListener('click', function(e) { e.stopPropagation(); open(img.src, img.alt); });
-    });
-    overlay.addEventListener('click', close);
-    lbImg.addEventListener('click', function(e) { e.stopPropagation(); });
-    lbClose.addEventListener('click', function(e) { e.stopPropagation(); close(); });
-    document.addEventListener('keydown', function(e) { if (e.key === 'Escape') close(); });
   })();
 </script>
 </body>
