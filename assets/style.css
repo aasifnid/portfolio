@@ -30,9 +30,10 @@ body {
 .cover-eyebrow { font-family: var(--font-mono); font-size: 11px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold-700); margin-bottom: 28px; }
 .cover h1 { font-family: var(--font-display); font-size: clamp(40px, 6vw, 64px); line-height: 1.06; font-weight: 800; letter-spacing: -0.03em; color: var(--neutral-1000); margin-bottom: 20px; }
 .lede { font-family: var(--font-body); font-size: 19px; line-height: 1.7; color: var(--neutral-700); margin-bottom: 28px; font-weight: 400; }
-.cover-meta { display: flex; gap: 0; flex-wrap: wrap; border: 1px solid var(--neutral-300); border-radius: var(--r-md); overflow: hidden; margin-top: 8px; }
-.cover-meta-item { display: flex; flex-direction: column; gap: 6px; padding: 16px 24px; border-right: 1px solid var(--neutral-300); background: var(--neutral-200); }
-.cover-meta-item:last-child { border-right: none; }
+.cover-meta { display: grid; grid-template-columns: repeat(3, 1fr); border: 1px solid var(--neutral-300); border-radius: var(--r-md); overflow: hidden; margin-top: 8px; }
+.cover-meta-item { display: flex; flex-direction: column; gap: 6px; padding: 16px 24px; background: var(--neutral-200); border-right: 1px solid var(--neutral-300); border-bottom: 1px solid var(--neutral-300); }
+.cover-meta-item:nth-child(3n) { border-right: none; }
+.cover-meta-item:nth-last-child(-n+3) { border-bottom: none; }
 .cover-meta-label { font-family: var(--font-mono); font-size: 10px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold-700); }
 .cover-meta-value { font-size: 14px; font-weight: 600; color: var(--neutral-1000); }
 
@@ -532,7 +533,6 @@ blockquote { font-family: var(--font-display); font-size: clamp(20px, 3vw, 26px)
   p.large { font-size: 18px; line-height: 30px; }
   .decision-item { padding: 20px; }
   .section-num { font-size: 24px; }
-  .cover-meta { flex-direction: column; }
-  .cover-meta-item { border-right: none; border-bottom: 1px solid var(--neutral-300); }
-  .cover-meta-item:last-child { border-bottom: none; }
+  .cover-meta { grid-template-columns: 1fr; }
+  .cover-meta-item { border-right: none; }
 }
