@@ -48,6 +48,14 @@
   .data-gap { padding: 20px 24px; border-left: 2px solid var(--neutral-400); margin: 32px 0; }
   .data-gap-label { font-family: var(--font-mono); font-size: 10px; font-weight: 600; letter-spacing: 0.10em; text-transform: uppercase; color: var(--neutral-600); margin-bottom: 8px; }
 
+  /* Cohort rollout table */
+  .phase-table { margin: 24px 0 32px; border: 1px solid var(--neutral-300); border-radius: 4px; overflow: hidden; }
+  .phase-row { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; border-bottom: 1px solid var(--neutral-300); }
+  .phase-row:last-child { border-bottom: none; }
+  .phase-row.phase-header span { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; color: var(--neutral-700); background: var(--neutral-200); padding: 10px 16px; }
+  .phase-row span { font-size: 14px; line-height: 20px; color: var(--neutral-800); padding: 12px 16px; border-right: 1px solid var(--neutral-300); }
+  .phase-row span:last-child { border-right: none; }
+
   /* Image placeholder */
   .img-placeholder { width: 100%; aspect-ratio: 16/9; background: var(--neutral-200); border: 1px dashed var(--neutral-400); border-radius: 4px; display: flex; flex-direction: column; align-items: center; justify-content: center; margin: 24px 0; gap: 8px; }
   .img-placeholder-tag { font-family: var(--font-mono); font-size: 10px; font-weight: 600; letter-spacing: 0.10em; text-transform: uppercase; color: var(--gold-700); }
@@ -63,6 +71,7 @@
     .stat-card:nth-child(3n) { border-right: 1px solid var(--neutral-300); }
     .stat-card:nth-child(2n) { border-right: none; }
     .stat-card:nth-last-child(-n+2) { border-bottom: none; }
+    .phase-row { grid-template-columns: 1fr 1fr; }
   }
 
 </style>
@@ -246,6 +255,39 @@
   <p class="section-title" data-animate>What 120 tutors and 417 students showed across four cohorts — and what the broader rollout confirmed.</p>
 
   <p>Feel Check was validated with 417 students and 120 tutors across four initial cohorts. The rollout continued beyond validation — 3,234 sessions logged across G3–4 and G5–8 since launch. All metrics below are since-launch aggregates.</p>
+
+  <div class="phase-table">
+    <div class="phase-row phase-header">
+      <span>Phase</span>
+      <span>Date</span>
+      <span>Tutors</span>
+      <span>Students</span>
+    </div>
+    <div class="phase-row">
+      <span>1 — In-house</span>
+      <span>30 Jan</span>
+      <span>7</span>
+      <span>14</span>
+    </div>
+    <div class="phase-row">
+      <span>2</span>
+      <span>24 Feb</span>
+      <span>42</span>
+      <span>249</span>
+    </div>
+    <div class="phase-row">
+      <span>3</span>
+      <span>10 Mar</span>
+      <span>62</span>
+      <span>102</span>
+    </div>
+    <div class="phase-row">
+      <span>4</span>
+      <span>31 Mar</span>
+      <span>9</span>
+      <span>46</span>
+    </div>
+  </div>
 
   <div class="stats-grid">
     <div class="stat-card">
