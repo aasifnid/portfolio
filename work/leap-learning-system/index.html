@@ -53,7 +53,7 @@
   <div class="cover-meta">
     <div class="cover-meta-item">
       <span class="cover-meta-label">Custom Learning Paths</span>
-      <span class="cover-meta-value">Tutors now create goals by picking chapters across curricula</span>
+      <span class="cover-meta-value">Tutors create goals by picking chapters across curricula</span>
     </div>
     <div class="cover-meta-item">
       <span class="cover-meta-label">Homework Visibility</span>
@@ -80,6 +80,7 @@
 
   <p>The cost was real. Tutors couldn't create custom learning paths ("this student is ready for Grade 5 concepts but needs Grade 4 foundations"). Progress tracking broke down across multiple programs. Students had no homework visibility. And the platform had no room to grow coherently.</p>
 
+
   <!-- 02 ROLE -->
   <div class="section-head" id="role" data-animate>
     <span class="section-num">02</span>
@@ -93,6 +94,7 @@
   <p>The illustrator and motion designer owned the visual execution — iconography, animations on chapter CTAs, animations on notes, and animation language across the system. We collaborated closely, brainstorming and discussing different possibilities for iconography and interaction patterns before they brought the system to life visually.</p>
 
   <p>One hard constraint: 4 weeks for complete scope (goal flow + homepage + chapter system). We couldn't break the existing data structure during migration.</p>
+
 
   <!-- 03 PROCESS -->
   <div class="section-head" id="process" data-animate>
@@ -128,6 +130,7 @@
 
   <p><strong>Teacher review requires student presence.</strong> Prevents checkbox behavior. Review only happens when it's useful — when the student is there to discuss.</p>
 
+
   <!-- 04 OUTCOME -->
   <div class="section-head" id="outcome" data-animate>
     <span class="section-num">04</span>
@@ -142,6 +145,7 @@
 
   <p>One de-scoped item: Milestones and achievements (tracking exams passed, medals earned, competitions won). We wanted to surface these on the dashboard but couldn't complete it in 4 weeks. Planned for follow-on work.</p>
 
+
   <!-- 05 REFLECTION -->
   <div class="section-head" id="reflection" data-animate>
     <span class="section-num">05</span>
@@ -153,6 +157,42 @@
   <p>What this taught me: Constraints force clarity. Working backward from a 4-week deadline meant we had to be ruthless about scope. Goal creation worked because it was independent. Homepage worked because the priorities were clear (homework first, navigation second, planning third). The chapter system was hardest because it touched everything — but breaking it into phases (goals first, then homepage, then system) made the complexity manageable.</p>
 
 </div>
+
+<div class="footer">
+  <span class="footer-name">Aasif Anwar</span>
+  <a href="../../index.html" class="footer-link">← Back to portfolio</a>
+</div>
+
+<div class="lightbox-overlay" id="lightbox-overlay">
+  <span class="lightbox-close" id="lightbox-close" title="Close (Esc)">×</span>
+  <img class="lightbox-img" id="lightbox-img" src="" alt="">
+</div>
+
+<script>
+  (function () {
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); }
+      });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('[data-animate]').forEach(function (el) { observer.observe(el); });
+  })();
+
+  (function () {
+    var navLinks = document.querySelectorAll('.cs-section-nav a');
+    var ids = ['context','role','process','outcome','reflection'];
+    var els = ids.map(function(id) { return document.getElementById(id); }).filter(Boolean);
+    var obs = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          var id = entry.target.id;
+          navLinks.forEach(function(link) { link.classList.toggle('active', link.getAttribute('href') === '#' + id); });
+        }
+      });
+    }, { rootMargin: '-40% 0px -55% 0px', threshold: 0 });
+    els.forEach(function(el) { obs.observe(el); });
+  })();
+</script>
 
 </body>
 </html>
