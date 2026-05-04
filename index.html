@@ -360,8 +360,9 @@
 
   /* ─── Archive card ─── */
   .work-card--archive {
-    display: flex; flex-direction: column; justify-content: center; gap: 10px;
-    padding: 36px 48px;
+    display: flex; flex-direction: column; justify-content: flex-start; gap: 10px;
+    padding: 40px 48px;
+    min-height: 280px;
     background: var(--color-surface);
     border: 1.5px dashed var(--color-border-2);
     border-radius: var(--r-md);
@@ -383,6 +384,7 @@
   .archive-desc {
     font-size: 14px; line-height: 22px; color: var(--color-ink-2);
     max-width: 520px;
+    margin-bottom: auto;
   }
   .archive-cta {
     font-family: var(--font-mono); font-size: 12px; font-weight: 500;
