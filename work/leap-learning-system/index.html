@@ -3,632 +3,156 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>LEAP: Learning System Architecture — Aasif Anwar</title>
+<title>LEAP Learning System — unified chapter architecture and custom learning goals · Aasif Anwar</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,400&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../../assets/tokens.css">
 <link rel="stylesheet" href="../../assets/style.css">
-<style>
-  /* ─── Reset ─── */
-  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-  html { font-size: 16px; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
-
-  /* ─── Base ─── */
-  body { font-family: var(--font-body); font-weight: 400; color: var(--neutral-1000); background: var(--neutral-100); line-height: 1.6; background-image: radial-gradient(circle, rgba(0,0,0,0.045) 1px, transparent 1px); background-size: 24px 24px; }
-  p { margin-bottom: 0; } /* reset shared 26px */
-
-  /* ─── Layout ─── */
-  .cover { padding: 96px 32px 72px; max-width: 740px; margin: 0 auto; }
-  .page { max-width: 740px; margin: 0 auto; padding: 0 32px 120px; }
-
-  /* ─── Cover ─── */
-  .cover-eyebrow { font-family: var(--font-body); font-size: 12px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold-700); margin-bottom: 20px; }
-  .cover h1 { font-family: var(--font-display); font-size: clamp(40px, 6vw, 64px); line-height: 1.08; font-weight: 600; letter-spacing: -0.025em; color: var(--neutral-1000); margin-bottom: 20px; max-width: 620px; }
-  .lede { font-family: var(--font-body); font-size: 19px; line-height: 1.6; color: var(--neutral-700); max-width: 540px; margin-bottom: 28px; font-weight: 400; }
-  .cover-meta { display: flex; gap: 28px; flex-wrap: wrap; border-top: 1px solid var(--neutral-300); padding-top: 20px; }
-  .cover-meta-item { display: flex; flex-direction: column; gap: 6px; }
-  .cover-meta-label { font-size: 10px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold-700); }
-  .cover-meta-value { font-size: 14px; font-weight: 500; color: var(--neutral-1000); }
-
-  /* ─── Hero ─── */
-  .hero { margin-top: 48px; width: 100%; border-radius: 8px; background: var(--neutral-200); min-height: 480px; border: 1px solid var(--neutral-300); display: flex; align-items: center; justify-content: center; overflow: hidden; }
-
-  /* ─── Hero goal mockup ─── */
-  .goal-mockup { width: 340px; background: #FFFFFF; border-radius: 8px; border: 1px solid var(--neutral-300); padding: 20px; }
-  .goal-mockup-header { font-family: var(--font-display); font-size: 15px; font-weight: 600; color: var(--neutral-1000); margin-bottom: 6px; }
-  .goal-mockup-sub { font-size: 12px; color: var(--neutral-700); margin-bottom: 16px; padding-bottom: 14px; border-bottom: 1px solid var(--neutral-300); }
-  .goal-progress-row { display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px; }
-  .goal-progress-label { font-size: 13px; color: var(--neutral-800); font-weight: 500; }
-  .goal-progress-val { font-size: 13px; font-weight: 600; color: var(--gold-700); }
-  .goal-progress-bar { width: 100%; height: 4px; background: var(--neutral-300); border-radius: 2px; margin-bottom: 16px; }
-  .goal-progress-fill { height: 4px; border-radius: 2px; background: var(--gold-500); }
-  .goal-hw-label { font-size: 10px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--neutral-700); margin-bottom: 8px; }
-  .hw-card { background: var(--neutral-100); border: 1px solid var(--neutral-300); border-radius: 6px; padding: 10px 12px; margin-bottom: 6px; }
-  .hw-card:last-of-type { margin-bottom: 0; }
-  .hw-card-type { font-size: 10px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; padding: 2px 7px; border-radius: 3px; display: inline-block; margin-bottom: 4px; }
-  .hw-card-type.learning { background: #EEF2FF; color: #3730A3; }
-  .hw-card-type.practice { background: #F0FDF4; color: #166534; }
-  .hw-card-title { font-family: var(--font-display); font-size: 12px; font-weight: 600; color: var(--neutral-1000); margin-bottom: 2px; }
-  .hw-card-due { font-size: 11px; color: var(--neutral-700); }
-  .hw-card-due.warning { color: #B45309; }
-
-  /* ─── Dividers ─── */
-  .divider { width: 100%; height: 1px; background: var(--neutral-300); margin: 64px 0; }
-  .divider-gold { width: 40px; height: 2px; background: var(--gold-500); margin: 56px 0; }
-
-  /* ─── Overview strip ─── */
-  .overview { display: grid; grid-template-columns: 1fr 1fr 1fr; border: 1px solid var(--neutral-300); margin: 48px 0; }
-  .overview-item { padding: 22px 24px; border-right: 1px solid var(--neutral-300); }
-  .overview-item:last-child { border-right: none; }
-  .overview-item-label { font-size: 10px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--neutral-700); margin-bottom: 8px; }
-  .overview-item-value { font-family: var(--font-display); font-size: 15px; font-weight: 600; line-height: 22px; color: var(--neutral-1000); }
-  .overview-item-sub { font-size: 13px; line-height: 20px; color: var(--neutral-700); margin-top: 4px; }
-
-  /* ─── Section headers — use shared style.css values ─── */
-  .section-head { display: flex; align-items: center; gap: 20px; padding-top: 96px; margin-bottom: 36px; border-top: 1px solid var(--neutral-300); }
-  .section-num { font-family: var(--font-display); font-size: 28px; font-weight: 700; line-height: 1; letter-spacing: -0.03em; color: var(--neutral-300); flex-shrink: 0; }
-  .section-label { font-family: var(--font-mono); font-size: 12px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--neutral-800); }
-  .section-title { font-family: var(--font-display); font-size: clamp(30px, 4vw, 44px); line-height: 1.15; font-weight: 600; letter-spacing: -0.02em; color: var(--neutral-1000); margin-bottom: 28px; }
-  h2 { font-family: var(--font-display); font-size: 20px; line-height: 28px; font-weight: 600; color: var(--neutral-1000); margin-bottom: 12px; margin-top: 48px; letter-spacing: -0.01em; }
-
-  /* ─── Body text ─── */
-  p { font-family: var(--font-body); font-size: 17px; line-height: 28px; color: var(--neutral-800); margin-bottom: 18px; }
-  p.large { font-size: 20px; line-height: 32px; color: var(--neutral-800); font-weight: 300; }
-  p:last-child { margin-bottom: 0; }
-  strong { font-weight: 600; color: var(--neutral-1000); }
-
-  /* ─── Narrative block ─── */
-  .narrative { border-left: 2px solid var(--gold-400); padding: 20px 0 20px 24px; margin: 28px 0; }
-  .narrative p { font-size: 17px; line-height: 28px; color: var(--neutral-800); margin-bottom: 14px; }
-  .narrative p:last-child { margin-bottom: 0; }
-
-  /* ─── Pull quote ─── */
-  blockquote { font-family: var(--font-display); font-size: clamp(20px, 3vw, 26px); line-height: 1.4; font-weight: 600; color: var(--neutral-900); border-left: 3px solid var(--gold-500); padding-left: 24px; margin: 40px 0; max-width: 560px; }
-
-  /* ─── Highlight box ─── */
-  .highlight { background: var(--neutral-200); padding: 18px 22px; margin: 24px 0 28px; border-left: 3px solid var(--gold-500); }
-  .highlight p { font-size: 16px; line-height: 26px; color: var(--neutral-900); margin-bottom: 0; }
-
-  /* ─── Problem dimensions grid ─── */
-  .challenges { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--neutral-300); border: 1px solid var(--neutral-300); margin: 28px 0; }
-  .challenge-item { background: var(--neutral-100); padding: 18px 20px; }
-  .challenge-title { font-family: var(--font-display); font-size: 15px; font-weight: 600; color: var(--neutral-1000); margin-bottom: 6px; }
-  .challenge-desc { font-size: 14px; line-height: 22px; color: var(--neutral-700); margin-bottom: 0; }
-
-  /* ─── Chapter hierarchy diagram ─── */
-  .hierarchy { margin: 32px 0; display: flex; flex-direction: column; gap: 12px; }
-  .hier-card { border: 1px solid var(--neutral-300); padding: 18px 20px; background: var(--neutral-100); }
-  .hier-card.level-0 { border-left: 3px solid var(--gold-500); background: var(--gold-100); }
-  .hier-level-label { font-size: 10px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--neutral-700); margin-bottom: 6px; }
-  .hier-card-name { font-family: var(--font-display); font-size: 16px; font-weight: 600; color: var(--neutral-1000); margin-bottom: 4px; }
-  .hier-card-desc { font-size: 14px; line-height: 22px; color: var(--neutral-700); margin-bottom: 0; }
-  .hier-sub-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-left: 24px; }
-  .hier-sub-card { border: 1px solid var(--neutral-300); padding: 16px 18px; background: var(--neutral-100); }
-  .hier-sub-card.lessons { border-left: 3px solid var(--neutral-700); }
-  .hier-sub-card.resources { border-left: 3px solid var(--neutral-300); }
-
-  /* ─── Node states strip ─── */
-  .node-states { display: flex; align-items: center; gap: 8px; margin: 20px 0 28px; flex-wrap: wrap; }
-  .node-state { font-size: 13px; font-weight: 500; color: var(--neutral-700); background: var(--neutral-200); padding: 5px 12px; border-radius: 3px; }
-  .node-state.active { background: var(--gold-100); color: var(--gold-700); border: 1px solid var(--gold-400); }
-  .state-arrow { font-size: 14px; color: var(--neutral-300); }
-
-  /* ─── Homework lifecycle strip ─── */
-  .hw-lifecycle { display: flex; gap: 0; margin: 20px 0 28px; border: 1px solid var(--neutral-300); border-radius: 4px; overflow: hidden; }
-  .lifecycle-stage { flex: 1; padding: 14px 16px; border-right: 1px solid var(--neutral-300); background: var(--neutral-100); }
-  .lifecycle-stage:last-child { border-right: none; }
-  .lifecycle-stage.done { background: var(--gold-100); }
-  .lifecycle-label { font-size: 10px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--neutral-700); margin-bottom: 6px; }
-  .lifecycle-stage.done .lifecycle-label { color: var(--gold-700); }
-  .lifecycle-text { font-size: 12px; line-height: 18px; color: var(--neutral-800); }
-
-  /* ─── Decision list ─── */
-  .decisions-list { margin: 32px 0; display: flex; flex-direction: column; gap: 0; }
-  .decision-item { border-left: 2px solid var(--gold-400); padding: 20px 0 20px 24px; margin-bottom: 24px; }
-  .decision-item-num { font-size: 11px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--gold-700); margin-bottom: 6px; }
-  .decision-item-title { font-family: var(--font-display); font-size: 18px; line-height: 1.4; font-weight: 600; letter-spacing: -0.01em; color: var(--neutral-1000); margin-bottom: 10px; }
-  .decision-item p { font-size: 15px; line-height: 24px; color: var(--neutral-800); margin-bottom: 0; }
-
-  /* ─── Rules table ─── */
-  .rules-table { width: 100%; border-collapse: collapse; border: 1px solid var(--neutral-300); margin: 24px 0; }
-  .rules-table th { font-size: 11px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--neutral-700); background: var(--neutral-200); padding: 10px 16px; text-align: left; border-bottom: 1px solid var(--neutral-300); }
-  .rules-table td { font-size: 14px; line-height: 22px; color: var(--neutral-800); padding: 12px 16px; border-bottom: 1px solid var(--neutral-200); vertical-align: top; }
-  .rules-table td:first-child { font-weight: 500; color: var(--neutral-1000); width: 36%; }
-  .rules-table tr:last-child td { border-bottom: none; }
-
-  /* ─── Due date progression ─── */
-  .due-progression { display: flex; gap: 0; margin: 24px 0 32px; border: 1px solid var(--neutral-300); border-radius: 4px; overflow: hidden; }
-  .due-stage { flex: 1; padding: 14px 16px; border-right: 1px solid var(--neutral-300); background: var(--neutral-100); }
-  .due-stage:last-child { border-right: none; }
-  .due-stage.warning { background: #FFFBEB; }
-  .due-stage.critical { background: #FFF5F5; }
-  .due-stage-label { font-size: 10px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--neutral-700); margin-bottom: 6px; }
-  .due-stage.warning .due-stage-label { color: #B45309; }
-  .due-stage.critical .due-stage-label { color: #DC2626; }
-  .due-stage-text { font-size: 12px; line-height: 18px; color: var(--neutral-800); }
-
-  /* ─── Images ─── */
-  .screen-featured { margin: 36px 0; }
-  .screen-featured img { width: 100%; border-radius: 8px; display: block; }
-  .screen-placeholder { width: 100%; border-radius: 8px; background: var(--neutral-200); min-height: 400px; display: block; border: 1px solid var(--neutral-300); }
-  .screen-placeholder-sm { width: 100%; border-radius: 6px; background: var(--neutral-200); min-height: 240px; display: block; border: 1px solid var(--neutral-300); }
-  .caption { font-size: 13px; line-height: 20px; color: var(--neutral-700); margin-top: 10px; }
-
-  /* ─── Process grid ─── */
-  .screen-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 28px 0; }
-
-  /* ─── Outcome stats ─── */
-  .outcome-stats { display: grid; grid-template-columns: 1fr 1fr; border: 1px solid var(--neutral-300); margin: 32px 0; }
-  .stat { padding: 28px 24px; border-right: 1px solid var(--neutral-300); border-bottom: 1px solid var(--neutral-300); }
-  .stat:nth-child(even) { border-right: none; }
-  .stat:nth-last-child(-n+2) { border-bottom: none; }
-  .stat-number { font-family: var(--font-display); font-size: clamp(36px, 5vw, 52px); line-height: 1; font-weight: 700; color: var(--neutral-1000); margin-bottom: 8px; letter-spacing: -0.03em; }
-  .stat-label { font-size: 14px; line-height: 20px; color: var(--neutral-700); }
-
-  /* ─── Reflection labels ─── */
-  .r-label { font-family: var(--font-mono); font-size: 10px; font-weight: 600; letter-spacing: 0.10em; text-transform: uppercase; color: var(--neutral-700); margin-bottom: 6px; margin-top: 32px; }
-
-  /* ─── Outcome note ─── */
-  .outcome-note { background: var(--neutral-200); border: 1px solid var(--neutral-300); border-radius: 4px; padding: 18px 22px; margin: 28px 0; }
-  .outcome-note p { font-size: 15px; line-height: 24px; color: var(--neutral-700); margin-bottom: 0; }
-
-  /* ─── Footer ─── */
-  .footer { border-top: 1px solid var(--neutral-300); padding: 40px 32px; max-width: 740px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
-  .footer-name { font-family: var(--font-display); font-size: 15px; font-weight: 600; color: var(--neutral-1000); }
-  .footer-link { font-size: 14px; color: var(--gold-700); text-decoration: none; }
-  .footer-link:hover { text-decoration: underline; }
-
-  /* ─── Mobile ─── */
-  @media (max-width: 640px) {
-    .cover { padding: 72px 24px 56px; }
-    .page { padding: 0 24px 80px; }
-    .overview { grid-template-columns: 1fr 1fr; }
-    .overview-item:nth-child(2) { border-right: none; }
-    .overview-item:nth-child(3) { border-top: 1px solid var(--neutral-300); grid-column: 1 / -1; border-right: none; }
-    .challenges, .hier-sub-row { grid-template-columns: 1fr; }
-    .screen-grid { grid-template-columns: 1fr; }
-    .due-progression, .hw-lifecycle { flex-direction: column; }
-    .due-stage, .lifecycle-stage { border-right: none; border-bottom: 1px solid var(--neutral-300); }
-    .outcome-stats { grid-template-columns: 1fr; }
-    .stat { border-right: none; }
-    .footer { flex-direction: column; gap: 16px; text-align: center; }
-    .cover-meta { gap: 16px; }
-    p.large { font-size: 18px; line-height: 28px; }
-  }
-</style>
+<noscript><style>[data-animate]{opacity:1!important;transform:none!important}</style></noscript>
 </head>
 <body>
 
-<!-- ═══════════════════════════════════════════ NAV ════════════════════════════════════════════ -->
 <nav class="site-nav">
   <a href="../../index.html" class="nav-name">Aasif Anwar</a>
   <div class="nav-links">
-    <a href="../../index.html#work">work</a>
-    <a href="../../index.html#about">about</a>
+    <a href="../../index.html#work">Work</a>
+    <a href="../../index.html#about">About</a>
   </div>
 </nav>
 
 <nav class="cs-section-nav" aria-label="Case study sections">
-  <a href="#problem">Situation</a>
-  <a href="#role">Task</a>
-  <a href="#discovery">Action</a>
-  <a href="#build">Solution</a>
-  <a href="#outcome">Result</a>
+  <a href="#context">Context</a>
+  <a href="#role">Role</a>
+  <a href="#process">Process</a>
+  <a href="#outcome">Outcome</a>
   <a href="#reflection">Reflection</a>
 </nav>
 
-<!-- ═══════════════════════════════════════════ COVER ═══════════════════════════════════════════ -->
+<!-- COVER -->
 <div class="cover">
-  <p class="cover-eyebrow">Nov 2024 – Mar 2025 · Product Designer · Cuemath</p>
-  <h1>LEAP: Learning System Architecture</h1>
-  <p class="lede">Teachers were assigning content without any way to see where it was going. Progress was invisible, and parents waited for updates that required a teacher call. I rebuilt the model — from opaque programme assignment to goal-based learning — and designed the first tracking surface all three stakeholders had ever seen.</p>
+  <p class="cover-eyebrow">Product Design · Cuemath · March 2025</p>
+  <h1>LEAP Learning System — unifying chapter architecture and enabling custom learning goals across math curricula</h1>
+  <p class="value-prop">Unified fragmented curriculum programs, enabled tutors to create custom learning goals, students completing homework on time.</p>
+  <p class="lede">LEAP Platform had locked curriculum programs (CBSE Grade 4, ICSE Grade 5, Common Core US, etc.) — if a student needed advanced practice, tutors had to assign an entirely new program, creating chaos across homework tracking and student visibility. Homework was buried inside chapters. I designed a unified three-level chapter architecture (Chapter → Block → Node) that accommodates 15+ different node types without breaking the existing system, introduced goal creation so tutors could pick chapters across curricula and set custom learning paths, and surfaced homework and goal progress on the student homepage. Shipped to production; tutors reported students completing homework on time.</p>
 
   <div class="cover-meta">
     <div class="cover-meta-item">
-      <span class="cover-meta-label">My role</span>
-      <span class="cover-meta-value">Sole Designer</span>
+      <span class="cover-meta-label">My Role</span>
+      <span class="cover-meta-value">Product Designer (IA, interaction, UI system direction)</span>
     </div>
     <div class="cover-meta-item">
-      <span class="cover-meta-label">Platform</span>
-      <span class="cover-meta-value">LEAP (Web)</span>
+      <span class="cover-meta-label">The Team</span>
+      <span class="cover-meta-value">1 PM, 3 engineers, 1 illustrator, 1 motion designer, curriculum team</span>
     </div>
     <div class="cover-meta-item">
       <span class="cover-meta-label">Timeline</span>
-      <span class="cover-meta-value">Nov 2024 – Mar 2025</span>
-    </div>
-    <div class="cover-meta-item">
-      <span class="cover-meta-label">Outcome</span>
-      <span class="cover-meta-value">Live in production</span>
+      <span class="cover-meta-value">4 weeks — March 2025</span>
     </div>
   </div>
-
-  <div class="hero">
-    <div class="goal-mockup">
-      <div class="goal-mockup-header">Goal — Fractions Mastery</div>
-      <div class="goal-mockup-sub">Grade 5 · Assigned by Priya Sharma</div>
-      <div class="goal-progress-row">
-        <span class="goal-progress-label">Chapter progress</span>
-        <span class="goal-progress-val">6 / 10 done</span>
-      </div>
-      <div class="goal-progress-bar"><div class="goal-progress-fill" style="width: 60%;"></div></div>
-      <div class="goal-hw-label">Homework</div>
-      <div class="hw-card">
-        <span class="hw-card-type learning">Learning</span>
-        <div class="hw-card-title">Fractions — Understanding Division</div>
-        <div class="hw-card-due">Complete by 14 Mar</div>
-      </div>
-      <div class="hw-card">
-        <span class="hw-card-type practice">Practice</span>
-        <div class="hw-card-title">Fractions — Multiplication Fluency</div>
-        <div class="hw-card-due warning">⚠&nbsp; Complete by 17 Mar</div>
-      </div>
+  <div class="cover-meta">
+    <div class="cover-meta-item">
+      <span class="cover-meta-label">Custom Learning Paths</span>
+      <span class="cover-meta-value">Tutors now create goals by picking chapters across curricula</span>
+    </div>
+    <div class="cover-meta-item">
+      <span class="cover-meta-label">Homework Visibility</span>
+      <span class="cover-meta-value">Students see homework queue on homepage, not buried in chapters</span>
+    </div>
+    <div class="cover-meta-item">
+      <span class="cover-meta-label">System Unification</span>
+      <span class="cover-meta-value">One chapter architecture replacing multiple competing structures</span>
     </div>
   </div>
 </div>
 
-<!-- ═══════════════════════════════════════════ PAGE ═══════════════════════════════════════════ -->
 <div class="page">
-  <div class="overview">
-    <div class="overview-item">
-      <p class="overview-item-label">The problem</p>
-      <p class="overview-item-value">Teachers assigned content with no visibility into progress. Parents had no independent view.</p>
-    </div>
-    <div class="overview-item">
-      <p class="overview-item-label">My role</p>
-      <p class="overview-item-value">Sole designer</p>
-      <p class="overview-item-sub">Goal model · Chapter architecture · Learning homepage · Homework queue</p>
-    </div>
-    <div class="overview-item">
-      <p class="overview-item-label">Outcome</p>
-      <p class="overview-item-value">Shipped in full sequence</p>
-      <p class="overview-item-sub">First goal-based learning system on LEAP</p>
-    </div>
-  </div>
 
-  <!-- ═══════════════════════════════════════════
-       01 — THE PROBLEM
-       ═══════════════════════════════════════════ -->
-  <div class="section-head" id="problem">
+  <!-- 01 CONTEXT -->
+  <div class="section-head" id="context" data-animate>
     <span class="section-num">01</span>
-    <span class="section-label">The Problem</span>
-  </div>
-  <h1 class="section-title">The assignment loop that gave nothing back.</h1>
-
-  <p class="large">Teachers assigned programmes. Students completed work. But between assignment and the next session, there was no signal — no summary, no status, nothing to act on without drilling into each chapter manually.</p>
-
-  <div class="narrative">
-    <p>The platform had content. What it didn't have was a model that made learning trackable. Programmes were content-first — teachers pushed pre-packaged material without defining what it was working toward. Progress was logged at the node level, but never surfaced in an aggregated, readable form. Understanding where a student stood required opening chapters one by one.</p>
-    <p>Parents had no independent access at all. Progress required a teacher to narrate it. Every update was a manual conversation, not a product feature.</p>
+    <span class="section-label">Context</span>
   </div>
 
-  <div class="challenges">
-    <div class="challenge-item">
-      <div class="challenge-title">No progress summary</div>
-      <p class="challenge-desc">Tracking required drilling chapter by chapter. There was no aggregated view of what a student had completed or where they were heading.</p>
-    </div>
-    <div class="challenge-item">
-      <div class="challenge-title">Parents waiting</div>
-      <p class="challenge-desc">Parents had no independent view of progress. Every update required a teacher to narrate it — a manual intervention that the product should have handled.</p>
-    </div>
-    <div class="challenge-item">
-      <div class="challenge-title">No assignment target</div>
-      <p class="challenge-desc">Programmes were content-first. Teachers assigned material without a goal — and had no way to know if the content was moving the student toward one.</p>
-    </div>
-    <div class="challenge-item">
-      <div class="challenge-title">No homework surface</div>
-      <p class="challenge-desc">Students had no visibility into assigned work outside sessions. Homework existed as a verbal instruction, not a product feature.</p>
-    </div>
-  </div>
+  <p>Tutors had to dig into lessons one-by-one to assign homework. Students had no central place to see it — homework lived inside chapters, buried two layers deep. If a tutor assigned extra practice or advanced worksheets, they got lost at the bottom of the chapter page; students scrolled past them or didn't know when they were due. Tracking whether a student had started or completed work meant navigating into every lesson.</p>
 
-  <!-- ═══════════════════════════════════════════
-       02 — ROLE
-       ═══════════════════════════════════════════ -->
-  <div class="section-head" id="role">
+  <p>But the deeper structural problem was the curriculum programs themselves. LEAP had grown across different math curricula — CBSE Grade 4, ICSE Grade 5, Common Core US Grade 6, and more. Each was its own locked "program" with its own chapter structure. If a student finished CBSE Grade 4 math and needed advanced practice, the tutor had to assign an entirely separate program — bringing in a whole new set of chapters. After assigning multiple programs, tracking became impossible: which chapters belonged to which program? Which had homework? What was the student's actual progress? Within those chapters, the UI itself was cluttered — inconsistent node types, unclear lesson structures, missing visual language.</p>
+
+  <p>The cost was real. Tutors couldn't create custom learning paths ("this student is ready for Grade 5 concepts but needs Grade 4 foundations"). Progress tracking broke down across multiple programs. Students had no homework visibility. And the platform had no room to grow coherently.</p>
+
+  <!-- 02 ROLE -->
+  <div class="section-head" id="role" data-animate>
     <span class="section-num">02</span>
     <span class="section-label">Role</span>
   </div>
-  <h1 class="section-title">Sole designer — from model definition to all three surfaces.</h1>
 
-  <p>Product designer, end-to-end. I translated teacher feedback into a new assignment model, designed the goal creation tool, defined the unified chapter architecture that makes progress trackable at every level, and built the learning homepage for three stakeholders simultaneously. The homework queue and its review lifecycle were part of the same sequence.</p>
+  <p>I owned the interaction design, information architecture, and system design end-to-end. My scope: the UX for the goal creation flow, the internal chapter structure and system design (tracking, time, status progression), the page layouts for the learning homepage and chapter content, and the entire homework section.</p>
 
-  <p>PM collaboration on the queue cap and review rules. Curriculum team alignment on the chapter architecture. Everything else — IA, interaction, UI — was mine from brief to production spec.</p>
+  <p>I worked directly with the PM on requirements and curriculum alignment, 3 engineers on implementation, and the curriculum team to ensure the architecture would work across CBSE, ICSE, and Common Core math programs. Success metrics were defined upfront: a unified chapter structure across all curricula, homework visibility and completion rates, and the ability for tutors to create custom learning paths.</p>
 
-  <!-- ═══════════════════════════════════════════
-       03 — DISCOVERY
-       ═══════════════════════════════════════════ -->
-  <div class="section-head" id="discovery">
+  <p>The illustrator and motion designer owned the visual execution — iconography, animations on chapter CTAs, animations on notes, and animation language across the system. We collaborated closely, brainstorming and discussing different possibilities for iconography and interaction patterns before they brought the system to life visually.</p>
+
+  <p>One hard constraint: 4 weeks for complete scope (goal flow + homepage + chapter system). We couldn't break the existing data structure during migration.</p>
+
+  <!-- 03 PROCESS -->
+  <div class="section-head" id="process" data-animate>
     <span class="section-num">03</span>
-    <span class="section-label">Discovery</span>
-  </div>
-  <h1 class="section-title">The problem wasn't missing features — it was the wrong model.</h1>
-
-  <p>Teacher feedback made the gap visible. Teachers weren't asking for new screens. They were describing structural friction: the work of manually checking each student's progress, the difficulty of communicating it to parents, the absence of any target for the content they were assigning.</p>
-
-  <div class="narrative">
-    <p>The programme-based model was designed around content delivery. Teachers pushed pre-packaged material, and the system logged completion at the node level. But there was no aggregating layer — no goal for the content to move toward, no view that surfaced what was done and what was outstanding without opening each chapter individually.</p>
-    <p>The diagnosis: personalisation was impossible because visibility was impossible. Before we could build a better homework surface, the underlying model had to change.</p>
+    <span class="section-label">Process</span>
   </div>
 
-  <blockquote>The fix wasn't additive. It required replacing the assignment model — not extending it.</blockquote>
+  <h2>Why goal creation first?</h2>
 
-  <!-- ═══════════════════════════════════════════
-       04 — DECISIONS
-       ═══════════════════════════════════════════ -->
-  <div class="section-head" id="decisions">
+  <p>Goal creation was independent and could ship on the existing system, making it the strategic first priority. The insight from tutor feedback was clear: locked curriculum programs weren't working. Tutors needed power to select chapters across programs and curricula to create customized learning paths.</p>
+
+  <p>I designed three goal types — School Success (academic prep), Test Prep (competitive exams), and Enrichment (skill acquisition) — each with a guided flow. Tutors select a goal type, then choose grade and curriculum, then the recommended chapters surface. They can add or remove chapters, set a completion timeline, and share the goal with parents for feedback. For Test Prep, the curriculum team pre-mapped chapters to specific exams; for Enrichment, tutors pick from a skills list. This framework meant tutors didn't have to build from scratch.</p>
+
+  <p>We explored different progressions for surfacing this information, but this flow (goal type → grade/curriculum → chapters → timeline) felt most sensible based on patterns we observed with tutors. We considered allowing tutors to upload school curriculums and auto-surface chapters, but de-scoped it due to tech and timeline constraints.</p>
+
+  <h2>What made the chapter system hard?</h2>
+
+  <p>LEAP had 15+ different node and sheet types — Learn, Practice, Smart Practice, Video, Challenge Arena, Test, Puzzle, Recap, Custom Test, Project, Extra Practice, Download, Activity, Subjective, and more. Each subject had categorized them differently in the old system. We had to create one unified three-level hierarchy (Chapter → Block → Node) without breaking the existing system during migration.</p>
+
+  <p>I worked closely with engineers to understand the data constraints. We couldn't deprecate existing structures; we had to accommodate them. Two block types emerged: Lessons (mandatory, count toward progress) and Resources (optional enrichment, don't count). Every sheet type fit into one of these categories. Nodes within each block had consistent properties — states (locked, unlocked, in-progress, completed), conditions (mandatory/optional), locations (in-class/anywhere). This unified structure let us handle new concepts like Competition Arena and Puzzles as resource blocks without fragmenting the system.</p>
+
+  <h2>Homepage priorities — what came first?</h2>
+
+  <p>I surfaced homework at the top — it's critical for learning progress and ensures concept absorption. It was buried before; now it's the first thing students see. Below homework, I added recent chapters as quick navigation for students with multiple goals; they can jump back to ongoing content without scrolling or recalling which goal they were on. The goals section below shows the full picture — progress, breakdown of chapters/tests/resources.</p>
+
+  <h2>Key decisions that shaped the system</h2>
+
+  <p><strong>Three-level hierarchy (Chapter → Block → Node).</strong> 15+ node types across subjects, each categorized differently. We couldn't break existing data during migration. The solution: a unified three-level structure with two block types — Lessons (mandatory, count toward progress) and Resources (optional enrichment). Every sheet type fit into one category, and nodes had consistent properties across the entire platform. This let us handle new concepts like Competition Arena and Puzzles as resource blocks without fragmenting the architecture.</p>
+
+  <p><strong>Progress tied to admin location, not teacher location.</strong> Teachers need flexibility to move nodes between in-class and anywhere. But the curriculum system needs a reliable signal of what was actually taught. So progress always counts from admin location (what was scheduled). Teachers can move nodes temporarily, but progress stays tied to the authoritative structure. Both sides get what they need.</p>
+
+  <p><strong>Queue cap of 10.</strong> We analyzed different homework types — auto-generated practice sheets, teacher-assigned lessons, system-generated smart practice. Collectively, we decided 10 was the sweet spot to prevent overwhelm while keeping work visible. Overflow gets queued but hidden, surfacing when load clears. Teachers see the full queue.</p>
+
+  <p><strong>Teacher review requires student presence.</strong> Prevents checkbox behavior. Review only happens when it's useful — when the student is there to discuss.</p>
+
+  <!-- 04 OUTCOME -->
+  <div class="section-head" id="outcome" data-animate>
     <span class="section-num">04</span>
-    <span class="section-label">Key Decisions</span>
-  </div>
-  <h1 class="section-title">Five decisions that built the system.</h1>
-
-  <div class="decisions-list">
-    <div class="decision-item">
-      <p class="decision-item-num">Decision 01</p>
-      <p class="decision-item-title">Goal model over programme assignment</p>
-      <p>Teachers needed a target, not just a content queue. Moving from programmes — pre-packaged content batches — to goals — teacher-defined objectives with assigned content — gave assignments a direction. Not "assign these chapters" but "reach this by here." Everything else follows: the chapter architecture has something to track toward, the homepage has something to surface, and teachers finally have a return signal after assignment.</p>
-    </div>
-
-    <div class="decision-item">
-      <p class="decision-item-num">Decision 02</p>
-      <p class="decision-item-title">Three-tier architecture — one structure, every subject</p>
-      <p>A chapter contains blocks (lesson or resource), and each block contains nodes (individual activities). Mandatory nodes count toward chapter progress; resource blocks never do. This isn't a policy — it's structural. The separation is what makes progress data reliable across subjects and grade levels. One architecture, no exceptions, everywhere.</p>
-    </div>
-
-    <div class="decision-item">
-      <p class="decision-item-num">Decision 03</p>
-      <p class="decision-item-title">Progress tied to admin location, not teacher location</p>
-      <p>Teachers can move nodes between in-class and homework without breaking progress tracking. A CW node moved to homework by the teacher still counts as CW progress. Teacher flexibility stays local to the session. Progress data stays trustworthy for the curriculum team. Both sides get what they need without requiring either to trust the other's discipline.</p>
-    </div>
-
-    <div class="decision-item">
-      <p class="decision-item-num">Decision 04</p>
-      <p class="decision-item-title">Queue cap of 10 — with a review lifecycle</p>
-      <p>Capping visible homework at 10 prevents overload. But the more important decision was the lifecycle: homework assigned → student submits → stays in queue until the teacher marks it reviewed in class. Completion and review are different events. The cap and the lifecycle enforce that distinction — neither the teacher nor the student can skip the review step by moving on.</p>
-    </div>
-
-    <div class="decision-item">
-      <p class="decision-item-num">Decision 05</p>
-      <p class="decision-item-title">One surface, three stakeholders</p>
-      <p>Teachers create goals and manage content. Students and parents see the same view — progress, goals, assigned homework — with role-differentiated controls. No separate parent dashboard to design or maintain. The same model that gives teachers visibility gives parents independence. They no longer have to wait for a teacher to narrate progress; the product does it.</p>
-    </div>
-  </div>
-
-  <!-- ═══════════════════════════════════════════
-       05 — THE BUILD
-       ═══════════════════════════════════════════ -->
-  <div class="section-head" id="build">
-    <span class="section-num">05</span>
-    <span class="section-label">The Build</span>
-  </div>
-  <h1 class="section-title">Three systems, built in sequence.</h1>
-  <p>Goal creation came first — the new model. Then chapter architecture — the structure that makes tracking possible. Then the learning homepage — where all of it surfaces to teachers, students, and parents at a glance.</p>
-
-  <!-- ─── Goal creation ─── -->
-  <h2>Goal creation</h2>
-  <p>Teachers set a learning objective and assign content toward it. The goal becomes the organising unit — chapters, homework, and progress all attach to it. For the first time, assignment had a direction, not just a content list.</p>
-
-  <div class="screen-featured">
-    <div class="screen-placeholder"></div>
-    <p class="caption">Goal creation flow — teacher sets a target, assigns chapters and content, and tracks progress against the goal. Over-assignment warning shown when the student's homework queue is already at capacity.</p>
-  </div>
-
-  <!-- ─── Chapter architecture ─── -->
-  <h2>Chapter architecture</h2>
-  <p>A three-level hierarchy that holds across every subject, grade, and content type on the platform. One structure, no per-subject exceptions.</p>
-
-  <div class="hierarchy">
-    <div class="hier-card level-0">
-      <div class="hier-level-label">Chapter</div>
-      <div class="hier-card-name">Grade 5 &middot; Fractions</div>
-      <div class="hier-card-desc">The top-level content unit. One chapter per topic per grade.</div>
-    </div>
-    <div class="hier-sub-row">
-      <div class="hier-sub-card lessons">
-        <div class="hier-level-label">Block — Lesson</div>
-        <div class="hier-card-name">Core Block</div>
-        <div class="hier-card-desc">Mandatory nodes that count toward chapter progress. Contains CW nodes (in class) and HW nodes (at home).</div>
-      </div>
-      <div class="hier-sub-card resources">
-        <div class="hier-level-label">Block — Resources</div>
-        <div class="hier-card-name">Optional Enrichment</div>
-        <div class="hier-card-desc">Never counts toward progress. Competition Arena, Playlist, Catch-up, Step-up.</div>
-      </div>
-    </div>
-    <div class="hier-sub-row">
-      <div class="hier-sub-card" style="grid-column: 1 / -1;">
-        <div class="hier-level-label">Node — Individual Activity</div>
-        <div class="hier-card-desc" style="display: flex; gap: 8px; flex-wrap: wrap; margin-top: 8px;">
-          <span style="background: var(--neutral-200); border-radius: 3px; padding: 3px 10px; font-size: 12px; color: var(--neutral-800);">Learning</span>
-          <span style="background: var(--neutral-200); border-radius: 3px; padding: 3px 10px; font-size: 12px; color: var(--neutral-800);">Practice</span>
-          <span style="background: var(--neutral-200); border-radius: 3px; padding: 3px 10px; font-size: 12px; color: var(--neutral-800);">Writing</span>
-          <span style="background: var(--neutral-200); border-radius: 3px; padding: 3px 10px; font-size: 12px; color: var(--neutral-800);">Quiz</span>
-          <span style="background: var(--neutral-200); border-radius: 3px; padding: 3px 10px; font-size: 12px; color: var(--neutral-800);">Extra Practice</span>
-          <span style="background: var(--neutral-200); border-radius: 3px; padding: 3px 10px; font-size: 12px; color: var(--neutral-800);">Monthly Test</span>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <p>Every node follows the same state progression and the same completion logic — no per-node exceptions. Mandatory nodes count toward chapter progress; resource block nodes never do.</p>
-
-  <div class="node-states">
-    <span class="node-state">Locked</span>
-    <span class="state-arrow">→</span>
-    <span class="node-state">Unlocked</span>
-    <span class="state-arrow">→</span>
-    <span class="node-state active">In Progress</span>
-    <span class="state-arrow">→</span>
-    <span class="node-state">Completed</span>
-  </div>
-
-  <p>Teacher controls within the structure — three adjustments that cover real-world tutoring variability without breaking the underlying model: move nodes between in-class and homework; mark a CW node as done for students who already know the content; skip an entire lesson to unblock dependent nodes downstream.</p>
-
-  <div class="screen-featured">
-    <div class="screen-placeholder"></div>
-    <p class="caption">Chapter view — teacher perspective. Lesson blocks and resource blocks visually distinct. Node states shown at a glance. Teacher controls accessible inline without interrupting the session flow.</p>
-  </div>
-
-  <!-- ─── Learning homepage ─── -->
-  <h2>Learning homepage</h2>
-  <p>The surface where all three stakeholders see the same progress — with role-differentiated controls. Teachers get the student list and management controls. Students and parents see goals, homework status, chapter completion, and sheets — without needing a teacher to narrate any of it.</p>
-
-  <div class="screen-grid">
-    <div>
-      <div class="screen-placeholder-sm"></div>
-      <p class="caption">Teacher view — student list with goal status, homework pending, and chapter progress visible at a glance. No drilling required.</p>
-    </div>
-    <div>
-      <div class="screen-placeholder-sm"></div>
-      <p class="caption">Student and parent view — same content layer, no management controls. Goals, homework, and chapter completion visible independently.</p>
-    </div>
-  </div>
-
-  <!-- ─── Homework queue ─── -->
-  <h2>Homework queue</h2>
-  <p>A new surface on the student homepage — the first homework view ever on LEAP. All assigned homework aggregated into a single ordered list with clear states, due dates, and a review lifecycle.</p>
-
-  <table class="rules-table">
-    <thead>
-      <tr><th>Rule</th><th>Detail</th></tr>
-    </thead>
-    <tbody>
-      <tr><td>Queue cap</td><td>Maximum 10 worksheets visible to the student at any time</td></tr>
-      <tr><td>Hidden overflow</td><td>Additional work stays queued but hidden — surfaces automatically when existing work is reviewed or unassigned</td></tr>
-      <tr><td>Sort order</td><td>Oldest first by date of assignment — most overdue work surfaces at the top</td></tr>
-      <tr><td>Teacher view</td><td>Full queue including overflow; students see only active work</td></tr>
-      <tr><td>Over-assignment warning</td><td>Shown when a teacher pushes into an already-full student queue</td></tr>
-      <tr><td>Review rule</td><td>Homework can only be marked reviewed when the student is present in class</td></tr>
-    </tbody>
-  </table>
-
-  <p>The homework lifecycle has three states — not two.</p>
-
-  <div class="hw-lifecycle">
-    <div class="lifecycle-stage">
-      <div class="lifecycle-label">Assigned</div>
-      <div class="lifecycle-text">Teacher pushes homework to student queue</div>
-    </div>
-    <div class="lifecycle-stage">
-      <div class="lifecycle-label">Submitted</div>
-      <div class="lifecycle-text">Student completes and submits</div>
-    </div>
-    <div class="lifecycle-stage done">
-      <div class="lifecycle-label">Reviewed</div>
-      <div class="lifecycle-text">Teacher marks reviewed in class — only when student is present</div>
-    </div>
-  </div>
-
-  <div class="screen-grid">
-    <div>
-      <div class="screen-placeholder-sm"></div>
-      <p class="caption">Homework queue — student view. Cards ordered oldest-first, type labels, due date states. Capped at 10; overflow surfaces automatically as load clears.</p>
-    </div>
-    <div>
-      <div class="screen-placeholder-sm"></div>
-      <p class="caption">Over-assignment warning — shown when a teacher pushes into a full student queue. Cap is surfaced without being punitive.</p>
-    </div>
-  </div>
-
-  <div class="due-progression">
-    <div class="due-stage">
-      <div class="due-stage-label">Day 1 – 4</div>
-      <div class="due-stage-text">Complete by [date]</div>
-    </div>
-    <div class="due-stage warning">
-      <div class="due-stage-label">Day 5 – 6</div>
-      <div class="due-stage-text">⚠&nbsp; Complete by [date]</div>
-    </div>
-    <div class="due-stage critical">
-      <div class="due-stage-label">Day 7</div>
-      <div class="due-stage-text">⚠&nbsp; Due today</div>
-    </div>
-  </div>
-
-  <!-- ═══════════════════════════════════════════
-       06 — OUTCOME
-       ═══════════════════════════════════════════ -->
-  <div class="section-head" id="outcome">
-    <span class="section-num">06</span>
     <span class="section-label">Outcome</span>
   </div>
-  <h1 class="section-title">Full spec delivered. First goal-based system on LEAP.</h1>
 
-  <p class="large">All three systems shipped in sequence — goal creation, chapter architecture, learning homepage. Nothing major was descoped. For the first time on the platform, teachers could set a learning target, assign content toward it, and track progress at a glance — alongside students and parents seeing the same view.</p>
+  <p>Shipped and live in production across the LEAP platform, reaching approximately 28,000–30,000 students. Goal creation became mandatory — every student's first onboarding step in QMath is creating a goal. Without it, lessons can't begin. Tutors adopted all three goal types: School Success for core curriculum, Test Prep for competitive exams, and Enrichment for skill-building.</p>
 
-  <div class="outcome-stats">
-    <div class="stat">
-      <p class="stat-number">1</p>
-      <p class="stat-label">Unified architecture replacing opaque programme assignment across all subjects and grades</p>
-    </div>
-    <div class="stat">
-      <p class="stat-number">3</p>
-      <p class="stat-label">Stakeholder surfaces — same model, role-differentiated controls: teacher, student, parent</p>
-    </div>
-    <div class="stat">
-      <p class="stat-number">0</p>
-      <p class="stat-label">Major descopes — full spec shipped as planned across all three systems</p>
-    </div>
-    <div class="stat">
-      <p class="stat-number">1st</p>
-      <p class="stat-label">Homework experience ever on LEAP — students had no visibility into assigned work before this</p>
-    </div>
-  </div>
+  <p>Before: Assigning the right curriculum to a student was a rigid exercise. Tutors picked entire programs (CBSE Grade 4, ICSE Grade 5, etc.) or stacked multiple programs if a student needed mixed content. Tracking what was actually assigned or how a student was progressing across programs was complicated. Setting learning targets meant working within the constraints of pre-packaged curricula.</p>
 
-  <div class="outcome-note">
-    <p>No dashboard data yet. Tutor feedback has been positive — teachers engaged well with the goal creation flow and found the at-a-glance progress view a meaningful change from the previous model. The metrics that matter as this matures: goal adoption rate among teachers, homework completion within goal-assigned content, and whether parent access to progress data reduces the frequency of manual teacher updates.</p>
-  </div>
+  <p>After: True personalization became the default. Every student has a goal. Tutors create custom goals by picking individual chapters across programs, not locked into pre-built program bundles. Tracking is centralized around goals, not scattered across multiple program assignments. Students see their homework queue prominently on the homepage instead of buried inside chapters, with clear due-date progression (Day 1–4 normal, Day 5–6 ⚠️, Day 7 overdue). The three-level chapter architecture unified previously fragmented structures across CBSE, ICSE, and Common Core curricula into one coherent system.</p>
 
-  <!-- ═══════════════════════════════════════════
-       07 — REFLECTION
-       ═══════════════════════════════════════════ -->
-  <div class="section-head" id="reflection">
-    <span class="section-num">07</span>
+  <p>One de-scoped item: Milestones and achievements (tracking exams passed, medals earned, competitions won). We wanted to surface these on the dashboard but couldn't complete it in 4 weeks. Planned for follow-on work.</p>
+
+  <!-- 05 REFLECTION -->
+  <div class="section-head" id="reflection" data-animate>
+    <span class="section-num">05</span>
     <span class="section-label">Reflection</span>
   </div>
-  <h2 style="margin-top: 16px;">What I'd do differently</h2>
 
-  <p class="r-label">No post-launch instrumentation</p>
-  <p>I built the goal creation tool to fix a visibility problem, but never defined how to measure whether it solved it. Goal adoption rate, homework completion within assigned content, parent engagement with the progress view — none of these were instrumented before launch. The 80% review target existed as a design intent, not a measurement. I'd want those metrics live before full rollout, not discovered missing after it.</p>
+  <p>What I'd do differently: The curriculum pre-mapping for Test Prep should have been done earlier in the discovery phase, not during implementation. It would have surfaced the complexity of exam-chapter relationships sooner and reduced engineering rework.</p>
 
-  <p class="r-label">Parent visibility is still passive</p>
-  <p>The parent view shows progress but can't act on it. Parents see what's assigned and what's been completed — but there's no notification when a goal is achieved, no alert when homework is overdue, no direct signal that closes the loop without them opening the app. The visibility layer is there. The engagement layer isn't. I'd build that next.</p>
+  <p>What this taught me: Constraints force clarity. Working backward from a 4-week deadline meant we had to be ruthless about scope. Goal creation worked because it was independent. Homepage worked because the priorities were clear (homework first, navigation second, planning third). The chapter system was hardest because it touched everything — but breaking it into phases (goals first, then homepage, then system) made the complexity manageable.</p>
 
-  <p class="r-label">Queue cap was a principled guess</p>
-  <p>The cap of 10 was a joint design and PM call — a reasonable ceiling to prevent over-assignment. But it was never validated against real teacher assignment behaviour. Now that the feature is live, I'd run the analysis: how often do teachers hit the cap, how frequently does overflow surface, are students seeing what they need to? The cap may be right. It may also need adjusting. We don't know yet.</p>
-
-  <p style="margin-top: 8px;">
-    <a href="../../index.html" class="footer-link">← Back to portfolio</a>
-  </p>
 </div>
 
-<!-- ═══════════════════════════════════════════ FOOTER ═══════════════════════════════════════════ -->
-<div class="footer">
-  <span class="footer-name">Aasif Anwar</span>
-  <a href="https://aasifanwar.framer.website" class="footer-link">aasifanwar.framer.website</a>
-</div>
-
-
-<script>
-  /* ── Scroll animations ── */
-  (function () {
-    var obs = new IntersectionObserver(function (entries) {
-      entries.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
-    }, { threshold: 0.1 });
-    document.querySelectorAll('[data-animate]').forEach(function (el) { obs.observe(el); });
-  })();
-
-  /* ── Section nav active state ── */
-  (function () {
-    var links = document.querySelectorAll('.cs-section-nav a');
-    var ids = ['problem','role','discovery','decisions','build','outcome','reflection'];
-    var els = ids.map(function(id){ return document.getElementById(id); }).filter(Boolean);
-    var navObs = new IntersectionObserver(function(entries) {
-      entries.forEach(function(e) {
-        if (e.isIntersecting) links.forEach(function(l){ l.classList.toggle('active', l.getAttribute('href')==='#'+e.target.id); });
-      });
-    }, { rootMargin: '-40% 0px -55% 0px', threshold: 0 });
-    els.forEach(function(el){ navObs.observe(el); });
-  })();
-</script>
 </body>
 </html>
