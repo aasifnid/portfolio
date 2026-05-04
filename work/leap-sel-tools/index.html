@@ -12,16 +12,14 @@
 <noscript><style>[data-animate]{opacity:1!important;transform:none!important}</style></noscript>
 <style>
 
-  /* ─── Cover meta ─── */
-  .cover-meta { display: block; overflow: visible; border-radius: 0; border: none; border-top: 1px solid var(--neutral-300); padding-top: 28px; margin-top: 4px; }
-  .cover-meta-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0; }
+  .cover-meta { display: block; border-top: 1px solid var(--neutral-300); padding-top: 28px; margin-top: 4px; }
+  .cover-meta-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; }
   .cover-meta-grid + .cover-meta-grid { border-top: 1px solid var(--neutral-300); margin-top: 16px; padding-top: 16px; }
   .cover-meta-cell { display: flex; flex-direction: column; gap: 8px; padding-right: 32px; }
   .cover-meta-label { font-family: var(--font-mono); font-size: 10px; font-weight: 600; letter-spacing: 0.10em; text-transform: uppercase; color: var(--gold-700); }
   .cover-meta-desc { font-size: 15px; line-height: 1.65; color: var(--neutral-700); font-weight: 400; margin-top: 4px; }
   .cover-meta-desc strong { font-size: 15px; font-weight: 600; color: var(--neutral-1000); }
 
-  /* ─── Phase table ─── */
   .phase-table { margin: 24px 0 32px; border: 1px solid var(--neutral-300); border-radius: 4px; overflow: hidden; }
   .phase-row { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; border-bottom: 1px solid var(--neutral-300); }
   .phase-row:last-child { border-bottom: none; }
@@ -29,7 +27,6 @@
   .phase-row span { font-size: 14px; line-height: 20px; color: var(--neutral-800); padding: 12px 16px; border-right: 1px solid var(--neutral-300); }
   .phase-row span:last-child { border-right: none; }
 
-  /* ─── Mobile ─── */
   @media (max-width: 640px) {
     .cover-meta-grid { grid-template-columns: 1fr 1fr; }
     .phase-row { grid-template-columns: 1fr 1fr; }
@@ -48,15 +45,14 @@
 </nav>
 
 <nav class="cs-section-nav" aria-label="Case study sections">
-  <a href="#situation">Context</a>
-  <a href="#task">Role</a>
-  <a href="#action">Process</a>
-  <a href="#result">Outcome</a>
+  <a href="#context">Context</a>
+  <a href="#role">Role</a>
+  <a href="#process">Process</a>
+  <a href="#outcome">Outcome</a>
   <a href="#reflection">Reflection</a>
-  <a href="#v2">v2</a>
 </nav>
 
-<!-- ═══════════════════════════════════════════ COVER ═══════════════════════════════════════════ -->
+<!-- COVER -->
 <div class="cover">
   <p class="cover-eyebrow">Product Design · Cuemath · 2025–26</p>
   <h1>Feel Check — student-led emotional check-in for Cuemath's live tutoring sessions</h1>
@@ -93,19 +89,17 @@
       </div>
     </div>
     <div style="border-top: 1px solid var(--neutral-300); margin-top: 16px; padding-top: 14px; display: flex; align-items: center; gap: 12px;">
-      <span class="cover-meta-label" style="flex-shrink: 0;">Design File</span>
-      <a href="https://www.figma.com/design/YWYRU37PmSUchCStgCX96u/Leap-Revisions--Apr--25---Mar--26-?node-id=7489-1220&t=pK6d9SdtPfN8lDdl-1" target="_blank" rel="noopener" style="font-size: 13px; color: var(--gold-700); text-decoration: none; font-weight: 600; letter-spacing: 0.01em;">View full flow in Figma →</a>
+      <span class="cover-meta-label" style="flex-shrink:0;">Design File</span>
+      <a href="https://www.figma.com/design/YWYRU37PmSUchCStgCX96u/Leap-Revisions--Apr--25---Mar--26-?node-id=7489-1220&t=pK6d9SdtPfN8lDdl-1" target="_blank" rel="noopener" style="font-size:13px;color:var(--gold-700);text-decoration:none;font-weight:600;">View full flow in Figma →</a>
     </div>
   </div>
 </div>
 
-<!-- ═══════════════════════════════════════════ PAGE ═══════════════════════════════════════════ -->
+<!-- PAGE -->
 <div class="page">
 
-  <!-- ═══════════════════════════════════════════
-       01 — CONTEXT
-       ═══════════════════════════════════════════ -->
-  <div class="section-head" id="situation" data-animate>
+  <!-- 01 CONTEXT -->
+  <div class="section-head" id="context" data-animate>
     <span class="section-num">01</span>
     <span class="section-label">Context</span>
   </div>
@@ -117,10 +111,8 @@
   <p>A student not in an optimal state doesn't learn effectively — and a session that delivers 20 minutes of actual instruction isn't the product Cuemath promised. Weaker sessions meant weaker progress, and weaker progress was one of the primary reasons students churned.</p>
 
 
-  <!-- ═══════════════════════════════════════════
-       02 — ROLE
-       ═══════════════════════════════════════════ -->
-  <div class="section-head" id="task" data-animate>
+  <!-- 02 ROLE -->
+  <div class="section-head" id="role" data-animate>
     <span class="section-num">02</span>
     <span class="section-label">Role</span>
   </div>
@@ -134,10 +126,8 @@
   <p>One hard constraint: high asset volume across two grade bands. I descoped animated icons and reduced unique regulation video count for v1 — both planned for v2.</p>
 
 
-  <!-- ═══════════════════════════════════════════
-       03 — PROCESS
-       ═══════════════════════════════════════════ -->
-  <div class="section-head" id="action" data-animate>
+  <!-- 03 PROCESS -->
+  <div class="section-head" id="process" data-animate>
     <span class="section-num">03</span>
     <span class="section-label">Process</span>
   </div>
@@ -157,11 +147,11 @@
     <div class="pivot-block-title">Regulation activities shipped without audio. One pilot observation changed that.</div>
     <div class="pivot-before-after">
       <div class="pivot-before">
-        <div class="pivot-state-label">V1 — Before</div>
-        <p>No background audio. Students tapped through the regulation activity quickly — the experience felt like a screen, not a settling moment.</p>
+        <div class="pivot-state-label">Before</div>
+        <p>No background audio. Students tapped through quickly — the experience felt like a screen, not a settling moment.</p>
       </div>
       <div class="pivot-after">
-        <div class="pivot-state-label">Shipped — After</div>
+        <div class="pivot-state-label">After</div>
         <p>Ambient audio added before external rollout. Avg regulation session: <strong>1.9 min</strong> — students engaged with content, not just completing it.</p>
       </div>
     </div>
@@ -188,8 +178,8 @@
     </div>
   </div>
 
-  <div class="screen-featured" style="margin-bottom: 36px;">
-    <div class="dashboard-frame"><div class="dashboard-chrome"><span class="chrome-dot"></span><span class="chrome-dot"></span><span class="chrome-dot"></span><span class="chrome-label">leap.cuemath.com</span></div><img src="images/embedded-10-10d85ac1.jpg" alt="Feel Check intro screen — student view full-screen, tutor panel read-only" style="width:100%;border-radius:8px;display:block;"></div>
+  <div class="screen-featured" style="margin-bottom:36px;">
+    <div class="dashboard-frame"><div class="dashboard-chrome"><span class="chrome-dot"></span><span class="chrome-dot"></span><span class="chrome-dot"></span><span class="chrome-label">leap.cuemath.com</span></div><img src="images/embedded-10-10d85ac1.jpg" alt="Feel Check — student view full-screen, tutor panel read-only" style="width:100%;border-radius:8px;display:block;"></div>
     <p class="caption">The student sees the full-screen interface. The tutor sees the same view — read-only, no controls.</p>
   </div>
 
@@ -202,17 +192,17 @@
     </div>
   </div>
 
-  <div class="screen-grid" style="margin-bottom: 36px;">
+  <div class="screen-grid" style="margin-bottom:36px;">
     <div>
-      <div class="dashboard-frame"><div class="dashboard-chrome"><span class="chrome-dot"></span><span class="chrome-dot"></span><span class="chrome-dot"></span><span class="chrome-label">leap.cuemath.com</span></div><img src="images/embedded-2-54dc6e31.jpg" alt="Senses step — environmental warm-up" style="width:100%;border-radius:8px;display:block;"></div>
+      <div class="dashboard-frame"><div class="dashboard-chrome"><span class="chrome-dot"></span><span class="chrome-dot"></span><span class="chrome-dot"></span><span class="chrome-label">leap.cuemath.com</span></div><img src="images/embedded-2-54dc6e31.jpg" alt="Senses — environmental warm-up" style="width:100%;border-radius:8px;display:block;"></div>
       <p class="caption">Step 1 — Senses. Environmental warm-up. No filtering consequence.</p>
     </div>
     <div>
-      <div class="dashboard-frame"><div class="dashboard-chrome"><span class="chrome-dot"></span><span class="chrome-dot"></span><span class="chrome-dot"></span><span class="chrome-label">leap.cuemath.com</span></div><img src="images/embedded-12-c5782253.jpg" alt="Heart step — emotional awareness, options filtered by Body state" style="width:100%;border-radius:8px;display:block;"></div>
+      <div class="dashboard-frame"><div class="dashboard-chrome"><span class="chrome-dot"></span><span class="chrome-dot"></span><span class="chrome-dot"></span><span class="chrome-label">leap.cuemath.com</span></div><img src="images/embedded-12-c5782253.jpg" alt="Heart — options filtered by Body state" style="width:100%;border-radius:8px;display:block;"></div>
       <p class="caption">Step 3 — Heart. Emotional awareness. Options filtered by Body state.</p>
     </div>
     <div>
-      <div class="dashboard-frame"><div class="dashboard-chrome"><span class="chrome-dot"></span><span class="chrome-dot"></span><span class="chrome-dot"></span><span class="chrome-label">leap.cuemath.com</span></div><img src="images/embedded-4-4f23360f.jpg" alt="Mind step — cognitive awareness, options filtered by Heart state" style="width:100%;border-radius:8px;display:block;"></div>
+      <div class="dashboard-frame"><div class="dashboard-chrome"><span class="chrome-dot"></span><span class="chrome-dot"></span><span class="chrome-dot"></span><span class="chrome-label">leap.cuemath.com</span></div><img src="images/embedded-4-4f23360f.jpg" alt="Mind — options filtered by Heart state" style="width:100%;border-radius:8px;display:block;"></div>
       <p class="caption">Step 4 — Mind. Cognitive awareness. Options filtered by Heart state.</p>
     </div>
   </div>
@@ -226,9 +216,9 @@
     </div>
   </div>
 
-  <div class="screen-grid" style="margin-bottom: 36px;">
+  <div class="screen-grid" style="margin-bottom:36px;">
     <div>
-      <div class="dashboard-frame"><div class="dashboard-chrome"><span class="chrome-dot"></span><span class="chrome-dot"></span><span class="chrome-dot"></span><span class="chrome-label">leap.cuemath.com</span></div><img src="images/embedded-5-9858022f.jpg" alt="G3-4 — grade-appropriate emotional options" style="width:100%;border-radius:8px;display:block;"></div>
+      <div class="dashboard-frame"><div class="dashboard-chrome"><span class="chrome-dot"></span><span class="chrome-dot"></span><span class="chrome-dot"></span><span class="chrome-label">leap.cuemath.com</span></div><img src="images/embedded-5-9858022f.jpg" alt="G3-4 — grade-appropriate options" style="width:100%;border-radius:8px;display:block;"></div>
       <p class="caption">G3–4 — same UI as G5–8, with grade-appropriate emotional options and regulation activities.</p>
     </div>
     <div>
@@ -246,21 +236,19 @@
     </div>
   </div>
 
-  <div class="screen-featured" style="margin-bottom: 36px;">
-    <div class="dashboard-frame"><div class="dashboard-chrome"><span class="chrome-dot"></span><span class="chrome-dot"></span><span class="chrome-dot"></span><span class="chrome-label">leap.cuemath.com</span></div><img src="images/embedded-11-12e01dee.jpg" alt="Body awareness stage — Unsure always present as a fixed option"></div>
-    <p class="caption">"Unsure" is fixed at every stage — always present regardless of how many primary options the wheel shows. First-class, not a fallback.</p>
+  <div class="screen-featured" style="margin-bottom:36px;">
+    <div class="dashboard-frame"><div class="dashboard-chrome"><span class="chrome-dot"></span><span class="chrome-dot"></span><span class="chrome-dot"></span><span class="chrome-label">leap.cuemath.com</span></div><img src="images/embedded-11-12e01dee.jpg" alt="Body awareness — Unsure always present as a fixed option"></div>
+    <p class="caption">"Unsure" is fixed at every stage — always present, always first-class, not a fallback.</p>
   </div>
 
-  <div class="screen-featured" style="margin-bottom: 36px;">
-    <div class="dashboard-frame"><div class="dashboard-chrome"><span class="chrome-dot"></span><span class="chrome-dot"></span><span class="chrome-dot"></span><span class="chrome-label" style="display:flex;align-items:center"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" style="flex-shrink:0;margin-right:5px"><rect width="14" height="14" rx="3" fill="#7856FF"/><path d="M2.5 10.5V3.5L7 8l4.5-4.5v7" stroke="white" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Mixpanel</span></div><div class="dashboard-crop">
-      <img src="images/embedded-8-61be7dab.png" alt="Unsure rate drops at each stage — 20.51% Body, 13.01% Heart, 9.96% Mind" style="width:100%;display:block;"></div></div>
+  <div class="screen-featured" style="margin-bottom:36px;">
+    <div class="dashboard-frame"><div class="dashboard-chrome"><span class="chrome-dot"></span><span class="chrome-dot"></span><span class="chrome-dot"></span><span class="chrome-label" style="display:flex;align-items:center"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" style="flex-shrink:0;margin-right:5px"><rect width="14" height="14" rx="3" fill="#7856FF"/><path d="M2.5 10.5V3.5L7 8l4.5-4.5v7" stroke="white" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Mixpanel</span></div><div class="dashboard-crop"><img src="images/embedded-8-61be7dab.png" alt="Unsure rate — 20.51% Body, 13.01% Heart, 9.96% Mind" style="width:100%;display:block;"></div></div>
     <p class="caption">Unsure drops at every stage — 20.51% at Body, 13.01% at Heart, 9.96% at Mind. Naming body sensation first reduces uncertainty at every stage that follows.</p>
   </div>
 
-  <div class="screen-featured" style="margin-bottom: 36px;">
-    <div class="dashboard-frame"><div class="dashboard-chrome"><span class="chrome-dot"></span><span class="chrome-dot"></span><span class="chrome-dot"></span><span class="chrome-label" style="display:flex;align-items:center"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" style="flex-shrink:0;margin-right:5px"><rect width="14" height="14" rx="3" fill="#7856FF"/><path d="M2.5 10.5V3.5L7 8l4.5-4.5v7" stroke="white" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Mixpanel</span></div><div class="dashboard-crop">
-      <img src="images/embedded-9-8a8f7e64.png" alt="264 Unsure-path sessions — every one resolved, no dead ends"></div></div>
-    <p class="caption">264 sessions followed the full Unsure path. G3–4: 22.3% Unsure on body awareness. G5–8: 20.2%. Every one resolved — no dead ends.</p>
+  <div class="screen-featured" style="margin-bottom:36px;">
+    <div class="dashboard-frame"><div class="dashboard-chrome"><span class="chrome-dot"></span><span class="chrome-dot"></span><span class="chrome-dot"></span><span class="chrome-label" style="display:flex;align-items:center"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" style="flex-shrink:0;margin-right:5px"><rect width="14" height="14" rx="3" fill="#7856FF"/><path d="M2.5 10.5V3.5L7 8l4.5-4.5v7" stroke="white" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Mixpanel</span></div><div class="dashboard-crop"><img src="images/embedded-9-8a8f7e64.png" alt="264 Unsure-path sessions — every one resolved"></div></div>
+    <p class="caption">264 sessions followed the full Unsure path. Every one resolved — no dead ends.</p>
   </div>
 
   <div class="video-block">
@@ -279,19 +267,18 @@
       <p><strong>Activity names were the primary friction point, not the flow.</strong> "Sparkling", "Affirmation", and "Set Intention" caused visible hesitation — students asked tutors what they meant or skipped them entirely. The flow worked; the vocabulary didn't. I revised before external rollout: "Affirmation" → "Get Ready!", "Set Intention" → "Set a Goal!"</p>
     </div>
     <div class="observation-item">
-      <p><strong>Read-only activity options were mistaken for interactive ones.</strong> Multiple students tapped the regulation activity options repeatedly, expecting them to respond. The affordance wasn't clear — options were meant to be read and then actioned, not clicked. Logged as a UX fix for v2.</p>
+      <p><strong>Read-only activity options were mistaken for interactive ones.</strong> Multiple students tapped the regulation activity options repeatedly, expecting them to respond. The affordance wasn't clear — options were meant to be read and then actioned, not clicked. Logged as a UX fix for the next iteration.</p>
     </div>
     <p class="observation-source">Class session recordings · 25 sessions · Feb 2026 · 2 tutors (Sapna Golani, Monika Agrawal) · Researcher-monitored by Aasif</p>
   </div>
 
 
-  <!-- ═══════════════════════════════════════════
-       04 — OUTCOME
-       ═══════════════════════════════════════════ -->
-  <div class="section-head" id="result" data-animate>
+  <!-- 04 OUTCOME -->
+  <div class="section-head" id="outcome" data-animate>
     <span class="section-num">04</span>
     <span class="section-label">Outcome</span>
   </div>
+
   <p class="section-title" data-animate>What 120 tutors and 417 students showed across four cohorts — and what the broader rollout confirmed.</p>
 
   <p>Feel Check was validated with 417 students and 120 tutors across four initial cohorts. The rollout continued beyond validation — 3,234 sessions logged across G3–4 and G5–8 since launch. All metrics below are since-launch aggregates.</p>
@@ -332,7 +319,7 @@
   <div class="outcome-stats">
     <div class="stat">
       <p class="stat-number">65.64%</p>
-      <p class="stat-label">Tutors observed improved student readiness after regulation. The direct answer to the problem Feel Check was built to solve.</p>
+      <p class="stat-label">Tutors observed improved student readiness after regulation — the direct answer to the problem Feel Check was built to solve.</p>
     </div>
     <div class="stat">
       <p class="stat-number">89.3%</p>
@@ -340,7 +327,7 @@
     </div>
     <div class="stat">
       <p class="stat-number">3.4 min</p>
-      <p class="stat-label">Average Feel Check duration — from check-in to learning ready. Within the 5-min spec.</p>
+      <p class="stat-label">Average check-in duration — from check-in to learning ready. Within the 5-min spec.</p>
     </div>
     <div class="stat">
       <p class="stat-number">95.38%</p>
@@ -360,13 +347,11 @@
 
   <div class="screen-grid">
     <div>
-      <div class="dashboard-frame"><div class="dashboard-chrome"><span class="chrome-dot"></span><span class="chrome-dot"></span><span class="chrome-dot"></span><span class="chrome-label" style="display:flex;align-items:center"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" style="flex-shrink:0;margin-right:5px"><rect width="14" height="14" rx="3" fill="#7856FF"/><path d="M2.5 10.5V3.5L7 8l4.5-4.5v7" stroke="white" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Mixpanel</span></div><div class="dashboard-crop">
-        <img src="images/embedded-15-dc7b3d35.png" alt="WOA timing — 42s average, 7s to process emotion zone"></div></div>
+      <div class="dashboard-frame"><div class="dashboard-chrome"><span class="chrome-dot"></span><span class="chrome-dot"></span><span class="chrome-dot"></span><span class="chrome-label" style="display:flex;align-items:center"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" style="flex-shrink:0;margin-right:5px"><rect width="14" height="14" rx="3" fill="#7856FF"/><path d="M2.5 10.5V3.5L7 8l4.5-4.5v7" stroke="white" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Mixpanel</span></div><div class="dashboard-crop"><img src="images/embedded-15-dc7b3d35.png" alt="WOA 42s · Zone processing 7s"></div></div>
       <p class="caption">WOA: 42s · Zone processing: 7s — the check-in stage runs in under a minute</p>
     </div>
     <div>
-      <div class="dashboard-frame"><div class="dashboard-chrome"><span class="chrome-dot"></span><span class="chrome-dot"></span><span class="chrome-dot"></span><span class="chrome-label" style="display:flex;align-items:center"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" style="flex-shrink:0;margin-right:5px"><rect width="14" height="14" rx="3" fill="#7856FF"/><path d="M2.5 10.5V3.5L7 8l4.5-4.5v7" stroke="white" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Mixpanel</span></div><div class="dashboard-crop">
-        <img src="images/embedded-16-acf57942.png" alt="Emotion selection 13s · regulation strategy 1.9 min"></div></div>
+      <div class="dashboard-frame"><div class="dashboard-chrome"><span class="chrome-dot"></span><span class="chrome-dot"></span><span class="chrome-dot"></span><span class="chrome-label" style="display:flex;align-items:center"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" style="flex-shrink:0;margin-right:5px"><rect width="14" height="14" rx="3" fill="#7856FF"/><path d="M2.5 10.5V3.5L7 8l4.5-4.5v7" stroke="white" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Mixpanel</span></div><div class="dashboard-crop"><img src="images/embedded-16-acf57942.png" alt="13s emotion selection · 1.9 min regulation"></div></div>
       <p class="caption">13s to choose an emotion · 1.9 min on regulation (avg, inclusive of reattempts)</p>
     </div>
   </div>
@@ -375,16 +360,14 @@
   <p>After each Feel Check, tutors rated what they could observe directly — student behaviour, not inferred emotional state.</p>
 
   <div class="screen-featured">
-    <div class="dashboard-frame"><div class="dashboard-chrome"><span class="chrome-dot"></span><span class="chrome-dot"></span><span class="chrome-dot"></span><span class="chrome-label" style="display:flex;align-items:center"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" style="flex-shrink:0;margin-right:5px"><rect width="14" height="14" rx="3" fill="#7856FF"/><path d="M2.5 10.5V3.5L7 8l4.5-4.5v7" stroke="white" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Mixpanel</span></div><div class="dashboard-crop">
-      <img src="images/embedded-17-979294d1.png" alt="Tutor feedback — emotion independence 89.3%, regulation readiness 65.64%"></div></div>
+    <div class="dashboard-frame"><div class="dashboard-chrome"><span class="chrome-dot"></span><span class="chrome-dot"></span><span class="chrome-dot"></span><span class="chrome-label" style="display:flex;align-items:center"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" style="flex-shrink:0;margin-right:5px"><rect width="14" height="14" rx="3" fill="#7856FF"/><path d="M2.5 10.5V3.5L7 8l4.5-4.5v7" stroke="white" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Mixpanel</span></div><div class="dashboard-crop"><img src="images/embedded-17-979294d1.png" alt="Tutor feedback — 89.3% emotion independence, 65.64% regulation readiness"></div></div>
     <p class="caption">Emotion selection (left) and regulation outcome (right). Tutors rated visible behaviour — not interpretation.</p>
   </div>
 
   <h2>Most students arrived calm — the ones who didn't were the point.</h2>
 
   <div class="screen-featured">
-    <div class="dashboard-frame"><div class="dashboard-chrome"><span class="chrome-dot"></span><span class="chrome-dot"></span><span class="chrome-dot"></span><span class="chrome-label" style="display:flex;align-items:center"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" style="flex-shrink:0;margin-right:5px"><rect width="14" height="14" rx="3" fill="#7856FF"/><path d="M2.5 10.5V3.5L7 8l4.5-4.5v7" stroke="white" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Mixpanel</span></div><div class="dashboard-crop">
-      <img src="images/embedded-18-4c4d27a6.png" alt="Zone of Regulation distribution — G3-4 and G5-8 since launch"></div></div>
+    <div class="dashboard-frame"><div class="dashboard-chrome"><span class="chrome-dot"></span><span class="chrome-dot"></span><span class="chrome-dot"></span><span class="chrome-label" style="display:flex;align-items:center"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" style="flex-shrink:0;margin-right:5px"><rect width="14" height="14" rx="3" fill="#7856FF"/><path d="M2.5 10.5V3.5L7 8l4.5-4.5v7" stroke="white" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Mixpanel</span></div><div class="dashboard-crop"><img src="images/embedded-18-4c4d27a6.png" alt="Zone distribution — G3-4 and G5-8 since launch"></div></div>
     <p class="caption">Zone distribution — G3–4 (907 sessions) and G5–8 (2,327 sessions) since launch. Green dominant across both bands — most students arrived calm. But 52% of G3–4 sessions and 40% of G5–8 sessions weren't Green. Feel Check's real value was surfacing that share and doing something about it before instruction began.</p>
   </div>
 
@@ -396,9 +379,7 @@
   </div>
 
 
-  <!-- ═══════════════════════════════════════════
-       05 — REFLECTION
-       ═══════════════════════════════════════════ -->
+  <!-- 05 REFLECTION -->
   <div class="section-head" id="reflection" data-animate>
     <span class="section-num">05</span>
     <span class="section-label">Reflection</span>
@@ -410,35 +391,6 @@
 
   <p>G1–2 was deferred for the right reason — self-directed emotional identification wasn't developmentally accessible at that age. But deferring without a defined brief for what a G1–2 version would actually need means it stays indefinitely deferred. The next version should start there.</p>
 
-
-  <!-- ═══════════════════════════════════════════
-       06 — WHAT'S NEXT
-       ═══════════════════════════════════════════ -->
-  <div class="section-head" id="v2" data-animate>
-    <span class="section-num">06</span>
-    <span class="section-label">What's next</span>
-  </div>
-
-  <div class="decisions-list">
-    <div class="decision-item">
-      <p class="decision-item-num">Priority 01</p>
-      <p class="decision-item-title">Learning impact — define what it looks like in our own data</p>
-      <p>Feel Check was built on the premise that emotional regulation before sessions improves academic outcomes. The research supports it. Our data doesn't show it yet — not because the connection doesn't exist, but because we never built a way to measure it. v2 starts here: defining what learning impact looks like in Cuemath's own data before designing anything else.</p>
-    </div>
-
-    <div class="decision-item">
-      <p class="decision-item-num">Priority 02</p>
-      <p class="decision-item-title">Purpose-designed motion and audio</p>
-      <p>Micro-interactions on the selection options across all four stages — purpose-designed motion, not static taps. Regulation activity audio designed alongside the content, not added on top of it. When the experience is the product, sensory quality isn't polish.</p>
-    </div>
-
-    <div class="decision-item">
-      <p class="decision-item-num">Priority 03</p>
-      <p class="decision-item-title">G1–2 grade band — designed from the ground up</p>
-      <p>G1–2 was deferred for the right reason — self-directed emotional identification wasn't developmentally accessible at that age. But deferring without a defined brief for what a G1–2 version would actually need means it stays indefinitely deferred. The next version should start there.</p>
-    </div>
-  </div>
-
 </div>
 
 <div class="footer">
@@ -446,7 +398,6 @@
   <a href="../../index.html" class="footer-link">← Back to portfolio</a>
 </div>
 
-<!-- ═══════════════════════════════════════════ LIGHTBOX ═══════════════════════════════════════════ -->
 <div class="lightbox-overlay" id="lightbox-overlay">
   <span class="lightbox-close" id="lightbox-close" title="Close (Esc)">×</span>
   <img class="lightbox-img" id="lightbox-img" src="" alt="">
@@ -456,69 +407,42 @@
   (function () {
     var observer = new IntersectionObserver(function (entries) {
       entries.forEach(function (entry) {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-          observer.unobserve(entry.target);
-        }
+        if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); }
       });
     }, { threshold: 0.1 });
-    document.querySelectorAll('[data-animate]').forEach(function (el) {
-      observer.observe(el);
-    });
+    document.querySelectorAll('[data-animate]').forEach(function (el) { observer.observe(el); });
   })();
 
-  /* ── Section nav active state ── */
   (function () {
     var navLinks = document.querySelectorAll('.cs-section-nav a');
-    var sections = ['situation','task','action','result','reflection','v2'];
-    var sectionEls = sections.map(function(id) { return document.getElementById(id); }).filter(Boolean);
-    var navObserver = new IntersectionObserver(function(entries) {
+    var ids = ['context','role','process','outcome','reflection'];
+    var els = ids.map(function(id) { return document.getElementById(id); }).filter(Boolean);
+    var obs = new IntersectionObserver(function(entries) {
       entries.forEach(function(entry) {
         if (entry.isIntersecting) {
-          var activeId = entry.target.id;
-          navLinks.forEach(function(link) {
-            var href = link.getAttribute('href').replace('#','');
-            link.classList.toggle('active', href === activeId);
-          });
+          var id = entry.target.id;
+          navLinks.forEach(function(link) { link.classList.toggle('active', link.getAttribute('href') === '#' + id); });
         }
       });
     }, { rootMargin: '-40% 0px -55% 0px', threshold: 0 });
-    sectionEls.forEach(function(el) { navObserver.observe(el); });
+    els.forEach(function(el) { obs.observe(el); });
   })();
-</script>
 
-<script>
   (function () {
-    const overlay = document.getElementById('lightbox-overlay');
-    const lbImg   = document.getElementById('lightbox-img');
-    const lbClose = document.getElementById('lightbox-close');
-
-    function open(src, alt) {
-      lbImg.src = src;
-      lbImg.alt = alt || '';
-      overlay.classList.add('active');
-      document.body.style.overflow = 'hidden';
-    }
-
-    function close() {
-      overlay.classList.remove('active');
-      document.body.style.overflow = '';
-      lbImg.src = '';
-    }
-
-    document.querySelectorAll('img').forEach(function (img) {
+    var overlay = document.getElementById('lightbox-overlay');
+    var lbImg = document.getElementById('lightbox-img');
+    var lbClose = document.getElementById('lightbox-close');
+    function open(src, alt) { lbImg.src = src; lbImg.alt = alt || ''; overlay.classList.add('active'); document.body.style.overflow = 'hidden'; }
+    function close() { overlay.classList.remove('active'); document.body.style.overflow = ''; lbImg.src = ''; }
+    document.querySelectorAll('img').forEach(function(img) {
       if (!img.src || img.src === window.location.href) return;
       img.classList.add('zoomable');
-      img.addEventListener('click', function (e) {
-        e.stopPropagation();
-        open(img.src, img.alt);
-      });
+      img.addEventListener('click', function(e) { e.stopPropagation(); open(img.src, img.alt); });
     });
-
     overlay.addEventListener('click', close);
-    lbImg.addEventListener('click', function (e) { e.stopPropagation(); });
-    lbClose.addEventListener('click', function (e) { e.stopPropagation(); close(); });
-    document.addEventListener('keydown', function (e) { if (e.key === 'Escape') close(); });
+    lbImg.addEventListener('click', function(e) { e.stopPropagation(); });
+    lbClose.addEventListener('click', function(e) { e.stopPropagation(); close(); });
+    document.addEventListener('keydown', function(e) { if (e.key === 'Escape') close(); });
   })();
 </script>
 </body>
