@@ -1,0 +1,94 @@
+<svg viewBox="0 0 1200 600" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="1200" height="600" fill="#f8f7f5"/>
+
+  <!-- Title -->
+  <text x="600" y="35" font-size="24" font-weight="600" text-anchor="middle" fill="#1a1a1a">
+    Old AC-Dependent Funnel vs. New Distributed System
+  </text>
+
+  <!-- Left side: Old flow -->
+  <text x="150" y="80" font-size="16" font-weight="600" fill="#666">OLD FLOW</text>
+  <text x="150" y="105" font-size="12" fill="#999">(48–72 hours, 4–6 AC touches)</text>
+
+  <!-- Old flow boxes -->
+  <rect x="80" y="140" width="140" height="80" fill="#e8e7e5" stroke="#999" stroke-width="1" rx="4"/>
+  <text x="150" y="175" font-size="13" font-weight="500" text-anchor="middle" fill="#1a1a1a">Lead</text>
+  <text x="150" y="193" font-size="13" font-weight="500" text-anchor="middle" fill="#1a1a1a">Qualification</text>
+  <text x="150" y="208" font-size="11" fill="#666" text-anchor="middle">(AC call)</text>
+
+  <line x1="220" y1="180" x2="270" y2="180" stroke="#999" stroke-width="2" marker-end="url(#arrowhead)"/>
+
+  <rect x="270" y="140" width="140" height="80" fill="#e8e7e5" stroke="#999" stroke-width="1" rx="4"/>
+  <text x="340" y="175" font-size="13" font-weight="500" text-anchor="middle" fill="#1a1a1a">Trial</text>
+  <text x="340" y="193" font-size="13" font-weight="500" text-anchor="middle" fill="#1a1a1a">Scheduling</text>
+  <text x="340" y="208" font-size="11" fill="#666" text-anchor="middle">(AC call)</text>
+
+  <line x1="410" y1="180" x2="460" y2="180" stroke="#999" stroke-width="2" marker-end="url(#arrowhead)"/>
+
+  <!-- Waiting period indicator for old flow -->
+  <rect x="80" y="240" width="330" height="30" fill="#ffb3b3" opacity="0.3" rx="4"/>
+  <text x="245" y="261" font-size="11" fill="#c33" text-anchor="middle" font-weight="500">↓ Waiting (24-48 hours)</text>
+
+  <rect x="460" y="140" width="140" height="80" fill="#e8e7e5" stroke="#999" stroke-width="1" rx="4"/>
+  <text x="530" y="175" font-size="13" font-weight="500" text-anchor="middle" fill="#1a1a1a">Enrollment</text>
+  <text x="530" y="193" font-size="13" font-weight="500" text-anchor="middle" fill="#1a1a1a">Discussion</text>
+  <text x="530" y="208" font-size="11" fill="#666" text-anchor="middle">(AC call)</text>
+
+  <line x1="600" y1="180" x2="650" y2="180" stroke="#999" stroke-width="2" marker-end="url(#arrowhead)"/>
+
+  <rect x="650" y="140" width="140" height="80" fill="#e8e7e5" stroke="#999" stroke-width="1" rx="4"/>
+  <text x="720" y="170" font-size="13" font-weight="500" text-anchor="middle" fill="#1a1a1a">Class Timing</text>
+  <text x="720" y="190" font-size="13" font-weight="500" text-anchor="middle" fill="#1a1a1a">Preferences</text>
+  <text x="720" y="208" font-size="11" fill="#666" text-anchor="middle">(AC call)</text>
+
+  <!-- Right side: New flow -->
+  <text x="950" y="80" font-size="16" font-weight="600" fill="#666">NEW FLOW</text>
+  <text x="950" y="105" font-size="12" fill="#999">(&lt;5 min for booking, parallel processes)</text>
+
+  <!-- Top row: System automation -->
+  <text x="800" y="135" font-size="12" font-weight="600" fill="#666">System Automation</text>
+  <rect x="800" y="150" width="110" height="60" fill="#d4e8f7" stroke="#3d7ba8" stroke-width="1" rx="4"/>
+  <text x="855" y="175" font-size="12" font-weight="500" text-anchor="middle" fill="#1a1a1a">Signup &amp;</text>
+  <text x="855" y="190" font-size="12" font-weight="500" text-anchor="middle" fill="#1a1a1a">Verification</text>
+
+  <rect x="920" y="150" width="110" height="60" fill="#d4e8f7" stroke="#3d7ba8" stroke-width="1" rx="4"/>
+  <text x="975" y="175" font-size="12" font-weight="500" text-anchor="middle" fill="#1a1a1a">Slot Selection</text>
+  <text x="975" y="190" font-size="12" font-weight="500" text-anchor="middle" fill="#1a1a1a">&amp; Recovery</text>
+
+  <rect x="1040" y="150" width="110" height="60" fill="#d4e8f7" stroke="#3d7ba8" stroke-width="1" rx="4"/>
+  <text x="1095" y="170" font-size="12" font-weight="500" text-anchor="middle" fill="#1a1a1a">Automated</text>
+  <text x="1095" y="185" font-size="12" font-weight="500" text-anchor="middle" fill="#1a1a1a">Reminders</text>
+
+  <!-- Middle row: Teacher involvement -->
+  <text x="800" y="260" font-size="12" font-weight="600" fill="#666">Teacher Relationships</text>
+  <rect x="800" y="275" width="110" height="60" fill="#e8d4f7" stroke="#7a3d8a" stroke-width="1" rx="4"/>
+  <text x="855" y="300" font-size="12" font-weight="500" text-anchor="middle" fill="#1a1a1a">Teacher Intro</text>
+  <text x="855" y="315" font-size="12" font-weight="500" text-anchor="middle" fill="#1a1a1a">(24 hrs pre)</text>
+
+  <rect x="920" y="275" width="110" height="60" fill="#e8d4f7" stroke="#7a3d8a" stroke-width="1" rx="4"/>
+  <text x="975" y="300" font-size="12" font-weight="500" text-anchor="middle" fill="#1a1a1a">In-Trial</text>
+  <text x="975" y="315" font-size="12" font-weight="500" text-anchor="middle" fill="#1a1a1a">Reference Script</text>
+
+  <rect x="1040" y="275" width="110" height="60" fill="#e8d4f7" stroke="#7a3d8a" stroke-width="1" rx="4"/>
+  <text x="1095" y="300" font-size="12" font-weight="500" text-anchor="middle" fill="#1a1a1a">Post-Trial Q&amp;A</text>
+  <text x="1095" y="315" font-size="12" font-weight="500" text-anchor="middle" fill="#1a1a1a">(Teacher present)</text>
+
+  <!-- Bottom row: Parent self-service -->
+  <text x="800" y="385" font-size="12" font-weight="600" fill="#666">Parent Self-Service</text>
+  <rect x="800" y="400" width="250" height="60" fill="#d4f7d4" stroke="#3d8a3d" stroke-width="1" rx="4"/>
+  <text x="925" y="420" font-size="12" font-weight="500" text-anchor="middle" fill="#1a1a1a">Direct Enrollment + Class Timing Selection</text>
+  <text x="925" y="438" font-size="11" fill="#666" text-anchor="middle">(Immediately post-trial, one-tap payment)</text>
+
+  <!-- Arrow definitions -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#999" />
+    </marker>
+  </defs>
+
+  <!-- Result boxes -->
+  <rect x="80" y="490" width="710" height="75" fill="#f0f0f0" stroke="#ccc" stroke-width="1" rx="4"/>
+  <text x="435" y="515" font-size="13" font-weight="600" text-anchor="middle" fill="#1a1a1a">RESULT: 70% AC Reduction | 50% QL-to-Trial Lift | 9.6% Trial-to-Paid Lift</text>
+  <text x="435" y="540" font-size="12" fill="#666" text-anchor="middle">Old model: Waiting periods, sequential AC dependency. New model: Parallel processes, distributed expertise.</text>
+</svg>

@@ -1,0 +1,104 @@
+---
+type: case-study
+project: LEAP Learning System
+slug: leap-learning-system
+date: 2026-05-04
+status: restructuring
+---
+
+# LEAP Learning System — Unified Chapter Architecture and Custom Learning Goals
+
+## COVER
+
+**Eyebrow:** Product Design · Cuemath · March 2025
+
+**Title:** LEAP Learning System — unifying chapter architecture and enabling custom learning goals across math curricula
+
+**Value Prop:** Unified fragmented curriculum programs, enabled tutors to create custom learning goals, students completing homework on time.
+
+**Lede:**
+LEAP Platform had locked curriculum programs (CBSE Grade 4, ICSE Grade 5, Common Core US, etc.) — if a student needed advanced practice, tutors had to assign an entirely new program, creating chaos across homework tracking and student visibility. Homework was buried inside chapters. I designed a unified three-level chapter architecture (Chapter → Block → Node) that accommodates 15+ different node types without breaking the existing system, introduced goal creation so tutors could pick chapters across curricula and set custom learning paths, and surfaced homework and goal progress on the student homepage. Shipped to production; tutors reported students completing homework on time.
+
+**Metadata (Row 1):**
+- **My Role:** Product Designer (IA, interaction, UI system direction)
+- **The Team:** 1 PM, 3 engineers, 1 illustrator, 1 motion designer, curriculum team
+- **Timeline:** 4 weeks — March 2025
+
+**Metadata (Row 2):**
+- **Custom Learning Paths:** Tutors now create goals by picking chapters across curricula
+- **Homework Visibility:** Students see homework queue on homepage, not buried in chapters
+- **System Unification:** One chapter architecture replacing multiple competing structures
+
+---
+
+## 01. CONTEXT
+
+Tutors had to dig into lessons one-by-one to assign homework. Students had no central place to see it — homework lived inside chapters, buried two layers deep. If a tutor assigned extra practice or advanced worksheets, they got lost at the bottom of the chapter page; students scrolled past them or didn't know when they were due. Tracking whether a student had started or completed work meant navigating into every lesson.
+
+But the deeper structural problem was the curriculum programs themselves. LEAP had grown across different math curricula — CBSE Grade 4, ICSE Grade 5, Common Core US Grade 6, and more. Each was its own locked "program" with its own chapter structure. If a student finished CBSE Grade 4 math and needed advanced practice, the tutor had to assign an entirely separate program — bringing in a whole new set of chapters. After assigning multiple programs, tracking became impossible: which chapters belonged to which program? Which had homework? What was the student's actual progress? Within those chapters, the UI itself was cluttered — inconsistent node types, unclear lesson structures, missing visual language.
+
+The cost was real. Tutors couldn't create custom learning paths ("this student is ready for Grade 5 concepts but needs Grade 4 foundations"). Progress tracking broke down across multiple programs. Students had no homework visibility. And the platform had no room to grow coherently.
+
+---
+
+## 02. ROLE
+
+I owned the interaction design, information architecture, and system design end-to-end. My scope: the UX for the goal creation flow, the internal chapter structure and system design (tracking, time, status progression), the page layouts for the learning homepage and chapter content, and the entire homework section.
+
+I worked directly with the PM on requirements and curriculum alignment, 3 engineers on implementation, and the curriculum team to ensure the architecture would work across CBSE, ICSE, and Common Core math programs. Success metrics were defined upfront: a unified chapter structure across all curricula, homework visibility and completion rates, and the ability for tutors to create custom learning paths.
+
+The illustrator and motion designer owned the visual execution — iconography, animations on chapter CTAs, animations on notes, and animation language across the system. We collaborated closely, brainstorming and discussing different possibilities for iconography and interaction patterns before they brought the system to life visually.
+
+One hard constraint: 4 weeks for complete scope (goal flow + homepage + chapter system). We couldn't break the existing data structure during migration.
+
+---
+
+## 03. PROCESS
+
+### Why goal creation first?
+
+Goal creation was independent and could ship on the existing system, making it the strategic first priority. The insight from tutor feedback was clear: locked curriculum programs weren't working. Tutors needed power to select chapters across programs and curricula to create customized learning paths.
+
+I designed three goal types — School Success (academic prep), Test Prep (competitive exams), and Enrichment (skill acquisition) — each with a guided flow. Tutors select a goal type, then choose grade and curriculum, then the recommended chapters surface. They can add or remove chapters, set a completion timeline, and share the goal with parents for feedback. For Test Prep, the curriculum team pre-mapped chapters to specific exams; for Enrichment, tutors pick from a skills list. This framework meant tutors didn't have to build from scratch.
+
+We explored different progressions for surfacing this information, but this flow (goal type → grade/curriculum → chapters → timeline) felt most sensible based on patterns we observed with tutors. We considered allowing tutors to upload school curriculums and auto-surface chapters, but de-scoped it due to tech and timeline constraints.
+
+### What made the chapter system hard?
+
+LEAP had 15+ different node and sheet types — Learn, Practice, Smart Practice, Video, Challenge Arena, Test, Puzzle, Recap, Custom Test, Project, Extra Practice, Download, Activity, Subjective, and more. Each subject had categorized them differently in the old system. We had to create one unified three-level hierarchy (Chapter → Block → Node) without breaking the existing system during migration.
+
+I worked closely with engineers to understand the data constraints. We couldn't deprecate existing structures; we had to accommodate them. Two block types emerged: Lessons (mandatory, count toward progress) and Resources (optional enrichment, don't count). Every sheet type fit into one of these categories. Nodes within each block had consistent properties — states (locked, unlocked, in-progress, completed), conditions (mandatory/optional), locations (in-class/anywhere). This unified structure let us handle new concepts like Competition Arena and Puzzles as resource blocks without fragmenting the system.
+
+### Homepage priorities — what came first?
+
+I surfaced homework at the top — it's critical for learning progress and ensures concept absorption. It was buried before; now it's the first thing students see. Below homework, I added recent chapters as quick navigation for students with multiple goals; they can jump back to ongoing content without scrolling or recalling which goal they were on. The goals section below shows the full picture — progress, breakdown of chapters/tests/resources.
+
+### Key decisions that shaped the system
+
+**Three-level hierarchy (Chapter → Block → Node).** 15+ node types across subjects, each categorized differently. We couldn't break existing data during migration. The solution: a unified three-level structure with two block types — Lessons (mandatory, count toward progress) and Resources (optional enrichment). Every sheet type fit into one category, and nodes had consistent properties across the entire platform. This let us handle new concepts like Competition Arena and Puzzles as resource blocks without fragmenting the architecture.
+
+**Progress tied to admin location, not teacher location.** Teachers need flexibility to move nodes between in-class and anywhere. But the curriculum system needs a reliable signal of what was actually taught. So progress always counts from admin location (what was scheduled). Teachers can move nodes temporarily, but progress stays tied to the authoritative structure. Both sides get what they need.
+
+**Queue cap of 10.** We analyzed different homework types — auto-generated practice sheets, teacher-assigned lessons, system-generated smart practice. Collectively, we decided 10 was the sweet spot to prevent overwhelm while keeping work visible. Overflow gets queued but hidden, surfacing when load clears. Teachers see the full queue.
+
+**Teacher review requires student presence.** Prevents checkbox behavior. Review only happens when it's useful — when the student is there to discuss.
+
+---
+
+## 04. OUTCOME
+
+Shipped and live in production across the LEAP platform, reaching approximately 28,000–30,000 students. Goal creation became mandatory — every student's first onboarding step in QMath is creating a goal. Without it, lessons can't begin. Tutors adopted all three goal types: School Success for core curriculum, Test Prep for competitive exams, and Enrichment for skill-building.
+
+Before: Assigning the right curriculum to a student was a rigid exercise. Tutors picked entire programs (CBSE Grade 4, ICSE Grade 5, etc.) or stacked multiple programs if a student needed mixed content. Tracking what was actually assigned or how a student was progressing across programs was complicated. Setting learning targets meant working within the constraints of pre-packaged curricula.
+
+After: True personalization became the default. Every student has a goal. Tutors create custom goals by picking individual chapters across programs, not locked into pre-built program bundles. Tracking is centralized around goals, not scattered across multiple program assignments. Students see their homework queue prominently on the homepage instead of buried inside chapters, with clear due-date progression (Day 1–4 normal, Day 5–6 ⚠️, Day 7 overdue). The three-level chapter architecture unified previously fragmented structures across CBSE, ICSE, and Common Core curricula into one coherent system.
+
+One de-scoped item: Milestones and achievements (tracking exams passed, medals earned, competitions won). We wanted to surface these on the dashboard but couldn't complete it in 4 weeks. Planned for follow-on work.
+
+---
+
+## 05. REFLECTION
+
+What I'd do differently: The curriculum pre-mapping for Test Prep should have been done earlier in the discovery phase, not during implementation. It would have surfaced the complexity of exam-chapter relationships sooner and reduced engineering rework.
+
+What this taught me: Constraints force clarity. Working backward from a 4-week deadline meant we had to be ruthless about scope. Goal creation worked because it was independent. Homepage worked because the priorities were clear (homework first, navigation second, planning third). The chapter system was hardest because it touched everything — but breaking it into phases (goals first, then homepage, then system) made the complexity manageable.
