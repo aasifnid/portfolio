@@ -83,11 +83,10 @@
 </nav>
 
 <nav class="cs-section-nav" aria-label="Case study sections">
-  <a href="#situation">Situation</a>
-  <a href="#task">Task</a>
-  <a href="#action">Action</a>
-  <a href="#solution">Solution</a>
-  <a href="#result">Result</a>
+  <a href="#situation">Context</a>
+  <a href="#task">Role</a>
+  <a href="#action">Process</a>
+  <a href="#result">Outcome</a>
   <a href="#reflection">Reflection</a>
   <a href="#v2">v2</a>
 </nav>
@@ -623,7 +622,7 @@
   /* ── Section nav active state ── */
   (function () {
     var navLinks = document.querySelectorAll('.cs-section-nav a');
-    var sections = ['situation','task','action','solution','result','reflection','v2'];
+    var sections = ['situation','task','action','result','reflection','v2'];
     var sectionEls = sections.map(function(id) { return document.getElementById(id); }).filter(Boolean);
     var navObserver = new IntersectionObserver(function(entries) {
       entries.forEach(function(entry) {
