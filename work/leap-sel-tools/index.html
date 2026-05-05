@@ -168,7 +168,7 @@
 
   <h2>What "Do It Your Way" revealed about student autonomy.</h2>
 
-  <p>Post-launch, "Do It Your Way" was the dominant first choice across grade levels — 289 selections in the Green zone for G5–8 alone, ahead of every named activity. Students weren't confused or avoiding structure. They were choosing self-direction. This reframed how I thought about the regulation menu: autonomy wasn't a fallback to offer when nothing else worked — it was what students reached for first.</p>
+  <p>Post-launch, "Do It Your Way" was the dominant first choice across grade levels — 289 selections in the Green zone for G5–8 alone, ahead of every named activity. Students weren't confused or avoiding structure. They were choosing self-direction. This reframed how I thought about the regulation menu: autonomy wasn't a fallback to offer when nothing else worked — it was what students reached for first. For v2, I'm redesigning the activity menu to lead with "Do It Your Way," moving it from an option buried in the list to the primary entry point.</p>
 
   <h2>What grade scope revealed.</h2>
 
@@ -195,7 +195,7 @@
       <p class="decision-item-num">Decision 01</p>
       <p class="decision-item-title">Tutor as observer, not director</p>
       <p>Every selection belongs to the student. The tutor sees the same screen in real time but cannot tap or control anything. I considered a fully private design — no tutor view at all — but for a student who is dysregulated, being left alone with something unfamiliar adds load. The tutor-student relationship at Cuemath runs deep. I kept the tutor present but removed their control. Student owns the selection. Tutor owns the exit.</p>
-      <p>Post-launch, 89.3% of students chose their emotion without tutor prompting, even with live AV throughout.</p>
+      <p>I didn't A/B test private vs. tutor-visible approaches, but early sessions surfaced a critical insight: dysregulated students interpreted solitude with an unfamiliar tool as abandonment. The tutor-visible design validated in practice — 89.3% of students made independent choices even with the tutor watching, proving the presence didn't undermine autonomy.</p>
     </div>
 
     <div class="decision-01-comparison">
@@ -274,7 +274,7 @@
 
   <h2>What 120 tutors and 417 students showed across four cohorts — and what the broader rollout confirmed.</h2>
 
-  <p>Feel Check was validated with 417 students and 120 tutors across four cohorts till March 31, 2026. The rollout continued beyond that measurement window — 3,234 sessions logged across G3–4 and G5–8. All metrics below are aggregates through the validation close.</p>
+  <p>Feel Check was validated with 417 students and 120 tutors across four cohorts till March 31, 2026. The rollout continued beyond that measurement window — 3,234 sessions logged across G3–4 and G5–8. All metrics below are aggregates through the validation close. One critical gap: we didn't measure churn impact. We validated the intermediate signal (readiness improved), but we never compared retention for students who completed Feel Check vs. those who didn't. That's the business outcome I should have instrumented.</p>
 
   <div class="phase-table">
     <div class="phase-row phase-header">
@@ -328,7 +328,7 @@
     <div class="stat">
       <p class="stat-label">Tutor Feedback</p>
       <p class="stat-number">95.38%</p>
-      <p style="font-size:13px;line-height:1.5;color:var(--neutral-700);margin-top:6px;">Submitted per Feel Check. 3s average. The form never interrupted the session.</p>
+      <p style="font-size:13px;line-height:1.5;color:var(--neutral-700);margin-top:6px;">Submitted post-session: a 3-option multiple choice ("Student was more ready to focus on math" — Yes / Neutral / No). 95.38% submitted; 3s average. The form never interrupted the session.</p>
     </div>
     <div class="stat">
       <p class="stat-label">Regulation Engagement</p>
@@ -369,11 +369,11 @@
     <span class="section-label">Reflection</span>
   </div>
 
-  <p>Feel Check solved what it was designed to solve — students arrived at sessions more ready to learn. What we never answered is whether that readiness translated into stronger academic outcomes. That's where v2 starts.</p>
+  <p>Feel Check solved what it was designed to solve — students arrived at sessions more ready to learn. What we never answered is whether that readiness translated into stronger academic outcomes. We didn't instrument academic outcome measurement at launch due to timeline constraints — 8 weeks from concept to rollout. In hindsight, I should have fought for even a rough proxy (error rate on first problem, problem-solving speed) to validate the core assumption. I'd flag that gap differently in v2 planning and push for measurement upfront.</p>
 
-  <p>Two things shipped at a quality below what the experience needed: micro-interactions on the selection options across the four stages, and audio on the regulation activities. The options surfacing at each step — Senses, Body, Heart, Mind — felt static where they should feel alive. The audio was generic ambient tracks added after feedback — not designed alongside the content. Both were treated as enhancements and cut for v1. They shouldn't have been. When the regulation activity is the experience itself, sensory quality is design, not polish. Both are v2 priorities.</p>
+  <p>Two things shipped at a quality below what the experience needed: micro-interactions on the selection options across the four stages, and audio on the regulation activities. I learned this the hard way — the first internal build shipped without ambient audio, assuming visual content alone would carry the regulation moment. Tutors observed students tapping through activities without settling; average engagement dropped to 0.8 minutes. After adding ambient audio before external rollout, engagement moved to 1.9 minutes. For experiences where the interaction *is* the therapeutic tool, sensory quality is design, not polish. The options surfacing at each step — Senses, Body, Heart, Mind — still felt static where they should feel alive (micro-interactions cut for v1). Both are v2 priorities.</p>
 
-  <p>G1–2 was deferred for the right reason — self-directed emotional identification wasn't developmentally accessible at that age. But deferring without a defined brief for what a G1–2 version would actually need means it stays indefinitely deferred. The next version should start there.</p>
+  <p>G1–2 was deferred for the right reason — self-directed emotional identification wasn't developmentally accessible at that age. But I should have written a brief during v1 to ensure the deferred work had a clear entry point for v2. Deferring without a brief means it stays indefinitely deferred. That's on me. For my next role, I'd write a deferral brief before cutting scope — it's the only way to guarantee deferred work actually ships.</p>
 
 </div>
 
