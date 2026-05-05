@@ -15,15 +15,21 @@ CAREER TIMELINE:
 - Available immediately, no notice period
 
 WORK SHIPPED:
-1. SEL Tools / Feel Check (2025–26, 0→1): Student-led emotional check-in before every session — reads mood and routes to a regulation activity. Shipped to 417 students across 4 cohorts. 65.64% of tutors observed improved student readiness; 89.3% of students chose emotion without prompting.
-2. New Trial Experience (2024): Reduced AC intervention by 70% and lifted trial conversion by 50% — shifted the demo class to a fully teacher-led journey. Distributed conversion work across system automation, teachers, and parents.
-3. Learning System Architecture (2024–25): Redesigned how teachers assign and track homework — unified fragmented curricula, created consistent chapter architecture, surfaced homework on student homepage. Tutors reported students completing homework on time.
-4. Affiliate Partnership (2024, 0→1): Referral platform for community educators to earn by promoting Cuemath events — landing page, affiliate dashboard, and admin tool. Solved trust and transparency at scale.
-5. Cue Tutor License (2024): New license system giving tutors preference-based trial allocation — reduced scheduled trial cancellations by 12%.
-6. Curriculum Games (2022, Game Design): Educational games embedding computational thinking into coding curricula and problem-solving into Cuemath's v3 Math program.
+1. Feel Check: Emotional Check-in (2025–26, 0→1): Student-led emotional check-in before tutoring sessions. Reads mood and routes students to appropriate regulation activities. Shipped to 417+ students. Result: 2 in 3 tutors saw better readiness, 89.3% of students self-reported emotions without prompting. Full case study on portfolio.
+2. New Trial Experience (2024, Redesign): Redesigned teacher onboarding and trial conversion flow across signup, teacher setup, and parent enrollment. Result: 50% conversion lift, 70% fewer support requests. Full case study on portfolio.
+3. Learning System Architecture (2024–25, Infrastructure): Unified 15+ fragmented curricula into a consistent chapter-based architecture. Enabled tutors to assign custom learning paths and made homework visible on student homepages. Result: Improved homework completion and tutor workflow clarity. Full case study on portfolio.
+4. Affiliate Partnership (2024, 0→1): Built a transparent referral system for community educators to earn by promoting Cuemath events. Solved trust through clarity. Includes landing page, affiliate dashboard, and admin tooling. Full case study on portfolio.
+5. Cue Tutor License (2024): New license allocation system giving tutors preference-based trial scheduling. Result: Reduced trial cancellations by 12%.
+6. Curriculum Games (2022, Game Design): Educational games embedding computational thinking into coding curricula and problem-solving into Cuemath's math program.
 
-ACADEMIC WORK (National Institute of Design):
-Aasif's Masters portfolio covers Game Design, Physical Product Design, and Interaction Design — the foundation that shaped his thinking before moving into product. This work is available on his portfolio at aasifanwar.vercel.app.
+FOUNDATION PROJECTS (National Institute of Design, 2018–21):
+Aasif's Masters portfolio covers five major projects spanning game design, physical product design, and interaction design:
+- Ayush Gram: System design project for India's Ministry of AYUSH — mapping and reimagining service touchpoints through a service design and policy lens.
+- NUMARIS: A digit-based game designed to build numerical intuition through play mechanics aligned with educational outcomes.
+- Inclusive Play Space: Design of an accessible passive play environment for children with varying physical abilities — research-led spatial and sensory planning.
+- Convolution: An exploration of layered interaction — how overlapping systems of rules and responses create emergent, unpredictable experiences.
+- Dhappa: A tabletop game reimagining Hide & Seek as a strategic card and board experience designed for repeat play and growing complexity.
+All foundation projects visible on his portfolio at aasifanwar.vercel.app/work/earlier-work.
 
 DESIGN PHILOSOPHY:
 Game design taught Aasif to treat engagement as a requirement, not a nice-to-have. He makes complexity feel simple and experiences worth coming back to. He always starts with the "why" before opening Figma — asks a lot of questions before touching any design tool. Design serves a purpose. Every element earns its place. From tabletop games to product systems, he learned: purpose first, aesthetics second.
