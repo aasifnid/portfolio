@@ -33,6 +33,19 @@
   .img-placeholder-tag { font-family: var(--font-mono); font-size: 10px; font-weight: 600; letter-spacing: 0.10em; text-transform: uppercase; color: var(--gold-700); }
   .img-placeholder-desc { font-size: 13px; color: var(--neutral-600); text-align: center; max-width: 360px; line-height: 1.5; }
 
+  /* Case study images */
+  .cs-img { width: 100%; border-radius: var(--r-md); margin: 24px 0; display: block; }
+  .stages-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 24px 0; }
+  .stages-grid img { width: 100%; border-radius: var(--r-md); display: block; }
+  .stages-grid-label { font-size: 12px; font-weight: 600; color: var(--neutral-700); margin-top: 8px; text-align: center; }
+  .grade-compare { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 24px 0; }
+  .grade-compare img { width: 100%; border-radius: var(--r-md); display: block; }
+  .grade-compare-label { font-size: 12px; font-weight: 600; color: var(--gold-700); margin-top: 8px; text-align: center; }
+  @media (max-width: 640px) {
+    .stages-grid { grid-template-columns: 1fr; }
+    .grade-compare { grid-template-columns: 1fr; }
+  }
+
   /* Mobile */
   @media (max-width: 640px) {
     .phase-row { grid-template-columns: 1fr 1fr; }
@@ -64,6 +77,8 @@
   <h1>Feel Check — student-led emotional check-in for Cuemath's live tutoring sessions</h1>
   <p class="value-prop">Feel Check gave every tutor a consistent signal before instruction began. 65.64% observed improved student readiness after regulation.</p>
   <p class="lede">Cuemath tutors had no visibility into how students arrived emotionally — instruction began regardless of state, and dysregulation only showed up after it had already disrupted the session. I designed Feel Check: a student-led, four-stage pre-session check-in that identifies a student's emotional state and guides them to a self-chosen regulation activity before the lesson begins. Across 417 students and 120 tutors over four cohorts, 89.3% of students chose their emotion without tutor prompting.</p>
+
+  <img src="../../assets/Case studies/SEL Feel Check/Intro.jpg" alt="Feel Check — student-led emotional check-in interface" class="cs-img">
 
   <div class="cover-meta">
     <div class="cover-meta-item">
@@ -151,9 +166,39 @@
 
   <p>The original scope was G1–8. Early tutor conversations and review with Roots made it clear that naming body sensations and identifying emotional states independently was too demanding for G1–2 — not a simplification problem, but a developmental one. I scoped Feel Check to G3–8. G1–2 is deferred, not dropped.</p>
 
+  <div class="grade-compare">
+    <div>
+      <img src="../../assets/Case studies/SEL Feel Check/Ruler Emotion Zones_Red_G3-4.jpg" alt="G3–4 version — emotional options and activities" class="cs-img">
+      <p class="grade-compare-label">G3–4</p>
+    </div>
+    <div>
+      <img src="../../assets/Case studies/SEL Feel Check/Ruler Emotion Zones_Red_G5-8.jpg" alt="G5–8 version — emotional options and activities" class="cs-img">
+      <p class="grade-compare-label">G5–8</p>
+    </div>
+  </div>
+
   <p>Before locking the regulation activity experience, I explored three directions with the Motion Designer: fully abstract visuals, character-driven sequences, and non-humanistic partial elements — rain, breathing patterns, ambient light. The non-humanistic approach was chosen: neutral, non-projecting, and focused on physical sensation rather than a character to follow.</p>
 
   <h2>Four decisions that defined how Feel Check works.</h2>
+
+  <div class="stages-grid">
+    <div>
+      <img src="../../assets/Case studies/SEL Feel Check/Senses_Q3.jpg" alt="Stage 1 — Senses: environmental grounding" class="cs-img">
+      <p class="stages-grid-label">1. Senses</p>
+    </div>
+    <div>
+      <img src="../../assets/Case studies/SEL Feel Check/Body.jpg" alt="Stage 2 — Body: physical awareness" class="cs-img">
+      <p class="stages-grid-label">2. Body</p>
+    </div>
+    <div>
+      <img src="../../assets/Case studies/SEL Feel Check/Heart.jpg" alt="Stage 3 — Heart: emotional identification" class="cs-img">
+      <p class="stages-grid-label">3. Heart</p>
+    </div>
+    <div>
+      <img src="../../assets/Case studies/SEL Feel Check/Mind.jpg" alt="Stage 4 — Mind: mental state" class="cs-img">
+      <p class="stages-grid-label">4. Mind</p>
+    </div>
+  </div>
 
   <div class="decisions-list">
 
@@ -164,10 +209,7 @@
       <p>Post-launch, 89.3% of students chose their emotion without tutor prompting, even with live AV throughout.</p>
     </div>
 
-    <div class="img-placeholder">
-      <span class="img-placeholder-tag">Screen</span>
-      <span class="img-placeholder-desc">Student view — full-screen interface. Tutor panel — read-only, no controls.</span>
-    </div>
+    <img src="../../assets/Case studies/SEL Feel Check/decision-01-student interface.jpg" alt="Decision 01 — Student view with read-only tutor panel" class="cs-img">
 
     <div class="decision-item">
       <p class="decision-item-num">Decision 02</p>
@@ -284,9 +326,9 @@
 
   <p>Zone distribution showed Green as dominant across both grade bands — most students arrived calm. But 52% of G3–4 sessions and 40% of G5–8 sessions weren't Green. Feel Check's real value was surfacing that share and doing something about it before instruction began.</p>
 
-  <div class="img-placeholder">
-    <span class="img-placeholder-tag">Mixpanel</span>
-    <span class="img-placeholder-desc">Zone of Regulation distribution — G3–4 (907 sessions) and G5–8 (2,327 sessions) since launch</span>
+  <!-- Mixpanel Zone Distribution Chart — to be added once exported -->
+  <div style="margin: 24px 0; padding: 32px; background: var(--neutral-200); border: 1px dashed var(--neutral-400); border-radius: var(--r-md); text-align: center;">
+    <p style="font-size: 13px; color: var(--neutral-700);">Zone of Regulation distribution chart — G3–4 (907 sessions) and G5–8 (2,327 sessions) since launch</p>
   </div>
 
   <div class="narrative">
