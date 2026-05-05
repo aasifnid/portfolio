@@ -35,6 +35,9 @@
 
   /* Case study images */
   .cs-img { width: 100%; border-radius: var(--r-md); margin: 24px 0; display: block; }
+  .decision-01-comparison { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 24px 0; }
+  .decision-01-comparison img { width: 100%; border-radius: var(--r-md); display: block; }
+  .comparison-label { font-size: 12px; font-weight: 600; color: var(--gold-700); margin-top: 8px; text-align: center; }
   .stages-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 24px 0; }
   .stages-grid img { width: 100%; border-radius: var(--r-md); display: block; }
   .stages-grid-label { font-size: 12px; font-weight: 600; color: var(--neutral-700); margin-top: 8px; text-align: center; }
@@ -42,6 +45,7 @@
   .grade-compare img { width: 100%; border-radius: var(--r-md); display: block; }
   .grade-compare-label { font-size: 12px; font-weight: 600; color: var(--gold-700); margin-top: 8px; text-align: center; }
   @media (max-width: 640px) {
+    .decision-01-comparison { grid-template-columns: 1fr; }
     .stages-grid { grid-template-columns: 1fr; }
     .grade-compare { grid-template-columns: 1fr; }
   }
@@ -209,7 +213,16 @@
       <p>Post-launch, 89.3% of students chose their emotion without tutor prompting, even with live AV throughout.</p>
     </div>
 
-    <img src="../../assets/Case%20studies/SEL%20Feel%20Check/decision-01-student%20interface.jpg" alt="Decision 01 — Student view with read-only tutor panel" class="cs-img">
+    <div class="decision-01-comparison">
+      <div>
+        <img src="../../assets/Case%20studies/SEL%20Feel%20Check/decision-01-student%20interface.jpg" alt="Student view — full-screen interface" class="cs-img">
+        <p class="comparison-label">Student View</p>
+      </div>
+      <div>
+        <img src="../../assets/Case%20studies/SEL%20Feel%20Check/decision-01-tutor%20interface.jpg" alt="Tutor view — read-only monitoring panel" class="cs-img">
+        <p class="comparison-label">Tutor View (Read-Only)</p>
+      </div>
+    </div>
 
     <div class="decision-item">
       <p class="decision-item-num">Decision 02</p>
