@@ -43,7 +43,7 @@
   /* ─── Header ─── */
   .resume-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 52px; gap: 24px; }
   .resume-name { font-family: var(--font-display); font-size: clamp(32px, 4vw, 48px); font-weight: 800; letter-spacing: -0.03em; line-height: 1.05; color: var(--neutral-1000); margin-bottom: 6px; }
-  .resume-title { font-size: 15px; font-weight: 400; color: var(--neutral-700); margin-bottom: 20px; }
+  .resume-title { font-size: 15px; font-weight: 600; color: var(--neutral-700); margin-bottom: 20px; }
   .resume-contact { display: flex; flex-wrap: wrap; gap: 4px 16px; }
   .resume-contact a, .resume-contact span { font-family: var(--font-mono); font-size: 12px; color: var(--neutral-700); text-decoration: none; letter-spacing: 0.04em; transition: color 0.15s ease; }
   .resume-contact a:hover { color: var(--neutral-1000); }
@@ -73,7 +73,7 @@
   }
 
   /* ─── Summary ─── */
-  .resume-summary { font-size: 16px; line-height: 1.72; color: var(--neutral-800); max-width: 680px; }
+  .resume-summary { font-size: 15px; line-height: 1.7; color: var(--neutral-800); max-width: 680px; }
   .resume-summary strong { color: var(--neutral-1000); font-weight: 600; }
 
   /* ─── Experience ─── */
@@ -84,8 +84,8 @@
   .exp-sep { color: var(--neutral-300); margin: 0 6px; }
   .exp-dates { font-family: var(--font-mono); font-size: 11px; font-weight: 400; color: var(--neutral-700); white-space: nowrap; letter-spacing: 0.04em; }
   .exp-projects { display: flex; flex-direction: column; gap: 10px; }
-  .exp-project { display: grid; grid-template-columns: 172px 1fr; gap: 16px; font-size: 13px; line-height: 1.65; }
-  .exp-project-name { font-weight: 600; color: var(--neutral-900); }
+  .exp-project { display: grid; grid-template-columns: 172px 1fr; gap: 16px; font-size: 13px; line-height: 1.7; }
+  .exp-project-name { font-weight: 500; color: var(--neutral-900); }
   .exp-project-desc { color: var(--neutral-700); }
   .exp-project-desc strong { color: var(--neutral-900); font-weight: 600; }
   .exp-project--full { grid-template-columns: 1fr; }
@@ -120,9 +120,9 @@
   .resume-footer-links a:hover { color: var(--neutral-1000); }
 
   /* ─── Experience bullets ─── */
-  .exp-focus { font-size: 13px; line-height: 1.6; color: var(--neutral-700); font-style: italic; margin-bottom: 14px; }
+  .exp-focus { font-size: 13px; line-height: 1.7; color: var(--neutral-700); font-style: italic; margin-bottom: 14px; }
   .exp-bullets { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 9px; }
-  .exp-bullets li { font-size: 13px; line-height: 1.65; color: var(--neutral-700); padding-left: 18px; position: relative; }
+  .exp-bullets li { font-size: 13px; line-height: 1.7; color: var(--neutral-700); padding-left: 18px; position: relative; }
   .exp-bullets li::before { content: '–'; position: absolute; left: 0; color: var(--gold-500); font-weight: 500; }
   .exp-bullets li strong { color: var(--neutral-900); font-weight: 600; }
 
@@ -215,7 +215,7 @@
       <p class="exp-focus">Focused on growth design, user journeys, and conversion rate optimization (CRO).</p>
       <ul class="exp-bullets">
         <li>Redesigned end-to-end trial user journey using A/B testing, funnel analysis, and user behavior insights → <strong>+9.6% trial-to-paid conversion</strong></li>
-        <li>Designed tutor allocation system with preference-based scheduling → <strong>40% reduction in scheduled trial cancellations</strong></li>
+        <li>Built CueTutor License & Trial Allocation system with tutor-level trial allocation preferences → <strong>12% reduction in scheduled trial cancellations</strong></li>
         <li>Improved sign-up funnel UX (Customer Needs Assessment flow) → <strong>+8% Qualified Lead to trial conversion</strong></li>
         <li>Conducted usability testing and user research to optimize internal tools for operations and curriculum teams</li>
         <li>Partnered with cross-functional teams to deliver data-driven design improvements across acquisition and retention flows</li>

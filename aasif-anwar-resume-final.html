@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aasif Anwar — Product Designer</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', sans-serif;
+            line-height: 1.7;
+            color: #2c2c2c;
+            background: #fff;
+            padding: 40px 50px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        @media print {
+            body {
+                padding: 30px 40px;
+            }
+        }
+
+        /* Header */
+        .header {
+            margin-bottom: 32px;
+            border-bottom: 2px solid #000;
+            padding-bottom: 20px;
+        }
+
+        .name {
+            font-size: 28px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            margin-bottom: 6px;
+        }
+
+        .title {
+            font-size: 14px;
+            color: #666;
+            font-weight: 600;
+            letter-spacing: 0.8px;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+        }
+
+        .contact {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+            font-size: 12px;
+            color: #555;
+        }
+
+        .contact a {
+            color: #2c2c2c;
+            text-decoration: none;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .contact a:hover {
+            border-bottom-color: #2c2c2c;
+        }
+
+        /* Summary */
+        .summary {
+            margin-bottom: 32px;
+            font-size: 13px;
+            line-height: 1.7;
+            color: #555;
+        }
+
+        /* Section */
+        .section {
+            margin-bottom: 40px;
+            padding-bottom: 24px;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .section:last-of-type {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+
+        .section-title {
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: #000;
+            margin-bottom: 24px;
+            padding-top: 0;
+        }
+
+        /* Role */
+        .role {
+            margin-bottom: 28px;
+        }
+
+        .role:last-child {
+            margin-bottom: 0;
+        }
+
+        .role-title {
+            font-size: 14px;
+            font-weight: 700;
+            margin-bottom: 14px;
+            color: #000;
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+        }
+
+        .role-dates {
+            font-size: 12px;
+            color: #888;
+            margin-left: auto;
+            white-space: nowrap;
+            text-align: right;
+        }
+
+        /* Project */
+        .project {
+            margin-bottom: 12px;
+            margin-left: 0;
+            font-size: 13px;
+            line-height: 1.7;
+            color: #555;
+        }
+
+        .project:last-child {
+            margin-bottom: 0;
+        }
+
+        .project-name {
+            font-weight: 500;
+            color: #000;
+            display: inline;
+        }
+
+        .project-desc {
+            color: #555;
+            display: inline;
+        }
+
+        /* Education */
+        .edu-item {
+            margin-bottom: 10px;
+            font-size: 13px;
+        }
+
+        .edu-school {
+            font-weight: 600;
+            color: #000;
+        }
+
+        .edu-degree {
+            color: #555;
+            font-size: 12px;
+        }
+
+        /* Skills & Tools */
+        .skills-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 32px;
+            font-size: 12px;
+        }
+
+        .skill-group-title {
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #000;
+        }
+
+        .skill-items {
+            color: #666;
+            line-height: 1.8;
+        }
+
+        /* Accent line */
+        .accent {
+            display: inline-block;
+            width: 3px;
+            height: 3px;
+            background: #000;
+            margin: 0 6px;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <div class="header">
+        <div class="name">Aasif Anwar</div>
+        <div class="title">Product Designer · UX Design & Research</div>
+        <div class="contact">
+            <span>+91-9709452140</span>
+            <span>·</span>
+            <span><a href="mailto:aasif.nid@gmail.com">aasif.nid@gmail.com</a></span>
+            <span>·</span>
+            <span><a href="https://aasifanwar.vercel.app">Portfolio</a></span>
+            <span>·</span>
+            <span><a href="https://linkedin.com/in/aasif-nid">LinkedIn</a></span>
+        </div>
+    </div>
+
+    <!-- Summary -->
+    <div class="summary">
+        Product Designer with 4+ years at Cuemath (200K+ students, 80+ countries). Designed growth flows, platform redesigns, and learning tools. Shipped work that moved metrics: 70% reduction in AC bottlenecks, 50% QL-to-trial lift, 67.45% improvement in student learning readiness. User research background (IIT Kanpur). Industrial Design degree (NID).
+    </div>
+
+    <!-- Experience -->
+    <div class="section">
+        <div class="section-title">Experience</div>
+
+        <div class="role">
+            <div class="role-title">Product Designer II Cuemath <span class="role-dates">Apr 2025 – Apr 2026</span></div>
+
+            <div class="project">
+                <span class="project-name">Feel Check (SEL Tools)</span>
+                <span class="project-desc"> — Tutors couldn't see how students arrived emotionally. Lost 15–20 minutes to dysregulation. Designed a 90-second student-led check-in using the Wheel of Awareness framework. Tested with 417 students across 4 cohorts. 89.3% of students engaged without prompting. 67.45% of tutors observed improved readiness to learn.</span>
+            </div>
+
+            <div class="project">
+                <span class="project-name">LEAP Platform Redesign</span>
+                <span class="project-desc"> — Core tutoring platform felt fragmented. Mapped the full student journey, identified where engagement dropped, redesigned the homepage and chapter view. 6 months of iterative work with engineering and product. Measurably improved session completion and engagement platform-wide.</span>
+            </div>
+        </div>
+
+        <div class="role">
+            <div class="role-title">Product Designer I Cuemath <span class="role-dates">Apr 2022 – Mar 2025</span></div>
+
+            <div class="project">
+                <span class="project-name">New Trial Experience</span>
+                <span class="project-desc"> — Parents waited 2–3 days for an AC call about enrollment. Redesigned the entire journey to distribute the work: system automation (WhatsApp verification, slot booking), teachers (relationship-building), parents (direct enrollment). 70% less AC intervention while maintaining conversion. Secondary wins: 50% QL-to-trial lift, 9.6% trial-to-paid lift.</span>
+            </div>
+
+            <div class="project">
+                <span class="project-name">e-CNA Flow</span>
+                <span class="project-desc"> — Signup funnel wasn't capturing what parents actually needed. Redesigned to ask real questions, improve lead quality, and route better. 8% QL-to-trial lift, 4% QL-to-paid lift.</span>
+            </div>
+
+            <div class="project">
+                <span class="project-name">CueTutor License & Trial Allocation</span>
+                <span class="project-desc"> — Built new license system with tutor-level trial allocation preferences. Reduced scheduled trial cancellations by 12%. Shipped cross-functionally with PMs and engineering.</span>
+            </div>
+        </div>
+
+        <div class="role">
+            <div class="role-title">Associate Game Designer Cuemath <span class="role-dates">May 2021 – Mar 2022</span></div>
+            <div class="project">
+                <span class="project-desc">Built interactive games embedding computational thinking into coding lessons. Gamified Cuemath's v3 math curriculum.</span>
+            </div>
+        </div>
+
+        <div class="role">
+            <div class="role-title">Gamified Curriculum Designer Mastree (Unacademy) <span class="role-dates">Nov 2020 – Apr 2021</span></div>
+            <div class="project">
+                <span class="project-desc">Crafted interactive math lessons for Inspirational Maths — India's first skill-based K–12 program.</span>
+            </div>
+        </div>
+
+        <div class="role">
+            <div class="role-title">Project Associate, Department of Design IIT Kanpur <span class="role-dates">Apr 2017 – Jun 2018</span></div>
+            <div class="project">
+                <span class="project-desc">Led design and development of digital math games for primary students in MP government schools.</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Education -->
+    <div class="section">
+        <div class="section-title">Education</div>
+        <div class="edu-item">
+            <div class="edu-school">National Institute of Design (NID)</div>
+            <div class="edu-degree">M.Des. in Industrial Design · 2018–2021</div>
+        </div>
+        <div class="edu-item">
+            <div class="edu-school">Nalanda College of Engineering</div>
+            <div class="edu-degree">B.Tech. in Mechanical Engineering · 2011–2015</div>
+        </div>
+    </div>
+
+    <!-- Skills & Tools -->
+    <div class="section">
+        <div class="section-title">Skills & Tools</div>
+        <div class="skills-section">
+            <div>
+                <div class="skill-group-title">Skills</div>
+                <div class="skill-items">
+                    Interaction Design · UX Research · User Journeys · Usability Testing · Information Architecture · A/B Testing · Funnel Optimization · Wireframing · Prototyping · UI Design
+                </div>
+            </div>
+            <div>
+                <div class="skill-group-title">Tools</div>
+                <div class="skill-items">
+                    Figma · Notion · Mixpanel · Miro · Slack
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
