@@ -33,7 +33,7 @@
 <!-- COVER -->
 <div class="cover">
   <p class="cover-eyebrow">Product Design · Cuemath · 2024</p>
-  <h1>New Trial Experience — 70% reduction in AC intervention by automating wait, empowering teachers, enabling parent self-service</h1>
+  <h1>New Trial Experience — Removed AC bottlenecks from trial-to-enrollment. 70% less AC work, same conversion rates.</h1>
   <p class="value-prop">Redesigned trial-to-enrollment workflow to distribute conversion work across three roles: system (WhatsApp communication + automated slot selection), teachers (relationship-building + answering questions), parents (enrollment decision-making). Achieved primary goal: 70% reduction in AC intervention while maintaining conversion rates. Secondary wins: QL-to-trial conversion improved 50%, trial-to-paid conversion improved 9.6%.</p>
   <p class="lede">Cuemath's trial funnel was entirely AC-dependent, creating a queue and stalling conversions. The redesign distributed the work: system handles automation (WhatsApp, scheduling), teachers handle relationship-building (introductions, answering questions), parents handle enrollment decisions (selection and payment). ACs now intervene only for exceptions—special needs, payment issues, edge cases.</p>
 
@@ -77,7 +77,7 @@
     <span class="section-label">Context</span>
   </div>
 
-  <p>Cuemath's lead-to-paid funnel was entirely AC-dependent. Every qualified lead passed through an AC at four sequential decision points: lead qualification (call parent, assess fit), trial scheduling (offer slots, coordinate availability), enrollment (discuss pricing after trial), and onboarding (collect parent's preferred class days post-enrollment). This wasn't parallel work—each step waited for the previous one to complete. A single parent journey required 4–6 AC interactions over 7–10 days. With limited AC headcount and rising lead volume, the funnel became a queue management problem.</p>
+  <p>Cuemath's lead-to-paid funnel was entirely AC-dependent. Every qualified lead required multiple AC touchpoints across the journey: initial qualification call, trial scheduling coordination, post-trial follow-up, and preference collection. Each touchpoint added 6–12 hours of delay as ACs managed competing leads. A typical parent journey took 2–3 days from signup to enrollment decision. With limited AC headcount and rising lead volume, the funnel became a bottleneck—ACs spent their time coordinating, not converting.</p>
 
   <p>The friction was real. Trials got delayed waiting for AC availability. Follow-ups stalled after the trial because ACs were handling the backlog of earlier leads. Parents' intent cooled during the waiting periods. By the time an AC called back post-trial, the peak moment of conviction had passed. The AC team wasn't incompetent—they were stretched. Cuemath operated on thin margins in India's market. Hiring more ACs to handle the volume wasn't economically viable. The model had to change.</p>
 
@@ -95,13 +95,13 @@
     <span class="section-label">Role</span>
   </div>
 
-  <p>I was the sole product designer on this project—early in my career at Cuemath, learning on the job. This was my first time owning an end-to-end user flow that directly impacted business metrics. I owned the entire redesign: the signup experience, communication strategy across WhatsApp, trial slot booking mechanics, teacher positioning during and before the trial, and the post-trial enrollment interface. The scope was complete—from a parent's first interaction (signing up as a qualified lead) through payment and class scheduling.</p>
+  <p>I was the sole product designer on this project. This was my first time owning an end-to-end user flow that directly impacted business metrics. I owned the entire redesign: the signup experience, communication strategy across WhatsApp, trial slot booking mechanics, teacher positioning during and before the trial, and the post-trial enrollment interface. The scope was complete—from a parent's first signup through payment and class scheduling.</p>
 
   <p>I worked with a lead product manager who owned strategy and business metrics, and engineering (one developer, one FE engineer, multiple BE engineers) to implement. The PM provided two critical data points: 40% of qualified leads didn't complete trial booking within 24 hours (waiting for AC callback), and 35% of trial-attendees didn't enroll within 3 days of the session (AC follow-up wasn't reaching them). I reframed this: the problem wasn't AC incompetence; it was AC availability as a dependency.</p>
 
-  <p>I tested a promising hypothesis early: have teachers lead conversions during trials. Within 3 weeks of prototyping with 5–6 teachers, the feedback was clear—teachers couldn't balance teaching and selling simultaneously without sounding performative and dropping lesson quality. That constraint redirected the entire approach toward distributed work: system handles wait, teacher handles rapport-building, parent handles enrollment choice.</p>
+  <p>I tested a promising hypothesis early: have teachers lead conversions during trials. Testing with 5–6 teachers across 22 trial classes revealed the mechanism of failure: Teachers' cognitive load during a live session is already maxed—managing pacing, monitoring student engagement, adapting explanations on the fly. Adding "and now convince the parent to enroll" creates a context switch mid-session. Parents sense the artifice—a teacher who was natural 5 minutes ago suddenly sounds scripted. The lesson quality suffers because the teacher's attention isn't fully on the student. The close fails because timing is wrong. That constraint redirected the entire approach toward distributed work: system handles wait, teacher handles rapport-building, parent handles enrollment choice.</p>
 
-  <p>Success criteria were defined upfront and were non-negotiable: maintain the QL2P conversion rate we already had (don't lose any conversions) while reducing AC intervention by 70%. Additionally, we wanted to collapse the time between trial and enrollment from days to minutes, and enable parents to move through the entire journey with minimal human intervention—only at moments where trust and credibility mattered. One constraint shaped everything: this had to work on WhatsApp. Parents in India engage reliably on WhatsApp; email and in-app notifications don't have the same trust or response rate. WhatsApp wasn't just a communication channel—it became the spine of the entire autonomous flow.</p>
+  <p>Success criteria were defined upfront and were non-negotiable: maintain the QL2P conversion rate we already had (don't lose any conversions) while reducing AC intervention by 70%. Additionally, we wanted to collapse the time between trial and enrollment from days to minutes, and enable parents to move through the entire journey with minimal human intervention—only at moments where trust and credibility mattered. One constraint shaped everything: this had to work on WhatsApp. We observed that most teacher-parent communication already happened on WhatsApp, not through our built-in Cuemath app chat. Teachers and parents were far more comfortable sharing information over WhatsApp—it was where they naturally defaulted. Rather than fight this pattern, we made it the system's spine.</p>
 
 
   <!-- 03 PROCESS -->
@@ -120,7 +120,7 @@
 
   <h2>The Five Key Design Decisions</h2>
 
-  <p><strong>Decision 1: WhatsApp as the primary communication channel.</strong> Every critical communication—verification, slot confirmation, teacher introduction, session reminders, post-trial enrollment—moved to WhatsApp. This became the spine of the entire autonomous flow, enabling reliable response rates and engagement at each step without requiring AC coordination.</p>
+  <p><strong>Decision 1: WhatsApp as the primary communication channel.</strong> We observed that most teacher-parent communication already happened on WhatsApp, not through our built-in Cuemath app chat. Teachers and parents were far more comfortable sharing information over WhatsApp—it was where they naturally defaulted. Rather than fight this pattern, we made it the system's spine. Every critical communication—verification, slot confirmation, teacher introduction, session reminders, post-trial enrollment—moved to WhatsApp. This enabled reliable response rates and engagement at each step without requiring AC coordination.</p>
 
   <p><strong>Decision 2: Automated 5-minute recovery for abandoned slot selection.</strong> Parents signed up and verified on WhatsApp, then didn't proceed to book a slot. We captured why through feedback: overwhelmed, distracted, uncertain about timing. Instead of losing them, a 5-minute automated follow-up message triggered: "Do you need help choosing a time?" This small, well-timed intervention recovered significant drop-off volume without requiring AC escalation. It was automation at the right moment—not replacing human judgment, but removing friction from a low-judgment step.</p>
 
@@ -190,19 +190,13 @@
 
   <p><strong>What I'd Do Differently</strong></p>
 
-  <p>Weeks 1–3: I designed the teacher-led conversion flow. Weeks 4–5: engineering built the prototype. Week 6: we tested with 5–6 teachers. The feedback was so clear that by week 7, I'd pivoted to the distributed-expertise model. So we lost 5 weeks on a dead-end hypothesis. A quick lo-fi prototype (paper mockup + 30-min teacher conversation) in week 1 would have surfaced the constraint in week 1, freeing weeks 2–7 for iteration on the actual solution. Lesson: validate hypotheses with users before building.</p>
-
-  <p>For the next project, I'd front-load messaging design. Before writing interaction flows, I'd draft 5–10 parent-facing messages and test them with actual parents: "Does this feel like a teacher or a robot?" This would have surfaced tone early, instead of discovering it in post-launch feedback. It's a one-day research activity that could have prevented weeks of messaging refinement.</p>
-
-  <p>We didn't have a strong measurement framework for the post-trial experience before we started collecting data. We gathered feedback from parents and teachers (good instinct), but didn't have systematic analysis of *why* some parents enrolled immediately and others dropped off. Better practice: define what questions you're asking before you start collecting answers.</p>
+  <p>I spent 5 weeks designing and building the teacher-led hypothesis before testing it. A paper prototype and one 30-minute conversation with a teacher in week 1 would have surfaced the core constraint immediately. Instead, I lost time executing on something that wouldn't work. Lesson: validate assumptions with users before you invest in design.</p>
 
   <p><strong>What This Taught Me</strong></p>
 
-  <p>Hypotheses need validation before you get attached to them. The initial design—teachers lead conversions—was elegant. Elegance isn't a substitute for reality. The actual solution was better anyway: distribute expertise across the journey instead of overloading any single role. Teachers aren't salespeople; they're trust proxies. Using them as trust proxies (pre-trial introduction, present during the session, available for immediate post-trial conversation) was more authentic and more effective than expecting them to close deals.</p>
+  <p>Constraints are design tools, not limitations. The 70% AC reduction mandate forced clarity: every step in the flow had to either build trust or capture intent. If it did neither, it was friction—cut it. That forced me to stop designing features and start designing a system.</p>
 
-  <p>This was my first time owning an end-to-end user flow that directly impacted business metrics and organizational operations. I learned that constraints—"reduce AC intervention by 70%"—are actually design tools, not limitations. That constraint forced clarity: every step in the flow had to earn its place by either building trust or capturing intent. If a step didn't do one of those two things, it was friction and deserved to be cut. Working backward from a hard constraint meant we couldn't afford vagueness. Every decision had to ladder back to "does this reduce AC work or does it improve the user experience?" Usually it had to do both.</p>
-
-  <p>The breakthrough often comes from reframing, not executing harder on the original hypothesis. We didn't solve the problem by making teachers better at selling. We solved it by asking a different question: "What if teachers don't sell at all? What if we distribute the work differently?" That shift in framing—from "how do we make teachers sell" to "how do we remove the need for selling at all"—is what unlocked the solution.</p>
+  <p>The real breakthrough wasn't making teachers better at selling. It was asking a different question: what if teachers don't sell at all? Reframing the problem unlocked everything. Teachers aren't salespeople; they're trust proxies. Using them that way—showing up 24 hours early, being present during the trial, answering questions after—felt authentic and worked better than any script ever could.</p>
 
 </div>
 
