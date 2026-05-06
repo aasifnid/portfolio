@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aasif Anwar — Product Designer</title>
+    <title>Md Aasif Anwar — Product Designer</title>
     <style>
         * {
             margin: 0;
@@ -29,91 +29,139 @@
             }
 
             @page {
-                margin: 0.75in;
+                margin: 0.5in;
                 size: A4;
             }
 
-            body {
+            html, body {
                 background: white !important;
                 background-image: none !important;
-                line-height: 1.5;
                 margin: 0 !important;
                 padding: 0 !important;
                 width: 100%;
                 color: #2c2c2c !important;
+                font-size: 10px;
+                line-height: 1.3;
             }
 
-            /* Aggressive spacing reduction for single page */
             .header {
-                margin-bottom: 4px;
-                padding-bottom: 4px;
+                margin-bottom: 10px;
+                padding-bottom: 8px;
                 border-bottom: 1px solid #000;
             }
 
             .name {
                 font-size: 20px;
-                margin-bottom: 0px;
+                font-weight: 700;
+                margin-bottom: 2px;
+                line-height: 1;
             }
 
             .title {
-                font-size: 10px;
-                margin-bottom: 2px;
+                font-size: 9px;
+                font-weight: 600;
+                margin-bottom: 4px;
+                line-height: 1;
             }
 
             .contact {
                 font-size: 9px;
-                gap: 6px;
+                gap: 8px;
+                line-height: 1;
+            }
+
+            .contact a {
+                color: #2c2c2c;
+                text-decoration: none;
+                border-bottom: none;
             }
 
             .summary {
                 margin-bottom: 4px;
-                font-size: 10px;
-                line-height: 1.4;
+                font-size: 9px;
+                line-height: 1.3;
             }
 
             .section {
-                margin-bottom: 4px;
-                padding-bottom: 3px;
-                page-break-inside: avoid;
+                margin-top: 0;
+                margin-bottom: 6px;
+                padding-bottom: 6px;
+                border-bottom: 0.5px solid #e5e7eb;
             }
 
             .section:last-of-type {
                 border-bottom: none;
                 padding-bottom: 0;
+                margin-bottom: 0;
             }
 
             .section-title {
-                font-size: 8px;
-                margin-bottom: 3px;
-                page-break-after: avoid;
+                font-size: 9px;
+                font-weight: 700;
+                letter-spacing: 0.5px;
+                text-transform: uppercase;
+                margin-bottom: 4px;
+                line-height: 1;
             }
 
             .role {
-                margin-bottom: 3px;
+                margin-bottom: 5px;
                 page-break-inside: avoid;
+            }
+
+            .role:last-child {
+                margin-bottom: 0;
             }
 
             .role-title {
                 font-size: 10px;
+                font-weight: 700;
                 margin-bottom: 2px;
-                page-break-after: avoid;
+                line-height: 1.1;
+                display: flex;
+                justify-content: space-between;
+            }
+
+            .role-dates {
+                font-size: 9px;
+                color: #888;
+                white-space: nowrap;
+                font-weight: 400;
             }
 
             .project {
                 margin-bottom: 2px;
-                font-size: 10px;
-                line-height: 1.4;
+                font-size: 9px;
+                line-height: 1.3;
                 page-break-inside: avoid;
+            }
+
+            .project:last-child {
+                margin-bottom: 0;
+            }
+
+            .project-name {
+                font-weight: 600;
             }
 
             .edu-item {
                 margin-bottom: 2px;
-                font-size: 10px;
+                font-size: 9px;
+                line-height: 1.2;
+            }
+
+            .edu-school {
+                font-weight: 600;
+            }
+
+            .edu-degree {
+                font-size: 8px;
+                color: #666;
             }
 
             .body-text {
-                font-size: 10px;
-                line-height: 1.4;
+                font-size: 9px;
+                line-height: 1.3;
             }
         }
 
@@ -283,7 +331,7 @@
 <body>
     <!-- Header -->
     <div class="header">
-        <div class="name">Aasif Anwar</div>
+        <div class="name">Md Aasif Anwar</div>
         <div class="title">Product Designer · UX Design & Research</div>
         <div class="contact">
             <span>+91-9709452140</span>
@@ -298,7 +346,7 @@
 
     <!-- Summary -->
     <div class="summary">
-        Product Designer with 4+ years at Cuemath (200K+ students, 80+ countries). Designed growth flows, platform redesigns, and learning tools. Shipped work that moved metrics: 70% reduction in AC bottlenecks, 50% QL-to-trial lift, 67.45% improvement in student learning readiness. User research background (IIT Kanpur). Industrial Design degree (NID).
+        5 years at Cuemath designing products for 200K+ students across 80+ countries. Background in mechanical engineering, game design, and learning systems gives me three complementary perspectives: systems-level thinking, understanding what drives engagement and behavior change, and clarity on learning outcomes. I bring all three to product problems where process, people, and interface are inseparable.
     </div>
 
     <!-- Experience -->
@@ -306,21 +354,7 @@
         <div class="section-title">Experience</div>
 
         <div class="role">
-            <div class="role-title">Product Designer II Cuemath <span class="role-dates">Apr 2025 – Apr 2026</span></div>
-
-            <div class="project">
-                <span class="project-name">Feel Check (SEL Tools)</span>
-                <span class="project-desc"> — Tutors couldn't see how students arrived emotionally. Lost 15–20 minutes to dysregulation. Designed a 90-second student-led check-in using the Wheel of Awareness framework. Tested with 417 students across 4 cohorts. 89.3% of students engaged without prompting. 67.45% of tutors observed improved readiness to learn.</span>
-            </div>
-
-            <div class="project">
-                <span class="project-name">LEAP Platform Redesign</span>
-                <span class="project-desc"> — Core tutoring platform felt fragmented. Mapped the full student journey, identified where engagement dropped, redesigned the homepage and chapter view. 6 months of iterative work with engineering and product. Measurably improved session completion and engagement platform-wide.</span>
-            </div>
-        </div>
-
-        <div class="role">
-            <div class="role-title">Product Designer I Cuemath <span class="role-dates">Apr 2022 – Mar 2025</span></div>
+            <div class="role-title">Product Designer II · Cuemath <span class="role-dates">Apr 2025 – Apr 2026</span></div>
 
             <div class="project">
                 <span class="project-name">New Trial Experience</span>
@@ -328,32 +362,46 @@
             </div>
 
             <div class="project">
-                <span class="project-name">e-CNA Flow</span>
-                <span class="project-desc"> — Signup funnel wasn't capturing what parents actually needed. Redesigned to ask real questions, improve lead quality, and route better. 8% QL-to-trial lift, 4% QL-to-paid lift.</span>
+                <span class="project-name">Feel Check (SEL Tools)</span>
+                <span class="project-desc"> — Tutors couldn't see how students arrived emotionally. Lost 15–20 minutes to dysregulation. Designed a 90-second student-led check-in using the Wheel of Awareness framework. Tested with 417 students across 4 cohorts. 89.3% of students engaged without prompting. 67.45% of tutors observed improved readiness to learn.</span>
+            </div>
+        </div>
+
+        <div class="role">
+            <div class="role-title">Product Designer I · Cuemath <span class="role-dates">Apr 2022 – Mar 2025</span></div>
+
+            <div class="project">
+                <span class="project-name">Student Transfer System</span>
+                <span class="project-desc"> — Manual transfer process was bottlenecked with 600+ pending requests and 5% churn rate. Designed automated matching system with teacher availability and student preference algorithms. Shipped in 2 weeks. Results: churn dropped from 5% to 0.2%, first class attendance improved to 92%, successful transfers on first attempt reached 85%.</span>
             </div>
 
             <div class="project">
                 <span class="project-name">CueTutor License & Trial Allocation</span>
                 <span class="project-desc"> — Built new license system with tutor-level trial allocation preferences. Reduced scheduled trial cancellations by 12%. Shipped cross-functionally with PMs and engineering.</span>
             </div>
+
+            <div class="project">
+                <span class="project-name">e-CNA Flow</span>
+                <span class="project-desc"> — Signup funnel wasn't capturing what parents actually needed. Redesigned to ask real questions, improve lead quality, and route better. 8% QL-to-trial lift, 4% QL-to-paid lift.</span>
+            </div>
         </div>
 
         <div class="role">
-            <div class="role-title">Associate Game Designer Cuemath <span class="role-dates">May 2021 – Mar 2022</span></div>
+            <div class="role-title">Associate Game Designer · Cuemath <span class="role-dates">May 2021 – Mar 2022</span></div>
             <div class="project">
                 <span class="project-desc">Built interactive games embedding computational thinking into coding lessons. Gamified Cuemath's v3 math curriculum.</span>
             </div>
         </div>
 
         <div class="role">
-            <div class="role-title">Gamified Curriculum Designer Mastree (Unacademy) <span class="role-dates">Nov 2020 – Apr 2021</span></div>
+            <div class="role-title">Gamified Curriculum Designer · Mastree (Unacademy) <span class="role-dates">Nov 2020 – Apr 2021</span></div>
             <div class="project">
                 <span class="project-desc">Crafted interactive math lessons for Inspirational Maths — India's first skill-based K–12 program.</span>
             </div>
         </div>
 
         <div class="role">
-            <div class="role-title">Project Associate, Department of Design IIT Kanpur <span class="role-dates">Apr 2017 – Jun 2018</span></div>
+            <div class="role-title">Project Associate · Department of Design, IIT Kanpur <span class="role-dates">Apr 2017 – Jun 2018</span></div>
             <div class="project">
                 <span class="project-desc">Led design and development of digital math games for primary students in MP government schools.</span>
             </div>
