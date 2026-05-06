@@ -22,8 +22,93 @@
         }
 
         @media print {
+            * {
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+                color-adjust: exact !important;
+            }
+
+            @page {
+                margin: 0.3in 0.35in 0.3in 0.35in;
+                size: A4;
+            }
+
+            html, body {
+                margin: 0 !important;
+                padding: 0 !important;
+                max-width: 100% !important;
+                height: auto;
+            }
+
             body {
-                padding: 30px 40px;
+                background: white;
+                background-image: none;
+                line-height: 1.6;
+                padding: 0 !important;
+                margin: 0 !important;
+            }
+
+            /* Tighten sections for fit */
+            .header {
+                margin-bottom: 16px;
+                padding-bottom: 12px;
+                border-bottom: 1px solid #000;
+            }
+
+            .name {
+                font-size: 24px;
+                margin-bottom: 4px;
+            }
+
+            .title {
+                font-size: 12px;
+                margin-bottom: 8px;
+            }
+
+            .contact {
+                font-size: 11px;
+                gap: 12px;
+            }
+
+            .summary {
+                margin-bottom: 16px;
+                font-size: 12px;
+                line-height: 1.6;
+            }
+
+            .section {
+                margin-bottom: 18px;
+                padding-bottom: 12px;
+            }
+
+            .section-title {
+                font-size: 10px;
+                margin-bottom: 12px;
+            }
+
+            .role {
+                margin-bottom: 14px;
+            }
+
+            .role-title {
+                font-size: 12px;
+                margin-bottom: 8px;
+            }
+
+            .project {
+                margin-bottom: 8px;
+                font-size: 12px;
+                line-height: 1.6;
+            }
+
+            .edu-item {
+                margin-bottom: 6px;
+                font-size: 12px;
+            }
+
+            .skills-section {
+                gap: 16px;
+                font-size: 11px;
             }
         }
 
