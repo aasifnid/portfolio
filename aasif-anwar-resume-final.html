@@ -106,8 +106,16 @@
                 font-size: 12px;
             }
 
-            .skills-section {
-                gap: 16px;
+            .skill-item {
+                margin-bottom: 10px;
+            }
+
+            .skill-label {
+                font-size: 12px;
+                margin-bottom: 4px;
+            }
+
+            .skill-list {
                 font-size: 11px;
             }
         }
@@ -258,21 +266,25 @@
             font-size: 12px;
         }
 
-        .skill-group-title {
+        .skill-item {
+            margin-bottom: 14px;
+        }
+
+        .skill-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .skill-label {
             font-weight: 600;
-            margin-bottom: 8px;
-            margin-top: 12px;
             color: #000;
+            font-size: 13px;
+            margin-bottom: 6px;
         }
 
-        .skill-group-title:first-of-type {
-            margin-top: 0;
-        }
-
-        .skill-items {
+        .skill-list {
             color: #666;
             line-height: 1.8;
-            margin-bottom: 12px;
+            font-size: 13px;
         }
 
         /* Accent line */
@@ -382,13 +394,17 @@
     <!-- Skills & Tools -->
     <div class="section">
         <div class="section-title">Skills & Tools</div>
-        <div class="skill-group-title">Skills</div>
-        <div class="skill-items">
-            Interaction Design · UX Research · User Journeys · Usability Testing · Information Architecture · A/B Testing · Funnel Optimization · Wireframing · Prototyping · UI Design
+        <div class="skill-item">
+            <div class="skill-label">Skills</div>
+            <div class="skill-list">
+                Interaction Design · UX Research · User Journeys · Usability Testing · Information Architecture · A/B Testing · Funnel Optimization · Wireframing · Prototyping · UI Design
+            </div>
         </div>
-        <div class="skill-group-title">Tools</div>
-        <div class="skill-items">
-            Figma · Notion · Mixpanel · Miro · Slack
+        <div class="skill-item">
+            <div class="skill-label">Tools</div>
+            <div class="skill-list">
+                Figma · Notion · Mixpanel · Miro · Slack
+            </div>
         </div>
     </div>
 </body>
