@@ -449,8 +449,50 @@
   .chat-send:hover { background: #2D2B28; }
   .chat-send:disabled { opacity: 0.4; cursor: not-allowed; }
   @media (max-width: 480px) {
+    /* Navigation */
+    .site-nav { padding: 0 16px; height: auto; flex-wrap: wrap; gap: 12px; }
+    .nav-name { font-size: 13px; }
+    .nav-links { gap: 2px; flex-wrap: wrap; }
+    .nav-links a { font-size: 12px; padding: 5px 10px; }
+    .nav-resume { margin-left: 0; }
+
+    /* Hero */
+    .home-hero { padding: 60px 16px 40px; }
+    .hero-headline { font-size: clamp(28px, 6vw, 40px); margin-bottom: 20px; }
+    .hero-eyebrow { font-size: 10px; margin-bottom: 16px; }
+    .hero-rule { width: 36px; margin-bottom: 16px; }
+    .hero-sub { font-size: 15px; line-height: 1.5; margin-bottom: 28px; }
+    .hero-actions { gap: 8px; }
+    .btn-primary, .btn-ghost { font-size: 12px; padding: 10px 16px; }
+
+    /* Work cards */
+    .home-section { padding: 40px 16px; }
+    .work-grid { gap: 12px; }
+    .work-card { min-height: auto; }
+    .work-card-body { padding: 20px 16px 24px; }
+    .work-card-meta { font-size: 10px; }
+    .work-card-title { font-size: 18px; margin-bottom: 8px; }
+    .work-card-desc { font-size: 13px; line-height: 20px; }
+    .work-card-visual { min-height: 160px; }
+
+    /* Archive card */
+    .work-card--archive { padding: 24px 16px; min-height: auto; }
+    .archive-meta { font-size: 10px; }
+    .archive-title { font-size: 18px; margin-bottom: 8px; }
+    .archive-desc { font-size: 13px; line-height: 20px; }
+
+    /* Recommendations grid */
+    .recs-grid { grid-template-columns: 1fr; }
+
+    /* About section */
+    .about-layout { gap: 24px; }
+
+    /* Chat */
     #chat-panel { width: calc(100vw - 24px); right: 12px; bottom: 80px; }
     #chat-bubble { bottom: 16px; right: 16px; }
+
+    /* Footer */
+    .home-footer { padding: 20px 16px 32px; }
   }
 
   /* ─── Footer ─── */
