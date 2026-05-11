@@ -1,0 +1,59 @@
+<svg viewBox="0 0 1200 500" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="1200" height="500" fill="#ffffff"/>
+
+  <!-- Background circles pattern -->
+  <circle cx="150" cy="250" r="120" fill="none" stroke="#f0f0f0" stroke-width="2" opacity="0.6"/>
+  <circle cx="150" cy="250" r="95" fill="none" stroke="#f0f0f0" stroke-width="2" opacity="0.4"/>
+  <circle cx="400" cy="250" r="120" fill="none" stroke="#f0f0f0" stroke-width="2" opacity="0.6"/>
+  <circle cx="400" cy="250" r="95" fill="none" stroke="#f0f0f0" stroke-width="2" opacity="0.4"/>
+  <circle cx="650" cy="250" r="120" fill="none" stroke="#f0f0f0" stroke-width="2" opacity="0.6"/>
+  <circle cx="650" cy="250" r="95" fill="none" stroke="#f0f0f0" stroke-width="2" opacity="0.4"/>
+  <circle cx="900" cy="250" r="120" fill="none" stroke="#f0f0f0" stroke-width="2" opacity="0.6"/>
+  <circle cx="900" cy="250" r="95" fill="none" stroke="#f0f0f0" stroke-width="2" opacity="0.4"/>
+
+  <!-- Stage 1: Senses -->
+  <circle cx="150" cy="250" r="80" fill="#A8E6D9" opacity="0.9"/>
+  <circle cx="150" cy="250" r="80" fill="none" stroke="#5FD3BC" stroke-width="3"/>
+  <text x="150" y="260" font-family="Plus Jakarta Sans, sans-serif" font-size="48" font-weight="bold" text-anchor="middle" fill="#2D3436">42s</text>
+  <text x="150" y="320" font-family="Plus Jakarta Sans, sans-serif" font-size="16" font-weight="600" text-anchor="middle" fill="#2D3436">Senses</text>
+  <text x="150" y="345" font-family="Plus Jakarta Sans, sans-serif" font-size="12" text-anchor="middle" fill="#636E72">(Wheel)</text>
+
+  <!-- Arrow 1 -->
+  <path d="M 230 250 L 320 250" stroke="#D0D0D0" stroke-width="3" fill="none" marker-end="url(#arrowhead)"/>
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#D0D0D0"/>
+    </marker>
+  </defs>
+
+  <!-- Stage 2: Emotion Zone -->
+  <circle cx="400" cy="250" r="80" fill="#B3D9F2" opacity="0.9"/>
+  <circle cx="400" cy="250" r="80" fill="none" stroke="#7FC3F2" stroke-width="3"/>
+  <text x="400" y="260" font-family="Plus Jakarta Sans, sans-serif" font-size="48" font-weight="bold" text-anchor="middle" fill="#2D3436">7s</text>
+  <text x="400" y="320" font-family="Plus Jakarta Sans, sans-serif" font-size="16" font-weight="600" text-anchor="middle" fill="#2D3436">Emotion</text>
+  <text x="400" y="345" font-family="Plus Jakarta Sans, sans-serif" font-size="12" text-anchor="middle" fill="#636E72">(Zone)</text>
+
+  <!-- Arrow 2 -->
+  <path d="M 480 250 L 570 250" stroke="#D0D0D0" stroke-width="3" fill="none" marker-end="url(#arrowhead)"/>
+
+  <!-- Stage 3: Select Emotion -->
+  <circle cx="650" cy="250" r="80" fill="#F5D0A9" opacity="0.9"/>
+  <circle cx="650" cy="250" r="80" fill="none" stroke="#E8A870" stroke-width="3"/>
+  <text x="650" y="260" font-family="Plus Jakarta Sans, sans-serif" font-size="48" font-weight="bold" text-anchor="middle" fill="#2D3436">14s</text>
+  <text x="650" y="320" font-family="Plus Jakarta Sans, sans-serif" font-size="16" font-weight="600" text-anchor="middle" fill="#2D3436">Select</text>
+  <text x="650" y="345" font-family="Plus Jakarta Sans, sans-serif" font-size="12" text-anchor="middle" fill="#636E72">(Emotion)</text>
+
+  <!-- Arrow 3 -->
+  <path d="M 730 250 L 820 250" stroke="#D0D0D0" stroke-width="3" fill="none" marker-end="url(#arrowhead)"/>
+
+  <!-- Stage 4: Regulation -->
+  <circle cx="900" cy="250" r="80" fill="#F0B8B8" opacity="0.9"/>
+  <circle cx="900" cy="250" r="80" fill="none" stroke="#E8968A" stroke-width="3"/>
+  <text x="900" y="250" font-family="Plus Jakarta Sans, sans-serif" font-size="40" font-weight="bold" text-anchor="middle" fill="#2D3436">2m</text>
+  <text x="900" y="320" font-family="Plus Jakarta Sans, sans-serif" font-size="16" font-weight="600" text-anchor="middle" fill="#2D3436">Regulate</text>
+  <text x="900" y="345" font-family="Plus Jakarta Sans, sans-serif" font-size="12" text-anchor="middle" fill="#636E72">(Strategy)</text>
+
+  <!-- Total at bottom -->
+  <text x="600" y="430" font-family="Plus Jakarta Sans, sans-serif" font-size="18" font-weight="600" text-anchor="middle" fill="#2D3436">Total Feel Check Journey: 3.4 minutes</text>
+</svg>

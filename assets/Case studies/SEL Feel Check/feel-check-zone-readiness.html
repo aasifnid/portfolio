@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feel Check Zone Readiness</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 40px;
+            background: #ffffff;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            width: 1200px;
+            max-width: 100%;
+        }
+
+        .comparison {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            margin-bottom: 40px;
+        }
+
+        .donut {
+            position: relative;
+            width: 220px;
+            height: 220px;
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            background: conic-gradient(
+                #52B788 0deg 182deg,
+                #4ECDC4 182deg 240deg,
+                #FFD93D 240deg 317deg,
+                #FF6B6B 317deg 360deg
+            );
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .donut::after {
+            content: '';
+            position: absolute;
+            width: 140px;
+            height: 140px;
+            background: #ffffff;
+            border-radius: 50%;
+        }
+
+        .donut-center {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+        }
+
+        .donut-number {
+            font-size: 36px;
+            font-weight: bold;
+            color: #2d3436;
+        }
+
+        .donut-label {
+            font-size: 11px;
+            color: #636e72;
+        }
+
+        .zone-section h3 {
+            text-align: center;
+            font-size: 14px;
+            font-weight: 600;
+            color: #2d3436;
+            margin: 20px 0 15px;
+        }
+
+        .legend {
+            font-size: 12px;
+            line-height: 1.8;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 8px;
+        }
+
+        .legend-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+
+        .insight-box {
+            background: #FFF8F0;
+            border: 2px solid #D0A86B;
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .insight-title {
+            font-size: 13px;
+            font-weight: 600;
+            color: #2d3436;
+            margin-bottom: 8px;
+        }
+
+        .insight-subtitle {
+            font-size: 11px;
+            color: #636e72;
+            margin-bottom: 12px;
+        }
+
+        .insight-meta {
+            font-size: 11px;
+            color: #636e72;
+            font-style: italic;
+            line-height: 1.5;
+        }
+
+        .outcome-box {
+            background: #A8E6D9;
+            border: 3px solid #5FD3BC;
+            border-radius: 12px;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .outcome-number {
+            font-size: 64px;
+            font-weight: bold;
+            color: #2d3436;
+            line-height: 1;
+            margin-bottom: 12px;
+        }
+
+        .outcome-label {
+            font-size: 14px;
+            font-weight: 600;
+            color: #2d3436;
+            line-height: 1.4;
+        }
+
+        .bottom-insight {
+            text-align: center;
+            font-size: 13px;
+            color: #636e72;
+            font-style: italic;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="comparison">
+            <!-- Left: Zone Distribution -->
+            <div class="zone-section">
+                <div class="donut">
+                    <div class="donut-center">
+                        <div class="donut-number">421</div>
+                        <div class="donut-label">sessions</div>
+                    </div>
+                </div>
+                <h3>G3–4 Zone Distribution</h3>
+                <div class="legend">
+                    <div class="legend-item">
+                        <div class="legend-dot" style="background: #52B788;"></div>
+                        <span>Green 217 (51%)</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-dot" style="background: #4ECDC4;"></div>
+                        <span>Blue 68 (16%)</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-dot" style="background: #FFD93D;"></div>
+                        <span>Yellow 90 (21%)</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-dot" style="background: #FF6B6B;"></div>
+                        <span>Red 46 (11%)</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Center: Insight -->
+            <div class="insight-box">
+                <div class="insight-title">47–53% arrived dysregulated</div>
+                <div class="insight-subtitle">(Yellow + Red zones)</div>
+                <div style="margin-top: 16px; border-top: 1px solid #E0C8A8; padding-top: 12px;">
+                    <div class="insight-meta">This is the problem<br>Feel Check solved</div>
+                </div>
+            </div>
+
+            <!-- Right: Outcome -->
+            <div class="outcome-box">
+                <div class="outcome-number">67.45%</div>
+                <div class="outcome-label">Tutors observed improved readiness</div>
+            </div>
+        </div>
+
+        <div class="bottom-insight">
+            Feel Check surfaced dysregulated students and improved readiness for nearly 2 out of 3.
+        </div>
+    </div>
+</body>
+</html>

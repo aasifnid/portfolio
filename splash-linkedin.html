@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Md Aasif Anwar — Built with AI</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,400&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html {
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    position: relative;
+    display: grid;
+    place-items: center;
+    min-height: 100vh;
+    width: 100vw;
+    background: #141210 !important;
+    background-image: radial-gradient(circle, rgba(255,255,255,0.04) 1px, transparent 1px) !important;
+    background-size: 24px 24px;
+    padding: 40px;
+    color-scheme: dark;
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+    overflow: hidden;
+  }
+
+  body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: #C4862A !important;
+    z-index: 10;
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+  }
+
+  .splash-wrapper {
+    width: 100%;
+    max-width: 900px;
+    text-align: center;
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+  }
+
+  .splash-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+  }
+
+  .splash-eyebrow {
+    font-family: 'DM Mono', monospace;
+    font-size: clamp(10px, 1vw, 13px);
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.3) !important;
+    margin-bottom: clamp(30px, 5vw, 50px);
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+  }
+
+  .splash-statement {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: clamp(40px, 8vw, 72px);
+    font-weight: 300;
+    letter-spacing: -0.02em;
+    line-height: 1.15;
+    color: rgba(255, 255, 255, 0.7) !important;
+    margin-bottom: 8px;
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+  }
+
+  .splash-statement strong {
+    font-weight: 800;
+    color: #FFFFFF !important;
+    display: block;
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+  }
+
+  .splash-tools {
+    font-family: 'DM Mono', monospace;
+    font-size: clamp(11px, 1.2vw, 13px);
+    font-weight: 400;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: #DFA44C !important;
+    margin-top: clamp(30px, 5vw, 50px);
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+  }
+
+  .splash-tools-sep {
+    color: rgba(255, 255, 255, 0.2) !important;
+    margin: 0 clamp(8px, 1vw, 12px);
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+  }
+
+  @page {
+    margin: 0;
+    padding: 0;
+  }
+
+  @media print {
+    * { margin: 0; padding: 0; }
+
+    html {
+      width: 100%;
+      height: 100%;
+    }
+
+    body {
+      margin: 0 !important;
+      padding: 40px !important;
+      width: 100%;
+      height: 100%;
+      min-height: 100%;
+      display: grid;
+      place-items: center;
+      background: #141210 !important;
+      background-image: radial-gradient(circle, rgba(255,255,255,0.04) 1px, transparent 1px) !important;
+      background-size: 24px 24px;
+      print-color-adjust: exact !important;
+      -webkit-print-color-adjust: exact !important;
+      page-break-after: avoid;
+    }
+
+    body::before {
+      height: 2px;
+      background: #C4862A !important;
+      print-color-adjust: exact !important;
+      -webkit-print-color-adjust: exact !important;
+    }
+
+    .splash-wrapper {
+      page-break-inside: avoid;
+      print-color-adjust: exact !important;
+      -webkit-print-color-adjust: exact !important;
+    }
+
+    .splash-eyebrow,
+    .splash-statement,
+    .splash-statement strong,
+    .splash-tools,
+    .splash-tools-sep {
+      print-color-adjust: exact !important;
+      -webkit-print-color-adjust: exact !important;
+    }
+  }
+
+  @media (max-width: 768px) {
+    body { padding: 30px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="splash-wrapper">
+  <div class="splash-container">
+    <p class="splash-eyebrow">Md Aasif Anwar &nbsp;·&nbsp; Portfolio 2026</p>
+    <p class="splash-statement">Built entirely<strong>with AI.</strong></p>
+    <p class="splash-tools">
+      Claude Code <span class="splash-tools-sep">·</span> Wispr Flow <span class="splash-tools-sep">·</span> Figma <span class="splash-tools-sep">·</span> Vercel
+    </p>
+  </div>
+</div>
+
+</body>
+</html>

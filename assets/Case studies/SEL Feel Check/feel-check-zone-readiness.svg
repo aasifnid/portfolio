@@ -1,0 +1,89 @@
+<svg viewBox="0 0 1200 600" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="1200" height="600" fill="#ffffff"/>
+
+  <!-- Background circles pattern (subtle) -->
+  <circle cx="300" cy="250" r="140" fill="none" stroke="#f0f0f0" stroke-width="2" opacity="0.5"/>
+  <circle cx="300" cy="250" r="110" fill="none" stroke="#f0f0f0" stroke-width="2" opacity="0.3"/>
+  <circle cx="900" cy="250" r="140" fill="none" stroke="#f0f0f0" stroke-width="2" opacity="0.5"/>
+  <circle cx="900" cy="250" r="110" fill="none" stroke="#f0f0f0" stroke-width="2" opacity="0.3"/>
+
+  <!-- LEFT SIDE: Zone Distribution (G3-4) -->
+  <g id="zone-g34">
+    <!-- Donut chart background -->
+    <circle cx="300" cy="250" r="100" fill="none" stroke="#E8E8E8" stroke-width="35"/>
+
+    <!-- Green segment (217 out of 421 = 51.5%) -->
+    <circle cx="300" cy="250" r="100" fill="none" stroke="#52B788" stroke-width="35"
+            stroke-dasharray="180.95 360" stroke-dashoffset="0" stroke-linecap="round"/>
+
+    <!-- Blue segment (68 out of 421 = 16.1%) -->
+    <circle cx="300" cy="250" r="100" fill="none" stroke="#4ECDC4" stroke-width="35"
+            stroke-dasharray="58.02 360" stroke-dashoffset="-180.95" stroke-linecap="round"/>
+
+    <!-- Yellow segment (90 out of 421 = 21.4%) -->
+    <circle cx="300" cy="250" r="100" fill="none" stroke="#FFD93D" stroke-width="35"
+            stroke-dasharray="77.04 360" stroke-dashoffset="-238.97" stroke-linecap="round"/>
+
+    <!-- Red segment (46 out of 421 = 10.9%) -->
+    <circle cx="300" cy="250" r="100" fill="none" stroke="#FF6B6B" stroke-width="35"
+            stroke-dasharray="39.24 360" stroke-dashoffset="-316.01" stroke-linecap="round"/>
+
+    <!-- Center text -->
+    <circle cx="300" cy="250" r="60" fill="#ffffff"/>
+    <text x="300" y="240" font-family="Plus Jakarta Sans, sans-serif" font-size="28" font-weight="bold" text-anchor="middle" fill="#2D3436">421</text>
+    <text x="300" y="265" font-family="Plus Jakarta Sans, sans-serif" font-size="12" text-anchor="middle" fill="#636E72">sessions</text>
+
+    <!-- Legend -->
+    <text x="300" y="380" font-family="Plus Jakarta Sans, sans-serif" font-size="14" font-weight="600" text-anchor="middle" fill="#2D3436">G3–4 Zone Distribution</text>
+
+    <!-- Legend items -->
+    <circle cx="180" cy="420" r="8" fill="#52B788"/>
+    <text x="200" y="426" font-family="Plus Jakarta Sans, sans-serif" font-size="12" fill="#2D3436">Green 217 (51%)</text>
+
+    <circle cx="180" cy="450" r="8" fill="#4ECDC4"/>
+    <text x="200" y="456" font-family="Plus Jakarta Sans, sans-serif" font-size="12" fill="#2D3436">Blue 68 (16%)</text>
+
+    <circle cx="420" cy="420" r="8" fill="#FFD93D"/>
+    <text x="440" y="426" font-family="Plus Jakarta Sans, sans-serif" font-size="12" fill="#2D3436">Yellow 90 (21%)</text>
+
+    <circle cx="420" cy="450" r="8" fill="#FF6B6B"/>
+    <text x="440" y="456" font-family="Plus Jakarta Sans, sans-serif" font-size="12" fill="#2D3436">Red 46 (11%)</text>
+  </g>
+
+  <!-- CENTER: Connecting arrow and insight -->
+  <defs>
+    <marker id="arrow-right" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#D0A86B"/>
+    </marker>
+  </defs>
+
+  <path d="M 500 250 L 700 250" stroke="#D0A86B" stroke-width="4" fill="none" marker-end="url(#arrow-right)"/>
+
+  <!-- Key insight box -->
+  <rect x="520" y="160" width="160" height="180" fill="#FFF8F0" stroke="#D0A86B" stroke-width="2" rx="8"/>
+  <text x="600" y="185" font-family="Plus Jakarta Sans, sans-serif" font-size="13" font-weight="600" text-anchor="middle" fill="#2D3436">47–53% arrived</text>
+  <text x="600" y="205" font-family="Plus Jakarta Sans, sans-serif" font-size="13" font-weight="600" text-anchor="middle" fill="#2D3436">dysregulated</text>
+  <text x="600" y="225" font-family="Plus Jakarta Sans, sans-serif" font-size="11" text-anchor="middle" fill="#636E72">(Yellow + Red)</text>
+  <text x="600" y="255" font-family="Plus Jakarta Sans, sans-serif" font-size="11" font-style="italic" text-anchor="middle" fill="#636E72">This is the problem</text>
+  <text x="600" y="275" font-family="Plus Jakarta Sans, sans-serif" font-size="11" font-style="italic" text-anchor="middle" fill="#636E72">Feel Check solved</text>
+</g>
+
+  <!-- RIGHT SIDE: Outcome stat -->
+  <g id="outcome">
+    <!-- Large stat box -->
+    <rect x="780" y="150" width="240" height="200" fill="#A8E6D9" stroke="#5FD3BC" stroke-width="3" rx="12"/>
+
+    <!-- Big number -->
+    <text x="900" y="240" font-family="Plus Jakarta Sans, sans-serif" font-size="72" font-weight="bold" text-anchor="middle" fill="#2D3436">67.45%</text>
+
+    <!-- Label -->
+    <text x="900" y="290" font-family="Plus Jakarta Sans, sans-serif" font-size="14" font-weight="600" text-anchor="middle" fill="#2D3436">Tutors observed</text>
+    <text x="900" y="310" font-family="Plus Jakarta Sans, sans-serif" font-size="14" font-weight="600" text-anchor="middle" fill="#2D3436">improved readiness</text>
+  </g>
+
+  <!-- Bottom insight -->
+  <text x="600" y="560" font-family="Plus Jakarta Sans, sans-serif" font-size="13" text-anchor="middle" fill="#636E72" font-style="italic">
+    Feel Check surfaced dysregulated students and improved readiness for nearly 2 out of 3.
+  </text>
+</svg>
