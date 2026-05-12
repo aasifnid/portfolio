@@ -24,7 +24,7 @@ body {
 .nav-links a:hover { color: rgba(255,255,255,0.7); }
 
 /* ─── Layout ─── */
-.cover { padding: 48px 32px 80px; max-width: 800px; margin: 0 auto; }
+.cover { padding: 24px 32px 80px; max-width: 800px; margin: 0 auto; }
 .page { max-width: 800px; margin: 0 auto; padding: 0 32px 160px; }
 
 /* ─── Cover ─── */
@@ -501,7 +501,7 @@ blockquote { font-family: var(--font-display); font-size: clamp(20px, 3vw, 26px)
 }
 
 /* ─── Section anchor offset ─── */
-.section-head[id] { scroll-margin-top: 100px; }
+.section-head[id] { scroll-margin-top: 80px; }
 
 /* ─── Image placeholders ─── */
 .img-placeholder {
