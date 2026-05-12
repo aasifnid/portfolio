@@ -473,7 +473,12 @@
       entries.forEach(function(entry) {
         if (entry.isIntersecting) {
           var id = entry.target.id;
-          navLinks.forEach(function(link) { link.classList.toggle('active', link.getAttribute('href') === '#' + id); });
+          navLinks.forEach(function(link) {
+            link.classList.remove('active');
+            if (link.getAttribute('href') === '#' + id) {
+              link.classList.add('active');
+            }
+          });
         }
       });
     }, { rootMargin: '-40% 0px -55% 0px', threshold: 0 });
