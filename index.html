@@ -8,7 +8,10 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,400&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/tokens.css">
+<link rel="stylesheet" href="assets/style.css">
 <style>
+  /* Critical navbar CSS - renders immediately */
+  .site-nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: #0D0D0D; height: 52px; display: flex; justify-content: space-between; align-items: center; padding: 0 32px; }
 
   /* ─── Reset + Base ─── */
   *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
@@ -24,36 +27,9 @@
     background-position: 0 0, 0 0;
     background-attachment: scroll, scroll;
     line-height: 1.6;
+    padding-top: 52px;
   }
 
-  /* ─── Nav ─── */
-  .site-nav {
-    position: sticky; top: 0; z-index: 100;
-    background: #F5F5F5;
-    border-bottom: 1px solid var(--color-border);
-    display: flex; justify-content: space-between; align-items: center;
-    padding: 0 48px; height: 52px;
-  }
-  .nav-name {
-    font-family: var(--font-display); font-size: 14px; font-weight: 700;
-    color: var(--color-ink); text-decoration: none; letter-spacing: -0.02em;
-  }
-  .nav-links { display: flex; gap: 4px; align-items: center; }
-  .nav-links a {
-    font-family: var(--font-mono); font-size: 13px; font-weight: 400;
-    color: var(--color-ink-3); text-decoration: none;
-    letter-spacing: 0.04em; padding: 6px 12px;
-    border-radius: var(--r-sm);
-    transition: color var(--ease);
-  }
-  .nav-links a:hover { color: var(--color-ink); }
-  .nav-resume {
-    border: 1px solid var(--color-border);
-    color: var(--color-ink) !important;
-    margin-left: 8px;
-    transition: border-color var(--ease);
-  }
-  .nav-resume:hover { border-color: var(--color-border-2) !important; }
 
   /* ─── Hero ─── */
   .home-hero {
@@ -71,17 +47,17 @@
     color: var(--color-ink); margin-bottom: 28px; max-width: 820px;
   }
   .hero-rule {
-    width: 48px; height: 1px; margin-bottom: 28px;
-    background: linear-gradient(90deg, #FF80F4 30%, #D926CA 50%, #FF80F4 70%);
-    background-size: 200% auto;
+    width: 96px; height: 2px; margin-bottom: 28px;
+    background: #0D0D0D;
     opacity: 0;
-    animation: fadeUp 0.5s ease 1000ms forwards, shimmer 3s linear 1500ms infinite;
+    animation: fadeUp 0.5s ease 1000ms forwards;
   }
   .hero-sub {
     font-size: 18px; line-height: 1.65; color: var(--color-ink-2);
     font-weight: 400; margin-bottom: 48px; max-width: 460px;
   }
-  .hero-actions { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; }
+  .hero-actions { display: flex; gap: 16px; align-items: center; flex-wrap: wrap; }
+  .hero-actions .btn-primary { padding: 14px 32px; font-size: 14px; }
 
   /* ─── Buttons ─── */
   .btn-primary {
@@ -95,14 +71,14 @@
   .btn-primary:hover { background: #2D2B28; }
   .btn-ghost {
     display: inline-flex; align-items: center; gap: 8px;
-    background: transparent; color: var(--color-ink-2);
+    background: #FFFFFF; color: var(--color-ink-2);
     font-family: var(--font-mono); font-size: 13px; font-weight: 500;
     letter-spacing: 0.03em; text-decoration: none;
     padding: 12px 22px;
     border: 1px solid var(--color-border); border-radius: var(--r-sm);
-    transition: border-color var(--ease), color var(--ease);
+    transition: border-color var(--ease), color var(--ease), background var(--ease);
   }
-  .btn-ghost:hover { border-color: var(--color-border-2); color: var(--color-ink); }
+  .btn-ghost:hover { border-color: var(--color-border-2); color: var(--color-ink); background: #F5F5F5; }
 
   /* ─── Sections ─── */
   .home-section { max-width: 960px; margin: 0 auto; padding: 80px 48px; }
@@ -118,7 +94,7 @@
   }
 
   /* ─── Work grid ─── */
-  .work-grid { display: flex; flex-direction: column; gap: 16px; }
+  .work-grid { display: flex; flex-direction: column; gap: 24px; }
   .wc-sel { background: #33CCFF; }
   .wc-trial { background: #FF884C; }
   .wc-lsa { background: #FFB700; }
@@ -198,7 +174,7 @@
   }
 
   /* ─── Recommendations ─── */
-  .recs-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .recs-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
   .rec-card {
     background: var(--color-surface); border-radius: var(--r-md);
     border: 1px solid var(--color-border); overflow: hidden;
@@ -229,7 +205,7 @@
     padding: 16px 20px 18px; position: relative;
     display: flex; align-items: center; gap: 0;
     background: transparent !important;
-    border-top: 3px solid transparent;
+    border-top: 2px solid transparent;
   }
   .rec-avatar {
     width: 68px; height: 68px; border-radius: 50%; flex-shrink: 0;
@@ -251,14 +227,24 @@
   }
   a.rec-avatar:hover { cursor: pointer; }
   a.rec-avatar:hover::after { opacity: 1; }
-  .rec-avatar.avatar-purple { border-color: #D946EF; border-width: 2px; }
-  .rec-avatar.avatar-blue { border-color: #0086E5; border-width: 2px; }
-  .rec-avatar.avatar-orange { border-color: #E67E22; border-width: 2px; }
-  .rec-avatar.avatar-green { border-color: #00B259; border-width: 2px; }
-  .rec-card:has(.avatar-purple) .rec-bottom { border-top-color: #D946EF; background: #FFE0FD !important; }
-  .rec-card:has(.avatar-blue) .rec-bottom { border-top-color: #0086E5; background: #D6F5FF !important; }
-  .rec-card:has(.avatar-orange) .rec-bottom { border-top-color: #E67E22; background: #FFDDCC !important; }
-  .rec-card:has(.avatar-green) .rec-bottom { border-top-color: #00B259; background: #D0FBE5 !important; }
+  .rec-avatar.avatar-purple { border-color: #FF80F4; border-width: 2px; }
+  .rec-avatar.avatar-blue { border-color: #33CCFF; border-width: 2px; }
+  .rec-avatar.avatar-orange { border-color: #FF884C; border-width: 2px; }
+  .rec-avatar.avatar-yellow { border-color: #FFB700; border-width: 2px; }
+  .rec-avatar.avatar-green { border-color: #00E573; border-width: 2px; }
+  .rec-avatar.avatar-red { border-color: #FF5B4D; border-width: 2px; }
+  /* Shade 1 bg + Shade 4 stroke: Manik (Blue) */
+  .rec-card:nth-child(1) .rec-bottom { border-top-color: #33CCFF; background: #D6F5FF !important; }
+  /* Shade 1 bg + Shade 4 stroke: Jigar (Yellow) */
+  .rec-card:nth-child(2) .rec-bottom { border-top-color: #FFB700; background: #FFF1CC !important; }
+  /* Shade 1 bg + Shade 4 stroke: Shubham (Green) */
+  .rec-card:nth-child(3) .rec-bottom { border-top-color: #00E573; background: #D0FBE5 !important; }
+  /* Shade 1 bg + Shade 4 stroke: Aman (Red) */
+  .rec-card:nth-child(4) .rec-bottom { border-top-color: #FF5B4D; background: #FFDBDB !important; }
+  /* Shade 1 bg + Shade 4 stroke: Jeetesh (Purple) */
+  .rec-card:nth-child(5) .rec-bottom { border-top-color: #FF80F4; background: #FFE0FD !important; }
+  /* Shade 1 bg + Shade 4 stroke: Ayush (Orange) */
+  .rec-card:nth-child(6) .rec-bottom { border-top-color: #FF884C; background: #FFDDCC !important; }
   .rec-identity { padding-right: 80px; }
   .rec-name {
     font-family: var(--font-display); font-size: 14px; font-weight: 700;
@@ -305,21 +291,46 @@
   .rec-placeholder .rec-quote { color: var(--color-ink-3); font-style: normal; }
 
   /* ─── About ─── */
-  .about-layout {
-    display: grid; grid-template-columns: 1fr 1fr;
-    gap: 72px; align-items: start;
+  .about-container {
+    display: flex; flex-direction: column; gap: 56px;
   }
-  .about-belief {
-    border-left: 3px solid #FF80F4;
-    padding: 4px 0 4px 28px; position: sticky; top: 72px;
+  .about-section {
+    display: flex; flex-direction: column; gap: 16px;
   }
-  .about-belief-quote {
-    font-family: var(--font-display); font-size: clamp(18px, 2vw, 24px);
-    font-weight: 700; letter-spacing: -0.02em; line-height: 1.4;
-    color: var(--color-ink); margin-bottom: 16px;
+  .about-section-title {
+    font-family: var(--font-display); font-size: 18px; font-weight: 700;
+    letter-spacing: -0.01em; line-height: 1.3;
+    color: var(--color-ink); margin: 0;
   }
-  .about-belief-sub {
+  .about-text {
+    display: flex; flex-direction: column; gap: 16px;
+  }
+  .about-text p {
     font-size: 15px; line-height: 26px; color: var(--color-ink-2);
+    margin: 0;
+  }
+  .about-timeline {
+    display: flex; flex-direction: column;
+  }
+  .about-sketch {
+    display: flex; flex-direction: column; align-items: center; gap: 12px;
+    margin: 0 0 24px 0;
+  }
+  .sketch-image {
+    max-width: 280px; width: 100%; height: auto;
+    border-radius: var(--r-md);
+  }
+  .sketch-caption {
+    font-size: 12px; color: var(--color-ink-3); text-align: center;
+    margin: 0;
+  }
+  .sketch-caption a {
+    color: var(--color-ink-3); text-decoration: none;
+    border-bottom: 1px solid var(--color-border);
+    transition: color 0.15s ease;
+  }
+  .sketch-caption a:hover {
+    color: var(--color-ink);
   }
   .timeline { display: flex; flex-direction: column; }
   .timeline-item { display: flex; gap: 16px; }
@@ -408,7 +419,12 @@
   .chat-header-dot {
     width: 8px; height: 8px; border-radius: 50%; background: #FF80F4;
   }
-  .chat-header-title { font-family: var(--font-display); font-size: 14px; font-weight: 700; }
+  .chat-header-title { font-family: var(--font-display); font-size: 14px; font-weight: 700; display: flex; align-items: center; gap: 8px; }
+  .chat-beta-tag {
+    font-family: var(--font-mono); font-size: 9px; font-weight: 600;
+    background: rgba(255,255,255,0.15); color: #FFFFFF;
+    padding: 2px 6px; border-radius: 3px; letter-spacing: 0.02em;
+  }
   .chat-header-sub { font-family: var(--font-mono); font-size: 10px; color: rgba(255,255,255,0.45); margin-top: 1px; letter-spacing: 0.04em; }
   .chat-close {
     background: none; border: none; cursor: pointer; color: rgba(255,255,255,0.5);
@@ -442,12 +458,12 @@
   }
   .chat-chip {
     font-family: var(--font-mono); font-size: 11px; font-weight: 500;
-    color: #0D0D0D; background: #F5F5F5;
+    color: #0D0D0D; background: #FFFFFF;
     border: 1px solid #E0E0E0; border-radius: 20px;
     padding: 5px 12px; cursor: pointer; letter-spacing: 0.02em;
     transition: background 0.15s;
   }
-  .chat-chip:hover { background: #f0dfc0; }
+  .chat-chip:hover { background: #F5F5F5; }
   .chat-input-row {
     padding: 12px 14px; border-top: 1px solid var(--color-border);
     display: flex; gap: 8px; flex-shrink: 0;
@@ -477,12 +493,6 @@
     }
     .intro-tools-sep { margin: 0 6px; }
 
-    /* Navigation */
-    .site-nav { padding: 0 16px; height: auto; flex-wrap: wrap; gap: 12px; }
-    .nav-name { font-size: 13px; }
-    .nav-links { gap: 2px; flex-wrap: wrap; }
-    .nav-links a { font-size: 12px; padding: 5px 10px; }
-    .nav-resume { margin-left: 0; }
 
     /* Hero */
     .home-hero { padding: 60px 16px 40px; }
@@ -773,7 +783,6 @@
 
   /* ─── Mobile ─── */
   @media (max-width: 768px) {
-    .site-nav { padding: 0 20px; }
     .home-hero { padding: 80px 24px 60px; }
     .hero-headline { letter-spacing: -0.025em; }
     .home-section { padding: 60px 24px; }
@@ -807,9 +816,9 @@
 <nav class="site-nav">
   <a href="index.html" class="nav-name">Md Aasif Anwar</a>
   <div class="nav-links">
-    <a href="#work">work</a>
-    <a href="#about">about</a>
-    <a href="resume/index.html" class="nav-resume">resume ↓</a>
+    <a href="index.html#work">works</a>
+    <a href="index.html#about">about</a>
+    <a href="https://drive.google.com/file/d/1NtfsJ9CRBjPtg234L0eRPxfK_al4kFGT/view?usp=sharing" target="_blank" rel="noopener">resume</a>
   </div>
 </nav>
 
@@ -820,17 +829,27 @@
   <div class="hero-rule"></div>
   <p class="hero-sub">Designed tools for students, tutors, and the space between them. Research first — metrics to close the loop.</p>
   <div class="hero-actions">
-    <a href="#work" class="btn-primary">View work →</a>
-    <a href="assets/aasif-anwar-resume.pdf" download="Aasif-Anwar-Resume.pdf" class="btn-ghost">Download resume ↓</a>
+    <a href="#work" class="btn-primary">
+      View works
+      <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" style="width: 16px; height: 16px;">
+        <path d="M12 6l-4 4-4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </a>
+    <a href="https://drive.google.com/uc?export=download&id=1NtfsJ9CRBjPtg234L0eRPxfK_al4kFGT" class="btn-ghost">
+      Download resume
+      <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" style="width: 14px; height: 14px;">
+        <path d="M8 1v9M5 7l3 3 3-3M2 11v1a2 2 0 002 2h8a2 2 0 002-2v-1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </a>
   </div>
 </div>
 
 <!-- ══════════════════════════════════════ WORK ══════════════════════════════════════ -->
 <section class="home-section" id="work">
-  <p class="home-section-label">Selected Work</p>
+  <p class="home-section-label">Works</p>
   <div class="work-grid">
 
-    <a href="work/leap-sel-feel-check/index.html" class="work-card card-with-flip">
+    <a href="work/leap-sel-feel-check/index.html" class="work-card">
       <div class="work-card-body wc-sel">
         <p class="work-card-meta" style="color: rgba(0,0,0,0.65);">2025–26 · 0→1</p>
         <p class="work-card-title" style="color: #1A1916;">Feel Check: Emotional Check-in</p>
@@ -870,7 +889,7 @@
       <p class="archive-meta">2018–21 · National Institute of Design</p>
       <p class="archive-title">Foundation Projects</p>
       <p class="archive-desc">Game design, physical products, interaction design. Experimented across form, space, play experience.</p>
-      <p class="archive-cta">View projects →</p>
+      <p class="archive-cta">View projects <span style="margin-left: 4px;">→</span></p>
     </a>
 
   </div>
@@ -884,10 +903,10 @@
     <div class="rec-card">
       <div class="rec-top">
         <p class="rec-quote">Aasif worked with me at Cuemath for nearly 5 years. He joined as a game designer and made the jump into product design mid-tenure — not a small shift, and he put in the work to actually become good at it, not just pass for it. What I valued most: he doesn't design in a vacuum. He talks to people, watches how users actually use the thing, and brings those learnings back into the next iteration. Curious by default, easy to collaborate with, and willing to take on whatever you throw at him. Any team would be lucky to have him.</p>
-        <button class="rec-readmore">Read more ↓</button>
+        <button class="rec-readmore">Read more</button>
       </div>
       <div class="rec-bottom">
-        <a class="rec-avatar avatar-purple" href="https://www.linkedin.com/in/manikbansal/" target="_blank" rel="noopener" title="View on LinkedIn"><img src="assets/Recommendations/Manik.jpeg" alt="Manik Bansal"></a>
+        <a class="rec-avatar avatar-blue" href="https://www.linkedin.com/in/manikbansal/" target="_blank" rel="noopener" title="View on LinkedIn"><img src="assets/Recommendations/Manik.jpeg" alt="Manik Bansal"></a>
         <div class="rec-identity">
           <p class="rec-name">Manik Bansal</p>
           <p class="rec-role">Head of Design · Cuemath</p>
@@ -898,10 +917,10 @@
     <div class="rec-card">
       <div class="rec-top">
         <p class="rec-quote">I had the pleasure of working closely with Aasif at Cuemath, where he played a key role in multiple initiatives, including website development, the new trial experience, and enhancing the group class experience. What truly sets Aasif apart is his ability to ask the right questions — always striving to understand the 'why' behind our projects, ensuring that design decisions were aligned with business goals and user impact. Not only did he design with intent, but he also took ownership of tracking the impact of his work, constantly assessing how it influenced user engagement and business outcomes. Aasif has an incredible ability to maintain design consistency while being open to exploring new approaches when necessary. Beyond his technical expertise, he is a fantastic collaborator. If you're looking for a product designer who is thoughtful, impact-driven, and committed to crafting meaningful user experiences, I highly recommend Aasif.</p>
-        <button class="rec-readmore">Read more ↓</button>
+        <button class="rec-readmore">Read more</button>
       </div>
       <div class="rec-bottom">
-        <a class="rec-avatar avatar-blue" href="https://www.linkedin.com/in/jigarvora01/" target="_blank" rel="noopener" title="View on LinkedIn"><img src="assets/Recommendations/Jigar.jpeg" alt="Jigar Vora"></a>
+        <a class="rec-avatar avatar-yellow" href="https://www.linkedin.com/in/jigarvora01/" target="_blank" rel="noopener" title="View on LinkedIn"><img src="assets/Recommendations/Jigar.jpeg" alt="Jigar Vora"></a>
         <div class="rec-identity">
           <p class="rec-name">Jigar Vora</p>
           <p class="rec-role">Business Head (India) · Cuemath</p>
@@ -912,10 +931,10 @@
     <div class="rec-card">
       <div class="rec-top">
         <p class="rec-quote">I worked with Aasif at Cuemath, and what stood out to me was how he approached design — not as someone protecting his craft, but as someone trying to figure out the right answer. He'd seek out people who understood parts of the product better than he did, and actually listen. When UX feedback came in from users, he wouldn't just ignore it — he'd reach out to them, understand where the real friction was, and come back with a proposal that fixed the actual pain. That mix of humility and follow-through is rarer than it should be. Any team would be lucky to have him.</p>
-        <button class="rec-readmore">Read more ↓</button>
+        <button class="rec-readmore">Read more</button>
       </div>
       <div class="rec-bottom">
-        <a class="rec-avatar avatar-orange" href="https://www.linkedin.com/in/shubham-vats-93172640/" target="_blank" rel="noopener" title="View on LinkedIn"><img src="assets/Recommendations/Shubham.jpeg" alt="Shubham Vats"></a>
+        <a class="rec-avatar avatar-green" href="https://www.linkedin.com/in/shubham-vats-93172640/" target="_blank" rel="noopener" title="View on LinkedIn"><img src="assets/Recommendations/Shubham.jpeg" alt="Shubham Vats"></a>
         <div class="rec-identity">
           <p class="rec-name">Shubham Vats</p>
           <p class="rec-role">Tech Lead · Cuemath</p>
@@ -926,10 +945,10 @@
     <div class="rec-card">
       <div class="rec-top">
         <p class="rec-quote">I can confidently say Aasif is one of the promising young designers I've come across. Aasif joined us as a game designer, but he never once limited himself to that label. Whether it was collaborating on fast-paced product iterations or getting into the weeds of user problems, Aasif brought a rare mix of curiosity, humility, and sharp design thinking to every challenge he tackled. He has a good sense of visual design from his game design roots, but what stood out most was his willingness to dive deep into the "why" behind every design decision. He was never afraid to ask questions, challenge assumptions, or seek feedback proactively — traits that I believe makes him a well rounded designer. Any team would be lucky to have him onboard!</p>
-        <button class="rec-readmore">Read more ↓</button>
+        <button class="rec-readmore">Read more</button>
       </div>
       <div class="rec-bottom">
-        <a class="rec-avatar avatar-green" href="https://www.linkedin.com/in/aman-awasthy-74986971/" target="_blank" rel="noopener" title="View on LinkedIn"><img src="assets/Recommendations/Aman.jpeg" alt="Aman Awasthy"></a>
+        <a class="rec-avatar avatar-red" href="https://www.linkedin.com/in/aman-awasthy-74986971/" target="_blank" rel="noopener" title="View on LinkedIn"><img src="assets/Recommendations/Aman.jpeg" alt="Aman Awasthy"></a>
         <div class="rec-identity">
           <p class="rec-name">Aman Awasthy</p>
           <p class="rec-role">Senior Product Designer · Cuemath</p>
@@ -940,7 +959,7 @@
     <div class="rec-card">
       <div class="rec-top">
         <p class="rec-quote">I had the pleasure of working alongside Aasif as his Product Manager across two major launches, and he consistently proved to be an invaluable asset to our team. Aasif's absolute superpower is taking highly abstract, ambiguous customer problems and translating them into visually stunning, functional design outcomes. During a comprehensive infrastructure overhaul, he handled the end-to-end UX/UI creation from scratch. No matter how many moving parts or tight deadlines we faced, he was incredibly responsive and delivered exceptional work. Beyond his technical skills, Aasif is a fantastic person to have on your side. He is highly collaborative, deeply helpful, and approaches complex problem-solving without ego. Any team looking for an empathetic, highly skilled designer would be incredibly lucky to have Aasif on board.</p>
-        <button class="rec-readmore">Read more ↓</button>
+        <button class="rec-readmore">Read more</button>
       </div>
       <div class="rec-bottom">
         <a class="rec-avatar avatar-purple" href="https://www.linkedin.com/in/jeeteshgulani/" target="_blank" rel="noopener" title="View on LinkedIn"><img src="assets/Recommendations/Jeetesh.jpeg" alt="Jeetesh Gulani"></a>
@@ -954,10 +973,10 @@
     <div class="rec-card">
       <div class="rec-top">
         <p class="rec-quote">I had the privilege of working with Aasif at Cuemath — one of the most dependable and thoughtful product designers I've worked with. He contributed significantly across high-impact initiatives including SEL tools, milestones, goals, puzzles, and several platform revamps, consistently improving user experience and bringing clarity to complex product problems. What truly sets him apart is his proactive mindset — any feedback was quickly acted upon with high quality and attention to detail. He has a strong sense of responsibility and always strives to raise the bar. Beyond his skills, he was always willing to step in and help others across teams whenever they were blocked.</p>
-        <button class="rec-readmore">Read more ↓</button>
+        <button class="rec-readmore">Read more</button>
       </div>
       <div class="rec-bottom">
-        <a class="rec-avatar avatar-blue" href="https://www.linkedin.com/in/ayush-singhal-a238b513b/" target="_blank" rel="noopener" title="View on LinkedIn"><img src="assets/Recommendations/Ayush.jpeg" alt="Ayush Singhal"></a>
+        <a class="rec-avatar avatar-orange" href="https://www.linkedin.com/in/ayush-singhal-a238b513b/" target="_blank" rel="noopener" title="View on LinkedIn"><img src="assets/Recommendations/Ayush.jpeg" alt="Ayush Singhal"></a>
         <div class="rec-identity">
           <p class="rec-name">Ayush Singhal</p>
           <p class="rec-role">Senior Software Engineer · Cuemath</p>
@@ -974,16 +993,36 @@
 <section class="home-section" id="about">
   <p class="home-section-label">About</p>
 
-  <div class="about-layout">
+  <div class="about-container">
 
-    <!-- Left — Philosophy -->
-    <div class="about-belief">
-      <p class="about-belief-quote">Design serves a purpose. Every element earns its place.</p>
-      <p class="about-belief-sub">From tabletop games to product systems, I've learned: purpose first, aesthetics second. It guides how I work.</p>
+    <!-- Section 1: Thanks -->
+    <div class="about-section">
+      <h3 class="about-section-title">Hey, thanks for stopping by</h3>
+      <div class="about-sketch">
+        <img src="assets/aasif-sketch.jpg" alt="Hand-drawn sketch by Srishti Singh" class="sketch-image" />
+        <p class="sketch-caption">Created with ❤️ by <a href="https://www.linkedin.com/in/srishti-singh-b3244b12b/" target="_blank" rel="noopener">Srishti Singh</a></p>
+      </div>
+      <div class="about-text">
+        <p>Everything I've accomplished—from discovering design to helping my friends, to designing products that matter—has been possible because I've always invested in genuine connections with people. I'm curious about how things work. Not just the surface—the systems, the friction points, why people struggle, what needs to change. I ask a lot of questions. That curiosity, combined with genuine relationships, opens doors.</p>
+      </div>
     </div>
 
-    <!-- Right — Journey -->
-    <div class="timeline">
+    <!-- Section 2: Origin Story -->
+    <div class="about-section">
+      <h3 class="about-section-title">Where/how it all began…</h3>
+      <div class="about-text">
+        <p>I started in mechanical engineering, certain of the path. A school friend, Manoranjan, discussed with me design as an option. Not as a career move, but as a fascinating breadth of disciplines. Photography, furniture, transportation, systems. I didn't have a master plan. I just got curious, stayed connected to people exposing me to new things, and followed where it led.</p>
+
+        <p>That's how I ended up at IIT Kanpur. I started by auditing design lessons and subsequently cracked an internship at the Department of Design, all while prepping for NID entrance exams—the desperation of wanting something badly, combined with genuine fascination. That's how I went from game design to product design at Cuemath—not because I decided to, but because it made sense when the opportunity arrived.</p>
+
+        <p>At Cuemath, I went through four organizational restructurings and layoffs in five years. Each one taught me something about resilience and what actually matters. I learned that the best work happens when you're genuinely trying to solve a real person's problem—not optimizing for metrics, but because you listened to them and understood their actual friction. That became my North Star.</p>
+      </div>
+    </div>
+
+    <!-- Section 3: Experience -->
+    <div class="about-section">
+      <h3 class="about-section-title">Experience</h3>
+      <div class="about-timeline">
 
       <div class="timeline-item">
         <div class="timeline-marker">
@@ -992,7 +1031,7 @@
         </div>
         <div class="timeline-content">
           <p class="timeline-label">Mechanical Engineering</p>
-          <p class="timeline-year">AKU Patna · 2011 – 2015</p>
+          <p class="timeline-year">Nalanda College of Engineering · 2011 – 2015</p>
         </div>
       </div>
 
@@ -1058,10 +1097,35 @@
         </div>
         <div class="timeline-content">
           <p class="timeline-label">What's next</p>
-          <p class="timeline-year">Systems at global scale</p>
+          <p class="timeline-year">Product design at scale</p>
         </div>
       </div>
 
+      </div>
+    </div>
+
+    <!-- Section 4: How I work -->
+    <div class="about-section">
+      <h3 class="about-section-title">How I work</h3>
+      <div class="about-text">
+        <p>I'm collaborative because you solve problems better together. I'm humble because I'm always trying to find the right answer, not defend a position. I'm resourceful—jugad is how my friends at NID describe it—because I believe in using what you have: connections, creativity, hustle, to solve real problems. I stay engaged through implementation because design isn't done at handoff. And I ask questions because I'm genuinely curious; listening deeply is how you find the real problem.</p>
+      </div>
+    </div>
+
+    <!-- Section 5: Outside work -->
+    <div class="about-section">
+      <h3 class="about-section-title">Outside work</h3>
+      <div class="about-text">
+        <p>I read a lot about what's happening in tech and the world. I'm a foodie and love cooking—it's where I want to spend more time. Most importantly, I believe genuine connections are how the best things happen. I've seen it my whole life, from college to now. So I invest in those relationships.</p>
+      </div>
+    </div>
+
+    <!-- Section 6: What's next -->
+    <div class="about-section">
+      <h3 class="about-section-title">What's next</h3>
+      <div class="about-text">
+        <p>I'm looking for product design roles on consumer-facing products at scale, where design has real influence. I want to keep listening deeply, solving thoughtfully, and helping teams ship things that actually matter. Available immediately. Open to both in-office and remote setups.</p>
+      </div>
     </div>
 
   </div>
@@ -1081,6 +1145,7 @@
 </footer>
 
 <script>
+
   /* ── Intro overlay ── */
   (function() {
     var overlay = document.getElementById('intro-overlay');
@@ -1098,7 +1163,7 @@
   window.addEventListener('scroll', function() {
     var nav = document.querySelector('.site-nav');
     if (window.scrollY > 24) {
-      nav.style.background = 'rgba(248, 245, 239, 0.82)';
+      nav.style.background = 'rgba(13, 13, 13, 0.95)';
       nav.style.backdropFilter = 'blur(16px)';
       nav.style.webkitBackdropFilter = 'blur(16px)';
     } else {
@@ -1150,15 +1215,11 @@
     });
   });
 
-  /* ── Card transition on click ── */
-  document.querySelectorAll('.card-with-flip').forEach(function(card) {
+  /* ── Card click navigation ── */
+  document.querySelectorAll('.work-card').forEach(function(card) {
     card.addEventListener('click', function(e) {
-      e.preventDefault();
-      card.classList.add('card-flipping');
       var href = card.getAttribute('href');
-      setTimeout(function() {
-        window.location.href = href;
-      }, 1000);
+      window.location.href = href;
     });
   });
 
@@ -1213,9 +1274,8 @@
 <div id="chat-panel" role="dialog" aria-label="Chat with Aasif's assistant">
   <div class="chat-header">
     <div class="chat-header-left">
-      <div class="chat-header-dot"></div>
       <div>
-        <div class="chat-header-title">Ask about Aasif</div>
+        <div class="chat-header-title">AI Assistant <span class="chat-beta-tag">Beta</span></div>
         <div class="chat-header-sub">Powered by Groq</div>
       </div>
     </div>
@@ -1225,7 +1285,7 @@
   </div>
   <div class="chat-messages" id="chat-messages">
     <div class="chat-msg chat-msg--bot">
-      <div class="chat-msg-bubble">Hi! I'm here to answer any questions you have about Aasif — his work, process, background, or what he's looking for next. Ask anything.</div>
+      <div class="chat-msg-bubble">Hi! I'm an AI trained to answer any questions related to Aasif's professional work and background. I'll do my best to help, but I can make mistakes—feel free to directly verify with Aasif if something's important. What would you like to know?</div>
     </div>
   </div>
   <div class="chat-starters" id="chat-starters">

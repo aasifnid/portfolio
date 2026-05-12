@@ -17,33 +17,35 @@
 
   /* ─── Page base ─── */
   body {
-    background-color: var(--neutral-100);
-    background-image: radial-gradient(circle, rgba(0,0,0,0.045) 1px, transparent 1px);
-    background-size: 24px 24px;
+    background-color: #FFFFFF;
+    background-image:
+      linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 55%),
+      radial-gradient(circle, #F5F5F5 4px, transparent 4px);
+    background-size: 100% 100%, 50px 50px;
+    background-position: 0 0, 0 0;
+    background-attachment: scroll, scroll;
   }
 
   /* ─── Nav ─── */
   .site-nav {
     position: sticky; top: 0; z-index: 100;
-    background: var(--neutral-100);
-    border-bottom: 1px solid var(--neutral-300);
+    background: #0D0D0D;
+    border-bottom: none;
     display: flex; justify-content: space-between; align-items: center;
     padding: 0 48px; height: 52px;
   }
-  .nav-name { font-family: var(--font-display); font-size: 14px; font-weight: 700; color: var(--neutral-1000); text-decoration: none; letter-spacing: -0.02em; }
+  .nav-name { font-family: var(--font-display); font-size: 14px; font-weight: 700; color: #FFFFFF; text-decoration: none; letter-spacing: -0.02em; }
   .nav-links { display: flex; gap: 4px; align-items: center; }
-  .nav-links a { font-family: var(--font-mono); font-size: 12px; font-weight: 400; color: var(--neutral-700); text-decoration: none; letter-spacing: 0.04em; padding: 6px 12px; border-radius: var(--r-sm); transition: color 0.15s ease; }
-  .nav-links a:hover { color: var(--neutral-1000); }
-  .nav-resume { border: 1px solid var(--neutral-300); color: var(--neutral-1000) !important; margin-left: 8px; transition: border-color 0.15s ease; }
-  .nav-resume:hover { border-color: var(--neutral-800) !important; }
+  .nav-links a { font-family: var(--font-mono); font-size: 12px; font-weight: 400; color: #FFFFFF; text-decoration: none; letter-spacing: 0.04em; padding: 6px 12px; border-radius: var(--r-sm); transition: color 0.15s ease; }
+  .nav-links a:hover { color: rgba(255,255,255,0.7); }
 
   /* ─── Page wrapper ─── */
   .resume-page { max-width: 780px; margin: 0 auto; padding: 64px 48px 96px; }
 
   /* ─── Header ─── */
-  .resume-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 52px; gap: 24px; }
-  .resume-name { font-family: var(--font-display); font-size: clamp(32px, 4vw, 48px); font-weight: 800; letter-spacing: -0.03em; line-height: 1.05; color: var(--neutral-1000); margin-bottom: 6px; }
-  .resume-title { font-size: 15px; font-weight: 600; color: var(--neutral-700); margin-bottom: 20px; }
+  .resume-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 52px; gap: 24px; padding-bottom: 24px; border-bottom: 1px solid #E5E7EB; }
+  .resume-name { font-family: var(--font-display); font-size: clamp(32px, 4vw, 48px); font-weight: 800; letter-spacing: -0.03em; line-height: 1.05; color: #0D0D0D; margin-bottom: 6px; }
+  .resume-title { font-size: 15px; font-weight: 600; color: #555; margin-bottom: 20px; }
   .resume-contact { display: flex; flex-wrap: wrap; gap: 4px 16px; }
   .resume-contact a, .resume-contact span { font-family: var(--font-mono); font-size: 12px; color: var(--neutral-700); text-decoration: none; letter-spacing: 0.04em; transition: color 0.15s ease; }
   .resume-contact a:hover { color: var(--neutral-1000); }
@@ -52,14 +54,14 @@
   /* ─── Download button ─── */
   .download-btn {
     display: inline-flex; align-items: center; gap: 8px;
+    background: var(--color-ink); color: #F8F5EF;
     font-family: var(--font-mono); font-size: 12px; font-weight: 500;
-    color: var(--neutral-1000); letter-spacing: 0.04em;
-    border: 1px solid var(--neutral-300); border-radius: var(--r-sm);
-    padding: 10px 18px; background: var(--neutral-200);
-    cursor: pointer; text-decoration: none; white-space: nowrap; flex-shrink: 0;
-    transition: border-color 0.15s ease, background 0.15s ease;
+    letter-spacing: 0.04em; text-decoration: none;
+    padding: 12px 22px; border-radius: var(--r-sm);
+    cursor: pointer; white-space: nowrap; flex-shrink: 0;
+    transition: background 0.15s ease;
   }
-  .download-btn:hover { border-color: var(--neutral-800); background: var(--neutral-100); }
+  .download-btn:hover { background: #2D2B28; }
   .download-btn svg { width: 14px; height: 14px; flex-shrink: 0; }
 
   /* ─── Section divider ─── */
@@ -69,7 +71,7 @@
   .resume-section-label {
     font-family: var(--font-mono); font-size: 10px; font-weight: 600;
     letter-spacing: 0.10em; text-transform: uppercase;
-    color: var(--gold-700); margin-bottom: 20px;
+    color: #0D0D0D; margin-bottom: 20px;
   }
 
   /* ─── Summary ─── */
@@ -113,17 +115,30 @@
   .edu-dates { font-family: var(--font-mono); font-size: 11px; color: var(--neutral-700); white-space: nowrap; letter-spacing: 0.03em; }
 
   /* ─── Footer ─── */
-  .resume-footer { margin-top: 64px; padding-top: 28px; border-top: 1px solid var(--neutral-300); display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; }
-  .resume-footer-note { font-family: var(--font-mono); font-size: 11px; color: var(--neutral-700); letter-spacing: 0.03em; }
-  .resume-footer-links { display: flex; gap: 20px; }
-  .resume-footer-links a { font-family: var(--font-mono); font-size: 11px; color: var(--neutral-700); text-decoration: none; letter-spacing: 0.03em; transition: color 0.15s ease; }
-  .resume-footer-links a:hover { color: var(--neutral-1000); }
+  .resume-footer {
+    max-width: 100%; margin: 0;
+    padding: 28px 48px 52px;
+    background-color: #0D0D0D;
+    border-top: none;
+    display: flex; justify-content: space-between; align-items: center; gap: 24px;
+  }
+  .resume-footer-note {
+    font-family: var(--font-mono); font-size: 11px; color: #FFFFFF;
+    text-decoration: none; letter-spacing: 0.04em; transition: color var(--ease);
+  }
+  .resume-footer-note:hover { color: #FFFFFF; opacity: 0.7; }
+  .resume-footer-links { display: flex; gap: 20px; align-items: center; }
+  .resume-footer-links a {
+    font-family: var(--font-mono); font-size: 12px; color: #FFFFFF;
+    text-decoration: none; letter-spacing: 0.04em; transition: color var(--ease);
+  }
+  .resume-footer-links a:hover { color: #FFFFFF; opacity: 0.7; }
 
   /* ─── Experience bullets ─── */
   .exp-focus { font-size: 13px; line-height: 1.7; color: var(--neutral-700); font-style: italic; margin-bottom: 14px; }
   .exp-bullets { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 9px; }
   .exp-bullets li { font-size: 13px; line-height: 1.7; color: var(--neutral-700); padding-left: 18px; position: relative; }
-  .exp-bullets li::before { content: '–'; position: absolute; left: 0; color: var(--gold-500); font-weight: 500; }
+  .exp-bullets li::before { content: '–'; position: absolute; left: 0; color: #555; font-weight: 500; }
   .exp-bullets li strong { color: var(--neutral-900); font-weight: 600; }
 
   /* ─── Skill categories ─── */
@@ -150,7 +165,7 @@
   <div class="nav-links">
     <a href="../index.html#work">work</a>
     <a href="../index.html#about">about</a>
-    <a href="index.html" class="nav-resume">resume ↓</a>
+    <a href="index.html">resume</a>
   </div>
 </nav>
 
@@ -170,15 +185,13 @@
         <a href="https://www.linkedin.com/in/aasif-nid/" target="_blank" rel="noopener">LinkedIn ↗</a>
       </div>
     </div>
-    <a class="download-btn" href="https://drive.google.com/file/d/1NtfsJ9CRBjPtg234L0eRPxfK_al4kFGT/view?usp=drive_link" target="_blank" rel="noopener">
+    <a class="download-btn" href="https://drive.google.com/file/d/1NtfsJ9CRBjPtg234L0eRPxfK_al4kFGT/view" target="_blank" rel="noopener">
+      Download PDF
       <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M8 1v9M5 7l3 3 3-3M2 11v1a2 2 0 002 2h8a2 2 0 002-2v-1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
       </svg>
-      Download PDF
     </a>
   </div>
-
-  <div class="resume-divider"></div>
 
   <!-- Bio -->
   <p class="resume-section-label">Bio</p>
@@ -307,13 +320,14 @@
   </div>
 
   <!-- Footer -->
-  <div class="resume-footer">
-    <span class="resume-footer-note">Last updated May 2026 · Built with AI</span>
-    <div class="resume-footer-links">
-      <a href="../index.html">← View Case Studies</a>
-    </div>
-  </div>
+</div>
 
+<!-- ══════════════════════════════════════ FOOTER ══════════════════════════════════════ -->
+<div class="resume-footer">
+  <span class="resume-footer-note">Built with AI · Last updated May 12</span>
+  <div class="resume-footer-links">
+    <a href="../index.html">← View Case Studies</a>
+  </div>
 </div>
 
 </body>

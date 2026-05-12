@@ -14,11 +14,14 @@
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', sans-serif;
             line-height: 1.7;
-            color: #2c2c2c;
-            background: #fff;
+            color: #0D0D0D;
+            background: #FFFFFF;
             padding: 40px 50px;
             max-width: 900px;
             margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
         }
 
         @media print {
@@ -168,7 +171,7 @@
         /* Header */
         .header {
             margin-bottom: 32px;
-            border-bottom: 1px solid #000;
+            border-bottom: 3px solid #FF80F4;
             padding-bottom: 20px;
         }
 
@@ -177,11 +180,12 @@
             font-weight: 700;
             letter-spacing: -0.5px;
             margin-bottom: 6px;
+            color: #0D0D0D;
         }
 
         .title {
             font-size: 14px;
-            color: #666;
+            color: #FF80F4;
             font-weight: 600;
             letter-spacing: 0.8px;
             text-transform: uppercase;
@@ -197,13 +201,46 @@
         }
 
         .contact a {
-            color: #2c2c2c;
+            color: #0D0D0D;
             text-decoration: none;
             border-bottom: 1px solid #ddd;
         }
 
         .contact a:hover {
-            border-bottom-color: #2c2c2c;
+            border-bottom-color: #FF80F4;
+        }
+
+        /* Footer */
+        .footer {
+            margin-top: auto;
+            padding-top: 32px;
+            border-top: 1px solid #E5E7EB;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 12px;
+            color: #666;
+        }
+
+        .footer-left {
+            display: flex;
+            gap: 12px;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .footer-links a {
+            color: #0D0D0D;
+            text-decoration: none;
+            border-bottom: 1px solid #ddd;
+            transition: border-bottom-color 0.2s;
+        }
+
+        .footer-links a:hover {
+            border-bottom-color: #FF80F4;
         }
 
         /* Summary */
@@ -434,6 +471,19 @@
         <div class="section-title">Tools</div>
         <div class="body-text">
             Figma · Claude Code · Gemini · Wispr Flo · Vercel · Notion · Mixpanel · Miro · Slack
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <div class="footer-left">
+            <span>Built with AI</span>
+            <span>·</span>
+            <span>© 2026 Md Aasif Anwar</span>
+        </div>
+        <div class="footer-links">
+            <a href="https://aasifanwar.vercel.app">Portfolio ↗</a>
+            <a href="mailto:aasif.nid@gmail.com">Email ↗</a>
         </div>
     </div>
 </body>

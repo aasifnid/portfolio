@@ -12,6 +12,10 @@
 <link rel="stylesheet" href="../../assets/style.css">
 <noscript><style>[data-animate]{opacity:1!important;transform:none!important}</style></noscript>
 <style>
+  /* Critical navbar CSS - renders immediately */
+  .site-nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: #0D0D0D; height: 52px; display: flex; justify-content: space-between; align-items: center; padding: 0 32px; }
+  /* Scroll progress bar */
+  #scroll-progress { position: fixed; top: 0; left: 0; height: 3px; width: 0%; background: #EC5B13; z-index: 9999; transition: width 0.08s linear; }
   /* New Trial Experience case study background */
   body { background-color: #FFDDCC; }
 
@@ -44,11 +48,14 @@
 </head>
 <body>
 
+<div id="scroll-progress"></div>
+
 <nav class="site-nav">
   <a href="../../index.html" class="nav-name">Md Aasif Anwar</a>
   <div class="nav-links">
-    <a href="../../index.html#work">Work</a>
-    <a href="../../index.html#about">About</a>
+    <a href="../../index.html#work">works</a>
+    <a href="../../index.html#about">about</a>
+    <a href="https://drive.google.com/file/d/1NtfsJ9CRBjPtg234L0eRPxfK_al4kFGT/view?usp=sharing" target="_blank" rel="noopener">resume</a>
   </div>
 </nav>
 
@@ -272,6 +279,7 @@
 </div>
 
 <script>
+
   (function () {
     var observer = new IntersectionObserver(function (entries) {
       entries.forEach(function (entry) {
@@ -325,12 +333,20 @@
       if (e.key === 'Escape') closeLightbox();
     });
   })();
+
+  /* Scroll progress bar */
+  var progressBar = document.getElementById('scroll-progress');
+  window.addEventListener('scroll', function() {
+    var pct = window.scrollY / (document.body.scrollHeight - window.innerHeight) * 100;
+    progressBar.style.width = Math.min(pct, 100) + '%';
+  });
 </script>
 
 <div class="lightbox-overlay" id="lightbox-overlay">
   <span class="lightbox-close" id="lightbox-close" title="Close (Esc)">×</span>
   <img class="lightbox-img" id="lightbox-img" src="" alt="">
 </div>
+
 
 <!-- Footer -->
 <footer class="site-footer">
