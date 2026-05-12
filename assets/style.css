@@ -24,7 +24,7 @@ body {
 .nav-links a:hover { color: rgba(255,255,255,0.7); }
 
 /* ─── Layout ─── */
-.cover { padding: 120px 32px 80px; max-width: 800px; margin: 0 auto; }
+.cover { padding: 48px 32px 80px; max-width: 800px; margin: 0 auto; }
 .page { max-width: 800px; margin: 0 auto; padding: 0 32px 160px; }
 
 /* ─── Cover ─── */
