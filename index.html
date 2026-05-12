@@ -228,6 +228,8 @@
   .rec-bottom {
     padding: 16px 20px 18px; position: relative;
     display: flex; align-items: center; gap: 0;
+    background: transparent !important;
+    border-top: 3px solid transparent;
   }
   .rec-avatar {
     width: 68px; height: 68px; border-radius: 50%; flex-shrink: 0;
@@ -253,14 +255,18 @@
   .rec-avatar.avatar-blue { border-color: #0086E5; border-width: 2px; }
   .rec-avatar.avatar-orange { border-color: #E67E22; border-width: 2px; }
   .rec-avatar.avatar-green { border-color: #00B259; border-width: 2px; }
+  .rec-card:has(.avatar-purple) .rec-bottom { border-top-color: #D946EF; }
+  .rec-card:has(.avatar-blue) .rec-bottom { border-top-color: #0086E5; }
+  .rec-card:has(.avatar-orange) .rec-bottom { border-top-color: #E67E22; }
+  .rec-card:has(.avatar-green) .rec-bottom { border-top-color: #00B259; }
   .rec-identity { padding-right: 80px; }
   .rec-name {
     font-family: var(--font-display); font-size: 14px; font-weight: 700;
-    color: #fff; margin-bottom: 3px; line-height: 1.3;
+    color: #0D0D0D; margin-bottom: 3px; line-height: 1.3;
   }
   .rec-role {
     font-family: var(--font-mono); font-size: 10px;
-    color: rgba(255,255,255,0.72); letter-spacing: 0.06em;
+    color: #666; letter-spacing: 0.06em;
   }
   /* ─── No-strip variant ─── */
   .rec-top-plain { padding: 24px 24px 20px; display: flex; flex-direction: column; gap: 12px; flex: 1; }
@@ -880,7 +886,7 @@
         <p class="rec-quote">Aasif worked with me at Cuemath for nearly 5 years. He joined as a game designer and made the jump into product design mid-tenure — not a small shift, and he put in the work to actually become good at it, not just pass for it. What I valued most: he doesn't design in a vacuum. He talks to people, watches how users actually use the thing, and brings those learnings back into the next iteration. Curious by default, easy to collaborate with, and willing to take on whatever you throw at him. Any team would be lucky to have him.</p>
         <button class="rec-readmore">Read more ↓</button>
       </div>
-      <div class="rec-bottom" style="background:#2A2520;">
+      <div class="rec-bottom">
         <a class="rec-avatar avatar-purple" href="https://www.linkedin.com/in/manikbansal/" target="_blank" rel="noopener" title="View on LinkedIn"><img src="assets/Recommendations/Manik.jpeg" alt="Manik Bansal"></a>
         <div class="rec-identity">
           <p class="rec-name">Manik Bansal</p>
@@ -894,7 +900,7 @@
         <p class="rec-quote">I had the pleasure of working closely with Aasif at Cuemath, where he played a key role in multiple initiatives, including website development, the new trial experience, and enhancing the group class experience. What truly sets Aasif apart is his ability to ask the right questions — always striving to understand the 'why' behind our projects, ensuring that design decisions were aligned with business goals and user impact. Not only did he design with intent, but he also took ownership of tracking the impact of his work, constantly assessing how it influenced user engagement and business outcomes. Aasif has an incredible ability to maintain design consistency while being open to exploring new approaches when necessary. Beyond his technical expertise, he is a fantastic collaborator. If you're looking for a product designer who is thoughtful, impact-driven, and committed to crafting meaningful user experiences, I highly recommend Aasif.</p>
         <button class="rec-readmore">Read more ↓</button>
       </div>
-      <div class="rec-bottom" style="background:#2A2520;">
+      <div class="rec-bottom">
         <a class="rec-avatar avatar-blue" href="https://www.linkedin.com/in/jigarvora01/" target="_blank" rel="noopener" title="View on LinkedIn"><img src="assets/Recommendations/Jigar.jpeg" alt="Jigar Vora"></a>
         <div class="rec-identity">
           <p class="rec-name">Jigar Vora</p>
@@ -908,7 +914,7 @@
         <p class="rec-quote">I worked with Aasif at Cuemath, and what stood out to me was how he approached design — not as someone protecting his craft, but as someone trying to figure out the right answer. He'd seek out people who understood parts of the product better than he did, and actually listen. When UX feedback came in from users, he wouldn't just ignore it — he'd reach out to them, understand where the real friction was, and come back with a proposal that fixed the actual pain. That mix of humility and follow-through is rarer than it should be. Any team would be lucky to have him.</p>
         <button class="rec-readmore">Read more ↓</button>
       </div>
-      <div class="rec-bottom" style="background:#2A2520;">
+      <div class="rec-bottom">
         <a class="rec-avatar avatar-orange" href="https://www.linkedin.com/in/shubham-vats-93172640/" target="_blank" rel="noopener" title="View on LinkedIn"><img src="assets/Recommendations/Shubham.jpeg" alt="Shubham Vats"></a>
         <div class="rec-identity">
           <p class="rec-name">Shubham Vats</p>
@@ -922,7 +928,7 @@
         <p class="rec-quote">I can confidently say Aasif is one of the promising young designers I've come across. Aasif joined us as a game designer, but he never once limited himself to that label. Whether it was collaborating on fast-paced product iterations or getting into the weeds of user problems, Aasif brought a rare mix of curiosity, humility, and sharp design thinking to every challenge he tackled. He has a good sense of visual design from his game design roots, but what stood out most was his willingness to dive deep into the "why" behind every design decision. He was never afraid to ask questions, challenge assumptions, or seek feedback proactively — traits that I believe makes him a well rounded designer. Any team would be lucky to have him onboard!</p>
         <button class="rec-readmore">Read more ↓</button>
       </div>
-      <div class="rec-bottom" style="background:#2A2520;">
+      <div class="rec-bottom">
         <a class="rec-avatar avatar-green" href="https://www.linkedin.com/in/aman-awasthy-74986971/" target="_blank" rel="noopener" title="View on LinkedIn"><img src="assets/Recommendations/Aman.jpeg" alt="Aman Awasthy"></a>
         <div class="rec-identity">
           <p class="rec-name">Aman Awasthy</p>
@@ -936,7 +942,7 @@
         <p class="rec-quote">I had the pleasure of working alongside Aasif as his Product Manager across two major launches, and he consistently proved to be an invaluable asset to our team. Aasif's absolute superpower is taking highly abstract, ambiguous customer problems and translating them into visually stunning, functional design outcomes. During a comprehensive infrastructure overhaul, he handled the end-to-end UX/UI creation from scratch. No matter how many moving parts or tight deadlines we faced, he was incredibly responsive and delivered exceptional work. Beyond his technical skills, Aasif is a fantastic person to have on your side. He is highly collaborative, deeply helpful, and approaches complex problem-solving without ego. Any team looking for an empathetic, highly skilled designer would be incredibly lucky to have Aasif on board.</p>
         <button class="rec-readmore">Read more ↓</button>
       </div>
-      <div class="rec-bottom" style="background:#2A2520;">
+      <div class="rec-bottom">
         <a class="rec-avatar avatar-purple" href="https://www.linkedin.com/in/jeeteshgulani/" target="_blank" rel="noopener" title="View on LinkedIn"><img src="assets/Recommendations/Jeetesh.jpeg" alt="Jeetesh Gulani"></a>
         <div class="rec-identity">
           <p class="rec-name">Jeetesh Gulani</p>
@@ -950,7 +956,7 @@
         <p class="rec-quote">I had the privilege of working with Aasif at Cuemath — one of the most dependable and thoughtful product designers I've worked with. He contributed significantly across high-impact initiatives including SEL tools, milestones, goals, puzzles, and several platform revamps, consistently improving user experience and bringing clarity to complex product problems. What truly sets him apart is his proactive mindset — any feedback was quickly acted upon with high quality and attention to detail. He has a strong sense of responsibility and always strives to raise the bar. Beyond his skills, he was always willing to step in and help others across teams whenever they were blocked.</p>
         <button class="rec-readmore">Read more ↓</button>
       </div>
-      <div class="rec-bottom" style="background:#2A2520;">
+      <div class="rec-bottom">
         <a class="rec-avatar avatar-blue" href="https://www.linkedin.com/in/ayush-singhal-a238b513b/" target="_blank" rel="noopener" title="View on LinkedIn"><img src="assets/Recommendations/Ayush.jpeg" alt="Ayush Singhal"></a>
         <div class="rec-identity">
           <p class="rec-name">Ayush Singhal</p>
