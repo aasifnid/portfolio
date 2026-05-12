@@ -18,7 +18,13 @@ body {
 
 /* ─── Nav ─── */
 .site-nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: #0D0D0D; border-bottom: none; display: flex; justify-content: space-between; align-items: center; padding: 0 48px; height: 64px; }
-.nav-name { font-family: var(--font-display); font-size: 14px; font-weight: 700; color: #FFFFFF; text-decoration: none; letter-spacing: -0.02em; }
+.nav-name { display: flex; align-items: center; justify-content: center; text-decoration: none; }
+.nav-logo-container { position: relative; height: 48px; width: auto; display: flex; align-items: center; justify-content: center; }
+.nav-logo { height: 48px; width: auto; display: block; transition: opacity 0.3s ease; }
+.nav-logo-default { opacity: 1; }
+.nav-logo-hover { position: absolute; opacity: 0; transform: scale(1) rotate(0deg); transition: opacity 0.3s ease, transform 0.3s ease; }
+.nav-name:hover .nav-logo-default { opacity: 0; }
+.nav-name:hover .nav-logo-hover { opacity: 1; transform: scale(1.1) rotate(3deg); }
 .nav-links { display: flex; gap: 24px; }
 .nav-links a { font-size: 13px; font-weight: 500; color: #FFFFFF; text-decoration: none; transition: color 0.15s ease; }
 .nav-links a:hover { color: rgba(255,255,255,0.7); }
