@@ -121,7 +121,7 @@
     </div>
     <div>
       <img src="../../assets/Case studies/Learning System Architecture/School Success Goal_Select book_2.jpg" alt="School Success goal creation flow — step 3" class="cs-img">
-      <p style="font-size: 12px; font-weight: 600; color: var(--gold-700); margin-top: 8px;">School Success Goal Creation Flow</p>
+      <p style="font-size: 12px; font-weight: 600; color: #0D0D0D; margin-top: 8px;">School Success Goal Creation Flow</p>
     </div>
   </div>
 
@@ -132,14 +132,14 @@
   <p>I worked closely with engineers to understand the data constraints. We couldn't deprecate existing structures; we had to accommodate them. Two block types emerged: Lessons (mandatory, count toward progress) and Resources (optional enrichment, don't count). Every sheet type fit into one of these categories. Nodes within each block had consistent properties — states (locked, unlocked, in-progress, completed), conditions (mandatory/optional), locations (in-class/anywhere). This unified structure let us handle new concepts like Competition Arena and Puzzles as resource blocks without fragmenting the system.</p>
 
   <img src="../../assets/Case studies/Learning System Architecture/Student view.jpg" alt="Learning homepage — homework queue on top, recent chapters for navigation, goals section below" class="cs-img">
-  <p style="font-size: 12px; font-weight: 600; color: var(--gold-700); margin-top: 8px;">Learning Homepage</p>
+  <p style="font-size: 12px; font-weight: 600; color: #0D0D0D; margin-top: 8px;">Learning Homepage</p>
 
   <h2>Homepage priorities — what came first?</h2>
 
   <p>I surfaced homework at the top — it's critical for learning progress and ensures concept absorption. It was buried before; now it's the first thing students see. Below homework, I added recent chapters as quick navigation for students with multiple goals; they can jump back to ongoing content without scrolling or recalling which goal they were on. The goals section below shows the full picture — progress, breakdown of chapters/tests/resources.</p>
 
   <img src="../../assets/Case studies/Learning System Architecture/Chapter Structure.jpg" alt="Three-level hierarchy — Chapter, Block (Lessons vs Resources), and Node types with properties and states" class="cs-img">
-  <p style="font-size: 12px; font-weight: 600; color: var(--gold-700); margin-top: 8px;">Chapter Structure Hierarchy</p>
+  <p style="font-size: 12px; font-weight: 600; color: #0D0D0D; margin-top: 8px;">Chapter Structure Hierarchy</p>
 
   <h2>Key decisions that shaped the system</h2>
 
@@ -252,7 +252,49 @@
   .lightbox-img { max-width: 90vw; max-height: 90vh; object-fit: contain; }
   .lightbox-close { position: absolute; top: 30px; right: 40px; color: white; font-size: 40px; font-weight: 300; cursor: pointer; z-index: 10000; }
   .lightbox-close:hover { color: #ccc; }
+
+  /* Learning System Architecture case study background */
+  body { background-color: #FFF1CC; }
+
+  /* ─── Footer ─── */
+  .site-footer {
+    max-width: 100%; margin: 0;
+    padding: 28px 48px 52px;
+    background-color: #0D0D0D;
+    border-top: none;
+    display: flex; justify-content: space-between; align-items: center; gap: 24px;
+  }
+  .footer-left { display: flex; align-items: center; gap: 16px; }
+  .footer-ai-credit {
+    font-family: var(--font-mono); font-size: 11px; color: #FFFFFF;
+    text-decoration: none; letter-spacing: 0.04em; transition: color var(--ease);
+  }
+  .footer-ai-credit:hover { color: #FFFFFF; opacity: 0.7; }
+  .footer-sep { color: rgba(255,255,255,0.3); }
+  .footer-copyright {
+    font-family: var(--font-mono); font-size: 11px;
+    color: #FFFFFF; letter-spacing: 0.04em;
+  }
+  .footer-links { display: flex; gap: 20px; align-items: center; }
+  .footer-link {
+    font-family: var(--font-mono); font-size: 12px; color: #FFFFFF;
+    text-decoration: none; letter-spacing: 0.04em; transition: color var(--ease);
+  }
+  .footer-link:hover { color: #FFFFFF; opacity: 0.7; }
 </style>
+
+<!-- Footer -->
+<footer class="site-footer">
+  <div class="footer-left">
+    <span class="footer-ai-credit">Built with AI</span>
+    <span class="footer-sep">·</span>
+    <span class="footer-copyright">© 2026 Md Aasif Anwar</span>
+  </div>
+  <div class="footer-links">
+    <a href="https://www.linkedin.com/in/aasif-nid/" target="_blank" rel="noopener" class="footer-link">LinkedIn ↗</a>
+    <a href="mailto:aasif.nid@gmail.com" class="footer-link">Email ↗</a>
+  </div>
+</footer>
 
 </body>
 </html>

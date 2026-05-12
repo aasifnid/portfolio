@@ -15,16 +15,14 @@
 
   body {
     font-family: var(--font-body); color: var(--color-ink);
-    background: var(--color-bg);
-    background-image: radial-gradient(circle, rgba(0,0,0,0.045) 1px, transparent 1px);
-    background-size: 24px 24px;
+    background: #FFE0FD;
     line-height: 1.6;
   }
 
   /* ─── Nav ─── */
   .site-nav {
     position: sticky; top: 0; z-index: 100;
-    background: var(--color-bg); border-bottom: 1px solid var(--color-border);
+    background: #F5F5F5; border-bottom: 1px solid var(--color-border);
     display: flex; justify-content: space-between; align-items: center;
     padding: 0 48px; height: 52px;
   }
@@ -50,7 +48,7 @@
   .header-eyebrow {
     font-family: var(--font-mono); font-size: 11px; font-weight: 500;
     letter-spacing: 0.12em; text-transform: uppercase;
-    color: var(--gold-700); margin-bottom: 16px;
+    color: #0D0D0D; margin-bottom: 16px;
   }
   .header-title {
     font-family: var(--font-display); font-size: clamp(32px, 4vw, 52px);
@@ -64,13 +62,13 @@
   .behance-link {
     display: inline-flex; align-items: center; gap: 8px;
     font-family: var(--font-mono); font-size: 12px; font-weight: 500;
-    color: var(--gold-700); text-decoration: none;
-    border: 1px solid var(--gold-400); border-radius: 4px;
+    color: #0D0D0D; text-decoration: none;
+    border: 1px solid #E0E0E0; border-radius: 4px;
     padding: 8px 14px; margin-top: 24px;
     background: var(--color-surface);
     transition: background 0.15s ease;
   }
-  .behance-link:hover { background: var(--gold-100); }
+  .behance-link:hover { background: #F5F5F5; }
 
   /* ─── Grid ─── */
   .projects { max-width: 960px; margin: 0 auto; padding: 56px 48px 100px; }
@@ -134,7 +132,7 @@
   }
   .project-cta {
     font-family: var(--font-mono); font-size: 11px; font-weight: 500;
-    color: var(--gold-700); letter-spacing: 0.04em;
+    color: #0D0D0D; letter-spacing: 0.04em;
     transition: color 0.15s ease;
   }
   .project-card:hover .project-cta { color: var(--color-ink); }
@@ -152,7 +150,7 @@
   }
   .footer-back {
     font-family: var(--font-mono); font-size: 13px; font-weight: 500;
-    color: var(--gold-700); text-decoration: none; letter-spacing: 0.04em;
+    color: #0D0D0D; text-decoration: none; letter-spacing: 0.04em;
     transition: color 0.15s ease;
   }
   .footer-back:hover { color: var(--color-ink); }
@@ -167,6 +165,32 @@
   @media (max-width: 480px) {
     .projects-grid { grid-template-columns: 1fr; }
   }
+
+  /* ─── Footer ─── */
+  .site-footer {
+    max-width: 100%; margin: 0;
+    padding: 28px 48px 52px;
+    background-color: #0D0D0D;
+    border-top: none;
+    display: flex; justify-content: space-between; align-items: center; gap: 24px;
+  }
+  .footer-left { display: flex; align-items: center; gap: 16px; }
+  .footer-ai-credit {
+    font-family: var(--font-mono); font-size: 11px; color: #FFFFFF;
+    text-decoration: none; letter-spacing: 0.04em; transition: color var(--ease);
+  }
+  .footer-ai-credit:hover { color: #FFFFFF; opacity: 0.7; }
+  .footer-sep { color: rgba(255,255,255,0.3); }
+  .footer-copyright {
+    font-family: var(--font-mono); font-size: 11px;
+    color: #FFFFFF; letter-spacing: 0.04em;
+  }
+  .footer-links { display: flex; gap: 20px; align-items: center; }
+  .footer-link {
+    font-family: var(--font-mono); font-size: 12px; color: #FFFFFF;
+    text-decoration: none; letter-spacing: 0.04em; transition: color var(--ease);
+  }
+  .footer-link:hover { color: #FFFFFF; opacity: 0.7; }
 
 </style>
 </head>
@@ -287,6 +311,19 @@
     }
   })();
 </script>
+
+<!-- Footer -->
+<footer class="site-footer">
+  <div class="footer-left">
+    <span class="footer-ai-credit">Built with AI</span>
+    <span class="footer-sep">·</span>
+    <span class="footer-copyright">© 2026 Md Aasif Anwar</span>
+  </div>
+  <div class="footer-links">
+    <a href="https://www.linkedin.com/in/aasif-nid/" target="_blank" rel="noopener" class="footer-link">LinkedIn ↗</a>
+    <a href="mailto:aasif.nid@gmail.com" class="footer-link">Email ↗</a>
+  </div>
+</footer>
 
 </body>
 </html>

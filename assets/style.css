@@ -27,14 +27,14 @@ body {
 .page { max-width: 800px; margin: 0 auto; padding: 0 32px 160px; }
 
 /* ─── Cover ─── */
-.cover-eyebrow { font-family: var(--font-mono); font-size: 11px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold-700); margin-bottom: 28px; }
+.cover-eyebrow { font-family: var(--font-mono); font-size: 11px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: #0D0D0D; margin-bottom: 28px; }
 .cover h1 { font-family: var(--font-display); font-size: clamp(36px, 4vw, 48px); line-height: 1.1; font-weight: 800; letter-spacing: -0.03em; color: var(--neutral-1000); margin-bottom: 24px; }
 .lede { font-family: var(--font-body); font-size: 17px; line-height: 1.7; color: var(--neutral-700); margin-bottom: 32px; font-weight: 400; }
 .cover-meta { display: grid; grid-template-columns: repeat(3, 1fr); border: 1px solid var(--neutral-300); border-radius: var(--r-md); overflow: hidden; margin-top: 8px; }
 .cover-meta-item { display: flex; flex-direction: column; gap: 6px; padding: 16px 24px; background: var(--neutral-200); border-right: 1px solid var(--neutral-300); border-bottom: 1px solid var(--neutral-300); }
 .cover-meta-item:nth-child(3n) { border-right: none; }
 .cover-meta-item:nth-last-child(-n+3) { border-bottom: none; }
-.cover-meta-label { font-family: var(--font-mono); font-size: 10px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold-700); }
+.cover-meta-label { font-family: var(--font-mono); font-size: 10px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: #0D0D0D; }
 .cover-meta-value { font-size: 14px; font-weight: 600; color: var(--neutral-1000); }
 
 /* ─── Hero ─── */
@@ -95,28 +95,28 @@ p:last-child { margin-bottom: 0; }
 strong { font-weight: 600; color: var(--neutral-1000); }
 
 /* ─── Narrative block — editorial callout ─── */
-.narrative { border-left: 2px solid var(--gold-400); padding: 4px 0 4px 24px; margin: 36px 0; }
+.narrative { border-left: 2px solid var(--neutral-300); padding: 4px 0 4px 24px; margin: 36px 0; }
 .narrative p { font-size: 17px; line-height: 30px; color: var(--neutral-800); margin-bottom: 16px; }
 .narrative p:last-child { margin-bottom: 0; }
 
 /* ─── Pull quote ─── */
-blockquote { font-family: var(--font-display); font-size: clamp(20px, 3vw, 26px); line-height: 1.4; font-weight: 700; color: var(--neutral-1000); border-left: 3px solid var(--gold-500); padding: 8px 0 8px 28px; margin: 44px 0; }
+blockquote { font-family: var(--font-display); font-size: clamp(20px, 3vw, 26px); line-height: 1.4; font-weight: 700; color: var(--neutral-1000); border-left: 3px solid var(--neutral-300); padding: 8px 0 8px 28px; margin: 44px 0; }
 
 /* ─── Highlight — inline callout ─── */
-.highlight { background: var(--gold-100); border-left: 3px solid var(--gold-500); padding: 16px 22px; margin: 24px 0; border-radius: 0 var(--r-md) var(--r-md) 0; }
+.highlight { background: #F5F5F5; border-left: 3px solid var(--neutral-300); padding: 16px 22px; margin: 24px 0; border-radius: 0 var(--r-md) var(--r-md) 0; }
 .highlight p { font-size: 16px; line-height: 27px; color: var(--neutral-900); margin-bottom: 0; }
 
 /* ─── Overview strip — card grid ─── */
 .overview { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; margin: 48px 0; }
 .overview-item { padding: 22px 24px; background: var(--neutral-200); border: 1px solid var(--neutral-300); border-radius: var(--r-md); box-shadow: var(--card-shadow); }
-.overview-item-label { font-family: var(--font-mono); font-size: 10px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold-700); margin-bottom: 10px; }
+.overview-item-label { font-family: var(--font-mono); font-size: 10px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: #0D0D0D; margin-bottom: 10px; }
 .overview-item-value { font-family: var(--font-display); font-size: 15px; font-weight: 700; line-height: 22px; color: var(--neutral-1000); }
 .overview-item-sub { font-size: 13px; line-height: 20px; color: var(--neutral-700); margin-top: 6px; }
 
 /* ─── Problem points — card list ─── */
 .problem-points { display: flex; flex-direction: column; gap: 12px; margin: 0 0 36px; }
 .problem-point { padding: 24px 28px; background: var(--neutral-200); border: 1px solid var(--neutral-300); border-radius: var(--r-md); box-shadow: 0 1px 3px rgba(0,0,0,0.04); }
-.problem-point-title { font-family: var(--font-display); font-size: 17px; font-weight: 700; color: var(--neutral-1000); margin-bottom: 10px; letter-spacing: -0.01em; padding-left: 14px; border-left: 2px solid var(--gold-500); }
+.problem-point-title { font-family: var(--font-display); font-size: 17px; font-weight: 700; color: var(--neutral-1000); margin-bottom: 10px; letter-spacing: -0.01em; padding-left: 14px; border-left: 2px solid var(--neutral-300); }
 .problem-point p { font-size: 15px; line-height: 26px; color: var(--neutral-700); margin-bottom: 0; }
 
 /* ─── Challenges grid — card grid ─── */
@@ -128,8 +128,8 @@ blockquote { font-family: var(--font-display); font-size: clamp(20px, 3vw, 26px)
 /* ─── Chapter hierarchy ─── */
 .hierarchy { margin: 32px 0; display: flex; flex-direction: column; gap: 10px; }
 .hier-card { border: 1px solid var(--neutral-300); padding: 18px 20px; background: var(--neutral-200); border-radius: var(--r-md); box-shadow: var(--card-shadow); }
-.hier-card.level-0 { border-left: 3px solid var(--gold-500); background: var(--gold-100); }
-.hier-level-label { font-family: var(--font-mono); font-size: 10px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold-700); margin-bottom: 6px; }
+.hier-card.level-0 { border-left: 3px solid #FFB700; background: #FFB700; }
+.hier-level-label { font-family: var(--font-mono); font-size: 10px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: #B8860B; margin-bottom: 6px; }
 .hier-card-name { font-family: var(--font-display); font-size: 16px; font-weight: 700; color: var(--neutral-1000); margin-bottom: 4px; }
 .hier-card-desc { font-size: 14px; line-height: 22px; color: var(--neutral-700); margin-bottom: 0; }
 .hier-sub-row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-left: 24px; }
@@ -140,7 +140,7 @@ blockquote { font-family: var(--font-display); font-size: clamp(20px, 3vw, 26px)
 /* ─── Node states ─── */
 .node-states { display: flex; align-items: center; gap: 8px; margin: 20px 0 28px; flex-wrap: wrap; }
 .node-state { font-size: 13px; font-weight: 500; color: var(--neutral-700); background: var(--neutral-200); padding: 6px 14px; border-radius: var(--r-sm); border: 1px solid var(--neutral-300); }
-.node-state.active { background: var(--gold-100); color: var(--gold-700); border-color: var(--gold-400); }
+.node-state.active { background: #FFFAED; color: #B8860B; border-color: #FFD580; }
 .state-arrow { font-size: 14px; color: var(--neutral-700); }
 
 /* ─── Decision list — the hero section ─── */
@@ -148,7 +148,7 @@ blockquote { font-family: var(--font-display); font-size: clamp(20px, 3vw, 26px)
 .decision-item {
   background: var(--neutral-200);
   border: 1px solid var(--neutral-300);
-  border-left: 3px solid var(--gold-500);
+  border-left: 3px solid #FFB700;
   border-radius: 0 var(--r-md) var(--r-md) 0;
   padding: 20px 24px;
   box-shadow: var(--card-shadow);
@@ -157,7 +157,7 @@ blockquote { font-family: var(--font-display); font-size: clamp(20px, 3vw, 26px)
   font-family: var(--font-mono);
   font-size: 10px; font-weight: 700;
   letter-spacing: 0.14em; text-transform: uppercase;
-  color: var(--gold-500); margin-bottom: 8px;
+  color: #B8860B; margin-bottom: 8px;
 }
 .decision-item-title {
   font-family: var(--font-display);
@@ -169,7 +169,7 @@ blockquote { font-family: var(--font-display); font-size: clamp(20px, 3vw, 26px)
 
 /* ─── Rules table ─── */
 .rules-table { width: 100%; border-collapse: collapse; border: 1px solid var(--neutral-300); margin: 28px 0; border-radius: var(--r-md); overflow: hidden; box-shadow: var(--card-shadow); }
-.rules-table th { font-family: var(--font-mono); font-size: 10px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold-700); background: var(--gold-100); padding: 12px 16px; text-align: left; border-bottom: 1px solid var(--neutral-300); }
+.rules-table th { font-family: var(--font-mono); font-size: 10px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: #B8860B; background: #FFFAED; padding: 12px 16px; text-align: left; border-bottom: 1px solid var(--neutral-300); }
 .rules-table td { font-size: 14px; line-height: 23px; color: var(--neutral-800); padding: 14px 16px; border-bottom: 1px solid var(--neutral-300); background: var(--neutral-200); vertical-align: top; }
 .rules-table td:first-child { font-weight: 600; color: var(--neutral-1000); width: 36%; }
 .rules-table tr:last-child td { border-bottom: none; }
@@ -177,9 +177,9 @@ blockquote { font-family: var(--font-display); font-size: clamp(20px, 3vw, 26px)
 /* ─── Homework lifecycle — card row ─── */
 .hw-lifecycle { display: flex; gap: 10px; margin: 20px 0 28px; }
 .lifecycle-stage { flex: 1; padding: 16px 18px; background: var(--neutral-200); border: 1px solid var(--neutral-300); border-radius: var(--r-md); box-shadow: var(--card-shadow); }
-.lifecycle-stage.done { background: var(--gold-100); border-color: var(--gold-400); }
+.lifecycle-stage.done { background: #FFFAED; border-color: #FFD580; }
 .lifecycle-label { font-family: var(--font-mono); font-size: 10px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--neutral-700); margin-bottom: 8px; }
-.lifecycle-stage.done .lifecycle-label { color: var(--gold-700); }
+.lifecycle-stage.done .lifecycle-label { color: #B8860B; }
 .lifecycle-text { font-size: 13px; line-height: 19px; color: var(--neutral-800); }
 
 /* ─── Due date progression — card row ─── */
@@ -204,12 +204,12 @@ blockquote { font-family: var(--font-display); font-size: clamp(20px, 3vw, 26px)
 /* ─── Outcome stats — card grid ─── */
 .outcome-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin: 32px 0; }
 .stat { padding: 24px; background: var(--neutral-200); border: 1px solid var(--neutral-300); border-radius: var(--r-md); box-shadow: var(--card-shadow); display: flex; flex-direction: column; gap: 6px; }
-.stat.span-full { grid-column: 1 / -1; background: var(--gold-100); border-left: 3px solid var(--gold-500); border-radius: 0 var(--r-md) var(--r-md) 0; }
+.stat.span-full { grid-column: 1 / -1; background: #FFFAED; border-left: 3px solid #FFB700; border-radius: 0 var(--r-md) var(--r-md) 0; }
 .stat-label { font-family: var(--font-mono); font-size: 10px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--neutral-700); line-height: 1.5; order: -1; }
 .stat-number { font-family: var(--font-display); font-size: clamp(26px, 3.5vw, 34px); line-height: 1; font-weight: 700; color: var(--neutral-1000); letter-spacing: -0.02em; }
 
 /* ─── Outcome note ─── */
-.outcome-note { background: var(--gold-100); border: 1px solid var(--neutral-300); border-left: 3px solid var(--gold-400); border-radius: 0 var(--r-md) var(--r-md) 0; padding: 20px 24px; margin: 28px 0; box-shadow: var(--card-shadow); }
+.outcome-note { background: #FFFAED; border: 1px solid var(--neutral-300); border-left: 3px solid #FFD580; border-radius: 0 var(--r-md) var(--r-md) 0; padding: 20px 24px; margin: 28px 0; box-shadow: var(--card-shadow); }
 .outcome-note p { font-size: 15px; line-height: 25px; color: var(--neutral-800); margin-bottom: 0; }
 
 /* ─── Dashboard frame ─── */
@@ -224,13 +224,13 @@ blockquote { font-family: var(--font-display); font-size: clamp(20px, 3vw, 26px)
 .dashboard-crop img { width: 100%; height: 100%; object-fit: cover; object-position: top; display: block; }
 
 /* ─── Figma link ─── */
-.figma-link { display: inline-flex; align-items: center; gap: 8px; font-family: var(--font-mono); font-size: 12px; font-weight: 500; color: var(--gold-700); text-decoration: none; border: 1px solid var(--gold-400); background: var(--neutral-200); border-radius: var(--r-sm); padding: 9px 16px; margin-top: 24px; letter-spacing: 0.04em; transition: background 0.15s ease, box-shadow 0.15s ease; box-shadow: var(--card-shadow); }
-.figma-link:hover { background: var(--gold-100); box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+.figma-link { display: inline-flex; align-items: center; gap: 8px; font-family: var(--font-mono); font-size: 12px; font-weight: 500; color: #B8860B; text-decoration: none; border: 1px solid #FFD580; background: var(--neutral-200); border-radius: var(--r-sm); padding: 9px 16px; margin-top: 24px; letter-spacing: 0.04em; transition: background 0.15s ease, box-shadow 0.15s ease; box-shadow: var(--card-shadow); }
+.figma-link:hover { background: #FFFAED; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
 
 /* ─── Footer ─── */
 .footer { border-top: 1px solid var(--neutral-300); padding: 40px 32px; max-width: 800px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
 .footer-name { font-family: var(--font-display); font-size: 15px; font-weight: 600; color: var(--neutral-1000); }
-.footer-link { font-size: 14px; color: var(--gold-700); text-decoration: none; font-weight: 500; transition: color 0.15s ease; }
+.footer-link { font-size: 14px; color: #0D0D0D; text-decoration: none; font-weight: 500; transition: color 0.15s ease; }
 .footer-link:hover { color: var(--neutral-1000); }
 
 /* ─── Lightbox ─── */
@@ -260,8 +260,8 @@ blockquote { font-family: var(--font-display); font-size: clamp(20px, 3vw, 26px)
   white-space: nowrap;
   transition: color 0.15s ease, border-color 0.15s ease;
 }
-.cs-section-nav a:hover { color: var(--gold-700); }
-.cs-section-nav a.active { color: var(--gold-700); border-bottom-color: var(--gold-500); }
+.cs-section-nav a:hover { color: #FF80F4; }
+.cs-section-nav a.active { color: #FF80F4; border-bottom-color: #FF80F4; }
 
 /* ─── Value prop hook ─── */
 .value-prop {
@@ -280,7 +280,7 @@ blockquote { font-family: var(--font-display); font-size: clamp(20px, 3vw, 26px)
 .goal-block-label {
   font-family: var(--font-mono); font-size: 10px; font-weight: 600;
   letter-spacing: 0.10em; text-transform: uppercase;
-  color: var(--gold-700); margin-bottom: 10px;
+  color: #B8860B; margin-bottom: 10px;
 }
 .goal-block p { font-size: 16px; line-height: 26px; color: var(--neutral-900); margin-bottom: 6px; }
 .goal-block p:last-child { margin-bottom: 0; }
@@ -309,13 +309,13 @@ blockquote { font-family: var(--font-display); font-size: clamp(20px, 3vw, 26px)
   padding: 14px 16px; border-radius: var(--r-sm);
 }
 .pivot-before { background: var(--neutral-100); border: 1px solid var(--neutral-300); }
-.pivot-after  { background: var(--gold-100); border: 1px solid var(--gold-400); }
+.pivot-after  { background: #FFFAED; border: 1px solid #FFD580; }
 .pivot-state-label {
   font-family: var(--font-mono); font-size: 10px; font-weight: 600;
   letter-spacing: 0.10em; text-transform: uppercase; margin-bottom: 6px;
 }
 .pivot-before .pivot-state-label { color: var(--neutral-700); }
-.pivot-after  .pivot-state-label  { color: var(--gold-700); }
+.pivot-after  .pivot-state-label  { color: #B8860B; }
 .pivot-before p, .pivot-after p {
   font-size: 13px; line-height: 20px; color: var(--neutral-900); margin-bottom: 0;
 }
@@ -325,7 +325,7 @@ blockquote { font-family: var(--font-display); font-size: clamp(20px, 3vw, 26px)
 .video-block-label {
   font-family: var(--font-mono); font-size: 10px; font-weight: 600;
   letter-spacing: 0.10em; text-transform: uppercase;
-  color: var(--gold-700); margin-bottom: 10px;
+  color: #B8860B; margin-bottom: 10px;
 }
 .video-placeholder {
   width: 100%; aspect-ratio: 16/9;
@@ -339,23 +339,23 @@ blockquote { font-family: var(--font-display); font-size: clamp(20px, 3vw, 26px)
 
 /* ─── Observation block ─── */
 .observation-block {
-  background: var(--gold-100); border: 1px solid var(--neutral-300);
-  border-left: 3px solid var(--gold-500);
+  background: #FFFAED; border: 1px solid var(--neutral-300);
+  border-left: 3px solid #FFB700;
   border-radius: 0 var(--r-md) var(--r-md) 0; padding: 20px 24px; margin: 28px 0;
   box-shadow: var(--card-shadow);
 }
 .observation-block-label {
   font-family: var(--font-mono); font-size: 10px; font-weight: 600;
   letter-spacing: 0.10em; text-transform: uppercase;
-  color: var(--gold-700); margin-bottom: 16px;
+  color: #B8860B; margin-bottom: 16px;
 }
-.observation-item { margin-bottom: 14px; padding-left: 14px; border-left: 2px solid var(--gold-500); }
+.observation-item { margin-bottom: 14px; padding-left: 14px; border-left: 2px solid #FFB700; }
 .observation-item:last-child { margin-bottom: 0; }
 .observation-item p { font-size: 15px; line-height: 25px; color: var(--neutral-900); margin-bottom: 0; }
 .observation-source {
   font-family: var(--font-mono); font-size: 10px; color: var(--neutral-700);
   letter-spacing: 0.04em; margin-top: 16px; padding-top: 12px;
-  border-top: 1px solid var(--gold-400);
+  border-top: 1px solid #FFD580;
 }
 
 /* ─── Session timeline (service blueprint) ─── */
@@ -395,8 +395,8 @@ blockquote { font-family: var(--font-display); font-size: clamp(20px, 3vw, 26px)
 /* Feel Check zone — proportional to 5 of 50 min, widened for legibility */
 .tl-fc {
   width: 13%; flex-shrink: 0;
-  background: var(--gold-100);
-  border-right: 2px solid var(--gold-500);
+  background: #D6F5FF;
+  border-right: 2px solid #33CCFF;
 }
 /* Instruction zone */
 .tl-inst {
@@ -417,7 +417,7 @@ blockquote { font-family: var(--font-display); font-size: clamp(20px, 3vw, 26px)
 /* Feel Check cell content */
 .tl-fc-label {
   font-family: var(--font-display); font-size: 12px; font-weight: 700;
-  color: var(--gold-700); line-height: 1.25; letter-spacing: -0.01em;
+  color: #0086E5; line-height: 1.25; letter-spacing: -0.01em;
 }
 /* Student instruction cell */
 .tl-student-label {
@@ -470,7 +470,7 @@ blockquote { font-family: var(--font-display); font-size: clamp(20px, 3vw, 26px)
 }
 .grade-col--g34 .grade-col-header { background: var(--neutral-200); }
 .grade-col--g58 .grade-col-header { background: var(--neutral-200); }
-.grade-col--g34 .grade-label { color: var(--gold-700); }
+.grade-col--g34 .grade-label { color: #0D0D0D; }
 .grade-label {
   font-family: var(--font-display); font-size: 15px; font-weight: 700;
   color: var(--neutral-1000);
@@ -511,7 +511,7 @@ blockquote { font-family: var(--font-display); font-size: clamp(20px, 3vw, 26px)
 }
 .img-placeholder-tag {
   font-family: var(--font-mono); font-size: 10px; font-weight: 600;
-  letter-spacing: 0.10em; text-transform: uppercase; color: var(--gold-700);
+  letter-spacing: 0.10em; text-transform: uppercase; color: #0D0D0D;
 }
 .img-placeholder-desc {
   font-size: 13px; color: var(--neutral-700); text-align: center;
