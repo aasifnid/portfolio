@@ -247,7 +247,7 @@ blockquote { font-family: var(--font-display); font-size: clamp(20px, 3vw, 26px)
 
 /* ─── Case study section nav ─── */
 .cs-section-nav {
-  position: sticky; top: 52px; z-index: 90;
+  position: sticky; top: 64px; z-index: 90;
   background: #FAFAFA; border-top: 3px solid #0D0D0D; border-bottom: 1px solid var(--neutral-300);
   display: flex; justify-content: center; gap: 0;
   overflow-x: auto; scrollbar-width: none;
