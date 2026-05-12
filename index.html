@@ -65,7 +65,7 @@
     background: var(--color-ink); color: #F8F5EF;
     font-family: var(--font-mono); font-size: 13px; font-weight: 500;
     letter-spacing: 0.03em; text-decoration: none;
-    padding: 12px 22px; border-radius: var(--r-sm);
+    padding: 12px 22px; border-radius: 0;
     transition: background var(--ease);
   }
   .btn-primary:hover { background: #2D2B28; }
@@ -75,7 +75,7 @@
     font-family: var(--font-mono); font-size: 13px; font-weight: 500;
     letter-spacing: 0.03em; text-decoration: none;
     padding: 12px 22px;
-    border: 1px solid var(--color-border); border-radius: var(--r-sm);
+    border: 1px solid var(--color-border); border-radius: 0;
     transition: border-color var(--ease), color var(--ease), background var(--ease);
   }
   .btn-ghost:hover { border-color: var(--color-border-2); color: var(--color-ink); background: #F5F5F5; }
@@ -104,7 +104,7 @@
     min-height: 280px;
     text-decoration: none; color: inherit;
     background: var(--color-surface);
-    border: 1px solid var(--color-border); border-radius: var(--r-md);
+    border: 1px solid var(--color-border); border-radius: 0;
     overflow: hidden;
     transition: border-color 0.2s ease, box-shadow 0.2s ease;
     transform-style: preserve-3d;
@@ -134,7 +134,7 @@
     letter-spacing: 0.1em; text-transform: uppercase;
     background: rgba(255,255,255,0.18); color: #fff;
     border: 1px solid rgba(255,255,255,0.28);
-    border-radius: 4px; padding: 5px 12px;
+    border-radius: 0; padding: 5px 12px;
     position: relative; z-index: 1;
     backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px);
   }
@@ -176,7 +176,7 @@
   /* ─── Recommendations ─── */
   .recs-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
   .rec-card {
-    background: var(--color-surface); border-radius: var(--r-md);
+    background: var(--color-surface); border-radius: 0;
     border: 1px solid var(--color-border); overflow: hidden;
     display: flex; flex-direction: column;
     box-shadow: 0 2px 12px rgba(0,0,0,0.05);
@@ -318,7 +318,7 @@
   }
   .sketch-image {
     max-width: 100%; width: 100%; height: auto;
-    border-radius: var(--r-md);
+    border-radius: 0;
   }
   .sketch-caption {
     font-size: 12px; color: var(--color-ink-3); text-align: center;
@@ -377,7 +377,7 @@
     position: fixed; bottom: 204px; right: 28px;
     transform: translateY(6px);
     background: var(--color-ink); color: #fff;
-    border-radius: var(--r-md); padding: 10px 14px;
+    border-radius: 0; padding: 10px 14px;
     width: 172px; text-align: left;
     opacity: 0; pointer-events: none;
     transition: opacity 0.2s ease, transform 0.2s ease;
@@ -401,7 +401,7 @@
   #chat-panel {
     position: fixed; bottom: 204px; right: 28px; z-index: 1000;
     width: 360px; max-height: 520px;
-    background: #fff; border-radius: var(--r-lg);
+    background: #fff; border-radius: 0;
     box-shadow: 0 8px 40px rgba(0,0,0,0.14), 0 2px 8px rgba(0,0,0,0.08);
     display: flex; flex-direction: column;
     overflow: hidden;
@@ -423,12 +423,12 @@
   .chat-beta-tag {
     font-family: var(--font-mono); font-size: 9px; font-weight: 600;
     background: rgba(255,255,255,0.15); color: #FFFFFF;
-    padding: 2px 6px; border-radius: 3px; letter-spacing: 0.02em;
+    padding: 2px 6px; border-radius: 0; letter-spacing: 0.02em;
   }
   .chat-header-sub { font-family: var(--font-mono); font-size: 10px; color: rgba(255,255,255,0.45); margin-top: 1px; letter-spacing: 0.04em; }
   .chat-close {
     background: none; border: none; cursor: pointer; color: rgba(255,255,255,0.5);
-    padding: 4px; border-radius: 4px; transition: color 0.15s;
+    padding: 4px; border-radius: 0; transition: color 0.15s;
     display: flex; align-items: center; justify-content: center;
   }
   .chat-close:hover { color: #fff; }
@@ -441,7 +441,7 @@
   .chat-msg--user { align-self: flex-end; }
   .chat-msg--bot  { align-self: flex-start; }
   .chat-msg-bubble {
-    padding: 10px 14px; border-radius: 14px;
+    padding: 10px 14px; border-radius: 0;
     font-size: 14px; line-height: 1.55;
   }
   .chat-msg--user .chat-msg-bubble {
@@ -459,7 +459,7 @@
   .chat-chip {
     font-family: var(--font-mono); font-size: 11px; font-weight: 500;
     color: #0D0D0D; background: #FFFFFF;
-    border: 1px solid #E0E0E0; border-radius: 20px;
+    border: 1px solid #E0E0E0; border-radius: 0;
     padding: 5px 12px; cursor: pointer; letter-spacing: 0.02em;
     transition: background 0.15s;
   }
@@ -469,7 +469,7 @@
     display: flex; gap: 8px; flex-shrink: 0;
   }
   .chat-input {
-    flex: 1; border: 1px solid var(--color-border); border-radius: var(--r-sm);
+    flex: 1; border: 1px solid var(--color-border); border-radius: 0;
     padding: 9px 12px; font-family: var(--font-body); font-size: 14px;
     color: var(--color-ink); outline: none; resize: none;
     transition: border-color 0.15s;
@@ -477,7 +477,7 @@
   .chat-input:focus { border-color: var(--color-border-2); }
   .chat-send {
     background: var(--color-ink); color: #fff;
-    border: none; border-radius: var(--r-sm); padding: 0 14px;
+    border: none; border-radius: 0; padding: 0 14px;
     cursor: pointer; font-family: var(--font-mono); font-size: 13px;
     transition: background 0.15s; flex-shrink: 0;
   }
@@ -566,7 +566,7 @@
     min-height: 280px;
     background: #FFE0FD;
     border: 1px dashed #FFA3F7;
-    border-radius: var(--r-md);
+    border-radius: 0;
     text-decoration: none; color: inherit;
     transition: border-color 0.2s ease, box-shadow 0.2s ease;
     transform-style: preserve-3d;
@@ -721,7 +721,7 @@
     width: 196px;
     background: var(--color-surface);
     border: 1px solid var(--color-border);
-    border-radius: 8px;
+    border-radius: 0;
     padding: 16px;
   }
   .cs-mini-label {
@@ -741,19 +741,19 @@
   .cs-mini-bar-row { display: flex; justify-content: space-between; margin-bottom: 5px; }
   .cs-mini-bar-lbl { font-size: 10px; color: var(--color-ink-2); }
   .cs-mini-bar-val { font-size: 10px; font-weight: 600; color: #0D0D0D; }
-  .cs-mini-bar { width: 100%; height: 3px; background: var(--color-border); border-radius: 2px; margin-bottom: 10px; }
-  .cs-mini-bar-fill { width: 60%; height: 3px; border-radius: 2px; background: #FF80F4; }
+  .cs-mini-bar { width: 100%; height: 3px; background: var(--color-border); border-radius: 0; margin-bottom: 10px; }
+  .cs-mini-bar-fill { width: 60%; height: 3px; border-radius: 0; background: #FF80F4; }
   .cs-mini-hw-lbl { font-size: 9px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--color-ink-3); margin-bottom: 5px; }
-  .cs-hw-item { background: var(--color-surface); border: 1px solid var(--color-border); border-radius: 3px; padding: 5px 8px; margin-bottom: 4px; }
+  .cs-hw-item { background: var(--color-surface); border: 1px solid var(--color-border); border-radius: 0; padding: 5px 8px; margin-bottom: 4px; }
   .cs-hw-item:last-child { margin-bottom: 0; }
-  .cs-hw-type { font-size: 8px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; padding: 1px 4px; border-radius: 2px; display: inline-block; margin-bottom: 2px; }
+  .cs-hw-type { font-size: 8px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; padding: 1px 4px; border-radius: 0; display: inline-block; margin-bottom: 2px; }
   .cs-hw-type.l { background: #EEF2FF; color: #3730A3; }
   .cs-hw-type.p { background: #F0FDF4; color: #166534; }
   .cs-hw-name { font-size: 10px; font-weight: 600; color: var(--color-ink); line-height: 1.3; }
 
   /* Trial — steps + metrics */
   .cs-mini-steps { display: flex; align-items: center; gap: 4px; margin: 10px 0; }
-  .cs-step { font-size: 10px; font-weight: 600; color: var(--color-ink-3); background: var(--color-surface); padding: 3px 7px; border-radius: 3px; }
+  .cs-step { font-size: 10px; font-weight: 600; color: var(--color-ink-3); background: var(--color-surface); padding: 3px 7px; border-radius: 0; }
   .cs-step.done { color: #166534; background: #F0FDF4; }
   .cs-step.active { color: #0D0D0D; background: #F5F5F5; }
   .cs-step-sep { font-size: 10px; color: var(--color-border-2); }
@@ -765,14 +765,14 @@
   /* Affiliate — earnings + status */
   .cs-mini-earnings { font-family: var(--font-display); font-size: 22px; font-weight: 700; color: var(--color-ink); letter-spacing: -0.03em; margin: 4px 0 2px; }
   .cs-status-row { display: flex; gap: 5px; }
-  .cs-status { font-size: 9px; font-weight: 600; padding: 3px 7px; border-radius: 3px; letter-spacing: 0.03em; }
+  .cs-status { font-size: 9px; font-weight: 600; padding: 3px 7px; border-radius: 0; letter-spacing: 0.03em; }
   .cs-status.pending { background: #FEF3C7; color: #92400E; }
   .cs-status.active { background: #F0FDF4; color: #166534; }
   .cs-status.paid { background: #EEF2FF; color: #3730A3; }
 
   /* License — preference chips */
   .cs-pref-row { display: flex; gap: 5px; margin: 10px 0; }
-  .cs-pref { font-size: 10px; font-weight: 600; padding: 4px 9px; border-radius: 3px; background: var(--color-surface); color: var(--color-ink-3); border: 1px solid var(--color-border); }
+  .cs-pref { font-size: 10px; font-weight: 600; padding: 4px 9px; border-radius: 0; background: var(--color-surface); color: var(--color-ink-3); border: 1px solid var(--color-border); }
   .cs-pref.selected { background: #F5F5F5; color: #0D0D0D; border-color: #E0E0E0; }
 
   /* Games — dots + score */

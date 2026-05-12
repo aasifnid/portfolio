@@ -21,7 +21,7 @@
   .cover-meta + .cover-meta { margin-top: 8px; }
 
   /* Phase table */
-  .phase-table { margin: 28px 0; border: 1px solid var(--neutral-300); border-radius: var(--r-md); overflow: hidden; box-shadow: var(--card-shadow); }
+  .phase-table { margin: 28px 0; border: 1px solid var(--neutral-300); border-radius: 0; overflow: hidden; box-shadow: var(--card-shadow); }
   .phase-row { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; border-bottom: 1px solid var(--neutral-300); }
   .phase-row:last-child { border-bottom: none; }
   .phase-row.phase-header span { font-family: var(--font-mono); font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.10em; color: #0D0D0D; background: var(--neutral-200); padding: 12px 18px; }
@@ -33,20 +33,20 @@
   .observation-block .observation-item:last-of-type { border-bottom: none; padding-bottom: 0; margin-bottom: 0; }
 
   /* Image placeholder */
-  .img-placeholder { width: 100%; aspect-ratio: 16/9; background: var(--neutral-200); border: 1px dashed var(--neutral-400); border-radius: var(--r-md); display: flex; flex-direction: column; align-items: center; justify-content: center; margin: 24px 0; gap: 8px; }
+  .img-placeholder { width: 100%; aspect-ratio: 16/9; background: var(--neutral-200); border: 1px dashed var(--neutral-400); border-radius: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; margin: 24px 0; gap: 8px; }
   .img-placeholder-tag { font-family: var(--font-mono); font-size: 10px; font-weight: 600; letter-spacing: 0.10em; text-transform: uppercase; color: #0D0D0D; }
   .img-placeholder-desc { font-size: 13px; color: var(--neutral-600); text-align: center; max-width: 360px; line-height: 1.5; }
 
   /* Case study images */
-  .cs-img { width: 100%; border-radius: var(--r-md); margin: 24px 0; display: block; }
+  .cs-img { width: 100%; border-radius: 0; margin: 24px 0; display: block; }
   .decision-01-comparison { display: grid; grid-template-columns: 1fr; gap: 16px; margin: 24px 0; }
-  .decision-01-comparison img { width: 100%; border-radius: var(--r-md); display: block; }
+  .decision-01-comparison img { width: 100%; border-radius: 0; display: block; }
   .comparison-label { font-size: 12px; font-weight: 600; color: #0D0D0D; margin-top: 8px; text-align: center; }
   .stages-grid { display: grid; grid-template-columns: 1fr; gap: 16px; margin: 24px 0; }
-  .stages-grid img { width: 100%; border-radius: var(--r-md); display: block; }
+  .stages-grid img { width: 100%; border-radius: 0; display: block; }
   .stages-grid-label { font-size: 12px; font-weight: 600; color: var(--neutral-700); margin-top: 8px; text-align: center; }
   .grade-compare { display: grid; grid-template-columns: 1fr; gap: 16px; margin: 24px 0; }
-  .grade-compare img { width: 100%; border-radius: var(--r-md); display: block; }
+  .grade-compare img { width: 100%; border-radius: 0; display: block; }
   .grade-compare-label { font-size: 12px; font-weight: 600; color: #0D0D0D; margin-top: 8px; text-align: center; }
 
   /* Mobile */
@@ -314,7 +314,7 @@
 
   <h2>Feel Check in a real session</h2>
 
-  <div style="margin: 32px 0; border-radius: var(--r-lg); overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.1); aspect-ratio: 16 / 9;">
+  <div style="margin: 32px 0; border-radius: 0; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.1); aspect-ratio: 16 / 9;">
     <iframe
       style="width: 100%; height: 100%; display: block; border: none;"
       src="https://drive.google.com/file/d/188rCDk088eSHwR7nTR9ldS2lKrNkuION/preview"
@@ -424,11 +424,11 @@
   <div style="margin: 32px 0;">
     <div style="display: grid; grid-template-columns: 1fr; gap: 24px;">
       <div>
-        <img class="cs-img" src="../../assets/Case studies/sel-feel-check/zone-g34.png" alt="Zone distribution G3-4: Green 217, Blue 68, Yellow 90, Red 46" style="width: 100%; border-radius: var(--r-md);">
+        <img class="cs-img" src="../../assets/Case studies/sel-feel-check/zone-g34.png" alt="Zone distribution G3-4: Green 217, Blue 68, Yellow 90, Red 46" style="width: 100%; border-radius: 0;">
         <p style="font-size: 12px; font-weight: 600; color: #0D0D0D; margin-top: 12px; text-align: center;">G3–4 (421 sessions)</p>
       </div>
       <div>
-        <img class="cs-img" src="../../assets/Case studies/sel-feel-check/zone-g58.png" alt="Zone distribution G5-8: Green 702, Blue 151, Yellow 162, Red 87" style="width: 100%; border-radius: var(--r-md);">
+        <img class="cs-img" src="../../assets/Case studies/sel-feel-check/zone-g58.png" alt="Zone distribution G5-8: Green 702, Blue 151, Yellow 162, Red 87" style="width: 100%; border-radius: 0;">
         <p style="font-size: 12px; font-weight: 600; color: #0D0D0D; margin-top: 12px; text-align: center;">G5–8 (1,102 sessions)</p>
       </div>
     </div>
