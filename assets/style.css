@@ -161,13 +161,25 @@ blockquote { font-family: var(--font-display); font-size: clamp(20px, 3vw, 26px)
   box-shadow: 0 1px 3px rgba(0,0,0,0.04);
 }
 .decision-item-num {
-  display: none;
+  font-family: var(--font-mono);
+  font-size: 14px; font-weight: 700;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--color-ink-3);
+  margin: 0; padding: 0;
+  display: inline;
+}
+.decision-item-num::after {
+  content: ' — ';
+  margin: 0 6px;
+  color: var(--color-ink-3);
 }
 .decision-item-title {
   font-family: var(--font-display);
   font-size: 20px; line-height: 1.4; font-weight: 700;
   letter-spacing: -0.02em;
-  color: var(--color-ink); margin-bottom: 16px;
+  color: var(--color-ink);
+  margin: 0 0 16px 0; padding: 0;
+  display: inline;
 }
 .decision-item p { font-size: 15px; line-height: 1.65; color: var(--neutral-800); margin-bottom: 0; }
 
