@@ -21,11 +21,11 @@
   .cover-meta + .cover-meta { margin-top: 8px; }
 
   /* Phase table */
-  .phase-table { margin: 28px 0; border: 1px solid var(--neutral-300); border-radius: 0; overflow: hidden; box-shadow: var(--card-shadow); }
+  .phase-table { margin: 28px 0; border: 1px solid var(--neutral-300); border-radius: 0; overflow: hidden; box-shadow: none; }
   .phase-row { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; border-bottom: 1px solid var(--neutral-300); }
   .phase-row:last-child { border-bottom: none; }
-  .phase-row.phase-header span { font-family: var(--font-mono); font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.10em; color: #0D0D0D; background: var(--neutral-200); padding: 12px 18px; }
-  .phase-row span { font-size: 14px; line-height: 22px; color: var(--neutral-800); padding: 14px 18px; border-right: 1px solid var(--neutral-300); }
+  .phase-row.phase-header span { font-family: var(--font-mono); font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.10em; color: var(--color-ink); background: var(--neutral-100); padding: 14px 18px; }
+  .phase-row span { font-size: 15px; line-height: 24px; color: var(--neutral-800); padding: 16px 18px; border-right: 1px solid var(--neutral-300); }
   .phase-row span:last-child { border-right: none; }
 
   /* Fix nested accent — remove gold border inside observation-block items */
@@ -33,21 +33,21 @@
   .observation-block .observation-item:last-of-type { border-bottom: none; padding-bottom: 0; margin-bottom: 0; }
 
   /* Image placeholder */
-  .img-placeholder { width: 100%; aspect-ratio: 16/9; background: var(--neutral-200); border: 1px dashed var(--neutral-400); border-radius: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; margin: 24px 0; gap: 8px; }
-  .img-placeholder-tag { font-family: var(--font-mono); font-size: 10px; font-weight: 600; letter-spacing: 0.10em; text-transform: uppercase; color: #0D0D0D; }
-  .img-placeholder-desc { font-size: 13px; color: var(--neutral-600); text-align: center; max-width: 360px; line-height: 1.5; }
+  .img-placeholder { width: 100%; aspect-ratio: 16/9; background: var(--neutral-100); border: 2px dashed var(--neutral-300); border-radius: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; margin: 32px 0; gap: 12px; }
+  .img-placeholder-tag { font-family: var(--font-mono); font-size: 11px; font-weight: 600; letter-spacing: 0.10em; text-transform: uppercase; color: var(--color-ink); }
+  .img-placeholder-desc { font-size: 14px; color: var(--neutral-700); text-align: center; max-width: 400px; line-height: 1.6; }
 
   /* Case study images */
-  .cs-img { width: 100%; border-radius: 0; margin: 24px 0; display: block; }
-  .decision-01-comparison { display: grid; grid-template-columns: 1fr; gap: 16px; margin: 24px 0; }
+  .cs-img { width: 100%; border-radius: 0; margin: 32px 0; display: block; }
+  .decision-01-comparison { display: grid; grid-template-columns: 1fr; gap: 24px; margin: 32px 0; }
   .decision-01-comparison img { width: 100%; border-radius: 0; display: block; }
-  .comparison-label { font-size: 12px; font-weight: 600; color: #0D0D0D; margin-top: 8px; text-align: center; }
-  .stages-grid { display: grid; grid-template-columns: 1fr; gap: 16px; margin: 24px 0; }
+  .comparison-label { font-size: 13px; font-weight: 600; color: var(--color-ink); margin-top: 12px; text-align: center; }
+  .stages-grid { display: grid; grid-template-columns: 1fr; gap: 24px; margin: 32px 0; }
   .stages-grid img { width: 100%; border-radius: 0; display: block; }
-  .stages-grid-label { font-size: 12px; font-weight: 600; color: var(--neutral-700); margin-top: 8px; text-align: center; }
-  .grade-compare { display: grid; grid-template-columns: 1fr; gap: 16px; margin: 24px 0; }
+  .stages-grid-label { font-size: 13px; font-weight: 600; color: var(--color-ink); margin-top: 12px; text-align: center; }
+  .grade-compare { display: grid; grid-template-columns: 1fr; gap: 24px; margin: 32px 0; }
   .grade-compare img { width: 100%; border-radius: 0; display: block; }
-  .grade-compare-label { font-size: 12px; font-weight: 600; color: #0D0D0D; margin-top: 8px; text-align: center; }
+  .grade-compare-label { font-size: 13px; font-weight: 600; color: var(--color-ink); margin-top: 12px; text-align: center; }
 
   /* Mobile */
   @media (max-width: 640px) {
