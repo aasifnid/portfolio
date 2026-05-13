@@ -1234,6 +1234,7 @@
     if (!btn) return;
     if (quote.scrollHeight > quote.clientHeight + 2) {
       btn.classList.add('visible');
+      btn.textContent = 'Read more ↓';
     }
     btn.addEventListener('click', function(e) {
       e.preventDefault();
