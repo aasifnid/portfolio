@@ -198,7 +198,6 @@
     background: none; border: none; cursor: pointer;
     padding: 0; text-align: left; display: none;
   }
-  .rec-readmore::after { content: " ↗"; margin-left: 2px; }
   .rec-readmore.visible { display: block; }
   .rec-bottom {
     padding: 16px 20px 18px; position: relative;
@@ -1241,10 +1240,10 @@
       e.stopPropagation();
       if (quote.classList.contains('expanded')) {
         quote.classList.remove('expanded');
-        btn.textContent = 'Read more';
+        btn.textContent = 'Read more ↓';
       } else {
         quote.classList.add('expanded');
-        btn.textContent = 'Read less';
+        btn.textContent = 'Read less ↑';
       }
     });
   });
