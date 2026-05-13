@@ -192,6 +192,9 @@
     -webkit-box-orient: vertical; overflow: hidden;
   }
   .rec-quote.expanded { display: block; }
+  .rec-readmore-cta {
+    font-weight: 600; color: var(--color-ink); font-style: normal;
+  }
   .rec-readmore {
     font-family: "Space Mono", monospace; font-size: 11px; font-weight: 600;
     color: #0D0D0D; letter-spacing: 0.04em;
@@ -1239,16 +1242,17 @@
 
     // Estimate words that fit in 4 lines (~32-36 words depending on screen width)
     var truncateAt = 35;
-    var truncatedText = words.slice(0, truncateAt).join(' ');
-    // Remove trailing punctuation and add ellipsis + CTA
-    truncatedText = truncatedText.replace(/[,\.\?!;:]$/, '') + '... Read more ↓';
+    var truncatedBase = words.slice(0, truncateAt).join(' ');
+    // Remove trailing punctuation
+    truncatedBase = truncatedBase.replace(/[,\.\?!;:]$/, '') + '...';
+    var truncatedHTML = truncatedBase + ' <span class="rec-readmore-cta">Read more ↓</span>';
 
     quote.setAttribute('data-full-text', originalText);
-    quote.setAttribute('data-truncated-text', truncatedText);
+    quote.setAttribute('data-truncated-html', truncatedHTML);
 
     if (quote.scrollHeight > quote.clientHeight + 2) {
       btn.classList.add('visible');
-      quote.textContent = truncatedText;
+      quote.innerHTML = truncatedHTML;
     }
 
     btn.addEventListener('click', function(e) {
@@ -1256,7 +1260,7 @@
       e.stopPropagation();
       if (quote.classList.contains('expanded')) {
         quote.classList.remove('expanded');
-        quote.textContent = truncatedText;
+        quote.innerHTML = truncatedHTML;
       } else {
         quote.classList.add('expanded');
         quote.textContent = originalText;
