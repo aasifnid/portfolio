@@ -182,7 +182,7 @@
     cursor: default;
   }
   .rec-top {
-    padding: 24px 24px 44px;
+    padding: 24px 24px 8px;
     display: flex; flex-wrap: wrap; align-items: flex-start; gap: 4px; flex: 1;
   }
   .rec-quote {
@@ -204,6 +204,7 @@
     display: flex; align-items: center; gap: 0;
     background: transparent !important;
     border-top: 2px solid transparent;
+    margin-top: 24px;
   }
   .rec-avatar {
     width: 68px; height: 68px; border-radius: 50%; flex-shrink: 0;
@@ -1232,19 +1233,33 @@
     var quote = card.querySelector('.rec-quote');
     var btn = card.querySelector('.rec-readmore');
     if (!btn) return;
+
+    var originalText = quote.textContent.trim();
+    var words = originalText.split(/\s+/);
+
+    // Estimate words that fit in 4 lines (~32-36 words depending on screen width)
+    var truncateAt = 35;
+    var truncatedText = words.slice(0, truncateAt).join(' ');
+    // Remove trailing punctuation and add ellipsis + CTA
+    truncatedText = truncatedText.replace(/[,\.\?!;:]$/, '') + '... Read more ↓';
+
+    quote.setAttribute('data-full-text', originalText);
+    quote.setAttribute('data-truncated-text', truncatedText);
+
     if (quote.scrollHeight > quote.clientHeight + 2) {
       btn.classList.add('visible');
-      btn.textContent = 'Read more ↓';
+      quote.textContent = truncatedText;
     }
+
     btn.addEventListener('click', function(e) {
       e.preventDefault();
       e.stopPropagation();
       if (quote.classList.contains('expanded')) {
         quote.classList.remove('expanded');
-        btn.textContent = 'Read more ↓';
+        quote.textContent = truncatedText;
       } else {
         quote.classList.add('expanded');
-        btn.textContent = 'Read less ↑';
+        quote.textContent = originalText;
       }
     });
   });
