@@ -193,13 +193,12 @@
   }
   .rec-quote.expanded { display: block; }
   .rec-readmore {
-    font-family: "Space Mono", monospace; font-size: 11px; font-weight: 600;
+    font-family: "Space Mono", monospace; font-size: 11px; font-weight: 500;
     color: #0D0D0D; letter-spacing: 0.04em;
-    background: none; border: none; border-bottom: 1px solid #0D0D0D; cursor: pointer;
+    background: none; border: none; cursor: pointer;
     padding: 0; text-align: left; display: none;
-    transition: opacity 0.2s ease;
   }
-  .rec-readmore:hover { opacity: 0.7; }
+  .rec-readmore::after { content: " →"; margin-left: 3px; }
   .rec-readmore.visible { display: block; }
   .rec-bottom {
     padding: 16px 20px 18px; position: relative;
