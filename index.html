@@ -195,7 +195,7 @@
   .rec-readmore-cta {
     font-family: "Space Mono", monospace; font-size: 11px; font-weight: 600;
     color: #0D0D0D; letter-spacing: 0.04em;
-    font-style: normal;
+    font-style: normal; cursor: pointer;
   }
   .rec-readmore {
     font-family: "Space Mono", monospace; font-size: 11px; font-weight: 600;
@@ -1255,19 +1255,29 @@
     if (quote.scrollHeight > quote.clientHeight + 2) {
       btn.classList.add('visible');
       quote.innerHTML = truncatedHTML;
+
+      // Attach click handler to inline span
+      var ctaSpan = quote.querySelector('.rec-readmore-cta');
+      if (ctaSpan) {
+        ctaSpan.addEventListener('click', handleQuoteExpand);
+      }
     }
 
-    btn.addEventListener('click', function(e) {
+    function handleQuoteExpand(e) {
       e.preventDefault();
       e.stopPropagation();
       if (quote.classList.contains('expanded')) {
         quote.classList.remove('expanded');
         quote.innerHTML = truncatedHTML;
+        var ctaSpan = quote.querySelector('.rec-readmore-cta');
+        if (ctaSpan) ctaSpan.addEventListener('click', handleQuoteExpand);
       } else {
         quote.classList.add('expanded');
         quote.textContent = originalText;
       }
-    });
+    }
+
+    btn.addEventListener('click', handleQuoteExpand);
   });
 </script>
 
