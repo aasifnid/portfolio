@@ -182,8 +182,8 @@
     cursor: default;
   }
   .rec-top {
-    padding: 24px 24px 8px;
-    display: flex; flex-wrap: wrap; align-items: flex-start; gap: 4px; flex: 1;
+    padding: 24px 24px 44px;
+    display: flex; flex-direction: column; gap: 12px; flex: 1;
   }
   .rec-quote {
     font-size: 14px; line-height: 23px; color: var(--color-ink-2);
@@ -192,11 +192,6 @@
     -webkit-box-orient: vertical; overflow: hidden;
   }
   .rec-quote.expanded { display: block; }
-  .rec-readmore-cta {
-    font-family: "Space Mono", monospace; font-size: 11px; font-weight: 600;
-    color: #0D0D0D; letter-spacing: 0.04em;
-    font-style: normal; cursor: pointer;
-  }
   .rec-readmore {
     font-family: "Space Mono", monospace; font-size: 11px; font-weight: 600;
     color: #0D0D0D; letter-spacing: 0.04em;
@@ -209,7 +204,6 @@
     display: flex; align-items: center; gap: 0;
     background: transparent !important;
     border-top: 2px solid transparent;
-    margin-top: 24px;
   }
   .rec-avatar {
     width: 68px; height: 68px; border-radius: 50%; flex-shrink: 0;
@@ -1238,46 +1232,21 @@
     var quote = card.querySelector('.rec-quote');
     var btn = card.querySelector('.rec-readmore');
     if (!btn) return;
-
-    var originalText = quote.textContent.trim();
-    var words = originalText.split(/\s+/);
-
-    // Estimate words that fit in 4 lines (~32-36 words depending on screen width)
-    var truncateAt = 35;
-    var truncatedBase = words.slice(0, truncateAt).join(' ');
-    // Remove trailing punctuation
-    truncatedBase = truncatedBase.replace(/[,\.\?!;:]$/, '') + '...';
-    var truncatedHTML = truncatedBase + ' <span class="rec-readmore-cta">Read more ↓</span>';
-
-    quote.setAttribute('data-full-text', originalText);
-    quote.setAttribute('data-truncated-html', truncatedHTML);
-
     if (quote.scrollHeight > quote.clientHeight + 2) {
       btn.classList.add('visible');
-      quote.innerHTML = truncatedHTML;
-
-      // Attach click handler to inline span
-      var ctaSpan = quote.querySelector('.rec-readmore-cta');
-      if (ctaSpan) {
-        ctaSpan.addEventListener('click', handleQuoteExpand);
-      }
+      btn.textContent = 'Read more ↓';
     }
-
-    function handleQuoteExpand(e) {
+    btn.addEventListener('click', function(e) {
       e.preventDefault();
       e.stopPropagation();
       if (quote.classList.contains('expanded')) {
         quote.classList.remove('expanded');
-        quote.innerHTML = truncatedHTML;
-        var ctaSpan = quote.querySelector('.rec-readmore-cta');
-        if (ctaSpan) ctaSpan.addEventListener('click', handleQuoteExpand);
+        btn.textContent = 'Read more ↓';
       } else {
         quote.classList.add('expanded');
-        quote.textContent = originalText;
+        btn.textContent = 'Read less ↑';
       }
-    }
-
-    btn.addEventListener('click', handleQuoteExpand);
+    });
   });
 </script>
 
