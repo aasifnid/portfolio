@@ -360,7 +360,9 @@ blockquote { font-family: var(--font-display); font-size: clamp(20px, 3vw, 26px)
   box-shadow: 0 1px 3px rgba(0,0,0,0.04);
 }
 .observation-block-label {
-  display: none;
+  font-family: var(--font-mono); font-size: 10px; font-weight: 600;
+  letter-spacing: 0.10em; text-transform: uppercase;
+  color: var(--neutral-700); margin-bottom: 16px;
 }
 .observation-item { margin-bottom: 14px; padding-left: 0; border-left: none; }
 .observation-item:last-child { margin-bottom: 0; }
