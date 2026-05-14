@@ -1416,6 +1416,13 @@
           typingBubble.textContent = 'Sorry, something went wrong. Try again.';
         } else {
           var reply = data.reply || 'Sorry, something went wrong. Try again.';
+          // Enforce 4-5 line limit (~450 chars max) to stay within daily token budget
+          if (reply.length > 450) {
+            reply = reply.substring(0, 450).trim();
+            if (reply.lastIndexOf('.') > 400) {
+              reply = reply.substring(0, reply.lastIndexOf('.') + 1);
+            }
+          }
           typingBubble.innerHTML = renderMarkdown(reply);
           history.push({ role: 'model', content: reply });
         }
