@@ -59,9 +59,19 @@ export default async function handler(req, res) {
       console.error('Groq API error:', response.status, err);
       try {
         const errData = JSON.parse(err);
-        return res.status(500).json({ error: errData.error?.message || 'AI service error' });
+        const errMsg = errData.error?.message || '';
+
+        // Detect rate limit errors and return specific error type
+        if (errMsg.includes('Rate limit') || errMsg.includes('rate limit') || response.status === 429) {
+          return res.status(429).json({
+            error: 'rate_limit',
+            message: 'I\'ve hit my token limit. I apologize. Please come back in a few minutes.'
+          });
+        }
+
+        return res.status(500).json({ error: 'service_error', message: errData.error?.message || 'AI service error' });
       } catch {
-        return res.status(500).json({ error: 'AI service error' });
+        return res.status(500).json({ error: 'service_error', message: 'AI service error' });
       }
     }
 

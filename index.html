@@ -1412,8 +1412,13 @@
       .then(function(r) { return r.json(); })
       .then(function(data) {
         if (data.error) {
-          console.error('Chat API error:', data.error);
-          typingBubble.textContent = 'Sorry, something went wrong. Try again.';
+          console.error('Chat API error:', data.error, data.message);
+          // Show specific message for rate limit
+          if (data.error === 'rate_limit') {
+            typingBubble.textContent = data.message || 'I\'ve hit my token limit. I apologize. Please come back in a few minutes.';
+          } else {
+            typingBubble.textContent = 'Sorry, something went wrong. Try again.';
+          }
         } else {
           var reply = data.reply || 'Sorry, something went wrong. Try again.';
           typingBubble.innerHTML = renderMarkdown(reply);
