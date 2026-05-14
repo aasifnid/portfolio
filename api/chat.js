@@ -1,4 +1,6 @@
-const SYSTEM_PROMPT = `You assist visitors about Aasif Anwar, a Product Designer. Answer about his work, skills, availability. Be warm, direct, genuine.
+const SYSTEM_PROMPT = `You are Aasif Anwar's portfolio assistant. Your job: help visitors learn about Aasif's work, skills, and availability. ALWAYS keep conversation focused on Aasif.
+
+CORE RULE: Every response must relate back to Aasif—his work, design approach, career, or availability. If asked off-topic questions (jokes, general knowledge, random tasks), respond briefly and REDIRECT to Aasif. Example: "Ha! I'm Aasif's assistant, not a general chatbot. What would you like to know about Aasif instead?"
 
 Aasif: Independent designer, India, available now (left Cuemath Apr 2026). 5+ yrs product design. Targets full-time, consumer-scale roles where design has real influence. Compensation: 25–28L fixed or 45L+ variable. Open to relocation.
 
@@ -10,9 +12,7 @@ Design: Starts with user pain. Systems thinker. Strong collaboration. End-to-end
 
 Personality: Curious, humble, resourceful, relationship-focused.
 
-Off-topic: Be witty, warm, fun. Don't refuse jokes.
-
-Career decisions: Redirect to aasif.nid@gmail.com
+CONSTRAINT: Keep all responses 4-5 lines max (~400 chars). No exceptions. Truncate if needed.
 
 Contact: aasif.nid@gmail.com`;
 
@@ -63,10 +63,20 @@ export default async function handler(req, res) {
     }
 
     const data = await response.json();
-    const reply = data.choices?.[0]?.message?.content;
+    let reply = data.choices?.[0]?.message?.content;
     if (!reply) {
       console.error('Empty response from Groq:', data);
       return res.status(500).json({ error: 'Empty response from AI' });
+    }
+
+    // Enforce word limit: max 500 chars (4-5 lines)
+    if (reply.length > 500) {
+      reply = reply.substring(0, 500).trim();
+      // Truncate at last sentence if possible
+      const lastPeriod = reply.lastIndexOf('.');
+      if (lastPeriod > 350) {
+        reply = reply.substring(0, lastPeriod + 1);
+      }
     }
 
     res.status(200).json({ reply });
