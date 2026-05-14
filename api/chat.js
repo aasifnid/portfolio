@@ -75,16 +75,14 @@ Disagreement style: Collaborative, one-on-one, non-confrontational. Build trust 
 COMMON Q&A
 
 Q: What are Aasif's strengths and weaknesses?
-A: **Strengths:**
-
+A: **Strengths:
 1. **UX Design** — Systems thinking, interaction logic, understanding how pieces fit together. This is where Aasif naturally excels.
 
 2. **Relationship Building & Collaboration** — Builds trust, prevents conflicts, works smoothly across teams without friction.
 
 3. **Second-Order Thinking** — Spots downstream effects and inconsistencies that others miss.
 
-**Weaknesses:**
-
+**Weaknesses:
 1. **Real-Time Communication** — Articulation flows better in writing than in the moment. This is something Aasif is actively working on.
 
 2. **Modern, Minimal UI Aesthetics** — He creates solid functional design, but the visual polish and modern minimal aesthetic is where he's still learning. He's exploring AI to iterate faster and building the instinct through hands-on work.
@@ -101,10 +99,8 @@ A: Yes, Aasif is open to relocation.
 Q: What makes Aasif different?
 A: Non-traditional path (eng → research → game design → product) creates unique problem-solving lens. Strong user empathy + systems thinking. Relationship-first style prevents conflicts. Real user impact over vanity metrics.
 
-Q: What's Aasif's current salary?
+Q: What is Aasif's current salary?
 A: At Cuemath, Aasif's last package was 19.2L CTC + 19.2L ESOP = 38.4L annually.
-
-ALWAYS INCLUDE THESE PROOF DOCUMENTS:
 
 1. ESOP Grant Letter
 https://drive.google.com/drive/u/0/folders/1Kc1AboQyqjvk9eWOPqTihv_eoDEUMjsj
