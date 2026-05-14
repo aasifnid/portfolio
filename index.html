@@ -1339,9 +1339,9 @@
     closeBtn.addEventListener('click', togglePanel);
 
     var quickAnswers = {
-      "What has he shipped?": "Over 5 years at Cuemath, Aasif designed end-to-end digital learning experiences across web and mobile — student interfaces, teacher dashboards, admin platforms, and everything in between. 4 featured case studies: Feel Check (emotional check-in, 2 in 3 tutors saw better readiness), New Trial Experience (50% conversion lift, 70% fewer support requests), Learning System Architecture (unified curricula, improved homework completion), Affiliate Partnership (transparent referral system).",
-      "What is his design superpower?": "Systems thinking — understanding how all the pieces fit together. He's excellent at spotting second-order effects and inconsistencies that others miss. Combined with deep user empathy and intentionality, he creates designs that solve real problems at scale.",
-      "What does he do outside of work?": "He reads a lot about tech and the world. He's a foodie and loves cooking — that's where he wants to spend more time. Most importantly, he believes genuine connections are how the best things happen, so he invests deeply in relationships."
+      "What has he shipped?": "4 case studies: Feel Check (emotional check-in, 2/3 tutors saw better readiness), New Trial (50% conversion lift), Learning System (unified architecture for 28k+ students), Affiliate Partnership (transparent referral). Shipped to 200k+ students across 80+ countries.",
+      "What is his design superpower?": "Systems thinking—spotting how pieces fit together and second-order effects others miss. Combines deep user empathy with intentionality to solve real problems at scale.",
+      "What does he do outside of work?": "Reads about tech & world. Foodie who loves cooking. Values genuine relationships—believes that's how best things happen."
     };
 
     starters.querySelectorAll('.chat-chip').forEach(function(chip) {
@@ -1411,13 +1411,19 @@
       })
       .then(function(r) { return r.json(); })
       .then(function(data) {
-        var reply = data.reply || 'Sorry, something went wrong. Try again.';
-        typingBubble.innerHTML = renderMarkdown(reply);
+        if (data.error) {
+          console.error('Chat API error:', data.error);
+          typingBubble.textContent = 'Sorry, something went wrong. Try again.';
+        } else {
+          var reply = data.reply || 'Sorry, something went wrong. Try again.';
+          typingBubble.innerHTML = renderMarkdown(reply);
+          history.push({ role: 'model', content: reply });
+        }
         typingBubble.classList.remove('typing');
-        history.push({ role: 'model', content: reply });
         messages.scrollTop = messages.scrollHeight;
       })
-      .catch(function() {
+      .catch(function(err) {
+        console.error('Chat fetch error:', err);
         typingBubble.textContent = 'Something went wrong. Please try again.';
         typingBubble.classList.remove('typing');
       })
