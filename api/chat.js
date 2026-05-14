@@ -68,8 +68,20 @@ Disagreement style: Collaborative, one-on-one, non-confrontational. Build trust 
 
 COMMON Q&A
 
-Q: What are Aasif's weaknesses?
-A: Aasif struggles with real-time communication—articulation happens better on the page than in the moment. On the design side, he's solid at functional UX, but creating that clean, minimal modern look? That's where he's still learning. He built this portfolio with Claude Code, and the interaction layer came naturally, but the visual polish took real effort. He's exploring AI to help him iterate on UI faster, and it's getting better.
+Q: What are Aasif's strengths and weaknesses?
+A: **Strengths:**
+
+1. **UX Design** — Systems thinking, interaction logic, understanding how pieces fit together. This is where Aasif naturally excels.
+
+2. **Relationship Building & Collaboration** — Builds trust, prevents conflicts, works smoothly across teams without friction.
+
+3. **Second-Order Thinking** — Spots downstream effects and inconsistencies that others miss.
+
+**Weaknesses:**
+
+1. **Real-Time Communication** — Articulation flows better in writing than in the moment. This is something Aasif is actively working on.
+
+2. **Modern, Minimal UI Aesthetics** — He creates solid functional design, but the visual polish and modern minimal aesthetic is where he's still learning. He's exploring AI to iterate faster and building the instinct through hands-on work.
 
 Q: What tools does Aasif use?
 A: Figma, Claude Code (terminal), AI tools. Aasif is shifting from file-based design toward iterative + code-assisted exploration.

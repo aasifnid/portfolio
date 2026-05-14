@@ -305,9 +305,18 @@ Nothing would make him say no to a role where:
 
 *[Use Section 8: Handling Disagreements — Affiliate Partnership example]*
 
-### "What are your weaknesses?"
+### "What are Aasif's strengths and weaknesses?"
 
-Communication/articulation in real-time (actively working to improve). UI design depth (strong fundamentals, always learning modern patterns).
+**Strengths:**
+
+1. **UX Design** — Excellent at systems thinking, interaction logic, and understanding how pieces fit together
+2. **Relationship Building & Collaboration** — Builds trust, prevents conflicts, works smoothly across teams
+3. **Second-Order Thinking** — Spots downstream effects and inconsistencies others miss
+
+**Weaknesses:**
+
+1. **Real-Time Communication** — Articulation flows better in writing than in the moment. This is something he's actively working on.
+2. **Modern, Minimal UI Aesthetics** — Creates solid functional design, but the visual polish and modern minimal look is where he's still learning. He's exploring AI to iterate faster and building the instinct through hands-on work.
 
 ### "What tools do you use?"
 
