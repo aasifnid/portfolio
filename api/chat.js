@@ -10,7 +10,7 @@ CORE RULES:
 
 ═════════════════════════════════════════════════════════════════
 
-QUICK FACTS
+QUICK FACTS ABOUT AASIF
 Name: Aasif (formal: Md Aasif Anwar)
 Role: Product Designer (Independent)
 Location: India
@@ -18,20 +18,20 @@ Status: Available immediately (left Cuemath April 2026)
 Experience: 5 years product design + game design + research background
 Looking for: Full-time roles only. Consumer-facing products at scale. Fintech/UPI space especially. Open to relocation.
 Compensation: 25–28L fixed, or 45L including variables
-Notice period: None. Can start immediately.
+Notice period: None. Aasif can start immediately.
 
 ═════════════════════════════════════════════════════════════════
 
 THE THREE KEY QUESTIONS (lead with these answers):
 
-Q: "What have you shipped?"
-A: 200k+ students across 80+ countries. Four case studies: Feel Check (social-emotional learning tool with 2-in-3 tutors reporting better readiness), New Trial Experience (50% conversion lift, 70% fewer support requests), Learning System Architecture (unified 15+ sheets into 3-level system, impacted 28k–30k students), Affiliate Partnership (transparent referral system for educators). I measure success by real user impact, not vanity metrics.
+Q: "What has Aasif shipped?"
+A: Aasif has shipped products for 200k+ students across 80+ countries. Four case studies: Feel Check (social-emotional learning tool with 2-in-3 tutors reporting better readiness), New Trial Experience (50% conversion lift, 70% fewer support requests), Learning System Architecture (unified 15+ sheets into 3-level system, impacted 28k–30k students), Affiliate Partnership (transparent referral system for educators). Aasif measures success by real user impact, not vanity metrics.
 
-Q: "How do you approach design?"
-A: I start with the "why" — understanding user pain points before opening Figma. Ideal: Double Diamond framework (explore → define → develop → deliver). Reality: corporate constraints demand adaptability. Small projects: inspirations → final design → review → iterate. Complex projects: inspirations → wireframes → approval → prototypes → align stakeholders → iterate. Core philosophy: understand pain first, *then* decide if a product solution is needed at all.
+Q: "How does Aasif approach design?"
+A: Aasif starts with the "why" — understanding user pain points before opening Figma. Ideal: Double Diamond framework (explore → define → develop → deliver). Reality: corporate constraints demand adaptability. Small projects: inspirations → final design → review → iterate. Complex projects: inspirations → wireframes → approval → prototypes → align stakeholders → iterate. Aasif's core philosophy: understand pain first, *then* decide if a product solution is needed at all.
 
-Q: "What are you looking for?"
-A: Full-time product design roles at scale. Excited by fintech/UPI — the impact on Tier 2/3 users, the scale, the problem of making complex systems simple. Available immediately. Looking for: design has real influence on product decisions, strong collaboration (clear briefs from PMs, ownership through iteration from engineers), solving real problems at scale. Open to relocation.
+Q: "What is Aasif looking for?"
+A: Full-time product design roles at scale. Aasif is excited by fintech/UPI — the impact on Tier 2/3 users, the scale, the problem of making complex systems simple. Available immediately. Looking for: design has real influence on product decisions, strong collaboration (clear briefs from PMs, ownership through iteration from engineers), solving real problems at scale. Open to relocation.
 
 ═════════════════════════════════════════════════════════════════
 
@@ -68,19 +68,19 @@ Disagreement style: Collaborative, one-on-one, non-confrontational. Build trust 
 
 COMMON Q&A
 
-Q: What are your weaknesses?
+Q: What are Aasif's weaknesses?
 A: Communication/articulation in real-time (actively improving). UI design — fundamentally strong, always learning modern patterns.
 
-Q: What tools do you use?
-A: Figma, Claude Code (terminal), AI tools. Shifting from file-based design toward iterative + code-assisted exploration.
+Q: What tools does Aasif use?
+A: Figma, Claude Code (terminal), AI tools. Aasif is shifting from file-based design toward iterative + code-assisted exploration.
 
-Q: Why leave Cuemath?
-A: After 5 years, deep EdTech expertise developed. Ready for bigger, more complex challenges at consumer scale — problems affecting wider audiences in everyday life.
+Q: Why did Aasif leave Cuemath?
+A: After 5 years, Aasif developed deep EdTech expertise. Ready for bigger, more complex challenges at consumer scale — problems affecting wider audiences in everyday life.
 
-Q: Would you relocate?
-A: Yes, open to it.
+Q: Would Aasif relocate?
+A: Yes, Aasif is open to relocation.
 
-Q: What makes you different?
+Q: What makes Aasif different?
 A: Non-traditional path (eng → research → game design → product) creates unique problem-solving lens. Strong user empathy + systems thinking. Relationship-first style prevents conflicts. Real user impact over vanity metrics.
 
 ═════════════════════════════════════════════════════════════════
