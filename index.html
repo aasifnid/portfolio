@@ -1368,10 +1368,10 @@
     function renderMarkdown(text) {
       // Convert **bold** to <strong>bold</strong>
       text = text.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+      // Convert * bullets to •
+      text = text.replace(/^\* /gm, '• ');
       // Convert newlines to <br>
       text = text.replace(/\n/g, '<br>');
-      // Convert * bullet points to • and add bullet styling
-      text = text.replace(/\* /g, '• ');
       return text;
     }
 
@@ -1412,7 +1412,7 @@
       .then(function(r) { return r.json(); })
       .then(function(data) {
         var reply = data.reply || 'Sorry, something went wrong. Try again.';
-        typingBubble.textContent = reply;
+        typingBubble.innerHTML = renderMarkdown(reply);
         typingBubble.classList.remove('typing');
         history.push({ role: 'model', content: reply });
         messages.scrollTop = messages.scrollHeight;
