@@ -152,18 +152,17 @@ Frame constraints as inputs, not blockers. Scale the process to the project, not
 2. **Relationship Building & Collaboration** — No one works against you; relationships prevent conflicts from becoming personal
 3. **Systems Thinking** — Spots second-order effects (e.g., admin design inconsistency across products)
 
-### Want to Improve
+### Growing Areas
 
-1. **Communication/Articulation**
-   - Has lots of knowledge & ideas in mind
-   - Struggles framing them into compact, concise sentences in real-time
+1. **Real-Time Communication**
+   - Articulation happens better on the page than in the moment
    - Writing > speaking fluency
-   - *Actively working on this*
+   - Actively working on this
 
-2. **UI Design**
-   - Already strong fundamentally
-   - Want to improve: Modern, minimal UIs
-   - Exploring AI-assisted design workflows
+2. **Modern, Minimal UI Aesthetics**
+   - Solid at functional UX and interaction design
+   - Creating clean, minimal modern visual design is where he's still learning
+   - Exploring AI to iterate on UI faster—building the instinct through hands-on work
 
 ### Tools & Stack
 
