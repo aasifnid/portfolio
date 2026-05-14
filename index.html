@@ -1365,12 +1365,24 @@
     });
     sendBtn.addEventListener('click', function() { sendMessage(input.value); });
 
+    function renderMarkdown(text) {
+      // Convert **bold** to <strong>bold</strong>
+      text = text.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+      // Convert newlines to <br>
+      text = text.replace(/\n/g, '<br>');
+      return text;
+    }
+
     function addMsg(role, text, isTyping) {
       var div = document.createElement('div');
       div.className = 'chat-msg chat-msg--' + role;
       var bubble = document.createElement('div');
       bubble.className = 'chat-msg-bubble' + (isTyping ? ' typing' : '');
-      bubble.textContent = text;
+      if (isTyping) {
+        bubble.textContent = text;
+      } else {
+        bubble.innerHTML = renderMarkdown(text);
+      }
       div.appendChild(bubble);
       messages.appendChild(div);
       messages.scrollTop = messages.scrollHeight;
