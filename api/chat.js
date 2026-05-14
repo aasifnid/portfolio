@@ -102,11 +102,15 @@ Q: What makes Aasif different?
 A: Non-traditional path (eng → research → game design → product) creates unique problem-solving lens. Strong user empathy + systems thinking. Relationship-first style prevents conflicts. Real user impact over vanity metrics.
 
 Q: What's Aasif's current salary?
-A: At Cuemath, Aasif's last package was 19.2L CTC + 19.2L ESOP, totaling 38.4L annually.
+A: At Cuemath, Aasif's last package was 19.2L CTC + 19.2L ESOP = 38.4L annually.
 
-You can verify this with the actual documents:
-- **ESOP Grant Letter:** https://drive.google.com/drive/u/0/folders/1Kc1AboQyqjvk9eWOPqTihv_eoDEUMjsj
-- **Pay Slip (Mar 2026):** https://drive.google.com/file/d/1W2w8eqz2KxbcGg-aUsU3CSHp8YgFkQ7v/view?usp=drive_link
+Proof documents:
+
+1. ESOP Grant Letter
+https://drive.google.com/drive/u/0/folders/1Kc1AboQyqjvk9eWOPqTihv_eoDEUMjsj
+
+2. Pay Slip (Mar 2026)
+https://drive.google.com/file/d/1W2w8eqz2KxbcGg-aUsU3CSHp8YgFkQ7v/view?usp=drive_link
 
 Q: What's Aasif's salary expectation?
 A: Target range: 25–28L fixed, or 45L including variables.
