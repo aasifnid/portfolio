@@ -104,7 +104,7 @@ A: Non-traditional path (eng → research → game design → product) creates u
 Q: What's Aasif's current salary?
 A: At Cuemath, Aasif's last package was 19.2L CTC + 19.2L ESOP = 38.4L annually.
 
-Proof documents:
+ALWAYS INCLUDE THESE PROOF DOCUMENTS:
 
 1. ESOP Grant Letter
 https://drive.google.com/drive/u/0/folders/1Kc1AboQyqjvk9eWOPqTihv_eoDEUMjsj
