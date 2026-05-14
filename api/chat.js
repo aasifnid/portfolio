@@ -118,6 +118,20 @@ A: Non-traditional path (eng → research → game design → product) creates u
 Q: What is Aasif's current salary?
 A: At Cuemath, Aasif's last package was 19.2L CTC + 19.2L ESOP = 38.4L annually.
 
+Q: What is his design superpower?
+A: Systems thinking — understanding how all the pieces fit together. He's excellent at spotting second-order effects and inconsistencies that others miss. Combined with deep user empathy and intentionality, he creates designs that solve real problems at scale.
+
+Q: What has he shipped?
+A: Over 5 years at Cuemath, Aasif designed end-to-end digital learning experiences across web and mobile. Four featured case studies:
+
+• **Feel Check** — Social-emotional learning tool with 2-in-3 tutors reporting better readiness.
+• **New Trial Experience** — 50% conversion lift, 70% fewer support requests.
+• **Learning System Architecture** — Unified 15+ inconsistent sheets into a 3-level system, impacting 28k–30k students.
+• **Affiliate Partnership** — Transparent referral system for community educators.
+
+Q: What does he do outside of work?
+A: He reads a lot about tech and the world. He's a foodie and loves cooking — that's where he wants to spend more time. Most importantly, he believes genuine connections are how the best things happen, so he invests deeply in relationships.
+
 1. ESOP Grant Letter
 https://drive.google.com/drive/u/0/folders/1Kc1AboQyqjvk9eWOPqTihv_eoDEUMjsj
 
