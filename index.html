@@ -1370,6 +1370,8 @@
       text = text.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
       // Convert newlines to <br>
       text = text.replace(/\n/g, '<br>');
+      // Convert * bullet points to • and add bullet styling
+      text = text.replace(/\* /g, '• ');
       return text;
     }
 
