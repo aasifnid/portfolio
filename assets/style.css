@@ -186,7 +186,7 @@ blockquote { font-family: var(--font-display); font-size: clamp(20px, 3vw, 26px)
 .hierarchy { margin: 32px 0; display: flex; flex-direction: column; gap: 10px; }
 .hier-card { border: 1px solid var(--neutral-300); padding: 18px 20px; background: var(--neutral-200); border-radius: 0; box-shadow: var(--card-shadow); }
 .hier-card.level-0 { border-left: 3px solid #FFB700; background: #FFB700; }
-.hier-level-label { font-family: var(--font-mono); font-size: var(--text-xs); font-weight: var(--fw-semibold); letter-spacing: 0.12em; text-transform: uppercase; color: #B8860B; margin-bottom: 6px; }
+.hier-level-label { font-family: var(--font-mono); font-size: var(--text-xs); font-weight: var(--fw-semibold); letter-spacing: 0.12em; text-transform: uppercase; color: var(--color-ink); margin-bottom: 6px; }
 .hier-card-name { font-family: var(--font-display); font-size: var(--text-base); font-weight: var(--fw-bold); color: var(--neutral-1000); margin-bottom: 4px; }
 .hier-card-desc { font-size: var(--text-sm); line-height: 22px; color: var(--neutral-700); margin-bottom: 0; }
 .hier-sub-row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-left: 24px; }
@@ -197,7 +197,7 @@ blockquote { font-family: var(--font-display); font-size: clamp(20px, 3vw, 26px)
 /* ─── Node states ─── */
 .node-states { display: flex; align-items: center; gap: 8px; margin: 20px 0 28px; flex-wrap: wrap; }
 .node-state { font-size: var(--text-xs); font-weight: var(--fw-semibold); color: var(--neutral-700); background: var(--neutral-200); padding: 6px 14px; border-radius: 0; border: 1px solid var(--neutral-300); }
-.node-state.active { background: #FFFAED; color: #B8860B; border-color: #FFD580; }
+.node-state.active { background: var(--neutral-200); color: var(--color-ink); border-color: var(--neutral-300); }
 .state-arrow { font-size: var(--text-sm); color: var(--neutral-700); }
 
 /* ─── Decision list — the hero section ─── */
@@ -235,7 +235,7 @@ blockquote { font-family: var(--font-display); font-size: clamp(20px, 3vw, 26px)
 
 /* ─── Rules table ─── */
 .rules-table { width: 100%; border-collapse: collapse; border: 1px solid var(--neutral-300); margin: 28px 0; border-radius: 0; overflow: hidden; box-shadow: var(--card-shadow); }
-.rules-table th { font-family: var(--font-mono); font-size: var(--text-xs); font-weight: var(--fw-semibold); letter-spacing: 0.12em; text-transform: uppercase; color: #B8860B; background: #FFFAED; padding: 12px 16px; text-align: left; border-bottom: 1px solid var(--neutral-300); }
+.rules-table th { font-family: var(--font-mono); font-size: var(--text-xs); font-weight: var(--fw-semibold); letter-spacing: 0.12em; text-transform: uppercase; color: var(--color-ink); background: #EBEBEB; padding: 12px 16px; text-align: left; border-top: 2px solid #FF80F4; border-bottom: 1px solid var(--neutral-300); }
 .rules-table td { font-size: var(--text-sm); line-height: 23px; color: var(--neutral-800); padding: 14px 16px; border-bottom: 1px solid var(--neutral-300); background: var(--neutral-200); vertical-align: top; }
 .rules-table td:first-child { font-weight: var(--fw-semibold); color: var(--neutral-1000); width: 36%; }
 .rules-table tr:last-child td { border-bottom: none; }
@@ -243,9 +243,9 @@ blockquote { font-family: var(--font-display); font-size: clamp(20px, 3vw, 26px)
 /* ─── Homework lifecycle — card row ─── */
 .hw-lifecycle { display: flex; gap: 10px; margin: 20px 0 28px; }
 .lifecycle-stage { flex: 1; padding: 16px 18px; background: var(--neutral-200); border: 1px solid var(--neutral-300); border-radius: 0; box-shadow: var(--card-shadow); }
-.lifecycle-stage.done { background: #FFFAED; border-color: #FFD580; }
+.lifecycle-stage.done { background: var(--neutral-200); border-color: var(--neutral-300); }
 .lifecycle-label { font-family: var(--font-mono); font-size: var(--text-xs); font-weight: var(--fw-semibold); letter-spacing: 0.1em; text-transform: uppercase; color: var(--neutral-700); margin-bottom: 8px; }
-.lifecycle-stage.done .lifecycle-label { color: #B8860B; }
+.lifecycle-stage.done .lifecycle-label { color: var(--color-ink); }
 .lifecycle-text { font-size: var(--text-xs); line-height: 19px; color: var(--neutral-800); }
 
 /* ─── Due date progression — card row ─── */
@@ -260,11 +260,14 @@ blockquote { font-family: var(--font-display); font-size: clamp(20px, 3vw, 26px)
 
 /* ─── Images ─── */
 .screen-featured { margin: 36px 0; }
-.screen-featured img { width: 100%; border-radius: 0; display: block; cursor: zoom-in; transition: transform 0.2s ease; box-shadow: 0 4px 20px rgba(0,0,0,0.1); }
-.screen-featured img:hover { transform: scale(1.005); }
+.screen-featured img { width: 100%; border-radius: 0; display: block; cursor: zoom-in; transition: opacity var(--ease); border: 1px solid var(--color-border); }
+.screen-featured img:hover { opacity: 0.92; }
 .screen-placeholder { width: 100%; border-radius: 0; background: var(--neutral-200); min-height: 400px; display: flex; align-items: center; justify-content: center; border: 1px dashed var(--neutral-300); box-shadow: var(--card-shadow); }
 .screen-placeholder-sm { width: 100%; border-radius: 0; background: var(--neutral-200); min-height: 240px; display: flex; align-items: center; justify-content: center; border: 1px dashed var(--neutral-300); }
 .caption { font-size: var(--text-xs); line-height: 20px; color: var(--neutral-700); margin-top: 12px; }
+.img-label { font-family: var(--font-mono); font-size: var(--text-xs); font-weight: var(--fw-semibold); letter-spacing: 0.04em; color: var(--color-ink); margin-top: 8px; }
+.video-embed { margin: 32px 0; border: 1px solid var(--color-border); overflow: hidden; aspect-ratio: 16 / 9; }
+.video-embed iframe { width: 100%; height: 100%; display: block; border: none; }
 .screen-grid { display: grid; grid-template-columns: 1fr; gap: 32px; margin: 28px 0; }
 
 /* ─── Outcome stats — card grid ─── */
@@ -279,7 +282,7 @@ blockquote { font-family: var(--font-display); font-size: clamp(20px, 3vw, 26px)
 .outcome-note p { font-size: var(--text-sm); line-height: 25px; color: var(--neutral-800); margin-bottom: 0; }
 
 /* ─── Dashboard frame ─── */
-.dashboard-frame { border-radius: 0; border: 1px solid var(--neutral-300); background: #fff; overflow: hidden; box-shadow: 0 4px 24px rgba(0,0,0,0.1); width: 100%; display: block; }
+.dashboard-frame { border-radius: 0; border: 1px solid var(--color-border); background: #fff; overflow: hidden; width: 100%; display: block; }
 .dashboard-chrome { display: flex; align-items: center; gap: 6px; padding: 9px 14px; background: #E8E6E2; border-bottom: 1px solid #D0CCC6; }
 .chrome-dot { width: 10px; height: 10px; border-radius: 50%; display: inline-block; }
 .chrome-dot:first-child { background: #FF6159; }
@@ -334,7 +337,7 @@ blockquote { font-family: var(--font-display); font-size: clamp(20px, 3vw, 26px)
 .lightbox-overlay.active { display: flex; }
 .lightbox-close { position: fixed; top: 20px; right: 24px; font-size: var(--text-3xl); color: rgba(255,255,255,0.7); cursor: pointer; line-height: 1; z-index: 10000; user-select: none; }
 .lightbox-close:hover { color: #fff; }
-.lightbox-img { max-width: 92vw; max-height: 90vh; object-fit: contain; border-radius: 0; cursor: default; box-shadow: 0 24px 64px rgba(0,0,0,0.5); }
+.lightbox-img { max-width: 92vw; max-height: 90vh; object-fit: contain; border-radius: 0; cursor: default; border: 1px solid var(--color-border); }
 
 /* ─── Scroll animations ─── */
 [data-animate] { opacity: 0; transform: translateY(20px); transition: opacity 0.5s ease, transform 0.5s ease; }
@@ -386,7 +389,7 @@ blockquote { font-family: var(--font-display); font-size: clamp(20px, 3vw, 26px)
 .goal-block-label {
   font-family: var(--font-mono); font-size: var(--text-xs); font-weight: var(--fw-semibold);
   letter-spacing: 0.10em; text-transform: uppercase;
-  color: #B8860B; margin-bottom: 10px;
+  color: var(--color-ink); margin-bottom: 10px;
 }
 .goal-block p { font-size: var(--text-base); line-height: 26px; color: var(--neutral-900); margin-bottom: 6px; }
 .goal-block p:last-child { margin-bottom: 0; }
@@ -415,13 +418,13 @@ blockquote { font-family: var(--font-display); font-size: clamp(20px, 3vw, 26px)
   padding: 14px 16px; border-radius: 0;
 }
 .pivot-before { background: var(--neutral-100); border: 1px solid var(--neutral-300); }
-.pivot-after  { background: #FFFAED; border: 1px solid #FFD580; }
+.pivot-after  { background: var(--neutral-200); border: 1px solid var(--neutral-300); }
 .pivot-state-label {
   font-family: var(--font-mono); font-size: var(--text-xs); font-weight: var(--fw-semibold);
   letter-spacing: 0.10em; text-transform: uppercase; margin-bottom: 6px;
 }
 .pivot-before .pivot-state-label { color: var(--neutral-700); }
-.pivot-after  .pivot-state-label  { color: #B8860B; }
+.pivot-after  .pivot-state-label  { color: var(--color-ink); }
 .pivot-before p, .pivot-after p {
   font-size: var(--text-xs); line-height: 20px; color: var(--neutral-900); margin-bottom: 0;
 }
@@ -431,7 +434,7 @@ blockquote { font-family: var(--font-display); font-size: clamp(20px, 3vw, 26px)
 .video-block-label {
   font-family: var(--font-mono); font-size: var(--text-xs); font-weight: var(--fw-semibold);
   letter-spacing: 0.10em; text-transform: uppercase;
-  color: #B8860B; margin-bottom: 10px;
+  color: var(--color-ink); margin-bottom: 10px;
 }
 .video-placeholder {
   width: 100%; aspect-ratio: 16/9;

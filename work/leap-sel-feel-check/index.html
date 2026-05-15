@@ -18,7 +18,7 @@
   .phase-table { margin: 28px 0; border: 1px solid var(--neutral-300); border-radius: 0; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.04); background: var(--neutral-200); }
   .phase-row { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; border-bottom: 1px solid var(--neutral-300); }
   .phase-row:last-child { border-bottom: none; }
-  .phase-row.phase-header span { font-family: var(--font-mono); font-size: var(--text-xs); font-weight: var(--fw-semibold); text-transform: uppercase; letter-spacing: 0.10em; color: var(--color-ink); background: var(--neutral-100); padding: 14px 18px; }
+  .phase-row.phase-header span { font-family: var(--font-mono); font-size: var(--text-xs); font-weight: var(--fw-semibold); text-transform: uppercase; letter-spacing: 0.10em; color: var(--color-ink); background: #EBEBEB; padding: 14px 18px; border-top: 2px solid #FF80F4; }
   .phase-row span { font-size: var(--text-sm); line-height: 24px; color: var(--neutral-800); padding: 16px 18px; border-right: 1px solid var(--neutral-300); }
   .phase-row span:last-child { border-right: none; }
 
@@ -223,7 +223,7 @@
 
       <p>I explored multiple layouts — geometric grids, modals, full-screen flows. I chose the circular form so the Wheel of Awareness could become the interface itself, not a reference diagram placed beside it.</p>
 
-      <img src="/work/leap-sel-feel-check/images/zone-of-regulation-menu.jpg" loading="lazy" alt="Zone of Regulation activity menu: circular picker showing Dragon Breaths, Countdown Breathing, Rain Visualisation, and Do it your way options" class="cs-img" style="margin: 24px 0;">
+      <img src="/work/leap-sel-feel-check/images/zone-of-regulation-menu.jpg" loading="lazy" alt="Zone of Regulation activity menu: circular picker showing Dragon Breaths, Countdown Breathing, Rain Visualisation, and Do it your way options" class="cs-img">
       <p class="caption">The activity menu implemented as the Wheel itself. Students see the sequence they just completed (Senses → Body → Heart → Mind) reflected in the four regulation options. Tutor monitoring panel visible on left. The circular form is the framework, not a decoration.</p>
     </div>
 
@@ -245,14 +245,13 @@
 
   <h2>Feel Check in a real session</h2>
 
-  <div style="margin: 32px 0; border-radius: 0; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.1); aspect-ratio: 16 / 9;">
+  <div class="video-embed">
     <iframe
-      style="width: 100%; height: 100%; display: block; border: none;"
       src="https://drive.google.com/file/d/188rCDk088eSHwR7nTR9ldS2lKrNkuION/preview"
       allow="autoplay">
     </iframe>
   </div>
-  <p class="caption" style="margin-top: 16px;">Real classroom session showing a student moving through Feel Check independently. The sequence: Senses (environmental grounding) → Body (physical awareness) → Heart (emotional identification) → Mind (mental state), followed by self-selected regulation activity. Tutor monitors but does not direct.</p>
+  <p class="caption">Real classroom session showing a student moving through Feel Check independently. The sequence: Senses (environmental grounding) → Body (physical awareness) → Heart (emotional identification) → Mind (mental state), followed by self-selected regulation activity. Tutor monitors but does not direct.</p>
 
   <h2>What shipping to four cohorts revealed.</h2>
 
@@ -266,7 +265,7 @@
     <p class="observation-source">What class recordings showed — 25 sessions, Feb 2026</p>
   </div>
 
-  <img src="../../assets/Case studies/sel-feel-check/feel-check-stage-timeline.png" loading="lazy" alt="Feel Check stage journey: Senses (42s) → Emotion Zone (7s) → Select Emotion (14s) → Regulate (2m) = 3.4 minutes total" class="cs-img" style="margin: 32px 0;">
+  <img src="../../assets/Case studies/sel-feel-check/feel-check-stage-timeline.png" loading="lazy" alt="Feel Check stage journey: Senses (42s) → Emotion Zone (7s) → Select Emotion (14s) → Regulate (2m) = 3.4 minutes total" class="cs-img">
   <p class="caption">The complete Feel Check journey in time. Regulation is the largest segment—this is where the actual emotional regulation work happens. The entire sequence completes in 3.4 minutes on average, keeping within the 5-minute design spec.</p>
 
 
@@ -317,53 +316,51 @@
     <div class="stat">
       <p class="stat-label">Learning Readiness</p>
       <p class="stat-number">67.45%</p>
-      <p style="font-size:var(--text-xs);line-height:1.5;color:var(--neutral-700);margin-top:6px;">Tutors observed improved student readiness after regulation — the direct answer to the problem Feel Check was built to solve.</p>
+      <p class="img-label">Tutors observed improved student readiness after regulation — the direct answer to the problem Feel Check was built to solve.</p>
     </div>
     <div class="stat">
       <p class="stat-label">Student Independence</p>
       <p class="stat-number">89.3%</p>
-      <p style="font-size:var(--text-xs);line-height:1.5;color:var(--neutral-700);margin-top:6px;">Students chose their emotion without tutor prompting — the student-led design held in practice.</p>
+      <p class="img-label">Students chose their emotion without tutor prompting — the student-led design held in practice.</p>
     </div>
     <div class="stat">
       <p class="stat-label">Check-in Duration</p>
       <p class="stat-number">3.4 min</p>
-      <p style="font-size:var(--text-xs);line-height:1.5;color:var(--neutral-700);margin-top:6px;">Average check-in duration — from start to learning ready. Within the 5-min spec.</p>
+      <p class="img-label">Average check-in duration — from start to learning ready. Within the 5-min spec.</p>
     </div>
     <div class="stat">
       <p class="stat-label">Tutor Feedback</p>
       <p class="stat-number">95.38%</p>
-      <p style="font-size:var(--text-xs);line-height:1.5;color:var(--neutral-700);margin-top:6px;">Submitted post-session: a 3-option multiple choice ("Student was more ready to focus on math" — Yes / Neutral / No). 95.38% submitted; 3s average. The form never interrupted the session.</p>
+      <p class="img-label">Submitted post-session: a 3-option multiple choice ("Student was more ready to focus on math" — Yes / Neutral / No). 95.38% submitted; 3s average. The form never interrupted the session.</p>
     </div>
     <div class="stat">
       <p class="stat-label">Regulation Engagement</p>
       <p class="stat-number">1.9 min</p>
-      <p style="font-size:var(--text-xs);line-height:1.5;color:var(--neutral-700);margin-top:6px;">Average time on regulation. Reattempt rate dropped from 21.7% to 15.16% — students choosing the right activity on the first try, more often.</p>
+      <p class="img-label">Average time on regulation. Reattempt rate dropped from 21.7% to 15.16% — students choosing the right activity on the first try, more often.</p>
     </div>
     <div class="stat">
       <p class="stat-label">Unsure — Body Awareness</p>
       <p class="stat-number">1 in 5</p>
-      <p style="font-size:var(--text-xs);line-height:1.5;color:var(--neutral-700);margin-top:6px;">Students couldn't name their body state — the hardest of the four stages. Unsure wasn't a fallback; it was the honest answer.</p>
+      <p class="img-label">Students couldn't name their body state — the hardest of the four stages. Unsure wasn't a fallback; it was the honest answer.</p>
     </div>
   </div>
 
   <p>Zone distribution showed Green as dominant across both grade bands — most students arrived calm. But 53% of G3–4 sessions and 49% of G5–8 sessions weren't Green. Feel Check's real value was surfacing that share and doing something about it before instruction began.</p>
 
-  <img src="../../assets/Case studies/sel-feel-check/feel-check-zone-readiness.png" loading="lazy" alt="Zone distribution shows 47-53% dysregulated students, Feel Check improved readiness for 67.45% of them" class="cs-img" style="margin: 32px 0;">
+  <img src="../../assets/Case studies/sel-feel-check/feel-check-zone-readiness.png" loading="lazy" alt="Zone distribution shows 47-53% dysregulated students, Feel Check improved readiness for 67.45% of them" class="cs-img">
   <p class="caption">The problem and the outcome. Feel Check's real value wasn't in serving the 47% who arrived calm. It was surfacing the 47–53% who arrived dysregulated, and improving readiness for nearly 2 out of 3 of them. Nearly half the cohort benefited from the regulation intervention.</p>
 
-  <div style="margin: 32px 0;">
-    <div style="display: grid; grid-template-columns: 1fr; gap: 24px;">
-      <div>
-        <img class="cs-img" src="../../assets/Case studies/sel-feel-check/zone-g34.png" alt="Zone distribution G3-4: Green 217, Blue 68, Yellow 90, Red 46" style="width: 100%; border-radius: 0;">
-        <p style="font-size: var(--text-xs); font-weight: var(--fw-semibold); color: #0D0D0D; margin-top: 12px; text-align: center;">G3–4 (421 sessions)</p>
-      </div>
-      <div>
-        <img class="cs-img" src="../../assets/Case studies/sel-feel-check/zone-g58.png" alt="Zone distribution G5-8: Green 702, Blue 151, Yellow 162, Red 87" style="width: 100%; border-radius: 0;">
-        <p style="font-size: var(--text-xs); font-weight: var(--fw-semibold); color: #0D0D0D; margin-top: 12px; text-align: center;">G5–8 (1,102 sessions)</p>
-      </div>
+  <div class="screen-grid">
+    <div>
+      <img class="cs-img" src="../../assets/Case studies/sel-feel-check/zone-g34.png" alt="Zone distribution G3-4: Green 217, Blue 68, Yellow 90, Red 46">
+      <p class="img-label">G3–4 (421 sessions)</p>
     </div>
-    <p style="font-size: var(--text-xs); color: var(--neutral-700); margin-top: 16px; text-align: center;">Zone of Regulation distribution till March 31, 2026</p>
+    <div>
+      <img class="cs-img" src="../../assets/Case studies/sel-feel-check/zone-g58.png" alt="Zone distribution G5-8: Green 702, Blue 151, Yellow 162, Red 87">
+      <p class="img-label">G5–8 (1,102 sessions)</p>
+    </div>
   </div>
+  <p class="caption">Zone of Regulation distribution till March 31, 2026</p>
 
   <div class="narrative">
     <p><strong>What the data couldn't tell us.</strong> Feel Check was built on the premise that emotional regulation before sessions would, over time, improve academic performance. No metric was ever instrumented to prove that connection. Whether the product moved learning outcomes remains unmeasured.</p>
