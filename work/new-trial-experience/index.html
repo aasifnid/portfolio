@@ -133,48 +133,70 @@
 
   <h2>The Five Key Design Decisions</h2>
 
-  <p><strong>Decision 1: WhatsApp as the primary communication channel.</strong> We observed that most teacher-parent communication already happened on WhatsApp, not through our built-in Cuemath app chat. Teachers and parents were far more comfortable sharing information over WhatsApp—it was where they naturally defaulted. Rather than fight this pattern, we made it the system's spine. Every critical communication—verification, slot confirmation, teacher introduction, session reminders, post-trial enrollment—moved to WhatsApp. This enabled reliable response rates and engagement at each step without requiring AC coordination. After the trial, teachers shared branded WhatsApp messages with parents covering pricing, class formats, and onboarding timelines. This transformed post-trial follow-up from an AC task into a self-serve, teacher-led experience.</p>
+  <div class="decisions-list">
 
-  <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 32px; margin: 28px 0;">
-    <div class="screen-featured">
-      <img src="../../assets/Case studies/New Trial Experience/WA1_Plan pricing _Total including GST.jpg" loading="lazy" alt="WhatsApp collateral: Plan pricing with GST and total costs">
-      <p class="caption"><strong>Pricing breakdown:</strong> Clear monthly costs including taxes. No surprises, no hidden fees.</p>
+    <div class="decision-item">
+      <p class="decision-item-num">Decision 1</p>
+      <p class="decision-item-title">WhatsApp as the primary communication channel</p>
+      <p>We observed that most teacher-parent communication already happened on WhatsApp, not through our built-in Cuemath app chat. Teachers and parents were far more comfortable sharing information over WhatsApp—it was where they naturally defaulted. Rather than fight this pattern, we made it the system's spine. Every critical communication—verification, slot confirmation, teacher introduction, session reminders, post-trial enrollment—moved to WhatsApp. This enabled reliable response rates and engagement at each step without requiring AC coordination. After the trial, teachers shared branded WhatsApp messages with parents covering pricing, class formats, and onboarding timelines. This transformed post-trial follow-up from an AC task into a self-serve, teacher-led experience.</p>
+      <div class="screen-grid" style="grid-template-columns: 1fr 1fr 1fr;">
+        <div class="screen-featured">
+          <img src="../../assets/Case studies/New Trial Experience/WA1_Plan pricing _Total including GST.jpg" loading="lazy" alt="WhatsApp collateral: Plan pricing with GST and total costs">
+          <p class="caption"><strong>Pricing breakdown:</strong> Clear monthly costs including taxes. No surprises, no hidden fees.</p>
+        </div>
+        <div class="screen-featured">
+          <img src="../../assets/Case studies/New Trial Experience/WA2_EMI options.jpg" loading="lazy" alt="WhatsApp collateral: EMI payment options">
+          <p class="caption"><strong>Payment flexibility:</strong> Monthly installment options for committed families.</p>
+        </div>
+        <div class="screen-featured">
+          <img src="../../assets/Case studies/New Trial Experience/WA3_Refund Policy.jpg" loading="lazy" alt="WhatsApp collateral: Refund policy and guarantees">
+          <p class="caption"><strong>Refund guarantee:</strong> Clear exit policy builds confidence in the purchase decision.</p>
+        </div>
+        <div class="screen-featured">
+          <img src="../../assets/Case studies/New Trial Experience/WA4_1_2 vs 1_1 Classes.jpg" loading="lazy" alt="WhatsApp collateral: Comparing 1:2 pair vs 1:1 solo classes">
+          <p class="caption"><strong>Class format option 1:</strong> 1:1 solo vs 1:2 pair at different price points.</p>
+        </div>
+        <div class="screen-featured">
+          <img src="../../assets/Case studies/New Trial Experience/WA5_1_2 vs 1_4 Classes.jpg" loading="lazy" alt="WhatsApp collateral: Comparing 1:2 pair vs 1:4 group classes">
+          <p class="caption"><strong>Class format option 2:</strong> 1:2 pair vs 1:4 group — cost vs attention trade-off.</p>
+        </div>
+      </div>
     </div>
-    <div class="screen-featured">
-      <img src="../../assets/Case studies/New Trial Experience/WA2_EMI options.jpg" loading="lazy" alt="WhatsApp collateral: EMI payment options">
-      <p class="caption"><strong>Payment flexibility:</strong> Monthly installment options for committed families. Reduces friction for cost-conscious parents.</p>
-    </div>
-    <div class="screen-featured">
-      <img src="../../assets/Case studies/New Trial Experience/WA3_Refund Policy.jpg" loading="lazy" alt="WhatsApp collateral: Refund policy and guarantees">
-      <p class="caption"><strong>Refund guarantee:</strong> Clear exit policy if the child or parent wants to stop. Builds confidence in the purchase decision.</p>
-    </div>
-    <div class="screen-featured">
-      <img src="../../assets/Case studies/New Trial Experience/WA4_1_2 vs 1_1 Classes.jpg" loading="lazy" alt="WhatsApp collateral: Comparing 1:2 pair vs 1:1 solo classes">
-      <p class="caption"><strong>Class format option 1:</strong> 1:1 solo vs 1:2 pair. Different learning experiences at different price points.</p>
-    </div>
-    <div class="screen-featured">
-      <img src="../../assets/Case studies/New Trial Experience/WA5_1_2 vs 1_4 Classes.jpg" loading="lazy" alt="WhatsApp collateral: Comparing 1:2 pair vs 1:4 group classes">
-      <p class="caption"><strong>Class format option 2:</strong> 1:2 pair vs 1:4 group. Group classes lower cost but shared teacher attention.</p>
-    </div>
-  </div>
 
-  <p><strong>Decision 2: Automated 5-minute recovery for abandoned slot selection.</strong> Parents signed up and verified on WhatsApp, then didn't proceed to book a slot. We captured why through feedback: overwhelmed, distracted, uncertain about timing. Instead of losing them, a 5-minute automated follow-up message triggered: "Do you need help choosing a time?" This small, well-timed intervention recovered significant drop-off volume without requiring AC escalation. It was automation at the right moment—not replacing human judgment, but removing friction from a low-judgment step.</p>
-
-  <p><strong>Decision 3: Teacher introduction message 24 hours before the trial.</strong> Instead of an AC confirmation, parents got a personal WhatsApp message from their assigned teacher—name, credentials, sometimes a video or photo. This shifted the relationship before the session even started. Parents weren't signing up for a generic trial; they were meeting a specific person. Teacher-parent rapport began 24 hours early, not after the session ended.</p>
-
-  <p><strong>Decision 4: In-trial conversation guided by a reference script, not a hard close.</strong> We considered three approaches: (1) Hard script—teachers memorize pricing and benefits, recite before close (rejected: feels scripted, adds cognitive load). (2) Soft talking points—teachers keep pricing on a reference card, mention if parents ask (chosen for trial). (3) No teacher mention, rely on post-trial enrollment UI (rejected: parent questions mid-trial would go unanswered). We chose option 2: teachers have talking points but only deploy them if parents ask "What comes next?" This way the teacher isn't pushing; the parent is pulling. Teachers could reference class format trade-offs (1:1, 1:2, 1:4) with their financial and educational benefits naturally.</p>
-
-  <p><strong>Decision 5: Direct enrollment immediately after the trial, with teacher present.</strong> The moment the session ended, parents saw an enrollment interface on their device. Not a form—just "Enroll now" with three plan options, pricing visible, and one-tap payment. No AC call necessary. If they had questions, the teacher was still present to answer them. If they wanted time to think, they got personalized WhatsApp reminders from the teacher, but the path was always direct to enrollment, not through an AC.</p>
-
-  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin: 28px 0;">
-    <div class="screen-featured">
-      <img src="../../assets/Case studies/New Trial Experience/Signup 1.jpg" loading="lazy" alt="WhatsApp verification: Parent verifies via WhatsApp">
-      <p class="caption"><strong>WhatsApp verification:</strong> One-time check that confirms the parent is real and the number is active. Creates the communication channel for all downstream steps.</p>
+    <div class="decision-item">
+      <p class="decision-item-num">Decision 2</p>
+      <p class="decision-item-title">Automated 5-minute recovery for abandoned slot selection</p>
+      <p>Parents signed up and verified on WhatsApp, then didn't proceed to book a slot. We captured why through feedback: overwhelmed, distracted, uncertain about timing. Instead of losing them, a 5-minute automated follow-up message triggered: "Do you need help choosing a time?" This small, well-timed intervention recovered significant drop-off volume without requiring AC escalation. It was automation at the right moment—not replacing human judgment, but removing friction from a low-judgment step.</p>
+      <div class="screen-grid" style="grid-template-columns: 1fr 1fr;">
+        <div class="screen-featured">
+          <img src="../../assets/Case studies/New Trial Experience/Signup 1.jpg" loading="lazy" alt="WhatsApp verification: Parent verifies via WhatsApp">
+          <p class="caption"><strong>WhatsApp verification:</strong> One-time check that confirms the parent is real and establishes the communication channel.</p>
+        </div>
+        <div class="screen-featured">
+          <img src="../../assets/Case studies/New Trial Experience/Signup 2.jpg" loading="lazy" alt="Trial slot selection: Parents select trial slot with teacher names visible">
+          <p class="caption"><strong>Slot selection:</strong> Teacher names visible, building confidence. Abandoned? 5-minute auto-reminder offers help.</p>
+        </div>
+      </div>
     </div>
-    <div class="screen-featured">
-      <img src="../../assets/Case studies/New Trial Experience/Signup 2.jpg" loading="lazy" alt="Trial slot selection: Parents select trial slot with teacher names visible">
-      <p class="caption"><strong>Trial slot selection—Decisions 1–3 in action:</strong> Parents choose their preferred slot. Teacher names are visible, building confidence that there's a real person assigned. If parents abandon here, a 5-minute auto-reminder offers help.</p>
+
+    <div class="decision-item">
+      <p class="decision-item-num">Decision 3</p>
+      <p class="decision-item-title">Teacher introduction message 24 hours before the trial</p>
+      <p>Instead of an AC confirmation, parents got a personal WhatsApp message from their assigned teacher—name, credentials, sometimes a video or photo. This shifted the relationship before the session even started. Parents weren't signing up for a generic trial; they were meeting a specific person. Teacher-parent rapport began 24 hours early, not after the session ended.</p>
     </div>
+
+    <div class="decision-item">
+      <p class="decision-item-num">Decision 4</p>
+      <p class="decision-item-title">In-trial conversation guided by a reference script, not a hard close</p>
+      <p>We considered three approaches: (1) Hard script—teachers memorize pricing and benefits, recite before close (rejected: feels scripted, adds cognitive load). (2) Soft talking points—teachers keep pricing on a reference card, mention if parents ask (chosen for trial). (3) No teacher mention, rely on post-trial enrollment UI (rejected: parent questions mid-trial would go unanswered). We chose option 2: teachers have talking points but only deploy them if parents ask "What comes next?" This way the teacher isn't pushing; the parent is pulling. Teachers could reference class format trade-offs (1:1, 1:2, 1:4) with their financial and educational benefits naturally.</p>
+    </div>
+
+    <div class="decision-item">
+      <p class="decision-item-num">Decision 5</p>
+      <p class="decision-item-title">Direct enrollment immediately after the trial, with teacher present</p>
+      <p>The moment the session ended, parents saw an enrollment interface on their device. Not a form—just "Enroll now" with three plan options, pricing visible, and one-tap payment. No AC call necessary. If they had questions, the teacher was still present to answer them. If they wanted time to think, they got personalized WhatsApp reminders from the teacher, but the path was always direct to enrollment, not through an AC.</p>
+    </div>
+
   </div>
 
   <h2>Implementation Phases</h2>
