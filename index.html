@@ -534,8 +534,6 @@
   #intro-overlay {
     position: fixed; inset: 0; z-index: 99999;
     background: #0D0D0D;
-    background-image: radial-gradient(circle, rgba(255,255,255,0.05) 2px, transparent 2px);
-    background-size: 32px 32px;
     display: flex; flex-direction: column;
     align-items: center; justify-content: center;
     transition: opacity 0.7s ease;
@@ -577,7 +575,7 @@
   }
   #cursor-dot {
     position: fixed; width: 8px; height: 8px; border-radius: 50%;
-    background: #FF80F4; pointer-events: none; z-index: 9998;
+    background: #FFB700; pointer-events: none; z-index: 9998;
     transform: translate(-50%, -50%);
     transition: width 0.2s ease, height 0.2s ease, opacity 0.2s ease, background 0.2s ease;
     will-change: left, top;
@@ -656,7 +654,7 @@
 <body>
 <div id="intro-overlay">
   <p class="intro-eyebrow">Portfolio 2026</p>
-  <p class="intro-statement">Built with <strong><span style="color: #D926CA;">AI</span></strong>.</p>
+  <p class="intro-statement">Built with <strong><span style="color: #FFB700;">AI</span></strong></p>
   <div style="width: 60px; height: 1px; background: rgba(255,255,255,0.3); margin: 32px 0;"></div>
   <p class="intro-tools">
     Claude Code <span class="intro-tools-sep">·</span> Wispr Flow <span class="intro-tools-sep">·</span> Figma <span class="intro-tools-sep">·</span> Vercel
