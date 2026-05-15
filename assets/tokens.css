@@ -27,19 +27,16 @@
   --fw-semibold:  600;  /* labels, small emphasis, secondary nav */
   --fw-bold:      700;  /* headings, primary nav, confidence */
 
-  /* ─── Type Scale: 12 fixed + 5 responsive ─── */
-  --text-xs:    11px;
-  --text-sm:    12px;
-  --text-base:  14px;
-  --text-md:    15px;
-  --text-body:  16px;
-  --text-lg:    17px;
-  --text-xl:    20px;
-  --text-2xl:   24px;
-  --text-3xl:   28px;
-  --text-4xl:   32px;
-  --text-5xl:   44px;
-  --text-6xl:   56px;
+  /* ─── Type Scale: 9 fixed + 5 responsive ─── */
+  --text-xs:    12px;   /* minimum — labels, caps, tags */
+  --text-sm:    14px;   /* secondary, meta */
+  --text-base:  16px;   /* body */
+  --text-lg:    18px;   /* large body */
+  --text-xl:    20px;   /* callouts */
+  --text-2xl:   24px;   /* subheadings */
+  --text-3xl:   32px;   /* section heads */
+  --text-4xl:   44px;   /* h2 */
+  --text-5xl:   56px;   /* h1 / display */
 
   /* Responsive clamps */
   --text-hero:       clamp(36px, 4.5vw, 64px);
@@ -77,11 +74,6 @@
   --s20: 80px;
   --s24: 96px;
 
-  /* ─── Border radius ─── */
-  --r-sm: 4px;
-  --r-md: 8px;
-  --r-lg: 10px;
-
   /* ─── Transition ─── */
   --ease: 0.15s ease;
 
@@ -98,8 +90,8 @@
   --btn-primary-hover: #2D2D2D;
   --btn-primary-padding: 12px 22px;
   --btn-primary-font: 'Space Mono', monospace;
-  --btn-primary-size: 13px;
-  --btn-primary-weight: 500;
+  --btn-primary-size: var(--text-xs);
+  --btn-primary-weight: var(--fw-semibold);
   --btn-primary-letter-spacing: 0.03em;
 
   --btn-ghost-bg: #FFFFFF;
@@ -111,8 +103,8 @@
   /* ─── Neutral aliases ─────────────────────────────────────────
      Used in case study pages. Aligned to the same neutral system.
   ──────────────────────────────────────────────────────────── */
-  --neutral-100:  #FFFFFF;   /* bg */
-  --neutral-200:  #FFFFFF;   /* surface */
+  --neutral-100:  #FAFAFA;   /* page bg — very subtle off-white */
+  --neutral-200:  #FFFFFF;   /* card/surface — pure white */
   --neutral-300:  #DADADA;   /* border */
   --neutral-700:  #6B6B6B;   /* secondary text */
   --neutral-800:  #4D4D4D;   /* body text */

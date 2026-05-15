@@ -11,11 +11,6 @@
 <link rel="stylesheet" href="../../assets/style.css">
 <noscript><style>[data-animate]{opacity:1!important;transform:none!important}</style></noscript>
 <style>
-  /* Critical navbar CSS - renders immediately */
-  .site-nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: #0D0D0D; height: 64px; display: flex; justify-content: space-between; align-items: center; padding: 0 48px; }
-  /* Scroll progress bar */
-  #scroll-progress { position: fixed; top: 0; left: 0; height: 2px; width: 0%; background: #FFFFFF; z-index: 9999; transition: width 0.08s linear; }
-
   /* Force equal-width cover meta items */
   .cover-meta .cover-meta-item { flex: 1; min-width: 0; }
   .cover-meta + .cover-meta { margin-top: 8px; }
@@ -24,24 +19,23 @@
   .phase-table { margin: 28px 0; border: 1px solid var(--neutral-300); border-radius: 0; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.04); background: var(--neutral-200); }
   .phase-row { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; border-bottom: 1px solid var(--neutral-300); }
   .phase-row:last-child { border-bottom: none; }
-  .phase-row.phase-header span { font-family: var(--font-mono); font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.10em; color: var(--color-ink); background: var(--neutral-100); padding: 14px 18px; }
-  .phase-row span { font-size: 15px; line-height: 24px; color: var(--neutral-800); padding: 16px 18px; border-right: 1px solid var(--neutral-300); }
+  .phase-row.phase-header span { font-family: var(--font-mono); font-size: var(--text-xs); font-weight: var(--fw-semibold); text-transform: uppercase; letter-spacing: 0.10em; color: var(--color-ink); background: var(--neutral-100); padding: 14px 18px; }
+  .phase-row span { font-size: var(--text-sm); line-height: 24px; color: var(--neutral-800); padding: 16px 18px; border-right: 1px solid var(--neutral-300); }
   .phase-row span:last-child { border-right: none; }
 
   /* Fix nested accent — remove gold border inside observation-block items */
   .observation-block .observation-item { border-left: none; padding-left: 0; padding-bottom: 16px; margin-bottom: 16px; border-bottom: 1px solid rgba(0,0,0,0.07); }
   .observation-block .observation-item:last-of-type { border-bottom: none; padding-bottom: 0; margin-bottom: 0; }
 
-  /* Image placeholder */
   .img-placeholder { width: 100%; aspect-ratio: 16/9; background: var(--neutral-100); border: 2px dashed var(--neutral-300); border-radius: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; margin: 32px 0; gap: 12px; }
-  .img-placeholder-tag { font-family: var(--font-mono); font-size: 11px; font-weight: 600; letter-spacing: 0.10em; text-transform: uppercase; color: var(--color-ink); }
-  .img-placeholder-desc { font-size: 14px; color: var(--neutral-700); text-align: center; max-width: 400px; line-height: 1.6; }
+  .img-placeholder-tag { font-family: var(--font-mono); font-size: var(--text-xs); font-weight: var(--fw-semibold); letter-spacing: 0.10em; text-transform: uppercase; color: var(--color-ink); }
+  .img-placeholder-desc { font-size: var(--text-sm); color: var(--neutral-700); text-align: center; max-width: 400px; line-height: 1.6; }
 
   /* Case study images */
   .cs-img { width: 100%; border-radius: 0; margin: 32px 0; display: block; }
-  .comparison-label { font-size: 13px; font-weight: 600; color: var(--color-ink); margin-top: 8px; text-align: center; }
-  .stages-grid-label { font-size: 13px; font-weight: 600; color: var(--color-ink); margin-top: 8px; text-align: center; }
-  .grade-compare-label { font-size: 13px; font-weight: 600; color: var(--color-ink); margin-top: 8px; text-align: center; }
+  .comparison-label { font-size: var(--text-xs); font-weight: var(--fw-semibold); color: var(--color-ink); margin-top: 8px; text-align: center; }
+  .stages-grid-label { font-size: var(--text-xs); font-weight: var(--fw-semibold); color: var(--color-ink); margin-top: 8px; text-align: center; }
+  .grade-compare-label { font-size: var(--text-xs); font-weight: var(--fw-semibold); color: var(--color-ink); margin-top: 8px; text-align: center; }
 
   /* Mobile */
   @media (max-width: 640px) {
@@ -49,31 +43,8 @@
   }
 
   /* Lightbox */
-  .cs-img { cursor: pointer; transition: opacity 0.2s; }
-  .cs-img:hover { opacity: 0.8; }
-  .lightbox-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); z-index: 9999; align-items: center; justify-content: center; }
-  .lightbox-overlay.active { display: flex; }
-  .lightbox-img { max-width: 90vw; max-height: 90vh; object-fit: contain; }
-  .lightbox-close { position: absolute; top: 30px; right: 40px; color: white; font-size: 40px; font-weight: 300; cursor: pointer; z-index: 10000; }
-  .lightbox-close:hover { color: #ccc; }
 
 
-  /* Feel Check case study background */
-
-  /* Secondary nav hover effect */
-
-  /* ─── Back link ─── */
-  .cs-back-link {
-    display: inline-flex; align-items: center; gap: 6px;
-    font-family: "DM Sans", sans-serif; font-size: 14px;
-    color: var(--neutral-700); text-decoration: none;
-    background: #F5F5F5;
-    border-top: 1px solid #DADADA;
-    padding: 24px 48px;
-    width: 100%; box-sizing: border-box;
-    transition: color 0.15s;
-  }
-  .cs-back-link:hover { color: var(--neutral-1000); }
 
 </style>
 </head>
@@ -96,7 +67,7 @@
 </nav>
 
 <nav class="cs-section-nav" aria-label="Case study sections">
-  <a href="../../index.html#work" class="cs-nav-back">← Back</a>
+  <a href="../../index.html#work" class="cs-nav-back">← All Work</a>
   <a href="#context">Context</a>
   <a href="#role">Role</a>
   <a href="#process">Process</a>
@@ -111,7 +82,7 @@
   <p class="value-prop">Feel Check identified emotional state and guided students to regulation before learning started. 67.45% of tutors observed improved student readiness.</p>
   <p class="lede">Tutors couldn't see how students arrived emotionally—and had no tool to help them regulate before instruction began. Mid-session dysregulation meant losing 15–20 minutes. I designed Feel Check: a student-led check-in that identifies emotional state and routes students to self-chosen regulation. Result: 89.3% of students engaged independently without prompting. 67.45% of tutors observed improved readiness to learn.</p>
 
-  <img src="../../assets/Case studies/sel-feel-check/intro.jpg" alt="Feel Check — student-led emotional check-in interface" class="cs-img">
+  <img src="../../assets/Case studies/sel-feel-check/intro.jpg" loading="lazy" alt="Feel Check — student-led emotional check-in interface" class="cs-img">
 
   <div class="cover-meta">
     <div class="cover-meta-item">
@@ -142,7 +113,7 @@
     </div>
   </div>
 
-  <a href="https://www.figma.com/design/k27AzLfhyS7AbuIZhLIFMY/Portfolio-2026?node-id=1-4377&t=M7FOPCoe9mE85zor-1" target="_blank" rel="noopener" class="figma-link">View full designs in Figma →</a>
+  <a href="https://www.figma.com/design/k27AzLfhyS7AbuIZhLIFMY/Portfolio-2026?node-id=1-4377&t=M7FOPCoe9mE85zor-1" target="_blank" rel="noopener" class="figma-link">Open in Figma →</a>
 </div>
 
 <div class="page">
@@ -187,7 +158,7 @@
 
   <p>To translate these frameworks into a self-directed student experience, I explored how to surface the activity options through different layout approaches. The wireframe exploration tested multiple directions before settling on the circular form that made the Wheel of Awareness the interface itself.</p>
 
-  <img src="/work/leap-sel-feel-check/images/ideation-options.jpg" alt="Wireframe exploration of option surfacing layouts: circular form, grid layouts, and visual arrangement variations" class="cs-img">
+  <img src="/work/leap-sel-feel-check/images/ideation-options.jpg" loading="lazy" alt="Wireframe exploration of option surfacing layouts: circular form, grid layouts, and visual arrangement variations" class="cs-img">
   <p class="caption">Exploring how to surface activity options. The circular form wasn't decorative — it made the framework visible as the decision structure. Students didn't see "pick an activity"; they saw the same wheel they'd just moved through. Tested against grid and geometric approaches; the circular form had the lowest cognitive friction and strongest alignment with the framework logic.</p>
 
   <p>I reviewed class recordings and tested the concept early with the internal tutor cohort. What became clear: any flow that felt clinical or adult-directed would be abandoned or resented. The design had to run on student initiative — the tutor needed to be present, but passive. Not a guide. An observer. That single constraint shaped every major decision that followed.</p>
@@ -200,7 +171,7 @@
 
   <p>Post-launch, "Do It Your Way" was the dominant first choice across grade levels — 289 selections in the Green zone for G5–8 alone, ahead of every named activity. Students weren't confused or avoiding structure. They were choosing self-direction. This reframed how I thought about the regulation menu: autonomy wasn't a fallback to offer when nothing else worked — it was what students reached for first. For v2, I'm redesigning the activity menu to lead with "Do It Your Way," moving it from an option buried in the list to the primary entry point.</p>
 
-  <img src="/work/leap-sel-feel-check/images/zor-activity-autonomy.jpg" alt="Do It Your Way experience: coral/red background with student-selected options (smell, breathing, meditation pose) and affirmation 'Sit quietly and relax my MIND'" class="cs-img">
+  <img src="/work/leap-sel-feel-check/images/zor-activity-autonomy.jpg" loading="lazy" alt="Do It Your Way experience: coral/red background with student-selected options (smell, breathing, meditation pose) and affirmation 'Sit quietly and relax my MIND'" class="cs-img">
   <p class="caption">What students chose first. "Do It Your Way" showed that autonomy—choosing their own regulation path—wasn't a design fallback. It was the primary signal. Students trusted their own instincts about what they needed. For v2, this becomes the lead option, not a buried choice.</p>
 
   <h2>What grade scope revealed.</h2>
@@ -208,18 +179,18 @@
   <p>The original scope was G1–8. Early tutor conversations and review with Roots made it clear that naming body sensations and identifying emotional states independently was too demanding for G1–2 — not a simplification problem, but a developmental one. I scoped Feel Check to G3–8. G1–2 is deferred, not dropped.</p>
 
   <div style="background: var(--neutral-200); padding: 24px; margin: 32px 0; border: 1px solid var(--neutral-300);">
-    <img src="../../assets/Case studies/sel-feel-check/ruler-emotion-zones-g34.jpg" alt="G3–4 version — emotional options and activities" class="cs-img" style="margin: 0 0 8px 0;">
+    <img src="../../assets/Case studies/sel-feel-check/ruler-emotion-zones-g34.jpg" loading="lazy" alt="G3–4 version — emotional options and activities" class="cs-img" style="margin: 0 0 8px 0;">
     <p class="grade-compare-label" style="margin: 0;">G3–4</p>
   </div>
 
   <div style="background: var(--neutral-200); padding: 24px; margin: 32px 0; border: 1px solid var(--neutral-300);">
-    <img src="../../assets/Case studies/sel-feel-check/ruler-emotion-zones-g58.jpg" alt="G5–8 version — emotional options and activities" class="cs-img" style="margin: 0 0 8px 0;">
+    <img src="../../assets/Case studies/sel-feel-check/ruler-emotion-zones-g58.jpg" loading="lazy" alt="G5–8 version — emotional options and activities" class="cs-img" style="margin: 0 0 8px 0;">
     <p class="grade-compare-label" style="margin: 0;">G5–8</p>
   </div>
 
   <p>Before locking the regulation activity experience, I explored three directions with the Motion Designer: fully abstract visuals, character-driven sequences, and non-humanistic partial elements — rain, breathing patterns, ambient light. The non-humanistic approach was chosen: neutral, non-projecting, and focused on physical sensation rather than a character to follow.</p>
 
-  <img src="/work/leap-sel-feel-check/images/zor-activity-instructions.jpg" alt="Regulation activity screen showing 'Do it your way' with breathing animation and instruction 'You know what you need right now. Trust yourself and do what brings ease.'" class="cs-img">
+  <img src="/work/leap-sel-feel-check/images/zor-activity-instructions.jpg" loading="lazy" alt="Regulation activity screen showing 'Do it your way' with breathing animation and instruction 'You know what you need right now. Trust yourself and do what brings ease.'" class="cs-img">
   <p class="caption">The regulation activity experience. Non-humanistic visuals (breathing patterns, soft light) guide physical sensation. No character to follow, no narrative. Audio was critical post-launch — visual content alone didn't create regulation moments; students tapped through without settling. With audio, average engaged time moved to 1.9 minutes.</p>
 
   <h2>Four decisions that defined how Feel Check works.</h2>
@@ -234,12 +205,12 @@
     </div>
 
     <div style="background: var(--neutral-200); padding: 24px; margin: 32px 0; border: 1px solid var(--neutral-300);">
-      <img src="../../assets/Case studies/sel-feel-check/decision-01-student.jpg" alt="Student view — full-screen interface" class="cs-img" style="margin: 0 0 8px 0;">
+      <img src="../../assets/Case studies/sel-feel-check/decision-01-student.jpg" loading="lazy" alt="Student view — full-screen interface" class="cs-img" style="margin: 0 0 8px 0;">
       <p class="comparison-label" style="margin: 0;">Student View</p>
     </div>
 
     <div style="background: var(--neutral-200); padding: 24px; margin: 32px 0; border: 1px solid var(--neutral-300);">
-      <img src="../../assets/Case studies/sel-feel-check/decision-01-tutor.jpg" alt="Tutor view — read-only monitoring panel" class="cs-img" style="margin: 0 0 8px 0;">
+      <img src="../../assets/Case studies/sel-feel-check/decision-01-tutor.jpg" loading="lazy" alt="Tutor view — read-only monitoring panel" class="cs-img" style="margin: 0 0 8px 0;">
       <p class="comparison-label" style="margin: 0;">Tutor View (Read-Only)</p>
     </div>
 
@@ -249,28 +220,28 @@
       <p>Feel Check runs as four stages: Senses → Body → Heart → Mind. Senses is environmental grounding — a warm-up before anything internal is named. Each stage progressively narrows: Body informs Heart, Heart informs Mind.</p>
 
       <div style="background: var(--neutral-200); padding: 24px; margin: 32px 0; border: 1px solid var(--neutral-300);">
-        <img src="../../assets/Case studies/sel-feel-check/senses.jpg" alt="Stage 1 — Senses: environmental grounding" class="cs-img" style="margin: 0 0 8px 0;">
+        <img src="../../assets/Case studies/sel-feel-check/senses.jpg" loading="lazy" alt="Stage 1 — Senses: environmental grounding" class="cs-img" style="margin: 0 0 8px 0;">
         <p class="stages-grid-label" style="margin: 0;">1. Senses</p>
       </div>
 
       <div style="background: var(--neutral-200); padding: 24px; margin: 32px 0; border: 1px solid var(--neutral-300);">
-        <img src="../../assets/Case studies/sel-feel-check/body.jpg" alt="Stage 2 — Body: physical awareness" class="cs-img" style="margin: 0 0 8px 0;">
+        <img src="../../assets/Case studies/sel-feel-check/body.jpg" loading="lazy" alt="Stage 2 — Body: physical awareness" class="cs-img" style="margin: 0 0 8px 0;">
         <p class="stages-grid-label" style="margin: 0;">2. Body</p>
       </div>
 
       <div style="background: var(--neutral-200); padding: 24px; margin: 32px 0; border: 1px solid var(--neutral-300);">
-        <img src="../../assets/Case studies/sel-feel-check/heart.jpg" alt="Stage 3 — Heart: emotional identification" class="cs-img" style="margin: 0 0 8px 0;">
+        <img src="../../assets/Case studies/sel-feel-check/heart.jpg" loading="lazy" alt="Stage 3 — Heart: emotional identification" class="cs-img" style="margin: 0 0 8px 0;">
         <p class="stages-grid-label" style="margin: 0;">3. Heart</p>
       </div>
 
       <div style="background: var(--neutral-200); padding: 24px; margin: 32px 0; border: 1px solid var(--neutral-300);">
-        <img src="../../assets/Case studies/sel-feel-check/mind.jpg" alt="Stage 4 — Mind: mental state" class="cs-img" style="margin: 0 0 8px 0;">
+        <img src="../../assets/Case studies/sel-feel-check/mind.jpg" loading="lazy" alt="Stage 4 — Mind: mental state" class="cs-img" style="margin: 0 0 8px 0;">
         <p class="stages-grid-label" style="margin: 0;">4. Mind</p>
       </div>
 
       <p>I explored multiple layouts — geometric grids, modals, full-screen flows. I chose the circular form so the Wheel of Awareness could become the interface itself, not a reference diagram placed beside it.</p>
 
-      <img src="/work/leap-sel-feel-check/images/zone-of-regulation-menu.jpg" alt="Zone of Regulation activity menu: circular picker showing Dragon Breaths, Countdown Breathing, Rain Visualisation, and Do it your way options" class="cs-img" style="margin: 24px 0;">
+      <img src="/work/leap-sel-feel-check/images/zone-of-regulation-menu.jpg" loading="lazy" alt="Zone of Regulation activity menu: circular picker showing Dragon Breaths, Countdown Breathing, Rain Visualisation, and Do it your way options" class="cs-img" style="margin: 24px 0;">
       <p class="caption">The activity menu implemented as the Wheel itself. Students see the sequence they just completed (Senses → Body → Heart → Mind) reflected in the four regulation options. Tutor monitoring panel visible on left. The circular form is the framework, not a decoration.</p>
     </div>
 
@@ -313,7 +284,7 @@
     <p class="observation-source">What class recordings showed — 25 sessions, Feb 2026</p>
   </div>
 
-  <img src="../../assets/Case studies/sel-feel-check/feel-check-stage-timeline.png" alt="Feel Check stage journey: Senses (42s) → Emotion Zone (7s) → Select Emotion (14s) → Regulate (2m) = 3.4 minutes total" class="cs-img" style="margin: 32px 0;">
+  <img src="../../assets/Case studies/sel-feel-check/feel-check-stage-timeline.png" loading="lazy" alt="Feel Check stage journey: Senses (42s) → Emotion Zone (7s) → Select Emotion (14s) → Regulate (2m) = 3.4 minutes total" class="cs-img" style="margin: 32px 0;">
   <p class="caption">The complete Feel Check journey in time. Regulation is the largest segment—this is where the actual emotional regulation work happens. The entire sequence completes in 3.4 minutes on average, keeping within the 5-minute design spec.</p>
 
 
@@ -364,52 +335,52 @@
     <div class="stat">
       <p class="stat-label">Learning Readiness</p>
       <p class="stat-number">67.45%</p>
-      <p style="font-size:13px;line-height:1.5;color:var(--neutral-700);margin-top:6px;">Tutors observed improved student readiness after regulation — the direct answer to the problem Feel Check was built to solve.</p>
+      <p style="font-size:var(--text-xs);line-height:1.5;color:var(--neutral-700);margin-top:6px;">Tutors observed improved student readiness after regulation — the direct answer to the problem Feel Check was built to solve.</p>
     </div>
     <div class="stat">
       <p class="stat-label">Student Independence</p>
       <p class="stat-number">89.3%</p>
-      <p style="font-size:13px;line-height:1.5;color:var(--neutral-700);margin-top:6px;">Students chose their emotion without tutor prompting — the student-led design held in practice.</p>
+      <p style="font-size:var(--text-xs);line-height:1.5;color:var(--neutral-700);margin-top:6px;">Students chose their emotion without tutor prompting — the student-led design held in practice.</p>
     </div>
     <div class="stat">
       <p class="stat-label">Check-in Duration</p>
       <p class="stat-number">3.4 min</p>
-      <p style="font-size:13px;line-height:1.5;color:var(--neutral-700);margin-top:6px;">Average check-in duration — from start to learning ready. Within the 5-min spec.</p>
+      <p style="font-size:var(--text-xs);line-height:1.5;color:var(--neutral-700);margin-top:6px;">Average check-in duration — from start to learning ready. Within the 5-min spec.</p>
     </div>
     <div class="stat">
       <p class="stat-label">Tutor Feedback</p>
       <p class="stat-number">95.38%</p>
-      <p style="font-size:13px;line-height:1.5;color:var(--neutral-700);margin-top:6px;">Submitted post-session: a 3-option multiple choice ("Student was more ready to focus on math" — Yes / Neutral / No). 95.38% submitted; 3s average. The form never interrupted the session.</p>
+      <p style="font-size:var(--text-xs);line-height:1.5;color:var(--neutral-700);margin-top:6px;">Submitted post-session: a 3-option multiple choice ("Student was more ready to focus on math" — Yes / Neutral / No). 95.38% submitted; 3s average. The form never interrupted the session.</p>
     </div>
     <div class="stat">
       <p class="stat-label">Regulation Engagement</p>
       <p class="stat-number">1.9 min</p>
-      <p style="font-size:13px;line-height:1.5;color:var(--neutral-700);margin-top:6px;">Average time on regulation. Reattempt rate dropped from 21.7% to 15.16% — students choosing the right activity on the first try, more often.</p>
+      <p style="font-size:var(--text-xs);line-height:1.5;color:var(--neutral-700);margin-top:6px;">Average time on regulation. Reattempt rate dropped from 21.7% to 15.16% — students choosing the right activity on the first try, more often.</p>
     </div>
     <div class="stat">
       <p class="stat-label">Unsure — Body Awareness</p>
       <p class="stat-number">1 in 5</p>
-      <p style="font-size:13px;line-height:1.5;color:var(--neutral-700);margin-top:6px;">Students couldn't name their body state — the hardest of the four stages. Unsure wasn't a fallback; it was the honest answer.</p>
+      <p style="font-size:var(--text-xs);line-height:1.5;color:var(--neutral-700);margin-top:6px;">Students couldn't name their body state — the hardest of the four stages. Unsure wasn't a fallback; it was the honest answer.</p>
     </div>
   </div>
 
   <p>Zone distribution showed Green as dominant across both grade bands — most students arrived calm. But 53% of G3–4 sessions and 49% of G5–8 sessions weren't Green. Feel Check's real value was surfacing that share and doing something about it before instruction began.</p>
 
-  <img src="../../assets/Case studies/sel-feel-check/feel-check-zone-readiness.png" alt="Zone distribution shows 47-53% dysregulated students, Feel Check improved readiness for 67.45% of them" class="cs-img" style="margin: 32px 0;">
+  <img src="../../assets/Case studies/sel-feel-check/feel-check-zone-readiness.png" loading="lazy" alt="Zone distribution shows 47-53% dysregulated students, Feel Check improved readiness for 67.45% of them" class="cs-img" style="margin: 32px 0;">
   <p class="caption">The problem and the outcome. Feel Check's real value wasn't in serving the 47% who arrived calm. It was surfacing the 47–53% who arrived dysregulated, and improving readiness for nearly 2 out of 3 of them. Nearly half the cohort benefited from the regulation intervention.</p>
 
   <div style="margin: 32px 0;">
     <div style="display: grid; grid-template-columns: 1fr; gap: 24px;">
       <div>
         <img class="cs-img" src="../../assets/Case studies/sel-feel-check/zone-g34.png" alt="Zone distribution G3-4: Green 217, Blue 68, Yellow 90, Red 46" style="width: 100%; border-radius: 0;">
-        <p style="font-size: 12px; font-weight: 600; color: #0D0D0D; margin-top: 12px; text-align: center;">G3–4 (421 sessions)</p>
+        <p style="font-size: var(--text-xs); font-weight: var(--fw-semibold); color: #0D0D0D; margin-top: 12px; text-align: center;">G3–4 (421 sessions)</p>
       </div>
       <div>
         <img class="cs-img" src="../../assets/Case studies/sel-feel-check/zone-g58.png" alt="Zone distribution G5-8: Green 702, Blue 151, Yellow 162, Red 87" style="width: 100%; border-radius: 0;">
-        <p style="font-size: 12px; font-weight: 600; color: #0D0D0D; margin-top: 12px; text-align: center;">G5–8 (1,102 sessions)</p>
+        <p style="font-size: var(--text-xs); font-weight: var(--fw-semibold); color: #0D0D0D; margin-top: 12px; text-align: center;">G5–8 (1,102 sessions)</p>
       </div>
     </div>
-    <p style="font-size: 13px; color: var(--neutral-700); margin-top: 16px; text-align: center;">Zone of Regulation distribution till March 31, 2026</p>
+    <p style="font-size: var(--text-xs); color: var(--neutral-700); margin-top: 16px; text-align: center;">Zone of Regulation distribution till March 31, 2026</p>
   </div>
 
   <div class="narrative">
@@ -520,7 +491,15 @@
 
 
 <!-- Footer -->
-<a href="../../index.html#work" class="cs-back-link">← Back to works</a>
+<a href="../../work/new-trial-experience/index.html" class="cs-next">
+  <div class="cs-next-inner">
+    <div>
+      <p class="cs-next-label">Next Case Study</p>
+      <p class="cs-next-title">New Trial Experience</p>
+    </div>
+    <span class="cs-next-arrow">→</span>
+  </div>
+</a>
 
 </body>
 </html>

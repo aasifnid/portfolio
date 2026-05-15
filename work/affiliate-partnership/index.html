@@ -12,31 +12,12 @@
 <link rel="stylesheet" href="../../assets/style.css">
 <noscript><style>[data-animate]{opacity:1!important;transform:none!important}</style></noscript>
 <style>
-  /* Critical navbar CSS - renders immediately */
-  .site-nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: #0D0D0D; height: 64px; display: flex; justify-content: space-between; align-items: center; padding: 0 48px; }
-  /* Scroll progress bar */
-  #scroll-progress { position: fixed; top: 0; left: 0; height: 2px; width: 0%; background: #FFFFFF; z-index: 9999; transition: width 0.08s linear; }
-  /* Image placeholder */
-  .img-placeholder { width: 100%; aspect-ratio: 16/9; background: var(--neutral-200); border: 1px dashed var(--neutral-400); border-radius: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; margin: 24px 0; gap: 8px; }
-  .img-placeholder-tag { font-family: var(--font-mono); font-size: 11px; font-weight: 600; letter-spacing: 0.10em; text-transform: uppercase; color: #0D0D0D; }
-  .img-placeholder-desc { font-size: 13px; color: var(--neutral-600); text-align: center; max-width: 360px; line-height: 1.5; }
+  .img-placeholder { width: 100%; aspect-ratio: 16/9; background: var(--neutral-200); border: 1px dashed var(--neutral-300); border-radius: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; margin: 24px 0; gap: 8px; }
+  .img-placeholder-tag { font-family: var(--font-mono); font-size: var(--text-xs); font-weight: var(--fw-semibold); letter-spacing: 0.10em; text-transform: uppercase; color: #0D0D0D; }
+  .img-placeholder-desc { font-size: var(--text-xs); color: var(--neutral-700); text-align: center; max-width: 360px; line-height: 1.5; }
 
-  /* Affiliate Partnership case study background */
 
-  /* Secondary nav hover effect */
 
-  /* ─── Back link ─── */
-  .cs-back-link {
-    display: inline-flex; align-items: center; gap: 6px;
-    font-family: "DM Sans", sans-serif; font-size: 14px;
-    color: var(--neutral-700); text-decoration: none;
-    background: #F5F5F5;
-    border-top: 1px solid #DADADA;
-    padding: 24px 48px;
-    width: 100%; box-sizing: border-box;
-    transition: color 0.15s;
-  }
-  .cs-back-link:hover { color: var(--neutral-1000); }
 </style>
 </head>
 <body>
@@ -58,7 +39,7 @@
 </nav>
 
 <nav class="cs-section-nav" aria-label="Case study sections">
-  <a href="../../index.html#work" class="cs-nav-back">← Back</a>
+  <a href="../../index.html#work" class="cs-nav-back">← All Work</a>
   <a href="#context">Context</a>
   <a href="#role">Role</a>
   <a href="#process">Process</a>
@@ -102,7 +83,7 @@
     </div>
   </div>
 
-  <a href="https://www.figma.com/design/k27AzLfhyS7AbuIZhLIFMY/Portfolio-2026?node-id=2-36814&t=KX11oQ6O55UHaJzh-1" target="_blank" rel="noopener" class="figma-link">View full flow in Figma →</a>
+  <a href="https://www.figma.com/design/k27AzLfhyS7AbuIZhLIFMY/Portfolio-2026?node-id=2-36814&t=KX11oQ6O55UHaJzh-1" target="_blank" rel="noopener" class="figma-link">Open in Figma →</a>
 </div>
 
 <div class="page">
@@ -208,8 +189,8 @@
     <p><strong>Decision 4: Flexible payout timing as trust-building</strong> — Payouts sometimes processed before event ends. Dashboard shows payout status with dates. Why: Early payouts signal trustworthiness and reduce affiliate anxiety.</p>
   </div>
 
-  <img src="../../assets/Case studies/Affiliate Partnership/Landing Page.jpg" alt="Landing page structure — trust signals placed before the sign-up form, earnings transparency leading" class="cs-img">
-  <p style="font-size: 12px; font-weight: 600; color: #0D0D0D; margin-top: 8px;">Affiliate Sign-Up Landing Page</p>
+  <img src="../../assets/Case studies/Affiliate Partnership/Landing Page.jpg" loading="lazy" alt="Landing page structure — trust signals placed before the sign-up form, earnings transparency leading" class="cs-img">
+  <p style="font-size: var(--text-xs); font-weight: var(--fw-semibold); color: #0D0D0D; margin-top: 8px;">Affiliate Sign-Up Landing Page</p>
 
   <h2>What Shipped</h2>
 
@@ -229,8 +210,8 @@
 
   <p>I don't have instrumented metrics on programme impact — activation rate, affiliate retention, event traffic attribution, cost per acquisition. This is a gap. Ideally, we'd know whether the design decisions actually paid off in practice. Did earnings transparency increase sign-up conversion? Did the dashboard keep affiliates engaged?</p>
 
-  <img src="../../assets/Case studies/Affiliate Partnership/Affiliate dashboard.jpg" alt="Affiliate dashboard — showing referral link, conversion tracking, earnings, and payout history" class="cs-img">
-  <p style="font-size: 12px; font-weight: 600; color: #0D0D0D; margin-top: 8px;">Affiliate Dashboard</p>
+  <img src="../../assets/Case studies/Affiliate Partnership/Affiliate dashboard.jpg" loading="lazy" alt="Affiliate dashboard — showing referral link, conversion tracking, earnings, and payout history" class="cs-img">
+  <p style="font-size: var(--text-xs); font-weight: var(--fw-semibold); color: #0D0D0D; margin-top: 8px;">Affiliate Dashboard</p>
 
   <p>What the design tells us: the framework I built *assumes* these behaviors would emerge if the incentives were right. The programme was designed on four specific bets: that earnings transparency would signal legitimacy, that trust signals before the form would increase conversion, that a dashboard showing progress would drive repeat engagement, and that flexible payout timing would build affiliate confidence.</p>
 
@@ -238,11 +219,11 @@
 
   <div style="display: flex; flex-direction: column; gap: 24px;">
     <div>
-      <img src="../../assets/Case studies/Affiliate Partnership/Admin Dashboard 1.jpg" alt="Admin dashboard — affiliate management, referral verification, campaign tracking, payout processing (part 1)" class="cs-img">
+      <img src="../../assets/Case studies/Affiliate Partnership/Admin Dashboard 1.jpg" loading="lazy" alt="Admin dashboard — affiliate management, referral verification, campaign tracking, payout processing (part 1)" class="cs-img">
     </div>
     <div>
-      <img src="../../assets/Case studies/Affiliate Partnership/Admin Dashboard 2.jpg" alt="Admin dashboard — affiliate management, referral verification, campaign tracking, payout processing (part 2)" class="cs-img">
-      <p style="font-size: 12px; font-weight: 600; color: #0D0D0D; margin-top: 8px;">Admin Dashboard</p>
+      <img src="../../assets/Case studies/Affiliate Partnership/Admin Dashboard 2.jpg" loading="lazy" alt="Admin dashboard — affiliate management, referral verification, campaign tracking, payout processing (part 2)" class="cs-img">
+      <p style="font-size: var(--text-xs); font-weight: var(--fw-semibold); color: #0D0D0D; margin-top: 8px;">Admin Dashboard</p>
     </div>
   </div>
 
@@ -272,9 +253,6 @@
 
   <div class="divider-gold"></div>
 
-  <p style="margin-top: 8px;">
-    <a href="/" class="footer-link">← View Case Studies</a>
-  </p>
 </div>
 
 <div class="lightbox-overlay" id="lightbox-overlay">
@@ -283,15 +261,6 @@
 </div>
 
 <style>
-  /* Critical navbar CSS - renders immediately */
-  .site-nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: #0D0D0D; height: 64px; display: flex; justify-content: space-between; align-items: center; padding: 0 48px; }
-  .cs-img { width: 100%; cursor: pointer; transition: opacity 0.2s; display: block; margin: 24px 0; border-radius: 0; }
-  .cs-img:hover { opacity: 0.8; }
-  .lightbox-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); z-index: 9999; align-items: center; justify-content: center; }
-  .lightbox-overlay.active { display: flex; }
-  .lightbox-img { max-width: 90vw; max-height: 90vh; object-fit: contain; }
-  .lightbox-close { position: absolute; top: 30px; right: 40px; color: white; font-size: 40px; font-weight: 300; cursor: pointer; z-index: 10000; }
-  .lightbox-close:hover { color: #ccc; }
 </style>
 
 <script>
@@ -376,7 +345,15 @@
 </script>
 
 <!-- Footer -->
-<a href="../../index.html#work" class="cs-back-link">← Back to works</a>
+<a href="../../work/earlier-work/index.html" class="cs-next">
+  <div class="cs-next-inner">
+    <div>
+      <p class="cs-next-label">Next Case Study</p>
+      <p class="cs-next-title">Earlier Work at NID</p>
+    </div>
+    <span class="cs-next-arrow">→</span>
+  </div>
+</a>
 
 </body>
 </html>
