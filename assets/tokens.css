@@ -7,21 +7,15 @@
 :root {
 
   /* ─── Surface ─── */
-  --color-bg:       #F8F5EF;   /* warm parchment */
-  --color-surface:  #FFFFFF;   /* white cards — pops against parchment */
-  --color-border:   #E0D9CF;   /* visible warm border */
-  --color-border-2: #C4BAB0;   /* strong hover / focus border */
+  --color-bg:       #FFFFFF;   /* white */
+  --color-surface:  #FFFFFF;   /* white cards */
+  --color-border:   #DADADA;   /* grey 5 — separators */
+  --color-border-2: #ADADAD;   /* stronger border / hover */
 
   /* ─── Ink ─── */
-  --color-ink:      #141210;   /* near-black — maximum contrast */
-  --color-ink-2:    #4A4540;   /* warm dark secondary */
-  --color-ink-3:    #8A8480;   /* muted warm gray */
-
-  /* ─── Gold ─── */
-  --gold-100: #FBF3E8;
-  --gold-400: #DFA44C;
-  --gold-500: #C4862A;
-  --gold-700: #A06820;
+  --color-ink:      #0D0D0D;   /* primary black */
+  --color-ink-2:    #4D4D4D;   /* secondary grey */
+  --color-ink-3:    #8F8F8F;   /* muted grey */
 
   /* ─── Typography: 3-Font System ─── */
   --font-display: 'Outfit', -apple-system, system-ui, sans-serif;
@@ -84,15 +78,15 @@
   --s24: 96px;
 
   /* ─── Border radius ─── */
-  --r-sm: 4px;    /* tags, small elements */
-  --r-md: 8px;    /* cards, components */
-  --r-lg: 10px;   /* hero, screens, large frames */
+  --r-sm: 4px;
+  --r-md: 8px;
+  --r-lg: 10px;
 
   /* ─── Transition ─── */
   --ease: 0.15s ease;
 
   /* ─── Card system ─── */
-  --card-gap: 24px;           /* consistent gap between all card grids */
+  --card-gap: 24px;
   --card-shadow: 0 1px 4px rgba(0,0,0,0.06), 0 0 0 1px var(--color-border);
   --card-border: 1px solid var(--color-border);
   --card-shadow-hover: 0 20px 48px rgba(0,0,0,0.12), 0 4px 12px rgba(0,0,0,0.06);
@@ -100,8 +94,8 @@
 
   /* ─── Button / CTA styles ─── */
   --btn-primary-bg: #0D0D0D;
-  --btn-primary-text: #F8F5EF;
-  --btn-primary-hover: #2D2B28;
+  --btn-primary-text: #FFFFFF;
+  --btn-primary-hover: #2D2D2D;
   --btn-primary-padding: 12px 22px;
   --btn-primary-font: 'Space Mono', monospace;
   --btn-primary-size: 13px;
@@ -114,15 +108,15 @@
   --btn-ghost-hover-bg: #F5F5F5;
   --btn-ghost-hover-border: var(--color-border-2);
 
-  /* ─── Neutral aliases (case study pages) ─────────────────────
-     Synced to the warm light palette. Single source of truth.
+  /* ─── Neutral aliases ─────────────────────────────────────────
+     Used in case study pages. Aligned to the same neutral system.
   ──────────────────────────────────────────────────────────── */
-  --neutral-100:  #F8F5EF;   /* bg */
+  --neutral-100:  #FFFFFF;   /* bg */
   --neutral-200:  #FFFFFF;   /* surface */
-  --neutral-300:  #E0D9CF;   /* border */
-  --neutral-700:  #6A6460;   /* secondary text */
-  --neutral-800:  #4A4540;   /* body text */
-  --neutral-900:  #2A2520;   /* near-primary */
-  --neutral-1000: #141210;   /* primary ink */
+  --neutral-300:  #DADADA;   /* border */
+  --neutral-700:  #6B6B6B;   /* secondary text */
+  --neutral-800:  #4D4D4D;   /* body text */
+  --neutral-900:  #1A1A1A;   /* near-primary */
+  --neutral-1000: #0D0D0D;   /* primary ink */
 
 }
