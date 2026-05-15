@@ -21,6 +21,8 @@
 </style>
 </head>
 <body>
+<div id="cursor-dot"></div>
+
 
 <div id="scroll-progress"></div>
 
@@ -354,6 +356,21 @@
     <span class="cs-next-arrow">→</span>
   </div>
 </a>
+
+
+<script>
+  (function () {
+    var dot = document.getElementById('cursor-dot');
+    document.addEventListener('mousemove', function(e) {
+      dot.style.left = e.clientX + 'px';
+      dot.style.top  = e.clientY + 'px';
+    });
+    document.querySelectorAll('a, button, .cs-img').forEach(function(el) {
+      el.addEventListener('mouseenter', function() { dot.classList.add('cursor-hover'); });
+      el.addEventListener('mouseleave', function() { dot.classList.remove('cursor-hover'); });
+    });
+  })();
+</script>
 
 </body>
 </html>

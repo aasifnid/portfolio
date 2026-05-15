@@ -13,7 +13,6 @@
 <style>
   /* Force equal-width cover meta items */
   .cover-meta .cover-meta-item { flex: 1; min-width: 0; }
-  .cover-meta + .cover-meta { margin-top: 8px; }
 
   /* Phase table */
   .phase-table { margin: 28px 0; border: 1px solid var(--neutral-300); border-radius: 0; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.04); background: var(--neutral-200); }
@@ -48,6 +47,8 @@
 </style>
 </head>
 <body>
+<div id="cursor-dot"></div>
+
 
 <div id="scroll-progress"></div>
 
@@ -96,8 +97,6 @@
       <span class="cover-meta-label">Timeline</span>
       <span class="cover-meta-value">8 weeks — Dec 2025 → Feb 2026</span>
     </div>
-  </div>
-  <div class="cover-meta">
     <div class="cover-meta-item">
       <span class="cover-meta-label">Learning Readiness</span>
       <span class="cover-meta-value">67.45% of tutors observed improved readiness</span>
@@ -483,6 +482,21 @@
     <span class="cs-next-arrow">→</span>
   </div>
 </a>
+
+
+<script>
+  (function () {
+    var dot = document.getElementById('cursor-dot');
+    document.addEventListener('mousemove', function(e) {
+      dot.style.left = e.clientX + 'px';
+      dot.style.top  = e.clientY + 'px';
+    });
+    document.querySelectorAll('a, button, .cs-img').forEach(function(el) {
+      el.addEventListener('mouseenter', function() { dot.classList.add('cursor-hover'); });
+      el.addEventListener('mouseleave', function() { dot.classList.remove('cursor-hover'); });
+    });
+  })();
+</script>
 
 </body>
 </html>
