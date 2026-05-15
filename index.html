@@ -16,7 +16,7 @@
 
   /* ─── Reset + Base ─── */
   *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-  html { font-size: 16px; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+  html { font-size: 16px; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; overflow-x: clip; }
   body { overflow-x: hidden; }
   body {
     font-family: "DM Sans", sans-serif;
@@ -359,7 +359,7 @@
     background: rgba(255,255,255,0.15); color: #FFFFFF;
     padding: 2px 6px; border-radius: 0; letter-spacing: 0.02em;
   }
-  .chat-header-sub { font-family: var(--font-mono); font-size: 10px; color: rgba(255,255,255,0.45); margin-top: 1px; letter-spacing: 0.04em; }
+  .chat-header-sub { font-family: var(--font-mono); font-size: 11px; color: rgba(255,255,255,0.45); margin-top: 1px; letter-spacing: 0.04em; }
   .chat-close {
     background: none; border: none; cursor: pointer; color: rgba(255,255,255,0.5);
     padding: 4px; border-radius: 0; transition: color 0.15s;
@@ -380,11 +380,10 @@
   }
   .chat-msg--user .chat-msg-bubble {
     background: var(--color-ink); color: #fff;
-    border-bottom-right-radius: 4px;
   }
   .chat-msg--bot .chat-msg-bubble {
     background: var(--color-surface); color: var(--color-ink);
-    border: 1px solid var(--color-border); border-radius: 6px;
+    border: 1px solid var(--color-border);
   }
   .chat-msg-bubble.typing { color: var(--color-ink-3); font-style: italic; }
   .chat-starters {
@@ -400,13 +399,15 @@
   }
   .chat-chip:hover { border-color: var(--color-ink-3); }
   .chat-msg--disclaimer .chat-msg-bubble {
-    background: transparent; border: none;
-    font-size: 13px; line-height: 1.6;
-    color: var(--color-ink-3); font-style: italic;
-    padding: 12px 0 4px;
+    background: #EBEBEB; border: none;
+    font-size: 14px; line-height: 1.5;
+    color: rgba(0,0,0,0.60); font-style: normal;
+    padding: 8px 12px; width: 100%;
+    font-family: var(--font-body);
   }
   .chat-input-row {
-    padding: 12px 14px; border-top: 1px solid var(--color-border);
+    padding: 12px 14px; border-top: 1px solid #DADADA;
+    background: #F5F5F5;
     display: flex; gap: 8px; flex-shrink: 0;
   }
   .chat-input {
@@ -475,7 +476,7 @@
   }
 
   /* ─── Footer ─── */
-  .contact-body { font-family: "Outfit", sans-serif; font-size: clamp(28px, 4vw, 44px); font-weight: 700; letter-spacing: -0.02em; line-height: 1.15; color: var(--color-ink); margin-bottom: 36px; max-width: 600px; }
+  .contact-body { font-family: "Outfit", sans-serif; font-size: clamp(34px, 4vw, 44px); font-weight: 700; letter-spacing: -0.02em; line-height: 1.15; color: var(--color-ink); margin-bottom: 36px; max-width: 600px; }
   .contact-ctas { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
 
   /* ─── Footer strip ─── */
