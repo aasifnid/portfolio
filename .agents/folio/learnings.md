@@ -12,8 +12,8 @@ Corrections and confirmed approaches from Aasif. Used to improve Folio's output 
 
 ## Session 1 — 2026-04-10 — LEAP SEL Tools case study
 
-### Font pairing — confirmed
-**Plus Jakarta Sans (headings) + DM Sans (body)** is the confirmed default pairing. Closest free equivalent to Cuemath's proprietary Athletics + Untitled Sans. Wide, geometric, open letterforms. Do not default to Playfair Display + Inter for Aasif's work — he finds serif fonts too thin.
+### Font pairing — superseded 2026-05-16
+~~Plus Jakarta Sans + DM Sans~~ was the original pairing. Replaced by **Outfit (display) + DM Sans (body)** as the canonical 2-font system — see Session 3 below for the full MD3 type system. Do not default to Playfair Display + Inter for Aasif's work — he finds serif fonts too thin.
 
 
 ### Metric highlighting — confirmed
@@ -91,3 +91,46 @@ session: 2026-05-03
 type: scope-decision
 ---
 `case-study-template.md` covers content, structure, and writing only. Visual design (HTML layout, components, typography, spacing, CSS) is explicitly out of scope for the template — this will be addressed in a future session. In Build mode, handle all UI decisions independently using `visual-design-guide.md` and the existing `templates/case-study.html`. Do not wait for or expect UI guidance from the template.
+
+---
+
+## Session 3 — 2026-05-16 — Typography system consolidation
+
+### Canonical 2-font system
+**Outfit (display) + DM Sans (body)**. No mono, no Plus Jakarta Sans, no DM Mono. These were all removed across the site in a single sweep:
+- `--font-mono` token deleted from `tokens.css`
+- All `var(--font-mono)` references replaced with `var(--font-body)` across `style.css`, all case studies, design-system page, and resume
+- All Google Fonts `<link>` imports normalized to `Outfit + DM Sans` only
+
+**Why:** 3-font systems drift over time. Uppercase labels get their character from `text-transform: uppercase + letter-spacing`, not from a typeface change. Standard product design practice puts UI labels (buttons, chips, inputs) in the body font, not a display or mono font.
+
+**How to apply:** When adding new components or pages, never reintroduce mono or a third typeface. If a label needs "character," use Label Large/Medium/Small from the MD3 scale (uppercase + tracking).
+
+### MD3 typography scale
+14 semantic tiers defined in `assets/typography.css` as utility classes (`.type-*`):
+
+| Tier | Font | Size / LH | Weight | Use |
+|------|------|-----------|--------|-----|
+| `.type-display-large` | Outfit | 64 / 72 | 700 | Hero headline only |
+| `.type-display-medium` | Outfit | 48 / 56 | 700 | Section titles ("Selected Works") |
+| `.type-display-small` | Outfit | 36 / 44 | 700 | Case study cover titles |
+| `.type-headline-large` | Outfit | 28 / 36 | 600 | About section titles, H2 |
+| `.type-headline-medium` | Outfit | 22 / 30 | 600 | Sub-section heads, decision titles |
+| `.type-headline-small` | Outfit | 18 / 26 | 600 | Inline emphasis |
+| `.type-title-large` | DM Sans | 16 / 24 | 600 | UI titles, table headers |
+| `.type-title-medium` | DM Sans | 14 / 20 | 600 | Button labels (CTAs) |
+| `.type-body-large` | DM Sans | 18 / 30 | 400 | Hero sub, long-form |
+| `.type-body-medium` | DM Sans | 16 / 26 | 400 | Default body |
+| `.type-body-small` | DM Sans | 14 / 22 | 400 | Captions |
+| `.type-label-large` | DM Sans | 14 / 20 | 600 + 0.08em caps | Section eyebrows |
+| `.type-label-medium` | DM Sans | 12 / 16 | 600 + 0.10em caps | Tags, phase labels |
+| `.type-label-small` | DM Sans | 11 / 14 | 600 + 0.12em caps | Tiny tags |
+
+**Why MD3 naming over Cuemath prefix style (aH1/UB1):** Aasif is targeting Google. MD3 semantic naming aligns with Google's design language. Names describe purpose, not the font, so future font swaps don't require renaming tokens.
+
+**How to apply:** Prefer adding utility classes (`<span class="type-label-large">`) on HTML elements. Avoid inline `font-family/size/weight` declarations in CSS rules — those reintroduce drift. When updating existing rules, reference the MD3 tier values rather than copy-pasting font metrics.
+
+### CTA + chip font rule
+Buttons (`.btn-primary`, `.btn-ghost`) and chips (`.chat-chip`) use **DM Sans semibold** — not Outfit, not Space Mono. Standard practice: body font for UI labels. Visual emphasis comes from background/border, not weight or typeface.
+
+**How to apply:** Any new interactive element (button, chip, tag, link styled as CTA) defaults to `.type-title-medium`. Do not use Outfit on a CTA.

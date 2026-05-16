@@ -17,10 +17,9 @@
   --color-ink-2:    #4D4D4D;   /* secondary grey */
   --color-ink-3:    #8F8F8F;   /* muted grey */
 
-  /* ─── Typography: 3-Font System ─── */
+  /* ─── Typography: 2-Font System ─── */
   --font-display: 'Outfit', -apple-system, system-ui, sans-serif;
   --font-body:    'DM Sans', -apple-system, system-ui, sans-serif;
-  --font-mono:    'Space Mono', ui-monospace, 'Courier New', monospace;
 
   /* ─── Font Weights: 3 Only ─── */
   --fw-regular:   400;  /* body text only */
@@ -89,10 +88,10 @@
   --btn-primary-text: #FFFFFF;
   --btn-primary-hover: #2D2D2D;
   --btn-primary-padding: 12px 22px;
-  --btn-primary-font: 'Space Mono', monospace;
-  --btn-primary-size: var(--text-xs);
+  --btn-primary-font: var(--font-body);
+  --btn-primary-size: var(--text-sm);
   --btn-primary-weight: var(--fw-semibold);
-  --btn-primary-letter-spacing: 0.03em;
+  --btn-primary-letter-spacing: 0;
 
   --btn-ghost-bg: #FFFFFF;
   --btn-ghost-border: 1px solid var(--color-border);
