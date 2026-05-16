@@ -4,3 +4,13 @@ work/*/brief.md
 *.pdf.crdownload
 .vercel
 .env*.local
+
+# Scratch / preview HTML files — kept local, not deployed
+card-preview.html
+splash-linkedin.html
+aasif-anwar-resume-final.html
+hero-previews.html
+hero-compare.html
+
+# Old archived work
+work/archive/

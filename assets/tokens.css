@@ -17,6 +17,9 @@
   --color-ink-2:    #4D4D4D;   /* secondary grey */
   --color-ink-3:    #8F8F8F;   /* muted grey */
 
+  /* ─── Accent ─── */
+  --color-accent:   #FF80F4;   /* purple 4 — sitewide accent (hover, focus, brand) */
+
   /* ─── Typography: 2-Font System ─── */
   --font-display: 'Outfit', -apple-system, system-ui, sans-serif;
   --font-body:    'DM Sans', -apple-system, system-ui, sans-serif;

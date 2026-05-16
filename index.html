@@ -6,13 +6,13 @@
 <title>Md Aasif Anwar — UX Designer</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&family=DM+Sans:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/tokens.css">
 <link rel="stylesheet" href="assets/typography.css">
 <link rel="stylesheet" href="assets/style.css">
 <style>
   /* Critical navbar CSS - renders immediately */
-  .site-nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: #0D0D0D; height: 64px; display: flex; justify-content: space-between; align-items: center; padding: 0 48px; }
+  .site-nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: var(--color-ink); height: 64px; display: flex; justify-content: space-between; align-items: center; padding: 0 48px; }
   @media (max-width: 640px) { .site-nav { padding: 0 24px; } }
 
   html { overflow-x: clip; }
@@ -34,17 +34,17 @@
   /* ─── Hero ─── */
   .home-hero {
     min-height: calc(100vh - 64px);
-    max-width: 960px; margin: 0 auto;
+    max-width: 800px; margin: 0 auto;
     padding: 80px 48px;
     display: grid;
-    grid-template-columns: 1fr 280px;
-    gap: 72px;
+    grid-template-columns: 1fr 240px;
+    gap: 64px;
     align-items: center;
   }
   .hero-content { display: flex; flex-direction: column; }
   .hero-portrait-col {
     position: relative;
-    width: 280px;
+    width: 240px;
     cursor: pointer;
   }
   .hero-bubble {
@@ -53,13 +53,13 @@
     right: -8px;
     transform: translateY(8px) rotate(-2deg);
     transform-origin: bottom right;
-    background: #FFFFFF;
-    color: #0D0D0D;
-    border: 2.5px solid #0D0D0D;
+    background: #FFE0FD;
+    color: var(--color-ink);
+    border: 2.5px solid var(--color-ink);
     border-radius: 20px;
     padding: 18px 24px;
     font-family: var(--font-body);
-    font-size: 14px;
+    font-size: var(--text-sm);
     font-weight: var(--fw-semibold);
     line-height: 1.45;
     text-align: left;
@@ -67,7 +67,7 @@
     transition: opacity 0.3s ease, transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
     z-index: 3;
     pointer-events: none;
-    box-shadow: 4px 4px 0 #0D0D0D, 0 12px 24px rgba(0,0,0,0.12);
+    box-shadow: 4px 4px 0 var(--color-ink), 0 12px 24px rgba(0,0,0,0.12);
   }
   .hero-bubble::before {
     content: '';
@@ -77,7 +77,7 @@
     width: 0; height: 0;
     border-left: 11px solid transparent;
     border-right: 11px solid transparent;
-    border-top: 14px solid #0D0D0D;
+    border-top: 14px solid var(--color-ink);
   }
   .hero-bubble::after {
     content: '';
@@ -88,7 +88,7 @@
     width: 0; height: 0;
     border-left: 9px solid transparent;
     border-right: 9px solid transparent;
-    border-top: 12px solid #FFFFFF;
+    border-top: 12px solid #FFE0FD;
   }
   .hero-portrait-col:hover .hero-bubble {
     opacity: 1;
@@ -96,7 +96,7 @@
   }
   .hero-portrait {
     position: relative;
-    width: 280px;
+    width: 240px;
     aspect-ratio: 1 / 1;
     transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
   }
@@ -124,30 +124,30 @@
     max-width: 560px;
   }
   .hero-contact-label {
-    font-family: var(--font-body); font-size: 15px;
+    font-family: var(--font-body); font-size: var(--text-base);
     font-weight: var(--fw-regular); color: var(--color-ink-2);
   }
   .hero-contact a {
     display: inline-flex; align-items: center; gap: 8px;
-    font-family: var(--font-body); font-size: 15px; font-weight: var(--fw-regular);
+    font-family: var(--font-body); font-size: var(--text-base); font-weight: var(--fw-regular);
     color: var(--color-ink-2); text-decoration: none;
     transition: color var(--ease);
   }
-  .hero-contact a:hover { color: #FF80F4; }
+  .hero-contact a:hover { color: var(--color-accent); }
   .hero-contact a svg { width: 16px; height: 16px; }
   .hero-eyebrow {
-    font-family: var(--font-body); font-size: 14px;
+    font-family: var(--font-body); font-size: var(--text-sm);
     font-weight: var(--fw-semibold); letter-spacing: 0.08em; text-transform: uppercase;
-    color: #0D0D0D; margin-bottom: 28px;
+    color: var(--color-ink); margin-bottom: 28px;
   }
   .hero-headline {
-    font-family: "Outfit", sans-serif; font-size: clamp(40px, 5vw, 72px);
-    line-height: 1.08; font-weight: var(--fw-bold); letter-spacing: -0.03em;
+    font-family: "Outfit", sans-serif; font-size: clamp(36px, 3.8vw, 50px);
+    line-height: 1.1; font-weight: var(--fw-bold); letter-spacing: -0.03em;
     color: var(--color-ink); margin-bottom: 32px; max-width: 820px;
   }
   .hero-rule {
     width: 96px; height: 2px; margin: 48px 0 32px;
-    background: #0D0D0D;
+    background: var(--color-ink);
     opacity: 0;
     animation: fadeUp 0.5s ease 1000ms forwards;
   }
@@ -159,15 +159,6 @@
   .hero-actions .btn-primary { padding: 14px 32px; font-size: var(--text-sm); }
 
   /* ─── Buttons ─── */
-  .btn-primary {
-    display: inline-flex; align-items: center; gap: 8px;
-    background: var(--color-ink); color: #FFFFFF;
-    font-family: var(--font-body); font-size: var(--text-sm); font-weight: var(--fw-semibold);
-    letter-spacing: 0; text-decoration: none;
-    padding: 12px 22px; border-radius: 0;
-    transition: background var(--ease);
-  }
-  .btn-primary:hover { background: #2D2D2D; }
   .btn-ghost {
     display: inline-flex; align-items: center; gap: 8px;
     background: #FFFFFF; color: var(--color-ink-2);
@@ -180,12 +171,12 @@
   .btn-ghost:hover { border-color: var(--color-border-2); color: var(--color-ink); background: #F5F5F5; }
 
   /* ─── Sections ─── */
-  .home-section { max-width: 960px; margin: 0 auto; padding: 80px 48px; }
+  .home-section { max-width: 800px; margin: 0 auto; padding: 80px 48px; }
   #work { padding-bottom: 100px; }
   .home-section-label {
-    font-family: "Outfit", sans-serif; font-size: 26px;
+    font-family: "Outfit", sans-serif; font-size: var(--text-2xl);
     font-weight: var(--fw-bold); letter-spacing: -0.01em; text-transform: none;
-    color: #0D0D0D; margin-bottom: 40px;
+    color: var(--color-ink); margin-bottom: 40px;
     display: flex; align-items: center; gap: 16px;
   }
   .home-section-label::after {
@@ -210,7 +201,7 @@
     transition: border-color 0.2s ease, box-shadow 0.2s ease;
   }
   .work-card:hover {
-    border-color: #0D0D0D;
+    border-color: var(--color-ink);
     box-shadow: 0 20px 48px rgba(0,0,0,0.12), 0 4px 12px rgba(0,0,0,0.06);
   }
   /* ─── Card visual panel ─── */
@@ -228,12 +219,12 @@
     position: absolute; right: -16px; top: -20px;
     font-family: "Outfit", sans-serif; font-size: var(--text-5xl); font-weight: var(--fw-bold);
     line-height: 1; letter-spacing: -0.06em;
-    opacity: 0.13; color: #fff; user-select: none; pointer-events: none;
+    opacity: 0.13; color: #FFFFFF; user-select: none; pointer-events: none;
   }
   .wv-badge {
-    font-family: var(--font-body); font-size: 12px; font-weight: var(--fw-semibold);
+    font-family: var(--font-body); font-size: var(--text-xs); font-weight: var(--fw-semibold);
     letter-spacing: 0.10em; text-transform: uppercase;
-    background: rgba(255,255,255,0.18); color: #fff;
+    background: rgba(255,255,255,0.18); color: #FFFFFF;
     border: 1px solid rgba(255,255,255,0.28);
     border-radius: 0; padding: 5px 12px;
     position: relative; z-index: 1;
@@ -250,7 +241,7 @@
     display: flex; align-items: center; justify-content: center;
   }
   .work-card-placeholder span {
-    font-family: var(--font-body); font-size: 12px; font-weight: var(--fw-semibold);
+    font-family: var(--font-body); font-size: var(--text-xs); font-weight: var(--fw-semibold);
     color: var(--color-ink-3); letter-spacing: 0.10em; text-transform: uppercase;
   }
   .work-card-body {
@@ -259,18 +250,18 @@
     overflow: hidden;
   }
   .work-card-meta {
-    font-family: var(--font-body); font-size: 14px;
-    letter-spacing: 0.08em; text-transform: uppercase;
+    font-family: var(--font-body); font-size: var(--text-xs);
+    letter-spacing: 0.10em; text-transform: uppercase;
     color: var(--color-ink-2); margin-bottom: 12px;
     font-weight: var(--fw-semibold);
   }
   .work-card-title {
-    font-family: "Outfit", sans-serif; font-size: 30px;
+    font-family: "Outfit", sans-serif; font-size: 28px;
     font-weight: var(--fw-bold); letter-spacing: -0.02em; line-height: 1.15;
     color: var(--color-ink); margin-bottom: 12px;
   }
   .work-card-desc {
-    font-size: 15px; line-height: 1.6;
+    font-size: var(--text-base); line-height: 1.6;
     color: var(--color-ink-2); margin-bottom: auto;
   }
 
@@ -305,8 +296,8 @@
     content: 'in';
     position: absolute; inset: 0;
     display: flex; align-items: center; justify-content: center;
-    font-family: var(--font-display); font-size: 16px; font-weight: 700;
-    color: #fff;
+    font-family: var(--font-display); font-size: var(--text-base); font-weight: 700;
+    color: #FFFFFF;
     background: rgba(10, 102, 194, 0.94);
     border-radius: 50%;
     opacity: 0;
@@ -316,14 +307,14 @@
   .rec-author-text { display: flex; flex-direction: column; gap: 1px; flex: 1; min-width: 0; }
   .rec-name {
     font-family: var(--font-display);
-    font-size: 15px; font-weight: 700;
+    font-size: var(--text-base); font-weight: 700;
     letter-spacing: -0.01em;
     color: var(--color-ink); line-height: 1.3;
     margin: 0;
   }
   .rec-role {
     font-family: var(--font-body);
-    font-size: 12px;
+    font-size: var(--text-xs);
     color: var(--color-ink-2);
     line-height: 1.3;
     margin: 0;
@@ -335,7 +326,7 @@
   }
   .rec-quote {
     font-family: var(--font-body);
-    font-size: 14.5px; line-height: 1.6;
+    font-size: var(--text-sm); line-height: 1.6;
     color: var(--color-ink-2);
     margin: 0 0 12px;
     display: -webkit-box;
@@ -349,7 +340,7 @@
   }
   .rec-readmore, .rec-readless {
     background: none; border: none; padding: 0;
-    font-family: var(--font-body); font-size: 14px;
+    font-family: var(--font-body); font-size: var(--text-sm);
     font-weight: 600;
     color: var(--color-ink-2); cursor: pointer;
     text-decoration: underline;
@@ -365,7 +356,7 @@
   .rec-quote-wrap.expanded .rec-readmore { display: none; }
   .rec-quote-wrap:not(.expanded) .rec-readless { display: none; }
   /* 6-color set — shuffled to break sequence, balanced warm/cool per row */
-  .rec-card:nth-child(1) .rec-head { background: #FFE0FD; border-bottom-color: #FF80F4; } /* purple */
+  .rec-card:nth-child(1) .rec-head { background: #FFE0FD; border-bottom-color: var(--color-accent); } /* purple */
   .rec-card:nth-child(2) .rec-head { background: #FFDDCC; border-bottom-color: #FF884C; } /* orange */
   .rec-card:nth-child(3) .rec-head { background: #FFF1CC; border-bottom-color: #FFB700; } /* yellow */
   .rec-card:nth-child(4) .rec-head { background: #D6F5FF; border-bottom-color: #33CCFF; } /* blue */
@@ -437,118 +428,7 @@
     .exp-org { display: block; text-align: left; margin-top: 2px; grid-column: 2; }
   }
 
-  /* ─── Chatbot ─── */
-  #chat-bubble {
-    position: fixed; bottom: 84px; right: 28px; z-index: 1000;
-    display: flex; align-items: center; gap: 10px;
-    background: var(--color-ink); border: none; cursor: pointer;
-    padding: 12px 18px; border-radius: 0;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.18);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-    white-space: nowrap;
-  }
-  #chat-bubble:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(0,0,0,0.22); }
-  #chat-bubble svg { width: 18px; height: 18px; flex-shrink: 0; }
-  .chat-bubble-label {
-    font-family: "DM Sans", sans-serif; font-size: var(--text-sm); font-weight: var(--fw-semibold);
-    color: #fff; letter-spacing: 0.01em;
-  }
-  .chat-bubble-dot {
-    width: 9px; height: 9px; border-radius: 50%;
-    background: #4ADE80; flex-shrink: 0;
-    box-shadow: 0 0 0 2px rgba(74,222,128,0.25);
-  }
-  #chat-panel {
-    position: fixed; bottom: 84px; right: 28px; z-index: 1000;
-    width: 360px; height: 520px;
-    background: #fff; border-radius: 0;
-    box-shadow: 0 8px 40px rgba(0,0,0,0.14), 0 2px 8px rgba(0,0,0,0.08);
-    display: flex; flex-direction: column;
-    overflow: hidden;
-    opacity: 0; transform: translateY(12px) scale(0.97);
-    pointer-events: none;
-    transition: opacity 0.22s ease, transform 0.22s ease;
-  }
-  #chat-panel.open { opacity: 1; transform: translateY(0) scale(1); pointer-events: all; }
-  .chat-header {
-    background: var(--color-ink); color: #fff;
-    padding: 14px 18px; display: flex; align-items: center; justify-content: space-between;
-    flex-shrink: 0;
-  }
-  .chat-header-left { display: flex; align-items: center; gap: 10px; }
-  .chat-header-title { font-family: var(--font-display); font-size: var(--text-sm); font-weight: var(--fw-bold); display: flex; align-items: center; gap: 8px; }
-  .chat-beta-tag {
-    font-family: var(--font-body); font-size: 11px; font-weight: var(--fw-semibold);
-    background: rgba(255,255,255,0.15); color: #FFFFFF;
-    padding: 2px 6px; border-radius: 0; letter-spacing: 0.08em; text-transform: uppercase;
-  }
-  .chat-header-sub { font-family: var(--font-body); font-size: 12px; color: rgba(255,255,255,0.45); margin-top: 1px; letter-spacing: 0; }
-  .chat-close {
-    background: none; border: none; cursor: pointer; color: rgba(255,255,255,0.5);
-    padding: 4px; border-radius: 0; transition: color 0.15s;
-    display: flex; align-items: center; justify-content: center;
-  }
-  .chat-close:hover { color: #fff; }
-  .chat-messages {
-    flex: 1; overflow-y: auto; padding: 16px;
-    display: flex; flex-direction: column; gap: 12px;
-    min-height: 200px;
-  }
-  .chat-msg { max-width: 88%; display: flex; flex-direction: column; gap: 3px; }
-  .chat-msg--user { align-self: flex-end; }
-  .chat-msg--bot  { align-self: stretch; max-width: 100%; }
-  .chat-msg-bubble {
-    padding: 10px 14px; border-radius: 0;
-    font-size: var(--text-sm); line-height: 1.55;
-  }
-  .chat-msg--user .chat-msg-bubble {
-    background: var(--color-ink); color: #fff;
-  }
-  .chat-msg--bot .chat-msg-bubble {
-    background: var(--color-surface); color: var(--color-ink);
-    border: 1px solid var(--color-border);
-  }
-  .chat-msg-bubble.typing { color: var(--color-ink-3); font-style: italic; }
-  .chat-starters {
-    padding: 4px 16px 12px; display: flex; flex-wrap: wrap; gap: 8px;
-  }
-  .chat-chip {
-    font-family: var(--font-body); font-size: var(--text-xs); font-weight: var(--fw-semibold);
-    letter-spacing: 0;
-    color: var(--color-ink-2); background: #FFFFFF;
-    border: 1px solid var(--color-border); border-radius: 0;
-    padding: 8px 14px; cursor: pointer;
-    display: inline-flex; align-items: center;
-    transition: background var(--ease), border-color var(--ease), color var(--ease);
-  }
-  .chat-chip:hover { border-color: var(--color-border-2); color: var(--color-ink); background: #F5F5F5; }
-  .chat-msg--disclaimer .chat-msg-bubble {
-    background: #EBEBEB; border: none;
-    font-size: var(--text-sm); line-height: 1.5;
-    color: rgba(0,0,0,0.60); font-style: normal;
-    padding: 8px 12px; width: 100%;
-    font-family: var(--font-body);
-  }
-  .chat-input-row {
-    padding: 12px 14px; border-top: 1px solid #DADADA;
-    background: #F5F5F5;
-    display: flex; gap: 8px; flex-shrink: 0;
-  }
-  .chat-input {
-    flex: 1; border: 1px solid var(--color-border); border-radius: 0;
-    padding: 9px 12px; font-family: var(--font-body); font-size: var(--text-sm);
-    color: var(--color-ink); outline: none; resize: none;
-    transition: border-color 0.15s;
-  }
-  .chat-input:focus { border-color: var(--color-border-2); }
-  .chat-send {
-    background: var(--color-ink); color: #fff;
-    border: none; border-radius: 0; padding: 0 14px;
-    cursor: pointer; font-family: var(--font-body); font-size: 14px; font-weight: var(--fw-semibold);
-    transition: background 0.15s; flex-shrink: 0;
-  }
-  .chat-send:hover { background: #2D2D2D; }
-  .chat-send:disabled { opacity: 0.4; cursor: not-allowed; }
+  /* Chatbot styles now live in shared assets/style.css */
   @media (max-width: 480px) {
     /* Intro overlay */
     .intro-eyebrow { font-size: var(--text-xs); letter-spacing: 0.08em; margin-bottom: 32px; }
@@ -572,12 +452,12 @@
     .hero-rule { width: 56px; margin: 24px 0 20px; }
     .hero-sub { font-size: var(--text-base); line-height: 1.55; max-width: 100%; }
     .hero-contact { flex-wrap: wrap; gap: 14px; max-width: 100%; }
-    .hero-contact-label { font-size: 14px; }
-    .hero-contact a { font-size: 14px; }
+    .hero-contact-label { font-size: var(--text-sm); }
+    .hero-contact a { font-size: var(--text-sm); }
     .hero-portrait { width: 180px; }
     .hero-portrait-col { width: 180px; margin: 0 auto; }
     .hero-bubble {
-      font-size: 12px;
+      font-size: var(--text-xs);
       padding: 12px 16px;
       right: -4px;
     }
@@ -590,7 +470,7 @@
 
     /* Work cards */
     .home-section { padding: 32px 20px; }
-    .home-section-label { font-size: 24px; margin-bottom: 28px; }
+    .home-section-label { font-size: var(--text-2xl); margin-bottom: 28px; }
     .work-grid { gap: 24px; }
     .work-card { min-height: auto; }
     .work-card-body { padding: 20px 16px 24px; }
@@ -605,9 +485,9 @@
       min-height: auto;
     }
     .archive-body { padding: 20px 24px; }
-    .archive-meta { font-size: 11px; }
-    .archive-title { font-size: 20px; }
-    .archive-desc { font-size: 13px; }
+    .archive-meta { font-size: var(--text-xs); }
+    .archive-title { font-size: var(--text-xl); }
+    .archive-desc { font-size: var(--text-sm); }
 
     /* Recommendations grid */
     .recs-grid { grid-template-columns: 1fr; }
@@ -615,35 +495,18 @@
     /* About section */
     .about-layout { gap: 24px; }
 
-    /* Chat — icon-only on mobile to reduce footprint */
-    #chat-panel { width: calc(100vw - 24px); right: 12px; bottom: 80px; }
-    #chat-bubble {
-      bottom: 20px; right: 20px;
-      padding: 14px;
-      gap: 0;
-    }
-    #chat-bubble .chat-bubble-label { display: none; }
-    #chat-bubble svg { width: 22px; height: 22px; }
-    #chat-bubble .chat-bubble-dot {
-      position: absolute;
-      top: 8px; right: 8px;
-      width: 8px; height: 8px;
-    }
-
-    /* Footer */
-    .home-footer { padding: 14px 20px; }
   }
 
   /* ─── Footer ─── */
   .contact-body { font-family: "Outfit", sans-serif; font-size: clamp(34px, 4vw, 44px); font-weight: var(--fw-bold); letter-spacing: -0.02em; line-height: 1.15; color: var(--color-ink); margin-bottom: 24px; max-width: 600px; }
   .contact-meta {
-    font-family: var(--font-body); font-size: 16px;
+    font-family: var(--font-body); font-size: var(--text-base);
     line-height: 1.6; color: var(--color-ink-2);
     margin: 0 0 32px;
     max-width: 540px;
   }
   .contact-inline {
-    font-family: var(--font-body); font-size: 15px;
+    font-family: var(--font-body); font-size: var(--text-base);
     color: var(--color-ink-2);
     display: flex; align-items: center; gap: 16px; flex-wrap: wrap;
     margin: 0;
@@ -657,41 +520,16 @@
     display: inline-flex; align-items: center; gap: 6px;
   }
   .contact-inline a:hover {
-    color: #FF80F4;
-    text-decoration-color: #FF80F4;
+    color: var(--color-accent);
+    text-decoration-color: var(--color-accent);
   }
   .contact-inline a svg { width: 14px; height: 14px; }
   .contact-divider { color: var(--color-ink-3); }
 
-  /* ─── Footer strip (quiet, restrained) ─── */
-  .home-footer {
-    border-top: 1px solid #DADADA;
-    background: #EBEBEB;
-    padding: 20px 48px;
-    display: flex; justify-content: space-between; align-items: center;
-  }
-  .footer-left {
-    display: flex; align-items: center; gap: 12px;
-  }
-  .footer-attribution,
-  .footer-built {
-    font-family: "DM Sans", sans-serif; font-size: var(--text-xs);
-    color: var(--color-ink-3); letter-spacing: 0.01em;
-  }
-  .footer-divider {
-    color: var(--color-border-2);
-  }
-  .footer-link {
-    font-family: "DM Sans", sans-serif; font-size: var(--text-xs);
-    color: var(--color-ink-3); text-decoration: none;
-    transition: color 0.15s ease;
-  }
-  .footer-link:hover { color: #FF80F4; }
-
   /* ─── Archive card: Compact magazine layout with NID photo ─── */
   .work-card--archive {
-    display: grid; grid-template-rows: 320px auto;
-    min-height: 460px;
+    display: grid; grid-template-rows: 260px auto;
+    min-height: 400px;
     background: var(--color-surface);
     border: 1px solid var(--color-border);
     border-radius: 0;
@@ -700,7 +538,7 @@
     transition: border-color 0.2s ease, box-shadow 0.2s ease;
   }
   .work-card--archive:hover {
-    border-color: #0D0D0D;
+    border-color: var(--color-ink);
     box-shadow: 0 12px 32px rgba(0,0,0,0.08);
   }
   .archive-visual {
@@ -716,23 +554,23 @@
   }
   .archive-body { padding: 24px 32px; }
   .archive-meta {
-    font-family: var(--font-body); font-size: 12px; font-weight: var(--fw-semibold);
-    letter-spacing: 0.10em; text-transform: uppercase; color: var(--color-ink-3);
+    font-family: var(--font-body); font-size: var(--text-xs); font-weight: var(--fw-semibold);
+    letter-spacing: 0.10em; text-transform: uppercase; color: var(--color-ink-2);
     margin-bottom: 6px;
   }
   .archive-title {
-    font-family: "Outfit", sans-serif; font-size: 22px; font-weight: var(--fw-bold);
+    font-family: "Outfit", sans-serif; font-size: var(--text-xl); font-weight: var(--fw-bold);
     letter-spacing: -0.02em; color: var(--color-ink);
     margin-bottom: 8px;
   }
   .archive-desc {
-    font-size: 14px; line-height: 1.5; color: var(--color-ink-2);
+    font-size: var(--text-base); line-height: 1.6; color: var(--color-ink-2);
   }
 
   /* ─── Intro overlay ─── */
   #intro-overlay {
     position: fixed; inset: 0; z-index: 99999;
-    background: #0D0D0D;
+    background: var(--color-ink);
     display: flex; flex-direction: column;
     align-items: center; justify-content: center;
     transition: opacity 0.7s ease;
@@ -748,11 +586,11 @@
     font-family: "Outfit", sans-serif;
     font-size: clamp(48px, 6vw, 64px);
     font-weight: var(--fw-bold); letter-spacing: -0.02em; line-height: 1.2;
-    color: #ffffff; text-align: center;
+    color: #FFFFFF; text-align: center;
     margin-bottom: 12px;
   }
   .intro-statement strong {
-    font-weight: var(--fw-bold); color: #fff; display: inline;
+    font-weight: var(--fw-bold); color: #FFFFFF; display: inline;
   }
   .intro-tools {
     font-family: "DM Sans", sans-serif; font-size: clamp(13px, 1.5vw, 16px); font-weight: var(--fw-regular);
@@ -833,27 +671,26 @@
     .work-card-visual { min-height: 240px; }
     .work-card-placeholder { height: 180px; border-left: none; border-top: 1px solid #DADADA; order: -1; }
     .work-card-body { padding: 28px 24px; }
-    .work-card-title { font-size: 24px; }
-    .work-card-desc { font-size: 14px; }
+    .work-card-title { font-size: var(--text-2xl); }
+    .work-card-desc { font-size: var(--text-sm); }
 
     /* Rec cards — mobile */
     .rec-head { padding: 16px 18px; }
     .rec-body { padding: 18px 18px 20px; }
-    .rec-quote { font-size: 14px; -webkit-line-clamp: 5; }
-    .rec-name { font-size: 14px; }
-    .rec-role { font-size: 11.5px; }
+    .rec-quote { font-size: var(--text-sm); -webkit-line-clamp: 5; }
+    .rec-name { font-size: var(--text-sm); }
+    .rec-role { font-size: var(--text-xs); }
     .rec-avatar { width: 40px; height: 40px; }
-    .rec-avatar::after { font-size: 14px; }
+    .rec-avatar::after { font-size: var(--text-sm); }
 
     /* Contact section — mobile */
     .contact-body { margin-bottom: 20px; }
-    .contact-meta { font-size: 15px; margin-bottom: 24px; }
-    .contact-inline { font-size: 15px; gap: 12px; }
+    .contact-meta { font-size: var(--text-base); margin-bottom: 24px; }
+    .contact-inline { font-size: var(--text-base); gap: 12px; }
     .contact-inline a svg { width: 16px; height: 16px; }
 
     .hero-actions { flex-direction: row; align-items: center; flex-wrap: wrap; }
-    .home-footer { padding: 16px 24px; flex-direction: column; gap: 12px; align-items: flex-start; }
-    .footer-left { flex-wrap: wrap; gap: 8px; }
+    .home-footer .footer-left { flex-wrap: wrap; gap: 8px; }
   }
 
 </style>
@@ -861,7 +698,7 @@
 <body>
 <div id="intro-overlay">
   <p class="intro-eyebrow">Portfolio 2026</p>
-  <p class="intro-statement">Built with <strong><span style="color: #FF80F4;">AI</span></strong></p>
+  <p class="intro-statement">Built with <strong><span style="color: var(--color-accent);">AI</span></strong></p>
   <div style="width: 60px; height: 1px; background: rgba(255,255,255,0.3); margin: 32px 0;"></div>
   <p class="intro-tools">
     Claude Code <span class="intro-tools-sep">·</span> Wispr Flow <span class="intro-tools-sep">·</span> Figma <span class="intro-tools-sep">·</span> Vercel
@@ -895,7 +732,7 @@
 <!-- ══════════════════════════════════════ HERO ══════════════════════════════════════ -->
 <div class="home-hero">
   <div class="hero-content">
-    <h1 class="hero-headline">Hi, I'm Aasif. I design products.</h1>
+    <h1 class="hero-headline">Hi, I'm Aasif.<br>I design products.</h1>
     <p class="hero-sub">An engineer turned product designer.<br>Built tools for 200K+ students and the tutors who use them.</p>
     <div class="hero-rule"></div>
     <div class="hero-contact">
@@ -913,8 +750,8 @@
   <div class="hero-portrait-col">
     <span class="hero-bubble">Start with Feel Check ↓</span>
     <div class="hero-portrait">
-      <img src="assets/Home CTA.png" alt="Aasif Anwar — Product Designer" class="caricature-default">
-      <img src="assets/Home CTA_Hover.png" alt="" class="caricature-wink" aria-hidden="true">
+      <img src="assets/Home CTA.png" alt="Aasif Anwar — Product Designer" class="caricature-default" fetchpriority="high" decoding="async">
+      <img src="assets/Home CTA_Hover.png" alt="" class="caricature-wink" aria-hidden="true" loading="lazy" decoding="async">
     </div>
   </div>
 </div>
@@ -1194,7 +1031,7 @@
 <section class="home-section" id="contact">
   <p class="home-section-label">Get in touch</p>
   <p class="contact-body">Let's build something meaningful at scale.</p>
-  <p class="contact-meta">Open to product design roles at consumer scale — in Bangalore or fully remote. Available immediately.</p>
+  <p class="contact-meta">Open to product design roles at consumer scale.<br>Available immediately.</p>
   <p class="contact-inline">
     <a href="mailto:aasif.nid@gmail.com">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="0"/><path d="M3 7l9 6 9-6"/></svg>
@@ -1204,6 +1041,11 @@
     <a href="https://www.linkedin.com/in/aasif-nid/" target="_blank" rel="noopener">
       <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 3H5a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2V5a2 2 0 00-2-2zM8.5 18H6V10h2.5v8zM7.25 8.8a1.45 1.45 0 110-2.9 1.45 1.45 0 010 2.9zM18 18h-2.5v-4.2c0-1.1-.4-1.8-1.4-1.8-.8 0-1.3.5-1.5 1-.1.2-.1.5-.1.7V18H10s.03-7.3 0-8h2.5v1.1c.3-.5 1-1.3 2.4-1.3 1.7 0 3.1 1.1 3.1 3.6V18z"/></svg>
       LinkedIn
+    </a>
+    <span class="contact-divider">·</span>
+    <a href="https://drive.google.com/file/d/1NtfsJ9CRBjPtg234L0eRPxfK_al4kFGT/view?usp=sharing" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="9" y1="13" x2="15" y2="13"/><line x1="9" y1="17" x2="15" y2="17"/></svg>
+      Resume
     </a>
   </p>
 </section>
@@ -1291,13 +1133,18 @@
     navLogo.addEventListener('mouseleave', function() { dot.style.opacity = '1'; });
   }
 
-  /* ── Hero headline word split ── */
+  /* ── Hero headline word split (preserves <br> line breaks) ── */
   var headline = document.querySelector('.hero-headline');
   if (headline) {
-    var words = headline.textContent.trim().split(/\s+/);
-    headline.innerHTML = words.map(function(w, i) {
-      return '<span class="word" style="animation-delay:' + (200 + i * 70) + 'ms">' + w + '</span>';
-    }).join(' ');
+    var lines = headline.innerHTML.split(/<br\s*\/?>/i);
+    var idx = 0;
+    headline.innerHTML = lines.map(function(line) {
+      var words = line.trim().split(/\s+/).filter(Boolean);
+      return words.map(function(w) {
+        var delay = 200 + (idx++) * 70;
+        return '<span class="word" style="animation-delay:' + delay + 'ms">' + w + '</span>';
+      }).join(' ');
+    }).join('<br>');
   }
 
   /* ── Card click navigation ── */
@@ -1329,18 +1176,17 @@
 
 <!-- ══════════════════════════════════════ CHATBOT ══════════════════════════════════════ -->
 <button id="chat-bubble" aria-label="Ask about Aasif">
-  <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+  <svg viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
     <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
   </svg>
   <span class="chat-bubble-label">Ask about Aasif</span>
-  <span class="chat-bubble-dot"></span>
 </button>
 
 <div id="chat-panel" role="dialog" aria-label="Chat with Aasif's assistant">
   <div class="chat-header">
     <div class="chat-header-left">
       <div>
-        <div class="chat-header-title">AI Assistant <span class="chat-beta-tag">Beta</span></div>
+        <div class="chat-header-title">AI Assistant <span class="tag">Beta</span></div>
         <div class="chat-header-sub">Powered by Groq</div>
       </div>
     </div>
@@ -1354,9 +1200,9 @@
     </div>
   </div>
   <div class="chat-starters" id="chat-starters">
-    <button class="chat-chip">What is his design superpower?</button>
-    <button class="chat-chip">What does he do outside of work?</button>
-    <button class="chat-chip">What has he shipped?</button>
+    <button class="chip">What is his design superpower?</button>
+    <button class="chip">What does he do outside of work?</button>
+    <button class="chip">What has he shipped?</button>
   </div>
   <div class="chat-input-row">
     <input class="chat-input" id="chat-input" type="text" placeholder="Ask a question…" autocomplete="off" />
@@ -1398,7 +1244,7 @@
       "What does he do outside of work?": "Reads about tech & world. Foodie who loves cooking. Values genuine relationships—believes that's how best things happen."
     };
 
-    starters.querySelectorAll('.chat-chip').forEach(function(chip) {
+    starters.querySelectorAll('.chip').forEach(function(chip) {
       chip.addEventListener('click', function() {
         var question = chip.textContent;
         var answer = quickAnswers[question];
