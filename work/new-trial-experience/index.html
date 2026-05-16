@@ -34,26 +34,17 @@
   </div>
 </nav>
 
-<nav class="cs-section-nav" aria-label="Case study sections">
-  <a href="../../index.html#work" class="cs-nav-back">← All Work</a>
-  <a href="#context">Context</a>
-  <a href="#role">Role</a>
-  <a href="#process">Process</a>
-  <a href="#outcome">Outcome</a>
-  <a href="#reflection">Reflection</a>
-</nav>
-
 <!-- COVER -->
 <div class="cover">
   <p class="cover-eyebrow">Product Design · Cuemath · 2024</p>
-  <h1>New Trial Experience — Removed AC bottlenecks from trial-to-enrollment. 70% less AC work, same conversion rates.</h1>
-  <p class="value-prop">Redesigned trial-to-enrollment workflow to distribute conversion work across three roles: system (WhatsApp communication + automated slot selection), teachers (relationship-building + answering questions), parents (enrollment decision-making). Achieved primary goal: 70% reduction in AC intervention while maintaining conversion rates. Secondary wins: QL-to-trial conversion improved 50%, trial-to-paid conversion improved 9.6%.</p>
-  <p class="lede">Cuemath's trial funnel was entirely AC-dependent, creating a queue and stalling conversions. The redesign distributed the work: system handles automation (WhatsApp, scheduling), teachers handle relationship-building (introductions, answering questions), parents handle enrollment decisions (selection and payment). ACs now intervene only for exceptions—special needs, payment issues, edge cases.</p>
+  <h1>New Trial Experience</h1>
+  <p class="cover-subtitle">Distributing conversion work across system, teachers, and parents — so AC headcount stops being the bottleneck.</p>
+  <p class="lede">Cuemath's trial funnel was entirely AC-dependent, creating a queue and stalling conversions. The redesign distributed the work: system handles automation (WhatsApp, scheduling), teachers handle relationship-building, parents handle enrollment decisions. ACs now intervene only for exceptions — payment issues, special needs, edge cases.</p>
 
   <div class="cover-meta">
     <div class="cover-meta-item">
       <span class="cover-meta-label">My Role</span>
-      <span class="cover-meta-value">Product Designer (UX, interaction design, flow architecture)</span>
+      <span class="cover-meta-value">Product Designer — UX, interaction, flow architecture</span>
     </div>
     <div class="cover-meta-item">
       <span class="cover-meta-label">The Team</span>
@@ -61,19 +52,11 @@
     </div>
     <div class="cover-meta-item">
       <span class="cover-meta-label">Timeline</span>
-      <span class="cover-meta-value">8 weeks initial design + iterations through 2024</span>
+      <span class="cover-meta-value">8 weeks design + iterations through 2024</span>
     </div>
     <div class="cover-meta-item">
-      <span class="cover-meta-label">Primary Objective</span>
-      <span class="cover-meta-value">70% reduction in AC intervention while maintaining QL2P conversion</span>
-    </div>
-    <div class="cover-meta-item">
-      <span class="cover-meta-label">Actual Results</span>
-      <span class="cover-meta-value">70% reduction in AC intervention + 50% QL-to-trial lift + 9.6% trial-to-paid lift</span>
-    </div>
-    <div class="cover-meta-item">
-      <span class="cover-meta-label">Key Insight</span>
-      <span class="cover-meta-value">Distribute expertise; don't overload any single role</span>
+      <span class="cover-meta-label">Outcome</span>
+      <span class="cover-meta-value">70% less AC work · 50% QL-to-trial lift · 9.6% trial-to-paid lift</span>
     </div>
   </div>
 
@@ -112,7 +95,34 @@
 
   <p>I tested a promising hypothesis early: have teachers lead conversions during trials. Testing with 5–6 teachers across 22 trial classes revealed the mechanism of failure: Teachers' cognitive load during a live session is already maxed—managing pacing, monitoring student engagement, adapting explanations on the fly. Adding "and now convince the parent to enroll" creates a context switch mid-session. Parents sense the artifice—a teacher who was natural 5 minutes ago suddenly sounds scripted. The lesson quality suffers because the teacher's attention isn't fully on the student. The close fails because timing is wrong. That constraint redirected the entire approach toward distributed work: system handles wait, teacher handles rapport-building, parent handles enrollment choice.</p>
 
-  <p>Success criteria were defined upfront and were non-negotiable: maintain the QL2P conversion rate we already had (don't lose any conversions) while reducing AC intervention by 70%. Additionally, we wanted to collapse the time between trial and enrollment from days to minutes, and enable parents to move through the entire journey with minimal human intervention—only at moments where trust and credibility mattered. One constraint shaped everything: this had to work on WhatsApp. We observed that most teacher-parent communication already happened on WhatsApp, not through our built-in Cuemath app chat. Teachers and parents were far more comfortable sharing information over WhatsApp—it was where they naturally defaulted. Rather than fight this pattern, we made it the system's spine.</p>
+  <p>Success criteria were defined upfront and were non-negotiable: maintain the QL2P conversion rate we already had while reducing AC intervention by 70%. Additionally, we wanted to collapse the time between trial and enrollment from days to minutes, and enable parents to move through the entire journey with minimal human intervention — only at moments where trust and credibility mattered. One constraint shaped everything: this had to work on WhatsApp. We observed that most teacher-parent communication already happened on WhatsApp, not in our app chat. Rather than fight that pattern, we made it the system's spine.</p>
+
+  <!-- Research methodology -->
+  <h2 style="margin-top: 56px;">How we got to the design.</h2>
+  <p>Three modes of research, each tightly scoped, each redirecting the next iteration.</p>
+
+  <div class="cs-method">
+    <div class="cs-method-row cs-method-header">
+      <span class="cs-method-method">Method</span>
+      <span class="cs-method-sample">Sample</span>
+      <span class="cs-method-finding">What it told us</span>
+    </div>
+    <div class="cs-method-row">
+      <span class="cs-method-method">Funnel data analysis</span>
+      <span class="cs-method-sample">QL2P cohort</span>
+      <span class="cs-method-finding">40% didn't complete trial booking within 24h; 35% of trial-attendees didn't enroll within 3 days. AC availability — not parent intent — was the choke point.</span>
+    </div>
+    <div class="cs-method-row">
+      <span class="cs-method-method">Teacher-led close test</span>
+      <span class="cs-method-sample">5–6 teachers · 22 trials</span>
+      <span class="cs-method-finding">Pitch-during-session collapsed teacher cognitive load. Lesson quality fell, parents sensed artifice. Closed loop in 5 weeks — should have been 1.</span>
+    </div>
+    <div class="cs-method-row">
+      <span class="cs-method-method">Post-launch audit</span>
+      <span class="cs-method-sample">ACs at scale</span>
+      <span class="cs-method-finding">2.3 exception conversations per AC per week vs. 15–18 routine before. ACs became a resource for judgment, not processing.</span>
+    </div>
+  </div>
 
 
   <!-- 03 PROCESS -->
@@ -127,16 +137,33 @@
 
   <p>Testing with 5–6 teachers revealed the mechanism of failure: Teachers' cognitive load during a live session is already maxed—managing pacing, monitoring student engagement, adapting explanations on the fly. Adding "and now convince the parent to enroll" creates a context switch mid-session. Teachers forget the pitch, or shoehorn it in awkwardly at the end when they remember. Parents sense the artifice—a teacher who was natural 5 minutes ago suddenly sounds scripted. The lesson quality suffers because the teacher's attention isn't fully on the student. The close fails because timing is wrong. Both break simultaneously.</p>
 
-  <p>The breakthrough came from reframing the problem entirely. We didn't need to remove teachers from the conversion journey—we needed to change *when* and *how* they participated. The insight: distribute expertise across the journey instead of overloading any single role. Teachers are trusted, but they're educators, not salespeople. Stop asking them to do both.</p>
+  <p>The breakthrough came from reframing the problem entirely. We didn't need to remove teachers from the conversion journey — we needed to change <em>when</em> and <em>how</em> they participated. Teachers are trusted, but they're educators, not salespeople. Stop asking them to do both.</p>
 
-  <h2>The Five Key Design Decisions</h2>
+  <div class="cs-insight">
+    <p class="cs-insight-label">Insight</p>
+    <p class="cs-insight-quote">"The real breakthrough wasn't making teachers better at selling. It was asking a different question: what if teachers don't sell at all?"</p>
+    <p class="cs-insight-meta">From: 22 trial sessions, 5–6 teachers, week 5 of the test.</p>
+  </div>
+
+  <h2>The five design decisions that distributed the work.</h2>
 
   <div class="decisions-list">
 
     <div class="decision-item">
-      <p class="decision-item-num">Decision 1</p>
+      <p class="decision-item-num">Decision 01</p>
       <p class="decision-item-title">WhatsApp as the primary communication channel</p>
-      <p>We observed that most teacher-parent communication already happened on WhatsApp, not through our built-in Cuemath app chat. Teachers and parents were far more comfortable sharing information over WhatsApp—it was where they naturally defaulted. Rather than fight this pattern, we made it the system's spine. Every critical communication—verification, slot confirmation, teacher introduction, session reminders, post-trial enrollment—moved to WhatsApp. This enabled reliable response rates and engagement at each step without requiring AC coordination. After the trial, teachers shared branded WhatsApp messages with parents covering pricing, class formats, and onboarding timelines. This transformed post-trial follow-up from an AC task into a self-serve, teacher-led experience.</p>
+      <p>Most teacher-parent communication already happened on WhatsApp, not in our built-in app chat. Rather than fight that pattern, we made it the system's spine. Every critical step — verification, slot confirmation, teacher intro, reminders, post-trial enrollment — moved to WhatsApp.</p>
+
+      <div class="decision-alts">
+        <p class="decision-alts-label">What I considered</p>
+        <ul>
+          <li><strong>Build it inside the Cuemath app</strong> — rejected: low engagement, parents had to remember to open it.</li>
+          <li><strong>SMS + email</strong> — rejected: low response rates; parents didn't trust the channel for transaction.</li>
+          <li><strong>WhatsApp Business API (picked)</strong> — high reliability, already-trusted channel, supports rich collateral.</li>
+        </ul>
+      </div>
+
+      <p>After the trial, teachers shared branded WhatsApp messages covering pricing, class formats, and onboarding timelines. Post-trial follow-up became a teacher-led, self-serve experience — no AC required.</p>
       <div class="screen-grid-3">
         <div class="screen-featured">
           <img src="../../assets/Case studies/New Trial Experience/WA1_Plan pricing _Total including GST.jpg" loading="lazy" alt="WhatsApp collateral: Plan pricing with GST and total costs">
@@ -162,9 +189,18 @@
     </div>
 
     <div class="decision-item">
-      <p class="decision-item-num">Decision 2</p>
+      <p class="decision-item-num">Decision 02</p>
       <p class="decision-item-title">Automated 5-minute recovery for abandoned slot selection</p>
-      <p>Parents signed up and verified on WhatsApp, then didn't proceed to book a slot. We captured why through feedback: overwhelmed, distracted, uncertain about timing. Instead of losing them, a 5-minute automated follow-up message triggered: "Do you need help choosing a time?" This small, well-timed intervention recovered significant drop-off volume without requiring AC escalation. It was automation at the right moment—not replacing human judgment, but removing friction from a low-judgment step.</p>
+      <p>Parents signed up and verified on WhatsApp, then didn't proceed to book a slot. Feedback surfaced why: overwhelmed, distracted, uncertain about timing. A 5-minute automated follow-up triggered: "Do you need help choosing a time?" Small, well-timed, low-judgment.</p>
+
+      <div class="decision-alts">
+        <p class="decision-alts-label">What I considered</p>
+        <ul>
+          <li><strong>AC callback to abandoned parents</strong> — rejected: re-introduces the very bottleneck we're removing.</li>
+          <li><strong>Wait 24h, then remind</strong> — rejected: intent cools too fast; conversion drops.</li>
+          <li><strong>5-minute auto-message (picked)</strong> — captures intent at peak, no human in the loop.</li>
+        </ul>
+      </div>
       <div class="screen-grid-2">
         <div class="screen-featured">
           <img src="../../assets/Case studies/New Trial Experience/Signup 1.jpg" loading="lazy" alt="WhatsApp verification: Parent verifies via WhatsApp">
@@ -178,21 +214,48 @@
     </div>
 
     <div class="decision-item">
-      <p class="decision-item-num">Decision 3</p>
+      <p class="decision-item-num">Decision 03</p>
       <p class="decision-item-title">Teacher introduction message 24 hours before the trial</p>
-      <p>Instead of an AC confirmation, parents got a personal WhatsApp message from their assigned teacher—name, credentials, sometimes a video or photo. This shifted the relationship before the session even started. Parents weren't signing up for a generic trial; they were meeting a specific person. Teacher-parent rapport began 24 hours early, not after the session ended.</p>
+      <p>Instead of an AC confirmation, parents got a personal WhatsApp message from their assigned teacher — name, credentials, sometimes a short video. Parents weren't signing up for a generic trial; they were meeting a specific person. Rapport began 24 hours early, not after the session ended.</p>
+
+      <div class="decision-alts">
+        <p class="decision-alts-label">What I considered</p>
+        <ul>
+          <li><strong>AC-sent confirmation</strong> — rejected: parent reads it as transactional; no rapport.</li>
+          <li><strong>Generic system reminder</strong> — rejected: no personalization, no trust signal.</li>
+          <li><strong>Teacher-sent personal intro (picked)</strong> — builds rapport before the session, lifts 78% slot-completion within 24h.</li>
+        </ul>
+      </div>
     </div>
 
     <div class="decision-item">
-      <p class="decision-item-num">Decision 4</p>
+      <p class="decision-item-num">Decision 04</p>
       <p class="decision-item-title">In-trial conversation guided by a reference script, not a hard close</p>
-      <p>We considered three approaches: (1) Hard script—teachers memorize pricing and benefits, recite before close (rejected: feels scripted, adds cognitive load). (2) Soft talking points—teachers keep pricing on a reference card, mention if parents ask (chosen for trial). (3) No teacher mention, rely on post-trial enrollment UI (rejected: parent questions mid-trial would go unanswered). We chose option 2: teachers have talking points but only deploy them if parents ask "What comes next?" This way the teacher isn't pushing; the parent is pulling. Teachers could reference class format trade-offs (1:1, 1:2, 1:4) with their financial and educational benefits naturally.</p>
+      <p>Teachers have talking points but only deploy them if parents ask "What comes next?" The parent pulls; the teacher doesn't push. Teachers can reference class format trade-offs (1:1, 1:2, 1:4) naturally — never as a pitch.</p>
+
+      <div class="decision-alts">
+        <p class="decision-alts-label">What I considered</p>
+        <ul>
+          <li><strong>Hard script</strong> — memorize pricing, recite before close. Rejected: feels rehearsed, breaks lesson quality.</li>
+          <li><strong>No teacher mention, post-trial UI only</strong> — rejected: in-session parent questions go unanswered.</li>
+          <li><strong>Soft talking points (picked)</strong> — teacher answers if asked, doesn't initiate. Authentic, contextual.</li>
+        </ul>
+      </div>
     </div>
 
     <div class="decision-item">
-      <p class="decision-item-num">Decision 5</p>
+      <p class="decision-item-num">Decision 05</p>
       <p class="decision-item-title">Direct enrollment immediately after the trial, with teacher present</p>
-      <p>The moment the session ended, parents saw an enrollment interface on their device. Not a form—just "Enroll now" with three plan options, pricing visible, and one-tap payment. No AC call necessary. If they had questions, the teacher was still present to answer them. If they wanted time to think, they got personalized WhatsApp reminders from the teacher, but the path was always direct to enrollment, not through an AC.</p>
+      <p>The moment the session ended, parents saw an enrollment interface on their device — not a form. Three plan options, pricing visible, one-tap payment. No AC call. If they had questions, the teacher was still present.</p>
+
+      <div class="decision-alts">
+        <p class="decision-alts-label">What I considered</p>
+        <ul>
+          <li><strong>AC follow-up call within 24h</strong> — rejected: intent cools; teacher is no longer in the moment.</li>
+          <li><strong>Email enrollment link 1h post-trial</strong> — rejected: peak conviction passes; parent moves on to other things.</li>
+          <li><strong>Direct in-screen enrollment, teacher present (picked)</strong> — captures intent at peak; +9.6% trial-to-paid.</li>
+        </ul>
+      </div>
     </div>
 
   </div>
@@ -228,27 +291,44 @@
     <span class="section-label">Outcome</span>
   </div>
 
-  <p>The project shipped and the results aligned with—and exceeded—our targets.</p>
+  <div class="cs-stat-hero">
+    <p class="cs-stat-hero-label">AC Intervention</p>
+    <p class="cs-stat-hero-number">−70%</p>
+    <p class="cs-stat-hero-desc">reduction in AC touchpoints while maintaining QL2P conversion — the primary objective of the brief.</p>
+  </div>
 
-  <p><strong>The 70% Reduction in AC Intervention</strong></p>
+  <p>The project shipped and the results aligned with — and exceeded — our targets.</p>
 
-  <p>ACs transitioned from owning every funnel touchpoint to handling edge cases only. We removed them from routine work—lead qualification calls, scheduling, reminders, enrollment conversations, preference collection. The system, teachers, and parents handled these instead. With routine work automated, the limited AC team focused on high-judgment situations: payment failures, special needs, retention risks. This freed capacity without hiring.</p>
+  <div class="outcome-stats">
+    <div class="stat">
+      <p class="stat-label">QL → Trial</p>
+      <p class="stat-number">+50%</p>
+      <p class="stat-desc">Trial booking collapsed from 48–72h (AC callback) to under 5 min (WhatsApp slot picker). 78% completed slot booking within 24h vs. ~40% before.</p>
+    </div>
+    <div class="stat">
+      <p class="stat-label">Trial → Paid</p>
+      <p class="stat-number">+9.6%</p>
+      <p class="stat-desc">Parents enrolled at peak conviction with teacher present, instead of waiting days for an AC follow-up call.</p>
+    </div>
+    <div class="stat">
+      <p class="stat-label">AC weekly load</p>
+      <p class="stat-number">2.3</p>
+      <p class="stat-desc">Exception conversations per AC per week post-launch (vs. 15–18 routine before). ACs became a resource for judgment, not processing.</p>
+    </div>
+    <div class="stat">
+      <p class="stat-label">Teacher intro adoption</p>
+      <p class="stat-number">89%</p>
+      <p class="stat-desc">of teachers sent the 24h pre-trial WhatsApp intro. Pre-session rapport became the norm, not the exception.</p>
+    </div>
+  </div>
 
-  <p><strong>The 50% Lift in QL-to-Trial Conversion</strong></p>
+  <h2>What changed for each role.</h2>
 
-  <p>Trial booking time collapsed from 48–72 hours (AC callback latency + scheduling back-and-forth) to <5 minutes (WhatsApp slot picker). Slot selection, teacher matching, and confirmation became self-serve, happening in minutes instead of days. The data bore this out: 78% of parents who saw the teacher intro message completed slot booking within 24 hours (vs. ~40% in the old AC-callback model). Pre-trial relationship-building—a single personal message from the assigned teacher—shifted parents from dependent on AC availability to autonomous. The friction of "I want to try this, but I have to wait for someone to process my request" disappeared entirely.</p>
+  <p><strong>For parents.</strong> Trial booking time collapsed from 48–72 hours to under 5 minutes. They could book on their own schedule, meet their teacher before the session, and enroll immediately after — all without coordinating with a human scheduler.</p>
 
-  <p><strong>The 9.6% Lift in Trial-to-Paid Conversion</strong></p>
+  <p><strong>For teachers.</strong> Pre-trial relationship-building via the intro message became the norm. Post-trial, teachers reported no pressure to "close the sale" — they answered questions if asked, then parents chose enrollment on their own.</p>
 
-  <p>This was the most meaningful outcome. Parents enrolled right after the trial, at peak conviction, instead of waiting for an AC follow-up call days later. The teacher was present, so questions got answered immediately in the moment. When parents gave their preferred class timing and days during the enrollment flow (rather than waiting for an AC to ask them later), they were still engaged with the trial experience. Intent didn't evaporate in a gap between the trial and the next AC touchpoint. The autonomous flow captured intent at its highest point.</p>
-
-  <p><strong>The Operational Impact</strong></p>
-
-  <p>The limited AC team scaled without growing headcount. As trial volume increased, the model didn't require proportionally more ACs because the system and teachers handled the volume. Post-launch audit showed ACs averaged 2.3 "exception" conversations per week per person (payment issues, cancellations, special needs), vs. 15–18 routine conversations in the old model. ACs became a resource for exceptions, not routine processing. This had downstream effects: lower operational costs, more sustainable margins, and a team that wasn't burning out from repetitive, low-judgment work.</p>
-
-  <p><strong>The Stakeholder Impact</strong></p>
-
-  <p>For parents: Trial booking time collapsed from 48–72 hours to <5 minutes. They could book on their own schedule, meet their teacher before the session, and enroll immediately after—all without coordinating with a human scheduler. For teachers: Pre-trial relationship-building via teacher intro message became the norm; 89% of teachers sent intro messages. Post-trial, teachers reported no pressure to "close the sale"—they answered questions if asked, then parents chose enrollment on their own. For ACs: 70% reduction in intervention held, with clear exception-handling workflows to prevent burnout.</p>
+  <p><strong>For ACs.</strong> The 70% reduction in intervention held, with clear exception-handling workflows. The team scaled without growing headcount as trial volume increased — system and teachers absorbed the volume.</p>
 
 
   <!-- 05 REFLECTION -->
@@ -257,15 +337,20 @@
     <span class="section-label">Reflection</span>
   </div>
 
-  <p><strong>What I'd Do Differently</strong></p>
+  <h2>Validate assumptions before you invest five weeks in design.</h2>
+  <p>I spent 5 weeks designing and building the teacher-led hypothesis before testing it. A paper prototype and one 30-minute conversation with a teacher in week 1 would have surfaced the cognitive-load constraint immediately. I lost time executing on something that wouldn't work. For my next role: any hypothesis touching live-session behavior gets a 1-hour validation conversation in week 1, before any design.</p>
 
-  <p>I spent 5 weeks designing and building the teacher-led hypothesis before testing it. A paper prototype and one 30-minute conversation with a teacher in week 1 would have surfaced the core constraint immediately. Instead, I lost time executing on something that wouldn't work. Lesson: validate assumptions with users before you invest in design.</p>
+  <h2>Constraints are design tools, not limitations.</h2>
+  <p>The 70% AC reduction mandate forced clarity: every step in the flow had to either build trust or capture intent. If it did neither, it was friction — cut it. That forced me to stop designing features and start designing a system. I'd take this lens to any optimization brief — translate the constraint into a design question, not a feature list.</p>
 
-  <p><strong>What This Taught Me</strong></p>
+  <h2>The reframe was the work.</h2>
+  <p>The real breakthrough wasn't making teachers better at selling. It was asking a different question: what if teachers don't sell at all? Teachers aren't salespeople; they're trust proxies. Using them that way — showing up 24 hours early, being present during the trial, answering questions after — felt authentic and worked better than any script could.</p>
 
-  <p>Constraints are design tools, not limitations. The 70% AC reduction mandate forced clarity: every step in the flow had to either build trust or capture intent. If it did neither, it was friction—cut it. That forced me to stop designing features and start designing a system.</p>
-
-  <p>The real breakthrough wasn't making teachers better at selling. It was asking a different question: what if teachers don't sell at all? Reframing the problem unlocked everything. Teachers aren't salespeople; they're trust proxies. Using them that way—showing up 24 hours early, being present during the trial, answering questions after—felt authentic and worked better than any script ever could.</p>
+  <!-- Transfer line -->
+  <div class="cs-transfer">
+    <p class="cs-transfer-label">What carries forward</p>
+    <p class="cs-transfer-line">Distribute expertise across the journey; don't overload any single role. The bottleneck is often a role asked to do too many jobs.</p>
+  </div>
 
 </div>
 <script>
@@ -280,7 +365,8 @@
   })();
 
   (function () {
-    var navLinks = document.querySelectorAll('.cs-section-nav a');
+    var pill = document.querySelector('.cs-section-pill');
+    var navLinks = document.querySelectorAll('.cs-section-pill a');
     var ids = ['context','role','process','outcome','reflection'];
     var els = ids.map(function(id) { return document.getElementById(id); }).filter(Boolean);
 
@@ -293,13 +379,17 @@
       });
     }
 
-    navLinks.forEach(function(link) {
-      link.addEventListener('click', function(e) {
-        var href = this.getAttribute('href');
-        var id = href.substring(1);
-        updateActiveTab(id);
-      });
-    });
+    var cover = document.querySelector('.cover');
+    if (pill && cover) {
+      window.addEventListener('scroll', function() {
+        var coverBottom = cover.offsetTop + cover.offsetHeight - 200;
+        if (window.scrollY > coverBottom) {
+          pill.classList.add('visible');
+        } else {
+          pill.classList.remove('visible');
+        }
+      }, { passive: true });
+    }
 
     var obs = new IntersectionObserver(function(entries) {
       entries.forEach(function(entry) {
@@ -354,6 +444,15 @@
   <img class="lightbox-img" id="lightbox-img" src="" alt="">
 </div>
 
+
+<!-- Floating section pill (appears on scroll past cover) -->
+<nav class="cs-section-pill" aria-label="Case study sections">
+  <a href="#context">Context</a>
+  <a href="#role">Role</a>
+  <a href="#process">Process</a>
+  <a href="#outcome">Outcome</a>
+  <a href="#reflection">Reflection</a>
+</nav>
 
 <!-- Footer -->
 <a href="../../work/leap-learning-system/index.html" class="cs-next">
