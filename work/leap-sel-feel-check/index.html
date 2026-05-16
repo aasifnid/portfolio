@@ -15,36 +15,9 @@
   /* Force equal-width cover meta items */
   .cover-meta .cover-meta-item { flex: 1; min-width: 0; }
 
-  /* Phase table */
-  .phase-table { margin: 28px 0; border: 1px solid var(--neutral-300); border-radius: 0; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.04); background: var(--neutral-200); }
-  .phase-row { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; border-bottom: 1px solid var(--neutral-300); }
-  .phase-row:last-child { border-bottom: none; }
-  .phase-row.phase-header span { font-family: var(--font-body); font-size: var(--text-xs); font-weight: var(--fw-semibold); text-transform: uppercase; letter-spacing: 0.10em; color: var(--color-ink); background: #EBEBEB; padding: 14px 18px; border-top: 2px solid #FF80F4; }
-  .phase-row span { font-size: var(--text-sm); line-height: 24px; color: var(--neutral-800); padding: 16px 18px; border-right: 1px solid var(--neutral-300); }
-  .phase-row span:last-child { border-right: none; }
-
-  /* Fix nested accent — remove gold border inside observation-block items */
+  /* Page-scoped tweak: remove inherited accent inside observation-block */
   .observation-block .observation-item { border-left: none; padding-left: 0; padding-bottom: 16px; margin-bottom: 16px; border-bottom: 1px solid rgba(0,0,0,0.07); }
   .observation-block .observation-item:last-of-type { border-bottom: none; padding-bottom: 0; margin-bottom: 0; }
-
-  .img-placeholder { width: 100%; aspect-ratio: 16/9; background: var(--neutral-100); border: 2px dashed var(--neutral-300); border-radius: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; margin: 32px 0; gap: 12px; }
-  .img-placeholder-tag { font-family: var(--font-body); font-size: var(--text-xs); font-weight: var(--fw-semibold); letter-spacing: 0.10em; text-transform: uppercase; color: var(--color-ink); }
-  .img-placeholder-desc { font-size: var(--text-sm); color: var(--neutral-700); text-align: center; max-width: 400px; line-height: 1.6; }
-
-  /* Case study images */
-  .comparison-label { font-size: var(--text-xs); font-weight: var(--fw-semibold); color: var(--color-ink); margin-top: 8px; text-align: center; }
-  .stages-grid-label { font-size: var(--text-xs); font-weight: var(--fw-semibold); color: var(--color-ink); margin-top: 8px; text-align: center; }
-  .grade-compare-label { font-size: var(--text-xs); font-weight: var(--fw-semibold); color: var(--color-ink); margin-top: 8px; text-align: center; }
-
-  /* Mobile */
-  @media (max-width: 640px) {
-    .phase-row { grid-template-columns: 1fr 1fr; }
-  }
-
-  /* Lightbox */
-
-
-
 </style>
 </head>
 <body>
@@ -64,21 +37,12 @@
   </div>
 </nav>
 
-<nav class="cs-section-nav" aria-label="Case study sections">
-  <a href="../../index.html#work" class="cs-nav-back">← All Work</a>
-  <a href="#context">Context</a>
-  <a href="#role">Role</a>
-  <a href="#process">Process</a>
-  <a href="#outcome">Outcome</a>
-  <a href="#reflection">Reflection</a>
-</nav>
-
 <!-- COVER -->
 <div class="cover">
   <p class="cover-eyebrow">Product Design · Cuemath · 2025–26</p>
-  <h1>Feel Check — Student-led emotional regulation tool for learning readiness</h1>
-  <p class="value-prop">Feel Check identified emotional state and guided students to regulation before learning started. 67.45% of tutors observed improved student readiness.</p>
-  <p class="lede">Tutors couldn't see how students arrived emotionally—and had no tool to help them regulate before instruction began. Mid-session dysregulation meant losing 15–20 minutes. I designed Feel Check: a student-led check-in that identifies emotional state and routes students to self-chosen regulation. Result: 89.3% of students engaged independently without prompting. 67.45% of tutors observed improved readiness to learn.</p>
+  <h1>Feel Check</h1>
+  <p class="cover-subtitle">A student-led emotional regulation tool for learning readiness.</p>
+  <p class="lede">Tutors couldn't see how students arrived emotionally — and had no tool to help them regulate before instruction began. Mid-session dysregulation meant losing 15–20 minutes. I designed Feel Check: a student-led check-in that identifies emotional state and routes students to self-chosen regulation.</p>
 
   <img src="../../assets/Case studies/sel-feel-check/intro.jpg" loading="lazy" alt="Feel Check — student-led emotional check-in interface" class="cs-img">
 
@@ -96,16 +60,8 @@
       <span class="cover-meta-value">8 weeks — Dec 2025 → Feb 2026</span>
     </div>
     <div class="cover-meta-item">
-      <span class="cover-meta-label">Learning Readiness</span>
-      <span class="cover-meta-value">67.45% of tutors observed improved readiness</span>
-    </div>
-    <div class="cover-meta-item">
-      <span class="cover-meta-label">Student Independence</span>
-      <span class="cover-meta-value">89.3% chose emotion without prompting</span>
-    </div>
-    <div class="cover-meta-item">
-      <span class="cover-meta-label">Check-in Duration</span>
-      <span class="cover-meta-value">3.4 min avg completion</span>
+      <span class="cover-meta-label">Outcome</span>
+      <span class="cover-meta-value">67% of tutors observed improved readiness · 89% student independence</span>
     </div>
   </div>
 
@@ -141,6 +97,33 @@
 
   <p>One hard constraint: high asset volume across two grade bands. I descoped animated icons and reduced unique regulation video count for v1 — both planned for v2.</p>
 
+  <!-- Research methodology -->
+  <h2 style="margin-top: 56px;">How we got to the design.</h2>
+  <p>Research happened in three modes — each tightly scoped, each feeding the next.</p>
+
+  <div class="cs-method">
+    <div class="cs-method-row cs-method-header">
+      <span class="cs-method-method">Method</span>
+      <span class="cs-method-sample">Sample</span>
+      <span class="cs-method-finding">What it told us</span>
+    </div>
+    <div class="cs-method-row">
+      <span class="cs-method-method">Class recording review</span>
+      <span class="cs-method-sample">~30 sessions</span>
+      <span class="cs-method-finding">Dysregulation was consistent; tutor responses weren't. No standard pattern existed.</span>
+    </div>
+    <div class="cs-method-row">
+      <span class="cs-method-method">Internal tutor cohort</span>
+      <span class="cs-method-sample">8 tutors</span>
+      <span class="cs-method-finding">Pressure-tested concepts before spec. Surfaced "abandonment" insight that shaped Decision 1.</span>
+    </div>
+    <div class="cs-method-row">
+      <span class="cs-method-method">Phased cohort rollout</span>
+      <span class="cs-method-sample">120 tutors · 417 students · 4 phases</span>
+      <span class="cs-method-finding">Validated readiness, autonomy, and Unsure flow across two grade bands.</span>
+    </div>
+  </div>
+
 
   <!-- 03 PROCESS -->
   <div class="section-head" id="process" data-animate>
@@ -154,35 +137,50 @@
 
   <p>To translate these frameworks into a self-directed student experience, I explored how to surface the activity options through different layout approaches. The wireframe exploration tested multiple directions before settling on the circular form that made the Wheel of Awareness the interface itself.</p>
 
-  <img src="/work/leap-sel-feel-check/images/ideation-options.jpg" loading="lazy" alt="Wireframe exploration of option surfacing layouts: circular form, grid layouts, and visual arrangement variations" class="cs-img">
+  <img src="images/ideation-options.jpg" loading="lazy" alt="Wireframe exploration of option surfacing layouts: circular form, grid layouts, and visual arrangement variations" class="cs-img">
   <p class="caption">Exploring how to surface activity options. The circular form wasn't decorative — it made the framework visible as the decision structure. Students didn't see "pick an activity"; they saw the same wheel they'd just moved through. Tested against grid and geometric approaches; the circular form had the lowest cognitive friction and strongest alignment with the framework logic.</p>
 
   <p>I reviewed class recordings and tested the concept early with the internal tutor cohort. What became clear: any flow that felt clinical or adult-directed would be abandoned or resented. The design had to run on student initiative — the tutor needed to be present, but passive. Not a guide. An observer. That single constraint shaped every major decision that followed.</p>
 
   <h2>What the first internal build revealed.</h2>
 
-  <p>The first build had no background audio on regulation activities. The assumption: visual content — breathing animations, calm sequences — would carry the regulation moment. It didn't. Tutors observed students tapping through activities quickly without settling. The experience felt like a screen, not a transition. Audio wasn't decorative; it was structural. I added ambient audio before external rollout. Average regulation time moved to 1.9 minutes of engaged time — students staying with the activity, not just completing it.</p>
+  <p>The first build had no background audio on regulation activities. The assumption: visual content — breathing animations, calm sequences — would carry the regulation moment. It didn't. Tutors observed students tapping through activities quickly without settling. The experience felt like a screen, not a transition. I added ambient audio before external rollout. Average regulation time moved to 1.9 minutes of engaged time — students staying with the activity, not just completing it.</p>
+
+  <div class="cs-insight">
+    <p class="cs-insight-label">Insight</p>
+    <p class="cs-insight-quote">"Audio wasn't decorative; it was structural. For experiences where the interaction is the therapeutic tool, sensory quality is design, not polish."</p>
+    <p class="cs-insight-meta">From: Internal build observation, before external rollout.</p>
+  </div>
 
   <h2>What "Do It Your Way" revealed about student autonomy.</h2>
 
-  <p>Post-launch, "Do It Your Way" was the dominant first choice across grade levels — 289 selections in the Green zone for G5–8 alone, ahead of every named activity. Students weren't confused or avoiding structure. They were choosing self-direction. This reframed how I thought about the regulation menu: autonomy wasn't a fallback to offer when nothing else worked — it was what students reached for first. For v2, I'm redesigning the activity menu to lead with "Do It Your Way," moving it from an option buried in the list to the primary entry point.</p>
+  <p>Post-launch, "Do It Your Way" was the dominant first choice across grade levels — 289 selections in the Green zone for G5–8 alone, ahead of every named activity. Students weren't confused or avoiding structure. They were choosing self-direction. For v2, I'm redesigning the activity menu to lead with "Do It Your Way," moving it from an option buried in the list to the primary entry point.</p>
 
-  <img src="/work/leap-sel-feel-check/images/zor-activity-autonomy.jpg" loading="lazy" alt="Do It Your Way experience: coral/red background with student-selected options (smell, breathing, meditation pose) and affirmation 'Sit quietly and relax my MIND'" class="cs-img">
+  <div class="cs-insight">
+    <p class="cs-insight-label">Insight</p>
+    <p class="cs-insight-quote">"Autonomy wasn't a fallback to offer when nothing else worked — it was what students reached for first."</p>
+    <p class="cs-insight-meta">From: Post-launch behavior, G5–8 Green zone (289 selections).</p>
+  </div>
+
+  <img src="images/zor-activity-autonomy.jpg" loading="lazy" alt="Do It Your Way experience: coral/red background with student-selected options (smell, breathing, meditation pose) and affirmation 'Sit quietly and relax my MIND'" class="cs-img">
   <p class="caption">What students chose first. "Do It Your Way" showed that autonomy—choosing their own regulation path—wasn't a design fallback. It was the primary signal. Students trusted their own instincts about what they needed. For v2, this becomes the lead option, not a buried choice.</p>
 
   <h2>What grade scope revealed.</h2>
 
   <p>The original scope was G1–8. Early tutor conversations and review with Roots made it clear that naming body sensations and identifying emotional states independently was too demanding for G1–2 — not a simplification problem, but a developmental one. I scoped Feel Check to G3–8. G1–2 is deferred, not dropped.</p>
 
-  <img src="../../assets/Case studies/sel-feel-check/ruler-emotion-zones-g34.jpg" loading="lazy" alt="G3–4 version — emotional options and activities" class="cs-img">
-  <p class="caption">G3–4</p>
-
-  <img src="../../assets/Case studies/sel-feel-check/ruler-emotion-zones-g58.jpg" loading="lazy" alt="G5–8 version — emotional options and activities" class="cs-img">
-  <p class="caption">G5–8</p>
+  <div class="cs-img-pair">
+    <img src="../../assets/Case studies/sel-feel-check/ruler-emotion-zones-g34.jpg" loading="lazy" alt="G3–4 version — emotional options and activities">
+    <img src="../../assets/Case studies/sel-feel-check/ruler-emotion-zones-g58.jpg" loading="lazy" alt="G5–8 version — emotional options and activities">
+  </div>
+  <div class="cs-img-caption-row">
+    <p class="img-label-center">G3–4</p>
+    <p class="img-label-center">G5–8</p>
+  </div>
 
   <p>Before locking the regulation activity experience, I explored three directions with the Motion Designer: fully abstract visuals, character-driven sequences, and non-humanistic partial elements — rain, breathing patterns, ambient light. The non-humanistic approach was chosen: neutral, non-projecting, and focused on physical sensation rather than a character to follow.</p>
 
-  <img src="/work/leap-sel-feel-check/images/zor-activity-instructions.jpg" loading="lazy" alt="Regulation activity screen showing 'Do it your way' with breathing animation and instruction 'You know what you need right now. Trust yourself and do what brings ease.'" class="cs-img">
+  <img src="images/zor-activity-instructions.jpg" loading="lazy" alt="Regulation activity screen showing 'Do it your way' with breathing animation and instruction 'You know what you need right now. Trust yourself and do what brings ease.'" class="cs-img">
   <p class="caption">The regulation activity experience. Non-humanistic visuals (breathing patterns, soft light) guide physical sensation. No character to follow, no narrative. Audio was critical post-launch — visual content alone didn't create regulation moments; students tapped through without settling. With audio, average engaged time moved to 1.9 minutes.</p>
 
   <h2>Four decisions that defined how Feel Check works.</h2>
@@ -190,52 +188,95 @@
   <div class="decisions-list">
 
     <div class="decision-item">
-      <p class="decision-item-num">Decision 1</p>
+      <p class="decision-item-num">Decision 01</p>
       <p class="decision-item-title">Tutor as observer, not director</p>
-      <p>Every selection belongs to the student. The tutor sees the same screen in real time but cannot tap or control anything. I considered a fully private design — no tutor view at all — but for a student who is dysregulated, being left alone with something unfamiliar adds load. The tutor-student relationship at Cuemath runs deep. I kept the tutor present but removed their control. Student owns the selection. Tutor owns the exit.</p>
-      <p>I didn't A/B test private vs. tutor-visible approaches, but early sessions surfaced a critical insight: dysregulated students interpreted solitude with an unfamiliar tool as abandonment. The tutor-visible design validated in practice — 89.3% of students made independent choices even with the tutor watching, proving the presence didn't undermine autonomy.</p>
+      <p>Every selection belongs to the student. The tutor sees the same screen in real time but cannot tap or control anything. Student owns the selection. Tutor owns the exit.</p>
+
+      <div class="decision-alts">
+        <p class="decision-alts-label">What I considered</p>
+        <ul>
+          <li><strong>Fully private</strong> — no tutor view. Rejected: dysregulated students would read solitude as abandonment.</li>
+          <li><strong>Tutor co-control</strong> — both can tap. Rejected: tutor-led behavior would override autonomy.</li>
+          <li><strong>Tutor as silent observer (picked)</strong> — present but no control. Best balance of safety and autonomy.</li>
+        </ul>
+      </div>
+
+      <p>Validated in practice: 89% of students made independent choices even with the tutor watching — presence didn't undermine autonomy.</p>
     </div>
 
-    <img src="../../assets/Case studies/sel-feel-check/decision-01-student.jpg" loading="lazy" alt="Student view — full-screen interface" class="cs-img">
-    <p class="caption">Student View</p>
-
-    <img src="../../assets/Case studies/sel-feel-check/decision-01-tutor.jpg" loading="lazy" alt="Tutor view — read-only monitoring panel" class="cs-img">
-    <p class="caption">Tutor View (Read-Only)</p>
+    <div class="cs-img-pair">
+      <img src="../../assets/Case studies/sel-feel-check/decision-01-student.jpg" loading="lazy" alt="Student view — full-screen interface">
+      <img src="../../assets/Case studies/sel-feel-check/decision-01-tutor.jpg" loading="lazy" alt="Tutor view — read-only monitoring panel">
+    </div>
+    <div class="cs-img-caption-row">
+      <p class="img-label-center">Student View</p>
+      <p class="img-label-center">Tutor View (Read-Only)</p>
+    </div>
 
     <div class="decision-item">
-      <p class="decision-item-num">Decision 2</p>
+      <p class="decision-item-num">Decision 02</p>
       <p class="decision-item-title">The sequence mirrors how awareness builds</p>
       <p>Feel Check runs as four stages: Senses → Body → Heart → Mind. Senses is environmental grounding — a warm-up before anything internal is named. Each stage progressively narrows: Body informs Heart, Heart informs Mind.</p>
 
-      <img src="../../assets/Case studies/sel-feel-check/senses.jpg" loading="lazy" alt="Stage 1 — Senses: environmental grounding" class="cs-img">
-  <p class="caption">1. Senses</p>
+      <div class="decision-alts">
+        <p class="decision-alts-label">What I considered</p>
+        <ul>
+          <li><strong>Grid menu of emotions</strong> — list-style. Rejected: didn't make the framework visible as the decision structure.</li>
+          <li><strong>Modal sequence</strong> — one stage per modal. Rejected: lost the cumulative narrowing across stages.</li>
+          <li><strong>Circular Wheel of Awareness (picked)</strong> — the framework itself becomes the interface. Lowest cognitive friction in cohort testing.</li>
+        </ul>
+      </div>
 
-      <img src="../../assets/Case studies/sel-feel-check/body.jpg" loading="lazy" alt="Stage 2 — Body: physical awareness" class="cs-img">
-  <p class="caption">2. Body</p>
-
-      <img src="../../assets/Case studies/sel-feel-check/heart.jpg" loading="lazy" alt="Stage 3 — Heart: emotional identification" class="cs-img">
-  <p class="caption">3. Heart</p>
-
-      <img src="../../assets/Case studies/sel-feel-check/mind.jpg" loading="lazy" alt="Stage 4 — Mind: mental state" class="cs-img">
-  <p class="caption">4. Mind</p>
+      <div class="cs-img-grid cs-img-grid--4">
+        <img src="../../assets/Case studies/sel-feel-check/senses.jpg" loading="lazy" alt="Stage 1 — Senses: environmental grounding">
+        <img src="../../assets/Case studies/sel-feel-check/body.jpg" loading="lazy" alt="Stage 2 — Body: physical awareness">
+        <img src="../../assets/Case studies/sel-feel-check/heart.jpg" loading="lazy" alt="Stage 3 — Heart: emotional identification">
+        <img src="../../assets/Case studies/sel-feel-check/mind.jpg" loading="lazy" alt="Stage 4 — Mind: mental state">
+      </div>
+      <div class="cs-img-caption-row" style="grid-template-columns: repeat(4, 1fr);">
+        <p class="img-label-center">1. Senses</p>
+        <p class="img-label-center">2. Body</p>
+        <p class="img-label-center">3. Heart</p>
+        <p class="img-label-center">4. Mind</p>
+      </div>
 
       <p>I explored multiple layouts — geometric grids, modals, full-screen flows. I chose the circular form so the Wheel of Awareness could become the interface itself, not a reference diagram placed beside it.</p>
 
-      <img src="/work/leap-sel-feel-check/images/zone-of-regulation-menu.jpg" loading="lazy" alt="Zone of Regulation activity menu: circular picker showing Dragon Breaths, Countdown Breathing, Rain Visualisation, and Do it your way options" class="cs-img">
+      <img src="images/zone-of-regulation-menu.jpg" loading="lazy" alt="Zone of Regulation activity menu: circular picker showing Dragon Breaths, Countdown Breathing, Rain Visualisation, and Do it your way options" class="cs-img">
       <p class="caption">The activity menu implemented as the Wheel itself. Students see the sequence they just completed (Senses → Body → Heart → Mind) reflected in the four regulation options. Tutor monitoring panel visible on left. The circular form is the framework, not a decoration.</p>
     </div>
 
     <div class="decision-item">
-      <p class="decision-item-num">Decision 3</p>
+      <p class="decision-item-num">Decision 03</p>
       <p class="decision-item-title">Two grade bands, not simplified versions</p>
-      <p>The same UI runs for G3–4 and G5–8. What differs is the set of emotional options and regulation activities — not the visual design, vocabulary, or flow structure. Grade differentiation is itself an accessibility decision: the same emotional framework, made accessible to different developmental stages by adjusting what appears, not how it looks.</p>
-      <p>G1–2 was ruled out — self-directed emotional identification wasn't developmentally accessible at that age. Not a simplification problem. Deferred, not dropped.</p>
+      <p>The same UI runs for G3–4 and G5–8. What differs is the set of emotional options and regulation activities — not the visual design, vocabulary, or flow structure.</p>
+
+      <div class="decision-alts">
+        <p class="decision-alts-label">What I considered</p>
+        <ul>
+          <li><strong>Simplified visual for younger</strong> — bigger icons, fewer steps. Rejected: implied "this is the kids' version" — undermined dignity.</li>
+          <li><strong>One single UI for all grades</strong> — same content too. Rejected: developmental vocabulary mismatch caused friction.</li>
+          <li><strong>Two grade bands, same UI, different content (picked)</strong> — accessibility through what appears, not how it looks.</li>
+        </ul>
+      </div>
+
+      <p>G1–2 was ruled out — self-directed emotional identification wasn't developmentally accessible at that age. Deferred, not dropped.</p>
     </div>
 
     <div class="decision-item">
-      <p class="decision-item-num">Decision 4</p>
+      <p class="decision-item-num">Decision 04</p>
       <p class="decision-item-title">"Unsure" as a first-class option</p>
-      <p>At every stage — Body, Heart, Mind — students could select "Unsure." Fixed in the UI, always present. Not a skip button. When all three stages resolved to "Unsure," students were routed to a curated set of regulation activities. No dead end.</p>
+      <p>At every stage — Body, Heart, Mind — students could select "Unsure." Fixed in the UI, always present. When all three stages resolved to "Unsure," students were routed to a curated set of regulation activities. No dead end.</p>
+
+      <div class="decision-alts">
+        <p class="decision-alts-label">What I considered</p>
+        <ul>
+          <li><strong>Skip button</strong> — quietly bypass the stage. Rejected: read as failure; reduced self-awareness signal.</li>
+          <li><strong>Required answer</strong> — must pick an emotion. Rejected: students would invent answers, breaking the data.</li>
+          <li><strong>"Unsure" as visible option (picked)</strong> — owns the honest answer. Carries through to curated regulation.</li>
+        </ul>
+      </div>
+
       <p>Post-launch: 20–22% of students selected "Unsure" at body awareness — the hardest dimension to name. 264 sessions followed the full Unsure path. Every one resolved.</p>
     </div>
 
@@ -244,10 +285,15 @@
   <h2>Feel Check in a real session</h2>
 
   <div class="video-embed">
-    <iframe
-      src="https://drive.google.com/file/d/188rCDk088eSHwR7nTR9ldS2lKrNkuION/preview"
-      allow="autoplay">
-    </iframe>
+    <video
+      controls
+      preload="metadata"
+      playsinline
+      poster="../../assets/Case studies/sel-feel-check/intro.jpg"
+      style="width: 100%; height: 100%; display: block; background: #000;">
+      <source src="videos/feel-check-in-session.mp4" type="video/mp4">
+      Your browser does not support video playback. <a href="videos/feel-check-in-session.mp4">Download video</a>
+    </video>
   </div>
   <p class="caption">Real classroom session showing a student moving through Feel Check independently. The sequence: Senses (environmental grounding) → Body (physical awareness) → Heart (emotional identification) → Mind (mental state), followed by self-selected regulation activity. Tutor monitors but does not direct.</p>
 
@@ -273,9 +319,15 @@
     <span class="section-label">Outcome</span>
   </div>
 
-  <h2>What 120 tutors and 417 students showed across four cohorts — and what the broader rollout confirmed.</h2>
+  <div class="cs-stat-hero">
+    <p class="cs-stat-hero-label">Learning Readiness</p>
+    <p class="cs-stat-hero-number">67%</p>
+    <p class="cs-stat-hero-desc">of tutors observed improved student readiness after regulation — the direct answer to the problem Feel Check was built to solve.</p>
+  </div>
 
-  <p>Feel Check was validated with 417 students and 120 tutors across four cohorts till March 31, 2026. The rollout continued beyond that measurement window — 3,234 sessions logged across G3–4 and G5–8. All metrics below are aggregates through the validation close. One critical gap: we didn't measure churn impact. We validated the intermediate signal (readiness improved), but we never compared retention for students who completed Feel Check vs. those who didn't. That's the business outcome I should have instrumented.</p>
+  <h2>What 120 tutors and 417 students showed across four cohorts.</h2>
+
+  <p>Feel Check was validated with 417 students and 120 tutors across four cohorts till March 31, 2026. The rollout continued beyond that measurement window — 3,234 sessions logged across G3–4 and G5–8. All metrics below are aggregates through the validation close. One critical gap: we didn't measure churn impact. We validated the intermediate signal (readiness improved), but never compared retention for students who completed Feel Check vs. those who didn't. That's the business outcome I should have instrumented.</p>
 
   <div class="phase-table">
     <div class="phase-row phase-header">
@@ -312,40 +364,30 @@
 
   <div class="outcome-stats">
     <div class="stat">
-      <p class="stat-label">Learning Readiness</p>
-      <p class="stat-number">67.45%</p>
-      <p class="img-label">Tutors observed improved student readiness after regulation — the direct answer to the problem Feel Check was built to solve.</p>
-    </div>
-    <div class="stat">
       <p class="stat-label">Student Independence</p>
-      <p class="stat-number">89.3%</p>
-      <p class="img-label">Students chose their emotion without tutor prompting — the student-led design held in practice.</p>
+      <p class="stat-number">89%</p>
+      <p class="stat-desc">Students chose their emotion without tutor prompting — the student-led design held in practice.</p>
     </div>
     <div class="stat">
       <p class="stat-label">Check-in Duration</p>
       <p class="stat-number">3.4 min</p>
-      <p class="img-label">Average check-in duration — from start to learning ready. Within the 5-min spec.</p>
+      <p class="stat-desc">Average duration — from start to learning ready. Within the 5-min spec.</p>
     </div>
     <div class="stat">
-      <p class="stat-label">Tutor Feedback</p>
-      <p class="stat-number">95.38%</p>
-      <p class="img-label">Submitted post-session: a 3-option multiple choice ("Student was more ready to focus on math" — Yes / Neutral / No). 95.38% submitted; 3s average. The form never interrupted the session.</p>
-    </div>
-    <div class="stat">
-      <p class="stat-label">Regulation Engagement</p>
-      <p class="stat-number">1.9 min</p>
-      <p class="img-label">Average time on regulation. Reattempt rate dropped from 21.7% to 15.16% — students choosing the right activity on the first try, more often.</p>
-    </div>
-    <div class="stat">
-      <p class="stat-label">Unsure — Body Awareness</p>
+      <p class="stat-label">Unsure — Body</p>
       <p class="stat-number">1 in 5</p>
-      <p class="img-label">Students couldn't name their body state — the hardest of the four stages. Unsure wasn't a fallback; it was the honest answer.</p>
+      <p class="stat-desc">Students couldn't name their body state — the hardest stage. Unsure wasn't a fallback; it was the honest answer.</p>
+    </div>
+    <div class="stat">
+      <p class="stat-label">Engaged Regulation</p>
+      <p class="stat-number">1.9 min</p>
+      <p class="stat-desc">Average time on regulation activities after ambient audio shipped. Reattempt rate dropped from 22% to 15%.</p>
     </div>
   </div>
 
   <p>Zone distribution showed Green as dominant across both grade bands — most students arrived calm. But 53% of G3–4 sessions and 49% of G5–8 sessions weren't Green. Feel Check's real value was surfacing that share and doing something about it before instruction began.</p>
 
-  <img src="../../assets/Case studies/sel-feel-check/feel-check-zone-readiness.png" loading="lazy" alt="Zone distribution shows 47-53% dysregulated students, Feel Check improved readiness for 67.45% of them" class="cs-img">
+  <img src="../../assets/Case studies/sel-feel-check/feel-check-zone-readiness.png" loading="lazy" alt="Zone distribution shows 47-53% dysregulated students, Feel Check improved readiness for 67% of them" class="cs-img">
   <p class="caption">The problem and the outcome. Feel Check's real value wasn't in serving the 47% who arrived calm. It was surfacing the 47–53% who arrived dysregulated, and improving readiness for nearly 2 out of 3 of them. Nearly half the cohort benefited from the regulation intervention.</p>
 
   <div class="screen-grid">
@@ -371,11 +413,20 @@
     <span class="section-label">Reflection</span>
   </div>
 
-  <p>Feel Check solved what it was designed to solve — students arrived at sessions more ready to learn. What we never answered is whether that readiness translated into stronger academic outcomes. We didn't instrument academic outcome measurement at launch due to timeline constraints — 8 weeks from concept to rollout. In hindsight, I should have fought for even a rough proxy (error rate on first problem, problem-solving speed) to validate the core assumption. I'd flag that gap differently in v2 planning and push for measurement upfront.</p>
+  <h2>The intermediate signal isn't the business outcome.</h2>
+  <p>Feel Check solved what it was designed to solve — students arrived at sessions more ready to learn. What we never answered is whether that readiness translated into stronger academic outcomes. We didn't instrument academic outcome measurement at launch due to timeline constraints (8 weeks from concept to rollout). In hindsight, I should have fought for even a rough proxy — error rate on first problem, problem-solving speed — to validate the core assumption. For my next role, I'd flag that gap differently in v2 planning and push for measurement upfront.</p>
 
-  <p>Two things shipped at a quality below what the experience needed: micro-interactions on the selection options across the four stages, and audio on the regulation activities. I learned this the hard way — the first internal build shipped without ambient audio, assuming visual content alone would carry the regulation moment. Tutors observed students tapping through activities without settling; average engagement dropped to 0.8 minutes. After adding ambient audio before external rollout, engagement moved to 1.9 minutes. For experiences where the interaction *is* the therapeutic tool, sensory quality is design, not polish. The options surfacing at each step — Senses, Body, Heart, Mind — still felt static where they should feel alive (micro-interactions cut for v1). Both are v2 priorities.</p>
+  <h2>For sensory experiences, quality is design — not polish.</h2>
+  <p>Two things shipped at a quality below what the experience needed: micro-interactions on the selection options across the four stages, and audio on the regulation activities. The first internal build shipped without ambient audio, assuming visual content alone would carry the regulation moment. Tutors observed students tapping through activities without settling; average engagement dropped to 0.8 minutes. After adding ambient audio before external rollout, engagement moved to 1.9 minutes. For experiences where the interaction <em>is</em> the therapeutic tool, sensory quality is design, not polish.</p>
 
-  <p>G1–2 was deferred for the right reason — self-directed emotional identification wasn't developmentally accessible at that age. But I should have written a brief during v1 to ensure the deferred work had a clear entry point for v2. Deferring without a brief means it stays indefinitely deferred. That's on me. For my next role, I'd write a deferral brief before cutting scope — it's the only way to guarantee deferred work actually ships.</p>
+  <h2>Deferred work needs a brief, or it stays deferred.</h2>
+  <p>G1–2 was deferred for the right reason — self-directed emotional identification wasn't developmentally accessible at that age. But I should have written a brief during v1 to ensure the deferred work had a clear entry point for v2. Deferring without a brief means it stays indefinitely deferred. For my next role, I'd write a deferral brief before cutting scope — it's the only way to guarantee deferred work actually ships.</p>
+
+  <!-- Transfer line -->
+  <div class="cs-transfer">
+    <p class="cs-transfer-label">What carries forward</p>
+    <p class="cs-transfer-line">In any emotional or sensitive flow, presence-without-control beats both full privacy and full guidance.</p>
+  </div>
 
 </div>
 
@@ -396,7 +447,8 @@
   })();
 
   (function () {
-    var navLinks = document.querySelectorAll('.cs-section-nav a');
+    var pill = document.querySelector('.cs-section-pill');
+    var navLinks = document.querySelectorAll('.cs-section-pill a');
     var ids = ['context','role','process','outcome','reflection'];
     var els = ids.map(function(id) { return document.getElementById(id); }).filter(Boolean);
 
@@ -407,6 +459,19 @@
           link.classList.add('active');
         }
       });
+    }
+
+    /* Show pill once user scrolls past the cover */
+    var cover = document.querySelector('.cover');
+    if (pill && cover) {
+      window.addEventListener('scroll', function() {
+        var coverBottom = cover.offsetTop + cover.offsetHeight - 200;
+        if (window.scrollY > coverBottom) {
+          pill.classList.add('visible');
+        } else {
+          pill.classList.remove('visible');
+        }
+      }, { passive: true });
     }
 
     navLinks.forEach(function(link) {
@@ -466,6 +531,15 @@
   });
 </script>
 
+
+<!-- Floating section pill (appears on scroll past cover) -->
+<nav class="cs-section-pill" aria-label="Case study sections">
+  <a href="#context">Context</a>
+  <a href="#role">Role</a>
+  <a href="#process">Process</a>
+  <a href="#outcome">Outcome</a>
+  <a href="#reflection">Reflection</a>
+</nav>
 
 <!-- Footer -->
 <a href="../../work/new-trial-experience/index.html" class="cs-next">
