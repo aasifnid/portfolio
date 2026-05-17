@@ -448,44 +448,6 @@ blockquote { font-family: var(--font-display); font-size: clamp(20px, 3vw, 26px)
   .cs-img-caption-row { grid-template-columns: 1fr; }
 }
 
-/* Floating section pill nav — replaces .cs-section-nav stripe */
-.cs-section-pill {
-  position: fixed;
-  bottom: 28px;
-  left: 50%;
-  transform: translateX(-50%) translateY(20px);
-  z-index: 900;
-  display: flex;
-  align-items: center;
-  gap: 4px;
-  padding: 6px;
-  background: rgba(13, 13, 13, 0.95);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border-radius: 999px;
-  box-shadow: 0 8px 32px rgba(0,0,0,0.18);
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.25s ease, transform 0.25s ease;
-}
-.cs-section-pill.visible {
-  opacity: 1;
-  pointer-events: auto;
-  transform: translateX(-50%) translateY(0);
-}
-.cs-section-pill a {
-  font-family: var(--font-body); font-size: var(--text-xs); font-weight: var(--fw-semibold);
-  letter-spacing: 0.02em;
-  color: rgba(255,255,255,0.65); text-decoration: none;
-  padding: 8px 14px; border-radius: 999px;
-  transition: color 0.15s ease, background 0.15s ease;
-}
-.cs-section-pill a:hover { color: #FFFFFF; }
-.cs-section-pill a.active { color: #FFFFFF; background: rgba(255,255,255,0.12); }
-@media (max-width: 640px) {
-  .cs-section-pill { bottom: 12px; padding: 4px; }
-  .cs-section-pill a { padding: 6px 10px; font-size: 11px; }
-}
 
 /* Section spacing utility — generous gaps between case study sections */
 .cs-section-spacing { margin-top: 96px; }
@@ -841,34 +803,32 @@ blockquote { font-family: var(--font-display); font-size: clamp(20px, 3vw, 26px)
 [data-animate] { opacity: 0; transform: translateY(20px); transition: opacity 0.5s ease, transform 0.5s ease; }
 [data-animate].visible { opacity: 1; transform: none; }
 
-/* ─── Case study section nav ─── */
+/* ─── Case study section nav (sticky top strip below site-nav) ─── */
 .cs-section-nav {
-  position: sticky; top: 63px; z-index: 90; margin: 0;
-  background: #F5F5F5; border-bottom: 1px solid #DADADA;
+  position: sticky; top: 64px; z-index: 90; margin: 0;
+  background: var(--color-surface);
+  border-bottom: 1px solid var(--color-border);
   display: flex; align-items: center; justify-content: center; gap: 0;
   overflow-x: auto; scrollbar-width: none;
   transform: translateZ(0);
 }
 .cs-section-nav::-webkit-scrollbar { display: none; }
-.cs-nav-back {
-  position: absolute; left: 24px;
-  font-family: var(--font-body); font-size: var(--text-xs); font-weight: var(--fw-bold);
-  letter-spacing: 0.04em; text-transform: uppercase;
-  color: #8F8F8F; text-decoration: none;
-  white-space: nowrap;
-  transition: color 0.15s ease;
-}
-.cs-nav-back:hover { color: #0D0D0D; }
 .cs-section-nav a {
   font-family: var(--font-body); font-size: var(--text-xs); font-weight: var(--fw-semibold);
-  letter-spacing: 0.08em; text-transform: uppercase;
-  color: #8F8F8F; text-decoration: none;
-  padding: 11px 16px; border-bottom: 2px solid transparent;
+  letter-spacing: 0.10em; text-transform: uppercase;
+  color: var(--color-ink-3); text-decoration: none;
+  padding: 14px 16px; border-bottom: 2px solid transparent;
   white-space: nowrap;
   transition: color 0.15s ease, border-color 0.15s ease;
 }
-.cs-section-nav a:hover { color: #0D0D0D; }
-.cs-section-nav a.active { color: #0D0D0D; border-bottom-color: #0D0D0D; font-weight: var(--fw-bold); }
+.cs-section-nav a:hover { color: var(--color-ink); }
+.cs-section-nav a.active {
+  color: var(--color-ink);
+  border-bottom-color: var(--color-accent);
+}
+@media (max-width: 768px) {
+  .cs-section-nav { display: none; }
+}
 
 /* ─── Value prop hook ─── */
 .value-prop {

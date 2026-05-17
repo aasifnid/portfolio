@@ -34,6 +34,14 @@
   </div>
 </nav>
 
+<nav class="cs-section-nav" aria-label="Case study sections">
+  <a href="#context">The Problem</a>
+  <a href="#role">Role</a>
+  <a href="#process">Decisions</a>
+  <a href="#outcome">Impact</a>
+  <a href="#reflection">Lessons</a>
+</nav>
+
 <!-- COVER -->
 <div class="cover">
   <p class="cover-eyebrow">Product Design · Cuemath · 2024</p>
@@ -68,7 +76,7 @@
   <!-- 01 CONTEXT -->
   <div class="section-head" id="context" data-animate>
     <span class="section-num">01</span>
-    <span class="section-label">Context</span>
+    <span class="section-label">The Problem</span>
   </div>
 
   <p>Cuemath's lead-to-paid funnel was entirely AC-dependent. Every qualified lead required multiple AC touchpoints across the journey: initial qualification call, trial scheduling coordination, post-trial follow-up, and preference collection. Each touchpoint added 6–12 hours of delay as ACs managed competing leads. A typical parent journey took 2–3 days from signup to enrollment decision. With limited AC headcount and rising lead volume, the funnel became a bottleneck—ACs spent their time coordinating, not converting.</p>
@@ -128,7 +136,7 @@
   <!-- 03 PROCESS -->
   <div class="section-head" id="process" data-animate>
     <span class="section-num">03</span>
-    <span class="section-label">Process</span>
+    <span class="section-label">Decisions</span>
   </div>
 
   <h2>The Initial Hypothesis and Why It Failed</h2>
@@ -288,7 +296,7 @@
   <!-- 04 OUTCOME -->
   <div class="section-head" id="outcome" data-animate>
     <span class="section-num">04</span>
-    <span class="section-label">Outcome</span>
+    <span class="section-label">Impact</span>
   </div>
 
   <div class="cs-stat-hero">
@@ -334,7 +342,7 @@
   <!-- 05 REFLECTION -->
   <div class="section-head" id="reflection" data-animate>
     <span class="section-num">05</span>
-    <span class="section-label">Reflection</span>
+    <span class="section-label">Lessons</span>
   </div>
 
   <h2>Validate assumptions before you invest five weeks in design.</h2>
@@ -353,6 +361,7 @@
   </div>
 
 </div>
+
 <script>
 
   (function () {
@@ -365,8 +374,7 @@
   })();
 
   (function () {
-    var pill = document.querySelector('.cs-section-pill');
-    var navLinks = document.querySelectorAll('.cs-section-pill a');
+    var navLinks = document.querySelectorAll('.cs-section-nav a:not(.cs-nav-back)');
     var ids = ['context','role','process','outcome','reflection'];
     var els = ids.map(function(id) { return document.getElementById(id); }).filter(Boolean);
 
@@ -377,18 +385,6 @@
           link.classList.add('active');
         }
       });
-    }
-
-    var cover = document.querySelector('.cover');
-    if (pill && cover) {
-      window.addEventListener('scroll', function() {
-        var coverBottom = cover.offsetTop + cover.offsetHeight - 200;
-        if (window.scrollY > coverBottom) {
-          pill.classList.add('visible');
-        } else {
-          pill.classList.remove('visible');
-        }
-      }, { passive: true });
     }
 
     var obs = new IntersectionObserver(function(entries) {
@@ -444,15 +440,6 @@
   <img class="lightbox-img" id="lightbox-img" src="" alt="">
 </div>
 
-
-<!-- Floating section pill (appears on scroll past cover) -->
-<nav class="cs-section-pill" aria-label="Case study sections">
-  <a href="#context">Context</a>
-  <a href="#role">Role</a>
-  <a href="#process">Process</a>
-  <a href="#outcome">Outcome</a>
-  <a href="#reflection">Reflection</a>
-</nav>
 
 <!-- Footer -->
 <a href="../../work/leap-learning-system/index.html" class="cs-next">

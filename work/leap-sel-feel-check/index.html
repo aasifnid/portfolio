@@ -37,6 +37,14 @@
   </div>
 </nav>
 
+<nav class="cs-section-nav" aria-label="Case study sections">
+  <a href="#context">The Problem</a>
+  <a href="#role">Role</a>
+  <a href="#process">Decisions</a>
+  <a href="#outcome">Impact</a>
+  <a href="#reflection">Lessons</a>
+</nav>
+
 <!-- COVER -->
 <div class="cover">
   <p class="cover-eyebrow">Product Design · Cuemath · 2025–26</p>
@@ -73,7 +81,7 @@
   <!-- 01 CONTEXT -->
   <div class="section-head" id="context" data-animate>
     <span class="section-num">01</span>
-    <span class="section-label">Context</span>
+    <span class="section-label">The Problem</span>
   </div>
 
   <p>When a student arrived dysregulated — tired, distracted, carrying the weight of a long day — the tutor had no way of knowing. The session would start, and whatever was going on with the student would surface mid-problem. Some tutors read the signs quickly and pivoted: a joke, a riddle, a rebus puzzle, anything to loosen the mood and bring focus back. But even when it worked, 20–30 minutes of a 50-minute session would be gone before any real math happened.</p>
@@ -128,7 +136,7 @@
   <!-- 03 PROCESS -->
   <div class="section-head" id="process" data-animate>
     <span class="section-num">03</span>
-    <span class="section-label">Process</span>
+    <span class="section-label">Decisions</span>
   </div>
 
   <h2>The challenge wasn't the frameworks. It was the fit.</h2>
@@ -316,7 +324,7 @@
   <!-- 04 OUTCOME -->
   <div class="section-head" id="outcome" data-animate>
     <span class="section-num">04</span>
-    <span class="section-label">Outcome</span>
+    <span class="section-label">Impact</span>
   </div>
 
   <div class="cs-stat-hero">
@@ -410,7 +418,7 @@
   <!-- 05 REFLECTION -->
   <div class="section-head" id="reflection" data-animate>
     <span class="section-num">05</span>
-    <span class="section-label">Reflection</span>
+    <span class="section-label">Lessons</span>
   </div>
 
   <h2>The intermediate signal isn't the business outcome.</h2>
@@ -447,8 +455,7 @@
   })();
 
   (function () {
-    var pill = document.querySelector('.cs-section-pill');
-    var navLinks = document.querySelectorAll('.cs-section-pill a');
+    var navLinks = document.querySelectorAll('.cs-section-nav a:not(.cs-nav-back)');
     var ids = ['context','role','process','outcome','reflection'];
     var els = ids.map(function(id) { return document.getElementById(id); }).filter(Boolean);
 
@@ -459,19 +466,6 @@
           link.classList.add('active');
         }
       });
-    }
-
-    /* Show pill once user scrolls past the cover */
-    var cover = document.querySelector('.cover');
-    if (pill && cover) {
-      window.addEventListener('scroll', function() {
-        var coverBottom = cover.offsetTop + cover.offsetHeight - 200;
-        if (window.scrollY > coverBottom) {
-          pill.classList.add('visible');
-        } else {
-          pill.classList.remove('visible');
-        }
-      }, { passive: true });
     }
 
     navLinks.forEach(function(link) {
@@ -531,15 +525,6 @@
   });
 </script>
 
-
-<!-- Floating section pill (appears on scroll past cover) -->
-<nav class="cs-section-pill" aria-label="Case study sections">
-  <a href="#context">Context</a>
-  <a href="#role">Role</a>
-  <a href="#process">Process</a>
-  <a href="#outcome">Outcome</a>
-  <a href="#reflection">Reflection</a>
-</nav>
 
 <!-- Footer -->
 <a href="../../work/new-trial-experience/index.html" class="cs-next">

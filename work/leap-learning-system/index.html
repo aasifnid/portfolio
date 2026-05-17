@@ -31,6 +31,14 @@
   </div>
 </nav>
 
+<nav class="cs-section-nav" aria-label="Case study sections">
+  <a href="#context">The Problem</a>
+  <a href="#role">Role</a>
+  <a href="#process">Decisions</a>
+  <a href="#outcome">Impact</a>
+  <a href="#reflection">Lessons</a>
+</nav>
+
 <!-- COVER -->
 <div class="cover">
   <p class="cover-eyebrow">Product Design · Cuemath · March 2025</p>
@@ -65,7 +73,7 @@
   <!-- 01 CONTEXT -->
   <div class="section-head" id="context" data-animate>
     <span class="section-num">01</span>
-    <span class="section-label">Context</span>
+    <span class="section-label">The Problem</span>
   </div>
 
   <p>Tutors had to dig into lessons one-by-one to assign homework. Students had no central place to see it — homework lived inside chapters, buried two layers deep. If a tutor assigned extra practice or advanced worksheets, they got lost at the bottom of the chapter page; students scrolled past them or didn't know when they were due. Tracking whether a student had started or completed work meant navigating into every lesson.</p>
@@ -120,7 +128,7 @@
   <!-- 03 PROCESS -->
   <div class="section-head" id="process" data-animate>
     <span class="section-num">03</span>
-    <span class="section-label">Process</span>
+    <span class="section-label">Decisions</span>
   </div>
 
   <h2>Why goal creation first?</h2>
@@ -228,7 +236,7 @@
   <!-- 04 OUTCOME -->
   <div class="section-head" id="outcome" data-animate>
     <span class="section-num">04</span>
-    <span class="section-label">Outcome</span>
+    <span class="section-label">Impact</span>
   </div>
 
   <div class="cs-stat-hero">
@@ -251,7 +259,7 @@
   <!-- 05 REFLECTION -->
   <div class="section-head" id="reflection" data-animate>
     <span class="section-num">05</span>
-    <span class="section-label">Reflection</span>
+    <span class="section-label">Lessons</span>
   </div>
 
   <h2>Pre-map content during discovery, not during build.</h2>
@@ -288,8 +296,7 @@
   })();
 
   (function () {
-    var pill = document.querySelector('.cs-section-pill');
-    var navLinks = document.querySelectorAll('.cs-section-pill a');
+    var navLinks = document.querySelectorAll('.cs-section-nav a:not(.cs-nav-back)');
     var ids = ['context','role','process','outcome','reflection'];
     var els = ids.map(function(id) { return document.getElementById(id); }).filter(Boolean);
 
@@ -300,18 +307,6 @@
           link.classList.add('active');
         }
       });
-    }
-
-    var cover = document.querySelector('.cover');
-    if (pill && cover) {
-      window.addEventListener('scroll', function() {
-        var coverBottom = cover.offsetTop + cover.offsetHeight - 200;
-        if (window.scrollY > coverBottom) {
-          pill.classList.add('visible');
-        } else {
-          pill.classList.remove('visible');
-        }
-      }, { passive: true });
     }
 
     var obs = new IntersectionObserver(function(entries) {
@@ -366,15 +361,6 @@
 
 </style>
 
-
-<!-- Floating section pill (appears on scroll past cover) -->
-<nav class="cs-section-pill" aria-label="Case study sections">
-  <a href="#context">Context</a>
-  <a href="#role">Role</a>
-  <a href="#process">Process</a>
-  <a href="#outcome">Outcome</a>
-  <a href="#reflection">Reflection</a>
-</nav>
 
 <!-- Footer -->
 <a href="../../work/affiliate-partnership/index.html" class="cs-next">
