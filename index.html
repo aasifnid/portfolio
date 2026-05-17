@@ -580,7 +580,7 @@
     background: var(--color-ink);
     display: flex; flex-direction: column;
     align-items: center; justify-content: center;
-    transition: opacity 0.7s ease;
+    transition: opacity 0.5s ease;
   }
   #intro-overlay.fade-out { opacity: 0; pointer-events: none; }
 
@@ -1068,8 +1068,8 @@
     } catch (e) { /* storage blocked — play overlay this time */ }
     setTimeout(function() {
       overlay.classList.add('fade-out');
-      setTimeout(hide, 700);
-    }, 2400);
+      setTimeout(hide, 500);
+    }, 3000);
   })();
 
   /* ── Nav glass on scroll (cached DOM ref + threshold guard) ── */
