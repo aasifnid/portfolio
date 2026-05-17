@@ -20,6 +20,20 @@
   /* ─── Accent ─── */
   --color-accent:   #FF80F4;   /* purple 4 — sitewide accent (hover, focus, brand) */
 
+  /* ─── Recommendation card palette (light bg + matching accent for each card) ─── */
+  --color-rec-1-bg:     #FFE0FD;   /* purple — head bg */
+  --color-rec-1-accent: #FF80F4;   /* purple — head border-bottom */
+  --color-rec-2-bg:     #FFDDCC;   /* orange — head bg */
+  --color-rec-2-accent: #FF884C;   /* orange — head border-bottom */
+  --color-rec-3-bg:     #FFF1CC;   /* yellow — head bg */
+  --color-rec-3-accent: #FFB700;   /* yellow — head border-bottom */
+  --color-rec-4-bg:     #D6F5FF;   /* blue — head bg */
+  --color-rec-4-accent: #33CCFF;   /* blue — head border-bottom */
+  --color-rec-5-bg:     #D0FBE5;   /* green — head bg */
+  --color-rec-5-accent: #00E573;   /* green — head border-bottom */
+  --color-rec-6-bg:     #FFDBDB;   /* red — head bg */
+  --color-rec-6-accent: #FF5B4D;   /* red — head border-bottom */
+
   /* ─── Typography: 2-Font System ─── */
   --font-display: 'Outfit', -apple-system, system-ui, sans-serif;
   --font-body:    'DM Sans', -apple-system, system-ui, sans-serif;

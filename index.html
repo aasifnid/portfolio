@@ -356,12 +356,12 @@
   .rec-quote-wrap.expanded .rec-readmore { display: none; }
   .rec-quote-wrap:not(.expanded) .rec-readless { display: none; }
   /* 6-color set — shuffled to break sequence, balanced warm/cool per row */
-  .rec-card:nth-child(1) .rec-head { background: #FFE0FD; border-bottom-color: var(--color-accent); } /* purple */
-  .rec-card:nth-child(2) .rec-head { background: #FFDDCC; border-bottom-color: #FF884C; } /* orange */
-  .rec-card:nth-child(3) .rec-head { background: #FFF1CC; border-bottom-color: #FFB700; } /* yellow */
-  .rec-card:nth-child(4) .rec-head { background: #D6F5FF; border-bottom-color: #33CCFF; } /* blue */
-  .rec-card:nth-child(5) .rec-head { background: #D0FBE5; border-bottom-color: #00E573; } /* green */
-  .rec-card:nth-child(6) .rec-head { background: #FFDBDB; border-bottom-color: #FF5B4D; } /* red */
+  .rec-card:nth-child(1) .rec-head { background: var(--color-rec-1-bg); border-bottom-color: var(--color-rec-1-accent); } /* purple */
+  .rec-card:nth-child(2) .rec-head { background: var(--color-rec-2-bg); border-bottom-color: var(--color-rec-2-accent); } /* orange */
+  .rec-card:nth-child(3) .rec-head { background: var(--color-rec-3-bg); border-bottom-color: var(--color-rec-3-accent); } /* yellow */
+  .rec-card:nth-child(4) .rec-head { background: var(--color-rec-4-bg); border-bottom-color: var(--color-rec-4-accent); } /* blue */
+  .rec-card:nth-child(5) .rec-head { background: var(--color-rec-5-bg); border-bottom-color: var(--color-rec-5-accent); } /* green */
+  .rec-card:nth-child(6) .rec-head { background: var(--color-rec-6-bg); border-bottom-color: var(--color-rec-6-accent); } /* red */
 
   /* ─── About ─── */
   .about-container {
@@ -616,22 +616,6 @@
     0%   { background-position: -200% center; }
     100% { background-position:  200% center; }
   }
-  @keyframes cardToColor {
-    0% { opacity: 1; background-color: transparent; }
-    40% { opacity: 1; background-color: #33CCFF; }
-    100% { opacity: 0; background-color: #33CCFF; }
-  }
-  @keyframes pageIn {
-    0% { opacity: 0; }
-    100% { opacity: 1; }
-  }
-  .card-flipping {
-    animation: cardToColor 1.2s ease-out forwards !important;
-  }
-  body.page-transition-in {
-    animation: pageIn 0.8s ease-out 0.4s forwards !important;
-  }
-
   /* ─── Hero entrance ─── */
   .hero-eyebrow {
     opacity: 0;
