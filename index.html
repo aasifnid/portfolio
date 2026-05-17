@@ -1046,23 +1046,22 @@
 
 <script>
 
-  /* ── Intro overlay ── */
+  /* ── Intro overlay — plays once per browser (localStorage), never replays on refresh / re-nav ── */
   (function() {
     var overlay = document.getElementById('intro-overlay');
-    if (sessionStorage.getItem('intro-seen')) {
+    if (!overlay) return;
+    var hide = function() {
       overlay.style.display = 'none';
       overlay.style.visibility = 'hidden';
       overlay.style.pointerEvents = 'none';
-      return;
-    }
-    sessionStorage.setItem('intro-seen', '1');
+    };
+    try {
+      if (localStorage.getItem('intro-seen')) { hide(); return; }
+      localStorage.setItem('intro-seen', '1');
+    } catch (e) { /* storage blocked — play overlay this time */ }
     setTimeout(function() {
       overlay.classList.add('fade-out');
-      setTimeout(function() {
-        overlay.style.display = 'none';
-        overlay.style.visibility = 'hidden';
-        overlay.style.pointerEvents = 'none';
-      }, 700);
+      setTimeout(hide, 700);
     }, 2400);
   })();
 
