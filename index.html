@@ -1082,17 +1082,21 @@
     }, 2400);
   })();
 
-  /* ── Nav glass on scroll ── */
+  /* ── Nav glass on scroll (cached DOM ref + threshold guard) ── */
+  var siteNav = document.querySelector('.site-nav');
+  var navIsGlass = false;
   window.addEventListener('scroll', function() {
-    var nav = document.querySelector('.site-nav');
-    if (window.scrollY > 24) {
-      nav.style.background = 'rgba(13, 13, 13, 0.95)';
-      nav.style.backdropFilter = 'blur(16px)';
-      nav.style.webkitBackdropFilter = 'blur(16px)';
+    var shouldGlass = window.scrollY > 24;
+    if (shouldGlass === navIsGlass) return;
+    navIsGlass = shouldGlass;
+    if (shouldGlass) {
+      siteNav.style.background = 'rgba(13, 13, 13, 0.95)';
+      siteNav.style.backdropFilter = 'blur(16px)';
+      siteNav.style.webkitBackdropFilter = 'blur(16px)';
     } else {
-      nav.style.background = '';
-      nav.style.backdropFilter = '';
-      nav.style.webkitBackdropFilter = '';
+      siteNav.style.background = '';
+      siteNav.style.backdropFilter = '';
+      siteNav.style.webkitBackdropFilter = '';
     }
   }, { passive: true });
 
@@ -1110,11 +1114,21 @@
     });
   });
 
-  /* ── Scroll progress bar ── */
+  /* ── Scroll progress bar (rAF-throttled, cached scrollable height) ── */
   var progressBar = document.getElementById('scroll-progress');
+  var scrollableHeight = document.body.scrollHeight - window.innerHeight;
+  window.addEventListener('resize', function() {
+    scrollableHeight = document.body.scrollHeight - window.innerHeight;
+  }, { passive: true });
+  var progressTicking = false;
   window.addEventListener('scroll', function() {
-    var pct = window.scrollY / (document.body.scrollHeight - window.innerHeight) * 100;
-    progressBar.style.width = Math.min(pct, 100) + '%';
+    if (progressTicking) return;
+    progressTicking = true;
+    requestAnimationFrame(function() {
+      var pct = scrollableHeight > 0 ? (window.scrollY / scrollableHeight) * 100 : 0;
+      progressBar.style.width = Math.min(pct, 100) + '%';
+      progressTicking = false;
+    });
   }, { passive: true });
 
   /* ── Custom cursor ── */

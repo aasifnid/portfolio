@@ -1066,6 +1066,8 @@ blockquote { font-family: var(--font-display); font-size: clamp(20px, 3vw, 26px)
 
 /* ─── Section anchor offset ─── */
 .section-head[id] { scroll-margin-top: 80px; }
+.home-section[id] { scroll-margin-top: 44px; }
+.home-hero[id], .home-hero { scroll-margin-top: 64px; }
 
 /* ─── Image placeholders ─── */
 .img-placeholder {
