@@ -1262,8 +1262,13 @@
       history = [];
       messages.innerHTML = initialMessagesHTML;
       starters.style.display = '';
+      panel.classList.remove('chat-has-history');
       input.value = '';
       input.focus();
+    }
+
+    function markHistoryStarted() {
+      panel.classList.add('chat-has-history');
     }
 
     bubble.addEventListener('click', openPanel);
@@ -1282,6 +1287,7 @@
         var answer = quickAnswers[question];
         if (answer) {
           starters.style.display = 'none';
+          markHistoryStarted();
           addMsg('user', question);
           history.push({ role: 'user', content: question });
           var reply = addMsg('bot', answer);
@@ -1328,6 +1334,7 @@
       if (!text) return;
 
       starters.style.display = 'none';
+      markHistoryStarted();
       input.value = '';
       sendBtn.disabled = true;
 
