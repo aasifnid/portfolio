@@ -4,12 +4,19 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Md Aasif Anwar — UX Designer</title>
+<script>
+  /* Pre-paint check: if this tab has already seen the splash, hide the overlay before first paint (no flash). */
+  try { if (sessionStorage.getItem('intro-seen')) document.documentElement.classList.add('intro-hide'); } catch (e) {}
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&family=DM+Sans:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/tokens.css">
 <link rel="stylesheet" href="assets/typography.css">
 <link rel="stylesheet" href="assets/style.css">
+<style>
+  .intro-hide #intro-overlay { display: none !important; }
+</style>
 <style>
   /* Critical navbar CSS - renders immediately */
   .site-nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: var(--color-ink); height: 64px; display: flex; justify-content: space-between; align-items: center; padding: 0 48px; }
@@ -1046,7 +1053,7 @@
 
 <script>
 
-  /* ── Intro overlay — plays once per browser (localStorage), never replays on refresh / re-nav ── */
+  /* ── Intro overlay — plays once per TAB (sessionStorage). Pre-paint check in <head> prevents flash on refresh / re-nav. ── */
   (function() {
     var overlay = document.getElementById('intro-overlay');
     if (!overlay) return;
@@ -1056,8 +1063,8 @@
       overlay.style.pointerEvents = 'none';
     };
     try {
-      if (localStorage.getItem('intro-seen')) { hide(); return; }
-      localStorage.setItem('intro-seen', '1');
+      if (sessionStorage.getItem('intro-seen')) { hide(); return; }
+      sessionStorage.setItem('intro-seen', '1');
     } catch (e) { /* storage blocked — play overlay this time */ }
     setTimeout(function() {
       overlay.classList.add('fade-out');
