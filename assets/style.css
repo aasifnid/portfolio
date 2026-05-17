@@ -18,7 +18,7 @@
   background: rgba(255, 128, 244, 0.2); border-color: transparent;
 }
 @media (hover: none) { #cursor-dot { display: none; } }
-html { font-size: var(--text-base); -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; scroll-padding-top: 64px; scroll-behavior: smooth; }
+html { font-size: var(--text-base); -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; scroll-behavior: smooth; }
 
 /* ─── Tokens inherited from tokens.css ───────────────────────────
    Neutral + gold values, card-shadow, border radius all come from
@@ -85,11 +85,11 @@ body {
 
 /* ─── Layout ─── */
 .cover { padding: 120px 32px 80px; max-width: 800px; margin: 0 auto; }
-.page { max-width: 800px; margin: 0 auto; padding: 0 32px 160px; }
+.page { max-width: 800px; margin: 0 auto; padding: 0 32px 480px; }
 
 @media (max-width: 768px) {
   .cover { padding: 96px 24px 64px; }
-  .page { padding: 0 24px 120px; }
+  .page { padding: 0 24px 360px; }
 }
 
 /* Optional inner prose constraint — for opt-in narrower text columns */
