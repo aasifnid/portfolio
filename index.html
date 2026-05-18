@@ -54,6 +54,14 @@
     width: 240px;
     cursor: pointer;
   }
+  /* Invisible hover-extender — adds 40px of trigger area in every
+     direction without changing the layout or shifting the bubble. */
+  .hero-portrait-col::before {
+    content: '';
+    position: absolute;
+    inset: -40px;
+    z-index: 0;
+  }
   .hero-bubble {
     position: absolute;
     bottom: calc(100% + 18px);
