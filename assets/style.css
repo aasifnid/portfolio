@@ -50,9 +50,17 @@ body {
   transition: color 0.2s ease;
 }
 .nav-name:hover { color: var(--color-accent); }
-.nav-links { display: flex; gap: 24px; }
+.nav-links { display: flex; align-items: center; gap: 24px; }
 .nav-links a { font-size: 14px; font-weight: var(--fw-semibold); color: #FFFFFF; text-decoration: none; transition: color 0.15s ease; }
 .nav-links a:hover { color: var(--color-accent); }
+/* Zone separator — splits scroll anchors (left) from page links (right).
+   1px hairline, 14px tall, low-opacity white, sits inline with text. */
+.nav-zone-sep {
+  display: inline-block;
+  width: 1px; height: 14px;
+  background: rgba(255,255,255,0.25);
+  margin: 0 4px;
+}
 .nav-burger {
   display: none; flex-direction: column; justify-content: space-between;
   width: 22px; height: 16px;
@@ -74,14 +82,26 @@ body {
   transition: transform 0.2s ease, opacity 0.2s ease;
 }
 .nav-mobile-menu.open { transform: translateY(0); opacity: 1; pointer-events: all; }
+/* Mobile burger items use the Vercel pattern: no per-item borders.
+   Grouping is signaled by a single .nav-mobile-divider between zones. */
 .nav-mobile-link {
-  font-family: "DM Sans", sans-serif; font-size: var(--text-sm); font-weight: var(--fw-semibold);
+  font-family: "DM Sans", sans-serif; font-size: var(--text-base); font-weight: var(--fw-semibold);
   color: #fff; text-decoration: none;
-  padding: 18px 24px; border-bottom: 1px solid rgba(255,255,255,0.08);
+  padding: 16px 24px;
   transition: background 0.15s;
 }
-.nav-mobile-link:last-child { border-bottom: none; }
-.nav-mobile-link:hover { background: rgba(255,255,255,0.05); color: var(--color-accent); }
+.nav-mobile-link:hover,
+.nav-mobile-link:focus-visible {
+  background: rgba(255,255,255,0.05); color: var(--color-accent); outline: none;
+}
+.nav-mobile-link:active { background: rgba(255,255,255,0.1); }
+/* Group divider for mobile menu — single 1px hairline between zones,
+   12px breathing space on each side. Vercel-style. */
+.nav-mobile-divider {
+  height: 1px;
+  background: rgba(255,255,255,0.12);
+  margin: 12px 24px;
+}
 
 /* ─── Layout ─── */
 .cover { padding: 120px 32px 80px; max-width: 800px; margin: 0 auto; }
@@ -703,7 +723,8 @@ blockquote { font-family: var(--font-display); font-size: var(--text-callout); l
   padding: 20px 48px;
   display: flex; justify-content: space-between; align-items: center;
 }
-.home-footer .footer-left {
+.home-footer .footer-left,
+.home-footer .footer-right {
   display: flex; align-items: center; gap: 12px;
 }
 .home-footer .footer-attribution,
@@ -712,14 +733,6 @@ blockquote { font-family: var(--font-display); font-size: var(--text-callout); l
   color: var(--color-ink-3); letter-spacing: 0.01em;
   font-weight: var(--fw-regular);
 }
-.home-footer .footer-divider { color: var(--color-border-2); }
-.home-footer .footer-link {
-  font-family: "DM Sans", sans-serif; font-size: var(--text-xs);
-  color: var(--color-ink-3); text-decoration: none;
-  font-weight: var(--fw-regular); letter-spacing: 0.01em;
-  transition: color 0.15s ease;
-}
-.home-footer .footer-link:hover { color: var(--color-accent); }
 @media (max-width: 768px) {
   .home-footer { padding: 16px 24px; flex-direction: column; gap: 12px; align-items: flex-start; }
 }

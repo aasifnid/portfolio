@@ -431,9 +431,27 @@
 <nav class="site-nav">
   <a href="../index.html" class="nav-name">Aasif Anwar</a>
   <div class="nav-links">
-    <a href="../index.html">← Back to portfolio</a>
+    <a href="../index.html#work">works</a>
+    <a href="../index.html#about">about</a>
+    <a href="../index.html#recommendations">peers</a>
+    <a href="../index.html#contact">connect</a>
+    <span class="nav-zone-sep" aria-hidden="true"></span>
+    <a href="./" aria-current="page">system</a>
+    <a href="https://drive.google.com/file/d/1NtfsJ9CRBjPtg234L0eRPxfK_al4kFGT/view?usp=sharing" target="_blank" rel="noopener">resume</a>
   </div>
+  <button class="nav-burger" id="nav-burger" aria-label="Open menu">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
+<div class="nav-mobile-menu" id="nav-mobile-menu">
+  <a href="../index.html#work" class="nav-mobile-link">works</a>
+  <a href="../index.html#about" class="nav-mobile-link">about</a>
+  <a href="../index.html#recommendations" class="nav-mobile-link">peers</a>
+  <a href="../index.html#contact" class="nav-mobile-link">connect</a>
+  <div class="nav-mobile-divider" aria-hidden="true"></div>
+  <a href="./" class="nav-mobile-link" aria-current="page">system</a>
+  <a href="https://drive.google.com/file/d/1NtfsJ9CRBjPtg234L0eRPxfK_al4kFGT/view?usp=sharing" target="_blank" rel="noopener" class="nav-mobile-link">resume</a>
+</div>
 
 <div class="ds-page">
 
@@ -729,19 +747,40 @@
     <!-- Top navigation -->
     <div class="ds-component">
       <div class="ds-component-header">
-        <span class="ds-component-title">Top navigation</span>
-        <span class="ds-component-meta">.site-nav · 64px · sticky · purple-4 hover on text</span>
+        <span class="ds-component-title">Top navigation · two-zone</span>
+        <span class="ds-component-meta">.site-nav · 64px sticky · scroll-anchors left, page-links right · .nav-zone-sep divides the two zones · purple-4 on hover</span>
       </div>
       <div class="ds-component-preview no-pad" style="background: var(--color-ink);">
         <div style="display: flex; justify-content: space-between; align-items: center; height: 64px; padding: 0 32px;">
           <a href="#" style="font-family: var(--font-display); font-size: 20px; font-weight: 700; color: #FFFFFF; text-decoration: none; letter-spacing: -0.01em;">Aasif Anwar</a>
-          <div style="display: flex; gap: 24px;">
+          <div style="display: flex; align-items: center; gap: 24px;">
             <a href="#" style="font-size: 14px; font-weight: 600; color: #FFFFFF; text-decoration: none;">works</a>
             <a href="#" style="font-size: 14px; font-weight: 600; color: #FFFFFF; text-decoration: none;">about</a>
             <a href="#" style="font-size: 14px; font-weight: 600; color: #FFFFFF; text-decoration: none;">peers</a>
             <a href="#" style="font-size: 14px; font-weight: 600; color: #FFFFFF; text-decoration: none;">connect</a>
-            <a href="#" style="font-size: 14px; font-weight: 600; color: var(--color-accent); text-decoration: none;">resume</a>
+            <span style="display: inline-block; width: 1px; height: 14px; background: rgba(255,255,255,0.25); margin: 0 4px;"></span>
+            <a href="#" style="font-size: 14px; font-weight: 600; color: #FFFFFF; text-decoration: none;">system</a>
+            <a href="#" style="font-size: 14px; font-weight: 600; color: #FFFFFF; text-decoration: none;">resume</a>
           </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile burger menu -->
+    <div class="ds-component">
+      <div class="ds-component-header">
+        <span class="ds-component-title">Mobile burger menu · grouped</span>
+        <span class="ds-component-meta">.nav-mobile-menu · no per-item borders · .nav-mobile-divider (1px, 12% white) splits zones · Vercel-style grouping</span>
+      </div>
+      <div class="ds-component-preview no-pad" style="background: var(--color-ink); max-width: 360px;">
+        <div style="display: flex; flex-direction: column; padding: 12px 0;">
+          <a href="#" style="font-size: 16px; font-weight: 600; color: #FFFFFF; text-decoration: none; padding: 16px 24px;">works</a>
+          <a href="#" style="font-size: 16px; font-weight: 600; color: #FFFFFF; text-decoration: none; padding: 16px 24px;">about</a>
+          <a href="#" style="font-size: 16px; font-weight: 600; color: #FFFFFF; text-decoration: none; padding: 16px 24px;">peers</a>
+          <a href="#" style="font-size: 16px; font-weight: 600; color: #FFFFFF; text-decoration: none; padding: 16px 24px;">connect</a>
+          <div style="height: 1px; background: rgba(255,255,255,0.12); margin: 12px 24px;"></div>
+          <a href="#" style="font-size: 16px; font-weight: 600; color: #FFFFFF; text-decoration: none; padding: 16px 24px;">system</a>
+          <a href="#" style="font-size: 16px; font-weight: 600; color: #FFFFFF; text-decoration: none; padding: 16px 24px;">resume</a>
         </div>
       </div>
     </div>
@@ -996,16 +1035,16 @@
     <div class="ds-component">
       <div class="ds-component-header">
         <span class="ds-component-title">Site footer</span>
-        <span class="ds-component-meta">.home-footer · light bg #EBEBEB · left group + right link · purple-4 hover</span>
+        <span class="ds-component-meta">.home-footer · light bg #EBEBEB · two-zone (.footer-left / .footer-right) · text-only, no CTA</span>
       </div>
       <div class="ds-component-preview no-pad">
         <footer class="home-footer" style="margin: 0; padding: 20px 32px;">
           <div class="footer-left">
             <span class="footer-attribution">© 2026 Aasif Anwar</span>
-            <span class="footer-divider">·</span>
-            <span class="footer-built">Designed + coded with AI</span>
           </div>
-          <a href="#" class="footer-link">Explore design system →</a>
+          <div class="footer-right">
+            <span class="footer-built">Designed by Aasif · Coded with AI</span>
+          </div>
         </footer>
       </div>
     </div>
@@ -1228,11 +1267,28 @@
 <footer class="home-footer">
   <div class="footer-left">
     <span class="footer-attribution">© 2026 Aasif Anwar</span>
-    <span class="footer-divider">·</span>
-    <span class="footer-built">Designed + coded with AI</span>
   </div>
-  <a href="../index.html" class="footer-link">← Back to portfolio</a>
+  <div class="footer-right">
+    <span class="footer-built">Designed by Aasif · Coded with AI</span>
+  </div>
 </footer>
 
+<script>
+(function() {
+  var burger = document.getElementById('nav-burger');
+  var mobileMenu = document.getElementById('nav-mobile-menu');
+  if (!burger || !mobileMenu) return;
+  burger.addEventListener('click', function() {
+    burger.classList.toggle('open');
+    mobileMenu.classList.toggle('open');
+  });
+  mobileMenu.querySelectorAll('.nav-mobile-link').forEach(function(link) {
+    link.addEventListener('click', function() {
+      burger.classList.remove('open');
+      mobileMenu.classList.remove('open');
+    });
+  });
+})();
+</script>
 </body>
 </html>
