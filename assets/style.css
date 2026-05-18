@@ -705,7 +705,9 @@ blockquote { font-family: var(--font-display); font-size: var(--text-callout); l
 .chat-send:hover { background: #2D2D2D; }
 .chat-send:disabled { opacity: 0.4; cursor: not-allowed; }
 @media (max-width: 480px) {
-  #chat-panel { width: calc(100vw - 24px); right: 12px; bottom: 80px; }
+  /* Anchor to bottom, cap height so the top stays clear of the 64px nav.
+     (64 nav + 80 bottom + 16 buffer = 160 reserved.) */
+  #chat-panel { width: calc(100vw - 24px); right: 12px; bottom: 80px; max-height: calc(100vh - 160px); }
   #chat-bubble { bottom: 20px; right: 20px; padding: 14px; gap: 0; }
   #chat-bubble .chat-bubble-label { display: none; }
   #chat-bubble svg { width: 22px; height: 22px; }
