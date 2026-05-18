@@ -131,34 +131,34 @@ body {
 .divider-gold { display: none; }
 
 /* ─── Section headers — architectural ───
-   Inline: small "01" eyebrow + big bold label on one line. Label is
-   the hero; the number is a quiet prefix. Used across case studies
-   and the design system. */
+   Stacked: small uppercase "01" eyebrow + big bold label below. Label
+   is the hero; the number is metadata. Tight gap between them so the
+   eyebrow reads as a marker on the title, not a separate line of text. */
 .section-head {
-  display: flex;
-  align-items: center;
-  gap: 16px;
+  display: block;
   padding-top: 80px;
   margin-bottom: 36px;
 }
 @media (max-width: 768px) {
-  .section-head { padding-top: 64px; margin-bottom: 28px; gap: 12px; }
+  .section-head { padding-top: 64px; margin-bottom: 28px; }
 }
 
 .section-num {
+  display: block;
   font-family: var(--font-body);
   font-size: var(--text-xs);
   font-weight: var(--fw-semibold);
   letter-spacing: var(--ls-caps);
   text-transform: uppercase;
   color: var(--color-ink-3);
-  flex-shrink: 0;
+  margin-bottom: 6px;
 }
 .section-label {
+  display: block;
   font-family: var(--font-display);
   font-size: var(--text-3xl);
   font-weight: var(--fw-bold);
-  line-height: 1;
+  line-height: 1.1;
   letter-spacing: -0.02em;
   color: var(--color-ink);
   text-transform: none;
