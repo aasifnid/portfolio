@@ -136,11 +136,11 @@ body {
    eyebrow reads as a marker on the title, not a separate line of text. */
 .section-head {
   display: block;
-  padding-top: 80px;
-  margin-bottom: 36px;
+  padding-top: 64px;
+  margin-bottom: 32px;
 }
 @media (max-width: 768px) {
-  .section-head { padding-top: 64px; margin-bottom: 28px; }
+  .section-head { padding-top: 48px; margin-bottom: 24px; }
 }
 
 .section-num {
@@ -151,7 +151,7 @@ body {
   letter-spacing: var(--ls-caps);
   text-transform: uppercase;
   color: var(--color-ink-3);
-  margin-bottom: 6px;
+  margin-bottom: 8px;
 }
 .section-label {
   display: block;
