@@ -67,22 +67,24 @@
 
   /* ─── Sections ─── */
   .ds-section { margin-bottom: 96px; }
-  .ds-section-head { margin-bottom: 40px; }
+  .ds-section-head {
+    display: flex; align-items: baseline; gap: 16px;
+    margin-bottom: 40px;
+  }
+  .ds-section-head::after {
+    content: ''; flex: 1; height: 1px; background: var(--color-border);
+    align-self: center;
+  }
   .ds-section-num {
-    display: block;
-    font-family: var(--font-body); font-size: 12px; font-weight: 600;
-    letter-spacing: 0.12em; text-transform: uppercase;
+    font-family: var(--font-body); font-size: 14px; font-weight: 600;
+    letter-spacing: 0.10em; text-transform: uppercase;
     color: var(--color-ink-3);
-    margin-bottom: 8px;
+    margin: 0;
   }
   .ds-section-title {
-    display: flex; align-items: center; gap: 16px;
     font-family: var(--font-display); font-size: 28px; font-weight: 700;
     letter-spacing: -0.02em; color: var(--color-ink);
     margin: 0;
-  }
-  .ds-section-title::after {
-    content: ''; flex: 1; height: 1px; background: var(--color-border);
   }
   .ds-subsection {
     margin-bottom: 48px;
@@ -461,7 +463,7 @@
   <!-- ═══ 01 · FOUNDATIONS ═══ -->
   <section class="ds-section">
     <div class="ds-section-head">
-      <p class="ds-section-num">01</p>
+      <span class="ds-section-num">01</span>
       <h2 class="ds-section-title">Foundations</h2>
     </div>
 
@@ -657,8 +659,32 @@
       <div class="ds-space-row"><span class="ds-space-label">s6</span><div class="ds-space-bar" style="width: 24px;"></div><span class="ds-space-value">24px</span></div>
       <div class="ds-space-row"><span class="ds-space-label">s8</span><div class="ds-space-bar" style="width: 32px;"></div><span class="ds-space-value">32px</span></div>
       <div class="ds-space-row"><span class="ds-space-label">s12</span><div class="ds-space-bar" style="width: 48px;"></div><span class="ds-space-value">48px</span></div>
-      <div class="ds-space-row"><span class="ds-space-label">s16</span><div class="ds-space-bar" style="width: 64px;"></div><span class="ds-space-value">64px</span></div>
+      <div class="ds-space-row"><span class="ds-space-label">s16</span><div class="ds-space-bar" style="width: 64px;"></div><span class="ds-space-value">64px · case study section break (mobile)</span></div>
+      <div class="ds-space-row"><span class="ds-space-label">s20</span><div class="ds-space-bar" style="width: 80px;"></div><span class="ds-space-value">80px · case study section break (desktop)</span></div>
       <div class="ds-space-row"><span class="ds-space-label">s24</span><div class="ds-space-bar" style="width: 96px;"></div><span class="ds-space-value">96px</span></div>
+    </div>
+
+    <!-- ─── Strokes / Dividers ─── -->
+    <div class="ds-subsection">
+      <p class="ds-subsection-label">Stroke system · 2 tiers, 2 roles</p>
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px;">
+        <div style="padding: 24px; background: #FAFAFA; border: 1px solid var(--color-border);">
+          <p style="font-family: var(--font-body); font-size: var(--text-xs); font-weight: var(--fw-semibold); letter-spacing: 0.10em; text-transform: uppercase; color: var(--color-ink-3); margin-bottom: 16px;">Tier 1 · Featured</p>
+          <div style="border-top: 1px solid var(--color-ink); border-bottom: 1px solid var(--color-ink); padding: 24px 0; margin: 8px 0;">
+            <p style="font-family: var(--font-display); font-size: 48px; font-weight: 700; line-height: 1; letter-spacing: -0.03em; color: var(--color-ink); margin: 0;">67%</p>
+          </div>
+          <p style="font-size: var(--text-sm); color: var(--color-ink-2); line-height: 1.5; margin-top: 16px;"><strong style="color: var(--color-ink);">1px solid var(--color-ink)</strong> · top + bottom (or top only). Reserved for hero / closing blocks that anchor a section: <code style="font-size: 12px;">.cs-stat-hero</code>, <code style="font-size: 12px;">.cs-transfer</code>. Signal: "look here."</p>
+        </div>
+        <div style="padding: 24px; background: #FAFAFA; border: 1px solid var(--color-border);">
+          <p style="font-family: var(--font-body); font-size: var(--text-xs); font-weight: var(--fw-semibold); letter-spacing: 0.10em; text-transform: uppercase; color: var(--color-ink-3); margin-bottom: 16px;">Tier 2 · Structural</p>
+          <div style="border-top: 1px solid var(--color-border); border-bottom: 1px solid var(--color-border); padding: 16px 0; margin: 8px 0;">
+            <p style="font-size: var(--text-sm); color: var(--color-ink-2); margin: 0;">Row 1 · 60% completion</p>
+            <p style="font-size: var(--text-sm); color: var(--color-ink-2); margin: 8px 0 0; border-top: 1px solid var(--color-border); padding-top: 8px;">Row 2 · 22% retention</p>
+          </div>
+          <p style="font-size: var(--text-sm); color: var(--color-ink-2); line-height: 1.5; margin-top: 16px;"><strong style="color: var(--color-ink);">1px solid var(--color-border)</strong> · hairline. For tables, rows, sub-blocks: <code style="font-size: 12px;">.cs-method</code>, <code style="font-size: 12px;">.phase-table</code>, <code style="font-size: 12px;">.outcome-stats</code>, <code style="font-size: 12px;">.observation-block</code>, <code style="font-size: 12px;">.decision-item</code>. Signal: "structural, scan past."</p>
+        </div>
+      </div>
+      <p style="font-size: var(--text-sm); color: var(--color-ink-3); line-height: 1.6; margin-top: 20px;"><strong style="color: var(--color-ink-2);">Rule:</strong> Section breaks use whitespace + numbered heading (no stroke). Borders are reserved for component-internal structure only. When the reader sees a <strong style="color: var(--color-ink);">dark line</strong>, it means "stop and look." When they see a <strong>light hairline</strong>, it means "row separation, keep moving."</p>
     </div>
 
     <!-- ─── Weights ─── -->
@@ -684,7 +710,7 @@
   <!-- ═══ 02 · COMPONENTS ═══ -->
   <section class="ds-section">
     <div class="ds-section-head">
-      <p class="ds-section-num">02</p>
+      <span class="ds-section-num">02</span>
       <h2 class="ds-section-title">Components</h2>
     </div>
 
@@ -1021,7 +1047,7 @@
     <div class="ds-component">
       <div class="ds-component-header">
         <span class="ds-component-title">Hero stat</span>
-        <span class="ds-component-meta">.cs-stat-hero · single anchor metric · 72–120px number, top + bottom rule</span>
+        <span class="ds-component-meta">.cs-stat-hero · single anchor metric · number clamp(48px → 96px) · 1px ink top + bottom (Tier 1 stroke)</span>
       </div>
       <div class="ds-component-preview">
         <div class="cs-stat-hero" style="margin: 0;">
@@ -1109,7 +1135,7 @@
   <!-- ═══ 03 · INTERACTIVE STATES ═══ -->
   <section class="ds-section">
     <div class="ds-section-head">
-      <p class="ds-section-num">03</p>
+      <span class="ds-section-num">03</span>
       <h2 class="ds-section-title">Interactive states</h2>
     </div>
 
