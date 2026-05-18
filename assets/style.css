@@ -28,7 +28,7 @@ html { font-size: var(--text-base); -webkit-font-smoothing: antialiased; -moz-os
 /* ─── Base ─── */
 body {
   font-family: var(--font-body); font-weight: var(--fw-regular);
-  color: var(--neutral-1000); background: #FFFFFF; line-height: 1.6;
+  color: var(--neutral-1000); background: var(--color-bg); line-height: 1.6;
   background-image:
     linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 55%),
     radial-gradient(circle, #F5F5F5 4px, transparent 4px);
@@ -43,7 +43,7 @@ body {
   display: inline-flex; align-items: center;
   text-decoration: none;
   font-family: var(--font-display);
-  font-size: 20px;
+  font-size: var(--text-xl);
   font-weight: 700;
   letter-spacing: -0.01em;
   color: #FFFFFF;
@@ -195,7 +195,7 @@ strong { font-weight: var(--fw-semibold); color: var(--neutral-1000); }
 blockquote { font-family: var(--font-display); font-size: var(--text-callout); line-height: 1.4; font-weight: var(--fw-bold); color: var(--neutral-1000); border-left: 3px solid var(--neutral-300); padding: 8px 0 8px 28px; margin: 44px 0; }
 
 /* ─── Highlight — inline callout ─── */
-.highlight { background: #F5F5F5; border-left: 3px solid var(--neutral-300); padding: 16px 22px; margin: 24px 0; border-radius: 0; }
+.highlight { background: var(--color-surface-2); border-left: 3px solid var(--neutral-300); padding: 16px 22px; margin: 24px 0; border-radius: 0; }
 .highlight p { font-size: var(--text-base); line-height: 27px; color: var(--neutral-900); margin-bottom: 0; }
 
 /* ─── Overview strip — card grid ─── */
@@ -220,7 +220,7 @@ blockquote { font-family: var(--font-display); font-size: var(--text-callout); l
 /* ─── Chapter hierarchy ─── */
 .hierarchy { margin: 32px 0; display: flex; flex-direction: column; gap: 10px; }
 .hier-card { border: 1px solid var(--neutral-300); padding: 18px 20px; background: var(--neutral-200); border-radius: 0; box-shadow: var(--card-shadow); }
-.hier-card.level-0 { border-left: 3px solid #FFB700; background: #FFB700; }
+.hier-card.level-0 { border-left: 3px solid var(--color-yellow-4); background: var(--color-yellow-4); }
 .hier-level-label { font-family: var(--font-body); font-size: var(--text-xs); font-weight: var(--fw-semibold); letter-spacing: 0.12em; text-transform: uppercase; color: var(--color-ink); margin-bottom: 6px; }
 .hier-card-name { font-family: var(--font-display); font-size: var(--text-base); font-weight: var(--fw-bold); color: var(--neutral-1000); margin-bottom: 4px; }
 .hier-card-desc { font-size: var(--text-sm); line-height: 22px; color: var(--neutral-700); margin-bottom: 0; }
@@ -268,7 +268,7 @@ blockquote { font-family: var(--font-display); font-size: var(--text-callout); l
 .decision-alts {
   margin: 20px 0 24px;
   padding: 16px 20px;
-  background: #F5F5F5;
+  background: var(--color-surface-2);
   border-left: 2px solid var(--color-ink-3);
 }
 .decision-alts-label {
@@ -520,14 +520,14 @@ blockquote { font-family: var(--font-display); font-size: var(--text-callout); l
 .outcome-note p { font-size: var(--text-sm); line-height: 25px; color: var(--neutral-800); margin-bottom: 0; }
 
 /* ─── Dashboard frame ─── */
-.dashboard-frame { border-radius: 0; border: 1px solid var(--color-border); background: #fff; overflow: hidden; width: 100%; display: block; }
+.dashboard-frame { border-radius: 0; border: 1px solid var(--color-border); background: var(--color-surface); overflow: hidden; width: 100%; display: block; }
 .dashboard-chrome { display: flex; align-items: center; gap: 6px; padding: 9px 14px; background: #E8E6E2; border-bottom: 1px solid #D0CCC6; }
 .chrome-dot { width: 10px; height: 10px; border-radius: 50%; display: inline-block; }
 .chrome-dot:first-child { background: #FF6159; }
 .chrome-dot:nth-child(2) { background: #FFBD2E; }
 .chrome-dot:nth-child(3) { background: #28CA42; }
 .chrome-label { margin-left: auto; font-size: var(--text-xs); font-weight: var(--fw-semibold); letter-spacing: 0.04em; color: #888; text-transform: uppercase; }
-.dashboard-crop { overflow: hidden; background: #fff; aspect-ratio: 16/9; }
+.dashboard-crop { overflow: hidden; background: var(--color-surface); aspect-ratio: 16/9; }
 .dashboard-crop img { width: 100%; height: 100%; object-fit: cover; object-position: top; display: block; }
 
 /* ─── Figma link ─── */
@@ -557,10 +557,10 @@ blockquote { font-family: var(--font-display); font-size: var(--text-callout); l
   cursor: none;
 }
 .btn-external .ext-icon {
-  font-size: 14px; transition: transform 0.2s ease;
+  font-size: var(--text-sm); transition: transform 0.2s ease;
 }
 .btn-external:hover {
-  background: #F5F5F5; border-color: var(--color-ink); color: var(--color-ink);
+  background: var(--color-surface-2); border-color: var(--color-ink); color: var(--color-ink);
 }
 .btn-external:hover .ext-icon { transform: translate(2px, -2px); }
 
@@ -568,13 +568,13 @@ blockquote { font-family: var(--font-display); font-size: var(--text-callout); l
 .chip {
   font-family: var(--font-body); font-size: var(--text-xs); font-weight: var(--fw-semibold);
   letter-spacing: 0;
-  color: var(--color-ink-2); background: #FFFFFF;
+  color: var(--color-ink-2); background: var(--color-surface);
   border: 1px solid var(--color-border); border-radius: 0;
   padding: 8px 14px; cursor: pointer;
   display: inline-flex; align-items: center;
   transition: background var(--ease), border-color var(--ease), color var(--ease);
 }
-.chip:hover { border-color: var(--color-border-2); color: var(--color-ink); background: #F5F5F5; }
+.chip:hover { border-color: var(--color-border-2); color: var(--color-ink); background: var(--color-surface-2); }
 
 /* ─── Inline tag / badge (small uppercase label, on dark or light) ─── */
 .tag {
@@ -603,7 +603,7 @@ blockquote { font-family: var(--font-display); font-size: var(--text-callout); l
 #chat-panel {
   position: fixed; bottom: 84px; right: 28px; z-index: 1000;
   width: 360px; height: 520px;
-  background: #FFFFFF; border-radius: 0;
+  background: var(--color-surface); border-radius: 0;
   box-shadow: 0 8px 40px rgba(0,0,0,0.14), 0 2px 8px rgba(0,0,0,0.08);
   display: flex; flex-direction: column;
   overflow: hidden;
@@ -665,7 +665,7 @@ blockquote { font-family: var(--font-display); font-size: var(--text-callout); l
 }
 .chat-input-row {
   padding: 12px 14px; border-top: 1px solid #DADADA;
-  background: #F5F5F5;
+  background: var(--color-surface-2);
   display: flex; gap: 8px; flex-shrink: 0;
 }
 .chat-input {
@@ -801,7 +801,7 @@ blockquote { font-family: var(--font-display); font-size: var(--text-callout); l
   }
   .cs-next-img { min-height: 180px; }
   .cs-next-body { padding: 24px 28px; }
-  .cs-next-title { font-size: 24px; }
+  .cs-next-title { font-size: var(--text-2xl); }
 }
 
 

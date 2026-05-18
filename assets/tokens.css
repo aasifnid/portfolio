@@ -7,10 +7,15 @@
 :root {
 
   /* ─── Surface ─── */
-  --color-bg:       #FFFFFF;   /* white */
-  --color-surface:  #FFFFFF;   /* white cards */
-  --color-border:   #DADADA;   /* grey 5 — separators */
-  --color-border-2: #ADADAD;   /* stronger border / hover */
+  --color-bg:        #FFFFFF;   /* white — page background */
+  --color-surface:   #FFFFFF;   /* white — cards, panels */
+  --color-surface-1: #FAFAFA;   /* very soft — quiet stages, component preview */
+  --color-surface-2: #F5F5F5;   /* soft — callout blocks, hover fills */
+  --color-border:    #DADADA;   /* grey 5 — separators */
+  --color-border-2:  #ADADAD;   /* stronger border / hover */
+
+  /* ─── Brand palette · 4-step accents (most-used shades exported as tokens) ─── */
+  --color-yellow-4:  #FFB700;   /* yellow 4 — top-level hierarchy markers */
 
   /* ─── Ink ─── */
   --color-ink:      #0D0D0D;   /* primary black */

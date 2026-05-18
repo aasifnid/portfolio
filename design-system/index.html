@@ -147,7 +147,7 @@
   }
   .ds-component-preview {
     padding: 32px;
-    background: #FAFAFA;
+    background: var(--color-surface-1);
   }
   .ds-component-preview.no-pad { padding: 0; }
   .ds-component-preview.bg-dark { background: var(--color-ink); }
@@ -391,7 +391,7 @@
     border: 1px solid var(--color-border); cursor: pointer;
     transition: border-color 0.15s ease, color 0.15s ease, background 0.15s ease;
   }
-  .btn-ghost:hover { border-color: var(--color-border-2); color: var(--color-ink); background: #F5F5F5; }
+  .btn-ghost:hover { border-color: var(--color-border-2); color: var(--color-ink); background: var(--color-surface-2); }
 
   /* ─── Footer (matches home) ─── */
   .home-footer {
@@ -439,7 +439,7 @@
 
   <!-- ═══ HEADER ═══ -->
   <header class="ds-header">
-    <h1 class="ds-title">The system behind this site.</h1>
+    <h1 class="ds-title">The system behind this design.</h1>
     <p class="ds-sub">Tokens, components, and patterns I designed and coded for my portfolio. Everything here is live — what you see is what runs.</p>
   </header>
 
@@ -455,20 +455,33 @@
       <p class="ds-subsection-label">Surface + Ink · neutral tokens</p>
       <div class="ds-color-row row-3">
         <div class="ds-swatch">
-          <div class="ds-swatch-box" style="background: #FFFFFF; border: 1px solid var(--color-border);"></div>
-          <span class="ds-swatch-name">color-bg</span>
+          <div class="ds-swatch-box" style="background: var(--color-bg); border: 1px solid var(--color-border);"></div>
+          <span class="ds-swatch-name">color-bg / color-surface</span>
           <span class="ds-swatch-value">#FFFFFF</span>
         </div>
         <div class="ds-swatch">
-          <div class="ds-swatch-box" style="background: #DADADA;"></div>
+          <div class="ds-swatch-box" style="background: var(--color-surface-1);"></div>
+          <span class="ds-swatch-name">color-surface-1</span>
+          <span class="ds-swatch-value">#FAFAFA · quiet stage</span>
+        </div>
+        <div class="ds-swatch">
+          <div class="ds-swatch-box" style="background: var(--color-surface-2);"></div>
+          <span class="ds-swatch-name">color-surface-2</span>
+          <span class="ds-swatch-value">#F5F5F5 · soft callout</span>
+        </div>
+      </div>
+      <div class="ds-color-row row-3">
+        <div class="ds-swatch">
+          <div class="ds-swatch-box" style="background: var(--color-border);"></div>
           <span class="ds-swatch-name">color-border</span>
           <span class="ds-swatch-value">#DADADA</span>
         </div>
         <div class="ds-swatch">
-          <div class="ds-swatch-box" style="background: #ADADAD;"></div>
+          <div class="ds-swatch-box" style="background: var(--color-border-2);"></div>
           <span class="ds-swatch-name">color-border-2</span>
           <span class="ds-swatch-value">#ADADAD</span>
         </div>
+        <div class="ds-swatch"></div>
       </div>
       <div class="ds-color-row row-3">
         <div class="ds-swatch">
@@ -504,7 +517,7 @@
     <!-- ─── Accent color callout ─── -->
     <div class="ds-subsection">
       <p class="ds-subsection-label">Accent color · use rules</p>
-      <div style="display: grid; grid-template-columns: 220px 1fr; gap: 32px; align-items: center; padding: 32px; background: #FAFAFA;">
+      <div style="display: grid; grid-template-columns: 220px 1fr; gap: 32px; align-items: center; padding: 32px; background: var(--color-surface-1);">
         <div style="background: #FF80F4; height: 120px;"></div>
         <div>
           <p style="font-family: var(--font-display); font-size: 24px; font-weight: 700; color: var(--color-ink); letter-spacing: -0.01em; margin-bottom: 4px;">Purple 4</p>
@@ -581,7 +594,7 @@
         <div class="ds-swatch"><div class="ds-swatch-box" style="background: #FFF1CC;"></div><span class="ds-swatch-name">yellow 1</span><span class="ds-swatch-value">#FFF1CC</span></div>
         <div class="ds-swatch"><div class="ds-swatch-box" style="background: #FFDB80;"></div><span class="ds-swatch-name">yellow 2</span><span class="ds-swatch-value">#FFDB80</span></div>
         <div class="ds-swatch"><div class="ds-swatch-box" style="background: #FFCC4D;"></div><span class="ds-swatch-name">yellow 3</span><span class="ds-swatch-value">#FFCC4D</span></div>
-        <div class="ds-swatch"><div class="ds-swatch-box" style="background: #FFB700;"></div><span class="ds-swatch-name">yellow 4 · primary</span><span class="ds-swatch-value">#FFB700</span></div>
+        <div class="ds-swatch"><div class="ds-swatch-box" style="background: var(--color-yellow-4);"></div><span class="ds-swatch-name">yellow 4 · primary</span><span class="ds-swatch-value">#FFB700</span></div>
         <div class="ds-swatch"><div class="ds-swatch-box" style="background: #E58600;"></div><span class="ds-swatch-name">yellow 5</span><span class="ds-swatch-value">#E58600</span></div>
         <div class="ds-swatch"><div class="ds-swatch-box" style="background: #B25900;"></div><span class="ds-swatch-name">yellow 6</span><span class="ds-swatch-value">#B25900</span></div>
       </div>
@@ -667,14 +680,14 @@
     <div class="ds-subsection">
       <p class="ds-subsection-label">Stroke system · 2 tiers, 2 roles</p>
       <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px;">
-        <div style="padding: 24px; background: #FAFAFA;">
+        <div style="padding: 24px; background: var(--color-surface-1);">
           <p style="font-family: var(--font-body); font-size: var(--text-xs); font-weight: var(--fw-semibold); letter-spacing: 0.10em; text-transform: uppercase; color: var(--color-ink-3); margin-bottom: 16px;">Tier 1 · Featured</p>
           <div style="border-top: 1px solid var(--color-ink); border-bottom: 1px solid var(--color-ink); padding: 24px 0; margin: 8px 0;">
             <p style="font-family: var(--font-display); font-size: 48px; font-weight: 700; line-height: 1; letter-spacing: -0.03em; color: var(--color-ink); margin: 0;">67%</p>
           </div>
           <p style="font-size: var(--text-sm); color: var(--color-ink-2); line-height: 1.5; margin-top: 16px;"><strong style="color: var(--color-ink);">1px solid var(--color-ink)</strong> · top + bottom (or top only). Reserved for hero / closing blocks that anchor a section: <code style="font-size: 12px;">.cs-stat-hero</code>, <code style="font-size: 12px;">.cs-transfer</code>. Signal: "look here."</p>
         </div>
-        <div style="padding: 24px; background: #FAFAFA;">
+        <div style="padding: 24px; background: var(--color-surface-1);">
           <p style="font-family: var(--font-body); font-size: var(--text-xs); font-weight: var(--fw-semibold); letter-spacing: 0.10em; text-transform: uppercase; color: var(--color-ink-3); margin-bottom: 16px;">Tier 2 · Structural</p>
           <div style="border-top: 1px solid var(--color-border); border-bottom: 1px solid var(--color-border); padding: 16px 0; margin: 8px 0;">
             <p style="font-size: var(--text-sm); color: var(--color-ink-2); margin: 0;">Row 1 · 60% completion</p>
@@ -791,7 +804,7 @@
         <span class="ds-component-meta">#chat-bubble · #chat-panel · .chat-header · .chat-msg · .chat-input-row</span>
       </div>
       <div class="ds-component-preview no-pad">
-        <div style="display: grid; grid-template-columns: 1fr 360px; gap: 24px; padding: 32px; align-items: start; background: #FAFAFA;">
+        <div style="display: grid; grid-template-columns: 1fr 360px; gap: 24px; padding: 32px; align-items: start; background: var(--color-surface-1);">
           <div>
             <p style="font-family: var(--font-display); font-size: var(--text-base); font-weight: var(--fw-bold); margin-bottom: 8px;">FAB (bubble)</p>
             <p style="font-size: var(--text-xs); color: var(--color-ink-3); line-height: 1.6; margin-bottom: 24px;">Fixed bottom-right (bottom 84 / right 28). Ink bg, white label, sharp corners. Hover lifts -2px. Mobile collapses to icon-only.</p>
@@ -821,7 +834,7 @@
             <div style="padding: 4px 16px 12px; display: flex; flex-wrap: wrap; gap: 8px;">
               <button class="chip">What is his design superpower?</button>
             </div>
-            <div style="padding: 12px 14px; border-top: 1px solid #DADADA; background: #F5F5F5; display: flex; gap: 8px;">
+            <div style="padding: 12px 14px; border-top: 1px solid #DADADA; background: var(--color-surface-2); display: flex; gap: 8px;">
               <input style="flex: 1; border: 1px solid var(--color-border); padding: 9px 12px; font-family: var(--font-body); font-size: var(--text-sm);" placeholder="Ask a question…" disabled />
               <button style="background: var(--color-ink); color: #FFFFFF; border: none; padding: 0 14px; font-family: var(--font-body); font-size: var(--text-sm); font-weight: var(--fw-semibold);">Send</button>
             </div>
@@ -1119,8 +1132,8 @@
       </div>
       <div class="ds-component-preview">
         <div class="cs-img-pair" style="margin: 0 0 8px;">
-          <div style="aspect-ratio: 16/10; background: #F5F5F5; border: 1px solid var(--color-border); display: flex; align-items: center; justify-content: center; color: var(--color-ink-3); font-size: var(--text-xs); letter-spacing: 0.10em; text-transform: uppercase;">Image A</div>
-          <div style="aspect-ratio: 16/10; background: #F5F5F5; border: 1px solid var(--color-border); display: flex; align-items: center; justify-content: center; color: var(--color-ink-3); font-size: var(--text-xs); letter-spacing: 0.10em; text-transform: uppercase;">Image B</div>
+          <div style="aspect-ratio: 16/10; background: var(--color-surface-2); border: 1px solid var(--color-border); display: flex; align-items: center; justify-content: center; color: var(--color-ink-3); font-size: var(--text-xs); letter-spacing: 0.10em; text-transform: uppercase;">Image A</div>
+          <div style="aspect-ratio: 16/10; background: var(--color-surface-2); border: 1px solid var(--color-border); display: flex; align-items: center; justify-content: center; color: var(--color-ink-3); font-size: var(--text-xs); letter-spacing: 0.10em; text-transform: uppercase;">Image B</div>
         </div>
         <div class="cs-img-caption-row">
           <p class="img-label-center">Label A</p>
