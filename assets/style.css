@@ -707,8 +707,18 @@ blockquote { font-family: var(--font-display); font-size: var(--text-callout); l
 @media (max-width: 480px) {
   /* Anchor to the same bottom as #chat-bubble (20px) so the open panel
      visually replaces the bubble. Cap height so the top stays clear of
-     the 64px nav. (64 nav + 20 bottom + 16 buffer = 100 reserved.) */
-  #chat-panel { width: calc(100vw - 24px); right: 12px; bottom: 20px; max-height: calc(100vh - 100px); }
+     the 64px nav. (64 nav + 20 bottom + 16 buffer = 100 reserved.)
+     dvh = dynamic viewport height — shrinks when the OS keyboard opens
+     so the input row stays visible above the keyboard. */
+  #chat-panel {
+    width: calc(100vw - 24px); right: 12px; bottom: 20px;
+    max-height: calc(100vh - 100px);
+    max-height: calc(100dvh - 100px);
+  }
+  /* Let the messages area shrink freely when the keyboard reduces
+     the visible viewport — otherwise min-height keeps the input
+     pushed below the keyboard. */
+  .chat-messages { min-height: 0; }
   #chat-bubble { bottom: 20px; right: 20px; padding: 14px; gap: 0; }
   #chat-bubble .chat-bubble-label { display: none; }
   #chat-bubble svg { width: 22px; height: 22px; }
