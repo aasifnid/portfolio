@@ -404,6 +404,7 @@
 </style>
 </head>
 <body>
+<div id="cursor-dot"></div>
 
 <nav class="site-nav">
   <a href="../index.html" class="nav-name">Aasif Anwar</a>
@@ -1252,19 +1253,34 @@
 
 <script>
 (function() {
+  /* ── Burger toggle ── */
   var burger = document.getElementById('nav-burger');
   var mobileMenu = document.getElementById('nav-mobile-menu');
-  if (!burger || !mobileMenu) return;
-  burger.addEventListener('click', function() {
-    burger.classList.toggle('open');
-    mobileMenu.classList.toggle('open');
-  });
-  mobileMenu.querySelectorAll('.nav-mobile-link').forEach(function(link) {
-    link.addEventListener('click', function() {
-      burger.classList.remove('open');
-      mobileMenu.classList.remove('open');
+  if (burger && mobileMenu) {
+    burger.addEventListener('click', function() {
+      burger.classList.toggle('open');
+      mobileMenu.classList.toggle('open');
     });
-  });
+    mobileMenu.querySelectorAll('.nav-mobile-link').forEach(function(link) {
+      link.addEventListener('click', function() {
+        burger.classList.remove('open');
+        mobileMenu.classList.remove('open');
+      });
+    });
+  }
+
+  /* ── Custom cursor dot ── */
+  var dot = document.getElementById('cursor-dot');
+  if (dot) {
+    document.addEventListener('mousemove', function(e) {
+      dot.style.left = e.clientX + 'px';
+      dot.style.top  = e.clientY + 'px';
+    });
+    document.querySelectorAll('a, button').forEach(function(el) {
+      el.addEventListener('mouseenter', function() { dot.classList.add('cursor-hover'); });
+      el.addEventListener('mouseleave', function() { dot.classList.remove('cursor-hover'); });
+    });
+  }
 })();
 </script>
 </body>
