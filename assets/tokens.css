@@ -54,12 +54,8 @@
   --text-4xl:   44px;   /* h2 */
   --text-5xl:   56px;   /* h1 / display */
 
-  /* Responsive clamps */
-  --text-hero:       clamp(36px, 4.5vw, 64px);
-  --text-h1:         clamp(28px, 6vw, 56px);
-  --text-section:    clamp(24px, 4vw, 32px);
-  --text-intro:      clamp(28px, 5vw, 40px);
-  --text-blockquote: clamp(36px, 5vw, 56px);
+  /* Responsive clamps — real ones, in use */
+  --text-callout:    clamp(22px, 2.6vw, 28px);   /* pull-quotes, decision titles, transfer lines, blockquotes */
 
   /* ─── Line Heights ─── */
   --lh-tight:  1.0;   /* labels */
