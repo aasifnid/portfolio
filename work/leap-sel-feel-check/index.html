@@ -100,7 +100,7 @@
 
   <p>When a student arrived dysregulated — tired, distracted, carrying the weight of a long day — the tutor had no way of knowing. The session would start, and whatever was going on with the student would surface mid-problem. Some tutors read the signs quickly and pivoted: a joke, a riddle, a rebus puzzle, anything to loosen the mood and bring focus back. But even when it worked, 20–30 minutes of a 50-minute session would be gone before any real math happened.</p>
 
-  <p>This wasn't an edge case. Class recordings showed it regularly, and a dedicated internal tutor cohort — the group Cuemath used to pressure-test ideas before any project reached a spec — confirmed what the recordings suggested: dysregulated students were consistent; tutor responses were not. Every tutor handled it differently. There was no standard.</p>
+  <p>This wasn't an edge case. Class-recording reviews and ongoing tutor feedback — Cuemath's standing input channels into product priorities — showed the same pattern over time: dysregulated students were consistent; tutor responses were not. Every tutor handled it differently. There was no standard. That signal, combined with a top-management assessment on student churn and parent visibility, led to the brief.</p>
 
   <p>A student not in an optimal state doesn't learn effectively — and a session that delivers 20 minutes of actual instruction isn't the product Cuemath promised. Weaker sessions meant weaker progress, and weaker progress was one of the primary reasons students churned.</p>
 
@@ -111,9 +111,13 @@
     <span class="section-label">Role</span>
   </div>
 
-  <p>I led product design for Feel Check end-to-end — concept through four cohort rollouts. Of Cuemath's three SEL tools, this was the most complex: a four-stage immersive flow across two grade bands, built from scratch. UX, UI, interaction flow, and all design assets were mine; regulation activity videos were produced by the Motion Designer from a jointly developed brief.</p>
+  <p>I owned design for Feel Check end-to-end, from spec to four cohort rollouts. Of Cuemath's three SEL tools, this was the most complex: a four-stage immersive flow across two grade bands.</p>
 
-  <p>I partnered with the PM on scope trade-offs, Engineering on implementation, Curriculum on content integration, and the Motion Designer on creative direction for the regulation activity videos. Clinical content — vocabulary, emotional options, and regulation activity library — was owned by Roots Global Educational Consultancy. My role was design translation: making a clinical framework work inside a 50-minute math session, not a counselling room. Where vocabulary tested too high-level with students, I flagged it, tested alternatives with the internal tutor cohort, and pushed for revisions. Final clinical call stayed with Roots.</p>
+  <p>The spec — drafted by Roots Global Educational Consultancy with our PM, curriculum team, and stakeholders — set the <strong>clinical foundation</strong>: three science-backed frameworks (Wheel of Awareness, RULER, Zones of Regulation) and a learning intent. Building the <strong>product</strong> — how a child would actually experience this inside a 50-minute math session — was the design problem, and that work was mine.</p>
+
+  <p>That meant designing the entire interaction system: a self-directed four-stage flow that ran on student initiative, an age-appropriate vocabulary system (the spec used clinical terms that tested too high; I proposed and tested alternatives with the tutor cohort, then took finals back to Roots for clinical sign-off), the visual and asset language across both grade bands, the UI for surfacing regulation activity videos, and the recovery states the spec didn't scope — "Unsure" loops, exits, silences. Some calls were judgment: I dropped background audio in the first cut, added it back after tutor testing flagged the absence.</p>
+
+  <p>I partnered with the PM on scope, Engineering on implementation, Curriculum on content integration, and the Motion Designer on the regulation activity videos. Where decisions needed sign-off from senior stakeholders, my Head of Design carried them forward. Clinical content — vocabulary, emotional options, and regulation activity library — stayed with Roots.</p>
 
   <p>Success criteria agreed upfront: students self-identifying emotion without prompting, tutors observing improved readiness, check-in completing under 5 minutes. One criterion wasn't measured but was central to the intent — that consistent emotional regulation before sessions would, over time, translate into stronger academic performance. We hadn't instrumented a way to measure that connection at launch.</p>
 
@@ -130,19 +134,14 @@
       <span class="cs-method-finding">What it told us</span>
     </div>
     <div class="cs-method-row">
-      <span class="cs-method-method">Class recording review</span>
-      <span class="cs-method-sample">~30 sessions</span>
-      <span class="cs-method-finding">Dysregulation was consistent; tutor responses weren't. No standard pattern existed.</span>
-    </div>
-    <div class="cs-method-row">
-      <span class="cs-method-method">Internal tutor cohort</span>
+      <span class="cs-method-method">Internal tutor testing</span>
       <span class="cs-method-sample">8 tutors</span>
-      <span class="cs-method-finding">Pressure-tested concepts before spec. Surfaced "abandonment" insight that shaped Decision 1.</span>
+      <span class="cs-method-finding">First round on initial design. Surfaced the "abandonment" insight that shaped Decision 1. Caught vocabulary friction early.</span>
     </div>
     <div class="cs-method-row">
       <span class="cs-method-method">Phased cohort rollout</span>
       <span class="cs-method-sample">120 tutors · 417 students · 4 phases</span>
-      <span class="cs-method-finding">Validated readiness, autonomy, and Unsure flow across two grade bands.</span>
+      <span class="cs-method-finding">Validated readiness, autonomy, and the Unsure flow across two grade bands.</span>
     </div>
   </div>
 
@@ -155,14 +154,14 @@
 
   <h2>The challenge wasn't the frameworks. It was the fit.</h2>
 
-  <p>The clinical brief from Roots Global Educational Consultancy specified three science-backed frameworks: Wheel of Awareness (body-first recognition), RULER (emotion labelling), and Zones of Regulation (regulation strategies). These are established and widely used. The design question wasn't whether they worked — it was whether they could work inside a 50-minute math session, self-directed by a child, before any instruction had begun.</p>
+  <p>The design question wasn't whether the clinical frameworks worked — they're established and widely used. It was whether they could work inside a 50-minute math session, self-directed by a child, before any instruction had begun.</p>
 
   <p>To translate these frameworks into a self-directed student experience, I explored how to surface the activity options through different layout approaches. The wireframe exploration tested multiple directions before settling on the circular form that made the Wheel of Awareness the interface itself.</p>
 
   <img src="images/ideation-options.jpg" loading="lazy" decoding="async" alt="Wireframe exploration of option surfacing layouts: circular form, grid layouts, and visual arrangement variations" class="cs-img">
   <p class="caption">Exploring how to surface activity options. The circular form wasn't decorative — it made the framework visible as the decision structure. Students didn't see "pick an activity"; they saw the same wheel they'd just moved through. Tested against grid and geometric approaches; the circular form had the lowest cognitive friction and strongest alignment with the framework logic.</p>
 
-  <p>I reviewed class recordings and tested the concept early with the internal tutor cohort. What became clear: any flow that felt clinical or adult-directed would be abandoned or resented. The design had to run on student initiative — the tutor needed to be present, but passive. Not a guide. An observer. That single constraint shaped every major decision that followed.</p>
+  <p>Once an initial design was in place, I validated with the internal tutor cohort. What surfaced: any flow that felt clinical or adult-directed would be abandoned or resented. The design had to run on student initiative — the tutor needed to be present, but passive. Not a guide. An observer. That single constraint shaped every major decision that followed.</p>
 
   <h2>What the first internal build revealed.</h2>
 
@@ -189,7 +188,7 @@
 
   <h2>What grade scope revealed.</h2>
 
-  <p>The original scope was G1–8. Early tutor conversations and review with Roots made it clear that naming body sensations and identifying emotional states independently was too demanding for G1–2 — not a simplification problem, but a developmental one. I scoped Feel Check to G3–8. G1–2 is deferred, not dropped.</p>
+  <p>The original scope was G1–8. Tutor cohort testing and review with Roots made it clear that naming body sensations and identifying emotional states independently was too demanding for G1–2 — not a simplification problem, but a developmental one. I scoped Feel Check to G3–8. G1–2 is deferred, not dropped.</p>
 
   <div class="cs-img-pair">
     <img src="../../assets/Case studies/sel-feel-check/ruler-emotion-zones-g34.jpg" loading="lazy" decoding="async" alt="G3–4 version — emotional options and activities">
