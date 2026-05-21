@@ -200,10 +200,11 @@ body {
 .cover-outcome-stats {
   display: grid; grid-template-columns: 1fr 1fr; gap: 40px;
 }
-/* SECTION TITLE — text-3xl token (32px), clamped. Metrics share size with H2. */
+/* SECTION TITLE — text-3xl (32px). Overview-fold metrics only use semibold (600)
+   to match the lighter Sub-title treatment. Impact-section metrics stay bold. */
 .cover-outcome-num {
   font-family: var(--font-display); font-size: clamp(24px, 3.5vw, 32px); line-height: 1.05;
-  font-weight: var(--fw-bold); letter-spacing: -0.03em;
+  font-weight: var(--fw-semibold); letter-spacing: -0.03em;
   color: var(--color-ink); margin: 0;
 }
 /* CAPTION — text-sm token (14px). Cover outcome description. */
@@ -660,7 +661,7 @@ blockquote { font-family: var(--font-display); font-size: var(--text-callout); l
   color: var(--color-ink-3); line-height: 1.5;
   order: -1; margin: 0;
 }
-/* SECTION TITLE — text-3xl token (32px), clamped. Metrics share size with H2. */
+/* SECTION TITLE — text-3xl (32px). Impact section metrics use bold (700) for data-presentation weight. */
 .stat-number {
   font-family: var(--font-display); font-size: clamp(24px, 3.5vw, 32px); line-height: 1.05;
   font-weight: var(--fw-bold); color: var(--color-ink); letter-spacing: -0.03em;
