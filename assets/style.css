@@ -178,10 +178,11 @@ body {
   letter-spacing: var(--ls-caps); text-transform: uppercase;
   color: var(--color-ink-3);
 }
-/* Type 3 — BODY (cover context value, slightly tighter line-height for compact card) */
+/* Cover meta value (Role, Team, Timeline values) — text-base / semibold to
+   match the Sub-title treatment in the overview fold. */
 .cover-context-value {
-  font-family: var(--font-body); font-size: var(--text-base); font-weight: var(--fw-regular);
-  color: var(--color-ink-2); line-height: 1.5;
+  font-family: var(--font-body); font-size: var(--text-base); font-weight: var(--fw-semibold);
+  color: var(--color-ink); line-height: 1.5;
 }
 .cover-outcome {
   padding: 32px;
