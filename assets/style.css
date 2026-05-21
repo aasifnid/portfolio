@@ -287,7 +287,7 @@ body {
    the named token.
    ═══════════════════════════════════════════════════════════════════ */
 
-/* SECTION TITLE — text-3xl token (32px), Outfit semibold. Identical spec to
+/* SECTION TITLE — text-3xl token (32px), Outfit Bold. Identical spec to
    .cover-outcome-num and all metric numbers — section titles and metrics share
    the same typographic identity. */
 h2 { font-family: var(--font-display); font-size: var(--text-3xl); line-height: 1.15; font-weight: var(--fw-bold); color: var(--color-ink); margin-bottom: 16px; margin-top: 64px; letter-spacing: -0.02em; }
