@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Decision-alts treatment — 5 options preview</title>
+<title>Decision-alts treatment — text-only options</title>
 <link rel="stylesheet" href="assets/tokens.css">
 <link rel="stylesheet" href="assets/style.css">
 <style>
@@ -27,8 +27,9 @@
   }
   .rec-body {
     font-family: var(--font-body); font-size: var(--text-base); line-height: 1.6;
-    color: var(--color-ink-2); margin: 0;
+    color: var(--color-ink-2); margin: 0 0 12px;
   }
+  .rec-body:last-child { margin-bottom: 0; }
 
   .preview-section { margin-bottom: 96px; }
   .preview-header {
@@ -41,6 +42,7 @@
     letter-spacing: var(--ls-caps); text-transform: uppercase;
     color: var(--color-ink-3); margin-bottom: 8px;
   }
+  .preview-eyebrow--rec { color: var(--color-accent); }
   .preview-title {
     font-family: var(--font-display); font-size: var(--text-3xl); font-weight: var(--fw-bold);
     line-height: 1.15; letter-spacing: -0.02em; color: var(--color-ink); margin-bottom: 8px;
@@ -50,18 +52,14 @@
     color: var(--color-ink-3); margin: 0;
   }
 
-  /* Real case study context — body prose around the treatment */
+  /* Real case study context */
   .ctx-prose {
     font-family: var(--font-body); font-size: var(--text-base); line-height: 1.6;
     color: var(--color-ink-2); margin-bottom: 24px;
   }
-  .ctx-caption {
-    font-family: var(--font-body); font-size: var(--text-sm); line-height: 1.5;
-    color: var(--color-ink-3); margin: 8px 0 32px;
-  }
-  .ctx-img {
-    width: 100%; display: block; border: 1px solid var(--color-border);
-    margin-top: 24px;
+  .ctx-prose-after {
+    font-family: var(--font-body); font-size: var(--text-base); line-height: 1.6;
+    color: var(--color-ink-2); margin-top: 32px;
   }
 
   /* ─── Option 1: Inline prose ─── */
@@ -70,57 +68,6 @@
     color: var(--color-ink-2);
   }
   .opt1-prose strong { color: var(--color-ink); font-weight: var(--fw-semibold); }
-
-  /* ─── Option 2: Annotated thumbnails ─── */
-  .opt2-label {
-    font-family: var(--font-body); font-size: var(--text-xs); font-weight: var(--fw-semibold);
-    letter-spacing: var(--ls-caps); text-transform: uppercase;
-    color: var(--color-ink-3); margin-bottom: 12px;
-  }
-  .opt2-row {
-    display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;
-    margin: 0;
-  }
-  .opt2-card {
-    display: flex; flex-direction: column; gap: 8px;
-  }
-  .opt2-thumb {
-    background: var(--color-surface-1);
-    border: 1px solid var(--color-border);
-    aspect-ratio: 4/3;
-    display: flex; align-items: center; justify-content: center;
-    font-size: var(--text-xs); color: var(--color-ink-3);
-    text-transform: uppercase; letter-spacing: var(--ls-caps);
-    position: relative;
-  }
-  .opt2-card--picked .opt2-thumb {
-    border-color: var(--color-accent);
-    border-width: 2px;
-  }
-  .opt2-check {
-    position: absolute; top: 8px; right: 8px;
-    background: var(--color-accent); color: #FFFFFF;
-    width: 22px; height: 22px;
-    display: flex; align-items: center; justify-content: center;
-    font-size: 13px; font-weight: 700;
-  }
-  .opt2-name {
-    font-family: var(--font-body); font-size: var(--text-sm);
-    font-weight: var(--fw-semibold); color: var(--color-ink);
-    margin: 0; display: flex; align-items: center; gap: 8px;
-  }
-  .opt2-tag {
-    font-family: var(--font-body); font-size: 10px; font-weight: var(--fw-semibold);
-    letter-spacing: var(--ls-caps); text-transform: uppercase;
-    color: var(--color-accent);
-  }
-  .opt2-note {
-    font-family: var(--font-body); font-size: var(--text-xs); line-height: 1.5;
-    color: var(--color-ink-3); margin: 0;
-  }
-  @media (max-width: 640px) {
-    .opt2-row { grid-template-columns: 1fr; }
-  }
 
   /* ─── Option 3: Strikethrough sketchbook ─── */
   .opt3-label {
@@ -200,124 +147,87 @@
 <body>
 <div class="preview-wrap">
 
-  <h1 style="font-family: var(--font-display); font-size: var(--text-3xl); font-weight: 700; color: var(--color-ink); margin-bottom: 8px;">Decision-alts treatment — 5 directions</h1>
-  <p style="font-family: var(--font-body); font-size: var(--text-base); color: var(--color-ink-2); margin-bottom: 32px; line-height: 1.6;">Each option uses real Decision 1 (Shape) content from the Feel Check case study — same body prose before, same ideation image and caption after. Judge each treatment by how naturally it connects to the surrounding flow.</p>
+  <h1 style="font-family: var(--font-display); font-size: var(--text-3xl); font-weight: 700; color: var(--color-ink); margin-bottom: 8px;">Decision-alts — text-only treatments</h1>
+  <p style="font-family: var(--font-body); font-size: var(--text-base); color: var(--color-ink-2); margin-bottom: 32px; line-height: 1.6;">Each option uses real Decision 2 (Vocabulary) content from Feel Check — a non-visual decision with no thumbnails to add. Same body prose before each treatment, same continuation after, so we can judge how naturally each handles a pure-text alts case.</p>
 
   <!-- ═══════════════ RECOMMENDATION ═══════════════ -->
   <div class="rec-banner">
     <p class="rec-eyebrow">Director's recommendation</p>
-    <p class="rec-title">Option 2 — Annotated thumbnails</p>
-    <p class="rec-body">It's the only treatment that <em>shows</em> the ideation instead of describing it. Thumbnails per option visualize the actual exploration; the picked one carries an accent border + checkmark; rejected ones sit quietly beside it. Reads as a designer's exploration board, not a data table. It also <strong>replaces</strong> the standalone ideation image below (the row of thumbnails IS the image) — eliminating one of the two "abrupt table" interruptions in the current flow. Pre-req: 3 small sketch thumbnails per alts block (placeholder shown here, real assets to create later).</p>
+    <p class="rec-title">Option 1 — Inline prose</p>
+    <p class="rec-body">Universal. Works for visual AND logic decisions equally. No chrome. The alternatives ARE the prose — there's no separate component to interrupt the flow, no abrupt table to fix. Reads as a confident designer voice: "I considered X, Y, landed on Z." Senior portfolios trust prose to carry rigor; junior portfolios need explicit callouts.</p>
+    <p class="rec-body">The other 3 text treatments (3, 4, 5) all work — they're just different flavors of "make the alternatives a discrete component." Option 1 says: don't make it a component at all.</p>
   </div>
 
   <!-- ═══════════════ OPTION 1 ═══════════════ -->
   <div class="preview-section">
     <div class="preview-header">
-      <p class="preview-eyebrow">Option 1</p>
-      <p class="preview-title">Inline prose — fold into the narrative</p>
-      <p class="preview-philosophy">Zero chrome. Alternatives are described in flowing prose. Reader gets the rigor as part of the storytelling. Most narrative, least table-like.</p>
+      <p class="preview-eyebrow preview-eyebrow--rec">Option 1 · Recommended</p>
+      <p class="preview-title">Inline prose</p>
+      <p class="preview-philosophy">Alternatives folded into the body paragraph. Zero chrome. No separate component. The rigor signal comes from how the prose is written — "I tested three options. X failed because Y. Z worked because W."</p>
     </div>
 
-    <p class="ctx-prose">The spec called for a "four-quadrant wheel" but didn't define the visual structure. I explored on two tracks: shape, then treatment within the picked shape.</p>
+    <p class="ctx-prose">The spec used clinical labels — "Sparkling," "Affirmation," "Set Intention." In the in-house tutor test, students hesitated, asked what they meant, or skipped these options entirely. The flow worked; the vocabulary didn't.</p>
 
-    <p class="opt1-prose">I tested three shapes for the wheel. A <strong>grid menu</strong> made the framework less visible. A <strong>modal sequence</strong> — one screen at a time — broke the feeling of narrowing in on the emotion. I landed on a <strong>circular wheel</strong>: the framework itself became the surface students tapped on.</p>
-
-    <img src="assets/Case studies/sel-feel-check/Ideation for options.jpg" alt="Ideation sketches" class="ctx-img">
-    <p class="ctx-caption">Early ideation — bringing the Wheel of Awareness to a screen, not a diagram.</p>
-  </div>
-
-  <!-- ═══════════════ OPTION 2 ═══════════════ -->
-  <div class="preview-section">
-    <div class="preview-header">
-      <p class="preview-eyebrow">Option 2 · Recommended</p>
-      <p class="preview-title">Annotated thumbnails — exploration spread</p>
-      <p class="preview-philosophy">Each option as a small thumbnail with a one-line note. Picked one gets an accent border and checkmark. Reads like a designer's exploration board. Replaces the standalone ideation image — this IS the image.</p>
-    </div>
-
-    <p class="ctx-prose">The spec called for a "four-quadrant wheel" but didn't define the visual structure. I explored on two tracks: shape, then treatment within the picked shape.</p>
-
-    <p class="opt2-label">Shape — three options explored</p>
-    <div class="opt2-row">
-      <div class="opt2-card">
-        <div class="opt2-thumb">Sketch 01</div>
-        <p class="opt2-name">Grid menu</p>
-        <p class="opt2-note">Made the wheel less visible as the framework.</p>
-      </div>
-      <div class="opt2-card">
-        <div class="opt2-thumb">Sketch 02</div>
-        <p class="opt2-name">Modal sequence</p>
-        <p class="opt2-note">Broke the feeling of narrowing in on the emotion.</p>
-      </div>
-      <div class="opt2-card opt2-card--picked">
-        <div class="opt2-thumb">Sketch 03<span class="opt2-check">✓</span></div>
-        <p class="opt2-name">Circular wheel <span class="opt2-tag">Picked</span></p>
-        <p class="opt2-note">The wheel itself became the surface students tapped on.</p>
-      </div>
-    </div>
-
-    <p style="font-family: var(--font-body); font-size: var(--text-xs); color: var(--color-ink-3); font-style: italic; margin-top: 32px;">Note: dummy "Sketch" placeholders shown here. Real implementation crops 3 thumbnails from existing ideation sketches.</p>
+    <p class="opt1-prose">I tested three vocabulary approaches. <strong>Keeping the spec's clinical labels</strong> would have required tutor explanations every session. <strong>Direct synonyms</strong> ("Sparkling" → "Joyful") still felt adult — they didn't fix the hesitation. I landed on <strong>child-natural rewrites</strong>: "Sparkling" became "Excited," "Set Intention" became "I'm ready." I took the final wording back to Roots for clinical sign-off before the external rollout.</p>
   </div>
 
   <!-- ═══════════════ OPTION 3 ═══════════════ -->
   <div class="preview-section">
     <div class="preview-header">
       <p class="preview-eyebrow">Option 3</p>
-      <p class="preview-title">Strikethrough sketchbook — working list</p>
-      <p class="preview-philosophy">Rejected options literally crossed out. Picked option in primary ink. Reads like a designer's notebook crossing items off a list. No chrome, just typographic structure.</p>
+      <p class="preview-title">Strikethrough sketchbook</p>
+      <p class="preview-philosophy">Rejected options literally crossed out. Picked option in primary ink. Reads like a designer's notebook crossing items off a list.</p>
     </div>
 
-    <p class="ctx-prose">The spec called for a "four-quadrant wheel" but didn't define the visual structure. I explored on two tracks: shape, then treatment within the picked shape.</p>
+    <p class="ctx-prose">The spec used clinical labels — "Sparkling," "Affirmation," "Set Intention." In the in-house tutor test, students hesitated, asked what they meant, or skipped these options entirely. The flow worked; the vocabulary didn't.</p>
 
-    <p class="opt3-label">Shape — three options explored</p>
+    <p class="opt3-label">Vocabulary — three approaches considered</p>
     <ul class="opt3-list">
-      <li><span class="opt3-rejected-name">Grid menu</span><span class="opt3-arrow">→</span><span class="opt3-rejected-rest">made the wheel less visible as the framework</span></li>
-      <li><span class="opt3-rejected-name">Modal sequence</span><span class="opt3-arrow">→</span><span class="opt3-rejected-rest">broke the feeling of narrowing in on the emotion</span></li>
-      <li><span class="opt3-picked-name">Circular wheel</span><span class="opt3-arrow">→</span>the wheel itself became the surface students tapped on</li>
+      <li><span class="opt3-rejected-name">Keep spec's clinical labels</span><span class="opt3-arrow">→</span><span class="opt3-rejected-rest">required tutor explanations every session</span></li>
+      <li><span class="opt3-rejected-name">Direct synonyms</span><span class="opt3-arrow">→</span><span class="opt3-rejected-rest">"Sparkling" → "Joyful" still felt adult, didn't fix hesitation</span></li>
+      <li><span class="opt3-picked-name">Child-natural rewrites</span><span class="opt3-arrow">→</span>words students actually say. "Sparkling" → "Excited," "Set Intention" → "I'm ready"</li>
     </ul>
 
-    <img src="assets/Case studies/sel-feel-check/Ideation for options.jpg" alt="Ideation sketches" class="ctx-img">
-    <p class="ctx-caption">Early ideation — bringing the Wheel of Awareness to a screen, not a diagram.</p>
+    <p class="ctx-prose-after">I took the final wording back to Roots for clinical sign-off before the external rollout.</p>
   </div>
 
   <!-- ═══════════════ OPTION 4 ═══════════════ -->
   <div class="preview-section">
     <div class="preview-header">
       <p class="preview-eyebrow">Option 4</p>
-      <p class="preview-title">Quote-callout for picked + footnote for rejected</p>
-      <p class="preview-philosophy">Picked option as a left-ruled callout (same archetype as .cs-insight). Rejected options compressed into one inline sentence below as caption text. Asymmetric — answer is loud, rigor is quiet.</p>
+      <p class="preview-title">Quote-callout for picked, footnote for rejected</p>
+      <p class="preview-philosophy">Picked option as a left-ruled callout (same archetype as .cs-insight). Rejected options compressed into one inline sentence below. Asymmetric — answer is loud, alternatives are quiet.</p>
     </div>
 
-    <p class="ctx-prose">The spec called for a "four-quadrant wheel" but didn't define the visual structure. I explored on two tracks: shape, then treatment within the picked shape.</p>
+    <p class="ctx-prose">The spec used clinical labels — "Sparkling," "Affirmation," "Set Intention." In the in-house tutor test, students hesitated, asked what they meant, or skipped these options entirely. The flow worked; the vocabulary didn't.</p>
 
     <div class="opt4-pick">
-      <p class="opt4-pick-label">Shape — picked</p>
-      <p class="opt4-pick-text"><strong>Circular wheel</strong> — the wheel itself became the surface students tapped on.</p>
+      <p class="opt4-pick-label">Vocabulary — picked</p>
+      <p class="opt4-pick-text"><strong>Child-natural rewrites</strong> — words students actually say. "Sparkling" became "Excited," "Set Intention" became "I'm ready."</p>
     </div>
-    <p class="opt4-also">Also explored: a grid menu (made the wheel less visible) and a modal sequence (broke the feeling of narrowing in).</p>
+    <p class="opt4-also">Also considered: keeping the spec's clinical labels (would have required tutor explanations every session) and direct synonyms ("Sparkling" → "Joyful," still felt adult).</p>
 
-    <img src="assets/Case studies/sel-feel-check/Ideation for options.jpg" alt="Ideation sketches" class="ctx-img">
-    <p class="ctx-caption">Early ideation — bringing the Wheel of Awareness to a screen, not a diagram.</p>
+    <p class="ctx-prose-after">I took the final wording back to Roots for clinical sign-off before the external rollout.</p>
   </div>
 
   <!-- ═══════════════ OPTION 5 ═══════════════ -->
   <div class="preview-section">
     <div class="preview-header">
       <p class="preview-eyebrow">Option 5</p>
-      <p class="preview-title">Numbered exploration — open typographic layout</p>
+      <p class="preview-title">Numbered exploration</p>
       <p class="preview-philosophy">Each option gets a number, name, brief reasoning, and a verdict label on the right. No surface fill, no rows, no boxes. Reads as exploration, scannable but minimal.</p>
     </div>
 
-    <p class="ctx-prose">The spec called for a "four-quadrant wheel" but didn't define the visual structure. I explored on two tracks: shape, then treatment within the picked shape.</p>
+    <p class="ctx-prose">The spec used clinical labels — "Sparkling," "Affirmation," "Set Intention." In the in-house tutor test, students hesitated, asked what they meant, or skipped these options entirely. The flow worked; the vocabulary didn't.</p>
 
-    <p class="opt5-label">Shape — three options explored</p>
+    <p class="opt5-label">Vocabulary — three approaches considered</p>
     <ol class="opt5-list">
-      <li><span><span class="opt5-name">Grid menu</span> — made the wheel less visible as the framework.</span><span class="opt5-verdict">Rejected</span></li>
-      <li><span><span class="opt5-name">Modal sequence</span> — broke the feeling of narrowing in on the emotion.</span><span class="opt5-verdict">Rejected</span></li>
-      <li class="opt5-picked"><span><span class="opt5-name">Circular wheel</span> — the wheel itself became the surface students tapped on.</span><span class="opt5-verdict">Picked</span></li>
+      <li><span><span class="opt5-name">Keep spec's clinical labels</span> — required tutor explanations every session.</span><span class="opt5-verdict">Rejected</span></li>
+      <li><span><span class="opt5-name">Direct synonyms</span> — "Sparkling" → "Joyful" still felt adult, didn't fix hesitation.</span><span class="opt5-verdict">Rejected</span></li>
+      <li class="opt5-picked"><span><span class="opt5-name">Child-natural rewrites</span> — words students actually say. "Sparkling" → "Excited," "Set Intention" → "I'm ready."</span><span class="opt5-verdict">Picked</span></li>
     </ol>
 
-    <img src="assets/Case studies/sel-feel-check/Ideation for options.jpg" alt="Ideation sketches" class="ctx-img">
-    <p class="ctx-caption">Early ideation — bringing the Wheel of Awareness to a screen, not a diagram.</p>
+    <p class="ctx-prose-after">I took the final wording back to Roots for clinical sign-off before the external rollout.</p>
   </div>
 
 </div>
