@@ -108,12 +108,8 @@ body {
 .cover { padding: 120px 32px 80px; max-width: 800px; margin: 0 auto; }
 .page {
   max-width: 800px; margin: 0 auto; padding: 0 32px 480px;
-  --cs-brand-bg: var(--color-surface-2);
+  --cs-brand-bg: var(--color-rec-1-bg);
   --cs-brand-accent: var(--color-accent);
-}
-.page.cs-feel-check {
-  --cs-brand-bg: var(--color-rec-4-bg);
-  --cs-brand-accent: var(--color-rec-4-accent);
 }
 
 @media (max-width: 768px) {
@@ -184,7 +180,7 @@ body {
 }
 .cover-outcome {
   padding: 32px 20px;
-  background: #D6F5FF; /* blue-1 default — overridable per case study */
+  background: #FFE0FD; /* purple-1 sitewide accent */
   border-left: 1px solid var(--color-border);
   border-right: 1px solid var(--color-border);
   border-bottom: 1px solid var(--color-border);
@@ -342,7 +338,7 @@ blockquote { font-family: var(--font-display); font-size: var(--text-callout); l
   font-size: var(--text-xs); font-weight: var(--fw-semibold);
   letter-spacing: var(--ls-caps); text-transform: uppercase;
   padding: 6px 14px;
-  border-radius: 2px;
+  border-radius: 0;
   margin: 0 0 16px 0;
 }
 .decision-item-num::after { content: none; }
@@ -362,7 +358,7 @@ blockquote { font-family: var(--font-display); font-size: var(--text-callout); l
   margin: 20px 0 24px;
   padding: 20px 24px;
   background: var(--color-surface-1);
-  border-radius: 4px;
+  border-radius: 0;
 }
 .decision-alts-label {
   font-family: var(--font-body); font-size: var(--text-xs); font-weight: var(--fw-semibold);
@@ -383,23 +379,39 @@ blockquote { font-family: var(--font-display); font-size: var(--text-callout); l
 .rules-table td:first-child { font-weight: var(--fw-semibold); color: var(--neutral-1000); width: 36%; }
 .rules-table tr:last-child td { border-bottom: none; }
 
-/* ─── Case study table — unified component for data + decision tables ─── */
+/* ─── Case study table — closed-box card with surface-1 header + brand-1 highlight ─── */
+.cs-table-wrap {
+  background: #FFFFFF;
+  border: 1px solid var(--color-border);
+  border-radius: 0;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+  margin: 28px 0;
+}
 .cs-table {
   width: 100%;
   border-collapse: collapse;
-  margin: 28px 0;
   font-family: var(--font-body);
   background: transparent;
 }
-.cs-table thead th {
+.cs-table th,
+.cs-table td {
   text-align: left;
+  padding: 16px 24px;
+  vertical-align: middle;
+}
+.cs-table th:first-child,
+.cs-table td:first-child { padding-left: 28px; }
+.cs-table th:last-child,
+.cs-table td:last-child { padding-right: 28px; }
+.cs-table thead th {
   font-family: var(--font-body);
   font-size: var(--text-xs);
   font-weight: var(--fw-semibold);
   letter-spacing: var(--ls-caps);
   text-transform: uppercase;
   color: var(--color-ink-3);
-  padding: 14px 16px;
+  background: var(--color-surface-1);
   border-bottom: 1px solid var(--color-border);
 }
 .cs-table tbody td {
@@ -407,9 +419,7 @@ blockquote { font-family: var(--font-display); font-size: var(--text-callout); l
   font-size: var(--text-sm);
   line-height: 1.55;
   color: var(--color-ink-2);
-  padding: 14px 16px;
   border-bottom: 1px solid var(--color-border);
-  vertical-align: middle;
 }
 .cs-table tbody tr:last-child td { border-bottom: none; }
 .cs-table tbody tr.cs-table-highlight td {
@@ -418,8 +428,12 @@ blockquote { font-family: var(--font-display); font-size: var(--text-callout); l
   font-weight: var(--fw-semibold);
 }
 @media (max-width: 640px) {
-  .cs-table thead th,
-  .cs-table tbody td { padding: 10px 10px; font-size: 13px; }
+  .cs-table th,
+  .cs-table td { padding: 12px 14px; font-size: 13px; }
+  .cs-table th:first-child,
+  .cs-table td:first-child { padding-left: 16px; }
+  .cs-table th:last-child,
+  .cs-table td:last-child { padding-right: 16px; }
 }
 
 /* Zone dots — used inside cs-table for D3 routing logic */
@@ -481,7 +495,7 @@ blockquote { font-family: var(--font-display); font-size: var(--text-callout); l
 .video-fullscreen-btn {
   position: absolute; top: 12px; right: 12px;
   background: rgba(0,0,0,0.65); color: #fff;
-  border: none; border-radius: 4px;
+  border: none; border-radius: 0;
   padding: 8px 10px; font-size: 18px; line-height: 1;
   cursor: pointer; z-index: 2;
   transition: background 0.15s ease;
@@ -621,7 +635,7 @@ blockquote { font-family: var(--font-display); font-size: var(--text-callout); l
   padding: 28px 24px;
   background: #FFFFFF;
   border: 1px solid var(--color-border);
-  border-radius: 4px;
+  border-radius: 0;
   display: flex; flex-direction: column; gap: 12px;
 }
 .stat.span-full { grid-column: 1 / -1; }
@@ -648,7 +662,7 @@ blockquote { font-family: var(--font-display); font-size: var(--text-callout); l
   padding: 48px 40px;
   background: #FFFFFF;
   border: 1px solid var(--color-border);
-  border-radius: 4px;
+  border-radius: 0;
 }
 .cs-stat-hero-label {
   font-family: var(--font-body); font-size: var(--text-xs); font-weight: var(--fw-semibold);
