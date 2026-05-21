@@ -376,8 +376,13 @@ blockquote { font-family: var(--font-display); font-size: var(--text-callout); l
   margin: 0 0 20px 0; padding: 0;
   display: block;
 }
-/* Type 3 — BODY (inside decision-item, line-height aligned to body) */
-.decision-item p { font-family: var(--font-body); font-size: var(--text-base); line-height: 1.6; color: var(--color-ink-2); margin-bottom: 16px; }
+/* Inside a .decision-item, the only thing we override on <p> is margin-bottom
+   (tighter rhythm between body paragraphs). Font-size/color/line-height MUST
+   stay unset here — otherwise this rule's specificity (0,1,1) beats class
+   selectors like .caption / .cs-insight-quote / .decision-item-num (0,1,0)
+   and forces them to render as body text. The default <p> rule supplies
+   body Type 3 styling. */
+.decision-item p { margin-bottom: 16px; }
 .decision-item p:last-child { margin-bottom: 0; }
 
 /* Alternatives-considered sub-block inside a decision */
