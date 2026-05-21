@@ -1072,18 +1072,103 @@
       </div>
     </div>
 
-    <!-- Hero stat -->
+    <!-- Hero stat (white-fill card) -->
     <div class="ds-component">
       <div class="ds-component-header">
         <span class="ds-component-title">Hero stat</span>
-        <span class="ds-component-meta">.cs-stat-hero · single anchor metric · number clamp(48px → 96px) · 1px ink top + bottom (Tier 1 stroke)</span>
+        <span class="ds-component-meta">.cs-stat-hero · single anchor metric · white-fill card · 1px border + 4px radius · number clamp(56px → 104px)</span>
       </div>
       <div class="ds-component-preview">
         <div class="cs-stat-hero" style="margin: 0;">
-          <p class="cs-stat-hero-label">Learning Readiness</p>
-          <p class="cs-stat-hero-number">67%</p>
-          <p class="cs-stat-hero-desc">of tutors observed improved student readiness after regulation — the direct answer to the problem.</p>
+          <p class="cs-stat-hero-label">Ready to learn after Feel Check</p>
+          <p class="cs-stat-hero-number">75.2%</p>
+          <p class="cs-stat-hero-desc">Tutors observed students were ready to learn after Feel Check (n=459). The direct answer to the problem.</p>
         </div>
+      </div>
+    </div>
+
+    <!-- Metric card grid (white-fill .stat in .outcome-stats grid) -->
+    <div class="ds-component">
+      <div class="ds-component-header">
+        <span class="ds-component-title">Metric card grid</span>
+        <span class="ds-component-meta">.outcome-stats &gt; .stat · 3-col on desktop / 1-col on mobile · white-fill cards · 1px border + 4px radius</span>
+      </div>
+      <div class="ds-component-preview">
+        <div class="outcome-stats" style="margin: 0;">
+          <div class="stat">
+            <p class="stat-label">Worked independently</p>
+            <p class="stat-number">89.1%</p>
+            <p class="stat-desc">Students worked through the regulation activity independently (n=421).</p>
+          </div>
+          <div class="stat">
+            <p class="stat-label">Check-in duration</p>
+            <p class="stat-number">3.4 min</p>
+            <p class="stat-desc">Average from start to learning-ready. Within the 5-minute spec.</p>
+          </div>
+          <div class="stat">
+            <p class="stat-label">Tutor feedback rate</p>
+            <p class="stat-number">96.3%</p>
+            <p class="stat-desc">Tutors submitted feedback after 96.3% of sessions. The credibility anchor for survey metrics.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Data table — unified .cs-table -->
+    <div class="ds-component">
+      <div class="ds-component-header">
+        <span class="ds-component-title">Data table</span>
+        <span class="ds-component-meta">.cs-table · unified for rollout data, decision logic, comparison · semantic &lt;table&gt; markup · .cs-table-highlight modifier for emphasized rows (uses --cs-brand-bg)</span>
+      </div>
+      <div class="ds-component-preview">
+        <table class="cs-table" style="margin: 0;">
+          <thead>
+            <tr>
+              <th>Phase</th>
+              <th>Date</th>
+              <th>Tutors</th>
+              <th>Students</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1 (in-house)</td>
+              <td>30 Jan</td>
+              <td>7</td>
+              <td>14</td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>24 Feb</td>
+              <td>42</td>
+              <td>249</td>
+            </tr>
+            <tr class="cs-table-highlight">
+              <td>3</td>
+              <td>10 Mar</td>
+              <td>62</td>
+              <td>102</td>
+            </tr>
+            <tr>
+              <td>4</td>
+              <td>31 Mar</td>
+              <td>9</td>
+              <td>46</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Image caption -->
+    <div class="ds-component">
+      <div class="ds-component-header">
+        <span class="ds-component-title">Image / video caption</span>
+        <span class="ds-component-meta">.caption · text-sm · ink-3 · line-height 1.55 · max-width 720px · target 1–2 sentences (15–30 words)</span>
+      </div>
+      <div class="ds-component-preview">
+        <div style="background: var(--color-surface-1); height: 120px; display: flex; align-items: center; justify-content: center; color: var(--color-ink-3); font-size: var(--text-sm); border: 1px solid var(--color-border);">[Image placeholder]</div>
+        <p class="caption" style="margin-bottom: 0;">Body × Heart × Mind combinations map to a Zone of Regulation. When Body and Heart are both Unsure, students get a curated set — the case the original spec didn't define.</p>
       </div>
     </div>
 
