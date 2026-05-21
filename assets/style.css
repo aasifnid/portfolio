@@ -201,11 +201,10 @@ body {
 .cover-outcome-stats {
   display: grid; grid-template-columns: 1fr 1fr; gap: 40px;
 }
-/* SECTION TITLE — text-3xl token (32px). Overview-fold metrics use semibold (600)
-   to match the lighter Sub-title treatment. Impact-section metrics stay bold. */
+/* SECTION TITLE — text-3xl (32px). Identical spec to h2 — same role, same look. */
 .cover-outcome-num {
   font-family: var(--font-display); font-size: var(--text-3xl); line-height: 1.15;
-  font-weight: var(--fw-semibold); letter-spacing: -0.02em;
+  font-weight: var(--fw-bold); letter-spacing: -0.02em;
   color: var(--color-ink); margin: 0;
 }
 /* CAPTION — text-sm token (14px). On purple-1 fill, color bumped ink-3 → ink-2 for contrast. */
@@ -291,7 +290,7 @@ body {
 /* SECTION TITLE — text-3xl token (32px), Outfit semibold. Identical spec to
    .cover-outcome-num and all metric numbers — section titles and metrics share
    the same typographic identity. */
-h2 { font-family: var(--font-display); font-size: var(--text-3xl); line-height: 1.15; font-weight: var(--fw-semibold); color: var(--color-ink); margin-bottom: 16px; margin-top: 64px; letter-spacing: -0.02em; }
+h2 { font-family: var(--font-display); font-size: var(--text-3xl); line-height: 1.15; font-weight: var(--fw-bold); color: var(--color-ink); margin-bottom: 16px; margin-top: 64px; letter-spacing: -0.02em; }
 @media (max-width: 640px) { h2 { font-size: var(--text-2xl); } }
 .section-head + h2 { margin-top: 16px; }
 .section-head + .section-title { margin-top: 0; }
@@ -668,7 +667,7 @@ blockquote { font-family: var(--font-display); font-size: var(--text-callout); l
 /* SECTION TITLE — text-3xl (32px). Identical spec to h2 — same role, same look. */
 .stat-number {
   font-family: var(--font-display); font-size: var(--text-3xl); line-height: 1.15;
-  font-weight: var(--fw-semibold); color: var(--color-ink); letter-spacing: -0.02em;
+  font-weight: var(--fw-bold); color: var(--color-ink); letter-spacing: -0.02em;
   margin: 0;
   white-space: nowrap;
 }
@@ -694,7 +693,7 @@ blockquote { font-family: var(--font-display); font-size: var(--text-callout); l
 /* SECTION TITLE — text-3xl (32px). Identical spec to h2 — same role, same look. */
 .cs-stat-hero-number {
   font-family: var(--font-display); font-size: var(--text-3xl); line-height: 1.15;
-  font-weight: var(--fw-semibold); color: var(--color-ink); letter-spacing: -0.02em;
+  font-weight: var(--fw-bold); color: var(--color-ink); letter-spacing: -0.02em;
   margin: 0 0 16px;
 }
 /* Type 3 — BODY */
