@@ -581,7 +581,7 @@ img.decision-alts-card-thumb { display: block; }
 .cs-insight {
   margin: 40px 0;
   padding: 0;
-  border-left: 3px solid var(--cs-brand-accent);
+  border-left: 3px solid var(--color-accent); /* sitewide purple-4, works in any context — case study or design system */
   padding-left: 24px;
 }
 .cs-insight-label {
