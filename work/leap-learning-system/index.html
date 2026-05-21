@@ -87,8 +87,9 @@
   <!-- 01 CONTEXT -->
   <div class="section-head" id="context" data-animate>
     <span class="section-num">01</span>
-    <span class="section-label">The Problem</span>
   </div>
+
+  <h2>The Problem</h2>
 
   <p>Tutors had to dig into lessons one-by-one to assign homework. Students had no central place to see it — homework lived inside chapters, buried two layers deep. If a tutor assigned extra practice or advanced worksheets, they got lost at the bottom of the chapter page; students scrolled past them or didn't know when they were due. Tracking whether a student had started or completed work meant navigating into every lesson.</p>
 
@@ -100,8 +101,9 @@
   <!-- 02 ROLE -->
   <div class="section-head" id="role" data-animate>
     <span class="section-num">02</span>
-    <span class="section-label">Role</span>
   </div>
+
+  <h2>Role</h2>
 
   <p>I owned the interaction design, information architecture, and system design end-to-end. My scope: the UX for the goal creation flow, the internal chapter structure and system design (tracking, time, status progression), the page layouts for the learning homepage and chapter content, and the entire homework section.</p>
 
@@ -142,7 +144,6 @@
   <!-- 03 PROCESS -->
   <div class="section-head" id="process" data-animate>
     <span class="section-num">03</span>
-    <span class="section-label">Decisions</span>
   </div>
 
   <h2>Why goal creation first?</h2>
@@ -185,62 +186,94 @@
   <div class="decisions-list">
 
     <div class="decision-item">
-      <p class="decision-item-num">Decision 01</p>
-      <p class="decision-item-title">Three-level hierarchy: Chapter → Block → Node</p>
+      <p class="decision-item-title">Decision 1 — Three-level hierarchy: Chapter → Block → Node</p>
       <p>15+ node types across subjects, each categorized differently. We couldn't break existing data during migration. The solution: a unified three-level structure with two block types — Lessons (mandatory, count toward progress) and Resources (optional enrichment). Every sheet type fit into one category.</p>
 
       <div class="decision-alts">
-        <p class="decision-alts-label">What I considered</p>
-        <ul>
-          <li><strong>Flat list of node types</strong> — rejected: didn't scale, hard for tutors to compose.</li>
-          <li><strong>Per-subject taxonomies</strong> — rejected: re-introduced the fragmentation problem we were solving.</li>
-          <li><strong>Chapter → Block → Node (picked)</strong> — absorbs existing structures, supports new concepts without rework.</li>
-        </ul>
+        <p class="decision-alts-label">Information architecture</p>
+        <div class="decision-alts-cards">
+          <div class="decision-alts-card">
+            <p class="decision-alts-card-name">Flat list of node types</p>
+            <p class="decision-alts-card-note">Didn't scale, hard for tutors to compose.</p>
+          </div>
+          <div class="decision-alts-card">
+            <p class="decision-alts-card-name">Per-subject taxonomies</p>
+            <p class="decision-alts-card-note">Re-introduced the fragmentation problem we were solving.</p>
+          </div>
+          <div class="decision-alts-card decision-alts-card--picked">
+            <p class="decision-alts-card-name">Chapter → Block → Node</p>
+            <p class="decision-alts-card-note">Absorbs existing structures, supports new concepts without rework.</p>
+          </div>
+        </div>
       </div>
     </div>
 
     <div class="decision-item">
-      <p class="decision-item-num">Decision 02</p>
-      <p class="decision-item-title">Progress tied to admin location, not teacher location</p>
+      <p class="decision-item-title">Decision 2 — Progress tied to admin location, not teacher location</p>
       <p>Teachers need flexibility to move nodes between in-class and anywhere. But the curriculum system needs a reliable signal of what was actually taught. So progress always counts from admin location. Teachers can move nodes temporarily; progress stays tied to the authoritative structure.</p>
 
       <div class="decision-alts">
-        <p class="decision-alts-label">What I considered</p>
-        <ul>
-          <li><strong>Progress follows teacher location</strong> — rejected: tutors could inadvertently break curriculum tracking.</li>
-          <li><strong>Lock node locations</strong> — rejected: removed the flexibility tutors needed to adapt.</li>
-          <li><strong>Admin-location authoritative (picked)</strong> — both sides get what they need.</li>
-        </ul>
+        <p class="decision-alts-label">Progress source of truth</p>
+        <div class="decision-alts-cards">
+          <div class="decision-alts-card">
+            <p class="decision-alts-card-name">Progress follows teacher location</p>
+            <p class="decision-alts-card-note">Tutors could inadvertently break curriculum tracking.</p>
+          </div>
+          <div class="decision-alts-card">
+            <p class="decision-alts-card-name">Lock node locations</p>
+            <p class="decision-alts-card-note">Removed the flexibility tutors needed to adapt.</p>
+          </div>
+          <div class="decision-alts-card decision-alts-card--picked">
+            <p class="decision-alts-card-name">Admin-location authoritative</p>
+            <p class="decision-alts-card-note">Both sides get what they need.</p>
+          </div>
+        </div>
       </div>
     </div>
 
     <div class="decision-item">
-      <p class="decision-item-num">Decision 03</p>
-      <p class="decision-item-title">Queue cap of 10 homework items</p>
+      <p class="decision-item-title">Decision 3 — Queue cap of 10 homework items</p>
       <p>Three homework sources — auto-generated practice, teacher-assigned lessons, system smart practice. Collectively, we landed on 10 as the sweet spot. Overflow queued but hidden; surfaces when load clears. Teachers see the full queue.</p>
 
       <div class="decision-alts">
-        <p class="decision-alts-label">What I considered</p>
-        <ul>
-          <li><strong>Show everything always</strong> — rejected: overwhelmed students, completion dropped.</li>
-          <li><strong>Strict cap at 5</strong> — rejected: under-served students who could handle more.</li>
-          <li><strong>Cap at 10, overflow queued (picked)</strong> — visible but bounded; self-paced surfacing.</li>
-        </ul>
+        <p class="decision-alts-label">Homework queue cap</p>
+        <div class="decision-alts-cards">
+          <div class="decision-alts-card">
+            <p class="decision-alts-card-name">Show everything always</p>
+            <p class="decision-alts-card-note">Overwhelmed students, completion dropped.</p>
+          </div>
+          <div class="decision-alts-card">
+            <p class="decision-alts-card-name">Strict cap at 5</p>
+            <p class="decision-alts-card-note">Under-served students who could handle more.</p>
+          </div>
+          <div class="decision-alts-card decision-alts-card--picked">
+            <p class="decision-alts-card-name">Cap at 10, overflow queued</p>
+            <p class="decision-alts-card-note">Visible but bounded; self-paced surfacing.</p>
+          </div>
+        </div>
       </div>
     </div>
 
     <div class="decision-item">
-      <p class="decision-item-num">Decision 04</p>
-      <p class="decision-item-title">Teacher review requires student presence</p>
+      <p class="decision-item-title">Decision 4 — Teacher review requires student presence</p>
       <p>Review only happens when it's useful — when the student is there to discuss. Prevents checkbox-style "marked complete" without the conversation.</p>
 
       <div class="decision-alts">
-        <p class="decision-alts-label">What I considered</p>
-        <ul>
-          <li><strong>Async review allowed</strong> — rejected: teachers would batch-check off completed items without the conversation.</li>
-          <li><strong>No review step</strong> — rejected: removed the feedback loop that makes practice meaningful.</li>
-          <li><strong>Synchronous review with student (picked)</strong> — preserves the feedback moment.</li>
-        </ul>
+        <p class="decision-alts-label">Review mode</p>
+        <div class="decision-alts-cards">
+          <div class="decision-alts-card">
+            <p class="decision-alts-card-name">Async review allowed</p>
+            <p class="decision-alts-card-note">Teachers would batch-check off completed items without the conversation.</p>
+          </div>
+          <div class="decision-alts-card">
+            <p class="decision-alts-card-name">No review step</p>
+            <p class="decision-alts-card-note">Removed the feedback loop that makes practice meaningful.</p>
+          </div>
+          <div class="decision-alts-card decision-alts-card--picked">
+            <p class="decision-alts-card-name">Synchronous review with student</p>
+            <p class="decision-alts-card-note">Preserves the feedback moment.</p>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -250,8 +283,9 @@
   <!-- 04 OUTCOME -->
   <div class="section-head" id="outcome" data-animate>
     <span class="section-num">04</span>
-    <span class="section-label">Impact</span>
   </div>
+
+  <h2>Impact</h2>
 
   <div class="cs-stat-hero">
     <p class="cs-stat-hero-number">28–30k</p>
@@ -272,7 +306,6 @@
   <!-- 05 REFLECTION -->
   <div class="section-head" id="reflection" data-animate>
     <span class="section-num">05</span>
-    <span class="section-label">Lessons</span>
   </div>
 
   <h2>Pre-map content during discovery, not during build.</h2>

@@ -90,8 +90,9 @@
   <!-- 01 CONTEXT -->
   <div class="section-head" id="context" data-animate>
     <span class="section-num">01</span>
-    <span class="section-label">The Problem</span>
   </div>
+
+  <h2>The Problem</h2>
 
   <p>Cuemath's lead-to-paid funnel was entirely AC-dependent. Every qualified lead required multiple AC touchpoints across the journey: initial qualification call, trial scheduling coordination, post-trial follow-up, and preference collection. Each touchpoint added 6–12 hours of delay as ACs managed competing leads. A typical parent journey took 2–3 days from signup to enrollment decision. With limited AC headcount and rising lead volume, the funnel became a bottleneck—ACs spent their time coordinating, not converting.</p>
 
@@ -108,8 +109,9 @@
   <!-- 02 ROLE -->
   <div class="section-head" id="role" data-animate>
     <span class="section-num">02</span>
-    <span class="section-label">Role</span>
   </div>
+
+  <h2>Role</h2>
 
   <p>I was the sole product designer on this project. This was my first time owning an end-to-end user flow that directly impacted business metrics. I owned the entire redesign: the signup experience, communication strategy across WhatsApp, trial slot booking mechanics, teacher positioning during and before the trial, and the post-trial enrollment interface. The scope was complete—from a parent's first signup through payment and class scheduling.</p>
 
@@ -150,7 +152,6 @@
   <!-- 03 PROCESS -->
   <div class="section-head" id="process" data-animate>
     <span class="section-num">03</span>
-    <span class="section-label">Decisions</span>
   </div>
 
   <h2>The Initial Hypothesis and Why It Failed</h2>
@@ -172,17 +173,25 @@
   <div class="decisions-list">
 
     <div class="decision-item">
-      <p class="decision-item-num">Decision 01</p>
-      <p class="decision-item-title">WhatsApp as the primary communication channel</p>
+      <p class="decision-item-title">Decision 1 — WhatsApp as the primary communication channel</p>
       <p>Most teacher-parent communication already happened on WhatsApp, not in our built-in app chat. Rather than fight that pattern, we made it the system's spine. Every critical step — verification, slot confirmation, teacher intro, reminders, post-trial enrollment — moved to WhatsApp.</p>
 
       <div class="decision-alts">
-        <p class="decision-alts-label">What I considered</p>
-        <ul>
-          <li><strong>Build it inside the Cuemath app</strong> — rejected: low engagement, parents had to remember to open it.</li>
-          <li><strong>SMS + email</strong> — rejected: low response rates; parents didn't trust the channel for transaction.</li>
-          <li><strong>WhatsApp Business API (picked)</strong> — high reliability, already-trusted channel, supports rich collateral.</li>
-        </ul>
+        <p class="decision-alts-label">Communication channel</p>
+        <div class="decision-alts-cards">
+          <div class="decision-alts-card">
+            <p class="decision-alts-card-name">Build it inside the Cuemath app</p>
+            <p class="decision-alts-card-note">Low engagement, parents had to remember to open it.</p>
+          </div>
+          <div class="decision-alts-card">
+            <p class="decision-alts-card-name">SMS + email</p>
+            <p class="decision-alts-card-note">Low response rates; parents didn't trust the channel for transaction.</p>
+          </div>
+          <div class="decision-alts-card decision-alts-card--picked">
+            <p class="decision-alts-card-name">WhatsApp Business API</p>
+            <p class="decision-alts-card-note">High reliability, already-trusted channel, supports rich collateral.</p>
+          </div>
+        </div>
       </div>
 
       <p>After the trial, teachers shared branded WhatsApp messages covering pricing, class formats, and onboarding timelines. Post-trial follow-up became a teacher-led, self-serve experience — no AC required.</p>
@@ -211,17 +220,25 @@
     </div>
 
     <div class="decision-item">
-      <p class="decision-item-num">Decision 02</p>
-      <p class="decision-item-title">Automated 5-minute recovery for abandoned slot selection</p>
+      <p class="decision-item-title">Decision 2 — Automated 5-minute recovery for abandoned slot selection</p>
       <p>Parents signed up and verified on WhatsApp, then didn't proceed to book a slot. Feedback surfaced why: overwhelmed, distracted, uncertain about timing. A 5-minute automated follow-up triggered: "Do you need help choosing a time?" Small, well-timed, low-judgment.</p>
 
       <div class="decision-alts">
-        <p class="decision-alts-label">What I considered</p>
-        <ul>
-          <li><strong>AC callback to abandoned parents</strong> — rejected: re-introduces the very bottleneck we're removing.</li>
-          <li><strong>Wait 24h, then remind</strong> — rejected: intent cools too fast; conversion drops.</li>
-          <li><strong>5-minute auto-message (picked)</strong> — captures intent at peak, no human in the loop.</li>
-        </ul>
+        <p class="decision-alts-label">Abandoned-slot recovery</p>
+        <div class="decision-alts-cards">
+          <div class="decision-alts-card">
+            <p class="decision-alts-card-name">AC callback to abandoned parents</p>
+            <p class="decision-alts-card-note">Re-introduces the very bottleneck we're removing.</p>
+          </div>
+          <div class="decision-alts-card">
+            <p class="decision-alts-card-name">Wait 24h, then remind</p>
+            <p class="decision-alts-card-note">Intent cools too fast; conversion drops.</p>
+          </div>
+          <div class="decision-alts-card decision-alts-card--picked">
+            <p class="decision-alts-card-name">5-minute auto-message</p>
+            <p class="decision-alts-card-note">Captures intent at peak, no human in the loop.</p>
+          </div>
+        </div>
       </div>
       <div class="screen-grid-2">
         <div class="screen-featured">
@@ -236,47 +253,71 @@
     </div>
 
     <div class="decision-item">
-      <p class="decision-item-num">Decision 03</p>
-      <p class="decision-item-title">Teacher introduction message 24 hours before the trial</p>
+      <p class="decision-item-title">Decision 3 — Teacher introduction message 24 hours before the trial</p>
       <p>Instead of an AC confirmation, parents got a personal WhatsApp message from their assigned teacher — name, credentials, sometimes a short video. Parents weren't signing up for a generic trial; they were meeting a specific person. Rapport began 24 hours early, not after the session ended.</p>
 
       <div class="decision-alts">
-        <p class="decision-alts-label">What I considered</p>
-        <ul>
-          <li><strong>AC-sent confirmation</strong> — rejected: parent reads it as transactional; no rapport.</li>
-          <li><strong>Generic system reminder</strong> — rejected: no personalization, no trust signal.</li>
-          <li><strong>Teacher-sent personal intro (picked)</strong> — builds rapport before the session, lifts 78% slot-completion within 24h.</li>
-        </ul>
+        <p class="decision-alts-label">Pre-trial touchpoint</p>
+        <div class="decision-alts-cards">
+          <div class="decision-alts-card">
+            <p class="decision-alts-card-name">AC-sent confirmation</p>
+            <p class="decision-alts-card-note">Parent reads it as transactional; no rapport.</p>
+          </div>
+          <div class="decision-alts-card">
+            <p class="decision-alts-card-name">Generic system reminder</p>
+            <p class="decision-alts-card-note">No personalization, no trust signal.</p>
+          </div>
+          <div class="decision-alts-card decision-alts-card--picked">
+            <p class="decision-alts-card-name">Teacher-sent personal intro</p>
+            <p class="decision-alts-card-note">Builds rapport before the session, lifts 78% slot-completion within 24h.</p>
+          </div>
+        </div>
       </div>
     </div>
 
     <div class="decision-item">
-      <p class="decision-item-num">Decision 04</p>
-      <p class="decision-item-title">In-trial conversation guided by a reference script, not a hard close</p>
+      <p class="decision-item-title">Decision 4 — In-trial conversation guided by a reference script, not a hard close</p>
       <p>Teachers have talking points but only deploy them if parents ask "What comes next?" The parent pulls; the teacher doesn't push. Teachers can reference class format trade-offs (1:1, 1:2, 1:4) naturally — never as a pitch.</p>
 
       <div class="decision-alts">
-        <p class="decision-alts-label">What I considered</p>
-        <ul>
-          <li><strong>Hard script</strong> — memorize pricing, recite before close. Rejected: feels rehearsed, breaks lesson quality.</li>
-          <li><strong>No teacher mention, post-trial UI only</strong> — rejected: in-session parent questions go unanswered.</li>
-          <li><strong>Soft talking points (picked)</strong> — teacher answers if asked, doesn't initiate. Authentic, contextual.</li>
-        </ul>
+        <p class="decision-alts-label">In-trial conversation</p>
+        <div class="decision-alts-cards">
+          <div class="decision-alts-card">
+            <p class="decision-alts-card-name">Hard script</p>
+            <p class="decision-alts-card-note">Memorize pricing, recite before close. Feels rehearsed, breaks lesson quality.</p>
+          </div>
+          <div class="decision-alts-card">
+            <p class="decision-alts-card-name">No teacher mention, post-trial UI only</p>
+            <p class="decision-alts-card-note">In-session parent questions go unanswered.</p>
+          </div>
+          <div class="decision-alts-card decision-alts-card--picked">
+            <p class="decision-alts-card-name">Soft talking points</p>
+            <p class="decision-alts-card-note">Teacher answers if asked, doesn't initiate. Authentic, contextual.</p>
+          </div>
+        </div>
       </div>
     </div>
 
     <div class="decision-item">
-      <p class="decision-item-num">Decision 05</p>
-      <p class="decision-item-title">Direct enrollment immediately after the trial, with teacher present</p>
+      <p class="decision-item-title">Decision 5 — Direct enrollment immediately after the trial, with teacher present</p>
       <p>The moment the session ended, parents saw an enrollment interface on their device — not a form. Three plan options, pricing visible, one-tap payment. No AC call. If they had questions, the teacher was still present.</p>
 
       <div class="decision-alts">
-        <p class="decision-alts-label">What I considered</p>
-        <ul>
-          <li><strong>AC follow-up call within 24h</strong> — rejected: intent cools; teacher is no longer in the moment.</li>
-          <li><strong>Email enrollment link 1h post-trial</strong> — rejected: peak conviction passes; parent moves on to other things.</li>
-          <li><strong>Direct in-screen enrollment, teacher present (picked)</strong> — captures intent at peak; +9.6% trial-to-paid.</li>
-        </ul>
+        <p class="decision-alts-label">Post-trial enrollment</p>
+        <div class="decision-alts-cards">
+          <div class="decision-alts-card">
+            <p class="decision-alts-card-name">AC follow-up call within 24h</p>
+            <p class="decision-alts-card-note">Intent cools; teacher is no longer in the moment.</p>
+          </div>
+          <div class="decision-alts-card">
+            <p class="decision-alts-card-name">Email enrollment link 1h post-trial</p>
+            <p class="decision-alts-card-note">Peak conviction passes; parent moves on to other things.</p>
+          </div>
+          <div class="decision-alts-card decision-alts-card--picked">
+            <p class="decision-alts-card-name">Direct in-screen enrollment, teacher present</p>
+            <p class="decision-alts-card-note">Captures intent at peak; +9.6% trial-to-paid.</p>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -310,8 +351,9 @@
   <!-- 04 OUTCOME -->
   <div class="section-head" id="outcome" data-animate>
     <span class="section-num">04</span>
-    <span class="section-label">Impact</span>
   </div>
+
+  <h2>Impact</h2>
 
   <div class="cs-stat-hero">
     <p class="cs-stat-hero-number">−70%</p>
@@ -355,7 +397,6 @@
   <!-- 05 REFLECTION -->
   <div class="section-head" id="reflection" data-animate>
     <span class="section-num">05</span>
-    <span class="section-label">Lessons</span>
   </div>
 
   <h2>Validate assumptions before you invest five weeks in design.</h2>

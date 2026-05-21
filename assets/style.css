@@ -128,6 +128,8 @@ body {
 /* Type 3 — BODY (lede, cover subtitle) */
 .cover-subtitle { font-family: var(--font-body); font-size: var(--text-base); line-height: 1.6; font-weight: var(--fw-regular); color: var(--color-ink-2); margin-bottom: 28px; max-width: 540px; }
 .lede { font-family: var(--font-body); font-size: var(--text-base); line-height: 1.6; color: var(--color-ink-2); margin-bottom: 32px; font-weight: var(--fw-regular); }
+/* Cover primer — framework/foundation paragraph between hero image and CTA */
+.cover-primer { font-family: var(--font-body); font-size: var(--text-base); line-height: 1.6; color: var(--color-ink-2); margin: 32px 0 0; font-weight: var(--fw-regular); }
 .cover-meta {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -1402,8 +1404,6 @@ img.decision-alts-card-thumb { display: block; }
   .outcome-stats { grid-template-columns: 1fr; }
   .footer { flex-direction: column; gap: 16px; text-align: center; }
   p.large { font-size: var(--text-lg); line-height: 30px; }
-  .decision-item { padding: 20px; }
-  .section-num { font-size: var(--text-2xl); }
   .cover-meta { grid-template-columns: 1fr; }
   .cover-meta-item { border-right: none; }
 }
