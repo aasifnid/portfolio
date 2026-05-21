@@ -1336,7 +1336,11 @@ img.decision-alts-card-thumb { display: block; }
 }
 
 /* ─── Section anchor offset ─── */
-.section-head[id] { scroll-margin-top: 80px; }
+.section-head[id] { scroll-margin-top: 128px; }
+@media (max-width: 768px) {
+  /* cs-section-nav is hidden on mobile, so only the 64px site-nav offsets the anchor */
+  .section-head[id] { scroll-margin-top: 80px; }
+}
 .home-section[id] { scroll-margin-top: 44px; }
 .home-hero[id], .home-hero { scroll-margin-top: 64px; }
 
