@@ -390,6 +390,60 @@ blockquote { font-family: var(--font-display); font-size: var(--text-callout); l
 .rules-table td:first-child { font-weight: var(--fw-semibold); color: var(--neutral-1000); width: 36%; }
 .rules-table tr:last-child td { border-bottom: none; }
 
+/* Routing table — editorial decision-logic table (D3 Unsure routing) */
+.routing-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: var(--font-body);
+  margin: 28px 0 12px;
+}
+.routing-table th {
+  text-align: left;
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  font-weight: var(--fw-semibold);
+  letter-spacing: var(--ls-caps);
+  text-transform: uppercase;
+  color: var(--color-ink-3);
+  padding: 12px 12px 10px;
+  border-bottom: 1px solid var(--color-border);
+}
+.routing-table td {
+  font-size: var(--text-sm);
+  line-height: 1.55;
+  color: var(--color-ink-2);
+  padding: 12px;
+  border-bottom: 1px solid var(--color-border);
+  vertical-align: middle;
+}
+.routing-table tr:last-child td { border-bottom: none; }
+.routing-table tr.routing-highlight td {
+  background: var(--cs-brand-bg);
+  color: var(--color-ink);
+  font-weight: var(--fw-semibold);
+}
+.routing-zone {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  white-space: nowrap;
+}
+.routing-zone::before {
+  content: "";
+  display: inline-block;
+  width: 10px; height: 10px;
+  border-radius: 50%;
+  background: var(--color-ink-3);
+}
+.routing-zone--blue::before  { background: var(--color-rec-4-accent); }
+.routing-zone--green::before { background: var(--color-rec-5-accent); }
+.routing-zone--yellow::before { background: var(--color-rec-3-accent); }
+.routing-zone--red::before   { background: var(--color-rec-6-accent); }
+@media (max-width: 640px) {
+  .routing-table th,
+  .routing-table td { padding: 10px 8px; font-size: 13px; }
+}
+
 /* ─── Homework lifecycle — card row ─── */
 .hw-lifecycle { display: flex; gap: 10px; margin: 20px 0 28px; }
 .lifecycle-stage { flex: 1; padding: 16px 18px; background: var(--neutral-200); border: 1px solid var(--neutral-300); border-radius: 0; box-shadow: var(--card-shadow); }

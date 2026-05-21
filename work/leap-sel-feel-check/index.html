@@ -215,17 +215,74 @@
         </ul>
       </div>
 
-      <div class="cs-img-placeholder">
-        <p class="cs-img-placeholder-label">Image placeholder · D3</p>
-        <p class="cs-img-placeholder-desc">The Unsure routing screen — showing the curated regulation set that all-Unsure students see (instead of an emotion-mapping dead end).</p>
-      </div>
+      <table class="routing-table">
+        <thead>
+          <tr>
+            <th>Body</th>
+            <th>Heart</th>
+            <th>Mind</th>
+            <th>Routes to</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Tight, fast breath</td>
+            <td>Heavy</td>
+            <td>Few thoughts</td>
+            <td><span class="routing-zone routing-zone--blue">Blue zone</span></td>
+          </tr>
+          <tr>
+            <td>Relaxed, slow breath</td>
+            <td>Calm</td>
+            <td>Blank</td>
+            <td><span class="routing-zone routing-zone--green">Green zone</span></td>
+          </tr>
+          <tr>
+            <td>Relaxed, slow breath</td>
+            <td>Sparkling</td>
+            <td>Full of thoughts</td>
+            <td><span class="routing-zone routing-zone--yellow">Yellow zone</span></td>
+          </tr>
+          <tr>
+            <td>Tight, fast breath</td>
+            <td>Powerful</td>
+            <td>Full of thoughts</td>
+            <td><span class="routing-zone routing-zone--red">Red zone</span></td>
+          </tr>
+          <tr>
+            <td>Unsure</td>
+            <td>Calm</td>
+            <td>Few thoughts</td>
+            <td><span class="routing-zone routing-zone--green">Green zone</span></td>
+          </tr>
+          <tr>
+            <td>Unsure</td>
+            <td>Heavy</td>
+            <td>Unsure</td>
+            <td><span class="routing-zone routing-zone--blue">Blue zone</span></td>
+          </tr>
+          <tr class="routing-highlight">
+            <td>Unsure</td>
+            <td>Unsure</td>
+            <td>Unsure</td>
+            <td>Curated regulation set</td>
+          </tr>
+        </tbody>
+      </table>
+      <p class="caption">Routing logic: each Body × Heart × Mind combination mapped to a Zone of Regulation. Partial-Unsure inputs still resolve to a zone. The all-Unsure path (highlighted) bypasses emotion-mapping entirely and routes straight to a curated regulation set — the case the spec didn't define.</p>
 
-      <p>1 in 5 students selected Unsure at the Body stage — the hardest to name. <strong>264 sessions followed the full Unsure path. Every one resolved.</strong></p>
+      <p>1 in 5 students selected Unsure at the Body stage — the hardest to name. <strong>184 sessions reached the all-Unsure path, and 98 unique students completed a regulation activity from there — no dead end.</strong></p>
 
-      <div class="cs-img-placeholder">
-        <p class="cs-img-placeholder-label">Mixpanel screenshot · D3</p>
-        <p class="cs-img-placeholder-desc">Unsure selection breakdown per stage (Body / Heart / Mind) + all-Unsure path completion count — to back the "1 in 5" and "264 sessions" claims.</p>
+      <div class="cs-img-pair">
+        <img src="../../assets/Case studies/sel-feel-check/d3-mixpanel-body-heart-mind-g3-4.png" loading="lazy" decoding="async" alt="G3-4 Body Heart Mind Unsure rates" class="cs-img">
+        <img src="../../assets/Case studies/sel-feel-check/d3-mixpanel-body-heart-mind-g5-8.png" loading="lazy" decoding="async" alt="G5-8 Body Heart Mind Unsure rates" class="cs-img">
       </div>
+      <div class="cs-img-caption-row">
+        <p class="img-label-center">G3–4 · Body 23.5% Unsure</p>
+        <p class="img-label-center">G5–8 · Body 20.1% Unsure</p>
+      </div>
+      <p class="caption">Body / Heart / Mind Unsure rates across both grade bands (Jan 31 – Mar 31, 2026). Unsure peaks at Body — the hardest sensation to name — and tapers as students settle into self-naming through Heart and Mind.</p>
+
 
       <div class="cs-insight">
         <p class="cs-insight-label">Insight</p>
@@ -249,10 +306,15 @@
 
       <p>Engaged regulation time moved from <strong>0.8 min → 1.9 min</strong>. Reattempt rate dropped <strong>22% → 15%</strong>.</p>
 
-      <div class="cs-img-placeholder">
-        <p class="cs-img-placeholder-label">Mixpanel screenshot · D4</p>
-        <p class="cs-img-placeholder-desc">Engagement time + reattempt rate before/after ambient audio was added — to back the "0.8 → 1.9 min" and "22% → 15%" claims.</p>
+      <div class="cs-img-pair">
+        <img src="../../assets/Case studies/sel-feel-check/d4-mixpanel-regulation-time.png" loading="lazy" decoding="async" alt="Average time spent on regulation strategy — Mixpanel" class="cs-img">
+        <img src="../../assets/Case studies/sel-feel-check/d4-mixpanel-reattempt-rate.png" loading="lazy" decoding="async" alt="Regulation strategy reattempt rate — Mixpanel" class="cs-img">
       </div>
+      <div class="cs-img-caption-row">
+        <p class="img-label-center">Regulation time · post-audio</p>
+        <p class="img-label-center">Reattempt rate · post-audio</p>
+      </div>
+      <p class="caption">Post-audio Mixpanel data (Jan 31 – Mar 31, 2026): students engaged with regulation for ~2 min on average and reattempt rate held at 15.16%. The pre-audio baseline (0.8 min engagement, 22% reattempt) comes from in-house tutor cohort observation logs before ambient audio shipped.</p>
 
       <div class="cs-insight">
         <p class="cs-insight-label">Insight</p>
@@ -288,10 +350,8 @@
 
       <p>Post-launch, <strong>"Do It Your Way"</strong> — the autonomy option in the spec — was consistently one of the top choices across grade levels and zones. <strong>~29% of G5–8 Green-zone selections</strong>, sitting right behind "Get Ready!" and ahead of every named alternative activity. Students weren't avoiding structure; many were choosing self-direction over a named path. For v2, I'm promoting "Do It Your Way" from one of four options to a primary entry point on the activity menu.</p>
 
-      <div class="cs-img-placeholder">
-        <p class="cs-img-placeholder-label">Mixpanel screenshot · Do It Your Way</p>
-        <p class="cs-img-placeholder-desc">Activity selection breakdown for G5–8 Green zone — showing "Do It Your Way" at ~29%, sitting #2 across regulation choices.</p>
-      </div>
+      <img src="../../assets/Case studies/sel-feel-check/d3-mixpanel-edge-case-activities.png" loading="lazy" decoding="async" alt="Edge case students' regulation activity picks by grade — Do It Your Way! prominent" class="cs-img">
+      <p class="caption">Regulation activity picks among the 98 unique students who reached the all-Unsure path. "Do It Your Way!" was the most-picked option across grades — when uncertain about how they felt, students reached for self-direction.</p>
 
       <div class="cs-insight">
         <p class="cs-insight-label">Insight</p>
