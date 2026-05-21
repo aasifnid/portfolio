@@ -398,17 +398,15 @@ blockquote { font-family: var(--font-display); font-size: var(--text-callout); l
   display: grid;
   grid-template-columns: 100px 1fr;
   gap: 16px;
-  padding: 14px 0;
-  border-top: 1px solid var(--color-border);
+  padding: 12px 0;
+  /* No inner borders — surface-1 fill is the only container affordance.
+     Picked row highlight extends full-bleed across the fill for emphasis. */
 }
-.decision-alts-row:last-child { border-bottom: 1px solid var(--color-border); }
 .decision-alts-row--picked {
-  background: var(--cs-brand-bg); /* purple-1 highlight, like cs-table-highlight */
+  background: var(--cs-brand-bg); /* purple-1 highlight */
   margin: 0 -24px; /* extend to alts block edges (parent has 24px padding) */
-  padding: 14px 24px;
-  border-top: none;
+  padding: 12px 24px;
 }
-.decision-alts-row--picked + .decision-alts-row { border-top: none; }
 .decision-alts-tag {
   font-family: var(--font-body);
   font-size: var(--text-xs);
