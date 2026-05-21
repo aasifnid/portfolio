@@ -391,7 +391,9 @@ blockquote { font-family: var(--font-display); font-size: var(--text-callout); l
   color: var(--color-ink-2); margin-bottom: 12px;
 }
 /* Row-based layout: explicit Picked/Rejected tag on the left, option text on the right.
-   Replaces the older flat <ul> with hidden "picked" item — now the answer is unambiguous. */
+   Picked row uses a purple-1 background highlight (same pattern as .cs-table-highlight)
+   instead of accent text — keeps the convention that accent color is for fills/markers,
+   never for text. */
 .decision-alts-row {
   display: grid;
   grid-template-columns: 100px 1fr;
@@ -400,6 +402,13 @@ blockquote { font-family: var(--font-display); font-size: var(--text-callout); l
   border-top: 1px solid var(--color-border);
 }
 .decision-alts-row:last-child { border-bottom: 1px solid var(--color-border); }
+.decision-alts-row--picked {
+  background: var(--cs-brand-bg); /* purple-1 highlight, like cs-table-highlight */
+  margin: 0 -24px; /* extend to alts block edges (parent has 24px padding) */
+  padding: 14px 24px;
+  border-top: none;
+}
+.decision-alts-row--picked + .decision-alts-row { border-top: none; }
 .decision-alts-tag {
   font-family: var(--font-body);
   font-size: var(--text-xs);
@@ -409,7 +418,7 @@ blockquote { font-family: var(--font-display); font-size: var(--text-callout); l
   color: var(--color-ink-3);
   padding-top: 2px;
 }
-.decision-alts-row--picked .decision-alts-tag { color: var(--color-accent); }
+.decision-alts-row--picked .decision-alts-tag { color: var(--color-ink); }
 .decision-alts-row p {
   font-family: var(--font-body);
   font-size: var(--text-sm);
@@ -421,6 +430,7 @@ blockquote { font-family: var(--font-display); font-size: var(--text-callout); l
 .decision-alts-row--picked p { color: var(--color-ink); }
 @media (max-width: 640px) {
   .decision-alts-row { grid-template-columns: 1fr; gap: 4px; padding: 12px 0; }
+  .decision-alts-row--picked { margin: 0 -24px; padding: 12px 24px; }
 }
 
 /* ─── Rules table ─── */
