@@ -1072,17 +1072,16 @@
       </div>
     </div>
 
-    <!-- Hero stat (white-fill card) -->
+    <!-- Hero stat (purple-1 fill card) -->
     <div class="ds-component">
       <div class="ds-component-header">
         <span class="ds-component-title">Hero stat</span>
-        <span class="ds-component-meta">.cs-stat-hero · single anchor metric · white-fill card · 1px border + 4px radius · number clamp(56px → 104px)</span>
+        <span class="ds-component-meta">.cs-stat-hero · single anchor metric · purple-1 (--cs-brand-bg) fill · 1px border · sharp edges · number text-3xl Outfit Bold (32px) · description text-base body</span>
       </div>
       <div class="ds-component-preview">
         <div class="cs-stat-hero" style="margin: 0;">
-          <p class="cs-stat-hero-label">Ready to learn after Feel Check</p>
           <p class="cs-stat-hero-number">75.2%</p>
-          <p class="cs-stat-hero-desc">Tutors observed students were ready to learn after Feel Check (n=459). The direct answer to the problem.</p>
+          <p class="cs-stat-hero-desc">of students were ready to learn after Feel Check — the direct answer to the problem (n=459, tutor-observed).</p>
         </div>
       </div>
     </div>
@@ -1091,7 +1090,7 @@
     <div class="ds-component">
       <div class="ds-component-header">
         <span class="ds-component-title">Metric card grid</span>
-        <span class="ds-component-meta">.outcome-stats &gt; .stat · 3-col on desktop / 1-col on mobile · white-fill cards · 1px border + 4px radius</span>
+        <span class="ds-component-meta">.outcome-stats &gt; .stat · 3-col on desktop / 1-col on mobile · white-fill cards · 1px border · sharp edges · 24px uniform padding · stat-number text-3xl Outfit Bold</span>
       </div>
       <div class="ds-component-preview">
         <div class="outcome-stats" style="margin: 0;">
@@ -1172,24 +1171,59 @@
       </div>
     </div>
 
-    <!-- Decision item v2 -->
+    <!-- Decision item with alts card-spread -->
     <div class="ds-component">
       <div class="ds-component-header">
         <span class="ds-component-title">Decision block</span>
-        <span class="ds-component-meta">.decision-item · typographic, no card chrome · with .decision-alts sub-block</span>
+        <span class="ds-component-meta">.decision-item · typographic, no card chrome · title format "Decision N — Title text" (text-xl DM Sans 600) · with .decision-alts card-spread sub-block</span>
       </div>
       <div class="ds-component-preview">
         <div class="decision-item" style="border-top: none; padding-top: 0;">
-          <p class="decision-item-num">Decision 01</p>
-          <p class="decision-item-title">Tutor as observer, not director</p>
+          <p class="decision-item-title">Decision 1 — Tutor as observer, not director</p>
           <p>Every selection belongs to the student. The tutor sees the same screen in real time but cannot tap or control anything.</p>
           <div class="decision-alts">
-            <p class="decision-alts-label">What I considered</p>
-            <ul>
-              <li><strong>Fully private</strong> — rejected: read as abandonment.</li>
-              <li><strong>Tutor co-control</strong> — rejected: overrode autonomy.</li>
-              <li><strong>Silent observer (picked)</strong> — best balance.</li>
-            </ul>
+            <p class="decision-alts-label">Tutor role</p>
+            <div class="decision-alts-cards">
+              <div class="decision-alts-card">
+                <p class="decision-alts-card-name">Fully private</p>
+                <p class="decision-alts-card-note">Read as abandonment. Tutor couldn't catch students who got stuck.</p>
+              </div>
+              <div class="decision-alts-card">
+                <p class="decision-alts-card-name">Tutor co-control</p>
+                <p class="decision-alts-card-note">Overrode student autonomy. Defeated the point of self-led check-in.</p>
+              </div>
+              <div class="decision-alts-card decision-alts-card--picked">
+                <p class="decision-alts-card-name">Silent observer</p>
+                <p class="decision-alts-card-note">Tutor sees the screen in real time but can't tap or control anything.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Decision-alts card-spread (standalone component) -->
+    <div class="ds-component">
+      <div class="ds-component-header">
+        <span class="ds-component-title">Decision alts · card spread</span>
+        <span class="ds-component-meta">.decision-alts-cards · 3-column grid · surface-1 fill on cards · picked card carries 2px accent border + ✓ checkmark badge in top-right corner · thumbnail area (.decision-alts-card-thumb) optional · mobile collapses to single column</span>
+      </div>
+      <div class="ds-component-preview">
+        <div class="decision-alts">
+          <p class="decision-alts-label">Routing</p>
+          <div class="decision-alts-cards">
+            <div class="decision-alts-card">
+              <p class="decision-alts-card-name">Skip button</p>
+              <p class="decision-alts-card-note">Felt like failure to the student. Defeated the purpose of asking.</p>
+            </div>
+            <div class="decision-alts-card">
+              <p class="decision-alts-card-name">Required answer (spec)</p>
+              <p class="decision-alts-card-note">Students would make something up. Regulation would match the made-up answer, not the real state.</p>
+            </div>
+            <div class="decision-alts-card decision-alts-card--picked">
+              <p class="decision-alts-card-name">Curated routing</p>
+              <p class="decision-alts-card-note">Accepts "I don't know" honestly. Shows activities that work without a named emotion.</p>
+            </div>
           </div>
         </div>
       </div>
