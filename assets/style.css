@@ -378,57 +378,66 @@ blockquote { font-family: var(--font-display); font-size: var(--text-callout); l
 .decision-item p { margin-bottom: 16px; }
 .decision-item p:last-child { margin-bottom: 0; }
 
-/* Alternatives-considered sub-block inside a decision */
+/* Alternatives-considered sub-block — card-spread layout.
+   3 cards in a row, all on surface-1 fill. Picked card carries a 2px accent
+   border plus a checkmark badge in the upper-right corner. Thumbnail area
+   (.decision-alts-card-thumb) is optional — present for visual decisions,
+   dropped for text-only ones. */
 .decision-alts {
   margin: 24px 0;
-  padding: 24px;
-  background: var(--color-surface-1);
-  border-radius: 0;
+  padding: 0;
+  background: transparent;
 }
 .decision-alts-label {
   font-family: var(--font-body); font-size: var(--text-xs); font-weight: var(--fw-semibold);
   letter-spacing: var(--ls-caps); text-transform: uppercase;
-  color: var(--color-ink-2); margin-bottom: 12px;
+  color: var(--color-ink-3); margin-bottom: 12px;
 }
-/* Row-based layout: explicit Picked/Rejected tag on the left, option text on the right.
-   Picked row uses a purple-1 background highlight (same pattern as .cs-table-highlight)
-   instead of accent text — keeps the convention that accent color is for fills/markers,
-   never for text. */
-.decision-alts-row {
+.decision-alts-cards {
   display: grid;
-  grid-template-columns: 100px 1fr;
-  gap: 16px;
-  padding: 12px 0;
-  /* No inner borders — surface-1 fill is the only container affordance.
-     Picked row highlight extends full-bleed across the fill for emphasis. */
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
 }
-.decision-alts-row--picked {
-  background: var(--cs-brand-bg); /* purple-1 highlight */
-  margin: 0 -24px; /* extend to alts block edges (parent has 24px padding) */
-  padding: 12px 24px;
+.decision-alts-card {
+  background: var(--color-surface-1);
+  padding: 16px;
+  display: flex; flex-direction: column;
+  gap: 8px;
+  position: relative;
 }
-.decision-alts-tag {
-  font-family: var(--font-body);
-  font-size: var(--text-xs);
-  font-weight: var(--fw-semibold);
-  letter-spacing: var(--ls-caps);
-  text-transform: uppercase;
-  color: var(--color-ink-3);
-  padding-top: 2px;
+.decision-alts-card--picked {
+  border: 2px solid var(--color-accent);
+  padding: 14px; /* 16 - 2 keeps content position identical to rejected cards */
 }
-.decision-alts-row--picked .decision-alts-tag { color: var(--color-ink); }
-.decision-alts-row p {
-  font-family: var(--font-body);
-  font-size: var(--text-sm);
-  line-height: 1.5;
-  color: var(--color-ink-2);
-  margin: 0;
+.decision-alts-card--picked::after {
+  content: "✓";
+  position: absolute;
+  top: -1px; right: -1px;
+  background: var(--color-accent);
+  color: #FFFFFF;
+  width: 24px; height: 24px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 13px; font-weight: 700;
 }
-.decision-alts-row p strong { color: var(--color-ink); font-weight: var(--fw-semibold); }
-.decision-alts-row--picked p { color: var(--color-ink); }
+.decision-alts-card-thumb {
+  background: #FFFFFF;
+  border: 1px solid var(--color-border);
+  aspect-ratio: 4/3;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 10px; color: var(--color-ink-3);
+  text-transform: uppercase; letter-spacing: var(--ls-caps);
+  margin-bottom: 4px;
+}
+.decision-alts-card-name {
+  font-family: var(--font-body); font-size: var(--text-sm);
+  font-weight: var(--fw-semibold); color: var(--color-ink); margin: 0;
+}
+.decision-alts-card-note {
+  font-family: var(--font-body); font-size: var(--text-xs); line-height: 1.5;
+  color: var(--color-ink-2); margin: 0;
+}
 @media (max-width: 640px) {
-  .decision-alts-row { grid-template-columns: 1fr; gap: 4px; padding: 12px 0; }
-  .decision-alts-row--picked { margin: 0 -24px; padding: 12px 24px; }
+  .decision-alts-cards { grid-template-columns: 1fr; }
 }
 
 /* ─── Rules table ─── */
