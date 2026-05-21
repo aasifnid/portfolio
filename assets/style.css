@@ -248,14 +248,14 @@ body {
   color: var(--color-ink-3);
   margin-bottom: 12px;
 }
-/* Type 2 — HEADING (section title "The Problem", "Role", etc.) */
+/* Type 1 — DISPLAY (section title "The Problem", "Role", etc. — hero of each section) */
 .section-label {
   display: block;
   font-family: var(--font-display);
-  font-size: clamp(28px, 3.5vw, 40px);
+  font-size: clamp(32px, 4.5vw, 48px);
   font-weight: var(--fw-bold);
-  line-height: 1.25;
-  letter-spacing: -0.02em;
+  line-height: 1.05;
+  letter-spacing: -0.03em;
   color: var(--color-ink);
   text-transform: none;
 }
@@ -274,18 +274,19 @@ body {
 /* ═══════════════════════════════════════════════════════════════════
    TYPOGRAPHY SYSTEM — 5 TYPES ONLY. Do not introduce new variants.
    ───────────────────────────────────────────────────────────────────
-   1. DISPLAY   Outfit Bold clamp(32,4.5vw,48) / lh 1.05 / ink       → h1, *-num, *-number
-   2. HEADING   Outfit Bold clamp(28,3.5vw,40) / lh 1.25 / ink       → h2, section-label, decision/insight titles
+   1. DISPLAY   Outfit Bold clamp(32,4.5vw,48) / lh 1.05 / ink       → h1, section-label, all metrics
+   2. HEADING   Outfit Bold clamp(24,3vw,32)   / lh 1.25 / ink       → h2, decision-title, insight-quote
    3. BODY      DM Sans 400 16px / lh 1.6 / ink-2                    → p, lede, hero-desc, cs-table td
    4. CAPTION   DM Sans 400 14px / lh 1.5 / ink-3                    → .caption, figcaption, stat-desc
    5. LABEL     DM Sans 600 12px UPPERCASE 0.12em / ink-3            → section-num, eyebrows, table th, pills
 
-   Heading > Display ratio is now 1.2:1 (was 2:1). Section headers no longer
-   lose to metrics in visual weight.
+   HIERARCHY: Display (section-label/metrics) > Heading (h2/decision-title)
+   by 1.5x. Section-label is the HERO of each section — h2 below it is the
+   subhead, clearly smaller. The two never tie for "I'm the title."
    ═══════════════════════════════════════════════════════════════════ */
 
 /* Type 2 — HEADING */
-h2 { font-family: var(--font-display); font-size: clamp(28px, 3.5vw, 40px); line-height: 1.25; font-weight: var(--fw-bold); color: var(--color-ink); margin-bottom: 16px; margin-top: 64px; letter-spacing: -0.02em; }
+h2 { font-family: var(--font-display); font-size: clamp(24px, 3vw, 32px); line-height: 1.25; font-weight: var(--fw-bold); color: var(--color-ink); margin-bottom: 16px; margin-top: 64px; letter-spacing: -0.02em; }
 .section-head + h2 { margin-top: 4px; }
 .section-head + .section-title { margin-top: 0; }
 
@@ -366,7 +367,7 @@ blockquote { font-family: var(--font-display); font-size: var(--text-callout); l
 /* Type 2 — HEADING */
 .decision-item-title {
   font-family: var(--font-display);
-  font-size: clamp(28px, 3.5vw, 40px); line-height: 1.25; font-weight: var(--fw-bold);
+  font-size: clamp(24px, 3vw, 32px); line-height: 1.25; font-weight: var(--fw-bold);
   letter-spacing: -0.02em;
   color: var(--color-ink);
   margin: 0 0 20px 0; padding: 0;
@@ -544,7 +545,7 @@ blockquote { font-family: var(--font-display); font-size: var(--text-callout); l
 }
 /* Type 2 — HEADING (insight pull-quote) */
 .cs-insight-quote {
-  font-family: var(--font-display); font-size: clamp(28px, 3.5vw, 40px); line-height: 1.25;
+  font-family: var(--font-display); font-size: clamp(24px, 3vw, 32px); line-height: 1.25;
   font-weight: var(--fw-bold); letter-spacing: -0.02em;
   color: var(--color-ink); margin: 0 0 12px;
 }
