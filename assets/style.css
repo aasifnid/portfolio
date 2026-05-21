@@ -107,14 +107,14 @@ body {
 /* ─── Layout ─── */
 .cover { padding: 120px 32px 80px; max-width: 800px; margin: 0 auto; }
 .page {
-  max-width: 800px; margin: 0 auto; padding: 0 32px 480px;
+  max-width: 800px; margin: 0 auto; padding: 0 32px 96px;
   --cs-brand-bg: var(--color-rec-1-bg);
   --cs-brand-accent: var(--color-accent);
 }
 
 @media (max-width: 768px) {
   .cover { padding: 96px 24px 64px; }
-  .page { padding: 0 24px 360px; }
+  .page { padding: 0 24px 64px; }
 }
 
 /* Optional inner prose constraint — for opt-in narrower text columns */
