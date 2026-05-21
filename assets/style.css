@@ -384,9 +384,14 @@ blockquote { font-family: var(--font-display); font-size: var(--text-callout); l
    (.decision-alts-card-thumb) is optional — present for visual decisions,
    dropped for text-only ones. */
 .decision-alts {
-  margin: 24px 0;
+  margin: 32px 0;
   padding: 0;
   background: transparent;
+}
+/* Caption inside an alts block sits between image and cards — tighten its
+   bottom margin so it visually belongs to the cards, not the next section. */
+.decision-alts .caption {
+  margin-bottom: 16px;
 }
 .decision-alts-label {
   font-family: var(--font-body); font-size: var(--text-xs); font-weight: var(--fw-semibold);
