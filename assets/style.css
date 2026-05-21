@@ -396,10 +396,10 @@ blockquote { font-family: var(--font-display); font-size: var(--text-callout); l
 .decision-alts-cards {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
+  gap: 16px;
 }
 .decision-alts-card {
-  background: var(--color-surface-1);
+  background: var(--color-surface-2); /* #F5F5F5 — clearer contrast against white page bg */
   border: 1px solid var(--color-border);
   padding: 0; /* edge-to-edge image; text children carry their own padding */
   display: flex; flex-direction: column;
