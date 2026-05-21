@@ -329,7 +329,6 @@
           <source src="../../assets/Case studies/sel-feel-check/Rain visualisation.mp4" type="video/mp4">
           Your browser does not support video playback.
         </video>
-        <button type="button" class="video-fullscreen-btn" aria-label="View fullscreen" title="View fullscreen">⛶</button>
       </div>
       <p class="caption">Rain Visualisation, one of the 26 regulation activities. <strong>Unmute to hear what students experienced</strong> — ambient audio + abstract visuals.</p>
 
@@ -526,18 +525,6 @@
       if (e.key === 'Escape') {
         lightboxOverlay.classList.remove('active');
       }
-    });
-  })();
-
-  /* Video fullscreen — click the ⛶ button to open in fullscreen */
-  (function () {
-    document.querySelectorAll('.video-fullscreen-btn').forEach(function(btn) {
-      btn.addEventListener('click', function() {
-        var video = btn.parentElement.querySelector('video');
-        if (!video) return;
-        var fs = video.requestFullscreen || video.webkitRequestFullscreen || video.mozRequestFullScreen || video.msRequestFullscreen;
-        if (fs) fs.call(video);
-      });
     });
   })();
 
