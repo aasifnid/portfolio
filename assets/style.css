@@ -428,13 +428,15 @@ blockquote { font-family: var(--font-display); font-size: var(--text-callout); l
   text-transform: uppercase; letter-spacing: var(--ls-caps);
   margin-bottom: 4px;
 }
+/* Body type with semibold weight for in-card emphasis (within locked 6 types) */
 .decision-alts-card-name {
-  font-family: var(--font-body); font-size: var(--text-sm);
+  font-family: var(--font-body); font-size: var(--text-base);
   font-weight: var(--fw-semibold); color: var(--color-ink); margin: 0;
 }
+/* Caption type — text-sm regular ink-3 */
 .decision-alts-card-note {
-  font-family: var(--font-body); font-size: var(--text-xs); line-height: 1.5;
-  color: var(--color-ink-2); margin: 0;
+  font-family: var(--font-body); font-size: var(--text-sm); line-height: 1.5;
+  font-weight: var(--fw-regular); color: var(--color-ink-3); margin: 0;
 }
 @media (max-width: 640px) {
   .decision-alts-cards { grid-template-columns: 1fr; }
