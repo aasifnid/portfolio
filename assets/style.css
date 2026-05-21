@@ -400,14 +400,15 @@ blockquote { font-family: var(--font-display); font-size: var(--text-callout); l
 }
 .decision-alts-card {
   background: var(--color-surface-1);
-  padding: 16px;
+  border: 1px solid var(--color-border);
+  padding: 15px; /* 16 - 1 (border) keeps content position consistent */
   display: flex; flex-direction: column;
   gap: 4px;
   position: relative;
 }
 .decision-alts-card--picked {
   border: 2px solid var(--color-accent);
-  padding: 14px; /* 16 - 2 keeps content position identical to rejected cards */
+  padding: 14px; /* 16 - 2 (border) keeps content position consistent */
 }
 .decision-alts-card--picked::after {
   content: "✓";
@@ -421,7 +422,6 @@ blockquote { font-family: var(--font-display); font-size: var(--text-callout); l
 }
 .decision-alts-card-thumb {
   background: #FFFFFF;
-  border: 1px solid var(--color-border);
   aspect-ratio: 4/3;
   width: 100%;
   object-fit: contain;
