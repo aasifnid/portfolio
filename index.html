@@ -109,6 +109,21 @@
     opacity: 1;
     transform: translateY(0) rotate(-2deg);
   }
+  /* Arrow points down — gentle bounce telegraphs "scroll down to find Feel Check" */
+  .hero-bubble-arrow {
+    display: inline-block;
+    will-change: transform;
+  }
+  .hero-portrait-col:hover .hero-bubble-arrow {
+    animation: hero-bubble-arrow-bounce 1.2s cubic-bezier(0.45, 0, 0.55, 1) infinite;
+  }
+  @keyframes hero-bubble-arrow-bounce {
+    0%, 100% { transform: translateY(0); opacity: 1; }
+    50%      { transform: translateY(6px); opacity: 0.6; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .hero-portrait-col:hover .hero-bubble-arrow { animation: none; }
+  }
   .hero-portrait {
     position: relative;
     width: 240px;
@@ -751,7 +766,7 @@
     </div>
   </div>
   <div class="hero-portrait-col">
-    <span class="hero-bubble">Start with Feel Check ↓</span>
+    <span class="hero-bubble">Start with Feel Check <span class="hero-bubble-arrow" aria-hidden="true">↓</span></span>
     <div class="hero-portrait">
       <img src="assets/Home CTA.png" alt="Aasif Anwar — Product Designer" class="caricature-default" fetchpriority="high" decoding="async">
       <img src="assets/Home CTA_Hover.png" alt="" class="caricature-wink" aria-hidden="true" loading="lazy" decoding="async">
