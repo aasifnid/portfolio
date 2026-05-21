@@ -82,12 +82,12 @@
     <span class="cover-outcome-label">Outcome</span>
     <div class="cover-outcome-stats">
       <div>
-        <p class="cover-outcome-num">74.6%</p>
-        <p class="cover-outcome-desc">Tutors observed students were ready to learn after Feel Check. (n=338)</p>
+        <p class="cover-outcome-num">75.2%</p>
+        <p class="cover-outcome-desc">Tutors observed students were ready to learn after Feel Check. (n=459)</p>
       </div>
       <div>
-        <p class="cover-outcome-num">89.5%</p>
-        <p class="cover-outcome-desc">Tutors observed students worked independently through the regulation activity. (n=305)</p>
+        <p class="cover-outcome-num">89.1%</p>
+        <p class="cover-outcome-desc">Tutors observed students worked independently through the regulation activity. (n=421)</p>
       </div>
     </div>
   </div>
@@ -118,7 +118,7 @@
     <span class="section-label">Role</span>
   </div>
 
-  <p><strong>I owned design for Feel Check end-to-end</strong>, from spec to four cohort rollouts. Of Cuemath's three SEL tools, this was the most complex: a four-stage immersive flow across two grade bands, designed for LEAP — Cuemath's proprietary live-class platform — as a non-blocking module inside active tutoring sessions.</p>
+  <p><strong>I owned design for Feel Check end-to-end</strong>, from spec to four-phase rollout. Of Cuemath's three SEL tools, this was the most complex: a four-stage immersive flow across two grade bands, designed for LEAP — Cuemath's proprietary live-class platform — as a non-blocking module inside active tutoring sessions.</p>
 
   <p>Feel Check sat at the center of <strong>a broader SEL system I designed</strong>. Alongside it ran Calm Zone and Riddle Zone — the two complementary tools — connected by a cross-tool tutor feedback flow that captured insights after every session. To anchor it all, I also designed the supporting content layer: a Tutor Guide and the Glossaries of Emotions and Heart Options that gave tutors and students a shared language for what they were feeling.</p>
 
@@ -271,17 +271,17 @@
       </table>
       <p class="caption">Routing logic: each Body × Heart × Mind combination mapped to a Zone of Regulation. Partial-Unsure inputs still resolve to a zone. The all-Unsure path (highlighted) bypasses emotion-mapping entirely and routes straight to a curated regulation set — the case the spec didn't define.</p>
 
-      <p>1 in 5 students selected Unsure at the Body stage — the hardest to name. <strong>184 sessions reached the all-Unsure path, and 98 unique students completed a regulation activity from there — no dead end.</strong></p>
+      <p>1 in 5 students selected Unsure at the Body stage — the hardest to name. <strong>254 sessions reached the all-Unsure path, and 119 unique students completed a regulation activity from there — no dead end.</strong></p>
 
       <div class="cs-img-pair">
-        <img src="../../assets/Case studies/sel-feel-check/d3-mixpanel-body-heart-mind-g3-4.png" loading="lazy" decoding="async" alt="G3-4 Body Heart Mind Unsure rates" class="cs-img">
-        <img src="../../assets/Case studies/sel-feel-check/d3-mixpanel-body-heart-mind-g5-8.png" loading="lazy" decoding="async" alt="G5-8 Body Heart Mind Unsure rates" class="cs-img">
+        <img src="../../assets/Case studies/sel-feel-check/D3_G3-4.jpg" loading="lazy" decoding="async" alt="G3-4 Body Heart Mind Unsure rates" class="cs-img">
+        <img src="../../assets/Case studies/sel-feel-check/D3_G5-8.jpg" loading="lazy" decoding="async" alt="G5-8 Body Heart Mind Unsure rates" class="cs-img">
       </div>
       <div class="cs-img-caption-row">
         <p class="img-label-center">G3–4 · Body 23.5% Unsure</p>
         <p class="img-label-center">G5–8 · Body 20.1% Unsure</p>
       </div>
-      <p class="caption">Body / Heart / Mind Unsure rates across both grade bands (Jan 31 – Mar 31, 2026). Unsure peaks at Body — the hardest sensation to name — and tapers as students settle into self-naming through Heart and Mind.</p>
+      <p class="caption">Body / Heart / Mind Unsure rates across both grade bands (Jan 30 – Apr 10, 2026). Unsure peaks at Body — the hardest sensation to name — and tapers as students settle into self-naming through Heart and Mind.</p>
 
 
       <div class="cs-insight">
@@ -294,27 +294,17 @@
     <div class="decision-item">
       <p class="decision-item-num">Decision 04</p>
       <p class="decision-item-title">Audio was structural, not decorative</p>
-      <p>The first build we tested in-house shipped without background audio. My assumption: visual content would carry the regulation moment. It didn't. Tutors observed students tapping through without settling. The experience felt like a screen, not a transition. I added ambient audio before external rollout.</p>
+      <p>The first build we tested in-house shipped without background audio. Audio was cut for v1 — building unique audio across all 26 regulation activities across two grade bands wasn't shippable within the timeline. My assumption: visual content alone would carry the regulation moment. It didn't. The session was mandatory and students couldn't skip without completing the regulation activity, so they had two options: engage and finish, or stall through. Without audio, most stalled — Phase 1 regulation averaged <strong>2.9 min</strong> of stalled screen time. After reviewing 24 in-house class recordings (14 unique students, 10 repeats), I proposed a shared-track ambient audio fix: common tracks across sets of similar activities. We shipped it before external rollout.</p>
 
       <div class="decision-alts">
         <p class="decision-alts-label">What changed</p>
         <ul>
-          <li>Audio added: ambient layer over regulation activities.</li>
+          <li>Audio added: shared ambient tracks across sets of similar regulation activities.</li>
           <li>Visuals: non-humanistic — rain, breathing patterns, ambient light. Not characters.</li>
         </ul>
       </div>
 
-      <p>Engaged regulation time moved from <strong>0.8 min → 1.9 min</strong>. Reattempt rate dropped <strong>22% → 15%</strong>.</p>
-
-      <div class="cs-img-pair">
-        <img src="../../assets/Case studies/sel-feel-check/d4-mixpanel-regulation-time.png" loading="lazy" decoding="async" alt="Average time spent on regulation strategy — Mixpanel" class="cs-img">
-        <img src="../../assets/Case studies/sel-feel-check/d4-mixpanel-reattempt-rate.png" loading="lazy" decoding="async" alt="Regulation strategy reattempt rate — Mixpanel" class="cs-img">
-      </div>
-      <div class="cs-img-caption-row">
-        <p class="img-label-center">Regulation time · post-audio</p>
-        <p class="img-label-center">Reattempt rate · post-audio</p>
-      </div>
-      <p class="caption">Post-audio Mixpanel data (Jan 31 – Mar 31, 2026): students engaged with regulation for ~2 min on average and reattempt rate held at 15.16%. The pre-audio baseline (0.8 min engagement, 22% reattempt) comes from in-house tutor cohort observation logs before ambient audio shipped.</p>
+      <p>Across Phases 2–4, regulation time dropped from <strong>2.9 min → 1.9 min</strong>, with reattempt rate at <strong>~14%</strong> across the matured validation window. The drop wasn't disengagement — students completed efficiently because the audio converted compliance time into actual regulation.</p>
 
       <div class="cs-insight">
         <p class="cs-insight-label">Insight</p>
@@ -350,8 +340,8 @@
 
       <p>Post-launch, <strong>"Do It Your Way"</strong> — the autonomy option in the spec — was consistently one of the top choices across grade levels and zones. <strong>~29% of G5–8 Green-zone selections</strong>, sitting right behind "Get Ready!" and ahead of every named alternative activity. Students weren't avoiding structure; many were choosing self-direction over a named path. For v2, I'm promoting "Do It Your Way" from one of four options to a primary entry point on the activity menu.</p>
 
-      <img src="../../assets/Case studies/sel-feel-check/d3-mixpanel-edge-case-activities.png" loading="lazy" decoding="async" alt="Edge case students' regulation activity picks by grade — Do It Your Way! prominent" class="cs-img">
-      <p class="caption">Regulation activity picks among the 98 unique students who reached the all-Unsure path. "Do It Your Way!" was the most-picked option across grades — when uncertain about how they felt, students reached for self-direction.</p>
+      <img src="../../assets/Case studies/sel-feel-check/D3_Regulation edge cases.jpg" loading="lazy" decoding="async" alt="Edge case students' regulation activity picks by grade — Do It Your Way! prominent" class="cs-img">
+      <p class="caption">Regulation activity picks among the 119 unique students who reached the all-Unsure path. "Do It Your Way!" was the most-picked option across grades — when uncertain about how they felt, students reached for self-direction.</p>
 
       <div class="cs-insight">
         <p class="cs-insight-label">Insight</p>
@@ -373,13 +363,13 @@
 
   <div class="cs-stat-hero">
     <p class="cs-stat-hero-label">Ready to learn after Feel Check</p>
-    <p class="cs-stat-hero-number">74.6%</p>
-    <p class="cs-stat-hero-desc">Tutors observed students were ready to learn after Feel Check (n=338). The direct answer to the problem Feel Check was built to solve.</p>
+    <p class="cs-stat-hero-number">75.2%</p>
+    <p class="cs-stat-hero-desc">Tutors observed students were ready to learn after Feel Check (n=459). The direct answer to the problem Feel Check was built to solve.</p>
   </div>
 
   <h2>What 120 tutors and 411 students showed across four cohorts.</h2>
 
-  <p>Feel Check was validated with 411 students and 120 tutors across four cohorts between January 30 and March 31, 2026. <strong>1,523 sessions ran inside the validation window</strong> (G3–4: 421, G5–8: 1,102). The rollout continued beyond the measurement close to over 3,000 sessions logged across both grade bands. All metrics below are aggregates from the validation window.</p>
+  <p>Feel Check was validated with 411 students and 120 tutors across four phases between January 30 and April 10, 2026. <strong>2,060 sessions ran inside the validation window</strong> (G3–4: 593, G5–8: 1,467). The window extends 10 days past the final phase launch (March 31) to let Phase 4 data mature. All metrics below are aggregates from this validation window.</p>
 
   <div class="phase-table">
     <div class="phase-row phase-header">
@@ -389,7 +379,7 @@
       <span>Students</span>
     </div>
     <div class="phase-row">
-      <span>1 — In-house</span>
+      <span>1 (in-house)</span>
       <span>30 Jan</span>
       <span>7</span>
       <span>14</span>
@@ -417,8 +407,8 @@
   <div class="outcome-stats">
     <div class="stat">
       <p class="stat-label">Worked independently</p>
-      <p class="stat-number">89.5%</p>
-      <p class="stat-desc">Students worked independently through the regulation activity (n=305) — the student-led design held in practice.</p>
+      <p class="stat-number">89.1%</p>
+      <p class="stat-desc">Students worked independently through the regulation activity (n=421) — the student-led design held in practice.</p>
     </div>
     <div class="stat">
       <p class="stat-label">Check-in duration</p>
@@ -427,27 +417,21 @@
     </div>
     <div class="stat">
       <p class="stat-label">Tutor feedback rate</p>
-      <p class="stat-number">98.4%</p>
-      <p class="stat-desc">Tutors submitted feedback for 98.4% of Feel Check sessions. Average submission time: 4 seconds.</p>
+      <p class="stat-number">96.3%</p>
+      <p class="stat-desc">Tutors submitted feedback after 96.3% of Feel Check sessions, averaging 4 seconds per submission — the foundation that makes every other tutor-observed metric here defensible.</p>
     </div>
   </div>
 
-  <p>Zone distribution showed Green as dominant across both grade bands — most students arrived calm. But <strong>48% of G3–4 sessions and 36% of G5–8 sessions weren't Green</strong>. Feel Check's real value was surfacing that share and doing something about it before instruction began.</p>
+  <img src="../../assets/Case studies/sel-feel-check/Readiness to learn.jpg" loading="lazy" decoding="async" alt="Tutor feedback across the regulation experience — engagement, readiness, comprehension, independence, completion" class="cs-img">
+  <p class="caption">Tutor feedback across the regulation experience (Jan 30 – Apr 10, 2026, n=2,201 events). Engagement 66.3%, Readiness 75.2%, Comprehension 79.9%, Independence 89.1%, Completion 81.4% — all reading Positive / High Autonomy. The student-led design held across every observed dimension.</p>
 
-  <img src="../../assets/Case studies/sel-feel-check/feel-check-zone-readiness.png" loading="lazy" decoding="async" alt="Zone distribution showing share of students who arrived not-Green" class="cs-img">
-  <p class="caption">Feel Check's real value: surfacing the share of students who arrived not-calm, and routing them through regulation before instruction.</p>
+  <p>Zone distribution showed Green as dominant across both grade bands — most students arrived calm. But <strong>49% of G3–4 sessions and 38% of G5–8 sessions weren't Green</strong>. Feel Check's real value was surfacing that share and doing something about it before instruction began.</p>
 
-  <div class="screen-grid">
-    <div>
-      <img class="cs-img" loading="lazy" decoding="async" src="../../assets/Case studies/sel-feel-check/zone-g34.png" alt="Zone distribution G3-4: Green 217, Blue 68, Yellow 90, Red 46">
-      <p class="img-label">G3–4 (421 sessions)</p>
-    </div>
-    <div>
-      <img class="cs-img" loading="lazy" decoding="async" src="../../assets/Case studies/sel-feel-check/zone-g58.png" alt="Zone distribution G5-8: Green 702, Blue 151, Yellow 162, Red 87">
-      <p class="img-label">G5–8 (1,102 sessions)</p>
-    </div>
-  </div>
-  <p class="caption">Zone of Regulation distribution till March 31, 2026</p>
+  <img src="../../assets/Case studies/sel-feel-check/Impact_Emotion zone distribution.jpg" loading="lazy" decoding="async" alt="Emotion zone distribution across G3-4 and G5-8" class="cs-img">
+  <p class="caption">Emotion zone distribution across grade bands (Jan 30 – Apr 10, 2026). Most students arrived in the Green zone — but a meaningful share didn't (49% G3-4, 38% G5-8). Feel Check's real value was surfacing that share and routing it through regulation before instruction began.</p>
+
+  <img src="../../assets/Case studies/sel-feel-check/Impact_Selected emotions.jpg" loading="lazy" decoding="async" alt="Selected emotions across zones for G3-4 and G5-8" class="cs-img">
+  <p class="caption">Granular emotion picks within each zone, across both grade bands. Calm and Happy dominated Green; Tired and Bored led Blue; Energized and Optimistic led Yellow; Annoyed led Red. The clinical vocabulary, made student-readable, held in practice.</p>
 
 
   <!-- 05 REFLECTION -->
@@ -460,7 +444,7 @@
   <p>Two of the spec's fallback options turned out to be primary, not edge cases. <strong>"Unsure"</strong> at body/heart/mind was the honest answer for 1 in 5 students at the body stage. <strong>"Do It Your Way"</strong> in the regulation menu sat consistently in the top two across grade bands. That's the one I keep coming back to — whenever a spec labels something a "fallback" now, I pause and ask whether real users will genuinely end up there. If the answer is yes, it's a primary state, not an edge.</p>
 
   <h2>The audio cut was the wrong scope trade-off.</h2>
-  <p>It was a wrong decision, and I agreed to it. PMs and Engineers pushed to hit the v1 timeline; audio was cut and I could have pushed back but didn't. Class recordings showed students tapping through without settling. I proposed a shared-track fix across similar regulation activities. After it shipped, engagement more than doubled. What stays with me: pushing back would have cost a week of timeline. Not pushing back cost half the regulation experience.</p>
+  <p>It was a wrong decision, and I agreed to it. PMs and Engineers pushed to hit the v1 timeline; I could have pushed back but didn't. The session was mandatory — students couldn't skip without completing the regulation activity, so they could only engage and finish or stall through. Without audio, the in-house cohort's regulation averaged <strong>2.9 min</strong> of mostly-stalled screen time. After reviewing 24 class recordings, I proposed a shared-track ambient audio fix across similar activities. Across the live cohorts that followed, regulation dropped to <strong>1.9 min</strong> with <strong>~14% reattempt</strong> — students engaged, completed, moved on. The drop wasn't disengagement; it was audio converting compliance into engagement. What stays with me: not pushing back cost a cohort of students stalling on screens that couldn't reach them.</p>
 
   <h2>Readiness was the goal. Learning outcomes were the question I left open.</h2>
   <p>Feel Check met its primary objective — students arrived ready to learn. We all believed that better readiness would naturally lead to better focus in class, smoother learning, and stronger academic progress over time. But that wasn't the primary expectation, so no one — including me — pushed to instrument it. I should have fought for a rough proxy that traced regulation through to learning. Whether Feel Check actually moved that longer arc is the part I think about most.</p>
