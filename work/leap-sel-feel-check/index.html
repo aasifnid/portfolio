@@ -136,122 +136,15 @@
   </div>
 
   <h2>Decisions</h2>
-  <p>The spec set the bones. These four decisions gave Feel Check the experience.</p>
+  <p>The spec set the bones — frameworks, sequence, and routing. The challenge was designing the experience within the allotted 5 minutes: how a child would move through it.</p>
 
   <div class="decisions-list">
 
     <div class="decision-item">
-      <p class="decision-item-title">Decision 1 — Make the wheel the interface, not a reference diagram</p>
-      <p>The spec called for a "four-quadrant wheel" but didn't define the visual structure. I explored on two tracks: shape, then treatment within the picked shape.</p>
+      <p class="decision-item-title">Decision 1 — Make Unsure a state, not a fallback</p>
+      <p>The spec had a "Skip" button at Body, Heart, and Mind. It let a kid bypass the question. After researching with multiple users, I concluded Skip was the wrong frame: <strong>Unsure should hold a place as an option, not a fallback.</strong> Skip treats uncertainty as something to bypass — but uncertainty IS a state, and RULER needs that state to read.</p>
 
-      <p>For shape, I tested geometric grids, modal sequences, and full-screen flows — and picked the circular form, matching the look of the Wheel of Awareness itself. Within that shape, I explored how to style it: full-screen abstract atmospheres, bold icons, and finally simple line icons. Line icons were the clearest and least distracting of the three.</p>
-
-      <p>When students reached the regulation step, they didn't see a separate menu of activities. They saw another wheel — shaped exactly like the one they'd just used to name their feelings. The interface stayed continuous from start to finish.</p>
-
-      <div class="decision-alts">
-        <p class="decision-alts-label">Shape</p>
-        <img src="../../assets/Case studies/sel-feel-check/Ideation for options.jpg" loading="lazy" decoding="async" alt="Early sketches exploring how to bring the Wheel of Awareness to a screen" class="cs-img">
-        <p class="caption">Early ideation — bringing the Wheel of Awareness to a screen, not a diagram.</p>
-        <div class="decision-alts-cards">
-          <div class="decision-alts-card">
-            <p class="decision-alts-card-name">Grid menu</p>
-            <p class="decision-alts-card-note">Made the wheel less visible as the framework.</p>
-          </div>
-          <div class="decision-alts-card">
-            <p class="decision-alts-card-name">Modal sequence</p>
-            <p class="decision-alts-card-note">One screen at a time. Broke the feeling of narrowing in on the emotion.</p>
-          </div>
-          <div class="decision-alts-card decision-alts-card--picked">
-            <p class="decision-alts-card-name">Circular wheel</p>
-            <p class="decision-alts-card-note">The wheel itself became the surface students tapped on.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="decision-alts">
-        <p class="decision-alts-label">Visual style</p>
-        <img src="../../assets/Case studies/sel-feel-check/Options for shape.jpg" loading="lazy" decoding="async" alt="Visual styles I tested — atmospheres, bold icons, then line icons" class="cs-img">
-        <p class="caption">Visual styles I tried — atmospheres, bold icons, then simple line icons (picked).</p>
-        <div class="decision-alts-cards">
-          <div class="decision-alts-card">
-            <p class="decision-alts-card-name">Abstract atmospheres</p>
-            <p class="decision-alts-card-note">Visually rich but heavy and slow to load.</p>
-          </div>
-          <div class="decision-alts-card">
-            <p class="decision-alts-card-name">Bold icons</p>
-            <p class="decision-alts-card-note">Strong presence but felt childish, and hard to vary across many emotions.</p>
-          </div>
-          <div class="decision-alts-card decision-alts-card--picked">
-            <p class="decision-alts-card-name">Line icons</p>
-            <p class="decision-alts-card-note">Clear, simple, worked across all emotion sets. Animation pushed to v2.</p>
-          </div>
-        </div>
-      </div>
-
-      <p>In the in-house tutor test, students moved through all four stages without asking where to click. Tutors didn't have to explain how to navigate the screen — the shape of the wheel showed them.</p>
-
-      <div class="cs-insight">
-        <p class="cs-insight-label">Insight</p>
-        <p class="cs-insight-quote">"The wheel wasn't a diagram next to the interface — it was the interface. Students didn't read the framework; they moved through it."</p>
-        <p class="cs-insight-meta">From: In-house tutor test, before external rollout.</p>
-      </div>
-
-      <img src="../../assets/Case studies/sel-feel-check/Zone of Regulation.jpg" loading="lazy" decoding="async" alt="Regulation activity menu, also in wheel form" class="cs-img">
-      <p class="caption">The regulation activity menu uses the same wheel shape — the framework stays continuous.</p>
-    </div>
-
-    <div class="decision-item">
-      <p class="decision-item-title">Decision 2 — Replace clinical vocabulary with words children actually use</p>
-      <p>The spec used clinical labels — "Sparkling," "Affirmation," "Set Intention." In the in-house tutor test, students hesitated, asked what they meant, or skipped these options entirely. The flow worked; the vocabulary didn't. I rewrote the labels that caused confusion before the external rollout, and took the final wording back to Roots for clinical sign-off.</p>
-
-      <div class="decision-alts">
-        <p class="decision-alts-label">Vocabulary</p>
-        <div class="decision-alts-cards">
-          <div class="decision-alts-card">
-<p class="decision-alts-card-name">Keep clinical labels</p>
-            <p class="decision-alts-card-note">Required tutor explanations every session. Students hesitated or skipped.</p>
-          </div>
-          <div class="decision-alts-card">
-<p class="decision-alts-card-name">Direct synonyms</p>
-            <p class="decision-alts-card-note">"Sparkling" → "Joyful." Still felt adult — didn't fix hesitation.</p>
-          </div>
-          <div class="decision-alts-card decision-alts-card--picked">
-<p class="decision-alts-card-name">Child-natural rewrites</p>
-            <p class="decision-alts-card-note">Words students actually say. "Affirmation" → "Get Ready!" "Set Intention" → "Set a Goal!"</p>
-          </div>
-        </div>
-      </div>
-
-      <p>After the rollout, tutors stopped flagging confusion around the activity names.</p>
-
-      <div class="cs-insight">
-        <p class="cs-insight-label">Insight</p>
-        <p class="cs-insight-quote">"Vocabulary is interaction. If kids hesitate at the label, the flow is broken."</p>
-        <p class="cs-insight-meta">From: In-house tutor test, before external rollout.</p>
-      </div>
-    </div>
-
-    <div class="decision-item">
-      <p class="decision-item-title">Decision 3 — Make Unsure a state, not a fallback</p>
-      <p>"Unsure" was offered as an option at every stage of the wheel. But the original spec said: even if a student selected Unsure at every stage, they still had to name an emotion before the system could pick a regulation activity. I pushed back on that. Being unsure across all three emotional stages is an honest, common state — adults feel it too. <strong>Asking a child to name an emotion when they truly don't know isn't a check-in — it's a forced answer.</strong> And a regulation activity based on a forced answer doesn't help — it matches the made-up answer, not how the child actually feels. The team agreed. When a student selects Unsure at all three stages, the flow skips the emotion-naming step entirely and takes them to a small set of regulation activities chosen to work without a named emotion — meant for "I don't know," not skipped.</p>
-
-      <div class="decision-alts">
-        <p class="decision-alts-label">Routing</p>
-        <div class="decision-alts-cards">
-          <div class="decision-alts-card">
-<p class="decision-alts-card-name">Skip button</p>
-            <p class="decision-alts-card-note">Felt like failure to the student. Defeated the purpose of asking how they felt.</p>
-          </div>
-          <div class="decision-alts-card">
-<p class="decision-alts-card-name">Required answer (spec)</p>
-            <p class="decision-alts-card-note">Students would make something up. Regulation would match the made-up answer, not the real state.</p>
-          </div>
-          <div class="decision-alts-card decision-alts-card--picked">
-<p class="decision-alts-card-name">Curated routing</p>
-            <p class="decision-alts-card-note">Accepts "I don't know" honestly. Shows activities that work without a named emotion.</p>
-          </div>
-        </div>
-      </div>
+      <p>But the spec still required students to name an emotion even after three Unsures. <strong>Asking a child to name an emotion when they truly don't know isn't a check-in — it's a forced answer.</strong> The team agreed: when all three Unsures stack, the flow skips emotion-naming and routes to a curated set of activities — meant for "I don't know," not skipped.</p>
 
       <div class="cs-table-wrap">
       <table class="cs-table">
@@ -269,12 +162,6 @@
             <td>Heavy</td>
             <td>Few thoughts</td>
             <td><span class="routing-zone routing-zone--blue">Blue zone</span></td>
-          </tr>
-          <tr>
-            <td>Relaxed, slow breath</td>
-            <td>Calm</td>
-            <td>Blank</td>
-            <td><span class="routing-zone routing-zone--green">Green zone</span></td>
           </tr>
           <tr>
             <td>Relaxed, slow breath</td>
@@ -309,9 +196,9 @@
         </tbody>
       </table>
       </div>
-      <p class="caption">Body × Heart × Mind combinations map to a Zone of Regulation. When Body and Heart are both Unsure (highlighted), students get a curated set instead — the case the original spec didn't define.</p>
+      <p class="caption">Body × Heart × Mind → Zone. All Unsure (highlighted): curated set — the case the spec missed.</p>
 
-      <p>1 in 5 students selected Unsure at the Body stage — the hardest stage to name. <strong>254 sessions reached the all-Unsure path, and 119 unique students completed a regulation activity from there — no dead end.</strong></p>
+      <p>1 in 5 students selected Unsure at the Body stage — the hardest to name. <strong>254 sessions reached the all-Unsure path; 119 unique students completed an activity from there — no dead end.</strong></p>
 
       <div class="cs-img-pair">
         <figure>
@@ -321,47 +208,66 @@
           <img src="../../assets/Case studies/sel-feel-check/D3_G5-8.jpg" loading="lazy" decoding="async" alt="G5-8 Body Heart Mind Unsure rates" class="cs-img">
         </figure>
       </div>
-      <p class="caption">Unsure rates per stage across both grade bands — Body sees the highest (G3–4: 23.5%, G5–8: 20.1%). The hardest stage to name.</p>
+      <p class="caption">Unsure rates per stage by grade band. Body the hardest to name (G3–4: 23.5%, G5–8: 20.1%).</p>
 
       <img src="../../assets/Case studies/sel-feel-check/D3_Regulation edge cases.jpg" loading="lazy" decoding="async" alt="Regulation activities picked by students who reached the all-Unsure path" class="cs-img">
-      <p class="caption">What the 119 students on the all-Unsure path picked, by grade. The curated set delivered them into activities they actually engaged with.</p>
+      <p class="caption">What the 119 all-Unsure students picked, by grade. They engaged with the activities.</p>
 
-      <div class="cs-insight">
-        <p class="cs-insight-label">Insight</p>
-        <p class="cs-insight-quote">"Unsure isn't a wrong answer — it's an honest one, and it deserves its own path."</p>
-        <p class="cs-insight-meta">From: Post-launch behavior across the validation window.</p>
-      </div>
+    </div>
+
+    <div class="decision-item">
+      <p class="decision-item-title">Decision 2 — Keep the wheel continuous from check-in to regulation</p>
+      <p>The spec called for a "four-quadrant wheel" with sequential activation. The rest was mine. <strong>The wheel had to stay continuous — same shape, same metaphor, from check-in through regulation activity.</strong> Any shift in form would cost seconds in a 5-minute flow.</p>
+
+      <p>I tested grids, modal sequences, and full-screen flows; the circular form held the framework intact. Within that shape, I tried atmospheres, bold icons, and line icons; line icons were clearest. Animation pushed to v2.</p>
+
+      <img src="../../assets/Case studies/sel-feel-check/Ideation for options.jpg" loading="lazy" decoding="async" alt="Early sketches exploring how to bring the Wheel of Awareness to a screen" class="cs-img">
+      <p class="caption">Early ideation — bringing the Wheel of Awareness to a screen.</p>
+
+      <img src="../../assets/Case studies/sel-feel-check/Options for shape.jpg" loading="lazy" decoding="async" alt="Visual styles I tested — atmospheres, bold icons, then line icons" class="cs-img">
+      <p class="caption">Visual styles I tried — atmospheres, bold icons, line icons (picked).</p>
+
+      <p>In testing, students moved through all four stages without asking where to click — the shape showed them.</p>
+
+      <img src="../../assets/Case studies/sel-feel-check/Zone of Regulation.jpg" loading="lazy" decoding="async" alt="Regulation activity menu, also in wheel form" class="cs-img">
+      <p class="caption">Regulation menu uses the same wheel — framework stays continuous.</p>
+    </div>
+
+    <div class="decision-item">
+      <p class="decision-item-title">Decision 3 — Replace clinical vocabulary with words children actually use</p>
+      <p>The spec used clinical labels — "Sparkling," "Affirmation," "Set Intention." I doubted they'd land for kids, but Roots was the clinical authority and the team deferred. When I monitored in-house recordings, the doubt held — students hesitated, asked what they meant, or skipped. <strong>Vocabulary is interaction.</strong> I asked for the change. Direct synonyms ("Sparkling" → "Joyful") still felt adult. We rewrote in child-natural language ("Affirmation" → "Get Ready!", "Set Intention" → "Set a Goal!") and took the wording back to Roots for sign-off. After rollout, tutors stopped flagging confusion.</p>
+
+      <p>Vocabulary varied by age: Grade 3-4 used 4 simpler emotions; Grade 5-8 used 6 more complex. <em>(Why metrics split by band.)</em></p>
+
     </div>
 
     <div class="decision-item">
       <p class="decision-item-title">Decision 4 — Audio was structural, not decorative</p>
-      <p>The first version we tested in-house shipped without background audio. That scope call came from the Motion Designer (who owned video and transition assets), along with PMs and Engineers, because building unique tracks for all 26 regulation activities across two grade bands wasn't possible in the timeline. We assumed the visuals alone could carry the regulation experience. They didn't. The session was mandatory — students couldn't skip without finishing the regulation activity — so they had two options: engage with it and finish, or sit on the screen and stall. Most stalled. Phase 1 regulation averaged <strong>2.9 minutes</strong> of mostly-empty screen time. After reviewing 24 in-house class recordings (14 unique students, 10 repeats), I proposed a different fix: shared ambient tracks across groups of similar activities, rather than a unique track for every one. We shipped it before the external rollout.</p>
+      <p>The first version shipped without background audio — a scope trade-off (26 unique tracks across both bands weren't shippable in v1). I had reservations about visuals alone carrying the regulation.</p>
+
+      <p>I observed the in-house sessions myself. Regulation was mandatory (no skipping); students had two options — engage and finish, or stall. Most stalled. Phase 1 averaged <strong>2.9 minutes</strong> of empty screen time.</p>
+
+      <p>I reviewed 24 recordings, spotted the stalling pattern, and proposed shared ambient tracks across similar activities. Shipped before rollout.</p>
 
       <div class="decision-alts">
         <p class="decision-alts-label">Audio strategy</p>
         <div class="decision-alts-cards">
           <div class="decision-alts-card">
 <p class="decision-alts-card-name">No audio (v1)</p>
-            <p class="decision-alts-card-note">Visuals alone left students stalling. Phase 1 averaged 2.9 minutes of mostly-empty screen time.</p>
+            <p class="decision-alts-card-note">Visuals stalled students. Phase 1: 2.9 min empty.</p>
           </div>
           <div class="decision-alts-card">
 <p class="decision-alts-card-name">Unique track per activity</p>
-            <p class="decision-alts-card-note">26 tracks × 2 grade bands. Not shippable in the v1 timeline.</p>
+            <p class="decision-alts-card-note">26 unique tracks. Not shippable in v1.</p>
           </div>
           <div class="decision-alts-card decision-alts-card--picked">
 <p class="decision-alts-card-name">Shared ambient tracks</p>
-            <p class="decision-alts-card-note">Grouped similar regulation activities. Solved the problem within scope. Regulation dropped to 1.9 min.</p>
+            <p class="decision-alts-card-note">Grouped similar activities. Regulation: 1.9 min.</p>
           </div>
         </div>
       </div>
 
-      <p>Across Phases 2–4, regulation time dropped from <strong>2.9 minutes to 1.9 minutes</strong>, and the reattempt rate held at around <strong>14%</strong>. The drop in time wasn't disengagement — it was the opposite. Students were no longer stalling. The audio pulled them in, they completed the activity, and moved on.</p>
-
-      <div class="cs-insight">
-        <p class="cs-insight-label">Insight</p>
-        <p class="cs-insight-quote">"When the interaction itself is the thing that helps someone, the sensory layer isn't a finishing touch — it's the work."</p>
-        <p class="cs-insight-meta">From: In-house build, before external rollout.</p>
-      </div>
+      <p>Across Phases 2–4, regulation dropped to <strong>1.9 min</strong>; reattempt held at <strong>14%</strong>. Not disengagement — the audio pulled students in. <strong>The sensory layer is the work.</strong></p>
 
       <div class="video-embed">
         <video
@@ -373,7 +279,7 @@
           Your browser does not support video playback.
         </video>
       </div>
-      <p class="caption">Rain Visualisation, one of the 26 regulation activities. <strong>Unmute to hear what students experienced</strong> — ambient audio + abstract visuals.</p>
+      <p class="caption">Rain Visualisation — one of 26 regulation activities.</p>
 
     </div>
 
