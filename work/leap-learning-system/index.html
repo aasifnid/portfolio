@@ -176,11 +176,6 @@
 
   <h2>Four decisions that shaped the system.</h2>
 
-  <div class="cs-insight">
-    <p class="cs-insight-label">Insight</p>
-    <p class="cs-insight-quote">"The unified architecture let us handle new concepts like Competition Arena and Puzzles as resource blocks — without fragmenting the system."</p>
-    <p class="cs-insight-meta">From: Migration design review, before engineering build.</p>
-  </div>
 
   <div class="decisions-list">
 
@@ -287,6 +282,7 @@
   <h2>Impact</h2>
 
   <div class="cs-stat-hero">
+    <p class="cs-stat-hero-label">Students reached</p>
     <p class="cs-stat-hero-number">28–30k</p>
     <p class="cs-stat-hero-desc">students across CBSE, ICSE, and Common Core curricula. Goal creation became mandatory — every student's first onboarding step.</p>
   </div>
@@ -307,19 +303,28 @@
     <span class="section-num">05</span>
   </div>
 
-  <h2>Pre-map content during discovery, not during build.</h2>
-  <p>The curriculum pre-mapping for Test Prep should have been done in discovery, not during implementation. It would have surfaced the complexity of exam-chapter relationships sooner and reduced engineering rework. For my next role: any system that depends on content taxonomy gets that taxonomy validated upfront, not concurrently.</p>
+  <h2>Lessons</h2>
 
-  <h2>Phase the complexity — touch one thing at a time.</h2>
-  <p>The chapter system was hardest because it touched everything. Breaking it into phases (goals first, then homepage, then system) made the complexity manageable. Goal creation could ship independently on the existing system — that bought us learning before we touched the architecture itself.</p>
+  <div class="lessons-list">
+    <div class="lesson">
+      <p class="decision-item-title">Pre-map content during discovery, not during build.</p>
+      <p>The curriculum pre-mapping for Test Prep should have been done in discovery, not during implementation. It would have surfaced the complexity of exam-chapter relationships sooner and reduced engineering rework. For my next role: any system that depends on content taxonomy gets that taxonomy validated upfront, not concurrently.</p>
+    </div>
 
-  <h2>Constraints force ruthless scoping.</h2>
-  <p>Working backward from a 4-week deadline meant every feature had to earn its place. Goal creation worked because it was independent. The homepage worked because the priorities were clear: homework first, navigation second, planning third. The constraint wasn't a limitation — it was the scoping tool.</p>
+    <div class="lesson">
+      <p class="decision-item-title">Phase the complexity — touch one thing at a time.</p>
+      <p>The chapter system was hardest because it touched everything. Breaking it into phases (goals first, then homepage, then system) made the complexity manageable. Goal creation could ship independently on the existing system — that bought us learning before we touched the architecture itself.</p>
+    </div>
 
-  <!-- Transfer line -->
-  <div class="cs-transfer">
-    <p class="cs-transfer-label">What carries forward</p>
-    <p class="cs-transfer-line">For systems that must absorb existing data, design an architecture that expands the existing — don't replace it.</p>
+    <div class="lesson">
+      <p class="decision-item-title">Constraints force ruthless scoping.</p>
+      <p>Working backward from a 4-week deadline meant every feature had to earn its place. Goal creation worked because it was independent. The homepage worked because the priorities were clear: homework first, navigation second, planning third. The constraint wasn't a limitation — it was the scoping tool.</p>
+    </div>
+
+    <div class="lesson">
+      <p class="decision-item-title">Design an architecture that expands the existing — don't replace it.</p>
+      <p>For systems that must absorb existing data.</p>
+    </div>
   </div>
 
 </div>
