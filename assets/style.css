@@ -203,6 +203,7 @@ body {
 .cover-outcome-stats {
   display: grid; grid-template-columns: 1fr 1fr; gap: 40px;
 }
+.cover-outcome-stats--three { grid-template-columns: 1fr 1fr 1fr; gap: 32px; }
 /* SECTION TITLE — text-3xl (32px). Identical spec to h2 — same role, same look. */
 .cover-outcome-num {
   font-family: var(--font-display); font-size: var(--text-3xl); line-height: 1.15;

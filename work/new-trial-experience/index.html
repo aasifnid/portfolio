@@ -59,27 +59,43 @@
 <!-- COVER -->
 <div class="cover">
   <h1>New Trial Experience</h1>
-  <p class="cover-subtitle">Distributing conversion work across system, teachers, and parents — so AC headcount stops being the bottleneck.</p>
-  <p class="lede">Cuemath's trial funnel was entirely AC-dependent, creating a queue and stalling conversions. The redesign distributed the work: system handles automation (WhatsApp, scheduling), teachers handle relationship-building, parents handle enrollment decisions. ACs now intervene only for exceptions — payment issues, special needs, edge cases.</p>
+  <p class="lede">Cuemath's trial funnel ran entirely through Academic Counselors (ACs), creating a queue and slowing parents down. The brief: cut AC intervention by 70% without losing conversions. The redesign distributed the work across three principles — a self-serve parent journey, teacher-led conversions during the trial, and WhatsApp as the primary channel for parents.</p>
 
-  <div class="cover-meta">
-    <div class="cover-meta-item">
-      <span class="cover-meta-label">My Role</span>
-      <span class="cover-meta-value">Product Designer — UX, interaction, flow architecture</span>
+  <div class="cover-context">
+    <div class="cover-context-item">
+      <span class="cover-context-label">Role</span>
+      <span class="cover-context-value">Product Designer · Trial funnel redesign</span>
     </div>
-    <div class="cover-meta-item">
-      <span class="cover-meta-label">The Team</span>
-      <span class="cover-meta-value">1 PM (project lead), 2 engineers</span>
+    <div class="cover-context-item">
+      <span class="cover-context-label">Team</span>
+      <span class="cover-context-value">PM (Business Head, India) · FE + BE engineers</span>
     </div>
-    <div class="cover-meta-item">
-      <span class="cover-meta-label">Timeline</span>
-      <span class="cover-meta-value">8 weeks design + iterations through 2024</span>
-    </div>
-    <div class="cover-meta-item">
-      <span class="cover-meta-label">Outcome</span>
-      <span class="cover-meta-value">70% less AC work · 50% QL-to-trial lift · 9.6% trial-to-paid lift</span>
+    <div class="cover-context-item">
+      <span class="cover-context-label">Timeline</span>
+      <span class="cover-context-value">8 weeks · 2024</span>
     </div>
   </div>
+  <div class="cover-outcome">
+    <span class="cover-outcome-label">Outcome</span>
+    <div class="cover-outcome-stats cover-outcome-stats--three">
+      <div>
+        <p class="cover-outcome-num">−70%</p>
+        <p class="cover-outcome-desc">AC interventions dropped per parent journey.</p>
+      </div>
+      <div>
+        <p class="cover-outcome-num">+50%</p>
+        <p class="cover-outcome-desc">More qualified leads booked a trial.</p>
+      </div>
+      <div>
+        <p class="cover-outcome-num">+9.6%</p>
+        <p class="cover-outcome-desc">More trial-takers enrolled into a paid plan.</p>
+      </div>
+    </div>
+  </div>
+
+  <img src="../../assets/Case studies/New Trial Experience/NTE cover.jpg" fetchpriority="high" decoding="async" alt="New Trial Experience — distributed conversion across system, teachers, and parents" class="cs-img">
+
+  <p class="cover-primer">Parents move through self-serve sign-up, trial slot booking, teacher assignment, and post-trial enrollment with the teacher still present — no AC in the loop.</p>
 
   <a href="https://www.figma.com/design/k27AzLfhyS7AbuIZhLIFMY/Portfolio-2026?node-id=85-159677&t=WVNKMLTUG6ayT6fP-1" target="_blank" rel="noopener" class="figma-link">Open in Figma →</a>
 </div>
@@ -93,17 +109,13 @@
 
   <h2>The Problem</h2>
 
-  <p>Cuemath's lead-to-paid funnel was entirely AC-dependent. Every qualified lead required multiple AC touchpoints across the journey: initial qualification call, trial scheduling coordination, post-trial follow-up, and preference collection. Each touchpoint added 6–12 hours of delay as ACs managed competing leads. A typical parent journey took 2–3 days from signup to enrollment decision. With limited AC headcount and rising lead volume, the funnel became a bottleneck—ACs spent their time coordinating, not converting.</p>
-
-  <p>The friction was real. Trials got delayed waiting for AC availability. Follow-ups stalled after the trial because ACs were handling the backlog of earlier leads. Parents' intent cooled during the waiting periods. By the time an AC called back post-trial, the peak moment of conviction had passed. The AC team wasn't incompetent—they were stretched. Cuemath operated on thin margins in India's market. Hiring more ACs to handle the volume wasn't economically viable. The model had to change.</p>
-
-  <p>The brief was direct: reduce AC intervention by 70% while maintaining the QL2P (Qualified Lead to Paid) conversion rate. If the team could automate or distribute the routine touchpoints—scheduling trials, reminders, enrollment conversations, and preference collection—the limited AC team could focus on complex cases: students with special needs, payment issues, retention at risk. The system would scale without scaling headcount.</p>
-
-  <div class="screen-featured">
-    <img src="../../assets/Case studies/New Trial Experience/flow-diagram.svg" loading="lazy" decoding="async" alt="Old AC-dependent funnel vs. new distributed system comparison">
-    <p class="caption">Old system: Sequential AC-dependent steps with 12–24 hour waits between each. New system: Parallel processes across system automation, teacher relationships, and parent self-service. ACs intervene only for exceptions.</p>
+  <div class="cs-insight">
+    <p class="cs-insight-quote">Every step of the trial funnel needed an AC — and the 2–3 day journey outlasted parent interest.</p>
   </div>
 
+  <p>A parent's interest in Cuemath had a shelf life. It peaked the moment they signed up — and faded with every wait that followed. The funnel was AC-dependent at every step: qualification, slot booking, post-trial follow-up, enrollment. Each handoff added 6–12 hours of delay, and the full journey ran 2–3 days. By the end, the spark was gone.</p>
+
+  <p>For ACs, every parent was one of dozens that day. They juggled, prioritized, called back when they could. Cuemath ran on thin margins; hiring more wasn't viable. The funnel wasn't failing because the team was — the process needed them everywhere.</p>
 
   <!-- 02 ROLE -->
   <div class="section-head" id="role" data-animate>
@@ -112,17 +124,15 @@
 
   <h2>Role</h2>
 
-  <p>I was the sole product designer on this project. This was my first time owning an end-to-end user flow that directly impacted business metrics. I owned the entire redesign: the signup experience, communication strategy across WhatsApp, trial slot booking mechanics, teacher positioning during and before the trial, and the post-trial enrollment interface. The scope was complete—from a parent's first signup through payment and class scheduling.</p>
+  <p><strong>I owned design for the trial funnel end-to-end</strong> — sign-up on Cuemath's website, WhatsApp communication, trial slot booking, teacher positioning before and during the trial, and post-trial enrollment. Payment landed at the very end, after the trial and the teacher's plan discussion. This was my first time owning an end-to-end user flow tied directly to business metrics.</p>
 
-  <p>I worked with a lead product manager who owned strategy and business metrics, and engineering (one developer, one FE engineer, multiple BE engineers) to implement. The PM provided two critical data points: 40% of qualified leads didn't complete trial booking within 24 hours (waiting for AC callback), and 35% of trial-attendees didn't enroll within 3 days of the session (AC follow-up wasn't reaching them). I reframed this: the problem wasn't AC incompetence; it was AC availability as a dependency.</p>
+  <p>I worked with a lead PM (strategy and business metrics) and a small engineering team (one frontend, multiple backend) to ship. Two data points anchored the work: <strong>40% of qualified leads didn't book a trial within 24 hours, and 35% of trial-takers didn't enroll within 3 days</strong> — both waiting on AC callbacks. The reframe: AC dependency wasn't a performance problem; it was a design problem.</p>
 
-  <p>I tested a promising hypothesis early: have teachers lead conversions during trials. Testing with 5–6 teachers across 22 trial classes revealed the mechanism of failure: Teachers' cognitive load during a live session is already maxed—managing pacing, monitoring student engagement, adapting explanations on the fly. Adding "and now convince the parent to enroll" creates a context switch mid-session. Parents sense the artifice—a teacher who was natural 5 minutes ago suddenly sounds scripted. The lesson quality suffers because the teacher's attention isn't fully on the student. The close fails because timing is wrong. That constraint redirected the entire approach toward distributed work: system handles wait, teacher handles rapport-building, parent handles enrollment choice.</p>
-
-  <p>Success criteria were defined upfront and were non-negotiable: maintain the QL2P conversion rate we already had while reducing AC intervention by 70%. Additionally, we wanted to collapse the time between trial and enrollment from days to minutes, and enable parents to move through the entire journey with minimal human intervention — only at moments where trust and credibility mattered. One constraint shaped everything: this had to work on WhatsApp. We observed that most teacher-parent communication already happened on WhatsApp, not in our app chat. Rather than fight that pattern, we made it the system's spine.</p>
+  <p>Success criteria were non-negotiable: reduce AC intervention by 70% without losing the lead-to-enrollment conversion rate. One constraint shaped everything — this had to live on WhatsApp. Most teacher-parent communication already happened there, not in our app. Rather than fight that pattern, we made it the system's spine.</p>
 
   <!-- Research methodology -->
-  <h2 style="margin-top: 56px;">How we got to the design.</h2>
-  <p>Three modes of research, each tightly scoped, each redirecting the next iteration.</p>
+  <h3 style="margin-top: 56px;">How we got to the design.</h3>
+  <p>Two modes of research, each tightly scoped, each redirecting the next iteration.</p>
 
   <div class="cs-method">
     <div class="cs-method-row cs-method-header">
@@ -132,18 +142,13 @@
     </div>
     <div class="cs-method-row">
       <span class="cs-method-method">Funnel data analysis</span>
-      <span class="cs-method-sample">QL2P cohort</span>
-      <span class="cs-method-finding">40% didn't complete trial booking within 24h; 35% of trial-attendees didn't enroll within 3 days. AC availability — not parent intent — was the choke point.</span>
+      <span class="cs-method-sample">Lead-to-enrollment cohort</span>
+      <span class="cs-method-finding">40% didn't complete trial booking within 24h; 35% of trial-takers didn't enroll within 3 days. AC availability — not parent intent — was the choke point.</span>
     </div>
     <div class="cs-method-row">
       <span class="cs-method-method">Teacher-led close test</span>
       <span class="cs-method-sample">5–6 teachers · 22 trials</span>
-      <span class="cs-method-finding">Pitch-during-session collapsed teacher cognitive load. Lesson quality fell, parents sensed artifice. Closed loop in 5 weeks — should have been 1.</span>
-    </div>
-    <div class="cs-method-row">
-      <span class="cs-method-method">Post-launch audit</span>
-      <span class="cs-method-sample">ACs at scale</span>
-      <span class="cs-method-finding">2.3 exception conversations per AC per week vs. 15–18 routine before. ACs became a resource for judgment, not processing.</span>
+      <span class="cs-method-finding">Pitching mid-session stretched teachers too thin. Lesson quality fell, parents sensed the artifice. Closed loop in 5 weeks — should have been 1.</span>
     </div>
   </div>
 
@@ -151,6 +156,13 @@
   <!-- 03 PROCESS -->
   <div class="section-head" id="process" data-animate>
     <span class="section-num">03</span>
+  </div>
+
+  <p>The brief was direct: reduce AC intervention by 70% while maintaining the QL2P (Qualified Lead to Paid) conversion rate. If the team could automate or distribute the routine touchpoints—scheduling trials, reminders, enrollment conversations, and preference collection—the limited AC team could focus on complex cases: students with special needs, payment issues, retention at risk. The system would scale without scaling headcount.</p>
+
+  <div class="screen-featured">
+    <img src="../../assets/Case studies/New Trial Experience/flow-diagram.svg" loading="lazy" decoding="async" alt="Old AC-dependent funnel vs. new distributed system comparison">
+    <p class="caption">Old system: Sequential AC-dependent steps with 12–24 hour waits between each. New system: Parallel processes across system automation, teacher relationships, and parent self-service. ACs intervene only for exceptions.</p>
   </div>
 
   <h2>The Initial Hypothesis and Why It Failed</h2>
