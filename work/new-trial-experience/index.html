@@ -432,6 +432,11 @@
 
 </div>
 
+<div class="lightbox-overlay" id="lightbox-overlay">
+  <span class="lightbox-close" id="lightbox-close" title="Close (Esc)">×</span>
+  <img class="lightbox-img" id="lightbox-img" src="" alt="">
+</div>
+
 <script>
 
   (function () {
@@ -492,7 +497,7 @@
 
     if (!lightbox) return;
 
-    document.querySelectorAll('.screen-featured img').forEach(function(img) {
+    document.querySelectorAll('.cs-img, .screen-featured img').forEach(function(img) {
       img.style.cursor = 'zoom-in';
       img.addEventListener('click', function() {
         lightboxImg.src = img.src;
@@ -522,11 +527,6 @@
     progressBar.style.width = Math.min(pct, 100) + '%';
   });
 </script>
-
-<div class="lightbox-overlay" id="lightbox-overlay">
-  <span class="lightbox-close" id="lightbox-close" title="Close (Esc)">×</span>
-  <img class="lightbox-img" id="lightbox-img" src="" alt="">
-</div>
 
 
 <!-- Footer -->
