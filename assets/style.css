@@ -802,6 +802,19 @@ img.decision-alts-card-thumb { display: block; }
 .figma-link { display: inline-flex; align-items: center; gap: 8px; font-family: var(--font-body); font-size: var(--text-xs); font-weight: var(--fw-semibold); color: #FFFFFF; text-decoration: none; border: none; background: var(--color-ink); border-radius: 0; padding: 9px 16px; margin-top: 24px; letter-spacing: 0.04em; transition: background 0.15s ease; }
 .figma-link:hover { background: #2D2D2D; }
 
+/* ─── Inline prose links (case study lede + body anchors) ─── */
+.lede a, .page p a:not(.figma-link):not(.btn-external):not(.btn-primary) {
+  color: var(--color-ink);
+  text-decoration: underline;
+  text-decoration-color: var(--color-accent);
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1.5px;
+  transition: color 0.15s ease;
+}
+.lede a:hover, .page p a:not(.figma-link):not(.btn-external):not(.btn-primary):hover {
+  color: var(--color-accent);
+}
+
 /* ─── Buttons (sitewide canonical) ─── */
 .btn-primary {
   display: inline-flex; align-items: center; gap: 8px;
