@@ -124,7 +124,7 @@
 
   <h2>Role</h2>
 
-  <p><strong>I owned design for the trial funnel end-to-end</strong> — sign-up on Cuemath's website, WhatsApp communication, trial slot booking, teacher positioning before and during the trial, and post-trial enrollment. Payment landed at the very end, after the trial and the teacher's plan discussion. This was my first time owning an end-to-end user flow tied directly to business metrics.</p>
+  <p><strong>I owned design for the trial funnel end-to-end</strong> — the customer need assessment form on Cuemath's website, WhatsApp/SMS/email communication, trial slot booking, teacher positioning before and during the trial, post-trial enrollment, and the post-class feedback flows for tutors and parents. The tutor matching algorithm sat under a separate team; I designed everything around it. Payment landed at the very end, after the trial and the teacher's plan discussion. This was my first time owning an end-to-end user flow tied directly to business metrics.</p>
 
   <p>I worked with a lead PM (strategy and business metrics) and a small engineering team (one frontend, multiple backend) to ship. Two data points anchored the work: <strong>40% of qualified leads didn't book a trial within 24 hours, and 35% of trial-takers didn't enroll within 3 days</strong> — both waiting on AC callbacks. The reframe: AC dependency wasn't a performance problem; it was a design problem.</p>
 
@@ -162,20 +162,22 @@
 
   <p>The brief was direct: reduce AC intervention by 70% while maintaining the lead-to-enrollment conversion rate. If the team could automate or distribute the routine touchpoints (scheduling trials, reminders, enrollment conversations, preference collection), the limited AC team could focus on complex cases — students with special needs, payment issues, retention at risk. The system would scale without scaling headcount.</p>
 
+  <p>The unlock started upstream. I redesigned Cuemath's customer need assessment form — turning a 5-field starter (name, grade, contact, board) into structured intent capture (child, parent, language preference, schedule, expectations). With the parent's need captured fully at sign-up, a separate team's tutor matching algorithm could route the right teacher automatically — no AC call required to qualify the lead.</p>
+
   <div class="screen-featured">
-    <img src="../../assets/Case studies/New Trial Experience/flow-diagram.svg" loading="lazy" decoding="async" alt="Old AC-dependent funnel vs. new distributed system comparison">
-    <p class="caption">Old system: Sequential AC-dependent steps with 12–24 hour waits between each. New system: Parallel processes across system automation, teacher relationships, and parent self-service. ACs intervene only for exceptions.</p>
+    <img src="../../assets/Case studies/New Trial Experience/Old vs New System.png" loading="lazy" decoding="async" alt="Old AC-dependent funnel vs. new distributed system comparison" class="cs-img">
+    <p class="caption">Old system: sequential AC-dependent steps with 12–24 hour waits between each. New system: parallel processes across system automation, teacher relationships, and parent self-service. ACs intervene only for exceptions.</p>
   </div>
 
   <h3>The initial hypothesis and why it failed</h3>
 
-  <p>The initial hypothesis was straightforward: have teachers lead conversions during trials. Testing across 22 trial classes proved it failed — pitching mid-session stretched teachers too thin, lesson quality fell, and parents sensed the artifice. The reframe: don't remove teachers from conversion; change <em>when</em> and <em>how</em> they participate.</p>
+  <p>The initial hypothesis was big: have tutors handle everything from the moment they were assigned to a parent — pre-trial messaging, the trial class itself, post-trial enrollment, and onboarding through the kid's first paid class. Parents already trusted tutors more than ACs; tutor-as-everything seemed to follow. Testing across 22 trial classes proved it failed — pitching mid-session stretched teachers too thin, lesson quality fell, and parents sensed the artifice. The deeper insight: tutors are educators, not the operational spine. The reframe: keep tutors at the trust moments (pre-trial intro, in-trial presence), distribute everything else to system and parent.</p>
 
   <div class="decisions-list">
 
     <div class="decision-item">
       <p class="decision-item-title">Decision 1 — WhatsApp as the primary communication channel</p>
-      <p>Most teacher-parent communication already happened on WhatsApp, not in our built-in app chat. Rather than fight that pattern, we made it the system's spine. Every critical step — verification, slot confirmation, teacher intro, reminders, post-trial enrollment — moved to WhatsApp.</p>
+      <p>Most teacher-parent communication already happened on WhatsApp, not in our built-in app chat. Rather than fight that pattern, we made it the system's spine. Every critical step — verification, slot confirmation, teacher intro, reminders, post-trial enrollment — moved to WhatsApp, with SMS and email as fallbacks for parents who didn't engage there (most Indian parents don't check email reliably, so it was the last resort, not the default).</p>
 
       <div class="decision-alts">
         <p class="decision-alts-label">Communication channel</p>
@@ -312,7 +314,7 @@
 
     <div class="decision-item">
       <p class="decision-item-title">Decision 5 — Direct enrollment immediately after the trial, with teacher present</p>
-      <p>The moment the session ended, parents saw an enrollment interface on their device — not a form. Three plan options, pricing visible, one-tap payment. No AC call. If they had questions, the teacher was still present.</p>
+      <p>The moment the session ended, parents saw an enrollment interface on their device — not a form. Three plan options, pricing visible, one-tap payment. No AC call. If they had questions, the teacher was still present. A secondary win we didn't design for: with no AC in the loop, the ad-hoc discounts (10–25%) ACs used to offer when they sensed a lead slipping disappeared too — parents paid the standard price, and revenue per enrollment held firm.</p>
 
       <div class="decision-alts">
         <p class="decision-alts-label">Post-trial enrollment</p>
