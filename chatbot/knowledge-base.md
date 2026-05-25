@@ -31,7 +31,7 @@ This document serves as the source of truth for the AI chatbot on aasifanwar.ver
 
 ### Question 1: "What have you shipped?"
 
-~30K active students at Cuemath (200K+ served lifetime, but active is the cohort my work serves today). I shipped end-to-end: **Feel Check** (social-emotional learning tool), **New Trial Experience** (50% conversion lift, 70% fewer support requests), **Learning System Architecture** (unified 15+ inconsistent sheets into 3-level system, ~30K active students impacted), **Cuemath Partners** (transparent referral system for community educators). I measure success by real user impact, not vanity metrics.
+~30K active students at Cuemath (200K+ served lifetime, but active is the cohort my work serves today). I shipped end-to-end: **Feel Check** (social-emotional learning tool), **New Trial Experience** (50% conversion lift, 70% fewer support requests), **Learning Home Redesign** (unified 15+ inconsistent sheets into 3-level system, ~30K active students impacted), **Cuemath Partners** (transparent referral system for community educators). I measure success by real user impact, not vanity metrics.
 
 ### Question 2: "How do you approach design?"
 
@@ -132,7 +132,7 @@ Frame constraints as inputs, not blockers. Scale the process to the project, not
 **What**: Redesigned signup/teacher setup/parent enrollment flow
 **Impact**: 50% conversion lift, 70% fewer support requests
 
-### Learning System Architecture
+### Learning Home Redesign
 
 **What**: Unified 15+ inconsistent sheet types into coherent 3-level architecture
 **Impact**: 28k–30k students, improved homework completion and teacher ability to compose custom paths

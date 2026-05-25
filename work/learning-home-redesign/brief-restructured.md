@@ -1,7 +1,7 @@
 ---
 type: case-study
 project: LEAP Learning System
-slug: leap-learning-system
+slug: learning-home-redesign
 date: 2026-05-04
 status: restructuring
 ---

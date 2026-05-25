@@ -3,18 +3,18 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Learning System Architecture — unified chapter structure and custom learning goals · Md Aasif Anwar</title>
-<meta name="description" content="A three-level learning architecture (Chapter → Block → Node) for Cuemath, absorbing 15+ existing sheet types and shipping to 28-30k students across CBSE, ICSE, and Common Core.">
-<link rel="canonical" href="https://aasifanwar.vercel.app/work/leap-learning-system/">
+<title>Learning Home Redesign — Cuemath's tutoring home for tutors and students · Md Aasif Anwar</title>
+<meta name="description" content="Redesigned Cuemath's learning home — composable goals across curricula, structured homework queue, and a visual system for 13 node types. Shipped to 28-30K students.">
+<link rel="canonical" href="https://aasifanwar.vercel.app/work/learning-home-redesign/">
 <meta property="og:type" content="article">
-<meta property="og:url" content="https://aasifanwar.vercel.app/work/leap-learning-system/">
-<meta property="og:title" content="Learning System Architecture — unified chapter structure">
-<meta property="og:description" content="Three-level chapter architecture absorbing 15+ sheet types. Shipped to 28-30k students across CBSE, ICSE, Common Core in 4 weeks.">
-<meta property="og:image" content="https://aasifanwar.vercel.app/work/leap-learning-system/assets/chapter-structure.jpg">
+<meta property="og:url" content="https://aasifanwar.vercel.app/work/learning-home-redesign/">
+<meta property="og:title" content="Learning Home Redesign — Cuemath case study">
+<meta property="og:description" content="Composable goals across curricula, structured homework queue, and a visual system for 13 node types. Shipped to 28-30K students.">
+<meta property="og:image" content="https://aasifanwar.vercel.app/work/learning-home-redesign/assets/chapter-structure.jpg">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Learning System Architecture — Cuemath case study">
-<meta name="twitter:description" content="Three-level chapter architecture for Cuemath. 15+ sheet types unified. Shipped to 28-30k students.">
-<meta name="twitter:image" content="https://aasifanwar.vercel.app/work/leap-learning-system/assets/chapter-structure.jpg">
+<meta name="twitter:title" content="Learning Home Redesign — Cuemath case study">
+<meta name="twitter:description" content="Composable goals, structured homework queue, visual system for 13 node types. Shipped to 28-30K students.">
+<meta name="twitter:image" content="https://aasifanwar.vercel.app/work/learning-home-redesign/assets/chapter-structure.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&family=DM+Sans:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
@@ -66,13 +66,13 @@
 
 <!-- COVER -->
 <div class="cover">
-  <h1>Learning System Architecture</h1>
-  <p class="lede">Cuemath's learning system locked tutors into per-curriculum programs and buried homework two layers deep. I designed a three-level architecture (Chapter → Block → Node) that absorbed 15+ existing sheet types, three goal types that let tutors compose custom paths, and a homepage that surfaced homework with 7-day tracking.</p>
+  <h1>Learning Home Redesign</h1>
+  <p class="lede">Cuemath's tutors couldn't customize learning for their students — programs were locked chapter lists, homework was buried two layers deep, and workarounds broke progress tracking. The PM defined a three-level structure (Chapter → Block → Node), and I designed the experience: a goal creation flow, a redesigned learning homepage with a homework queue and recent chapters, and a refreshed visual system for 13 node types.</p>
 
   <div class="cover-context">
     <div class="cover-context-item">
       <span class="cover-context-label">Role</span>
-      <span class="cover-context-value">Product Designer · IA, interaction, UI system direction</span>
+      <span class="cover-context-value">Product Designer · UX, Interaction Design</span>
     </div>
     <div class="cover-context-item">
       <span class="cover-context-label">Team</span>
@@ -80,7 +80,7 @@
     </div>
     <div class="cover-context-item">
       <span class="cover-context-label">Timeline</span>
-      <span class="cover-context-value">4 weeks · March 2025</span>
+      <span class="cover-context-value">4 weeks · 2025</span>
     </div>
   </div>
 
@@ -88,17 +88,19 @@
     <span class="cover-outcome-label">Outcome</span>
     <div class="cover-outcome-stats">
       <div>
-        <p class="cover-outcome-num">28–30k</p>
-        <p class="cover-outcome-desc">Students reached across CBSE, ICSE, and Common Core curricula.</p>
+        <p class="cover-outcome-num">30K</p>
+        <p class="cover-outcome-desc">Active students benefited from the redesigned learning home.</p>
       </div>
       <div>
-        <p class="cover-outcome-num">15+ → 3</p>
-        <p class="cover-outcome-desc">Sheet types unified into a three-level chapter architecture.</p>
+        <p class="cover-outcome-num">3</p>
+        <p class="cover-outcome-desc">New goal types: School Success, Test Prep, Enrichment.</p>
       </div>
     </div>
   </div>
 
-  <p class="cover-primer">The system gives tutors a three-level chapter architecture (Chapter → Block → Node), three goal types to compose custom paths, and a homepage that surfaces homework with 7-day tracking.</p>
+  <img src="../learning-home-redesign/assets/school-success-goal-1.jpg" fetchpriority="high" decoding="async" alt="Learning Home Redesign — School Success goal creation flow" class="cs-img">
+
+  <p class="cover-primer">A Chapter holds Blocks, and each Block holds Nodes — learning, practice, videos, puzzles, and more. Lessons are mandatory blocks and count toward progress; Resources are optional. Tutors compose custom goals by pulling chapters across curricula, and students see homework with day-by-day overdue tracking.</p>
 
   <a href="https://www.figma.com/design/k27AzLfhyS7AbuIZhLIFMY/Portfolio-2026?node-id=2-28574&t=M7FOPCoe9mE85zor-1" target="_blank" rel="noopener" class="figma-link">Open in Figma →</a>
 </div>
@@ -113,12 +115,12 @@
   <h2>The Problem</h2>
 
   <div class="cs-insight">
-    <p class="cs-insight-quote">Cuemath's learning system locked tutors into per-curriculum programs and buried homework two layers deep — workarounds broke progress tracking and students missed assignments.</p>
+    <p class="cs-insight-quote">Cuemath's tutors couldn't customize learning, and homework was buried two layers deep — workarounds broke progress tracking and students missed assignments.</p>
   </div>
 
-  <p>The system had grown across CBSE, ICSE, and Common Core math, each a locked program with its own chapter structure. A tutor who needed Grade 5 concepts plus Grade 4 foundations had to assign two whole programs side by side. Tracking which chapter belonged to which program, what had homework, and how progress added up became unreliable.</p>
+  <p>When a tutor wanted to assemble a custom plan, the only path was program stacking — assign one program, then another, sometimes a third. Every chapter from each program came along, including ones that didn't apply. Within days, progress totals stopped meaning anything, homework lists became unreadable, and tracking broke.</p>
 
-  <p>Homework had the same problem at a smaller scale. It lived inside chapters, buried two layers deep. Extra practice and advanced worksheets got lost at the bottom of the chapter page; students scrolled past them or missed the due date. Tutors had to dig into lessons one by one to check who'd done what.</p>
+  <p>For students, homework was hidden. To see what was due, they had to open a chapter, scroll past everything else, and find it at the bottom. Most never did. Tutors checking who'd done what had to dig into each chapter, item by item.</p>
 
 
   <!-- 02 ROLE -->
@@ -128,13 +130,13 @@
 
   <h2>Role</h2>
 
-  <p><strong>I owned design for the Learning System Architecture end-to-end</strong> — Cuemath's chapter structure and goal-creation flow, shipped across three math curricula in 4 weeks.</p>
+  <p><strong>Experience design:</strong> Cuemath's learning home for tutors and students, built within a new Chapter → Block → Node architecture.</p>
 
   <ul class="cs-list">
-    <li><strong>End-to-end UX/UI</strong> — goal creation flow, learning homepage, chapter system, homework queue</li>
-    <li><strong>System design</strong> — three-level hierarchy (Chapter → Block → Node), node states, progress source of truth, in-class vs anywhere routing</li>
-    <li><strong>Cross-curriculum architecture</strong> — one structure that absorbed 15+ existing sheet types across CBSE, ICSE, and Common Core</li>
-    <li><strong>Cross-functional collaboration</strong> — PM (scope), Engineering (data migration), Curriculum (Test Prep pre-mapping), Illustrator + Motion (visual + interaction language)</li>
+    <li><strong>End-to-end UX/UI</strong> — goal creation flow, learning homepage, homework queue, and chapter UX for both tutor and student views</li>
+    <li><strong>Visual system</strong> — 13 distinct node treatments, block-level hierarchy (Lessons vs Resources), and state visuals (locked, unlocked, in-progress, completed)</li>
+    <li><strong>Interaction design</strong> — micro-interactions and motion across cards, state changes, and the homework queue</li>
+    <li><strong>Cross-functional collaboration</strong> — PM (architecture spec), Engineering (data migration), Curriculum (content), Illustrator + Motion (visual + interaction language)</li>
   </ul>
 
 
@@ -144,29 +146,29 @@
   </div>
 
   <h2>Decisions</h2>
-  <p>The architecture had to absorb 15+ existing sheet types without breaking the migration, give tutors composable goals across curricula, and ship in 4 weeks. Four decisions held it together.</p>
+  <p>Three constraints, all non-negotiable: engineering wouldn't break the migration, so the new architecture had to absorb the legacy sheet types. Tutors had to compose paths across locked curricula. And we had 4 weeks. Four decisions made it possible.</p>
 
   <div class="decisions-list">
 
     <div class="decision-item">
       <p class="decision-item-title">Decision 1 — Three-level hierarchy that absorbed 15+ sheet types</p>
-      <p>The system had 15+ node and sheet types (Learn, Practice, Smart Practice, Video, Challenge Arena, Test, Puzzle, Recap, Custom Test, and more), each categorized differently by subject. <strong>We couldn't drop the old data during migration; the architecture had to absorb it, not replace it.</strong></p>
+      <p>I mapped every existing sheet type (Learn, Practice, Smart Practice, Video, Challenge Arena, Test, Puzzle, Recap, Custom Test, and more), each categorized differently by subject. <strong>We couldn't drop them during migration; the architecture had to wrap the old data, not replace it.</strong></p>
 
-      <p>I designed Chapter → Block → Node. Two block types covered every existing sheet: Lessons (mandatory, count toward progress) and Resources (optional enrichment). New concepts like Competition Arena dropped in as resource blocks without forking the system.</p>
+      <p>The pattern emerged from the mapping: every type fell into one of two buckets — things that counted toward progress, and things that didn't. That became Chapter → Block → Node, where each Block is either Lessons (mandatory, count toward progress) or Resources (optional enrichment). New concepts like Competition Arena drop in as Resources without forking the system.</p>
 
-      <img src="../leap-learning-system/assets/chapter-structure.jpg" loading="lazy" decoding="async" alt="Three-level hierarchy — Chapter, Block (Lessons vs Resources), Node states and properties" class="cs-img">
+      <img src="../learning-home-redesign/assets/chapter-structure.jpg" loading="lazy" decoding="async" alt="Three-level hierarchy — Chapter, Block (Lessons vs Resources), Node states and properties" class="cs-img">
       <p class="caption">Chapter → Block → Node. Two block types absorbed all 15+ existing sheet types.</p>
     </div>
 
     <div class="decision-item">
       <p class="decision-item-title">Decision 2 — Three goal types, ordered the way tutors think</p>
-      <p>Tutors needed to mix chapters across curricula. I built three goal types (School Success for academic prep, Test Prep for competitive exams, Enrichment for skill-building) and a flow that matched how tutors framed the conversation: <strong>goal type → grade and curriculum → chapters → timeline.</strong> Reversed orders failed in early tests.</p>
+      <p>Tutors needed to mix chapters across curricula. I built three goal types (School Success for academic prep, Test Prep for competitive exams, Enrichment for skill-building) and a flow that matched how tutors framed the conversation: <strong>goal type → grade and curriculum → chapters → timeline.</strong> In early walkthroughs with tutors, the order mattered — surfacing grade and curriculum first stalled the conversation.</p>
 
       <p>The curriculum team pre-mapped Test Prep chapters to specific exams so tutors didn't start from scratch. Auto-importing school curriculums was scoped out — tech and timeline.</p>
 
-      <img src="../leap-learning-system/assets/school-success-goal-1.jpg" loading="lazy" decoding="async" alt="School Success goal creation — step 1" class="cs-img">
-      <img src="../leap-learning-system/assets/school-success-goal-select-book-2.jpg" loading="lazy" decoding="async" alt="School Success goal creation — step 2" class="cs-img">
-      <img src="../leap-learning-system/assets/school-success-goal-end-date-3.jpg" loading="lazy" decoding="async" alt="School Success goal creation — step 3" class="cs-img">
+      <img src="../learning-home-redesign/assets/school-success-goal-1.jpg" loading="lazy" decoding="async" alt="School Success goal creation — step 1" class="cs-img">
+      <img src="../learning-home-redesign/assets/school-success-goal-select-book-2.jpg" loading="lazy" decoding="async" alt="School Success goal creation — step 2" class="cs-img">
+      <img src="../learning-home-redesign/assets/school-success-goal-end-date-3.jpg" loading="lazy" decoding="async" alt="School Success goal creation — step 3" class="cs-img">
       <p class="caption">Goal creation flow: type → grade and curriculum → chapters → timeline.</p>
     </div>
 
@@ -183,7 +185,7 @@
 
       <p>Three sources fed the queue: auto-generated practice, teacher-assigned lessons, and system smart-practice. <strong>Showing everything overwhelmed students; capping at 5 under-served the ones who could handle more. We landed on 10 visible, overflow queued and hidden — it surfaces as load clears.</strong> Teachers see the full queue.</p>
 
-      <img src="../leap-learning-system/assets/student-view.jpg" loading="lazy" decoding="async" alt="Learning homepage — homework queue on top, recent chapters, goals section below" class="cs-img">
+      <img src="../learning-home-redesign/assets/student-view.jpg" loading="lazy" decoding="async" alt="Learning homepage — homework queue on top, recent chapters, goals section below" class="cs-img">
       <p class="caption">Homepage: homework queue on top, recent chapters mid, goals at the bottom.</p>
     </div>
 
@@ -222,7 +224,7 @@
     </div>
   </div>
 
-  <p>Shipped in 4 weeks. Tutors compose paths from individual chapters across curricula — pre-built program bundles are no longer the default. Milestones and achievements (exams passed, medals, competitions) were de-scoped to a follow-on phase.</p>
+  <p>Shipped in 4 weeks. Tutors now compose paths from individual chapters across curricula — pre-built program bundles are no longer the default. Milestones (exams passed, medals, competitions) de-scoped to a follow-on phase.</p>
 
 
   <!-- 05 REFLECTION -->
@@ -347,7 +349,7 @@
 </script>
 
 <style>
-  /* Learning System Architecture case study background */
+  /* Learning Home Redesign case study background */
 
 </style>
 
