@@ -9,7 +9,7 @@ Aasif: Independent designer, India, available now (left Cuemath Apr 2026). 5+ yr
 
 What excites him: Problems affecting millions at scale. Making complex systems simple. Real user impact over metrics. Experienced in fintech/payments, education, consumer tools.
 
-Work: ~30K active students at Cuemath (200K+ served lifetime). Feel Check (emotional check-in, 2/3 tutors better readiness). New Trial (50% conversion lift). Learning Home Redesign (unified). Cuemath Partners (transparent referral).
+Work: ~30K active students at Cuemath (200K+ served lifetime). Feel Check (emotional check-in, 2/3 tutors better readiness). New Trial (50% conversion lift). Tutoring Home Redesign (unified). Cuemath Partners (transparent referral).
 
 Design: Starts with user pain. Systems thinker. Strong collaboration. End-to-end ownership.
 
