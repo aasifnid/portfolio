@@ -68,15 +68,15 @@
   }
   .hero-bubble {
     position: absolute;
-    bottom: calc(100% + 18px);
+    bottom: calc(100% + 16px);
     right: -8px;
     transform: translateY(8px) rotate(-2deg);
     transform-origin: bottom right;
-    background: #FFE0FD;
+    background: var(--color-rec-1-bg);
     color: var(--color-ink);
-    border: 2.5px solid var(--color-ink);
-    border-radius: 20px;
-    padding: 18px 24px;
+    border: 2px solid var(--color-ink);
+    border-radius: 0;
+    padding: 16px 24px;
     font-family: var(--font-body);
     font-size: var(--text-sm);
     font-weight: var(--fw-semibold);
@@ -92,22 +92,22 @@
     content: '';
     position: absolute;
     top: 100%;
-    left: 26px;
+    left: 24px;
     width: 0; height: 0;
-    border-left: 11px solid transparent;
-    border-right: 11px solid transparent;
-    border-top: 14px solid var(--color-ink);
+    border-left: 12px solid transparent;
+    border-right: 12px solid transparent;
+    border-top: 16px solid var(--color-ink);
   }
   .hero-bubble::after {
     content: '';
     position: absolute;
     top: 100%;
     left: 28px;
-    margin-top: -3.5px;
+    margin-top: -4px;
     width: 0; height: 0;
-    border-left: 9px solid transparent;
-    border-right: 9px solid transparent;
-    border-top: 12px solid #FFE0FD;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-top: 12px solid var(--color-rec-1-bg);
   }
   .hero-portrait-col:hover .hero-bubble {
     opacity: 1;
