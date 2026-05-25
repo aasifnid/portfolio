@@ -3,13 +3,24 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>LEAP Learning System — unified chapter architecture and custom learning goals · Md Aasif Anwar</title>
+<title>Learning System Architecture — unified chapter structure and custom learning goals · Md Aasif Anwar</title>
+<meta name="description" content="A three-level learning architecture (Chapter → Block → Node) for Cuemath, absorbing 15+ existing sheet types and shipping to 28-30k students across CBSE, ICSE, and Common Core.">
+<link rel="canonical" href="https://aasifanwar.vercel.app/work/leap-learning-system/">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://aasifanwar.vercel.app/work/leap-learning-system/">
+<meta property="og:title" content="Learning System Architecture — unified chapter structure">
+<meta property="og:description" content="Three-level chapter architecture absorbing 15+ sheet types. Shipped to 28-30k students across CBSE, ICSE, Common Core in 4 weeks.">
+<meta property="og:image" content="https://aasifanwar.vercel.app/work/leap-learning-system/assets/chapter-structure.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Learning System Architecture — Cuemath case study">
+<meta name="twitter:description" content="Three-level chapter architecture for Cuemath. 15+ sheet types unified. Shipped to 28-30k students.">
+<meta name="twitter:image" content="https://aasifanwar.vercel.app/work/leap-learning-system/assets/chapter-structure.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&family=DM+Sans:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../../assets/tokens.css">
-<link rel="stylesheet" href="../../assets/typography.css">
-<link rel="stylesheet" href="../../assets/style.css">
+<link rel="stylesheet" href="../../common-assets/tokens.css">
+<link rel="stylesheet" href="../../common-assets/typography.css">
+<link rel="stylesheet" href="../../common-assets/style.css">
 <noscript><style>[data-animate]{opacity:1!important;transform:none!important}</style></noscript>
 <style>
 </style>
@@ -56,7 +67,7 @@
 <!-- COVER -->
 <div class="cover">
   <h1>Learning System Architecture</h1>
-  <p class="lede">LEAP locked students into rigid curriculum programs — tutors couldn't mix chapters across grades. Homework was buried, progress fragmented. I designed a three-level architecture (Chapter → Block → Node) that lets tutors compose custom paths, surfaced homework on the homepage with 7-day tracking, and centralized progress.</p>
+  <p class="lede">Cuemath's learning system locked tutors into per-curriculum programs and buried homework two layers deep. I designed a three-level architecture (Chapter → Block → Node) that absorbed 15+ existing sheet types, three goal types that let tutors compose custom paths, and a homepage that surfaced homework with 7-day tracking.</p>
 
   <div class="cover-context">
     <div class="cover-context-item">
@@ -65,7 +76,7 @@
     </div>
     <div class="cover-context-item">
       <span class="cover-context-label">Team</span>
-      <span class="cover-context-value">PM · 3 engineers · Illustrator · Motion · Curriculum</span>
+      <span class="cover-context-value">PM · FE + BE engineers · Illustrator · Motion · Curriculum</span>
     </div>
     <div class="cover-context-item">
       <span class="cover-context-label">Timeline</span>
@@ -78,14 +89,16 @@
     <div class="cover-outcome-stats">
       <div>
         <p class="cover-outcome-num">28–30k</p>
-        <p class="cover-outcome-desc">Students reached after rollout.</p>
+        <p class="cover-outcome-desc">Students reached across CBSE, ICSE, and Common Core curricula.</p>
       </div>
       <div>
-        <p class="cover-outcome-num">3</p>
-        <p class="cover-outcome-desc">Goal types adopted; custom paths replaced locked programs.</p>
+        <p class="cover-outcome-num">15+ → 3</p>
+        <p class="cover-outcome-desc">Sheet types unified into a three-level chapter architecture.</p>
       </div>
     </div>
   </div>
+
+  <p class="cover-primer">The system gives tutors a three-level chapter architecture (Chapter → Block → Node), three goal types to compose custom paths, and a homepage that surfaces homework with 7-day tracking.</p>
 
   <a href="https://www.figma.com/design/k27AzLfhyS7AbuIZhLIFMY/Portfolio-2026?node-id=2-28574&t=M7FOPCoe9mE85zor-1" target="_blank" rel="noopener" class="figma-link">Open in Figma →</a>
 </div>
@@ -99,11 +112,13 @@
 
   <h2>The Problem</h2>
 
-  <p>Tutors had to dig into lessons one-by-one to assign homework. Students had no central place to see it — homework lived inside chapters, buried two layers deep. If a tutor assigned extra practice or advanced worksheets, they got lost at the bottom of the chapter page; students scrolled past them or didn't know when they were due. Tracking whether a student had started or completed work meant navigating into every lesson.</p>
+  <div class="cs-insight">
+    <p class="cs-insight-quote">Cuemath's learning system locked tutors into per-curriculum programs and buried homework two layers deep — workarounds broke progress tracking and students missed assignments.</p>
+  </div>
 
-  <p>But the deeper structural problem was the curriculum programs themselves. LEAP had grown across different math curricula — CBSE Grade 4, ICSE Grade 5, Common Core US Grade 6, and more. Each was its own locked "program" with its own chapter structure. If a student finished CBSE Grade 4 math and needed advanced practice, the tutor had to assign an entirely separate program — bringing in a whole new set of chapters. After assigning multiple programs, tracking became impossible: which chapters belonged to which program? Which had homework? What was the student's actual progress? Within those chapters, the UI itself was cluttered — inconsistent node types, unclear lesson structures, missing visual language.</p>
+  <p>The system had grown across CBSE, ICSE, and Common Core math, each a locked program with its own chapter structure. A tutor who needed Grade 5 concepts plus Grade 4 foundations had to assign two whole programs side by side. Tracking which chapter belonged to which program, what had homework, and how progress added up became unreliable.</p>
 
-  <p>The cost was real. Tutors couldn't create custom learning paths ("this student is ready for Grade 5 concepts but needs Grade 4 foundations"). Progress tracking broke down across multiple programs. Students had no homework visibility. And the platform had no room to grow coherently.</p>
+  <p>Homework had the same problem at a smaller scale. It lived inside chapters, buried two layers deep. Extra practice and advanced worksheets got lost at the bottom of the chapter page; students scrolled past them or missed the due date. Tutors had to dig into lessons one by one to check who'd done what.</p>
 
 
   <!-- 02 ROLE -->
@@ -113,40 +128,14 @@
 
   <h2>Role</h2>
 
-  <p>I owned the interaction design, information architecture, and system design end-to-end. My scope: the UX for the goal creation flow, the internal chapter structure and system design (tracking, time, status progression), the page layouts for the learning homepage and chapter content, and the entire homework section.</p>
+  <p><strong>I owned design for the Learning System Architecture end-to-end</strong> — Cuemath's chapter structure and goal-creation flow, shipped across three math curricula in 4 weeks.</p>
 
-  <p>I worked directly with the PM on requirements and curriculum alignment, 3 engineers on implementation, and the curriculum team to ensure the architecture would work across CBSE, ICSE, and Common Core math programs. Success metrics were defined upfront: a unified chapter structure across all curricula, homework visibility and completion rates, and the ability for tutors to create custom learning paths.</p>
-
-  <p>The illustrator and motion designer owned the visual execution — iconography, animations on chapter CTAs, animations on notes, and animation language across the system. We collaborated closely, brainstorming and discussing different possibilities for iconography and interaction patterns before they brought the system to life visually.</p>
-
-  <p>One hard constraint: 4 weeks for complete scope (goal flow + homepage + chapter system). We couldn't break the existing data structure during migration.</p>
-
-  <!-- Research methodology -->
-  <h2 style="margin-top: 56px;">How we got to the design.</h2>
-  <p>Three modes of inquiry redirected each iteration.</p>
-
-  <div class="cs-method">
-    <div class="cs-method-row cs-method-header">
-      <span class="cs-method-method">Method</span>
-      <span class="cs-method-sample">Sample</span>
-      <span class="cs-method-finding">What it told us</span>
-    </div>
-    <div class="cs-method-row">
-      <span class="cs-method-method">Tutor feedback synthesis</span>
-      <span class="cs-method-sample">Cross-curriculum tutors</span>
-      <span class="cs-method-finding">Locked programs blocked personalization. Tutors stacked programs as a workaround — broke tracking.</span>
-    </div>
-    <div class="cs-method-row">
-      <span class="cs-method-method">Data structure audit</span>
-      <span class="cs-method-sample">15+ sheet types · 3 curricula</span>
-      <span class="cs-method-finding">Couldn't deprecate existing structures during migration. Needed an architecture that absorbed them, not replaced them.</span>
-    </div>
-    <div class="cs-method-row">
-      <span class="cs-method-method">Goal-flow pattern study</span>
-      <span class="cs-method-sample">Internal tutors</span>
-      <span class="cs-method-finding">Goal-type → grade/curriculum → chapters → timeline matched how tutors naturally think. Reverse orders failed.</span>
-    </div>
-  </div>
+  <ul class="cs-list">
+    <li><strong>End-to-end UX/UI</strong> — goal creation flow, learning homepage, chapter system, homework queue</li>
+    <li><strong>System design</strong> — three-level hierarchy (Chapter → Block → Node), node states, progress source of truth, in-class vs anywhere routing</li>
+    <li><strong>Cross-curriculum architecture</strong> — one structure that absorbed 15+ existing sheet types across CBSE, ICSE, and Common Core</li>
+    <li><strong>Cross-functional collaboration</strong> — PM (scope), Engineering (data migration), Curriculum (Test Prep pre-mapping), Illustrator + Motion (visual + interaction language)</li>
+  </ul>
 
 
   <!-- 03 PROCESS -->
@@ -154,130 +143,48 @@
     <span class="section-num">03</span>
   </div>
 
-  <h2>Why goal creation first?</h2>
-
-  <p>Goal creation was independent and could ship on the existing system, making it the strategic first priority. The insight from tutor feedback was clear: locked curriculum programs weren't working. Tutors needed power to select chapters across programs and curricula to create customized learning paths.</p>
-
-  <p>I designed three goal types — School Success (academic prep), Test Prep (competitive exams), and Enrichment (skill acquisition) — each with a guided flow. Tutors select a goal type, then choose grade and curriculum, then the recommended chapters surface. They can add or remove chapters, set a completion timeline, and share the goal with parents for feedback. For Test Prep, the curriculum team pre-mapped chapters to specific exams; for Enrichment, tutors pick from a skills list. This framework meant tutors didn't have to build from scratch.</p>
-
-  <p>We explored different progressions for surfacing this information, but this flow (goal type → grade/curriculum → chapters → timeline) felt most sensible based on patterns we observed with tutors. We considered allowing tutors to upload school curriculums and auto-surface chapters, but de-scoped it due to tech and timeline constraints.</p>
-
-  <img src="../../assets/Case studies/Learning System Architecture/School Success Goal_1.jpg" loading="lazy" decoding="async" alt="School Success goal creation flow — step 1" class="cs-img">
-  <img src="../../assets/Case studies/Learning System Architecture/School Success Goal_End date_3.jpg" loading="lazy" decoding="async" alt="School Success goal creation flow — step 2" class="cs-img">
-  <img src="../../assets/Case studies/Learning System Architecture/School Success Goal_Select book_2.jpg" loading="lazy" decoding="async" alt="School Success goal creation flow — step 3" class="cs-img">
-  <p class="img-label">School Success Goal Creation Flow</p>
-
-  <h2>What made the chapter system hard?</h2>
-
-  <p>LEAP had 15+ different node and sheet types — Learn, Practice, Smart Practice, Video, Challenge Arena, Test, Puzzle, Recap, Custom Test, Project, Extra Practice, Download, Activity, Subjective, and more. Each subject had categorized them differently in the old system. We had to create one unified three-level hierarchy (Chapter → Block → Node) without breaking the existing system during migration.</p>
-
-  <p>I worked closely with engineers to understand the data constraints. We couldn't deprecate existing structures; we had to accommodate them. Two block types emerged: Lessons (mandatory, count toward progress) and Resources (optional enrichment, don't count). Every sheet type fit into one of these categories. Nodes within each block had consistent properties — states (locked, unlocked, in-progress, completed), conditions (mandatory/optional), locations (in-class/anywhere). This unified structure let us handle new concepts like Competition Arena and Puzzles as resource blocks without fragmenting the system.</p>
-
-  <img src="../../assets/Case studies/Learning System Architecture/Student view.jpg" loading="lazy" decoding="async" alt="Learning homepage — homework queue on top, recent chapters for navigation, goals section below" class="cs-img">
-  <p class="img-label">Learning Homepage</p>
-
-  <h2>Homepage priorities — what came first?</h2>
-
-  <p>I surfaced homework at the top — it's critical for learning progress and ensures concept absorption. It was buried before; now it's the first thing students see. Below homework, I added recent chapters as quick navigation for students with multiple goals; they can jump back to ongoing content without scrolling or recalling which goal they were on. The goals section below shows the full picture — progress, breakdown of chapters/tests/resources.</p>
-
-  <img src="../../assets/Case studies/Learning System Architecture/Chapter Structure.jpg" loading="lazy" decoding="async" alt="Three-level hierarchy — Chapter, Block (Lessons vs Resources), and Node types with properties and states" class="cs-img">
-  <p class="img-label">Chapter Structure Hierarchy</p>
-
-  <h2>Four decisions that shaped the system.</h2>
-
+  <h2>Decisions</h2>
+  <p>The architecture had to absorb 15+ existing sheet types without breaking the migration, give tutors composable goals across curricula, and ship in 4 weeks. Four decisions held it together.</p>
 
   <div class="decisions-list">
 
     <div class="decision-item">
-      <p class="decision-item-title">Decision 1 — Three-level hierarchy: Chapter → Block → Node</p>
-      <p>15+ node types across subjects, each categorized differently. We couldn't break existing data during migration. The solution: a unified three-level structure with two block types — Lessons (mandatory, count toward progress) and Resources (optional enrichment). Every sheet type fit into one category.</p>
+      <p class="decision-item-title">Decision 1 — Three-level hierarchy that absorbed 15+ sheet types</p>
+      <p>The system had 15+ node and sheet types (Learn, Practice, Smart Practice, Video, Challenge Arena, Test, Puzzle, Recap, Custom Test, and more), each categorized differently by subject. <strong>We couldn't drop the old data during migration; the architecture had to absorb it, not replace it.</strong></p>
 
-      <div class="decision-alts">
-        <p class="decision-alts-label">Information architecture</p>
-        <div class="decision-alts-cards">
-          <div class="decision-alts-card">
-            <p class="decision-alts-card-name">Flat list of node types</p>
-            <p class="decision-alts-card-note">Didn't scale, hard for tutors to compose.</p>
-          </div>
-          <div class="decision-alts-card">
-            <p class="decision-alts-card-name">Per-subject taxonomies</p>
-            <p class="decision-alts-card-note">Re-introduced the fragmentation problem we were solving.</p>
-          </div>
-          <div class="decision-alts-card decision-alts-card--picked">
-            <p class="decision-alts-card-name">Chapter → Block → Node</p>
-            <p class="decision-alts-card-note">Absorbs existing structures, supports new concepts without rework.</p>
-          </div>
-        </div>
-      </div>
+      <p>I designed Chapter → Block → Node. Two block types covered every existing sheet: Lessons (mandatory, count toward progress) and Resources (optional enrichment). New concepts like Competition Arena dropped in as resource blocks without forking the system.</p>
+
+      <img src="../leap-learning-system/assets/chapter-structure.jpg" loading="lazy" decoding="async" alt="Three-level hierarchy — Chapter, Block (Lessons vs Resources), Node states and properties" class="cs-img">
+      <p class="caption">Chapter → Block → Node. Two block types absorbed all 15+ existing sheet types.</p>
     </div>
 
     <div class="decision-item">
-      <p class="decision-item-title">Decision 2 — Progress tied to admin location, not teacher location</p>
-      <p>Teachers need flexibility to move nodes between in-class and anywhere. But the curriculum system needs a reliable signal of what was actually taught. So progress always counts from admin location. Teachers can move nodes temporarily; progress stays tied to the authoritative structure.</p>
+      <p class="decision-item-title">Decision 2 — Three goal types, ordered the way tutors think</p>
+      <p>Tutors needed to mix chapters across curricula. I built three goal types (School Success for academic prep, Test Prep for competitive exams, Enrichment for skill-building) and a flow that matched how tutors framed the conversation: <strong>goal type → grade and curriculum → chapters → timeline.</strong> Reversed orders failed in early tests.</p>
 
-      <div class="decision-alts">
-        <p class="decision-alts-label">Progress source of truth</p>
-        <div class="decision-alts-cards">
-          <div class="decision-alts-card">
-            <p class="decision-alts-card-name">Progress follows teacher location</p>
-            <p class="decision-alts-card-note">Tutors could inadvertently break curriculum tracking.</p>
-          </div>
-          <div class="decision-alts-card">
-            <p class="decision-alts-card-name">Lock node locations</p>
-            <p class="decision-alts-card-note">Removed the flexibility tutors needed to adapt.</p>
-          </div>
-          <div class="decision-alts-card decision-alts-card--picked">
-            <p class="decision-alts-card-name">Admin-location authoritative</p>
-            <p class="decision-alts-card-note">Both sides get what they need.</p>
-          </div>
-        </div>
-      </div>
+      <p>The curriculum team pre-mapped Test Prep chapters to specific exams so tutors didn't start from scratch. Auto-importing school curriculums was scoped out — tech and timeline.</p>
+
+      <img src="../leap-learning-system/assets/school-success-goal-1.jpg" loading="lazy" decoding="async" alt="School Success goal creation — step 1" class="cs-img">
+      <img src="../leap-learning-system/assets/school-success-goal-select-book-2.jpg" loading="lazy" decoding="async" alt="School Success goal creation — step 2" class="cs-img">
+      <img src="../leap-learning-system/assets/school-success-goal-end-date-3.jpg" loading="lazy" decoding="async" alt="School Success goal creation — step 3" class="cs-img">
+      <p class="caption">Goal creation flow: type → grade and curriculum → chapters → timeline.</p>
     </div>
 
     <div class="decision-item">
-      <p class="decision-item-title">Decision 3 — Queue cap of 10 homework items</p>
-      <p>Three homework sources — auto-generated practice, teacher-assigned lessons, system smart practice. Collectively, we landed on 10 as the sweet spot. Overflow queued but hidden; surfaces when load clears. Teachers see the full queue.</p>
+      <p class="decision-item-title">Decision 3 — Anchor progress to admin location, give teachers flexibility on top</p>
+      <p>Teachers needed to move nodes between in-class and anywhere — live sessions pace differently than self-study. But the curriculum needed a reliable read of what was actually taught. <strong>Progress counts from the admin's official location; teachers can move nodes for a session without breaking tracking.</strong></p>
 
-      <div class="decision-alts">
-        <p class="decision-alts-label">Homework queue cap</p>
-        <div class="decision-alts-cards">
-          <div class="decision-alts-card">
-            <p class="decision-alts-card-name">Show everything always</p>
-            <p class="decision-alts-card-note">Overwhelmed students, completion dropped.</p>
-          </div>
-          <div class="decision-alts-card">
-            <p class="decision-alts-card-name">Strict cap at 5</p>
-            <p class="decision-alts-card-note">Under-served students who could handle more.</p>
-          </div>
-          <div class="decision-alts-card decision-alts-card--picked">
-            <p class="decision-alts-card-name">Cap at 10, overflow queued</p>
-            <p class="decision-alts-card-note">Visible but bounded; self-paced surfacing.</p>
-          </div>
-        </div>
-      </div>
+      <p>Both sides got what they needed: tutors kept their pacing flexibility, the curriculum kept its source of truth.</p>
     </div>
 
     <div class="decision-item">
-      <p class="decision-item-title">Decision 4 — Teacher review requires student presence</p>
-      <p>Review only happens when it's useful — when the student is there to discuss. Prevents checkbox-style "marked complete" without the conversation.</p>
+      <p class="decision-item-title">Decision 4 — Surface homework first, cap the queue at 10</p>
+      <p>Homework was buried two layers deep before — students missed it, tutors couldn't tell who'd started. I moved it to the top of the homepage with 7-day due-date progression (Day 1–4 normal, Day 5–6 warning, Day 7 overdue). Recent chapters sat below as quick navigation, goals at the bottom for the full picture.</p>
 
-      <div class="decision-alts">
-        <p class="decision-alts-label">Review mode</p>
-        <div class="decision-alts-cards">
-          <div class="decision-alts-card">
-            <p class="decision-alts-card-name">Async review allowed</p>
-            <p class="decision-alts-card-note">Teachers would batch-check off completed items without the conversation.</p>
-          </div>
-          <div class="decision-alts-card">
-            <p class="decision-alts-card-name">No review step</p>
-            <p class="decision-alts-card-note">Removed the feedback loop that makes practice meaningful.</p>
-          </div>
-          <div class="decision-alts-card decision-alts-card--picked">
-            <p class="decision-alts-card-name">Synchronous review with student</p>
-            <p class="decision-alts-card-note">Preserves the feedback moment.</p>
-          </div>
-        </div>
-      </div>
+      <p>Three sources fed the queue: auto-generated practice, teacher-assigned lessons, and system smart-practice. <strong>Showing everything overwhelmed students; capping at 5 under-served the ones who could handle more. We landed on 10 visible, overflow queued and hidden — it surfaces as load clears.</strong> Teachers see the full queue.</p>
+
+      <img src="../leap-learning-system/assets/student-view.jpg" loading="lazy" decoding="async" alt="Learning homepage — homework queue on top, recent chapters, goals section below" class="cs-img">
+      <p class="caption">Homepage: homework queue on top, recent chapters mid, goals at the bottom.</p>
     </div>
 
   </div>
@@ -290,21 +197,32 @@
 
   <h2>Impact</h2>
 
-  <div class="cs-stat-hero">
-    <p class="cs-stat-hero-label">Students reached</p>
-    <p class="cs-stat-hero-number">28–30k</p>
-    <p class="cs-stat-hero-desc">students across CBSE, ICSE, and Common Core curricula. Goal creation became mandatory — every student's first onboarding step.</p>
+  <div class="impact-metrics-cluster">
+    <div class="cs-stat-hero">
+      <p class="cs-stat-hero-label">Students reached</p>
+      <p class="cs-stat-hero-number">28–30k</p>
+      <p class="cs-stat-hero-desc">students across CBSE, ICSE, and Common Core. Goal creation became every student's first onboarding step.</p>
+    </div>
+    <div class="outcome-stats">
+      <div class="stat">
+        <p class="stat-label">Goal types adopted</p>
+        <p class="stat-number">3 / 3</p>
+        <p class="stat-desc">School Success, Test Prep, Enrichment — all three picked up by tutors.</p>
+      </div>
+      <div class="stat">
+        <p class="stat-label">Sheet types unified</p>
+        <p class="stat-number">15+ → 3</p>
+        <p class="stat-desc">Every existing type absorbed into Chapter → Block → Node.</p>
+      </div>
+      <div class="stat">
+        <p class="stat-label">Curricula supported</p>
+        <p class="stat-number">3</p>
+        <p class="stat-desc">CBSE, ICSE, Common Core — one architecture across all of them.</p>
+      </div>
+    </div>
   </div>
 
-  <p>Shipped and live in production across the LEAP platform. Tutors adopted all three goal types: School Success for core curriculum, Test Prep for competitive exams, and Enrichment for skill-building.</p>
-
-  <h2>Before vs. after.</h2>
-
-  <p><strong>Before.</strong> Assigning the right curriculum was a rigid exercise. Tutors picked entire programs (CBSE Grade 4, ICSE Grade 5) or stacked multiple programs for mixed-content students. Tracking what was actually assigned — or how progress added up across programs — was unreliable.</p>
-
-  <p><strong>After.</strong> True personalization became the default. Every student has a goal. Tutors compose paths from individual chapters across programs, not pre-built bundles. Tracking is centralized around goals. Students see their homework queue on the homepage with clear due-date progression (Day 1–4 normal, Day 5–6 ⚠️, Day 7 overdue).</p>
-
-  <p>One de-scoped item: Milestones and achievements (exams passed, medals earned, competitions won). We wanted these on the dashboard but couldn't complete in 4 weeks. Planned for follow-on work.</p>
+  <p>Shipped in 4 weeks. Tutors compose paths from individual chapters across curricula — pre-built program bundles are no longer the default. Milestones and achievements (exams passed, medals, competitions) were de-scoped to a follow-on phase.</p>
 
 
   <!-- 05 REFLECTION -->
@@ -316,23 +234,18 @@
 
   <div class="lessons-list">
     <div class="lesson">
-      <p class="decision-item-title">Pre-map content during discovery, not during build.</p>
-      <p>The curriculum pre-mapping for Test Prep should have been done in discovery, not during implementation. It would have surfaced the complexity of exam-chapter relationships sooner and reduced engineering rework. For my next role: any system that depends on content taxonomy gets that taxonomy validated upfront, not concurrently.</p>
+      <p class="decision-item-title">Tutors' workarounds were the spec for what to build next</p>
+      <p>Before goals existed, tutors couldn't mix chapters across CBSE and ICSE — so they stacked entire programs side by side and ignored the parts they didn't need. The system technically allowed it; it just broke tracking. <strong>The workaround wasn't a bug to fix — it was the unmet need to design for.</strong></p>
     </div>
 
     <div class="lesson">
-      <p class="decision-item-title">Phase the complexity — touch one thing at a time.</p>
-      <p>The chapter system was hardest because it touched everything. Breaking it into phases (goals first, then homepage, then system) made the complexity manageable. Goal creation could ship independently on the existing system — that bought us learning before we touched the architecture itself.</p>
+      <p class="decision-item-title">Absorb the old structure; don't replace it</p>
+      <p>I started thinking we'd drop the 15+ sheet types and replace them with a clean three-level model. Engineering pushed back — the migration couldn't break. The architecture had to wrap the old data into Lessons and Resources blocks, not overwrite it. <strong>The constraint produced a more durable system than the clean-slate version would have.</strong></p>
     </div>
 
     <div class="lesson">
-      <p class="decision-item-title">Constraints force ruthless scoping.</p>
-      <p>Working backward from a 4-week deadline meant every feature had to earn its place. Goal creation worked because it was independent. The homepage worked because the priorities were clear: homework first, navigation second, planning third. The constraint wasn't a limitation — it was the scoping tool.</p>
-    </div>
-
-    <div class="lesson">
-      <p class="decision-item-title">Design an architecture that expands the existing — don't replace it.</p>
-      <p>For systems that must absorb existing data.</p>
+      <p class="decision-item-title">Ship the independent piece first to keep the team learning</p>
+      <p>Goal creation could run on the existing system. The chapter rebuild couldn't. Shipping goals first meant tutors started composing custom paths weeks before the architecture was ready — and their behavior fed the system design underneath. <strong>The dependency order was the learning order.</strong></p>
     </div>
   </div>
 
@@ -441,7 +354,7 @@
 
 <!-- Footer -->
 <a href="../../work/affiliate-partnership/index.html" class="cs-next">
-  <div class="cs-next-img" style="background-image: url('../../assets/Case studies/Cuemath Partners/Affiliate Partnership_Card Thumbnail.jpg');"></div>
+  <div class="cs-next-img" style="background-image: url('../affiliate-partnership/assets/cuemath-partners-card-thumbnail.jpg');"></div>
   <div class="cs-next-body">
     <p class="cs-next-label">Next case study</p>
     <h2 class="cs-next-title">Cuemath Partners</h2>

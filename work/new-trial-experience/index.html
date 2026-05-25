@@ -5,12 +5,23 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="updated" content="2026-05-04">
 <title>New Trial Experience — distributing conversion work across system, teachers, and parents · Md Aasif Anwar</title>
+<meta name="description" content="Redesigned Cuemath's trial funnel to cut Academic Counselor intervention by 70% while maintaining lead-to-enrollment conversion. WhatsApp-led, teacher-anchored, parent-self-serve.">
+<link rel="canonical" href="https://aasifanwar.vercel.app/work/new-trial-experience/">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://aasifanwar.vercel.app/work/new-trial-experience/">
+<meta property="og:title" content="New Trial Experience — distributing conversion work">
+<meta property="og:description" content="−70% AC intervention. +50% trial booking. +9.6% trial-to-paid. WhatsApp-led trial funnel redesign for Cuemath.">
+<meta property="og:image" content="https://aasifanwar.vercel.app/work/new-trial-experience/assets/nte-cover.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="New Trial Experience — Cuemath case study">
+<meta name="twitter:description" content="−70% AC intervention. +50% trial booking. WhatsApp-led trial funnel redesign.">
+<meta name="twitter:image" content="https://aasifanwar.vercel.app/work/new-trial-experience/assets/nte-cover.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&family=DM+Sans:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../../assets/tokens.css">
-<link rel="stylesheet" href="../../assets/typography.css">
-<link rel="stylesheet" href="../../assets/style.css">
+<link rel="stylesheet" href="../../common-assets/tokens.css">
+<link rel="stylesheet" href="../../common-assets/typography.css">
+<link rel="stylesheet" href="../../common-assets/style.css">
 <noscript><style>[data-animate]{opacity:1!important;transform:none!important}</style></noscript>
 <style>
 
@@ -59,7 +70,7 @@
 <!-- COVER -->
 <div class="cover">
   <h1>New Trial Experience</h1>
-  <p class="lede">Cuemath's trial funnel ran entirely through Academic Counselors (ACs), creating a queue and slowing parents down. The brief: cut AC intervention by 70% without losing conversions. The redesign distributed the work across three principles — a self-serve parent journey, teacher-led conversions during the trial, and WhatsApp as the primary channel for parents.</p>
+  <p class="lede">Cuemath's trial funnel ran entirely through Academic Counselors (ACs), creating a queue and slowing parents down. The brief: cut AC intervention by 70% without losing conversions. The redesign distributed the work across three principles — a parent-led journey, teacher-led conversions during the trial, and WhatsApp as the primary channel for parents.</p>
 
   <div class="cover-context">
     <div class="cover-context-item">
@@ -93,7 +104,7 @@
     </div>
   </div>
 
-  <img src="../../assets/Case studies/New Trial Experience/NTE cover.jpg" fetchpriority="high" decoding="async" alt="New Trial Experience — distributed conversion across system, teachers, and parents" class="cs-img">
+  <img src="../new-trial-experience/assets/nte-cover.jpg" fetchpriority="high" decoding="async" alt="New Trial Experience — distributed conversion across system, teachers, and parents" class="cs-img">
 
   <p class="cover-primer">Parents move through self-serve sign-up, trial slot booking, teacher assignment, and post-trial enrollment with the teacher still present — no AC in the loop.</p>
 
@@ -124,33 +135,15 @@
 
   <h2>Role</h2>
 
-  <p><strong>I owned design for the trial funnel end-to-end</strong> — the customer need assessment form on Cuemath's website, WhatsApp/SMS/email communication, trial slot booking, teacher positioning before and during the trial, post-trial enrollment, and the post-class feedback flows for tutors and parents. The tutor matching algorithm sat under a separate team; I designed everything around it. Payment landed at the very end, after the trial and the teacher's plan discussion. This was my first time owning an end-to-end user flow tied directly to business metrics.</p>
+  <p><strong>I owned design for the trial funnel end-to-end</strong> — from the sign-up form on Cuemath's website through trial booking, the trial class, and post-trial enrollment. My first time owning a full user flow tied directly to business numbers.</p>
 
-  <p>I worked with a lead PM (strategy and business metrics) and a small engineering team (one frontend, multiple backend) to ship. Two data points anchored the work: <strong>40% of qualified leads didn't book a trial within 24 hours, and 35% of trial-takers didn't enroll within 3 days</strong> — both waiting on AC callbacks. The reframe: AC dependency wasn't a performance problem; it was a design problem.</p>
+  <ul class="cs-list">
+    <li><strong>End-to-end UX/UI</strong> — sign-up form, slot booking, teacher intro flow, in-trial parent surface, post-trial enrollment, feedback flows</li>
+    <li><strong>Communication design</strong> — WhatsApp as the spine, with SMS and email as fallbacks; branded post-trial collateral (pricing, plans, refund policy)</li>
+    <li><strong>Constraint</strong> — cut AC intervention by 70% without losing the lead-to-enrollment rate. The work had to live on WhatsApp, where teacher-parent conversations already happened</li>
+    <li><strong>Cross-functional collaboration</strong> — PM (Business Head, India) on scope and metrics, FE + BE engineers on build; tutor matching algorithm sat under a separate team, I designed around it</li>
+  </ul>
 
-  <p>Success criteria were non-negotiable: reduce AC intervention by 70% without losing the lead-to-enrollment conversion rate. One constraint shaped everything — this had to live on WhatsApp. Most teacher-parent communication already happened there, not in our app. Rather than fight that pattern, we made it the system's spine.</p>
-
-  <!-- Research methodology -->
-  <h3 style="margin-top: 56px;">How we got to the design.</h3>
-  <p>Two modes of research, each tightly scoped, each redirecting the next iteration.</p>
-
-  <div class="cs-method">
-    <div class="cs-method-row cs-method-header">
-      <span class="cs-method-method">Method</span>
-      <span class="cs-method-sample">Sample</span>
-      <span class="cs-method-finding">What it told us</span>
-    </div>
-    <div class="cs-method-row">
-      <span class="cs-method-method">Funnel data analysis</span>
-      <span class="cs-method-sample">Lead-to-enrollment cohort</span>
-      <span class="cs-method-finding">40% didn't complete trial booking within 24h; 35% of trial-takers didn't enroll within 3 days. AC availability — not parent intent — was the choke point.</span>
-    </div>
-    <div class="cs-method-row">
-      <span class="cs-method-method">Teacher-led close test</span>
-      <span class="cs-method-sample">5–6 teachers · 22 trials</span>
-      <span class="cs-method-finding">Pitching mid-session stretched teachers too thin. Lesson quality fell, parents sensed the artifice. Closed loop in 5 weeks — should have been 1.</span>
-    </div>
-  </div>
 
 
   <!-- 03 PROCESS -->
@@ -160,85 +153,51 @@
 
   <h2>Decisions</h2>
 
-  <p>The brief was direct: reduce AC intervention by 70% while maintaining the lead-to-enrollment conversion rate. If the team could automate or distribute the routine touchpoints (scheduling trials, reminders, enrollment conversations, preference collection), the limited AC team could focus on complex cases — students with special needs, payment issues, retention at risk. The system would scale without scaling headcount.</p>
+  <p>The brief was direct: cut AC intervention by 70% while holding lead-to-enrollment conversion. If the team could automate or distribute routine touchpoints (scheduling, reminders, enrollment, preference collection), ACs could focus on exceptions like special needs and payment issues. The system would scale without growing headcount.</p>
 
-  <p>The unlock started upstream. I redesigned Cuemath's customer need assessment form — turning a 5-field starter (name, grade, contact, board) into structured intent capture (child, parent, language preference, schedule, expectations). With the parent's need captured fully at sign-up, a separate team's tutor matching algorithm could route the right teacher automatically — no AC call required to qualify the lead.</p>
+  <p>My first hypothesis was big: have tutors handle everything from the moment they were assigned to a parent — pre-trial messaging, the class itself, post-trial enrollment, even onboarding. Parents already trusted tutors more than ACs, so tutor-as-everything seemed to follow. Testing across 22 trial classes proved it failed: pitching mid-session stretched teachers too thin, lesson quality fell, parents sensed the artifice. <strong>The shift: tutors are educators, not the operational spine. Keep them at the trust moments; distribute everything else to system and parent.</strong></p>
 
   <div class="screen-featured">
-    <img src="../../assets/Case studies/New Trial Experience/Old vs New System.png" loading="lazy" decoding="async" alt="Old AC-dependent funnel vs. new distributed system comparison" class="cs-img">
-    <p class="caption">Old system: sequential AC-dependent steps with 12–24 hour waits between each. New system: parallel processes across system automation, teacher relationships, and parent self-service. ACs intervene only for exceptions.</p>
+    <img src="../new-trial-experience/assets/old-vs-new-system.png" loading="lazy" decoding="async" alt="Old AC-dependent funnel vs. new distributed system comparison" class="cs-img">
+    <p class="caption">Old: sequential AC-dependent steps with 12–24h waits between each. New: parallel work across system automation, teacher relationships, and parent self-service. ACs intervene only for exceptions.</p>
   </div>
-
-  <h3>The initial hypothesis and why it failed</h3>
-
-  <p>The initial hypothesis was big: have tutors handle everything from the moment they were assigned to a parent — pre-trial messaging, the trial class itself, post-trial enrollment, and onboarding through the kid's first paid class. Parents already trusted tutors more than ACs; tutor-as-everything seemed to follow. Testing across 22 trial classes proved it failed — pitching mid-session stretched teachers too thin, lesson quality fell, and parents sensed the artifice. The deeper insight: tutors are educators, not the operational spine. The reframe: keep tutors at the trust moments (pre-trial intro, in-trial presence), distribute everything else to system and parent.</p>
 
   <div class="decisions-list">
 
     <div class="decision-item">
       <p class="decision-item-title">Decision 1 — WhatsApp as the spine, with automated recovery</p>
-      <p>Most teacher-parent communication already happened on WhatsApp, not in our built-in app chat. <strong>Rather than fight that pattern, we made it the system's spine.</strong> Every critical step — verification, slot confirmation, teacher intro, reminders, post-trial enrollment — moved to WhatsApp, with SMS and email as fallbacks for parents who didn't engage there (most Indian parents don't check email reliably, so it was the last resort, not the default).</p>
+      <p>Most teacher-parent communication already happened on WhatsApp, not in our built-in app chat. <strong>Rather than fight that pattern, we made it the system's spine.</strong> Every critical step (verification, slot confirmation, teacher intro, reminders, post-trial enrollment) moved to WhatsApp, with SMS and email as fallbacks for parents who didn't engage there. Most Indian parents don't check email reliably, so it was the last resort, not the default.</p>
 
       <p>One automation rode on top of the channel: a 5-minute auto-message for parents who started but didn't book a slot — <em>"Do you need help choosing a time?"</em>. Small, well-timed, low-judgment, capturing intent at peak before it cooled.</p>
 
-      <div class="decision-alts">
-        <p class="decision-alts-label">Communication channel</p>
-        <div class="decision-alts-cards">
-          <div class="decision-alts-card">
-            <p class="decision-alts-card-name">Build it inside the Cuemath app</p>
-            <p class="decision-alts-card-note">Low engagement, parents had to remember to open it.</p>
-          </div>
-          <div class="decision-alts-card">
-            <p class="decision-alts-card-name">SMS + email</p>
-            <p class="decision-alts-card-note">Low response rates; parents didn't trust the channel for transaction.</p>
-          </div>
-          <div class="decision-alts-card decision-alts-card--picked">
-            <p class="decision-alts-card-name">WhatsApp Business API</p>
-            <p class="decision-alts-card-note">High reliability, already-trusted channel, supports rich collateral.</p>
-          </div>
-        </div>
-      </div>
-
       <div class="screen-grid-2">
         <div class="screen-featured">
-          <img src="../../assets/Case studies/New Trial Experience/Signup 1.jpg" loading="lazy" decoding="async" alt="WhatsApp verification: Parent verifies via WhatsApp" class="cs-img">
-          <p class="caption">WhatsApp verification — a one-time check that confirms the parent is real and establishes the channel.</p>
+          <img src="../new-trial-experience/assets/signup-1.jpg" loading="lazy" decoding="async" alt="WhatsApp verification step in the sign-up flow" class="cs-img">
+          <p class="caption">WhatsApp verification confirms the parent and sets up the channel.</p>
         </div>
         <div class="screen-featured">
-          <img src="../../assets/Case studies/New Trial Experience/Signup 2.jpg" loading="lazy" decoding="async" alt="Trial slot selection: Parents select trial slot with teacher names visible" class="cs-img">
-          <p class="caption">Slot selection — teacher names visible, building confidence. If abandoned, a 5-minute auto-reminder offers help.</p>
+          <img src="../new-trial-experience/assets/signup-2.jpg" loading="lazy" decoding="async" alt="Slot picker with teacher names visible" class="cs-img">
+          <p class="caption">Slot selection with teacher names visible. A 5-min auto-reminder fires if abandoned.</p>
         </div>
       </div>
 
-      <p>After the trial, teachers shared branded WhatsApp messages covering pricing, class formats, and onboarding timelines. Post-trial follow-up became a teacher-led, self-serve experience — no AC required.</p>
+      <p>After the trial, teachers shared branded WhatsApp messages: pricing, class formats, refund policy. Post-trial follow-up became teacher-led — no AC required.</p>
 
       <div class="screen-grid-3">
         <div class="screen-featured">
-          <img src="../../assets/Case studies/New Trial Experience/WA1_Plan pricing _Total including GST.jpg" loading="lazy" decoding="async" alt="WhatsApp collateral: Plan pricing with GST and total costs" class="cs-img">
-          <p class="caption">Pricing breakdown — clear monthly costs including taxes. No surprises, no hidden fees.</p>
+          <img src="../new-trial-experience/assets/wa1-plan-pricing-total-including-gst.jpg" loading="lazy" decoding="async" alt="Plan pricing with taxes" class="cs-img">
+          <p class="caption">Pricing — monthly cost with taxes, no hidden fees.</p>
         </div>
         <div class="screen-featured">
-          <img src="../../assets/Case studies/New Trial Experience/WA2_EMI options.jpg" loading="lazy" decoding="async" alt="WhatsApp collateral: EMI payment options" class="cs-img">
-          <p class="caption">Payment flexibility — monthly installment options for committed families.</p>
+          <img src="../new-trial-experience/assets/wa3-refund-policy.jpg" loading="lazy" decoding="async" alt="Refund policy" class="cs-img">
+          <p class="caption">Refund policy — clear exit terms.</p>
         </div>
         <div class="screen-featured">
-          <img src="../../assets/Case studies/New Trial Experience/WA3_Refund Policy.jpg" loading="lazy" decoding="async" alt="WhatsApp collateral: Refund policy and guarantees" class="cs-img">
-          <p class="caption">Refund guarantee — clear exit policy builds confidence in the purchase decision.</p>
-        </div>
-        <div class="screen-featured">
-          <img src="../../assets/Case studies/New Trial Experience/WA4_1_2 vs 1_1 Classes.jpg" loading="lazy" decoding="async" alt="WhatsApp collateral: Comparing 1:2 pair vs 1:1 solo classes" class="cs-img">
-          <p class="caption">Class format option 1 — 1:1 solo vs 1:2 pair at different price points.</p>
-        </div>
-        <div class="screen-featured">
-          <img src="../../assets/Case studies/New Trial Experience/WA5_1_2 vs 1_4 Classes.jpg" loading="lazy" decoding="async" alt="WhatsApp collateral: Comparing 1:2 pair vs 1:4 group classes" class="cs-img">
-          <p class="caption">Class format option 2 — 1:2 pair vs 1:4 group, cost vs attention trade-off.</p>
+          <img src="../new-trial-experience/assets/wa4-1-2-vs-1-1-classes.jpg" loading="lazy" decoding="async" alt="Class format comparison" class="cs-img">
+          <p class="caption">1:1 solo vs 1:2 pair — format comparison.</p>
         </div>
       </div>
 
-      <div class="cs-insight">
-        <p class="cs-insight-quote">"Channel choice is structural, not cosmetic."</p>
-        <p class="cs-insight-meta">From: Cuemath parent communication patterns.</p>
-      </div>
     </div>
 
     <div class="decision-item">
@@ -247,69 +206,25 @@
 
       <p>During the trial itself, teachers had a structured reference script — but used it only when parents asked questions. <strong>The parent pulls; the teacher doesn't push.</strong> Teachers could reference class formats (1:1, 1:2, 1:4) naturally, never as a pitch.</p>
 
-      <div class="decision-alts">
-        <p class="decision-alts-label">In-trial conversation</p>
-        <div class="decision-alts-cards">
-          <div class="decision-alts-card">
-            <p class="decision-alts-card-name">Hard script</p>
-            <p class="decision-alts-card-note">Memorize pricing, recite before close. Feels rehearsed, breaks lesson quality.</p>
-          </div>
-          <div class="decision-alts-card">
-            <p class="decision-alts-card-name">No teacher mention, post-trial UI only</p>
-            <p class="decision-alts-card-note">In-session parent questions go unanswered.</p>
-          </div>
-          <div class="decision-alts-card decision-alts-card--picked">
-            <p class="decision-alts-card-name">Soft talking points</p>
-            <p class="decision-alts-card-note">Teacher answers if asked, doesn't initiate. Authentic, contextual.</p>
-          </div>
-        </div>
-      </div>
-
       <div class="screen-grid-2">
         <div class="screen-featured">
-          <img src="../../assets/Case studies/New Trial Experience/Teacher Goal Handling.jpg" loading="lazy" decoding="async" alt="Teacher interface: Goal Handling with structured reference script" class="cs-img">
-          <p class="caption">Teacher side — structured reference script. "Repeat the goal," "Let parent talk," then "Validate & explain." Teachers answer authentically about class formats and pricing.</p>
+          <img src="../new-trial-experience/assets/teacher-goal-handling.jpg" loading="lazy" decoding="async" alt="Teacher reference script during the trial class" class="cs-img">
+          <p class="caption">Teacher side — reference script: repeat the goal, let parent talk, validate and explain.</p>
         </div>
         <div class="screen-featured">
-          <img src="../../assets/Case studies/New Trial Experience/Parent Goal Handling.jpg" loading="lazy" decoding="async" alt="Parent interface: Goal Handling shows natural conversation experience" class="cs-img">
-          <p class="caption">Parent side — clean, conversational experience. Parents never see the script or sales messaging. Answers feel authentic because they're contextual, not memorized.</p>
+          <img src="../new-trial-experience/assets/parent-goal-handling.jpg" loading="lazy" decoding="async" alt="Parent surface during the trial class — no script visible" class="cs-img">
+          <p class="caption">Parent side — clean conversation. Parents never see the script.</p>
         </div>
       </div>
 
-      <div class="cs-insight">
-        <p class="cs-insight-quote">"Teachers are educators, not salespeople — let them build trust, not close."</p>
-        <p class="cs-insight-meta">From: 22-trial teacher-led close test.</p>
-      </div>
     </div>
 
     <div class="decision-item">
       <p class="decision-item-title">Decision 3 — Direct enrollment immediately after the trial, with teacher present</p>
-      <p>The moment the session ended, parents saw an enrollment interface on their device — not a form. Three plan options, pricing visible, one-tap payment. <strong>Captures intent at peak conviction, instead of after the moment passes.</strong> No AC call. If they had questions, the teacher was still present.</p>
+      <p>The moment the session ended, parents saw an enrollment interface on their device — not a form. Three plan options, pricing visible, one-tap payment. <strong>Captures the decision while they're still in the moment, instead of days later.</strong> No AC call. If they had questions, the teacher was still present.</p>
 
       <p>A secondary win we didn't design for: with no AC in the loop, the ad-hoc discounts (10–25%) ACs used to offer when they sensed a lead slipping disappeared too — parents paid the standard price, and revenue per enrollment held firm.</p>
 
-      <div class="decision-alts">
-        <p class="decision-alts-label">Post-trial enrollment</p>
-        <div class="decision-alts-cards">
-          <div class="decision-alts-card">
-            <p class="decision-alts-card-name">AC follow-up call within 24h</p>
-            <p class="decision-alts-card-note">Intent cools; teacher is no longer in the moment.</p>
-          </div>
-          <div class="decision-alts-card">
-            <p class="decision-alts-card-name">Email enrollment link 1h post-trial</p>
-            <p class="decision-alts-card-note">Peak conviction passes; parent moves on to other things.</p>
-          </div>
-          <div class="decision-alts-card decision-alts-card--picked">
-            <p class="decision-alts-card-name">Direct in-screen enrollment, teacher present</p>
-            <p class="decision-alts-card-note">Captures intent at peak; +9.6% trial-to-paid.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="cs-insight">
-        <p class="cs-insight-quote">"Convert at peak conviction, not after the moment passes."</p>
-        <p class="cs-insight-meta">From: Post-launch LSQ data.</p>
-      </div>
     </div>
 
   </div>
@@ -338,7 +253,7 @@
       <div class="stat">
         <p class="stat-label">Trial → Paid</p>
         <p class="stat-number">+9.6%</p>
-        <p class="stat-desc">Parents enrolled at peak conviction with teacher present, instead of waiting days for an AC follow-up call.</p>
+        <p class="stat-desc">Parents enrolled in the moment with the teacher present, instead of waiting days for an AC callback.</p>
       </div>
       <div class="stat">
         <p class="stat-label">Teacher intro adoption</p>
@@ -348,15 +263,7 @@
     </div>
   </div>
 
-  <p>The project shipped and the results aligned with — and exceeded — our targets.</p>
-
-  <h3>What changed for each role</h3>
-
-  <p>For parents — trial booking time collapsed from 48–72 hours to under 5 minutes. They could book on their own schedule, meet their teacher before the session, and enroll immediately after — all without coordinating with a human scheduler.</p>
-
-  <p>For teachers — pre-trial connection via the intro message became the norm. Post-trial, teachers reported no pressure to close the sale; they answered questions if asked, then parents chose enrollment on their own.</p>
-
-  <p>For ACs — the 70% reduction in intervention held, with clear exception-handling workflows. The team scaled without growing headcount as trial volume increased; system and teachers absorbed the load.</p>
+  <p>The project shipped and the results matched the brief: 70% AC reduction held, conversion held, and the team scaled without growing headcount as trial volume increased.</p>
 
 
   <!-- 05 REFLECTION -->
@@ -368,8 +275,8 @@
 
   <div class="lessons-list">
     <div class="lesson">
-      <p class="decision-item-title">The reframe was distribution, not optimization</p>
-      <p>The breakthrough wasn't making teachers better at selling — it was distributing the work entirely. Teachers became trust anchors (pre-trial intro, in-trial presence). The system handled scheduling, reminders, and self-checkout. The parent owned the decision moment. ACs handled exceptions. No single role broke under the weight of the next. The reframe wasn't <em>"how do we optimize ACs"</em> — it was <em>"who should be doing each part of this work?"</em></p>
+      <p class="decision-item-title">The shift was distribution, not optimization</p>
+      <p>The breakthrough wasn't making teachers better at selling — it was distributing the work entirely. Teachers became the trust points (pre-trial intro, in-trial presence). The system handled scheduling, reminders, and checkout. The parent owned the decision moment. ACs handled exceptions. No single role broke under the weight of the next. The question wasn't <em>"how do we make ACs faster"</em> — it was <em>"who should be doing each part of this work?"</em></p>
     </div>
 
     <div class="lesson">
@@ -484,7 +391,7 @@
 
 <!-- Footer -->
 <a href="../../work/leap-learning-system/index.html" class="cs-next">
-  <div class="cs-next-img" style="background-image: url('../../assets/Case studies/Learning System Architecture/Learning System Architecture_Card Thumbnail.jpg');"></div>
+  <div class="cs-next-img" style="background-image: url('../leap-learning-system/assets/learning-system-architecture-card-thumbnail.jpg');"></div>
   <div class="cs-next-body">
     <p class="cs-next-label">Next case study</p>
     <h2 class="cs-next-title">Learning System Architecture</h2>
