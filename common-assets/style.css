@@ -124,7 +124,7 @@ body {
 /* Type 5 — LABEL */
 .cover-eyebrow { font-family: var(--font-body); font-size: var(--text-xs); font-weight: var(--fw-semibold); letter-spacing: var(--ls-caps); text-transform: uppercase; color: var(--color-ink-3); margin-top: 0; margin-bottom: 20px; }
 /* PAGE TITLE — text-5xl token (56px), clamped for mobile */
-.cover h1 { font-family: var(--font-display); font-size: clamp(40px, 7vw, 56px); line-height: 1.05; font-weight: var(--fw-bold); letter-spacing: -0.03em; color: var(--color-ink); margin-bottom: 16px; }
+.cover h1 { font-family: var(--font-display); font-size: clamp(36px, 5.5vw, 48px); line-height: 1.1; font-weight: var(--fw-bold); letter-spacing: -0.025em; color: var(--color-ink); margin-bottom: 16px; text-wrap: balance; }
 /* Type 3 — BODY (lede, cover subtitle) */
 .cover-subtitle { font-family: var(--font-body); font-size: var(--text-base); line-height: 1.6; font-weight: var(--fw-regular); color: var(--color-ink-2); margin-bottom: 28px; max-width: 540px; }
 .lede { font-family: var(--font-body); font-size: var(--text-base); line-height: 1.6; color: var(--color-ink-2); margin-bottom: 32px; font-weight: var(--fw-regular); }
