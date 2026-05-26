@@ -412,30 +412,32 @@
 <body>
 <div id="cursor-dot"></div>
 
+<!-- NAV:START — auto-synced from common-assets/navbar.html · run scripts/sync-nav.py to update -->
 <nav class="site-nav">
-  <a href="../index.html" class="nav-name">Aasif Anwar</a>
+  <a href="/" class="nav-name" data-nav-home>Aasif Anwar</a>
   <div class="nav-links">
-    <a href="../index.html#work">works</a>
-    <a href="../index.html#about">about</a>
-    <a href="../index.html#recommendations">peers</a>
-    <a href="../index.html#contact">connect</a>
+    <a href="/#work" data-nav-link="work">works</a>
+    <a href="/#about" data-nav-link="about">about</a>
+    <a href="/#recommendations" data-nav-link="peers">peers</a>
+    <a href="/#contact" data-nav-link="connect">connect</a>
     <span class="nav-zone-sep" aria-hidden="true"></span>
-    <a href="./" aria-current="page">system</a>
-    <a href="https://drive.google.com/file/d/1NtfsJ9CRBjPtg234L0eRPxfK_al4kFGT/view?usp=sharing" target="_blank" rel="noopener">resume</a>
+    <a href="https://drive.google.com/file/d/1NtfsJ9CRBjPtg234L0eRPxfK_al4kFGT/view?usp=sharing" target="_blank" rel="noopener" data-nav-link="resume">resume</a>
+    <a href="/design-system/" data-nav-link="design-system">design system</a>
   </div>
   <button class="nav-burger" id="nav-burger" aria-label="Open menu">
     <span></span><span></span><span></span>
   </button>
 </nav>
 <div class="nav-mobile-menu" id="nav-mobile-menu">
-  <a href="../index.html#work" class="nav-mobile-link">works</a>
-  <a href="../index.html#about" class="nav-mobile-link">about</a>
-  <a href="../index.html#recommendations" class="nav-mobile-link">peers</a>
-  <a href="../index.html#contact" class="nav-mobile-link">connect</a>
+  <a href="/#work" class="nav-mobile-link" data-nav-link="work">works</a>
+  <a href="/#about" class="nav-mobile-link" data-nav-link="about">about</a>
+  <a href="/#recommendations" class="nav-mobile-link" data-nav-link="peers">peers</a>
+  <a href="/#contact" class="nav-mobile-link" data-nav-link="connect">connect</a>
   <div class="nav-mobile-divider" aria-hidden="true"></div>
-  <a href="./" class="nav-mobile-link" aria-current="page">system</a>
-  <a href="https://drive.google.com/file/d/1NtfsJ9CRBjPtg234L0eRPxfK_al4kFGT/view?usp=sharing" target="_blank" rel="noopener" class="nav-mobile-link">resume</a>
+  <a href="https://drive.google.com/file/d/1NtfsJ9CRBjPtg234L0eRPxfK_al4kFGT/view?usp=sharing" target="_blank" rel="noopener" class="nav-mobile-link" data-nav-link="resume">resume</a>
+  <a href="/design-system/" class="nav-mobile-link" data-nav-link="design-system">design system</a>
 </div>
+<!-- NAV:END -->
 
 <div class="ds-page">
 
@@ -746,8 +748,8 @@
     <!-- Top navigation -->
     <div class="ds-component">
       <div class="ds-component-header">
-        <span class="ds-component-title">Top navigation · two-zone</span>
-        <span class="ds-component-meta">.site-nav · 64px sticky · scroll-anchors left, page-links right · .nav-zone-sep divides the two zones · purple-4 on hover</span>
+        <span class="ds-component-title">Top navigation · two-zone · shared component</span>
+        <span class="ds-component-meta">Single source: /common-assets/navbar.html · synced into every page between &lt;!-- NAV:START --&gt; and &lt;!-- NAV:END --&gt; markers by scripts/sync-nav.py. Edit the source → run the script → propagates everywhere as static HTML (zero flash). .site-nav · 64px sticky · scroll-anchors left, page-links right · .nav-zone-sep divides the two zones · purple-4 on hover.</span>
       </div>
       <div class="ds-component-preview no-pad" style="background: var(--color-ink);">
         <div style="display: flex; justify-content: space-between; align-items: center; height: 64px; padding: 0 32px;">
@@ -758,8 +760,8 @@
             <a href="#" style="font-size: 14px; font-weight: 600; color: #FFFFFF; text-decoration: none;">peers</a>
             <a href="#" style="font-size: 14px; font-weight: 600; color: #FFFFFF; text-decoration: none;">connect</a>
             <span style="display: inline-block; width: 1px; height: 14px; background: rgba(255,255,255,0.25); margin: 0 4px;"></span>
-            <a href="#" style="font-size: 14px; font-weight: 600; color: #FFFFFF; text-decoration: none;">system</a>
             <a href="#" style="font-size: 14px; font-weight: 600; color: #FFFFFF; text-decoration: none;">resume</a>
+            <a href="#" style="font-size: 14px; font-weight: 600; color: #FFFFFF; text-decoration: none;">design system</a>
           </div>
         </div>
       </div>
@@ -778,8 +780,8 @@
           <a href="#" style="font-size: 16px; font-weight: 600; color: #FFFFFF; text-decoration: none; padding: 16px 24px;">peers</a>
           <a href="#" style="font-size: 16px; font-weight: 600; color: #FFFFFF; text-decoration: none; padding: 16px 24px;">connect</a>
           <div style="height: 1px; background: rgba(255,255,255,0.12); margin: 12px 24px;"></div>
-          <a href="#" style="font-size: 16px; font-weight: 600; color: #FFFFFF; text-decoration: none; padding: 16px 24px;">system</a>
           <a href="#" style="font-size: 16px; font-weight: 600; color: #FFFFFF; text-decoration: none; padding: 16px 24px;">resume</a>
+          <a href="#" style="font-size: 16px; font-weight: 600; color: #FFFFFF; text-decoration: none; padding: 16px 24px;">design system</a>
         </div>
       </div>
     </div>
@@ -1432,22 +1434,6 @@
 
 <script>
 (function() {
-  /* ── Burger toggle ── */
-  var burger = document.getElementById('nav-burger');
-  var mobileMenu = document.getElementById('nav-mobile-menu');
-  if (burger && mobileMenu) {
-    burger.addEventListener('click', function() {
-      burger.classList.toggle('open');
-      mobileMenu.classList.toggle('open');
-    });
-    mobileMenu.querySelectorAll('.nav-mobile-link').forEach(function(link) {
-      link.addEventListener('click', function() {
-        burger.classList.remove('open');
-        mobileMenu.classList.remove('open');
-      });
-    });
-  }
-
   /* ── Custom cursor dot ── */
   var dot = document.getElementById('cursor-dot');
   if (dot) {

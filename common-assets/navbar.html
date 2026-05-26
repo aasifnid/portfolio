@@ -1,8 +1,24 @@
 <nav class="site-nav">
-  <a href="/" class="nav-name">Md Aasif Anwar</a>
+  <a href="/" class="nav-name" data-nav-home>Aasif Anwar</a>
   <div class="nav-links">
-    <a href="/#work">works</a>
-    <a href="/#about">about</a>
-    <a href="https://drive.google.com/file/d/1NtfsJ9CRBjPtg234L0eRPxfK_al4kFGT/view?usp=sharing" target="_blank" rel="noopener">resume</a>
+    <a href="/#work" data-nav-link="work">works</a>
+    <a href="/#about" data-nav-link="about">about</a>
+    <a href="/#recommendations" data-nav-link="peers">peers</a>
+    <a href="/#contact" data-nav-link="connect">connect</a>
+    <span class="nav-zone-sep" aria-hidden="true"></span>
+    <a href="https://drive.google.com/file/d/1NtfsJ9CRBjPtg234L0eRPxfK_al4kFGT/view?usp=sharing" target="_blank" rel="noopener" data-nav-link="resume">resume</a>
+    <a href="/design-system/" data-nav-link="design-system">design system</a>
   </div>
+  <button class="nav-burger" id="nav-burger" aria-label="Open menu">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
+<div class="nav-mobile-menu" id="nav-mobile-menu">
+  <a href="/#work" class="nav-mobile-link" data-nav-link="work">works</a>
+  <a href="/#about" class="nav-mobile-link" data-nav-link="about">about</a>
+  <a href="/#recommendations" class="nav-mobile-link" data-nav-link="peers">peers</a>
+  <a href="/#contact" class="nav-mobile-link" data-nav-link="connect">connect</a>
+  <div class="nav-mobile-divider" aria-hidden="true"></div>
+  <a href="https://drive.google.com/file/d/1NtfsJ9CRBjPtg234L0eRPxfK_al4kFGT/view?usp=sharing" target="_blank" rel="noopener" class="nav-mobile-link" data-nav-link="resume">resume</a>
+  <a href="/design-system/" class="nav-mobile-link" data-nav-link="design-system">design system</a>
+</div>
