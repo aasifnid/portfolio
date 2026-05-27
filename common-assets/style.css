@@ -245,7 +245,7 @@ body {
 .section-num {
   display: block;
   font-family: var(--font-body);
-  font-size: var(--text-xs);
+  font-size: var(--text-sm);
   font-weight: var(--fw-semibold);
   letter-spacing: var(--ls-caps);
   text-transform: uppercase;
@@ -293,9 +293,9 @@ body {
 /* SECTION TITLE — text-3xl token (32px), Outfit Bold. Identical spec to
    .cover-outcome-num and all metric numbers — section titles and metrics share
    the same typographic identity. */
-h2 { font-family: var(--font-display); font-size: var(--text-3xl); line-height: 1.15; font-weight: var(--fw-bold); color: var(--color-ink); margin-bottom: 16px; margin-top: 64px; letter-spacing: -0.02em; }
+h2 { font-family: var(--font-display); font-size: var(--text-3xl); line-height: 1.15; font-weight: var(--fw-bold); color: var(--color-ink); margin-bottom: var(--space-bond); margin-top: var(--space-section); letter-spacing: -0.02em; }
 @media (max-width: 640px) { h2 { font-size: var(--text-2xl); } }
-.section-head + h2 { margin-top: 16px; }
+.section-head + h2 { margin-top: var(--space-bond); }
 .section-head + .section-title { margin-top: 0; }
 
 /* Type 3 — BODY */
@@ -359,14 +359,18 @@ blockquote { font-family: var(--font-display); font-size: var(--text-callout); l
 .state-arrow { font-size: var(--text-sm); color: var(--neutral-700); }
 
 /* ─── Decision block (typographic, no card chrome) ─── */
-.decisions-list { margin: 56px 0; display: flex; flex-direction: column; gap: 64px; }
-.lessons-list { margin: 32px 0 0; display: flex; flex-direction: column; gap: 48px; }
+.decisions-list { margin: var(--space-block) 0; display: flex; flex-direction: column; gap: var(--space-section); }
+.lessons-list { margin: var(--space-block) 0 0; display: flex; flex-direction: column; gap: var(--space-section); }
 .lesson p:last-child { margin-bottom: 0; }
 .decision-item {
   background: transparent;
   border: none;
   border-radius: 0;
   padding: 0;
+  /* Flex column: flex items NEVER margin-collapse, so the owl top-margins below produce
+     identical gaps for every child regardless of type (block image vs grid image-pair). */
+  display: flex;
+  flex-direction: column;
 }
 /* SUB-TITLE — text-xl token (20px / 600 semibold / DM Sans body).
    Format: "Decision 1 — Make the wheel the interface, not a reference diagram" */
@@ -375,17 +379,26 @@ blockquote { font-family: var(--font-display); font-size: var(--text-callout); l
   font-size: var(--text-xl); line-height: 1.4; font-weight: var(--fw-semibold);
   letter-spacing: 0;
   color: var(--color-ink);
-  margin: 0 0 16px 0; padding: 0;
+  margin: 0; padding: 0;
   display: block;
 }
-/* Inside a .decision-item, the only thing we override on <p> is margin-bottom
-   (tighter rhythm between body paragraphs). Font-size/color/line-height MUST
-   stay unset here — otherwise this rule's specificity (0,1,1) beats class
-   selectors like .caption / .cs-insight-quote / .decision-item-num (0,1,0)
-   and forces them to render as body text. The default <p> rule supplies
-   body Type 3 styling. */
-.decision-item p { margin-bottom: 16px; }
-.decision-item p:last-child { margin-bottom: 0; }
+/* NOTE: never set font-size/color/line-height on `.decision-item p` or `.decision-item > *` —
+   its specificity (≥0,1,1) beats class selectors like .caption / .cs-insight-quote and would
+   force them to render as body text. These rules touch margins only. */
+/* Decision flow rhythm — owl pattern, top-margins ONLY so margins never collapse.
+   Grid/flex containers (.cs-img-pair, .cs-img-grid) don't margin-collapse the way single
+   block images do; using only top margins (every bottom is 0) removes collapse entirely,
+   so every block — paragraph, table, single image, image pair/grid, video — is spaced
+   identically. Tokens only. */
+/* Scoped under .decisions-list so the reset (0,2,0) out-specifies every element's own margin
+   (.caption, .cs-table-wrap, .video-embed, .cs-img* are all 0,1,0). Reset ALL margins to 0 first,
+   then add gaps via top-margins only — so nothing can add or collapse. */
+.decisions-list .decision-item > * { margin: 0; }
+.decisions-list .decision-item > * + * { margin-top: var(--space-block); }                    /* 32 — default block gap */
+.decisions-list .decision-item > p + p { margin-top: var(--space-bond); }                     /* 16 — paragraph to paragraph */
+.decisions-list .decision-item > .decision-item-title + * { margin-top: var(--space-bond); }  /* 16 — title to its body */
+.decisions-list .decision-item > .caption { margin-top: var(--space-bond); }                  /* 16 — media to its caption */
+.decisions-list .decision-item > .caption + * { margin-top: var(--space-block); }             /* 32 — caption to next block */
 
 /* Alternatives-considered sub-block — card-spread layout.
    3 cards in a row, all on surface-1 fill. Picked card carries a 2px accent
@@ -475,7 +488,7 @@ img.decision-alts-card-thumb { display: block; }
   border-radius: 0;
   overflow: hidden;
   box-shadow: 0 1px 3px rgba(0,0,0,0.04);
-  margin: 32px 0;
+  margin: var(--space-block) 0;
 }
 .cs-table {
   width: 100%;
@@ -572,13 +585,23 @@ img.decision-alts-card-thumb { display: block; }
   font-size: var(--text-sm);
   line-height: 1.5;
   color: var(--color-ink-3);
-  margin: 8px 0 32px;
+  margin: var(--space-bond) 0 var(--space-block);
   max-width: 720px;
   font-weight: var(--fw-regular);
 }
 /* CAPTION — single-line caption identifier */
-.img-label { font-family: var(--font-body); font-size: var(--text-sm); font-weight: var(--fw-regular); color: var(--color-ink-3); line-height: 1.5; margin-top: 8px; margin-bottom: 32px; }
-.video-embed { margin: 32px 0; border: 1px solid var(--color-border); overflow: hidden; aspect-ratio: 16 / 9; }
+.img-label { font-family: var(--font-body); font-size: var(--text-sm); font-weight: var(--fw-regular); color: var(--color-ink-3); line-height: 1.5; margin-top: var(--caption-gap); margin-bottom: 32px; }
+.video-embed { margin: var(--space-block) 0; border: 1px solid var(--color-border); overflow: hidden; aspect-ratio: 16 / 9; }
+/* Media (video, table) directly followed by a caption: collapse its bottom margin so the gap is exactly --caption-gap */
+.video-embed:has(+ .caption),
+.cs-table-wrap:has(+ .caption) { margin-bottom: 0; }
+
+/* Outside .decision-item (e.g. the overview, Impact), keep media gaps uniform too: zero the
+   preceding element's bottom margin so the media's own top margin (--space-block) is the sole gap,
+   independent of grid/flex margin-collapse quirks. (.decision-item uses the owl rhythm above.) */
+:is(p, .caption):has(+ :is(.cs-img, .cs-img-pair, .cs-img-grid, .video-embed, .cs-table-wrap)) {
+  margin-bottom: 0;
+}
 .video-embed iframe,
 .video-embed video { width: 100%; height: 100%; display: block; border: none; }
 
@@ -667,12 +690,13 @@ img.decision-alts-card-thumb { display: block; }
 .cs-img-pair,
 .cs-img-grid {
   display: grid; grid-template-columns: 1fr 1fr; gap: 16px;
-  margin: 32px 0 8px;
+  margin: var(--space-block) 0 0;
 }
+.cs-img-grid--3 { grid-template-columns: repeat(3, 1fr); }
 .cs-img-grid--4 { grid-template-columns: repeat(4, 1fr); }
 .cs-img-pair > figure,
 .cs-img-grid > figure {
-  display: flex; flex-direction: column; gap: 8px;
+  display: flex; flex-direction: column; gap: var(--caption-gap);
   margin: 0;
 }
 .cs-img-pair img,
@@ -683,7 +707,7 @@ img.decision-alts-card-thumb { display: block; }
 }
 .cs-img-pair img:hover,
 .cs-img-grid img:hover { opacity: 0.92; }
-/* CAPTION — text-sm token (14px). Centered figcaption under paired/grid images. */
+/* CAPTION — text-sm token (14px). Left-aligned figcaption under paired/grid images. */
 .cs-img-pair figcaption,
 .cs-img-grid figcaption {
   font-family: var(--font-body);
@@ -691,12 +715,13 @@ img.decision-alts-card-thumb { display: block; }
   font-weight: var(--fw-regular);
   line-height: 1.5;
   color: var(--color-ink-3);
-  text-align: center;
+  text-align: left;
   margin: 0;
 }
 @media (max-width: 640px) {
   .cs-img-pair,
   .cs-img-grid,
+  .cs-img-grid--3,
   .cs-img-grid--4 { grid-template-columns: 1fr; gap: 24px; }
 }
 
@@ -1397,7 +1422,7 @@ img.decision-alts-card-thumb { display: block; }
 #scroll-progress { position: fixed; top: 0; left: 0; height: 1px; width: 0%; background: var(--color-accent); z-index: 9999; transition: width 0.08s linear; }
 
 /* ─── Case study images ─── */
-.cs-img { width: 100%; border-radius: 0; display: block; cursor: zoom-in; margin: 32px 0 0; border: 1px solid var(--color-border); transition: opacity var(--ease); }
+.cs-img { width: 100%; border-radius: 0; display: block; cursor: zoom-in; margin: var(--space-block) 0 0; border: 1px solid var(--color-border); transition: opacity var(--ease); }
 .cs-img:hover { opacity: 0.92; }
 
 .cs-img-placeholder {

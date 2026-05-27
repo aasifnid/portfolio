@@ -84,7 +84,7 @@
     </div>
     <div class="cover-context-item">
       <span class="cover-context-label">Team</span>
-      <span class="cover-context-value">PM · Motion designer · Engineers · Curriculum team · Roots (emotional intelligence consultancy)</span>
+      <span class="cover-context-value">PM · Motion designer · Engineers · Curriculum team · Roots (clinical consultancy)</span>
     </div>
     <div class="cover-context-item">
       <span class="cover-context-label">Timeline</span>
@@ -106,10 +106,6 @@
   </div>
 
   <img src="../feel-check/assets/intro.jpg" fetchpriority="high" decoding="async" alt="Feel Check — student-led emotional check-in interface" class="cs-img">
-
-  <p class="cover-primer">Feel Check moves students through four steps of self-check — Senses, Body, Heart, Mind — surfaces a feeling, and routes them to a short activity to regulate.</p>
-
-  <a href="https://www.figma.com/design/k27AzLfhyS7AbuIZhLIFMY/Portfolio-2026?node-id=1-4377&t=M7FOPCoe9mE85zor-1" target="_blank" rel="noopener" class="figma-link">Open in Figma →</a>
 </div>
 
 <div class="page">
@@ -121,13 +117,9 @@
 
   <h2>The Problem</h2>
 
-  <div class="cs-insight">
-    <p class="cs-insight-quote">Tutors couldn't see how students arrived emotionally — and 15-20 min of every 50 min class went to settling instead of teaching.</p>
-  </div>
+  <p>Students rarely arrive with a clear head — a tough exam, a fight at home, or just a long day can leave them stressed, tired, or distracted. The tutor had no way of knowing. It showed up mid-class. By then, half the session was gone.</p>
 
-  <p>When a student arrived stressed, tired, or distracted, the tutor had no way of knowing. Stress, fatigue, or distraction would surface mid-class — and by the time the tutor caught it, half the session was gone.</p>
-
-  <p>Class-recording reviews and ongoing tutor feedback showed it consistently: the student's state was a constant; the tutor's response wasn't. There was no standard, and no tool. A session delivering barely half its time to instruction isn't the product Cuemath promised — weaker sessions meant weaker progress.</p>
+  <p>Class recordings and in-house tutor feedback showed the same thing again and again. Every tutor handled it differently. There was no standard, and no tool. Weaker sessions meant weaker progress — not what Cuemath promised.</p>
 
 
   <!-- 02 ROLE -->
@@ -137,14 +129,43 @@
 
   <h2>Role</h2>
 
-  <p><strong>End-to-end design:</strong> Cuemath's most complex Social Emotional Learning (SEL) tool, designed for Grades 3-8, from clinical spec to four-phase rollout.</p>
+  <p>I owned the design of Feel Check, from clinical spec to a four-phase rollout.</p>
 
   <ul class="cs-list">
-    <li><strong>End-to-end UX/UI</strong> — 4-step self-check, emotion mapping, regulation activity</li>
-    <li><strong>Broader SEL system design</strong> — Feel Check + Focus Zone + Riddle Zone + cross-tool feedback</li>
-    <li><strong>Supporting materials</strong> — Tutor Guide, Emotions and Heart Options glossaries, emailers</li>
-    <li><strong>Cross-functional collaboration</strong> — PM (scope), Engineering (build), Curriculum (content), Motion (regulation videos), Roots Consultancy (clinical spec)</li>
+    <li><strong>End-to-end design of the check-in flow</strong> — Wheel of Awareness, RULER emotion zones, and regulation activities</li>
+    <li><strong>Broader SEL system &amp; support</strong> — the complementary tools (Focus Zone, Riddle Zone), a tutor feedback flow, and supporting materials (Tutor Guide, Emotion and Wheel of Awareness options glossary, Comms)</li>
+    <li><strong>Cross-functional collaboration</strong> — PM (scope), Engineering (build), Curriculum (content), Motion (regulation videos), Roots Global Educational Consultancy (clinical spec)</li>
   </ul>
+
+
+  <!-- HOW IT WORKS — overview bridge (unnumbered; promote to a numbered nav section if it stays) -->
+  <h2 id="flow">How Feel Check works</h2>
+  <p>One wheel, three steps. Students reflect on how they feel, name the emotion, then pick a way to reset — all within five minutes before a class begins.</p>
+
+  <div class="video-embed">
+    <video id="flow-video" autoplay muted loop playsinline preload="metadata" title="Click to play fullscreen" style="cursor: zoom-in;">
+      <source src="../feel-check/assets/feel-check-flow.mp4" type="video/mp4">
+      Your browser does not support video playback.
+    </video>
+  </div>
+  <p class="caption">A walkthrough of the live-class flow, recorded by me. Real student sessions stay confidential.</p>
+
+  <div class="cs-img-grid cs-img-grid--3">
+    <figure>
+      <img src="../feel-check/assets/feel-check-flow-1-awareness.jpg" loading="lazy" decoding="async" alt="Wheel of Awareness — Heart question, student picks how their heart feels" class="cs-img">
+      <figcaption>Step 1 — Wheel of Awareness</figcaption>
+    </figure>
+    <figure>
+      <img src="../feel-check/assets/feel-check-flow-2-zones.jpg" loading="lazy" decoding="async" alt="RULER emotion zone — red zone, student picks the specific emotion" class="cs-img">
+      <figcaption>Step 2 — RULER Emotion Zones</figcaption>
+    </figure>
+    <figure>
+      <img src="../feel-check/assets/feel-check-flow-3-activities.jpg" loading="lazy" decoding="async" alt="Regulation activity picker — curated activities matched to the emotion" class="cs-img">
+      <figcaption>Step 3 — Regulation activities</figcaption>
+    </figure>
+  </div>
+
+  <a href="https://www.figma.com/design/k27AzLfhyS7AbuIZhLIFMY/Portfolio-2026?node-id=1-4377&t=M7FOPCoe9mE85zor-1" target="_blank" rel="noopener" class="figma-link">Open in Figma →</a>
 
 
   <!-- 03 PROCESS -->
@@ -159,9 +180,9 @@
 
     <div class="decision-item">
       <p class="decision-item-title">Decision 1 — Make Unsure a state, not a fallback</p>
-      <p>The spec had a "Skip" button at Body, Heart, and Mind. It let a kid bypass the question. After researching with multiple users, I concluded Skip was the wrong frame: <strong>Unsure should hold a place as an option, not a fallback.</strong> Skip treats uncertainty as something to bypass — but uncertainty IS a state, and RULER needs that state to read.</p>
+      <p>The spec had a "Skip" button at Body, Heart, and Mind. But the flow runs on honest reflection — a skipped answer maps to the wrong zone, and regulation built on the wrong zone does nothing for the state the kid is actually in. Uncertainty isn't a failure; it's a real, common state. <strong>If an adult isn't always sure how they feel, expecting a child to be sure every time is the wrong bar.</strong> So I proposed Unsure in place of Skip — a state the flow registers and routes on, not an exit that throws the reflection away.</p>
 
-      <p>But the spec still required students to name an emotion even after three Unsures. <strong>Asking a child to name an emotion when they truly don't know isn't a check-in — it's a forced answer.</strong> The team agreed: when all three Unsures stack, the flow skips emotion-naming and routes to a curated set of activities — meant for "I don't know," not skipped.</p>
+      <p>But the spec still required students to name an emotion even after three Unsures. <strong>Asking a child to name an emotion when they truly don't know isn't a check-in — it's a forced answer.</strong> The team agreed: when all three Unsures stack, the flow drops the emotion step and routes to a curated set of activities — meant for "I don't know," not ignored.</p>
 
       <div class="cs-table-wrap">
       <table class="cs-table">
@@ -225,7 +246,7 @@
           <img src="../feel-check/assets/D3_G5-8.jpg" loading="lazy" decoding="async" alt="G5-8 Body Heart Mind Unsure rates" class="cs-img">
         </figure>
       </div>
-      <p class="caption">Unsure rates per stage by grade band. Body the hardest to name (G3–4: 23.5%, G5–8: 20.1%).</p>
+      <p class="caption">Unsure rates per stage by grade band. Body the hardest to name (G3–4: 22.3%, G5–8: 20.5%).</p>
 
       <img src="../feel-check/assets/d3-regulation-edge-cases.jpg" loading="lazy" decoding="async" alt="Regulation activities picked by students who reached the all-Unsure path" class="cs-img">
       <p class="caption">What the 119 all-Unsure students picked, by grade. They engaged with the activities.</p>
@@ -233,28 +254,12 @@
     </div>
 
     <div class="decision-item">
-      <p class="decision-item-title">Decision 2 — Keep the wheel continuous from check-in to regulation</p>
-      <p>The spec called for a "four-quadrant wheel" with sequential activation. The rest was mine. <strong>The wheel had to stay continuous — same shape, same metaphor, from check-in through regulation activity.</strong> Any shift in form would cost seconds in a 5-minute flow.</p>
+      <p class="decision-item-title">Decision 2 — Replace clinical vocabulary with words children actually use</p>
+      <p>The spec used clinical labels — "Sparkling," "Affirmation," "Set Intention." I doubted they'd land for kids, but Roots was the clinical authority and the team deferred. When I watched the in-house recordings, the doubt held — students hesitated, asked what they meant, or skipped. <strong>Vocabulary is interaction.</strong> I asked for the change.</p>
 
-      <p>I tested grids, modal sequences, and full-screen flows; the circular form held the framework intact. Within that shape, I tried atmospheres, bold icons, and line icons; line icons were clearest. Animation pushed to v2.</p>
+      <p>Direct synonyms ("Sparkling" → "Joyful") still felt adult. We rewrote them in plain, kid-friendly words ("Affirmation" → "Get Ready!", "Set Intention" → "Set a Goal!") and took it back to Roots to sign off. After rollout, tutors stopped reporting confusion.</p>
 
-      <img src="../feel-check/assets/ideation-for-options.jpg" loading="lazy" decoding="async" alt="Early sketches exploring how to bring the Wheel of Awareness to a screen" class="cs-img">
-      <p class="caption">Early ideation — bringing the Wheel of Awareness to a screen.</p>
-
-      <img src="../feel-check/assets/options-for-shape.jpg" loading="lazy" decoding="async" alt="Visual styles I tested — atmospheres, bold icons, then line icons" class="cs-img">
-      <p class="caption">Visual styles I tried — atmospheres, bold icons, line icons (picked).</p>
-
-      <p>In testing, students moved through all four stages without asking where to click — the shape showed them.</p>
-
-      <img src="../feel-check/assets/zone-of-regulation.jpg" loading="lazy" decoding="async" alt="Regulation activity menu, also in wheel form" class="cs-img">
-      <p class="caption">Regulation menu uses the same wheel — framework stays continuous.</p>
-    </div>
-
-    <div class="decision-item">
-      <p class="decision-item-title">Decision 3 — Replace clinical vocabulary with words children actually use</p>
-      <p>The spec used clinical labels — "Sparkling," "Affirmation," "Set Intention." I doubted they'd land for kids, but Roots was the clinical authority and the team deferred. When I monitored in-house recordings, the doubt held — students hesitated, asked what they meant, or skipped. <strong>Vocabulary is interaction.</strong> I asked for the change. Direct synonyms ("Sparkling" → "Joyful") still felt adult. We rewrote in child-natural language ("Affirmation" → "Get Ready!", "Set Intention" → "Set a Goal!") and took the wording back to Roots for sign-off. After rollout, tutors stopped flagging confusion.</p>
-
-      <p>Vocabulary varied by age: Grade 3-4 used 4 simpler emotions; Grade 5-8 used 6 more complex. <em>(Why metrics split by band.)</em></p>
+      <p>Vocabulary varied by age: Grade 3-4 used 4 simpler emotions, Grade 5-8 used 6 more complex — which is why the impact metrics are reported by grade band.</p>
 
       <img src="../feel-check/assets/impact-selected-emotions.jpg" loading="lazy" decoding="async" alt="Selected emotions across zones for G3-4 and G5-8" class="cs-img">
       <p class="caption">Specific emotions per zone. The rewritten vocabulary held in practice.</p>
@@ -262,8 +267,8 @@
     </div>
 
     <div class="decision-item">
-      <p class="decision-item-title">Decision 4 — Audio was structural, not decorative</p>
-      <p>The first version shipped without background audio — a scope trade-off (26 unique tracks across both bands weren't shippable in v1). I had reservations about visuals alone carrying the regulation.</p>
+      <p class="decision-item-title">Decision 3 — Audio was structural, not decorative</p>
+      <p>The first version shipped without background audio. The 26 tracks needed across both grade bands couldn't be ready in time, so they were cut to make the deadline. I wasn't sure visuals alone would do the job.</p>
 
       <p>I observed the in-house sessions myself. Regulation was mandatory (no skipping); students had two options — engage and finish, or stall. Most stalled. Phase 1 averaged <strong>2.9 minutes</strong> of empty screen time.</p>
 
@@ -273,12 +278,12 @@
         <p class="decision-alts-label">Audio strategy</p>
         <div class="decision-alts-cards">
           <div class="decision-alts-card">
-<p class="decision-alts-card-name">No audio (v1)</p>
+<p class="decision-alts-card-name">No audio</p>
             <p class="decision-alts-card-note">Visuals stalled students. Phase 1: 2.9 min empty.</p>
           </div>
           <div class="decision-alts-card">
 <p class="decision-alts-card-name">Unique track per activity</p>
-            <p class="decision-alts-card-note">26 unique tracks. Not shippable in v1.</p>
+            <p class="decision-alts-card-note">26 tracks. Couldn't be ready in time.</p>
           </div>
           <div class="decision-alts-card decision-alts-card--picked">
 <p class="decision-alts-card-name">Shared ambient tracks</p>
@@ -287,7 +292,7 @@
         </div>
       </div>
 
-      <p>Across Phases 2–4, regulation dropped to <strong>1.9 min</strong>; reattempt held at <strong>14%</strong>. Not disengagement — the audio pulled students in. <strong>The sensory layer is the work.</strong></p>
+      <p>Across Phases 2–4, the empty screen time became <strong>1.9 minutes</strong> of real regulation — students settled in instead of stalling. <strong>The sensory layer is the work.</strong></p>
 
       <div class="video-embed">
         <video
@@ -508,6 +513,31 @@
         lightboxOverlay.classList.remove('active');
       }
     });
+  })();
+
+  /* Flow video — ambient muted loop; click to play fullscreen with controls */
+  (function () {
+    var v = document.getElementById('flow-video');
+    if (!v) return;
+
+    v.addEventListener('click', function () {
+      v.controls = true;
+      v.muted = false;
+      if (v.requestFullscreen) { v.requestFullscreen(); }
+      else if (v.webkitRequestFullscreen) { v.webkitRequestFullscreen(); }
+      else if (v.webkitEnterFullscreen) { v.webkitEnterFullscreen(); } /* iOS Safari */
+      v.play();
+    });
+
+    function restoreAmbient() {
+      if (!document.fullscreenElement && !document.webkitFullscreenElement) {
+        v.controls = false;
+        v.muted = true;
+        v.play();
+      }
+    }
+    document.addEventListener('fullscreenchange', restoreAmbient);
+    document.addEventListener('webkitfullscreenchange', restoreAmbient);
   })();
 
   /* Scroll progress bar */

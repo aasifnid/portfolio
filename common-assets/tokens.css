@@ -91,6 +91,12 @@
   --s20: 80px;
   --s24: 96px;
 
+  /* ─── Vertical rhythm — 3 tiers, snap everything to these ─── */
+  --space-section: var(--s16);        /* 64px — between major sections / above a section heading */
+  --space-block:   var(--s8);         /* 32px — between content blocks: body↔media, caption↔body */
+  --space-bond:    var(--s4);         /* 16px — tight bond: media↔caption, heading↔its body */
+  --caption-gap:   var(--space-bond); /* alias — media↔caption gap */
+
   /* ─── Transition ─── */
   --ease: 0.15s ease;
 
