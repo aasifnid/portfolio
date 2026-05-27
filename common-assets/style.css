@@ -701,7 +701,7 @@ img.decision-alts-card-thumb { display: block; }
 }
 .cs-img-pair img,
 .cs-img-grid img {
-  width: 100%; display: block;
+  width: 100%; display: block; margin: 0;
   border: 1px solid var(--color-border);
   cursor: zoom-in; transition: opacity var(--ease);
 }
