@@ -137,7 +137,7 @@ Frame constraints as inputs, not blockers. Scale the process to the project, not
 **What**: Unified 13 inconsistent sheet types into coherent 3-level architecture
 **Impact**: 28k–30k students, improved homework completion and teacher ability to compose custom paths
 
-### Affiliate Partnership
+### Cuemath Partners
 
 **What**: Transparent referral system for community educators
 **Philosophy**: Trust through clarity
@@ -183,7 +183,7 @@ Frame constraints as inputs, not blockers. Scale the process to the project, not
 2. Involve domain experts if needed (tech leads, engineers)
 3. Build relationships — connection comes first
 
-**Example** (Affiliate Partnership Admin):
+**Example** (Cuemath Partners Admin):
 - PM said: "We can handle it internally, no need for design"
 - Aasif's concern: "This creates inconsistency in the admin portal. Developers without design guidance will fragment the experience"
 - Resolution: Discussed, showed recommendations, PM agreed
@@ -303,7 +303,7 @@ Nothing would make him say no to a role where:
 
 ### "Tell me about a time you disagreed with someone"
 
-*[Use Section 8: Handling Disagreements — Affiliate Partnership example]*
+*[Use Section 8: Handling Disagreements — Cuemath Partners example]*
 
 ### "What are Aasif's strengths and weaknesses?"
 

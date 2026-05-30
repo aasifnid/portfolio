@@ -134,3 +134,31 @@ type: scope-decision
 Buttons (`.btn-primary`, `.btn-ghost`) and chips (`.chat-chip`) use **DM Sans semibold** — not Outfit, not Space Mono. Standard practice: body font for UI labels. Visual emphasis comes from background/border, not weight or typeface.
 
 **How to apply:** Any new interactive element (button, chip, tag, link styled as CTA) defaults to `.type-title-medium`. Do not use Outfit on a CTA.
+
+---
+
+## Session 4 — 2026-05-30 — Spoken narration register (interview scripts)
+
+### The spoken-register sweet spot — found by overshooting both sides
+When writing Feel Check's interview narration script, the right register is a **seamless senior-designer flow: connected, full sentences that sound like a person talking confidently across a table.** Two failure modes, both rejected by Aasif:
+
+1. **Too poetic / composed** → "reads like AI." Tells: writerly phrases like "carrying whatever the day had handed them" (borderline-OK), "the emotional gap was real," "turned it from a side-observation into a funded project," lists of 5–6 parallel images making the same point.
+2. **Too plain / simplified** → "feels childlike and immature, not a senior designer." Tells: short choppy sentences, signpost fragments like "Here's the problem." / "Like I said," / "So here's what we built." Breaks storytelling flow.
+
+**The fix is never "use simpler words" to escape the AI feel.** It's surgical: keep the senior flow and connected sentences, and only swap out the 2–3 specific phrases that sound corporate/composed. Flattening the whole thing into plain English overcorrects into childlike.
+
+**Director-lens content rules for spoken openings (Google L3/L4 hiring panel):**
+- Lead with the insight/surprising fact, not mood. "Nobody had it on the roadmap" + quantified cost ("nearly half the class, every class") is the hook.
+- ONE vivid human image, not a list of six — a list signals you didn't trust one to land.
+- Every sentence must carry one of: problem, evidence, user cost, business cost, or role. Mood-only sentences get cut.
+- Business cost = one tight sentence proving you *think* in those terms; don't spell out the full churn→referral→revenue cascade.
+- Opening + problem to first solution beat ≈ 70s, not 160s. Pace itself signals seniority.
+- A touch of warmth is on-brand for an emotional-design product (shows the EQ that qualifies him) — but one beat, then pivot to rigor.
+
+### Page vs. spoken narration — what to say aloud vs. leave on the page
+The case study page is the **complete record**; the spoken walkthrough is a **curated highlight reel**. Never narrate the page line-by-line — selecting *is* the senior signal; reading everything looks like an inability to prioritize. Every candidate item passes 3 tests before earning a spot in the script:
+1. **Already said it?** (e.g., a lesson already covered as a decision) → cut, repetition reads as padding.
+2. **Distinct signal?** Two items making the same point → merge or pick one.
+3. **Want it remembered?** ~20s/item budget — spend on highest signal, put the strongest LAST.
+
+Worked example (Feel Check Lessons): 4 page lessons → 2 spoken. Audio lesson cut (already in D3), the two "delight/agency" lessons merged into one, the "measured ready not learned" honesty lesson kept and placed last. The unspoken items are NOT wasted — they become **probe ammunition** ("any other takeaways?"). General rule: voice carries the *why/story*; page carries the *full evidence + depth*; overlap only where reflection is inherently personal.

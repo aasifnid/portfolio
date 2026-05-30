@@ -90,17 +90,17 @@
 
 <!-- COVER -->
 <div class="cover">
-  <h1>New Trial Experience</h1>
-  <p class="lede">Cuemath's trial funnel ran entirely through Academic Counselors (ACs), creating a queue and slowing parents down. The brief: cut AC intervention by 70% without losing conversions. The redesign distributed the work across three principles — a parent-led journey, teacher-led conversions during the trial, and WhatsApp as the primary channel for parents.</p>
+  <h1>New Trial Experience: Self-serve funnel</h1>
+  <p class="lede">Cuemath's trial funnel ran entirely through Academic Counselors (ACs) — every step waited on a callback, and parents' interest cooled before they reached a paid plan. I redesigned it to run without that bottleneck: parents self-serve through sign-up and booking, teachers own the trust moments, and the system handles the routine — cutting AC work 70% while conversion held.</p>
 
   <div class="cover-context">
     <div class="cover-context-item">
       <span class="cover-context-label">Role</span>
-      <span class="cover-context-value">Product Designer · Trial funnel redesign</span>
+      <span class="cover-context-value">Product Designer</span>
     </div>
     <div class="cover-context-item">
       <span class="cover-context-label">Team</span>
-      <span class="cover-context-value">PM (Business Head, India) · FE + BE engineers</span>
+      <span class="cover-context-value">PM (Business Head, India) · Engineers · Tutor operations team</span>
     </div>
     <div class="cover-context-item">
       <span class="cover-context-label">Timeline</span>
@@ -139,7 +139,7 @@
     <span class="section-num">01</span>
   </div>
 
-  <h2>The Problem</h2>
+  <h2>The problem</h2>
 
   <div class="cs-insight">
     <p class="cs-insight-quote">Every step of the trial funnel needed an AC — and the 2–3 day journey outlasted parent interest.</p>
@@ -147,7 +147,9 @@
 
   <p>A parent's interest in Cuemath had a shelf life. It peaked the moment they signed up — and faded with every wait that followed. The funnel was AC-dependent at every step: qualification, slot booking, post-trial follow-up, enrollment. Each handoff added 6–12 hours of delay, and the full journey ran 2–3 days. By the end, the spark was gone.</p>
 
-  <p>For ACs, every parent was one of dozens that day. They juggled, prioritized, called back when they could. Cuemath ran on thin margins; hiring more wasn't viable. The funnel wasn't failing because the team was — the process needed them everywhere.</p>
+  <p>The funnel data showed exactly where it leaked. 40% of qualified leads didn't book a trial within 24 hours, and 35% of trial-takers didn't enroll within three days — both stuck waiting on an AC callback, not on their own decision.</p>
+
+  <p>And this wasn't an AC problem. For an AC, every parent was one of dozens that day — they juggled, prioritized, called back when they could. But every day a lead sat waiting was a lead more likely to go cold, and on Cuemath's thin margins, adding ACs to move faster wasn't viable. The funnel wasn't failing because the team was — the process needed them everywhere.</p>
 
   <!-- 02 ROLE -->
   <div class="section-head" id="role" data-animate>
@@ -156,13 +158,15 @@
 
   <h2>Role</h2>
 
-  <p><strong>Funnel redesign:</strong> Cuemath's trial experience — from sign-up through trial booking, the trial class, and post-trial enrollment. The work had to live on WhatsApp, where teacher-parent conversations already happened. My first time owning a full user flow tied directly to business numbers.</p>
+  <p><strong>Funnel redesign:</strong> Cuemath's trial experience — from sign-up through trial booking, the trial class, and post-trial enrollment. The work had to live on WhatsApp, where teacher-parent conversations already happened. I owned the full user flow, from sign-up to paid enrollment, tied directly to business targets.</p>
 
   <ul class="cs-list">
     <li><strong>End-to-end UX/UI</strong> — sign-up form, slot booking, teacher intro flow, in-trial parent surface, post-trial enrollment, feedback flows</li>
     <li><strong>Communication design</strong> — WhatsApp as the spine, with SMS and email as fallbacks; branded post-trial collateral (pricing, plans, refund policy)</li>
     <li><strong>Cross-functional collaboration</strong> — PM (Business Head, India) on scope and metrics, FE + BE engineers on build; tutor matching algorithm sat under a separate team, I designed around it</li>
   </ul>
+
+  <p>Two inputs shaped the design: a funnel-data analysis that pinpointed where parents dropped off, and a 22-trial pilot of my first hypothesis — which failed, and redirected the entire approach.</p>
 
 
 
@@ -177,6 +181,8 @@
 
   <p>My first hypothesis was big: have tutors handle everything from the moment they were assigned to a parent — pre-trial messaging, the class itself, post-trial enrollment, even onboarding. Parents already trusted tutors more than ACs, so tutor-as-everything seemed to follow. Testing across 22 trial classes proved it failed: pitching mid-session stretched teachers too thin, lesson quality fell, parents sensed the artifice. <strong>The shift: tutors are educators, not the operational spine. Keep them at the trust moments; distribute everything else to system and parent.</strong></p>
 
+  <p>So we redrew the funnel around one question — who should own each part of the work? The system took the routine: scheduling, reminders, checkout. Teachers took the trust moments: the pre-trial intro and the class itself. Parents took the decision. ACs stepped in only for exceptions — special needs, payment issues. Here's the shift:</p>
+
   <div class="screen-featured">
     <img src="../new-trial-experience/assets/old-vs-new-system.png" loading="lazy" decoding="async" alt="Old AC-dependent funnel vs. new distributed system comparison" class="cs-img">
     <p class="caption">Old: sequential AC-dependent steps with 12–24h waits between each. New: parallel work across system automation, teacher relationships, and parent self-service. ACs intervene only for exceptions.</p>
@@ -186,7 +192,7 @@
 
     <div class="decision-item">
       <p class="decision-item-title">Decision 1 — WhatsApp as the spine, with automated recovery</p>
-      <p>Most teacher-parent communication already happened on WhatsApp, not the app's built-in chat. <strong>Rather than fight that pattern, we made it the system's spine.</strong> Every critical step (verification, slot confirmation, teacher intro, reminders, post-trial enrollment) moved to WhatsApp, with SMS and email as fallbacks.</p>
+      <p>WhatsApp was set by the brief — most teacher-parent conversation already lived there, not in our app, so the spec made it the channel. <strong>The design problem was making it carry the whole funnel.</strong> Every critical step (verification, slot confirmation, teacher intro, reminders, post-trial enrollment) ran on WhatsApp, with SMS and email as fallbacks so no parent fell through.</p>
 
       <p>One automation rode on top: a 5-minute auto-message for parents who started but didn't book — <em>"Do you need help choosing a time?"</em>. Small, well-timed, capturing intent before it cooled.</p>
 
@@ -280,7 +286,9 @@
     </div>
   </div>
 
-  <p>The project shipped and the results matched the brief: 70% AC reduction held, conversion held, and the team scaled without growing headcount as trial volume increased.</p>
+  <p class="caption">Measured from Cuemath's funnel data (LSQ), before and after rollout.</p>
+
+  <p>All three held in the weeks after launch, and the team absorbed rising trial volume without adding ACs. What I didn't get to measure was the longer arc — whether parents who self-served, without an AC's nudge, stayed enrolled as long as the old high-touch funnel kept them. If I ran it again, that's the first thing I'd instrument.</p>
 
 
   <!-- 05 REFLECTION -->
@@ -293,7 +301,7 @@
   <div class="lessons-list">
     <div class="lesson">
       <p class="decision-item-title">The shift was distribution, not optimization</p>
-      <p>The breakthrough wasn't making teachers better at selling — it was distributing the work entirely. Teachers became the trust points (pre-trial intro, in-trial presence). The system handled scheduling, reminders, and checkout. The parent owned the decision moment. ACs handled exceptions. No single role broke under the weight of the next. The question wasn't <em>"how do we make ACs faster"</em> — it was <em>"who should be doing each part of this work?"</em></p>
+      <p>The breakthrough wasn't making teachers better at selling — it was distributing the work entirely, so no single role broke under the weight of the next. The question I'd carry forward isn't <em>"how do we make ACs faster"</em> — it's <em>"who should be doing each part of this work?"</em></p>
     </div>
 
     <div class="lesson">
@@ -302,7 +310,7 @@
     </div>
 
     <div class="lesson">
-      <p class="decision-item-title">Constraints are design tools, not limitations</p>
+      <p class="decision-item-title">The constraint became my filter: build trust, capture intent, or cut it</p>
       <p>The 70% AC reduction mandate forced clarity: every step in the flow had to either build trust or capture intent. If it did neither, it was friction — cut it. That forced me to stop designing features and start designing a system. I'd take this lens to any optimization brief — translate the constraint into a design question, not a feature list.</p>
     </div>
   </div>

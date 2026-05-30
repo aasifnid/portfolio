@@ -1,4 +1,8 @@
 {
   "cleanUrls": true,
-  "trailingSlash": true
+  "trailingSlash": true,
+  "redirects": [
+    { "source": "/work/affiliate-partnership", "destination": "/work/cuemath-partners", "permanent": true },
+    { "source": "/work/affiliate-partnership/:path*", "destination": "/work/cuemath-partners/:path*", "permanent": true }
+  ]
 }
