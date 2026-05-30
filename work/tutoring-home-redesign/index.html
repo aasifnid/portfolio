@@ -173,38 +173,71 @@
   </div>
 
   <h2>Decisions</h2>
-  <p>The challenge wasn't adding features — it was making urgency readable and hierarchy legible on surfaces that were already full. Two decisions shaped how.</p>
+  <p>Three decisions shaped the redesign — how learning plans are built, how urgency reaches the student, and how a chapter page holds 13 content types without collapsing.</p>
 
   <div class="decisions-list">
 
     <div class="decision-item">
-      <p class="decision-item-title">Decision 1 — Make urgency readable without reading</p>
-      <p>Students could see the queue — but seeing it wasn't the same as knowing what was urgent. A homework card due tomorrow and one three days overdue looked identical. Position alone wasn't enough.</p>
+      <p class="decision-item-title">Decision 1 — Replace program stacking with goal-based composition</p>
+      <p>Before this redesign, every student was on a single curriculum program — every chapter in a grade's syllabus, assigned at once. If a tutor needed cross-curriculum content, the only option was to add the entire second program. Progress percentages stopped meaning anything when hundreds of chapters the student would never touch were in the count. Tutors worked around the system rather than through it.</p>
 
-      <p>Color shifted day-by-day — normal through Day 4, warning by Day 5–6, overdue at Day 7. Every state carried an icon, a label, and a position shift alongside the color — so urgency held up for color-blind students too. Micro-animations drew the eye to what had changed since the student last opened the screen.</p>
+      <p>The goal-based system flipped the model. A tutor picks a goal type — School Success, Test Prep, or Enrichment — then composes a plan from individual chapters across any of the 10 curricula. Nothing is assigned by default. The goal types gave tutors a frame for decisions that used to be implicit and gave students clearer context for what they were working toward.</p>
 
-      <p>Two empty states shipped: <em>No homework assigned</em> and <em>All homework done.</em> Both kept Recent Chapters and Goals visible — empty homework didn't mean an empty homepage.</p>
-
-      <p>An early version had a stroke animation across active mandatory cards. The internal teacher cohort flagged it as jarring. I removed it and let the static state visuals do the work.</p>
-
-      <p>The queue showed ten cards at a time — a cap agreed with engineering during spec. The 50+ overdue edge wasn't designed for; the hypothesis was that visibility would prompt a conversation with the tutor before pile-up got that bad. That edge case would wait for V2.</p>
-
-      <img src="../tutoring-home-redesign/assets/homework-empty-states.png" loading="lazy" decoding="async" alt="Two empty states on the student's tutoring home: all homework completed (left) and no homework assigned (right). Recent Chapters and Goals remain visible in both." class="cs-img">
-      <p class="caption">Two empty states — homework done and none assigned.</p>
+      <div class="cs-img-grid cs-img-grid--3">
+        <figure>
+          <img src="../tutoring-home-redesign/assets/school-success-goal.jpg" loading="lazy" decoding="async" alt="School Success goal type — tutor composing a goal for curriculum-aligned learning" class="cs-img">
+          <figcaption>School Success</figcaption>
+        </figure>
+        <figure>
+          <img src="../tutoring-home-redesign/assets/test-prep-goal.jpg" loading="lazy" decoding="async" alt="Test Prep goal type — tutor composing a goal for exam preparation" class="cs-img">
+          <figcaption>Test Prep</figcaption>
+        </figure>
+        <figure>
+          <img src="../tutoring-home-redesign/assets/enrichment-goal.jpg" loading="lazy" decoding="async" alt="Enrichment goal type — tutor composing a goal for optional enrichment content" class="cs-img">
+          <figcaption>Enrichment</figcaption>
+        </figure>
+      </div>
     </div>
 
     <div class="decision-item">
-      <p class="decision-item-title">Decision 2 — A chapter page that holds 13 content types without breaking</p>
-      <p>The chapter page was the hardest surface. Thirteen content types — lessons, practice, videos, puzzles, and more — had to coexist on one screen, each with four states (locked, unlocked, in-progress, completed). Lessons (mandatory, count toward progress) had to read as clearly distinct from Resources (optional enrichment). All on one already-content-heavy page.</p>
+      <p class="decision-item-title">Decision 2 — Surface time, not just status</p>
+      <p>The old homework list showed what was assigned, not how urgent. A card due tomorrow and one assigned two weeks ago looked identical. The fix was a countdown badge — "3d", "7d" — on every active card, so time remaining was readable at a glance. Six states covered the full lifecycle: locked, active with countdown, partially done (as a percentage), completed, overdue, and needs-attention. Each used a distinct shape and icon rather than color alone — cards already carried their own visual backgrounds, and color-only urgency would have collapsed against them.</p>
 
-      <p>We presented the first version to stakeholders. They approved it. My design manager and I weren't convinced — the hierarchy felt collapsed, states didn't pop, the page read as a long list rather than a structure.</p>
+      <p>Overdue was designed to break pattern — a solid red pill, the most visually heavy state on the card. An early version had a stroke animation on active cards; the internal tutor cohort flagged it as jarring and I cut it. Two empty states shipped alongside — <em>No homework assigned</em> and <em>All homework done</em> — keeping Goals and Recent Chapters visible so an empty queue didn't mean an empty home.</p>
 
-      <p>We sat together one night, started over, and shipped the new version the next day. The shift was treating Lessons and Resources as different categories with their own background field, not just different card styles. State visuals got iconography paired with color so they read at a glance. They became a system rather than one-offs — new types could slot in without breaking the page.</p>
+      <div class="cs-img-pair">
+        <figure>
+          <img src="../tutoring-home-redesign/assets/all-hws-completed.jpg" loading="lazy" decoding="async" alt="Student tutoring home — all homework completed empty state" class="cs-img">
+          <figcaption>All homework completed</figcaption>
+        </figure>
+        <figure>
+          <img src="../tutoring-home-redesign/assets/no-hws-assigned.jpg" loading="lazy" decoding="async" alt="Student tutoring home — no homework assigned empty state" class="cs-img">
+          <figcaption>No homework assigned</figcaption>
+        </figure>
+      </div>
+    </div>
+
+    <div class="decision-item">
+      <p class="decision-item-title">Decision 3 — A chapter page that holds 13 content types without breaking</p>
+      <p>The chapter page was the hardest surface. Thirteen content types — lessons, practice, videos, puzzles, and more — had to coexist on one screen, each with four states (locked, unlocked, in-progress, completed). Lessons (mandatory, count toward progress) had to read as clearly distinct from Resources (optional enrichment).</p>
+
+      <img src="../tutoring-home-redesign/assets/nodes-and-hw-cards.jpg" loading="lazy" decoding="async" alt="All 13 content type cards — each with distinct illustration, icon, color, and visual treatment" class="cs-img">
+      <p class="caption">13 content types — each with its own visual identity.</p>
+
+      <p>We presented the first version to stakeholders. They approved it. My design manager and I weren't convinced — hierarchy felt collapsed, states didn't pop, everything lived at the same visual level. We sat together one night, started over, and shipped the new version the next day. The shift was treating Lessons and Resources as distinct categories with their own background field, not just different card styles. State visuals got iconography paired with color so each state read at a glance. The system scaled: new content types could slot in without redesigning the page.</p>
 
       <p>Stakeholders approved the version we didn't ship. The one we rebuilt overnight is the one I remember most.</p>
 
-      <img src="../tutoring-home-redesign/assets/student-view.jpg" loading="lazy" decoding="async" alt="Chapter page, student view — 13 content types and 4 states visible across Lessons and Resources blocks" class="cs-img">
-      <p class="caption">Chapter page, student view — 13 content types across Lessons and Resources.</p>
+      <div class="cs-img-pair">
+        <figure>
+          <img src="../tutoring-home-redesign/assets/discarded-student-view.jpg" loading="lazy" decoding="async" alt="Discarded chapter page — hierarchy collapsed, all content types at the same visual level" class="cs-img">
+          <figcaption>Before — stakeholders approved this</figcaption>
+        </figure>
+        <figure>
+          <img src="../tutoring-home-redesign/assets/final-student-view.jpg" loading="lazy" decoding="async" alt="Final chapter page — Lessons and Resources as distinct categories, each content type with its own visual identity" class="cs-img">
+          <figcaption>After — the one we rebuilt overnight</figcaption>
+        </figure>
+      </div>
     </div>
 
   </div>
@@ -221,7 +254,24 @@
     <div class="cs-stat-hero">
       <p class="cs-stat-hero-label">Active students</p>
       <p class="cs-stat-hero-number">30K</p>
-      <p class="cs-stat-hero-desc">moved onto the redesigned home across CBSE, ICSE, and Common Core.</p>
+      <p class="cs-stat-hero-desc">moved onto the redesigned home across all regions and grades.</p>
+    </div>
+    <div class="outcome-stats">
+      <div class="stat">
+        <p class="stat-label">Tutors</p>
+        <p class="stat-number">3,353</p>
+        <p class="stat-desc">Active tutors globally on the redesigned home — NAM, ISC, IME, APAC, EUK, EMEA.</p>
+      </div>
+      <div class="stat">
+        <p class="stat-label">New goal types</p>
+        <p class="stat-number">3</p>
+        <p class="stat-desc">School Success, Test Prep, and Enrichment — replacing the old program-stacking model.</p>
+      </div>
+      <div class="stat">
+        <p class="stat-label">Curricula covered</p>
+        <p class="stat-number">10</p>
+        <p class="stat-desc">Tutors can compose goals across all 10 curricula — CBSE, ICSE, Common Core, and more.</p>
+      </div>
     </div>
   </div>
 
