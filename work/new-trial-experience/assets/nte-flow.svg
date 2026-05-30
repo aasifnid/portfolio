@@ -1,0 +1,54 @@
+<svg viewBox="0 0 920 250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="The new trial flow: the parent signs up and books a slot in minutes on WhatsApp; the assigned teacher reaches out a day before and runs the trial; the parent enrolls on the spot, one tap on their device. The system runs reminders and routing underneath, and ACs step in only for exceptions.">
+  <defs>
+    <marker id="nteArrow" markerWidth="9" markerHeight="9" refX="6.5" refY="4.5" orient="auto">
+      <path d="M0 0 L9 4.5 L0 9 Z" fill="#FF80F4"/>
+    </marker>
+  </defs>
+  <style>
+    text { font-family: 'DM Sans', system-ui, -apple-system, sans-serif; }
+    .owner { font-size: 11px; font-weight: 700; letter-spacing: 0.1em; fill: #1A1A1A; }
+    .title { font-size: 17px; font-weight: 600; fill: #1A1A1A; }
+    .sub   { font-size: 12.5px; font-weight: 400; fill: #6B6B6B; }
+    .note  { font-size: 13px; font-weight: 400; fill: #6B6B6B; }
+  </style>
+
+  <!-- Step 1 — Parent -->
+  <rect x="20" y="55" width="190" height="128" fill="#FFFFFF" stroke="#DADADA"/>
+  <rect x="38" y="74" width="68" height="22" fill="#FFE0FD"/>
+  <text x="48" y="89" class="owner">PARENT</text>
+  <text x="38" y="125" class="title">Sign up</text>
+  <text x="38" y="147" class="title">&amp; book a slot</text>
+  <text x="38" y="170" class="sub">In minutes, on WhatsApp</text>
+
+  <line x1="212" y1="119" x2="246" y2="119" stroke="#FF80F4" stroke-width="2" marker-end="url(#nteArrow)"/>
+
+  <!-- Step 2 — Teacher -->
+  <rect x="250" y="55" width="190" height="128" fill="#FFFFFF" stroke="#DADADA"/>
+  <rect x="268" y="74" width="78" height="22" fill="#FFE0FD"/>
+  <text x="278" y="89" class="owner">TEACHER</text>
+  <text x="268" y="125" class="title">Teacher</text>
+  <text x="268" y="147" class="title">reaches out</text>
+  <text x="268" y="170" class="sub">A day before the trial</text>
+
+  <line x1="442" y1="119" x2="476" y2="119" stroke="#FF80F4" stroke-width="2" marker-end="url(#nteArrow)"/>
+
+  <!-- Step 3 — Teacher -->
+  <rect x="480" y="55" width="190" height="128" fill="#FFFFFF" stroke="#DADADA"/>
+  <rect x="498" y="74" width="78" height="22" fill="#FFE0FD"/>
+  <text x="508" y="89" class="owner">TEACHER</text>
+  <text x="498" y="137" class="title">Trial class</text>
+  <text x="498" y="170" class="sub">Rapport already built</text>
+
+  <line x1="672" y1="119" x2="706" y2="119" stroke="#FF80F4" stroke-width="2" marker-end="url(#nteArrow)"/>
+
+  <!-- Step 4 — Parent -->
+  <rect x="710" y="55" width="190" height="128" fill="#FFFFFF" stroke="#DADADA"/>
+  <rect x="728" y="74" width="68" height="22" fill="#FFE0FD"/>
+  <text x="738" y="89" class="owner">PARENT</text>
+  <text x="728" y="125" class="title">Enroll</text>
+  <text x="728" y="147" class="title">on the spot</text>
+  <text x="728" y="170" class="sub">One tap, on device</text>
+
+  <!-- system / no-AC note -->
+  <text x="460" y="223" text-anchor="middle" class="note">The system runs reminders and routing underneath — ACs step in only for exceptions.</text>
+</svg>
