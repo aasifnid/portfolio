@@ -9,7 +9,7 @@
     .owner { font-size: 11px; font-weight: 700; letter-spacing: 0.1em; fill: #1A1A1A; }
     .title { font-size: 17px; font-weight: 600; fill: #1A1A1A; }
     .sub   { font-size: 12.5px; font-weight: 400; fill: #6B6B6B; }
-    .note  { font-size: 13px; font-weight: 400; fill: #6B6B6B; }
+    .note  { font-size: 13px; font-weight: 400; fill: #FFFFFF; opacity: 0.6; }
   </style>
 
   <!-- Step 1 — Parent -->
@@ -49,6 +49,4 @@
   <text x="728" y="147" class="title">on the spot</text>
   <text x="728" y="170" class="sub">One tap, on device</text>
 
-  <!-- system / no-AC note -->
-  <text x="460" y="223" text-anchor="middle" class="note">The system runs reminders and routing underneath — ACs step in only for exceptions.</text>
 </svg>
