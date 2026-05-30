@@ -23,6 +23,50 @@
 <link rel="stylesheet" href="../../common-assets/style.css">
 <noscript><style>[data-animate]{opacity:1!important;transform:none!important}</style></noscript>
 <style>
+.figma-embed-frame {
+  border: 1px solid #d8d8d8;
+  overflow: hidden;
+}
+.figma-embed-chrome {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 16px;
+  background: #f0f0f0;
+  border-bottom: 1px solid #d8d8d8;
+}
+.figma-embed-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #ccc;
+  display: inline-block;
+}
+.figma-embed-chrome-label {
+  font-size: 12px;
+  color: #999;
+  margin-left: 6px;
+  letter-spacing: 0.02em;
+}
+.figma-embed-wrap {
+  position: relative;
+  background: #f7f7f7;
+  min-height: 640px;
+}
+.figma-embed-loading {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  color: #aaa;
+  pointer-events: none;
+}
+.figma-embed-wrap iframe {
+  position: relative;
+  z-index: 1;
+}
 </style>
 </head>
 <body>
@@ -132,6 +176,8 @@
 
   <h2>The problem</h2>
 
+  <p class="cs-insight">Programs were all-or-nothing — so tutors stacked curricula, homework got buried, and progress tracking became a number no one trusted.</p>
+
   <p>When a tutor wanted to build a custom learning plan, the only option was to layer full curriculum programs on top of each other — assign one, then another, sometimes a third. Every chapter came along, including ones that didn't apply. Within days, progress totals stopped meaning anything, homework lists became unreadable, and tracking broke.</p>
 
   <p>For students, homework was hidden. To see what was due, they had to open a chapter, scroll past everything else, and find it at the bottom. Most never did. Tutors checking who'd done what had to dig into each chapter, item by item.</p>
@@ -179,9 +225,7 @@
 
     <div class="decision-item">
       <p class="decision-item-title">Decision 1 — Replace program stacking with goal-based composition</p>
-      <p>Before this redesign, every student was on a single curriculum program — every chapter in a grade's syllabus, assigned at once. If a tutor needed cross-curriculum content, the only option was to add the entire second program. Progress percentages stopped meaning anything when hundreds of chapters the student would never touch were in the count. Tutors worked around the system rather than through it.</p>
-
-      <p>The goal-based system flipped the model. A tutor picks a goal type — School Success, Test Prep, or Enrichment — then composes a plan from individual chapters across any of the 10 curricula. Nothing is assigned by default. The goal types gave tutors a frame for decisions that used to be implicit and gave students clearer context for what they were working toward.</p>
+      <p>The fix was a goal-based model. A tutor picks a goal type — School Success, Test Prep, or Enrichment — then composes a plan from individual chapters across any of the 10 curricula. Nothing is assigned by default. The goal types gave tutors a frame for decisions that used to be implicit and gave students clearer context for what they were working toward.</p>
 
       <div class="cs-img-grid cs-img-grid--3">
         <figure>
@@ -201,9 +245,9 @@
 
     <div class="decision-item">
       <p class="decision-item-title">Decision 2 — Surface time, not just status</p>
-      <p>The old homework list showed what was assigned, not how urgent. A card due tomorrow and one assigned two weeks ago looked identical. The fix was a countdown badge — "3d", "7d" — on every active card, so time remaining was readable at a glance. Six states covered the full lifecycle: locked, active with countdown, partially done (as a percentage), completed, overdue, and needs-attention. Each used a distinct shape and icon rather than color alone — cards already carried their own visual backgrounds, and color-only urgency would have collapsed against them.</p>
+      <p>Homework had no urgency signal — a card due tomorrow looked identical to one due next week. The fix was a countdown badge — "3d", "7d" — on every active card, so time remaining was readable at a glance. Six states covered the full lifecycle: locked, active with countdown, partially done (as a percentage), completed, overdue, and needs-attention. Each used a distinct shape and icon rather than color alone — cards already carried their own visual backgrounds, and color-only urgency would have collapsed against them.</p>
 
-      <p>Overdue was designed to break pattern — a solid red pill, the most visually heavy state on the card. An early version had a stroke animation on active cards; the internal tutor cohort flagged it as jarring and I cut it. Two empty states shipped alongside — <em>No homework assigned</em> and <em>All homework done</em> — keeping Goals and Recent Chapters visible so an empty queue didn't mean an empty home.</p>
+      <p>Overdue was designed to break pattern — a solid red pill, the most visually heavy state on the card. Two empty states shipped alongside — <em>No homework assigned</em> and <em>All homework done</em> — keeping Goals and Recent Chapters visible so an empty queue didn't mean an empty home.</p>
 
       <div class="cs-img-pair">
         <figure>
@@ -265,7 +309,7 @@
       <div class="stat">
         <p class="stat-label">New goal types</p>
         <p class="stat-number">3</p>
-        <p class="stat-desc">School Success, Test Prep, and Enrichment — replacing the old program-stacking model.</p>
+        <p class="stat-desc">School Success, Test Prep, and Enrichment — replacing all-or-nothing program assignment.</p>
       </div>
       <div class="stat">
         <p class="stat-label">Curricula covered</p>
@@ -275,9 +319,9 @@
     </div>
   </div>
 
-  <p>Custom goals became the default — tutors stopped layering whole curricula on top of each other and started composing chapters across programs in a single learner plan. The behavior shift held. When tutors build cleaner plans, students get cleaner homework lists — progress tracking means something again instead of a count no one trusts.</p>
+  <p>Custom goals became the default. Cleaner plans meant cleaner homework lists — progress tracking meant something again instead of a count no one trusted. The behavior shift held.</p>
 
-  <p>Closed-cohort feedback surfaced one design revision — the stroke animation, removed before wider rollout. Beyond that, no blocking feedback came back through the channel. The channel was thin and self-selected, so the silence isn't strong evidence on its own; it's a signal, not a verdict. Milestones (exams, medals, competitions) and the max-overflow case (50+ overdue items) were deferred to V2 — the cases that needed real usage data before designing for them.</p>
+  <p>Feedback from the internal tutor cohort came back clean after launch. The channel was thin and self-selected, so the silence is a signal, not a verdict. Milestones (exams, medals, competitions) and the 50+ overdue edge case were deferred to V2 — both needed real usage data before designing for them.</p>
 
 
   <!-- 05 REFLECTION -->
@@ -289,14 +333,19 @@
 
   <div class="lessons-list">
     <div class="lesson">
-      <p class="decision-item-title">Lesson 1 — The brief I should have questioned</p>
-      <p>I treated the brief as "visualize 13 content types." The harder question was whether we still needed 13. Consolidation got debated and deferred, the engineering cost of migration didn't fit the four-week window, so I worked within the existing taxonomy.</p>
-      <p>The night my design manager and I rebuilt the chapter page from scratch wasn't a craft problem. It was the cost of accepting the taxonomy as a given. A leaner content model would have made the visual system easier, possibly redundant. Next time I'd push the question harder upstream, before we shipped a workaround dressed as a system.</p>
+      <p class="decision-item-title">Lesson 1 — One animation draws attention. Many animations create noise.</p>
+      <p>I designed a stroke animation to draw students' attention to the sheet they should focus on next — one glowing card standing out from the rest. The problem was that the animation was assigned to all core sheets and all work-in-progress sheets on the page. In practice, a student's page could have five or six of these running at once, all pulsing for attention at the same time. The page already made it clear what was locked, in-progress, or done — and students already knew the order sheets unlock in. The animation was adding noise on top of a system that was already working. We piloted it with our in-house teachers, got strong pushback, and pulled it immediately.</p>
+      <div class="video-embed" style="background:#000;">
+        <video id="lesson-video" autoplay muted loop playsinline preload="auto" style="cursor:zoom-in;">
+          <source src="../tutoring-home-redesign/assets/lesson-3.mp4" type="video/mp4">
+        </video>
+      </div>
+      <p class="caption">State transitions — animation in the chapter page.</p>
     </div>
 
     <div class="lesson">
-      <p class="decision-item-title">Lesson 2 — Motion can't carry priority static layout hasn't earned</p>
-      <p>The state visuals — iconography, color, position — were already doing the work. Adding animation on top was a layer of urgency the layout hadn't earned. When the teachers flagged it as jarring, the feedback wasn't really about the animation — it was the surface telling me it wasn't ready for it. Motion amplifies what's already clear. It can't rescue what isn't. I'd reach for it earlier in the process now, as a diagnostic rather than a finish.</p>
+      <p class="decision-item-title">Lesson 2 — There is almost always more room than you think</p>
+      <p>This was one of my first projects end-to-end, and when my design manager asked what I thought of the approved design, I defaulted to "we're out of time" — I couldn't articulate what felt wrong, so I didn't push back. He didn't accept that. We sat down that evening with no plan, just Figma open, iterating side by side and sharing ideas as they came. By 2am we had something we were both comfortable shipping — far better than what was approved, with no extra brief and no time formally blocked. Just two people deciding to figure it out. What I carried from that night: there is almost always more room to improve than you think, if you commit to using whatever time is left.</p>
     </div>
   </div>
 
@@ -312,6 +361,29 @@
   /* Flow video — ambient muted loop; click to play fullscreen with controls */
   (function () {
     var v = document.getElementById('flow-video');
+    if (!v) return;
+    v.addEventListener('click', function () {
+      v.controls = true;
+      v.muted = false;
+      if (v.requestFullscreen) { v.requestFullscreen(); }
+      else if (v.webkitRequestFullscreen) { v.webkitRequestFullscreen(); }
+      else if (v.webkitEnterFullscreen) { v.webkitEnterFullscreen(); }
+      v.play();
+    });
+    function restoreAmbient() {
+      if (!document.fullscreenElement && !document.webkitFullscreenElement) {
+        v.controls = false;
+        v.muted = true;
+        v.play();
+      }
+    }
+    document.addEventListener('fullscreenchange', restoreAmbient);
+    document.addEventListener('webkitfullscreenchange', restoreAmbient);
+  })();
+
+  /* Lesson video — ambient muted loop; click to play fullscreen with controls */
+  (function () {
+    var v = document.getElementById('lesson-video');
     if (!v) return;
     v.addEventListener('click', function () {
       v.controls = true;
