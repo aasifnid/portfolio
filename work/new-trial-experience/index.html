@@ -25,7 +25,16 @@
 <noscript><style>[data-animate]{opacity:1!important;transform:none!important}</style></noscript>
 <style>
 .outcome-stats { grid-template-columns: repeat(2, 1fr); }
-.screen-grid-3 { align-items: end; }
+.screen-grid-3 { grid-template-rows: auto auto; }
+.screen-grid-3 .screen-featured { display: contents; }
+.screen-grid-3 .screen-featured:nth-child(1) img,
+.screen-grid-3 .screen-featured:nth-child(1) .caption { grid-column: 1; }
+.screen-grid-3 .screen-featured:nth-child(2) img,
+.screen-grid-3 .screen-featured:nth-child(2) .caption { grid-column: 2; }
+.screen-grid-3 .screen-featured:nth-child(3) img,
+.screen-grid-3 .screen-featured:nth-child(3) .caption { grid-column: 3; }
+.screen-grid-3 .screen-featured img { grid-row: 1; align-self: end; }
+.screen-grid-3 .screen-featured .caption { grid-row: 2; align-self: start; }
 </style>
 </head>
 <body>
