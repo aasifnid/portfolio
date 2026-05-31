@@ -1,0 +1,105 @@
+<svg viewBox="0 0 920 362" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Before: four sequential steps all owned by AC, with 12–24h waits between each. After: same work distributed across System, Teacher, and Parent — ACs step in only for exceptions.">
+  <defs>
+    <marker id="greyArrow" markerWidth="9" markerHeight="9" refX="6.5" refY="4.5" orient="auto">
+      <path d="M0 0 L9 4.5 L0 9 Z" fill="#888888"/>
+    </marker>
+    <marker id="purpleArrow" markerWidth="9" markerHeight="9" refX="6.5" refY="4.5" orient="auto">
+      <path d="M0 0 L9 4.5 L0 9 Z" fill="#FF80F4"/>
+    </marker>
+  </defs>
+  <style>
+    text { font-family: 'DM Sans', system-ui, -apple-system, sans-serif; }
+    .stag  { font-size: 10px; font-weight: 700; letter-spacing: 0.12em; }
+    .owner { font-size: 11px; font-weight: 700; letter-spacing: 0.1em; fill: #1A1A1A; }
+    .title { font-size: 15px; font-weight: 600; fill: #1A1A1A; }
+    .sub   { font-size: 11.5px; font-weight: 400; fill: #6B6B6B; }
+    .wait  { font-size: 10px; font-weight: 400; fill: #888888; }
+  </style>
+
+  <!-- ═══ BEFORE ════════════════════════════════════════════ -->
+  <text x="20" y="20" class="stag" fill="#888888">BEFORE — one owner, every step</text>
+
+  <!-- B1 -->
+  <rect x="20"  y="32" width="190" height="115" fill="#FAFAFA" stroke="#DADADA"/>
+  <rect x="38"  y="48" width="40"  height="18"  fill="#FFE8E8"/>
+  <text x="48"  y="61" class="owner">AC</text>
+  <text x="38"  y="97" class="title">Lead arrives</text>
+  <text x="38"  y="122" class="sub">AC schedules &amp; assigns</text>
+
+  <line x1="212" y1="89" x2="246" y2="89" stroke="#888888" stroke-width="2" marker-end="url(#greyArrow)"/>
+  <text x="229"  y="83" class="wait" text-anchor="middle">12–24h</text>
+
+  <!-- B2 -->
+  <rect x="250" y="32" width="190" height="115" fill="#FAFAFA" stroke="#DADADA"/>
+  <rect x="268" y="48" width="40"  height="18"  fill="#FFE8E8"/>
+  <text x="278" y="61" class="owner">AC</text>
+  <text x="268" y="97" class="title">Reminder call</text>
+  <text x="268" y="122" class="sub">AC calls the day before</text>
+
+  <line x1="442" y1="89" x2="476" y2="89" stroke="#888888" stroke-width="2" marker-end="url(#greyArrow)"/>
+  <text x="459"  y="83" class="wait" text-anchor="middle">12–24h</text>
+
+  <!-- B3 -->
+  <rect x="480" y="32" width="190" height="115" fill="#FAFAFA" stroke="#DADADA"/>
+  <rect x="498" y="48" width="40"  height="18"  fill="#FFE8E8"/>
+  <text x="508" y="61" class="owner">AC</text>
+  <text x="498" y="97" class="title">Trial class</text>
+  <text x="498" y="122" class="sub">AC coordinates</text>
+
+  <line x1="672" y1="89" x2="706" y2="89" stroke="#888888" stroke-width="2" marker-end="url(#greyArrow)"/>
+  <text x="689"  y="83" class="wait" text-anchor="middle">12–24h</text>
+
+  <!-- B4 -->
+  <rect x="710" y="32" width="190" height="115" fill="#FAFAFA" stroke="#DADADA"/>
+  <rect x="728" y="48" width="40"  height="18"  fill="#FFE8E8"/>
+  <text x="738" y="61" class="owner">AC</text>
+  <text x="728" y="97" class="title">Enroll follow-up</text>
+  <text x="728" y="122" class="sub">AC calls to convert</text>
+
+  <!-- ═══ DIVIDER ════════════════════════════════════════════ -->
+  <line x1="20" y1="162" x2="900" y2="162" stroke="#333333" stroke-width="1"/>
+
+  <!-- ═══ AFTER ═════════════════════════════════════════════ -->
+  <text x="20" y="182" class="stag" fill="#FF80F4">AFTER — work distributed across three owners</text>
+
+  <!-- A1: SYSTEM -->
+  <rect x="20"  y="194" width="190" height="128" fill="#FFFFFF" stroke="#DADADA"/>
+  <rect x="38"  y="213" width="66"  height="22"  fill="#FFE0FD"/>
+  <text x="48"  y="228" class="owner">SYSTEM</text>
+  <text x="38"  y="264" class="title">Schedule</text>
+  <text x="38"  y="286" class="title">&amp; verify</text>
+  <text x="38"  y="309" class="sub">Automated on WhatsApp</text>
+
+  <line x1="212" y1="258" x2="246" y2="258" stroke="#FF80F4" stroke-width="2" marker-end="url(#purpleArrow)"/>
+
+  <!-- A2: TEACHER pre-trial -->
+  <rect x="250" y="194" width="190" height="128" fill="#FFFFFF" stroke="#DADADA"/>
+  <rect x="268" y="213" width="78"  height="22"  fill="#FFE0FD"/>
+  <text x="278" y="228" class="owner">TEACHER</text>
+  <text x="268" y="264" class="title">Pre-trial</text>
+  <text x="268" y="286" class="title">reach-out</text>
+  <text x="268" y="309" class="sub">Rapport built a day before</text>
+
+  <line x1="442" y1="258" x2="476" y2="258" stroke="#FF80F4" stroke-width="2" marker-end="url(#purpleArrow)"/>
+
+  <!-- A3: TEACHER trial -->
+  <rect x="480" y="194" width="190" height="128" fill="#FFFFFF" stroke="#DADADA"/>
+  <rect x="498" y="213" width="78"  height="22"  fill="#FFE0FD"/>
+  <text x="508" y="228" class="owner">TEACHER</text>
+  <text x="498" y="264" class="title">Trial class</text>
+  <text x="498" y="309" class="sub">Rapport already built</text>
+
+  <line x1="672" y1="258" x2="706" y2="258" stroke="#FF80F4" stroke-width="2" marker-end="url(#purpleArrow)"/>
+
+  <!-- A4: PARENT -->
+  <rect x="710" y="194" width="190" height="128" fill="#FFFFFF" stroke="#DADADA"/>
+  <rect x="728" y="213" width="68"  height="22"  fill="#FFE0FD"/>
+  <text x="738" y="228" class="owner">PARENT</text>
+  <text x="728" y="264" class="title">Enroll</text>
+  <text x="728" y="286" class="title">on the spot</text>
+  <text x="728" y="309" class="sub">One tap, on device</text>
+
+  <!-- AC footnote -->
+  <text x="900" y="350" class="wait" text-anchor="end">AC: exceptions only</text>
+
+</svg>

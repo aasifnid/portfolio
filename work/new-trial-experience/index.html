@@ -25,8 +25,7 @@
 <noscript><style>[data-animate]{opacity:1!important;transform:none!important}</style></noscript>
 <style>
 .outcome-stats { grid-template-columns: repeat(2, 1fr); }
-
-
+.screen-grid-3 { align-items: end; }
 </style>
 </head>
 <body>
@@ -142,6 +141,11 @@
 
   <p>And it wasn't the team's fault. Every parent was one of dozens an AC juggled that day, and on Cuemath's thin margins, hiring more to move faster wasn't viable. The funnel wasn't failing because the team was — the process put them in too many places at once.</p>
 
+  <div class="screen-featured">
+    <img src="../new-trial-experience/assets/old-vs-new-system.png" loading="lazy" decoding="async" alt="Old AC-dependent funnel vs. new distributed system comparison" class="cs-img">
+    <p class="caption">Old: every step routed through AC, with 12–24h waits between each. New: work distributed across system, teacher, and parent — ACs handle exceptions only.</p>
+  </div>
+
   <!-- 02 ROLE -->
   <div class="section-head" id="role" data-animate>
     <span class="section-num">02</span>
@@ -175,24 +179,11 @@
 
   <h2>Decisions</h2>
 
-  <p>The brief was direct: cut AC intervention by 70% while holding lead-to-enrollment conversion. If routine touchpoints — scheduling, reminders, enrollment — could be automated or handed to parents, ACs could focus on exceptions: special needs, payment issues.</p>
-
-  <p>My first hypothesis was big: have tutors handle everything from the moment they were assigned to a parent — pre-trial messaging, the class itself, post-trial enrollment, even onboarding. Parents already trusted tutors more than ACs, so tutor-as-everything seemed to follow. Testing across 22 trial classes proved it failed: pitching mid-session stretched teachers too thin, lesson quality fell, parents sensed the artifice. <strong>The shift: tutors are educators, not the operational spine. Keep them at the trust moments; distribute everything else to system and parent.</strong></p>
-
-  <p>So we redrew the funnel around one question — who should own each part of the work? The system took the routine: scheduling, reminders, checkout. Teachers took the trust moments: the pre-trial intro and the class itself. Parents took the decision. ACs stepped in only for exceptions — special needs, payment issues. Here's the shift:</p>
-
-  <div class="screen-featured">
-    <img src="../new-trial-experience/assets/old-vs-new-system.png" loading="lazy" decoding="async" alt="Old AC-dependent funnel vs. new distributed system comparison" class="cs-img">
-    <p class="caption">Old: sequential AC-dependent steps with 12–24h waits between each. New: parallel work across system automation, teacher relationships, and parent self-service. ACs intervene only for exceptions.</p>
-  </div>
-
   <div class="decisions-list">
 
     <div class="decision-item">
       <p class="decision-item-title">Decision 1 — WhatsApp as the spine, with automated recovery</p>
-      <p>WhatsApp was set by the brief — most teacher-parent conversation already lived there, not in our app, so the spec made it the channel. <strong>The design problem was making it carry the whole funnel.</strong> Every critical step (verification, slot confirmation, teacher intro, reminders, post-trial enrollment) ran on WhatsApp, with SMS and email as fallbacks so no parent fell through.</p>
-
-      <p>One automation rode on top: a 5-minute auto-message for parents who started but didn't book — <em>"Do you need help choosing a time?"</em>. Small, well-timed, capturing intent before it cooled.</p>
+      <p>WhatsApp was set by the brief — most teacher-parent conversation already lived there. <strong>The design problem was making it carry the whole funnel.</strong> Every critical step — verification, slot booking, teacher intro, reminders, post-trial enrollment — ran on WhatsApp, with SMS and email as fallbacks. A 5-minute auto-message fired for parents who started booking but didn't finish.</p>
 
       <div class="screen-grid-2">
         <div class="screen-featured">
@@ -205,7 +196,7 @@
         </div>
       </div>
 
-      <p>After the trial, teachers shared branded WhatsApp messages: pricing, class formats, refund policy. Post-trial follow-up became teacher-led — no AC required.</p>
+      <p>After the trial, teachers shared branded messages covering pricing, formats, and refund policy — post-trial follow-up became teacher-led.</p>
 
       <div class="screen-grid-3">
         <div class="screen-featured">
@@ -226,11 +217,9 @@
 
     <div class="decision-item">
       <p class="decision-item-title">Decision 2 — Teacher as trust anchor, before and during the trial</p>
-      <p>Instead of an AC confirmation, parents got a personal WhatsApp message from their assigned teacher 24 hours before the trial — name, credentials, sometimes a short video. <strong>Rapport began 24 hours early, not after the session ended.</strong></p>
+      <p>The initial direction had teachers owning everything — testing across 22 trials showed it broke lesson quality. So we narrowed their role to the trust moments only. Instead of an AC confirmation, parents got a WhatsApp message from their assigned teacher 24 hours before — name, credentials, sometimes a short video. <strong>Rapport began a day early, not after the session ended.</strong> 89% of teachers sent it in rollout — pre-session trust became the norm.</p>
 
-      <p>During the trial itself, teachers had a structured reference script — but used it only when parents asked questions. The parent pulls; the teacher doesn't push. Teachers could reference class formats (1:1, 1:2, 1:4) naturally, never as a pitch.</p>
-
-      <p>In rollout, <strong>89% of teachers sent the pre-trial WhatsApp intro</strong> — pre-session rapport became the norm, not the exception.</p>
+      <p>During the trial, teachers had a reference script — used only when parents asked. The parent pulls; the teacher doesn't push. Class formats came up naturally, never as a pitch.</p>
 
       <div class="screen-grid-2">
         <div class="screen-featured">
@@ -247,9 +236,9 @@
 
     <div class="decision-item">
       <p class="decision-item-title">Decision 3 — Direct enrollment immediately after the trial, with teacher present</p>
-      <p>The moment the session ended, parents saw an enrollment interface on their device — not a form. Three plan options, pricing visible, one-tap payment. <strong>Captures the decision while they're still in the moment, instead of days later.</strong> No AC call. If they had questions, the teacher was still present.</p>
+      <p>The moment the session ended, parents saw an enrollment interface on their device — three plan options, pricing visible, one-tap payment. <strong>Captures the decision while they're still in the moment, not days later.</strong> No AC required; the teacher was still there for questions.</p>
 
-      <p>A secondary win we didn't design for: with no AC in the loop, the ad-hoc discounts (10–25%) ACs used to offer when they sensed a lead slipping disappeared too — parents paid the standard price, and revenue per enrollment held firm.</p>
+      <p>A secondary win: removing ACs also removed the ad-hoc discounts (10–25%) they offered when sensing a slipping lead — parents paid standard price, and revenue per enrollment held.</p>
 
     </div>
 
