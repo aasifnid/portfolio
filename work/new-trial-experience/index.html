@@ -46,59 +46,15 @@
 
 <div id="scroll-progress"></div>
 
-<!-- NAV:START — auto-synced from common-assets/navbar.html · run scripts/sync-nav.py to update -->
-<nav class="site-nav">
-  <a href="/" class="nav-name" data-nav-home>Aasif Anwar</a>
-  <div class="nav-links">
-    <a href="/#work" data-nav-link="work">works</a>
-    <a href="/#about" data-nav-link="about">about</a>
-    <a href="/#recommendations" data-nav-link="peers">peers</a>
-    <a href="/#contact" data-nav-link="connect">connect</a>
-    <span class="nav-zone-sep" aria-hidden="true"></span>
-    <a href="https://drive.google.com/file/d/1WEOEkgUW7NZk5b4zRzuqMfnKv8hcUsir/view?usp=sharing" target="_blank" rel="noopener" data-nav-link="resume">resume</a>
-    <a href="/design-system/" data-nav-link="design-system">design system</a>
+<!-- NAV:START - auto-synced from common-assets/navbar-case-study.html - run scripts/sync-nav.py to update -->
+<nav class="site-nav cs-nav">
+  <a href="/#work" class="cs-nav-back">← Back to work</a>
+  <div class="cs-nav-actions">
+    <a href="https://drive.google.com/file/d/1WEOEkgUW7NZk5b4zRzuqMfnKv8hcUsir/view?usp=sharing" target="_blank" rel="noopener" class="cs-nav-btn">Resume</a>
+    <a href="/design-system/" class="cs-nav-btn">Design system</a>
   </div>
-  <button class="nav-burger" id="nav-burger" aria-label="Open menu">
-    <span></span><span></span><span></span>
-  </button>
 </nav>
-<div class="nav-mobile-menu" id="nav-mobile-menu">
-  <a href="/#work" class="nav-mobile-link" data-nav-link="work">works</a>
-  <a href="/#about" class="nav-mobile-link" data-nav-link="about">about</a>
-  <a href="/#recommendations" class="nav-mobile-link" data-nav-link="peers">peers</a>
-  <a href="/#contact" class="nav-mobile-link" data-nav-link="connect">connect</a>
-  <div class="nav-mobile-divider" aria-hidden="true"></div>
-  <a href="https://drive.google.com/file/d/1WEOEkgUW7NZk5b4zRzuqMfnKv8hcUsir/view?usp=sharing" target="_blank" rel="noopener" class="nav-mobile-link" data-nav-link="resume">resume</a>
-  <a href="/design-system/" class="nav-mobile-link" data-nav-link="design-system">design system</a>
-</div>
-<script>
-  (function() {
-    var burger = document.getElementById('nav-burger');
-    var menu = document.getElementById('nav-mobile-menu');
-    if (!burger || !menu) return;
-    function setOpen(open) {
-      burger.classList.toggle('open', open);
-      menu.classList.toggle('open', open);
-      burger.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
-      burger.setAttribute('aria-expanded', String(open));
-    }
-    burger.addEventListener('click', function() {
-      setOpen(!menu.classList.contains('open'));
-    });
-    menu.querySelectorAll('.nav-mobile-link').forEach(function(link) {
-      link.addEventListener('click', function() { setOpen(false); });
-    });
-  })();
-</script>
 <!-- NAV:END -->
-
-<nav class="cs-section-nav" aria-label="Case study sections">
-  <a href="#context">The Problem</a>
-  <a href="#role">Role</a>
-  <a href="#process">Decisions</a>
-  <a href="#outcome">Impact</a>
-  <a href="#reflection">Lessons</a>
-</nav>
 
 <!-- COVER -->
 <div class="cover">
@@ -331,47 +287,6 @@
     document.querySelectorAll('[data-animate]').forEach(function (el) { observer.observe(el); });
   })();
 
-  (function () {
-    var navLinks = document.querySelectorAll('.cs-section-nav a:not(.cs-nav-back)');
-    var ids = ['context','role','process','outcome','reflection'];
-    var els = ids.map(function(id) { return document.getElementById(id); }).filter(Boolean);
-    var clickScrollUntil = 0;
-
-    function updateActiveTab(id) {
-      navLinks.forEach(function(link) {
-        link.classList.remove('active');
-        if (link.getAttribute('href') === '#' + id) {
-          link.classList.add('active');
-        }
-      });
-    }
-
-    navLinks.forEach(function(link) {
-      link.addEventListener('click', function() {
-        var href = this.getAttribute('href');
-        if (!href || href.charAt(0) !== '#') return;
-        var id = href.substring(1);
-        if (document.getElementById(id)) {
-          updateActiveTab(id);
-          clickScrollUntil = Date.now() + 1500;
-        }
-      });
-    });
-
-    function updateActiveOnScroll() {
-      if (Date.now() < clickScrollUntil) return;
-      var triggerY = 130;
-      var active = els[0] ? els[0].id : null;
-      for (var i = 0; i < els.length; i++) {
-        if (els[i].getBoundingClientRect().top - triggerY <= 0) {
-          active = els[i].id;
-        }
-      }
-      if (active) updateActiveTab(active);
-    }
-    window.addEventListener('scroll', updateActiveOnScroll, { passive: true });
-    updateActiveOnScroll();
-  })();
 
   (function () {
     var lightbox = document.getElementById('lightbox-overlay');

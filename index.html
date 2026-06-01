@@ -159,8 +159,16 @@
     width: 8px; height: 8px;
     border-radius: 50%;
     background: #00C853;
-    box-shadow: 0 0 0 4px rgba(0, 200, 83, 0.15);
     flex-shrink: 0;
+    animation: statusPulse 1.8s ease-out infinite;
+  }
+  @keyframes statusPulse {
+    0%   { box-shadow: 0 0 0 0 rgba(0, 200, 83, 0.4); }
+    70%  { box-shadow: 0 0 0 7px rgba(0, 200, 83, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(0, 200, 83, 0); }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .hero-status-dot { animation: none; box-shadow: 0 0 0 4px rgba(0, 200, 83, 0.15); }
   }
   .hero-contact {
     display: flex; align-items: center; gap: 28px;
@@ -678,30 +686,24 @@
 <div id="cursor-dot"></div>
 
 <!-- ══════════════════════════════════════ NAV ══════════════════════════════════════ -->
-<!-- NAV:START — auto-synced from common-assets/navbar.html · run scripts/sync-nav.py to update -->
+<!-- NAV:START - auto-synced from common-assets/navbar.html - run scripts/sync-nav.py to update -->
 <nav class="site-nav">
   <a href="/" class="nav-name" data-nav-home>Aasif Anwar</a>
   <div class="nav-links">
-    <a href="/#work" data-nav-link="work">works</a>
+    <a href="/#work" data-nav-link="work">work</a>
     <a href="/#about" data-nav-link="about">about</a>
     <a href="/#recommendations" data-nav-link="peers">peers</a>
     <a href="/#contact" data-nav-link="connect">connect</a>
-    <span class="nav-zone-sep" aria-hidden="true"></span>
-    <a href="https://drive.google.com/file/d/1WEOEkgUW7NZk5b4zRzuqMfnKv8hcUsir/view?usp=sharing" target="_blank" rel="noopener" data-nav-link="resume">resume</a>
-    <a href="/design-system/" data-nav-link="design-system">design system</a>
   </div>
   <button class="nav-burger" id="nav-burger" aria-label="Open menu">
     <span></span><span></span><span></span>
   </button>
 </nav>
 <div class="nav-mobile-menu" id="nav-mobile-menu">
-  <a href="/#work" class="nav-mobile-link" data-nav-link="work">works</a>
+  <a href="/#work" class="nav-mobile-link" data-nav-link="work">work</a>
   <a href="/#about" class="nav-mobile-link" data-nav-link="about">about</a>
   <a href="/#recommendations" class="nav-mobile-link" data-nav-link="peers">peers</a>
   <a href="/#contact" class="nav-mobile-link" data-nav-link="connect">connect</a>
-  <div class="nav-mobile-divider" aria-hidden="true"></div>
-  <a href="https://drive.google.com/file/d/1WEOEkgUW7NZk5b4zRzuqMfnKv8hcUsir/view?usp=sharing" target="_blank" rel="noopener" class="nav-mobile-link" data-nav-link="resume">resume</a>
-  <a href="/design-system/" class="nav-mobile-link" data-nav-link="design-system">design system</a>
 </div>
 <script>
   (function() {
@@ -714,9 +716,7 @@
       burger.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
       burger.setAttribute('aria-expanded', String(open));
     }
-    burger.addEventListener('click', function() {
-      setOpen(!menu.classList.contains('open'));
-    });
+    burger.addEventListener('click', function() { setOpen(!menu.classList.contains('open')); });
     menu.querySelectorAll('.nav-mobile-link').forEach(function(link) {
       link.addEventListener('click', function() { setOpen(false); });
     });
@@ -727,12 +727,11 @@
 <!-- ══════════════════════════════════════ HERO ══════════════════════════════════════ -->
 <div class="home-hero">
   <div class="hero-content">
-    <p class="hero-status">Product Designer &middot; Open to full-time roles<span class="hero-status-dot"></span></p>
+    <p class="hero-status">Open to full-time roles<span class="hero-status-dot"></span></p>
     <h1 class="hero-headline">I built learning tools for 30K students and 3K+ tutors.</h1>
     <p class="hero-sub">Lifted trial-to-paid by 9.6%. Got 75.2% of students into class ready to learn.</p>
     <div class="hero-rule"></div>
     <div class="hero-contact">
-      <span class="hero-contact-label">Say hi —</span>
       <a href="mailto:aasif.nid@gmail.com">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="0"/><path d="M3 7l9 6 9-6"/></svg>
         aasif.nid@gmail.com
@@ -740,6 +739,10 @@
       <a href="https://www.linkedin.com/in/aasif-nid/" target="_blank" rel="noopener">
         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 3H5a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2V5a2 2 0 00-2-2zM8.5 18H6V10h2.5v8zM7.25 8.8a1.45 1.45 0 110-2.9 1.45 1.45 0 010 2.9zM18 18h-2.5v-4.2c0-1.1-.4-1.8-1.4-1.8-.8 0-1.3.5-1.5 1-.1.2-.1.5-.1.7V18H10s.03-7.3 0-8h2.5v1.1c.3-.5 1-1.3 2.4-1.3 1.7 0 3.1 1.1 3.1 3.6V18z"/></svg>
         LinkedIn
+      </a>
+      <a href="https://drive.google.com/file/d/1WEOEkgUW7NZk5b4zRzuqMfnKv8hcUsir/view?usp=sharing" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="9" y1="13" x2="15" y2="13"/><line x1="9" y1="17" x2="15" y2="17"/></svg>
+        Resume
       </a>
     </div>
   </div>
@@ -754,7 +757,7 @@
 
 <!-- ══════════════════════════════════════ WORK ══════════════════════════════════════ -->
 <section class="home-section" id="work">
-  <p class="home-section-label">Selected Works</p>
+  <p class="home-section-label">Selected Work</p>
   <div class="work-grid">
 
     <a href="work/feel-check/index.html" class="work-card">

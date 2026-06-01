@@ -75,6 +75,16 @@ body {
 .nav-burger.open span:nth-child(1) { transform: translateY(7.25px) rotate(45deg); }
 .nav-burger.open span:nth-child(2) { opacity: 0; }
 .nav-burger.open span:nth-child(3) { transform: translateY(-7.25px) rotate(-45deg); }
+
+/* ─── Case-study inner nav — "Back to work" + plain text links (matches home nav style); visible on mobile, no hamburger ─── */
+.cs-nav-back { font-size: 14px; font-weight: var(--fw-semibold); color: #FFFFFF; text-decoration: none; transition: color 0.15s ease; }
+.cs-nav-back:hover { color: var(--color-accent); }
+.cs-nav-actions { display: flex; align-items: center; gap: 24px; }
+.cs-nav-btn { font-size: 14px; font-weight: var(--fw-semibold); color: #FFFFFF; text-decoration: none; white-space: nowrap; transition: color 0.15s ease; }
+.cs-nav-btn:hover { color: var(--color-accent); }
+@media (max-width: 768px) {
+  .cs-nav-actions { gap: 16px; }
+}
 .nav-mobile-menu {
   position: fixed; top: 64px; left: 0; right: 0; z-index: 999;
   background: var(--color-ink);
