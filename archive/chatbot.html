@@ -1,0 +1,330 @@
+<!-- ════════════════════════════════════════════════════════════════
+  ARCHIVED COMPONENT — "Ask about Aasif" chatbot (FAB + panel + Groq chat)
+  Removed from index.html on 2026-06-02 (set aside, not deleted).
+
+  TO RESTORE:
+    1. Paste the markup + <script> block below back into index.html,
+       just before the closing </body> (where the CHATBOT comment was).
+    2. The CSS is still present (dormant) in common-assets/style.css
+       under selectors:  #chat-bubble, #chat-panel, .chat-*, .chip
+       (nothing to re-add — it simply has no markup to style right now).
+  ════════════════════════════════════════════════════════════════ -->
+
+<!-- ══════════════════════════════════════ CHATBOT ══════════════════════════════════════ -->
+<button id="chat-bubble" aria-label="Ask about Aasif">
+  <svg viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+  </svg>
+  <span class="chat-bubble-label">Ask about Aasif</span>
+</button>
+
+<div id="chat-panel" role="dialog" aria-label="Chat with Aasif's assistant">
+  <div class="chat-header">
+    <div class="chat-header-left">
+      <div>
+        <div class="chat-header-title">AI Assistant <span class="tag">Beta</span></div>
+        <div class="chat-header-sub">Powered by Groq</div>
+      </div>
+    </div>
+    <div class="chat-header-actions">
+      <button class="chat-reset" id="chat-reset-btn" aria-label="Start new chat" title="New chat">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 4v6h-6"/><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/></svg>
+      </button>
+      <button class="chat-close" id="chat-close-btn" aria-label="Close chat">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    </div>
+  </div>
+  <div class="chat-messages" id="chat-messages">
+    <div class="chat-msg chat-msg--bot chat-msg--disclaimer">
+      <div class="chat-msg-bubble">I'm an AI trained on Aasif's work. I can make mistakes—verify anything important directly with him.</div>
+    </div>
+  </div>
+  <div class="chat-starters" id="chat-starters">
+    <button class="chip">What is his design superpower?</button>
+    <button class="chip">What does he do outside of work?</button>
+    <button class="chip">What has he shipped?</button>
+  </div>
+  <div class="chat-input-row">
+    <input class="chat-input" id="chat-input" type="text" placeholder="Ask a question…" autocomplete="off" />
+    <button class="chat-send" id="chat-send">Send</button>
+  </div>
+</div>
+
+<script>
+  (function() {
+    var bubble  = document.getElementById('chat-bubble');
+    var panel   = document.getElementById('chat-panel');
+    var closeBtn= document.getElementById('chat-close-btn');
+    var resetBtn= document.getElementById('chat-reset-btn');
+    var messages= document.getElementById('chat-messages');
+    var starters= document.getElementById('chat-starters');
+    var input   = document.getElementById('chat-input');
+    var sendBtn = document.getElementById('chat-send');
+    var history = [];
+    var isOpen  = false;
+
+    /* Snapshot of the initial messages container so reset can restore it cleanly */
+    var initialMessagesHTML = messages.innerHTML;
+
+    function openPanel() {
+      isOpen = true;
+      panel.classList.add('open');
+      bubble.style.display = 'none';
+      input.focus();
+    }
+
+    function closePanel() {
+      isOpen = false;
+      panel.classList.remove('open');
+      bubble.style.display = 'flex';
+    }
+
+    function resetChat() {
+      history = [];
+      messages.innerHTML = initialMessagesHTML;
+      starters.style.display = '';
+      panel.classList.remove('chat-has-history');
+      input.value = '';
+      input.focus();
+    }
+
+    function markHistoryStarted() {
+      panel.classList.add('chat-has-history');
+    }
+
+    bubble.addEventListener('click', openPanel);
+    closeBtn.addEventListener('click', closePanel);
+    resetBtn.addEventListener('click', resetChat);
+
+    var quickAnswers = {
+      "What has he shipped?": "4 case studies: Feel Check (emotional check-in, 2/3 tutors saw better readiness), New Trial (50% conversion lift), Tutoring Home Redesign (unified structure for 30K students), Cuemath Partners (transparent referral). Designed for ~30K active students at Cuemath.",
+      "What is his design superpower?": "Systems thinking—spotting how pieces fit together and second-order effects others miss. Combines deep user empathy with intentionality to solve real problems at scale.",
+      "What does he do outside of work?": "Reads about tech & world. Foodie who loves cooking. Values genuine relationships—believes that's how best things happen."
+    };
+
+    starters.querySelectorAll('.chip').forEach(function(chip) {
+      chip.addEventListener('click', function() {
+        var question = chip.textContent;
+        var answer = quickAnswers[question];
+        if (answer) {
+          starters.style.display = 'none';
+          markHistoryStarted();
+          addMsg('user', question);
+          history.push({ role: 'user', content: question });
+          var reply = addMsg('bot', answer);
+          history.push({ role: 'model', content: answer });
+        } else {
+          sendMessage(question);
+        }
+      });
+    });
+
+    input.addEventListener('keydown', function(e) {
+      if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); sendMessage(input.value); }
+    });
+    sendBtn.addEventListener('click', function() { sendMessage(input.value); });
+
+    function renderMarkdown(text) {
+      // Convert **bold** to <strong>bold</strong>
+      text = text.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+      // Convert * bullets to •
+      text = text.replace(/^\* /gm, '• ');
+      // Convert newlines to <br>
+      text = text.replace(/\n/g, '<br>');
+      return text;
+    }
+
+    function addMsg(role, text, isTyping) {
+      var div = document.createElement('div');
+      div.className = 'chat-msg chat-msg--' + role;
+      var bubble = document.createElement('div');
+      bubble.className = 'chat-msg-bubble' + (isTyping ? ' typing' : '');
+      if (isTyping) {
+        bubble.textContent = text;
+      } else {
+        bubble.innerHTML = renderMarkdown(text);
+      }
+      div.appendChild(bubble);
+      messages.appendChild(div);
+      messages.scrollTop = messages.scrollHeight;
+      return bubble;
+    }
+
+    function sendMessage(text) {
+      text = (text || '').trim();
+      if (!text) return;
+
+      starters.style.display = 'none';
+      markHistoryStarted();
+      input.value = '';
+      sendBtn.disabled = true;
+
+      addMsg('user', text);
+      history.push({ role: 'user', content: text });
+
+      var typingBubble = addMsg('bot', 'Thinking…', true);
+
+      fetch('/api/chat', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ message: text, history: history.slice(0, -1) })
+      })
+      .then(function(r) { return r.json(); })
+      .then(function(data) {
+        if (data.error) {
+          console.error('Chat API error:', data.error, data.message);
+          // Show specific message for rate limit
+          if (data.error === 'rate_limit') {
+            typingBubble.textContent = data.message || 'I\'ve hit my token limit. I apologize. Please come back in a few minutes.';
+          } else {
+            typingBubble.textContent = 'Sorry, something went wrong. Try again.';
+          }
+        } else {
+          var reply = data.reply || 'Sorry, something went wrong. Try again.';
+          typingBubble.innerHTML = renderMarkdown(reply);
+          history.push({ role: 'model', content: reply });
+        }
+        typingBubble.classList.remove('typing');
+        messages.scrollTop = messages.scrollHeight;
+      })
+      .catch(function(err) {
+        console.error('Chat fetch error:', err);
+        typingBubble.textContent = 'Something went wrong. Please try again.';
+        typingBubble.classList.remove('typing');
+      })
+      .finally(function() {
+        sendBtn.disabled = false;
+        input.focus();
+      });
+    }
+  })();
+</script>
+
+
+<!-- ===== ARCHIVED CHATBOT CSS (moved out of common-assets/style.css 2026-06-02) =====
+     To restore: paste back into style.css, and restore the markup+script above into index.html. -->
+<style>
+/* ─── Chatbot ─── */
+#chat-bubble {
+  position: fixed; bottom: 84px; right: max(120px, calc((100% - 1000px) / 2)); z-index: 1000;
+  display: flex; align-items: center; gap: 10px;
+  background: var(--color-ink); border: none; cursor: pointer;
+  padding: 12px 18px; border-radius: 0;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.18);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  white-space: nowrap;
+}
+#chat-bubble:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(0,0,0,0.22); }
+@media (max-width: 1100px) { #chat-bubble, #chat-panel { right: 64px; } }
+#chat-bubble svg { width: 18px; height: 18px; flex-shrink: 0; }
+.chat-bubble-label {
+  font-family: var(--font-body); font-size: var(--text-sm); font-weight: var(--fw-semibold);
+  color: #FFFFFF; letter-spacing: 0.01em;
+}
+#chat-panel {
+  position: fixed; bottom: 84px; right: max(120px, calc((100% - 1000px) / 2)); z-index: 1000;
+  width: 360px; height: 520px;
+  background: var(--color-surface); border-radius: 0;
+  box-shadow: 0 8px 40px rgba(0,0,0,0.14), 0 2px 8px rgba(0,0,0,0.08);
+  display: flex; flex-direction: column;
+  overflow: hidden;
+  opacity: 0; transform: translateY(12px) scale(0.97);
+  pointer-events: none;
+  transition: opacity 0.22s ease, transform 0.22s ease;
+}
+#chat-panel.open { opacity: 1; transform: translateY(0) scale(1); pointer-events: all; }
+.chat-header {
+  background: var(--color-ink); color: #FFFFFF;
+  padding: 14px 18px; display: flex; align-items: center; justify-content: space-between;
+  flex-shrink: 0;
+}
+.chat-header-left { display: flex; align-items: center; gap: 10px; }
+.chat-header-title { font-family: var(--font-display); font-size: var(--text-sm); font-weight: var(--fw-bold); display: flex; align-items: center; gap: 8px; }
+.chat-header-sub { font-family: var(--font-body); font-size: var(--text-xs); color: rgba(255,255,255,0.45); margin-top: 1px; letter-spacing: 0; }
+.chat-header-actions { display: flex; align-items: center; gap: 4px; }
+.chat-close,
+.chat-reset {
+  background: none; border: none; cursor: pointer; color: rgba(255,255,255,0.5);
+  padding: 4px; border-radius: 0; transition: color 0.15s, opacity 0.2s ease;
+  display: flex; align-items: center; justify-content: center;
+}
+.chat-close:hover,
+.chat-reset:hover { color: #FFFFFF; }
+
+/* Reset button hidden until first user interaction adds a message */
+.chat-reset { display: none; }
+.chat-has-history .chat-reset { display: flex; }
+.chat-messages {
+  flex: 1; overflow-y: auto; padding: 16px;
+  display: flex; flex-direction: column; gap: 12px;
+  min-height: 200px;
+}
+.chat-msg { max-width: 88%; display: flex; flex-direction: column; gap: 3px; }
+.chat-msg--user { align-self: flex-end; }
+.chat-msg--bot  { align-self: stretch; max-width: 100%; }
+.chat-msg-bubble {
+  padding: 10px 14px; border-radius: 0;
+  font-size: var(--text-sm); line-height: 1.55;
+}
+.chat-msg--user .chat-msg-bubble {
+  background: var(--color-ink); color: #FFFFFF;
+}
+.chat-msg--bot .chat-msg-bubble {
+  background: var(--color-surface); color: var(--color-ink);
+  border: 1px solid var(--color-border);
+}
+.chat-msg-bubble.typing { color: var(--color-ink-3); font-style: italic; }
+.chat-starters {
+  padding: 4px 16px 12px; display: flex; flex-wrap: wrap; gap: 8px;
+}
+.chat-msg--disclaimer .chat-msg-bubble {
+  background: #EBEBEB; border: none;
+  font-size: var(--text-sm); line-height: 1.5;
+  color: rgba(0,0,0,0.60); font-style: normal;
+  padding: 8px 12px; width: 100%;
+  font-family: var(--font-body);
+}
+.chat-input-row {
+  padding: 12px 14px; border-top: 1px solid #DADADA;
+  background: var(--color-surface-2);
+  display: flex; gap: 8px; flex-shrink: 0;
+}
+.chat-input {
+  flex: 1; border: 1px solid var(--color-border); border-radius: 0;
+  padding: 9px 12px; font-family: var(--font-body); font-size: var(--text-sm);
+  color: var(--color-ink); outline: none; resize: none;
+  transition: border-color 0.15s;
+}
+.chat-input:focus { border-color: var(--color-border-2); }
+.chat-send {
+  background: var(--color-ink); color: #FFFFFF;
+  border: none; border-radius: 0; padding: 0 14px;
+  cursor: pointer; font-family: var(--font-body); font-size: var(--text-sm); font-weight: var(--fw-semibold);
+  transition: background 0.15s; flex-shrink: 0;
+}
+.chat-send:hover { background: #2D2D2D; }
+.chat-send:disabled { opacity: 0.4; cursor: not-allowed; }
+@media (max-width: 480px) {
+  /* Anchor to the same bottom as #chat-bubble (20px) so the open panel
+     visually replaces the bubble. Cap height so the top stays clear of
+     the 64px nav. (64 nav + 20 bottom + 16 buffer = 100 reserved.)
+     dvh = dynamic viewport height — shrinks when the OS keyboard opens
+     so the input row stays visible above the keyboard. */
+  /* Use left+right (not width+right) so the browser computes the width
+     from the available space — no chance of overflow past the viewport. */
+  #chat-panel {
+    left: 12px; right: 12px; bottom: 20px;
+    width: auto;
+    max-height: calc(100vh - 100px);
+    max-height: calc(100dvh - 100px);
+  }
+  /* Let the messages area shrink freely when the keyboard reduces
+     the visible viewport — otherwise min-height keeps the input
+     pushed below the keyboard. */
+  .chat-messages { min-height: 0; }
+  #chat-bubble { bottom: 20px; right: 20px; padding: 14px; gap: 0; }
+  #chat-bubble .chat-bubble-label { display: none; }
+  #chat-bubble svg { width: 22px; height: 22px; }
+}
+</style>

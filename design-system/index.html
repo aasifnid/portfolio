@@ -27,7 +27,8 @@
      .nav-zone-sep, .nav-burger, .nav-mobile-menu, .nav-mobile-divider. */
 
   /* ─── Page layout ─── */
-  .ds-page { max-width: 800px; margin: 0 auto; padding: 128px 48px 96px; }
+  .ds-page { max-width: 1600px; margin: 0 auto; padding: 128px 120px 96px; }
+  @media (max-width: 1100px) { .ds-page { padding-left: 64px; padding-right: 64px; } }
 
   .ds-header { margin-bottom: 96px; max-width: 640px; }
   .ds-eyebrow {
@@ -366,9 +367,10 @@
     font-family: var(--font-body); font-size: var(--text-sm); font-weight: 600;
     text-decoration: none; padding: 12px 24px;
     border: none; cursor: pointer;
-    transition: background 0.15s ease;
+    transition: background 0.15s ease, color 0.15s ease;
   }
-  .btn-primary:hover { background: var(--btn-primary-hover); }
+  /* Interaction standard: primary FILLS the accent on hover (text → ink); ghost shifts to accent border + text. */
+  .btn-primary:hover { background: var(--btn-primary-hover); color: var(--color-ink); }
   .btn-ghost {
     display: inline-flex; align-items: center; gap: 8px;
     background: var(--btn-ghost-bg); color: var(--btn-ghost-text);
@@ -377,7 +379,8 @@
     border: var(--btn-ghost-border); cursor: pointer;
     transition: border-color 0.15s ease, color 0.15s ease, background 0.15s ease;
   }
-  .btn-ghost:hover { border-color: var(--btn-ghost-hover-border); color: var(--color-ink); background: var(--btn-ghost-hover-bg); }
+  .btn-ghost:hover { border-color: var(--color-accent); color: var(--color-accent); background: transparent; }
+  .btn-primary:focus-visible, .btn-ghost:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 2px; }
 
   /* ─── Footer (matches home) ─── */
   .home-footer {
@@ -739,11 +742,26 @@
       <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px;">
         <div style="padding: 24px; background: var(--color-surface-1);">
           <p style="font-family: var(--font-display); font-size: var(--text-xl); font-weight: var(--fw-bold); color: var(--color-ink); margin-bottom: 8px;">Sharp edges</p>
-          <p style="font-size: var(--text-sm); color: var(--color-ink-2); line-height: 1.6;">All rectangular UI uses <code style="font-size: var(--text-xs);">border-radius: 0</code>. No exceptions for cards, buttons, badges, inputs, or speech bubbles. <strong>Only true circles (<code style="font-size: var(--text-xs);">border-radius: 50%</code>)</strong> are allowed — used for avatar photos, recommendation cards' LinkedIn overlay, and the chrome browser dots in the dashboard frame.</p>
+          <p style="font-size: var(--text-sm); color: var(--color-ink-2); line-height: 1.6;">All rectangular UI uses <code style="font-size: var(--text-xs);">border-radius: 0</code>. No exceptions for cards, buttons, badges, inputs, or speech bubbles. <strong>Only true circles (<code style="font-size: var(--text-xs);">border-radius: 50%</code>)</strong> are allowed — used for avatar photos, recommendation cards' LinkedIn overlay, and the chrome browser dots in the dashboard frame. <strong>One deliberate exception:</strong> the recommendation roster pills (<code style="font-size: var(--text-xs);">.recs-pill</code>) and carousel arrow buttons are rounded/circular as a "tap-to-select" affordance.</p>
         </div>
         <div style="padding: 24px; background: var(--color-surface-1);">
           <p style="font-family: var(--font-display); font-size: var(--text-xl); font-weight: var(--fw-bold); color: var(--color-ink); margin-bottom: 8px;">Mobile overflow guard</p>
           <p style="font-size: var(--text-sm); color: var(--color-ink-2); line-height: 1.6;">Every page sets <code style="font-size: var(--text-xs);">html { overflow-x: clip }</code> + <code style="font-size: var(--text-xs);">body { overflow-x: hidden }</code> globally. Prevents a recurring white sliver bug on mobile when any descendant overflows its container — case study image grids and the cs-next footer are common triggers.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ─── Layout system ─── -->
+    <div class="ds-subsection">
+      <p class="ds-subsection-label">Layout system · centered column + reading frame</p>
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px;">
+        <div style="padding: 24px; background: var(--color-surface-1);">
+          <p style="font-family: var(--font-display); font-size: var(--text-xl); font-weight: var(--fw-bold); color: var(--color-ink); margin-bottom: 8px;">Homepage · focused column</p>
+          <p style="font-size: var(--text-sm); color: var(--color-ink-2); line-height: 1.6;">Nav, hero, and every section share <code style="font-size: var(--text-xs);">max-width: 1240px; margin: 0 auto; padding: 0 120px</code> → a ~1000px content column centered with generous gutters. Nav &amp; footer track it via <code style="font-size: var(--text-xs);">max(120px, calc((100% - 1000px) / 2))</code>. Gutters step 120 → 64 (≤1100px) → 24 (≤640px).</p>
+        </div>
+        <div style="padding: 24px; background: var(--color-surface-1);">
+          <p style="font-family: var(--font-display); font-size: var(--text-xl); font-weight: var(--fw-bold); color: var(--color-ink); margin-bottom: 8px;">Case study · reading frame <code style="font-size: var(--text-xs);">.cs-reading</code></p>
+          <p style="font-size: var(--text-sm); color: var(--color-ink-2); line-height: 1.6;">Case-study pages run narrower than home: body text caps at <strong>~760px</strong> for readability while media (images, video, tables, next-case card) spans the wider <strong>~1000px</strong> frame. Applied via <code style="font-size: var(--text-xs);">.cover.cs-reading</code> / <code style="font-size: var(--text-xs);">.page.cs-reading</code>. Rule: narrow text, wide media.</p>
         </div>
       </div>
     </div>
@@ -823,6 +841,14 @@
         <p style="margin-top: 16px; font-size: var(--text-xs); color: var(--color-ink-3); line-height: 1.5;">
           <strong style="color: var(--color-ink-2);">.btn-primary</strong> for primary CTAs (single per page) · <strong style="color: var(--color-ink-2);">.btn-ghost</strong> for secondary actions · <strong style="color: var(--color-ink-2);">.btn-external</strong> for ambient external links (galleries, resumes, repos) — transparent bg, ↗ icon, quieter weight.
         </p>
+        <p style="margin-top: 12px; font-size: var(--text-xs); color: var(--color-ink-3); line-height: 1.65; border-top: 1px solid var(--color-border); padding-top: 12px;">
+          <strong style="color: var(--color-ink-2);">Interaction model (sitewide) — hover the buttons above:</strong><br>
+          <strong style="color: var(--color-ink-2);">Primary</strong>: ink fill → <em>fills accent (purple-4), text flips to ink</em>.
+          <strong style="color: var(--color-ink-2);">Ghost / secondary</strong>: border + text shift to accent (the "accent edge").
+          <strong style="color: var(--color-ink-2);">Selected / active</strong> (pills, current nav): purple-1 fill + purple-4 ring.
+          <strong style="color: var(--color-ink-2);">Focus (keyboard)</strong>: 2px accent outline, 2px offset.
+          Rule of thumb — <em>accent edge = touching it · accent / purple-1 fill = committed to it.</em>
+        </p>
       </div>
     </div>
 
@@ -864,8 +890,8 @@
     <!-- Chatbot (FAB + Panel) -->
     <div class="ds-component">
       <div class="ds-component-header">
-        <span class="ds-component-title">Chatbot · floating action + panel</span>
-        <span class="ds-component-meta">#chat-bubble · #chat-panel · .chat-header · .chat-msg · .chat-input-row</span>
+        <span class="ds-component-title">Chatbot · floating action + panel <span style="color: var(--color-accent); font-weight: var(--fw-bold);">· ARCHIVED</span></span>
+        <span class="ds-component-meta">Archived 2026-06-02 — markup + CSS live in /archive/chatbot.html, not on the live site. Kept here for reference / future restore.</span>
       </div>
       <div class="ds-component-preview no-pad">
         <div style="display: grid; grid-template-columns: 1fr 360px; gap: 24px; padding: 32px; align-items: start; background: var(--color-surface-1);">
@@ -984,8 +1010,8 @@
     <!-- Recommendation card -->
     <div class="ds-component">
       <div class="ds-component-header">
-        <span class="ds-component-title">Recommendation card</span>
-        <span class="ds-component-meta">.rec-card · colored header · line-clamp quote · LinkedIn avatar hover</span>
+        <span class="ds-component-title">Recommendation card <span style="color: var(--color-ink-3); font-weight: var(--fw-bold);">· legacy</span></span>
+        <span class="ds-component-meta">LEGACY — replaced by the Recommendations carousel below. .rec-card · colored header · line-clamp quote · LinkedIn avatar hover</span>
       </div>
       <div class="ds-component-preview">
         <div class="rec-card" style="max-width: 480px;">
@@ -1006,6 +1032,29 @@
               <button class="rec-readmore">Read more</button>
             </div>
           </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Recommendations carousel (current) -->
+    <div class="ds-component">
+      <div class="ds-component-header">
+        <span class="ds-component-title">Recommendations carousel <span style="color: var(--color-accent); font-weight: var(--fw-bold);">· current</span></span>
+        <span class="ds-component-meta">.recs-pills · .recs-pill (roster chips, rounded) · .recs-mark · .recs-quote (text-xl DM Sans 600) · .recs-attr (→ LinkedIn) · .recs-count · .recs-arrows — one recommendation at a time; pill hover = accent edge, selected = purple-1 fill + purple-4 ring. Replaces the 6-card grid (legacy, above).</span>
+      </div>
+      <div class="ds-component-preview">
+        <div class="recs-pills" style="margin-bottom: 32px;">
+          <div class="recs-pill on"><img src="../home/assets/Recommendations/Manik.jpeg" alt=""><div><div class="nm">Manik Bansal</div><div class="rl">Head of Design · Cuemath</div></div></div>
+          <div class="recs-pill"><img src="../home/assets/Recommendations/Vaibhav.jpeg" alt=""><div><div class="nm">Vaibhav Sawhney</div><div class="rl">Head of Product · Cuemath</div></div></div>
+        </div>
+        <div class="recs-panel">
+          <span class="recs-mark">“</span>
+          <blockquote class="recs-quote" style="min-height: 0;">He doesn't design in a vacuum — he talks to people, watches how they use the product, and brings it into the next iteration.”</blockquote>
+          <a class="recs-attr" href="#" onclick="return false;"><img src="../home/assets/Recommendations/Manik.jpeg" alt=""><div><div class="recs-name">Manik Bansal</div><div class="recs-role">Head of Design · Cuemath</div></div></a>
+        </div>
+        <div class="recs-ctrls" style="margin-top: 32px;">
+          <div class="recs-count"><span>01</span> / 06</div>
+          <div class="recs-arrows"><button>‹</button><button>›</button></div>
         </div>
       </div>
     </div>

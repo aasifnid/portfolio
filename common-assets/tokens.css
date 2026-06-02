@@ -110,7 +110,7 @@
   /* ─── Button / CTA styles ─── */
   --btn-primary-bg: #0D0D0D;
   --btn-primary-text: #FFFFFF;
-  --btn-primary-hover: #2D2D2D;
+  --btn-primary-hover: var(--color-accent);   /* hover = fill swaps to accent (text flips to ink) */
   --btn-primary-padding: 12px 22px;
   --btn-primary-font: var(--font-body);
   --btn-primary-size: var(--text-sm);
@@ -120,8 +120,8 @@
   --btn-ghost-bg: #FFFFFF;
   --btn-ghost-border: 1px solid var(--color-border);
   --btn-ghost-text: var(--color-ink-2);
-  --btn-ghost-hover-bg: #F5F5F5;
-  --btn-ghost-hover-border: var(--color-border-2);
+  --btn-ghost-hover-bg: transparent;
+  --btn-ghost-hover-border: var(--color-accent);
 
   /* ─── Neutral aliases ─────────────────────────────────────────
      Used in case study pages. Aligned to the same neutral system.

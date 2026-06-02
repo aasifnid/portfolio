@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Recommendations — V4 refined (light, design-system aligned)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<!-- the actual design system -->
+<link rel="stylesheet" href="common-assets/tokens.css">
+<link rel="stylesheet" href="common-assets/typography.css">
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:var(--font-body);background:var(--color-surface-1);color:var(--color-ink);-webkit-font-smoothing:antialiased}
+  img{display:block}
+
+  .note{background:var(--color-ink);color:#fff;padding:20px max(24px,calc((100% - 1000px)/2));font-size:var(--text-sm);line-height:1.6}
+  .note b{color:var(--color-accent)}
+
+  .rec{padding:104px max(24px,calc((100% - 1000px)/2))}
+
+  /* TITLE — exact .home-section-label (Outfit / --text-2xl / --fw-bold + trailing hairline) */
+  .rec-label{font-family:var(--font-display);font-size:var(--text-2xl);font-weight:var(--fw-bold);
+    letter-spacing:var(--ls-micro);line-height:var(--lh-snug);color:var(--color-ink);
+    display:flex;align-items:center;gap:16px;margin-bottom:48px}
+  .rec-label::after{content:'';flex:1;height:1px;background:var(--color-border)}
+
+  /* pill strip — the roster */
+  .pills{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:56px}
+  .pill{display:flex;align-items:center;gap:10px;padding:7px 16px 7px 7px;background:var(--color-surface);
+    border:1px solid var(--color-border);border-radius:40px;cursor:pointer;transition:border-color .18s,background .18s}
+  .pill img{width:34px;height:34px;border-radius:50%;object-fit:cover}
+  .pill .nm{font-family:var(--font-body);font-size:var(--text-sm);font-weight:var(--fw-semibold);line-height:1.15;color:var(--color-ink)}
+  .pill .rl{font-family:var(--font-body);font-size:var(--text-xs);font-weight:var(--fw-regular);color:var(--color-ink-3);line-height:1.2;margin-top:1px}
+  .pill:hover{border-color:var(--color-ink)}
+  .pill.on{background:var(--color-rec-1-bg);border-color:var(--color-accent)}
+
+  /* quote panel — FIXED height so controls never shift */
+  .panel{max-width:760px}
+  .panel-mark{font-family:var(--font-display);font-size:var(--text-5xl);line-height:.6;color:var(--color-accent);font-weight:var(--fw-bold);display:block;height:32px}
+  .panel-quote{font-family:var(--font-display);font-size:var(--text-callout);font-weight:var(--fw-regular);
+    line-height:1.45;letter-spacing:var(--ls-micro);color:var(--color-ink);margin-top:18px;
+    min-height:6em} /* fits the longest excerpt → arrows below stay put */
+  .panel-attr{display:flex;align-items:center;gap:12px;margin-top:28px}
+  .panel-attr img{width:46px;height:46px;border-radius:50%;object-fit:cover}
+  .panel-name{font-family:var(--font-body);font-weight:var(--fw-bold);font-size:var(--text-base)}
+  .panel-role{font-family:var(--font-body);font-size:var(--text-sm);color:var(--color-ink-3);margin-top:2px}
+
+  /* controls */
+  .ctrls{display:flex;align-items:center;justify-content:space-between;margin-top:48px;max-width:760px}
+  .count{font-family:var(--font-display);font-weight:var(--fw-bold);font-size:var(--text-base);letter-spacing:.04em}
+  .count span{color:var(--color-ink-3)}
+  .arrows{display:flex;gap:10px}
+  .arrows button{width:46px;height:46px;border:1px solid var(--color-border);background:var(--color-surface);color:var(--color-ink);
+    border-radius:50%;cursor:pointer;font-size:var(--text-xl);transition:.18s;display:flex;align-items:center;justify-content:center}
+  .arrows button:hover{border-color:var(--color-ink);background:var(--color-ink);color:#fff}
+
+  @media(max-width:600px){.rec{padding:72px 24px}.panel-quote{min-height:11em}}
+</style>
+</head>
+<body>
+
+<div class="note">Refined <b>V4 — light</b> · linked to the real <b>tokens.css + typography.css</b> · description line removed · quote block height locked so the arrows never shift.</div>
+
+<section class="rec">
+  <p class="rec-label">Words from Peers</p>
+
+  <div class="pills" id="pills"></div>
+
+  <div class="panel">
+    <span class="panel-mark">“</span>
+    <blockquote class="panel-quote" id="pq"></blockquote>
+    <div class="panel-attr"><img id="pimg" alt=""><div><div class="panel-name" id="pn"></div><div class="panel-role" id="pr"></div></div></div>
+  </div>
+
+  <div class="ctrls">
+    <div class="count"><span id="pc">01</span> / 06</div>
+    <div class="arrows"><button id="prev" aria-label="Previous">‹</button><button id="next" aria-label="Next">›</button></div>
+  </div>
+</section>
+
+<script>
+const REC=[
+ {img:"home/assets/Recommendations/Manik.jpeg",name:"Manik Bansal",role:"Head of Design · Cuemath",
+  quote:`He doesn't design in a vacuum — he talks to people, watches how they use the product, and brings it into the next iteration. Any team would be lucky to have him.`},
+ {img:"home/assets/Recommendations/Vaibhav.jpeg",name:"Vaibhav Sawhney",role:"Head of Product · Cuemath",
+  quote:`He takes ownership end-to-end and turns ambiguous briefs into polished, thoughtful outcomes — dependable, and genuinely invested in getting the product right.`},
+ {img:"home/assets/Recommendations/Jigar.jpeg",name:"Jigar Vora",role:"Business Head (India) · Cuemath",
+  quote:`He always understands the 'why' behind a project, so design aligns with business goals and user impact — and he tracks how his work moves engagement and outcomes.`},
+ {img:"home/assets/Recommendations/Shubham.jpeg",name:"Shubham Vats",role:"Tech Lead · Cuemath",
+  quote:`He doesn't protect his craft — he hunts the right answer. When users hit friction, he'd reach out, understand it, and return with the fix. That follow-through is rare.`},
+ {img:"home/assets/Recommendations/Jeetesh.jpeg",name:"Jeetesh Gulani",role:"Product Manager · Cuemath",
+  quote:`His superpower is taking abstract, ambiguous problems and turning them into visually stunning, functional design — responsive and ego-free, no matter the deadline.`},
+ {img:"home/assets/Recommendations/Ayush.jpeg",name:"Ayush Singhal",role:"SDE II · Cuemath",
+  quote:`One of the most dependable and thoughtful designers I've worked with. He acts on feedback fast, sweats the detail, and steps in to unblock other teams.`}
+];
+let i=0;
+pills.innerHTML=REC.map((o,k)=>`<div class="pill${k===0?' on':''}" data-k="${k}">
+  <img src="${o.img}" alt=""><div><div class="nm">${o.name}</div><div class="rl">${o.role}</div></div></div>`).join('');
+function render(){const o=REC[i];
+  pq.textContent=o.quote+'”';pimg.src=o.img;pn.textContent=o.name;pr.textContent=o.role;
+  pc.textContent=String(i+1).padStart(2,'0');
+  [...pills.children].forEach((p,k)=>p.classList.toggle('on',k===i));}
+[...pills.children].forEach(p=>p.onclick=()=>{i=+p.dataset.k;render()});
+prev.onclick=()=>{i=(i-1+REC.length)%REC.length;render()};
+next.onclick=()=>{i=(i+1)%REC.length;render()};
+render();
+</script>
+</body>
+</html>

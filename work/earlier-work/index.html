@@ -22,8 +22,8 @@
 <style>
   /* ─── Header ─── */
   .page-header {
-    max-width: 800px; margin: 0 auto;
-    padding: 96px 48px 48px;
+    max-width: 1600px; margin: 0 auto;
+    padding: 96px 120px 48px;
   }
   .header-label {
     font-family: var(--font-body); font-size: var(--text-xs); font-weight: var(--fw-semibold);
@@ -41,7 +41,7 @@
   }
 
   /* ─── Grid ─── */
-  .projects { max-width: 800px; margin: 0 auto; padding: 32px 48px 100px; }
+  .projects { max-width: 1600px; margin: 0 auto; padding: 32px 120px 100px; }
   .projects-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
 
   /* ─── Project card (magazine-style: image-zoom, no card lift) ─── */
@@ -99,9 +99,9 @@
     margin: 0;
   }
 
-  /* ─── cs-next alignment override: match the 48px inset of .projects + .page-header ─── */
+  /* ─── cs-next alignment override: match the 120px inset of .projects + .page-header ─── */
   .cs-next {
-    max-width: 704px;
+    max-width: 1360px;
   }
 
   /* ─── cs-next image as 2×2 collage of case studies ─── */
@@ -123,6 +123,11 @@
     transform: scale(1.06);
   }
 
+  @media (max-width: 1100px) {
+    .page-header { padding-left: 64px; padding-right: 64px; }
+    .projects { padding-left: 64px; padding-right: 64px; }
+  }
+
   @media (max-width: 768px) {
     .page-header { padding: 64px 24px 32px; }
     .projects { padding: 24px 24px 80px; }
@@ -137,7 +142,7 @@
 <!-- ══════ NAV ══════ -->
 <!-- NAV:START - auto-synced from common-assets/navbar-case-study.html - run scripts/sync-nav.py to update -->
 <nav class="site-nav cs-nav">
-  <a href="/#work" class="cs-nav-back">← Back to work</a>
+  <a href="/#work" class="cs-nav-back"><span class="cs-nav-arrow">←</span>Back to work</a>
   <div class="cs-nav-actions">
     <a href="https://drive.google.com/file/d/1WEOEkgUW7NZk5b4zRzuqMfnKv8hcUsir/view?usp=sharing" target="_blank" rel="noopener" class="cs-nav-btn">Resume</a>
     <a href="/design-system/" class="cs-nav-btn">Design system</a>
