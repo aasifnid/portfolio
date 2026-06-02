@@ -157,7 +157,7 @@
   <p>A tutor selects chapters from any curriculum and composes a custom goal in minutes. The student opens their home and sees exactly what's due — today, this week, overdue — without digging. The chapter page shows content in a clear hierarchy: mandatory lessons first, optional resources below, each with a visual state that holds up at a glance.</p>
 
   <div class="video-embed">
-    <video id="flow-video" autoplay muted loop playsinline preload="metadata" style="cursor: zoom-in;">
+    <video id="flow-video" muted loop playsinline preload="none" poster="../tutoring-home-redesign/assets/tutoring-home-redesign-flow-poster.jpg" style="cursor: zoom-in;">
       <source src="../tutoring-home-redesign/assets/tutoring-home-redesign-flow.mp4" type="video/mp4">
       Your browser does not support video playback.
     </video>
@@ -290,7 +290,7 @@
       <p class="decision-item-title">Lesson 1 — One animation draws attention. Many animations create noise.</p>
       <p>I designed a stroke animation to draw students' attention to the sheet they should focus on next — one glowing card standing out from the rest. The problem was that the animation was assigned to all core sheets and all work-in-progress sheets on the page. In practice, a student's page could have five or six of these running at once, all pulsing for attention at the same time. The page already made it clear what was locked, in-progress, or done — and students already knew the order sheets unlock in. The animation was adding noise on top of a system that was already working. We piloted it with our in-house teachers, got strong pushback, and pulled it immediately.</p>
       <div class="video-embed" style="background:#000;">
-        <video id="lesson-video" autoplay muted loop playsinline preload="metadata" style="cursor:zoom-in;">
+        <video id="lesson-video" muted loop playsinline preload="none" poster="../tutoring-home-redesign/assets/lesson-3-poster.jpg" style="cursor:zoom-in;">
           <source src="../tutoring-home-redesign/assets/lesson-3.mp4" type="video/mp4">
         </video>
       </div>
@@ -361,6 +361,21 @@
     }
     document.addEventListener('fullscreenchange', restoreAmbient);
     document.addEventListener('webkitfullscreenchange', restoreAmbient);
+  })();
+
+  /* Lazy ambient video — load + play only when scrolled near (preload="none") */
+  (function () {
+    var vids = document.querySelectorAll('.video-embed video[loop]');
+    if (!vids.length) return;
+    if (!('IntersectionObserver' in window)) { vids.forEach(function (v) { try { v.play(); } catch (e) {} }); return; }
+    var vio = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        var v = e.target;
+        if (e.isIntersecting) { v.play().catch(function () {}); }
+        else if (!document.fullscreenElement && !document.webkitFullscreenElement) { v.pause(); }
+      });
+    }, { rootMargin: '300px 0px', threshold: 0.1 });
+    vids.forEach(function (v) { vio.observe(v); });
   })();
 
   (function () {

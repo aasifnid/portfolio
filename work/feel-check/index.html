@@ -118,7 +118,7 @@
   <p>One wheel, three steps. Students reflect on how they feel, name the emotion, then pick a way to reset — all within five minutes before a class begins.</p>
 
   <div class="video-embed">
-    <video id="flow-video" autoplay muted loop playsinline preload="metadata" poster="../feel-check/assets/feel-check-flow-poster.jpg" title="Click to play fullscreen" style="cursor: zoom-in;">
+    <video id="flow-video" muted loop playsinline preload="none" poster="../feel-check/assets/feel-check-flow-poster.jpg" title="Click to play fullscreen" style="cursor: zoom-in;">
       <source src="../feel-check/assets/feel-check-flow.mp4" type="video/mp4">
       Your browser does not support video playback.
     </video>
@@ -470,6 +470,21 @@
     }
     document.addEventListener('fullscreenchange', restoreAmbient);
     document.addEventListener('webkitfullscreenchange', restoreAmbient);
+  })();
+
+  /* Lazy ambient video — load + play only when scrolled near (preload="none") */
+  (function () {
+    var vids = document.querySelectorAll('.video-embed video[loop]');
+    if (!vids.length) return;
+    if (!('IntersectionObserver' in window)) { vids.forEach(function (v) { try { v.play(); } catch (e) {} }); return; }
+    var vio = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        var v = e.target;
+        if (e.isIntersecting) { v.play().catch(function () {}); }
+        else if (!document.fullscreenElement && !document.webkitFullscreenElement) { v.pause(); }
+      });
+    }, { rootMargin: '300px 0px', threshold: 0.1 });
+    vids.forEach(function (v) { vio.observe(v); });
   })();
 
   /* Scroll progress bar */
