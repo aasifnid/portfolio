@@ -30,7 +30,6 @@ GROUPS = {
         "work/cuemath-partners/index.html",
         "work/new-trial-experience/index.html",
         "work/tutoring-home-redesign/index.html",
-        "work/earlier-work/index.html",
     ]),
 }
 

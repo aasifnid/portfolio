@@ -1,137 +1,61 @@
 /* ═══════════════════════════════════════════════════════════════
-   Design System — Aasif Anwar Portfolio
+   Design System — Aasif Anwar Portfolio · V3
    Single source of truth for all design tokens.
-   All pages should link this file before any other stylesheet.
+   Link this file FIRST, before typography.css and style.css.
    ═══════════════════════════════════════════════════════════════ */
 
 :root {
 
-  /* ─── Surface ─── */
-  --color-bg:        #FFFFFF;   /* white — page background */
-  --color-surface:   #FFFFFF;   /* white — cards, panels */
-  --color-surface-1: #FAFAFA;   /* very soft — quiet stages, component preview */
-  --color-surface-2: #F5F5F5;   /* soft — callout blocks, hover fills */
-  --color-border:    #DADADA;   /* grey 5 — separators */
-  --color-border-2:  #ADADAD;   /* stronger border / hover */
+  /* ─── Surface / ink ─── */
+  --bg:        #FAFAFB;   /* page background — off-white */
+  --surface:   #FFFFFF;   /* cards, panels, nav */
+  --ink:       #15151A;   /* primary text */
+  --ink-2:     #54545F;   /* secondary text */
+  --ink-3:     #9A9AA6;   /* muted text — captions, meta, labels */
+  --line:      #ECECF1;   /* hairline separators, borders */
 
-  /* ─── Brand palette · 4-step accents (most-used shades exported as tokens) ─── */
-  --color-yellow-4:  #FFB700;   /* yellow 4 — top-level hierarchy markers */
+  /* ─── Accent + gradient (brand) ─── */
+  --accent:    #9B59E8;   /* solid accent — icons/text where gradient can't apply */
+  --grad:      linear-gradient(110deg,#5B6CF0 0%,#9B59E8 48%,#F0609A 100%);
+  --grad-soft: linear-gradient(110deg,rgba(91,108,240,.12),rgba(240,96,154,.12));
 
-  /* ─── Ink ─── */
-  --color-ink:      #0D0D0D;   /* primary black */
-  --color-ink-2:    #4D4D4D;   /* secondary grey */
-  --color-ink-3:    #8F8F8F;   /* muted grey */
+  /* ─── Data palette — charts / zone pills only ─── */
+  --data-blue:#3D6FD0;   --data-blue-bg:rgba(91,141,239,.15);
+  --data-yellow:#B97E16; --data-yellow-bg:rgba(224,162,59,.18);
+  --data-red:#D0405E;    --data-red-bg:rgba(224,96,122,.16);
+  --data-green:#1F9E50;  --data-green-bg:rgba(52,199,94,.16);
 
-  /* ─── Accent ─── */
-  --color-accent:   #FF80F4;   /* purple 4 — sitewide accent (hover, focus, brand) */
+  /* ─── Type families (scale lives in typography.css + component CSS) ─── */
+  --disp: 'Space Grotesk', -apple-system, system-ui, sans-serif;  /* display / headings */
+  --sans: 'Inter', -apple-system, system-ui, sans-serif;          /* body / UI */
 
-  /* ─── Recommendation card palette (light bg + matching accent for each card) ─── */
-  --color-rec-1-bg:     #FFE0FD;   /* purple — head bg */
-  --color-rec-1-accent: #FF80F4;   /* purple — head border-bottom */
-  --color-rec-2-bg:     #FFDDCC;   /* orange — head bg */
-  --color-rec-2-accent: #FF884C;   /* orange — head border-bottom */
-  --color-rec-3-bg:     #FFF1CC;   /* yellow — head bg */
-  --color-rec-3-accent: #FFB700;   /* yellow — head border-bottom */
-  --color-rec-4-bg:     #D6F5FF;   /* blue — head bg */
-  --color-rec-4-accent: #33CCFF;   /* blue — head border-bottom */
-  --color-rec-5-bg:     #D0FBE5;   /* green — head bg */
-  --color-rec-5-accent: #00E573;   /* green — head border-bottom */
-  --color-rec-6-bg:     #FFDBDB;   /* red — head bg */
-  --color-rec-6-accent: #FF5B4D;   /* red — head border-bottom */
+  /* ─── Radius ─── */
+  --radius:16px; --radius-sm:12px; --radius-pill:999px;   /* card · small · pill */
 
-  /* ─── Typography: 2-Font System ─── */
-  --font-display: 'Outfit', -apple-system, system-ui, sans-serif;
-  --font-body:    'DM Sans', -apple-system, system-ui, sans-serif;
+  /* ─── Elevation ─── */
+  --shadow:0 24px 56px -24px rgba(60,40,110,.26);
 
-  /* ─── Font Weights: 3 Only ─── */
-  --fw-regular:   400;  /* body text only */
-  --fw-semibold:  600;  /* labels, small emphasis, secondary nav */
-  --fw-bold:      700;  /* headings, primary nav, confidence */
+  /* ─── Motion — three durations, nothing in between ─── */
+  --ease:cubic-bezier(.2,1,.3,1);             /* standard ease-out for UI/cards */
+  --ease-bounce:cubic-bezier(.34,1.56,.64,1); /* playful overshoot — caricature only */
+  --t-fast:.2s; --t-base:.3s; --t-slow:.5s;
 
-  /* ─── Type Scale: 9 fixed + 5 responsive ─── */
-  --text-xs:    12px;   /* minimum — labels, caps, tags */
-  --text-sm:    14px;   /* secondary, meta */
-  --text-base:  16px;   /* body */
-  --text-lg:    18px;   /* large body */
-  --text-xl:    20px;   /* callouts */
-  --text-2xl:   24px;   /* subheadings */
-  --text-3xl:   32px;   /* section heads */
-  --text-4xl:   44px;   /* h2 */
-  --text-5xl:   56px;   /* h1 / display */
+  /* ─── Layout ─── */
+  --sp:104px;     /* section rhythm — home/showcase default; case study overrides to 80 */
+  --maxw:1160px;  /* home/showcase content width */
+  --read:800px;   /* case-study reading column width */
 
-  /* Responsive clamps — real ones, in use */
-  --text-callout:    clamp(22px, 2.6vw, 28px);   /* pull-quotes, decision titles, transfer lines, blockquotes */
-
-  /* ─── Line Heights ─── */
-  --lh-tight:  1.0;   /* labels */
-  --lh-snug:   1.3;   /* headings */
-  --lh-normal: 1.6;   /* body default */
-  --lh-loose:  1.7;   /* large copy */
-
-  /* ─── Letter Spacing ─── */
-  --ls-tight:   -0.03em;  /* large display, tight */
-  --ls-snug:    -0.02em;  /* display, snug */
-  --ls-micro:   -0.01em;  /* headings, subtle */
-  --ls-normal:   0em;     /* body, no change */
-  --ls-label:    0.08em;  /* small labels */
-  --ls-caps:     0.12em;  /* uppercase labels */
-  --ls-expanded: 0.16em;  /* expanded caps */
-
-  /* ─── Spacing (8px base) ─── */
-  --s1:  4px;
-  --s2:  8px;
-  --s3:  12px;
-  --s4:  16px;
-  --s5:  20px;
-  --s6:  24px;
-  --s8:  32px;
-  --s10: 40px;
-  --s12: 48px;
-  --s16: 64px;
-  --s20: 80px;
-  --s24: 96px;
-
-  /* ─── Vertical rhythm — 3 tiers, snap everything to these ─── */
-  --space-section: var(--s16);        /* 64px — between major sections / above a section heading */
-  --space-block:   var(--s8);         /* 32px — between content blocks: body↔media, caption↔body */
-  --space-bond:    var(--s4);         /* 16px — tight bond: media↔caption, heading↔its body */
-  --caption-gap:   var(--space-bond); /* alias — media↔caption gap */
-
-  /* ─── Transition ─── */
-  --ease: 0.15s ease;
-
-  /* ─── Card system ─── */
-  --card-gap: 24px;
-  --card-shadow: 0 1px 4px rgba(0,0,0,0.06), 0 0 0 1px var(--color-border);
-  --card-border: 1px solid var(--color-border);
-  --card-shadow-hover: 0 20px 48px rgba(0,0,0,0.12), 0 4px 12px rgba(0,0,0,0.06);
-  --card-border-radius: 0px;  /* sharp design — no rounding */
-
-  /* ─── Button / CTA styles ─── */
-  --btn-primary-bg: #0D0D0D;
-  --btn-primary-text: #FFFFFF;
-  --btn-primary-hover: var(--color-accent);   /* hover = fill swaps to accent (text flips to ink) */
-  --btn-primary-padding: 12px 22px;
-  --btn-primary-font: var(--font-body);
-  --btn-primary-size: var(--text-sm);
-  --btn-primary-weight: var(--fw-semibold);
-  --btn-primary-letter-spacing: 0;
-
-  --btn-ghost-bg: #FFFFFF;
-  --btn-ghost-border: 1px solid var(--color-border);
-  --btn-ghost-text: var(--color-ink-2);
-  --btn-ghost-hover-bg: transparent;
-  --btn-ghost-hover-border: var(--color-accent);
-
-  /* ─── Neutral aliases ─────────────────────────────────────────
-     Used in case study pages. Aligned to the same neutral system.
+  /* ─── TEMPORARY back-compat aliases ───────────────────────────
+     Keep the not-yet-rebuilt case-study pages (NTE / Cuemath
+     Partners / Tutoring Home) rendering during the V3 migration.
+     REMOVE after Phase 5 (all case studies rebuilt on V3).
   ──────────────────────────────────────────────────────────── */
-  --neutral-100:  #FAFAFA;   /* page bg — very subtle off-white */
-  --neutral-200:  #FFFFFF;   /* card/surface — pure white */
-  --neutral-300:  #DADADA;   /* border */
-  --neutral-700:  #6B6B6B;   /* secondary text */
-  --neutral-800:  #4D4D4D;   /* body text */
-  --neutral-900:  #1A1A1A;   /* near-primary */
-  --neutral-1000: #0D0D0D;   /* primary ink */
+  --color-bg:var(--bg);       --color-surface:var(--surface);  --color-surface-1:var(--bg);
+  --color-surface-2:var(--line); --color-border:var(--line);   --color-border-2:var(--ink-3);
+  --color-ink:var(--ink);     --color-ink-2:var(--ink-2);      --color-ink-3:var(--ink-3);
+  --color-accent:var(--accent);
+  --neutral-100:var(--bg);    --neutral-200:var(--surface);    --neutral-300:var(--line);
+  --neutral-700:var(--ink-2); --neutral-800:var(--ink-2);      --neutral-900:var(--ink);  --neutral-1000:var(--ink);
+  --font-display:var(--disp); --font-body:var(--sans);
 
 }
