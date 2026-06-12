@@ -23,14 +23,12 @@ NAV_CASE = ROOT / "common-assets" / "navbar-case-study.html"
 GROUPS = {
     "main": (NAV_MAIN, [
         "index.html",
-        "design-system/index.html",
     ]),
     "case-study": (NAV_CASE, [
         "work/feel-check/index.html",
         "work/cuemath-partners/index.html",
         "work/new-trial-experience/index.html",
         "work/tutoring-home-redesign/index.html",
-        "work/earlier-work/index.html",
     ]),
 }
 

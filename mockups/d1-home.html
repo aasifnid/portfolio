@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aasif Anwar — Field Notes (Direction 1)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#F4F1E9; --paper-2:#ECE8DC; --card:#FBFAF5;
+    --ink:#1B1A17; --ink-2:#4A463E; --ink-3:#8C887C; --line:#D8D3C4;
+    --accent:#BE3F2B;            /* brick red — single editorial accent */
+    --serif:'Fraunces',Georgia,serif; --mono:'IBM Plex Mono',monospace; --sans:'Inter',sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
+  a{color:inherit;text-decoration:none}
+  img{display:block;max-width:100%}
+  .wrap{max-width:1100px;margin:0 auto;padding:0 56px}
+  @media(max-width:680px){.wrap{padding:0 24px}}
+  .mono{font-family:var(--mono)}
+  .eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3)}
+
+  /* nav */
+  .nav{position:sticky;top:0;z-index:20;background:rgba(244,241,233,.86);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+  .nav .wrap{display:flex;justify-content:space-between;align-items:center;height:62px}
+  .nav .name{font-family:var(--serif);font-size:19px;font-weight:600;letter-spacing:-.01em}
+  .nav .links{display:flex;gap:26px;font-family:var(--mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-2)}
+  .nav .links a:hover{color:var(--accent)}
+
+  /* hero */
+  .hero{padding:64px 0 56px;border-bottom:1px solid var(--line)}
+  .hero-eyebrow{display:flex;align-items:center;gap:12px;margin-bottom:30px}
+  .hero-eyebrow .dot{width:7px;height:7px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 4px rgba(190,63,43,.15)}
+  .hero h1{font-family:var(--serif);font-weight:400;font-size:clamp(38px,6vw,76px);line-height:1.04;letter-spacing:-.025em;max-width:16ch}
+  .hero h1 em{font-style:italic;font-weight:500;color:var(--accent)}
+  .hero .sub{font-size:18px;color:var(--ink-2);max-width:60ch;margin-top:26px;line-height:1.55}
+  .hero .meta{display:flex;gap:18px;flex-wrap:wrap;margin-top:34px;font-family:var(--mono);font-size:12.5px;letter-spacing:.02em}
+  .hero .meta a{border-bottom:1px solid var(--line);padding-bottom:3px;transition:border-color .2s,color .2s}
+  .hero .meta a:hover{color:var(--accent);border-color:var(--accent)}
+
+  /* section heading */
+  .sec{padding:72px 0;border-bottom:1px solid var(--line)}
+  .sec-head{display:grid;grid-template-columns:1fr auto;align-items:baseline;margin-bottom:8px}
+  .sec-num{font-family:var(--mono);font-size:13px;color:var(--accent);letter-spacing:.04em}
+  .sec-title{font-family:var(--serif);font-size:30px;font-weight:500;letter-spacing:-.02em;margin-top:6px}
+  .sec-note{font-family:var(--mono);font-size:12px;color:var(--ink-3);text-transform:uppercase;letter-spacing:.06em}
+
+  /* work — editorial rows with thumbnail */
+  .work{margin-top:30px;border-top:1px solid var(--ink)}
+  .work-row{display:grid;grid-template-columns:34px 168px 1fr 44px;gap:28px;align-items:center;
+    padding:24px 0;border-bottom:1px solid var(--line);transition:background .2s,padding .25s}
+  .work-row:hover{background:var(--card);padding-left:10px;padding-right:10px}
+  .work-row .ix{font-family:var(--mono);font-size:13px;color:var(--ink-3)}
+  .work-row .thumb{width:168px;height:104px;object-fit:cover;border:1px solid var(--line);filter:saturate(.96)}
+  .work-row .ttl{font-family:var(--serif);font-size:25px;font-weight:500;letter-spacing:-.02em;line-height:1.18}
+  .work-row .mt{font-family:var(--mono);font-size:11.5px;text-transform:uppercase;letter-spacing:.06em;color:var(--accent);margin-bottom:8px}
+  .work-row .ds{font-size:14.5px;color:var(--ink-2);line-height:1.5;max-width:62ch;margin-top:8px}
+  .work-row .arr{font-family:var(--serif);font-size:22px;text-align:right;transition:transform .25s}
+  .work-row:hover .arr{transform:translate(4px,-4px);color:var(--accent)}
+  @media(max-width:760px){.work-row{grid-template-columns:1fr;gap:12px}.work-row .thumb{width:100%;height:160px}.work-row .arr{display:none}}
+
+  /* about */
+  .about-photo{width:100%;height:auto;border:1px solid var(--line);margin-bottom:14px}
+  .about-cap{font-family:var(--mono);font-size:11px;color:var(--ink-3);text-align:center;margin-bottom:44px}
+  .about-cap a{color:var(--accent)}
+  .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px}
+  @media(max-width:760px){.about-grid{grid-template-columns:1fr;gap:36px}}
+  .about-block+.about-block{margin-top:34px}
+  .about-block h3{font-family:var(--mono);font-size:12px;text-transform:uppercase;letter-spacing:.08em;color:var(--accent);margin-bottom:12px}
+  .about-block p{font-size:15.5px;color:var(--ink-2);line-height:1.65}
+  .about-block p+p{margin-top:14px}
+  /* journey table */
+  .journey{border-top:1px solid var(--ink)}
+  .jrow{display:grid;grid-template-columns:96px 1fr;gap:18px;padding:13px 0;border-bottom:1px solid var(--line)}
+  .jrow .yr{font-family:var(--mono);font-size:12px;color:var(--ink-3)}
+  .jrow .role{font-family:var(--serif);font-size:17px;font-weight:500}
+  .jrow .org{font-size:13px;color:var(--ink-3);margin-top:2px}
+
+  /* peers */
+  .peers{display:grid;grid-template-columns:1fr 1fr;gap:40px 48px;margin-top:34px}
+  @media(max-width:760px){.peers{grid-template-columns:1fr}}
+  .quote{border-left:2px solid var(--accent);padding-left:22px}
+  .quote .q{font-family:var(--serif);font-size:18px;font-weight:400;line-height:1.5;letter-spacing:-.01em}
+  .quote .by{display:flex;align-items:center;gap:11px;margin-top:16px}
+  .quote .by img{width:38px;height:38px;border-radius:50%;object-fit:cover}
+  .quote .nm{font-weight:600;font-size:14px}
+  .quote .rl{font-family:var(--mono);font-size:11px;color:var(--ink-3);letter-spacing:.02em}
+
+  /* contact */
+  .contact{padding:88px 0}
+  .contact .big{font-family:var(--serif);font-weight:400;font-size:clamp(32px,4.6vw,56px);line-height:1.06;letter-spacing:-.02em;max-width:18ch}
+  .contact .big em{font-style:italic;color:var(--accent)}
+  .contact .links{display:flex;gap:22px;flex-wrap:wrap;margin-top:30px;font-family:var(--mono);font-size:13px}
+  .contact .links a{border-bottom:1px solid var(--line);padding-bottom:3px}
+  .contact .links a:hover{color:var(--accent);border-color:var(--accent)}
+  .foot{border-top:1px solid var(--line);padding:22px 0;font-family:var(--mono);font-size:11px;color:var(--ink-3);display:flex;justify-content:space-between}
+</style>
+</head>
+<body>
+
+<nav class="nav"><div class="wrap">
+  <a class="name">Aasif Anwar</a>
+  <div class="links"><a>Work</a><a>About</a><a>Peers</a><a>Connect</a></div>
+</div></nav>
+
+<header class="hero"><div class="wrap">
+  <div class="hero-eyebrow"><span class="dot"></span><span class="eyebrow">Product Designer — Open to full-time roles</span></div>
+  <h1>I built <em>learning tools</em> for 30K students and 3K+ tutors.</h1>
+  <p class="sub">Lifted trial-to-paid by 9.6%. Got 75.2% of students into class ready to learn.</p>
+  <div class="meta">
+    <a href="mailto:aasif.nid@gmail.com">aasif.nid@gmail.com</a>
+    <a>LinkedIn</a>
+    <a>Resume</a>
+  </div>
+</div></header>
+
+<!-- WORK -->
+<section class="sec"><div class="wrap">
+  <div class="sec-head">
+    <div><div class="sec-num">01</div><div class="sec-title">Selected Work</div></div>
+    <div class="sec-note">2018 — 2026</div>
+  </div>
+  <div class="work">
+    <a class="work-row" href="d1-feelcheck.html">
+      <span class="ix">01</span>
+      <img class="thumb" src="../work/feel-check/assets/feel-check-card-thumbnail.webp" alt="Feel Check">
+      <div><div class="mt">2025–26 · Behavior Design</div><div class="ttl">Feel Check: Emotional check-in</div><div class="ds">Student-led emotional check-in for live classes. 75.2% of students ready to learn after Feel Check (n=459 tutor observations).</div></div>
+      <span class="arr">↗</span>
+    </a>
+    <a class="work-row">
+      <span class="ix">02</span>
+      <img class="thumb" src="../work/new-trial-experience/assets/new-trial-experience-card-thumbnail.webp" alt="New Trial Experience">
+      <div><div class="mt">2024 · System Redesign</div><div class="ttl">New Trial Experience: Self-serve funnel</div><div class="ds">Trial funnel redesign distributing work across system, teachers, parents. −70% Academic Counselor intervention, +50% qualified leads to trial, +9.6% trial-to-paid.</div></div>
+      <span class="arr">↗</span>
+    </a>
+    <a class="work-row">
+      <span class="ix">03</span>
+      <img class="thumb" src="../work/tutoring-home-redesign/assets/tutoring-home-redesign-card-thumbnail.webp" alt="Tutoring home redesign">
+      <div><div class="mt">2025 · Interaction Design</div><div class="ttl">Tutoring home redesign</div><div class="ds">Designed a goal creation flow, homework queue, and surfaced recent chapters. Benefiting 30K active students and 3K+ tutors.</div></div>
+      <span class="arr">↗</span>
+    </a>
+    <a class="work-row">
+      <span class="ix">04</span>
+      <img class="thumb" src="../work/cuemath-partners/assets/cuemath-partners-card-thumbnail.webp" alt="Cuemath Partners">
+      <div><div class="mt">2025 · Platform Design</div><div class="ttl">Cuemath Partners: Affiliate-led event referral</div><div class="ds">Partner platform for community influencers tracking event referrals and payouts. 138 onboarded, 3,019 active users.</div></div>
+      <span class="arr">↗</span>
+    </a>
+    <a class="work-row">
+      <span class="ix">05</span>
+      <img class="thumb" src="../home/assets/aasif-at-nid.webp" alt="Earlier Work at NID">
+      <div><div class="mt">2018–21 · Foundation Projects</div><div class="ttl">Earlier Work at NID</div><div class="ds">Game design, physical products, interaction design. Experimented across form, space, play experience.</div></div>
+      <span class="arr">↗</span>
+    </a>
+  </div>
+</div></section>
+
+<!-- ABOUT -->
+<section class="sec"><div class="wrap">
+  <div class="sec-head"><div><div class="sec-num">02</div><div class="sec-title">About</div></div></div>
+  <div style="margin-top:30px">
+    <img class="about-photo" src="../home/assets/about-me.webp" alt="Aasif Anwar">
+    <p class="about-cap">Created with ❤️ by <a href="https://www.linkedin.com/in/srishti-singh-b3244b12b/" target="_blank" rel="noopener">Srishti Singh</a></p>
+    <div class="about-grid">
+      <div>
+        <div class="about-block">
+          <p>I did my Master's in Toy and Game Design from NID — a discipline most people misread as "design for kids." It's not. It's the design of playful experiences: engagements with games, physical environments, or interactive systems. The medium changes; the principle doesn't.</p>
+          <p>I joined Cuemath as a Game Designer. When my manager asked me to take on product, I said yes. The users were still kids; the work, still about engagement — just inside a bigger system now. Five years in, the thing I keep coming back to is simpler than I thought: listen to the person who's stuck, understand the friction, build the thing.</p>
+        </div>
+        <div class="about-block">
+          <h3>How I work</h3>
+          <p>I'm resourceful (jugadu is what my friends at NID call me), because I believe in using what you have: connections, creativity, hustle, to solve real problems. Every turn in my career came through a connection I built or people I valued — I try not to forget that. I stay engaged through implementation because design isn't done at handoff. I ask questions because I'm genuinely curious; listening deeply is how you find the real problem.</p>
+        </div>
+        <div class="about-block">
+          <h3>What's next</h3>
+          <p>I'm looking for product design roles on consumer-facing products at scale, where design has real influence. I want to keep listening deeply, solving thoughtfully, and helping teams ship things that actually matter.</p>
+        </div>
+      </div>
+      <div>
+        <div class="about-block"><h3>Journey so far</h3></div>
+        <div class="journey">
+          <div class="jrow"><span class="yr">2011 – 15</span><div><div class="role">Mechanical Engineering</div><div class="org">Nalanda College of Engineering</div></div></div>
+          <div class="jrow"><span class="yr">2015 – 17</span><div><div class="role">Pivot to Design</div><div class="org">Self-directed exploration</div></div></div>
+          <div class="jrow"><span class="yr">2017 – 18</span><div><div class="role">Design Associate</div><div class="org">Department of Design, IIT Kanpur</div></div></div>
+          <div class="jrow"><span class="yr">2018 – 21</span><div><div class="role">M.Des in Toy and Game Design</div><div class="org">National Institute of Design</div></div></div>
+          <div class="jrow"><span class="yr">2021 – 22</span><div><div class="role">Game Design</div><div class="org">Cuemath</div></div></div>
+          <div class="jrow"><span class="yr">2022 – 26</span><div><div class="role">Product Design</div><div class="org">Cuemath</div></div></div>
+          <div class="jrow"><span class="yr">What's next</span><div><div class="role">Design for consumers at scale 🤞</div></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div></section>
+
+<!-- PEERS -->
+<section class="sec"><div class="wrap">
+  <div class="sec-head"><div><div class="sec-num">03</div><div class="sec-title">Words from Peers</div></div><div class="sec-note">06 recommendations</div></div>
+  <div class="peers">
+    <div class="quote"><p class="q">He doesn't design in a vacuum — he talks to people, watches how they use the product, and brings it into the next iteration. Any team would be lucky to have him.</p><div class="by"><img src="../home/assets/Recommendations/Manik.webp" alt=""><div><div class="nm">Manik Bansal</div><div class="rl">Head of Design · Cuemath</div></div></div></div>
+    <div class="quote"><p class="q">He takes ownership end-to-end and turns ambiguous briefs into polished, thoughtful outcomes — dependable, and genuinely invested in getting the product right.</p><div class="by"><img src="../home/assets/Recommendations/Vaibhav.webp" alt=""><div><div class="nm">Vaibhav Sawhney</div><div class="rl">Head of Product · Cuemath</div></div></div></div>
+    <div class="quote"><p class="q">He always understands the 'why' behind a project, so design aligns with business goals and user impact — and he tracks how his work moves engagement and outcomes.</p><div class="by"><img src="../home/assets/Recommendations/Jigar.webp" alt=""><div><div class="nm">Jigar Vora</div><div class="rl">Business Head (India) · Cuemath</div></div></div></div>
+    <div class="quote"><p class="q">He doesn't protect his craft — he hunts the right answer. When users hit friction, he'd reach out, understand it, and return with the fix. That follow-through is rare.</p><div class="by"><img src="../home/assets/Recommendations/Shubham.webp" alt=""><div><div class="nm">Shubham Vats</div><div class="rl">Tech Lead · Cuemath</div></div></div></div>
+    <div class="quote"><p class="q">His superpower is taking abstract, ambiguous problems and turning them into visually stunning, functional design — responsive and ego-free, no matter the deadline.</p><div class="by"><img src="../home/assets/Recommendations/Jeetesh.webp" alt=""><div><div class="nm">Jeetesh Gulani</div><div class="rl">Product Manager · Cuemath</div></div></div></div>
+    <div class="quote"><p class="q">One of the most dependable and thoughtful designers I've worked with. He acts on feedback fast, sweats the detail, and steps in to unblock other teams.</p><div class="by"><img src="../home/assets/Recommendations/Ayush.webp" alt=""><div><div class="nm">Ayush Singhal</div><div class="rl">SDE II · Cuemath</div></div></div></div>
+  </div>
+</div></section>
+
+<!-- CONTACT -->
+<section class="contact"><div class="wrap">
+  <div class="sec-num" style="margin-bottom:18px">04 — Get in touch</div>
+  <p class="big">Let's build something <em>meaningful</em> at scale.</p>
+  <div class="links">
+    <a href="mailto:aasif.nid@gmail.com">aasif.nid@gmail.com</a>
+    <a>LinkedIn</a>
+    <a>Resume</a>
+  </div>
+</div></section>
+<div class="wrap"><div class="foot"><span>© 2026 Aasif Anwar</span><span>Designed by Aasif · Coded with AI</span></div></div>
+
+</body>
+</html>

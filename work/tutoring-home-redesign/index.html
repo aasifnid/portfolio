@@ -17,209 +17,125 @@
 <meta name="twitter:image" content="https://aasifanwar.vercel.app/work/tutoring-home-redesign/assets/chapter-structure.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&family=DM+Sans:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../../common-assets/tokens.css">
 <link rel="stylesheet" href="../../common-assets/typography.css">
 <link rel="stylesheet" href="../../common-assets/style.css">
-<noscript><style>[data-animate]{opacity:1!important;transform:none!important}</style></noscript>
-<style>
-.figma-embed-frame {
-  border: 1px solid #d8d8d8;
-  overflow: hidden;
-}
-.figma-embed-chrome {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  padding: 10px 16px;
-  background: #f0f0f0;
-  border-bottom: 1px solid #d8d8d8;
-}
-.figma-embed-dot {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background: #ccc;
-  display: inline-block;
-}
-.figma-embed-chrome-label {
-  font-size: 12px;
-  color: #999;
-  margin-left: 6px;
-  letter-spacing: 0.02em;
-}
-.figma-embed-wrap {
-  position: relative;
-  background: #f7f7f7;
-  min-height: 640px;
-}
-.figma-embed-loading {
-  position: absolute;
-  inset: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 13px;
-  color: #aaa;
-  pointer-events: none;
-}
-.figma-embed-wrap iframe {
-  position: relative;
-  z-index: 1;
-}
-</style>
 </head>
-<body>
-<div id="cursor-dot"></div>
-
-
-<div id="scroll-progress"></div>
+<body class="page-cs">
+<div id="cur-dot"></div><div id="cur-ring"></div>
+<div id="progress"></div>
 
 <!-- NAV:START - auto-synced from common-assets/navbar-case-study.html - run scripts/sync-nav.py to update -->
-<nav class="site-nav cs-nav">
-  <a href="/#work" class="cs-nav-back"><span class="cs-nav-arrow">←</span>Back to work</a>
-  <div class="cs-nav-actions">
-    <a href="https://drive.google.com/file/d/1WEOEkgUW7NZk5b4zRzuqMfnKv8hcUsir/view?usp=sharing" target="_blank" rel="noopener" class="cs-nav-btn">Resume</a>
-    <a href="/design-system/" class="cs-nav-btn">Design system</a>
+<nav class="site-nav cs-nav" id="site-nav">
+  <div class="nav-inner">
+    <a href="/#work" class="cs-nav-back"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>Back to Projects</a>
+    <div class="cs-nav-actions">
+      <a href="https://drive.google.com/file/d/1WEOEkgUW7NZk5b4zRzuqMfnKv8hcUsir/view?usp=sharing" target="_blank" rel="noopener" class="cs-nav-btn">Resume</a>
+    </div>
   </div>
 </nav>
+<script>
+  (function() {
+    var nav = document.getElementById('site-nav');
+    if (nav) addEventListener('scroll', function() { nav.classList.toggle('scrolled', scrollY > 20); }, { passive: true });
+  })();
+</script>
 <!-- NAV:END -->
 
 <!-- COVER -->
-<div class="cover">
-  <h1>Tutoring home redesign</h1>
+<header class="cs cover">
+  <h1><span class="grad-text">Tutoring home redesign</span></h1>
   <p class="lede">Cuemath's tutors couldn't customize learning for their students — programs were rigid chapter lists, homework was buried two layers deep, and workarounds broke progress tracking. I redesigned the tutoring home: a goal creation flow across curricula, a homework queue surfaced at the top, and a visual system that makes 13 content types readable at a glance.</p>
 
-  <div class="cover-context">
-    <div class="cover-context-item">
-      <span class="cover-context-label">Role</span>
-      <span class="cover-context-value">Product Designer</span>
-    </div>
-    <div class="cover-context-item">
-      <span class="cover-context-label">Team</span>
-      <span class="cover-context-value">PM · Engineers · Motion designer · Curriculum team</span>
-    </div>
-    <div class="cover-context-item">
-      <span class="cover-context-label">Timeline</span>
-      <span class="cover-context-value">4 weeks · 2025</span>
-    </div>
+  <div class="cover-meta">
+    <div><span class="lab">Role</span><span class="val">Product Designer</span></div>
+    <div><span class="lab">Timeline</span><span class="val">4 weeks · 2025</span></div>
+    <div><span class="lab">Team</span><span class="val">PM · Engineers · Motion designer · Curriculum team</span></div>
   </div>
 
-  <div class="cover-outcome">
-    <span class="cover-outcome-label">Outcome</span>
-    <div class="cover-outcome-stats">
-      <div>
-        <p class="cover-outcome-num">30K</p>
-        <p class="cover-outcome-desc">Active students benefited from the redesigned tutoring home.</p>
-      </div>
-      <div>
-        <p class="cover-outcome-num">3</p>
-        <p class="cover-outcome-desc">New goal types: School Success, Test Prep, Enrichment.</p>
-      </div>
-    </div>
+  <div class="cover-hero wide">
+    <img src="assets/school-success-goal-1.webp" fetchpriority="high" alt="Tutoring Home Redesign — School Success goal creation flow" class="cs-img no-zoom">
   </div>
+</header>
 
-  <img src="../tutoring-home-redesign/assets/school-success-goal-1.webp" fetchpriority="high" decoding="async" alt="Tutoring Home Redesign — School Success goal creation flow" class="cs-img">
+<article class="cs">
 
-</div>
-
-<div class="page">
-
-  <!-- 01 CONTEXT -->
-  <div class="section-head" id="context" data-animate>
-    <span class="section-num">01</span>
-  </div>
-
-  <h2>The problem</h2>
-
+  <!-- 01 -->
+  <div class="sec-top"><h2>The problem</h2></div>
   <p>When a tutor wanted to build a custom learning plan, the only option was to layer full curriculum programs on top of each other — assign one, then another, sometimes a third. Every chapter came along, including ones that didn't apply. Within days, progress totals stopped meaning anything, homework lists became unreadable, and tracking broke.</p>
-
   <p>For students, homework was hidden. To see what was due, they had to open a chapter, scroll past everything else, and find it at the bottom. Most never did. Tutors checking who'd done what had to dig into each chapter, item by item.</p>
 
-
-  <!-- 02 ROLE -->
-  <div class="section-head" id="role" data-animate>
-    <span class="section-num">02</span>
-  </div>
-
-  <h2>Role</h2>
-
+  <!-- 02 -->
+  <div class="sec-top"><h2>Role</h2></div>
   <p>I owned the design of the tutoring home end-to-end — one shared surface with role-aware controls for both tutors and students.</p>
-
   <ul class="cs-list">
     <li><strong>Goal creation and homepage</strong> — goal creation flow, homework queue, and chapter UX for both tutor and student views</li>
     <li><strong>Visual system</strong> — content type hierarchy (Lessons vs Resources), state visuals, and motion across cards and state changes</li>
   </ul>
 
-
   <!-- HOW IT WORKS -->
-  <h2>How it works</h2>
+  <div class="sec-top"><h2>How it works</h2></div>
   <p>A tutor selects chapters from any curriculum and composes a custom goal in minutes. The student opens their home and sees exactly what's due — today, this week, overdue — without digging. The chapter page shows content in a clear hierarchy: mandatory lessons first, optional resources below, each with a visual state that holds up at a glance.</p>
 
   <div class="video-embed">
-    <video id="flow-video" muted loop playsinline preload="none" poster="../tutoring-home-redesign/assets/tutoring-home-redesign-flow-poster.webp" style="cursor: zoom-in;">
-      <source src="../tutoring-home-redesign/assets/tutoring-home-redesign-flow.mp4" type="video/mp4">
-      Your browser does not support video playback.
+    <video id="flow-video" muted loop playsinline preload="none" poster="assets/tutoring-home-redesign-flow-poster.webp" title="Click to play fullscreen">
+      <source src="assets/tutoring-home-redesign-flow.mp4" type="video/mp4">
     </video>
   </div>
   <p class="caption">Goal creation → homework queue → chapter structure.</p>
 
   <a href="https://www.figma.com/design/k27AzLfhyS7AbuIZhLIFMY/Portfolio-2026?node-id=2-28574&t=M7FOPCoe9mE85zor-1" target="_blank" rel="noopener" class="figma-link">Open in Figma →</a>
 
-
-  <!-- 03 PROCESS -->
-  <div class="section-head" id="process" data-animate>
-    <span class="section-num">03</span>
-  </div>
-
-  <h2>Decisions</h2>
+  <!-- 03 -->
+  <div class="sec-top"><h2>Decisions</h2></div>
   <p>Three decisions shaped the redesign — how learning plans are built, how urgency reaches the student, and how a chapter page holds 13 content types without collapsing.</p>
 
-  <div class="decisions-list">
+  <div class="decisions">
 
-    <div class="decision-item">
-      <p class="decision-item-title">Decision 1 — Replace program stacking with goal-based composition</p>
+    <div class="decision">
+      <p class="d-title"><span class="idx">01</span>Replace program stacking with goal-based composition</p>
       <p>The fix was a goal-based model. A tutor picks a goal type — School Success, Test Prep, or Enrichment — then composes a plan from individual chapters across any of the 10 curricula. Nothing is assigned by default. The goal types gave tutors a frame for decisions that used to be implicit and gave students clearer context for what they were working toward.</p>
 
-      <div class="cs-img-grid cs-img-grid--3">
+      <div class="cs-img-grid cs-img-grid--3 wide">
         <figure>
-          <img src="../tutoring-home-redesign/assets/school-success-goal.webp" loading="lazy" decoding="async" alt="School Success goal type — tutor composing a goal for curriculum-aligned learning" class="cs-img">
+          <img src="assets/school-success-goal.webp" loading="lazy" alt="School Success goal type — tutor composing a goal for curriculum-aligned learning" class="cs-img">
           <figcaption>School Success</figcaption>
         </figure>
         <figure>
-          <img src="../tutoring-home-redesign/assets/test-prep-goal.webp" loading="lazy" decoding="async" alt="Test Prep goal type — tutor composing a goal for exam preparation" class="cs-img">
+          <img src="assets/test-prep-goal.webp" loading="lazy" alt="Test Prep goal type — tutor composing a goal for exam preparation" class="cs-img">
           <figcaption>Test Prep</figcaption>
         </figure>
         <figure>
-          <img src="../tutoring-home-redesign/assets/enrichment-goal.webp" loading="lazy" decoding="async" alt="Enrichment goal type — tutor composing a goal for optional enrichment content" class="cs-img">
+          <img src="assets/enrichment-goal.webp" loading="lazy" alt="Enrichment goal type — tutor composing a goal for optional enrichment content" class="cs-img">
           <figcaption>Enrichment</figcaption>
         </figure>
       </div>
     </div>
 
-    <div class="decision-item">
-      <p class="decision-item-title">Decision 2 — Surface time, not just status</p>
+    <div class="decision">
+      <p class="d-title"><span class="idx">02</span>Surface time, not just status</p>
       <p>Homework had no urgency signal — a card due tomorrow looked identical to one due next week. The fix was a countdown badge — "3d", "7d" — on every active card, so time remaining was readable at a glance. Six states covered the full lifecycle: locked, active with countdown, partially done (as a percentage), completed, overdue, and needs-attention. Each used a distinct shape and icon rather than color alone — cards already carried their own visual backgrounds, and color-only urgency would have collapsed against them.</p>
 
       <p>Overdue was designed to break pattern — a solid red pill, the most visually heavy state on the card. Two empty states shipped alongside — <em>No homework assigned</em> and <em>All homework done</em> — keeping Goals and Recent Chapters visible so an empty queue didn't mean an empty home.</p>
 
       <div class="cs-img-pair">
         <figure>
-          <img src="../tutoring-home-redesign/assets/all-hws-completed.webp" loading="lazy" decoding="async" alt="Student tutoring home — all homework completed empty state" class="cs-img">
+          <img src="assets/all-hws-completed.webp" loading="lazy" alt="Student tutoring home — all homework completed empty state" class="cs-img">
           <figcaption>All homework completed</figcaption>
         </figure>
         <figure>
-          <img src="../tutoring-home-redesign/assets/no-hws-assigned.webp" loading="lazy" decoding="async" alt="Student tutoring home — no homework assigned empty state" class="cs-img">
+          <img src="assets/no-hws-assigned.webp" loading="lazy" alt="Student tutoring home — no homework assigned empty state" class="cs-img">
           <figcaption>No homework assigned</figcaption>
         </figure>
       </div>
     </div>
 
-    <div class="decision-item">
-      <p class="decision-item-title">Decision 3 — A chapter page that holds 13 content types without breaking</p>
+    <div class="decision">
+      <p class="d-title"><span class="idx">03</span>A chapter page that holds 13 content types without breaking</p>
       <p>The chapter page was the hardest surface. Thirteen content types — lessons, practice, videos, puzzles, and more — had to coexist on one screen, each with four states (locked, unlocked, in-progress, completed). Lessons (mandatory, count toward progress) had to read as clearly distinct from Resources (optional enrichment).</p>
 
-      <img src="../tutoring-home-redesign/assets/nodes-and-hw-cards.webp" loading="lazy" decoding="async" alt="All 13 content type cards — each with distinct illustration, icon, color, and visual treatment" class="cs-img">
+      <div class="media"><img src="assets/nodes-and-HW-cards.webp" loading="lazy" alt="All 13 content type cards — each with distinct illustration, icon, color, and visual treatment" class="cs-img"></div>
       <p class="caption">13 content types — each with its own visual identity.</p>
 
       <p>We presented the first version to stakeholders. They approved it. My design manager and I weren't convinced — hierarchy felt collapsed, states didn't pop, everything lived at the same visual level. We sat together one night, started over, and shipped the new version the next day. The shift was treating Lessons and Resources as distinct categories with their own background field, not just different card styles. State visuals got iconography paired with color so each state read at a glance. The system scaled: new content types could slot in without redesigning the page.</p>
@@ -228,11 +144,11 @@
 
       <div class="cs-img-pair">
         <figure>
-          <img src="../tutoring-home-redesign/assets/discarded-student-view.webp" loading="lazy" decoding="async" alt="Discarded chapter page — hierarchy collapsed, all content types at the same visual level" class="cs-img">
+          <img src="assets/discarded-student-view.webp" loading="lazy" alt="Discarded chapter page — hierarchy collapsed, all content types at the same visual level" class="cs-img">
           <figcaption>PM-approved, ready to ship — we weren't satisfied</figcaption>
         </figure>
         <figure>
-          <img src="../tutoring-home-redesign/assets/final-student-view.webp" loading="lazy" decoding="async" alt="Final chapter page — Lessons and Resources as distinct categories, each content type with its own visual identity" class="cs-img">
+          <img src="assets/final-student-view.webp" loading="lazy" alt="Final chapter page — Lessons and Resources as distinct categories, each content type with its own visual identity" class="cs-img">
           <figcaption>Rebuilt overnight — what actually shipped</figcaption>
         </figure>
       </div>
@@ -240,36 +156,19 @@
 
   </div>
 
+  <!-- 04 -->
+  <div class="sec-top"><h2>Impact</h2></div>
 
-  <!-- 04 OUTCOME -->
-  <div class="section-head" id="outcome" data-animate>
-    <span class="section-num">04</span>
-  </div>
-
-  <h2>Impact</h2>
-
-  <div class="impact-metrics-cluster">
-    <div class="cs-stat-hero">
-      <p class="cs-stat-hero-label">Active students</p>
-      <p class="cs-stat-hero-number">30K</p>
-      <p class="cs-stat-hero-desc">moved onto the redesigned home across all regions and grades.</p>
+  <div class="impact-cluster">
+    <div class="stat-hero">
+      <p class="lab">Active students</p>
+      <p class="num">30K</p>
+      <p class="desc">moved onto the redesigned home across all regions and grades.</p>
     </div>
-    <div class="outcome-stats">
-      <div class="stat">
-        <p class="stat-label">Tutors</p>
-        <p class="stat-number">3,353</p>
-        <p class="stat-desc">Active tutors globally on the redesigned home — NAM, ISC, IME, APAC, EUK, EMEA.</p>
-      </div>
-      <div class="stat">
-        <p class="stat-label">New goal types</p>
-        <p class="stat-number">3</p>
-        <p class="stat-desc">School Success, Test Prep, and Enrichment — replacing all-or-nothing program assignment.</p>
-      </div>
-      <div class="stat">
-        <p class="stat-label">Curricula covered</p>
-        <p class="stat-number">10</p>
-        <p class="stat-desc">Tutors can compose goals across all 10 curricula — CBSE, ICSE, Common Core, and more.</p>
-      </div>
+    <div class="stat-grid">
+      <div class="stat"><p class="lab">Tutors</p><p class="num grad-text">3,353</p><p class="desc">Active tutors globally on the redesigned home — NAM, ISC, IME, APAC, EUK, EMEA.</p></div>
+      <div class="stat"><p class="lab">New goal types</p><p class="num grad-text">3</p><p class="desc">School Success, Test Prep, and Enrichment — replacing all-or-nothing program assignment.</p></div>
+      <div class="stat"><p class="lab">Curricula covered</p><p class="num grad-text">10</p><p class="desc">Tutors can compose goals across all 10 curricula — CBSE, ICSE, Common Core, and more.</p></div>
     </div>
   </div>
 
@@ -277,194 +176,114 @@
 
   <p>Feedback from the internal tutor cohort came back clean after launch. The channel was thin and self-selected, so the silence is a signal, not a verdict. Milestones (exams, medals, competitions) and the 50+ overdue edge case were deferred to V2 — both needed real usage data before designing for them.</p>
 
-
-  <!-- 05 REFLECTION -->
-  <div class="section-head" id="reflection" data-animate>
-    <span class="section-num">05</span>
-  </div>
-
-  <h2>Lessons</h2>
-
-  <div class="lessons-list">
+  <!-- 05 -->
+  <div class="sec-top"><h2>Lessons</h2></div>
+  <div class="lessons">
     <div class="lesson">
-      <p class="decision-item-title">Lesson 1 — One animation draws attention. Many animations create noise.</p>
-      <p>I designed a stroke animation to draw students' attention to the sheet they should focus on next — one glowing card standing out from the rest. The problem was that the animation was assigned to all core sheets and all work-in-progress sheets on the page. In practice, a student's page could have five or six of these running at once, all pulsing for attention at the same time. The page already made it clear what was locked, in-progress, or done — and students already knew the order sheets unlock in. The animation was adding noise on top of a system that was already working. We piloted it with our in-house teachers, got strong pushback, and pulled it immediately.</p>
-      <div class="video-embed" style="background:#000;">
-        <video id="lesson-video" muted loop playsinline preload="none" poster="../tutoring-home-redesign/assets/lesson-3-poster.webp" style="cursor:zoom-in;">
-          <source src="../tutoring-home-redesign/assets/lesson-3.mp4" type="video/mp4">
-        </video>
+      <span class="l-num">01</span>
+      <div class="l-body">
+        <p class="l-title">One animation draws attention. Many animations create noise.</p>
+        <p>I designed a stroke animation to draw students' attention to the sheet they should focus on next — one glowing card standing out from the rest. The problem was that the animation was assigned to all core sheets and all work-in-progress sheets on the page. In practice, a student's page could have five or six of these running at once, all pulsing for attention at the same time. The page already made it clear what was locked, in-progress, or done — and students already knew the order sheets unlock in. The animation was adding noise on top of a system that was already working. We piloted it with our in-house teachers, got strong pushback, and pulled it immediately.</p>
+        <div class="video-embed">
+          <video id="lesson-video" muted loop playsinline preload="none" poster="assets/lesson-3-poster.webp" title="Click to play fullscreen">
+            <source src="assets/lesson-3.mp4" type="video/mp4">
+          </video>
+        </div>
+        <p class="caption">State transitions — animation in the chapter page.</p>
       </div>
-      <p class="caption">State transitions — animation in the chapter page.</p>
     </div>
-
     <div class="lesson">
-      <p class="decision-item-title">Lesson 2 — There is almost always more room than you think</p>
-      <p>This was one of my first projects end-to-end, and when my design manager asked what I thought of the approved design, I defaulted to "we're out of time" — I couldn't articulate what felt wrong, so I didn't push back. He didn't accept that. We sat down that evening with no plan, just Figma open, iterating side by side and sharing ideas as they came. By 2am we had something we were both comfortable shipping — far better than what was approved, with no extra brief and no time formally blocked. Just two people deciding to figure it out. What I carried from that night: there is almost always more room to improve than you think, if you commit to using whatever time is left.</p>
+      <span class="l-num">02</span>
+      <div class="l-body">
+        <p class="l-title">There is almost always more room than you think</p>
+        <p>This was one of my first projects end-to-end, and when my design manager asked what I thought of the approved design, I defaulted to "we're out of time" — I couldn't articulate what felt wrong, so I didn't push back. He didn't accept that. We sat down that evening with no plan, just Figma open, iterating side by side and sharing ideas as they came. By 2am we had something we were both comfortable shipping — far better than what was approved, with no extra brief and no time formally blocked. Just two people deciding to figure it out. What I carried from that night: there is almost always more room to improve than you think, if you commit to using whatever time is left.</p>
+      </div>
     </div>
-
     <div class="lesson">
-      <p class="decision-item-title">Lesson 3 — The pushback that derailed our scope became the next project</p>
-      <p>Cutting the puzzle sections looked like easy cleanup — until the experienced tutors pushed back hard. Those puzzles weren't filler, they said; they were how they reset a distracted kid mid-class. That one conversation became a project of its own — Feel Check, a check-in flow that helps kids settle before class begins. The lesson I carry: the user pushback that derails your current scope is often the start of your next one.</p>
+      <span class="l-num">03</span>
+      <div class="l-body">
+        <p class="l-title">The pushback that derailed our scope became the next project</p>
+        <p>Cutting the puzzle sections looked like easy cleanup — until the experienced tutors pushed back hard. Those puzzles weren't filler, they said; they were how they reset a distracted kid mid-class. That one conversation became a project of its own — Feel Check, a check-in flow that helps kids settle before class begins. The lesson I carry: the user pushback that derails your current scope is often the start of your next one.</p>
+      </div>
     </div>
   </div>
 
+</article>
+
+<!-- NEXT -->
+<div class="next-wrap">
+  <a class="next" href="/work/cuemath-partners/">
+    <div class="next-img" style="background-image:url('../cuemath-partners/assets/cuemath-partners-card-thumbnail.webp')"></div>
+    <div class="next-body">
+      <p class="next-lab">Next case study</p>
+      <p class="next-title">Cuemath Partners</p>
+      <p class="next-meta">2025 · Platform Design</p>
+    </div>
+  </a>
 </div>
 
-<div class="lightbox-overlay" id="lightbox-overlay">
-  <span class="lightbox-close" id="lightbox-close" title="Close (Esc)">×</span>
-  <img class="lightbox-img" id="lightbox-img" src="" alt="">
-</div>
+<div class="cs-foot"><span>© 2026 Aasif Anwar</span><span>Designed and built by Aasif</span></div>
+
+<div class="lightbox" id="lb"><button class="lb-close" id="lb-close" aria-label="Close">×</button><img id="lb-img" alt=""></div>
 
 <script>
+  // scroll progress bar
+  var bar=document.getElementById('progress');
+  addEventListener('scroll',function(){
+    bar.style.width=Math.min(scrollY/(document.body.scrollHeight-innerHeight)*100,100)+'%';
+  },{passive:true});
 
-  /* Flow video — ambient muted loop; click to play fullscreen with controls */
-  (function () {
-    var v = document.getElementById('flow-video');
-    if (!v) return;
-    v.addEventListener('click', function () {
-      v.controls = true;
-      v.muted = false;
-      if (v.requestFullscreen) { v.requestFullscreen(); }
-      else if (v.webkitRequestFullscreen) { v.webkitRequestFullscreen(); }
-      else if (v.webkitEnterFullscreen) { v.webkitEnterFullscreen(); }
+  // custom cursor
+  (function(){
+    if(!matchMedia('(hover:hover) and (pointer:fine)').matches) return;
+    var dot=document.getElementById('cur-dot'),ring=document.getElementById('cur-ring');
+    var mx=innerWidth/2,my=innerHeight/2,rx=mx,ry=my;
+    var reduce=matchMedia('(prefers-reduced-motion:reduce)').matches;
+    var SEL='a,button,.cs-img:not(.no-zoom),video';
+    addEventListener('mousemove',function(e){
+      mx=e.clientX;my=e.clientY;dot.style.left=mx+'px';dot.style.top=my+'px';
+      if(reduce){ring.style.left=mx+'px';ring.style.top=my+'px';}
+      var on=!!(e.target.closest&&e.target.closest(SEL));
+      ring.classList.toggle('hover',on);dot.classList.toggle('hover',on);
+    });
+    if(!reduce)(function loop(){rx+=(mx-rx)*.2;ry+=(my-ry)*.2;ring.style.left=rx+'px';ring.style.top=ry+'px';requestAnimationFrame(loop);})();
+    document.addEventListener('mouseleave',function(){dot.style.opacity='0';ring.style.opacity='0';});
+    document.addEventListener('mouseenter',function(){dot.style.opacity='';ring.style.opacity='';});
+  })();
+
+  // lightbox — click any image to open full screen
+  (function(){
+    var lb=document.getElementById('lb'),img=document.getElementById('lb-img'),close=document.getElementById('lb-close');
+    document.querySelectorAll('.cs-img:not(.no-zoom)').forEach(function(el){
+      el.addEventListener('click',function(){img.src=el.currentSrc||el.src;img.alt=el.alt;lb.classList.add('on');});
+    });
+    function hide(){lb.classList.remove('on');img.removeAttribute('src');}
+    lb.addEventListener('click',function(e){if(e.target!==img)hide();});
+    close.addEventListener('click',hide);
+    document.addEventListener('keydown',function(e){if(e.key==='Escape'&&lb.classList.contains('on'))hide();});
+  })();
+
+  // flow video — ambient muted loop; click for fullscreen with sound
+  (function(){
+    var v=document.getElementById('flow-video');if(!v) return;
+    v.addEventListener('click',function(){
+      v.controls=true;v.muted=false;
+      if(v.requestFullscreen)v.requestFullscreen();else if(v.webkitEnterFullscreen)v.webkitEnterFullscreen();
       v.play();
     });
-    function restoreAmbient() {
-      if (!document.fullscreenElement && !document.webkitFullscreenElement) {
-        v.controls = false;
-        v.muted = true;
-        v.play();
-      }
-    }
-    document.addEventListener('fullscreenchange', restoreAmbient);
-    document.addEventListener('webkitfullscreenchange', restoreAmbient);
+    function restore(){if(!document.fullscreenElement){v.controls=false;v.muted=true;v.play();}}
+    document.addEventListener('fullscreenchange',restore);
   })();
 
-  /* Lesson video — ambient muted loop; click to play fullscreen with controls */
-  (function () {
-    var v = document.getElementById('lesson-video');
-    if (!v) return;
-    v.addEventListener('click', function () {
-      v.controls = true;
-      v.muted = false;
-      if (v.requestFullscreen) { v.requestFullscreen(); }
-      else if (v.webkitRequestFullscreen) { v.webkitRequestFullscreen(); }
-      else if (v.webkitEnterFullscreen) { v.webkitEnterFullscreen(); }
-      v.play();
-    });
-    function restoreAmbient() {
-      if (!document.fullscreenElement && !document.webkitFullscreenElement) {
-        v.controls = false;
-        v.muted = true;
-        v.play();
-      }
-    }
-    document.addEventListener('fullscreenchange', restoreAmbient);
-    document.addEventListener('webkitfullscreenchange', restoreAmbient);
-  })();
-
-  /* Lazy ambient video — load + play only when scrolled near (preload="none") */
-  (function () {
-    var vids = document.querySelectorAll('.video-embed video[loop]');
-    if (!vids.length) return;
-    if (!('IntersectionObserver' in window)) { vids.forEach(function (v) { try { v.play(); } catch (e) {} }); return; }
-    var vio = new IntersectionObserver(function (entries) {
-      entries.forEach(function (e) {
-        var v = e.target;
-        if (e.isIntersecting) { v.play().catch(function () {}); }
-        else if (!document.fullscreenElement && !document.webkitFullscreenElement) { v.pause(); }
-      });
-    }, { rootMargin: '300px 0px', threshold: 0.1 });
-    vids.forEach(function (v) { vio.observe(v); });
-  })();
-
-  (function () {
-    var observer = new IntersectionObserver(function (entries) {
-      entries.forEach(function (entry) {
-        if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); }
-      });
-    }, { threshold: 0.1 });
-    document.querySelectorAll('[data-animate]').forEach(function (el) { observer.observe(el); });
-  })();
-
-
-  (function () {
-    var lightboxOverlay = document.getElementById('lightbox-overlay');
-    var lightboxImg = document.getElementById('lightbox-img');
-    var lightboxClose = document.getElementById('lightbox-close');
-    var csImages = document.querySelectorAll('.cs-img');
-    if (csImages.length > 0) {
-      csImages.forEach(function(img) {
-        img.addEventListener('click', function() {
-          lightboxImg.src = img.src;
-          lightboxImg.alt = img.alt;
-          lightboxOverlay.classList.add('active');
-        });
-      });
-      lightboxClose.addEventListener('click', function() {
-        lightboxOverlay.classList.remove('active');
-      });
-      lightboxOverlay.addEventListener('click', function(e) {
-        if (e.target === lightboxOverlay) {
-          lightboxOverlay.classList.remove('active');
-        }
-      });
-      document.addEventListener('keydown', function(e) {
-        if (e.key === 'Escape') {
-          lightboxOverlay.classList.remove('active');
-        }
-      });
-    }
-  })();
-
-  /* Scroll progress bar */
-  var progressBar = document.getElementById('scroll-progress');
-  window.addEventListener('scroll', function() {
-    var pct = window.scrollY / (document.body.scrollHeight - window.innerHeight) * 100;
-    progressBar.style.width = Math.min(pct, 100) + '%';
-  });
-</script>
-
-<style>
-  /* Tutoring Home Redesign case study background */
-
-</style>
-
-
-<!-- Footer -->
-<a href="../../work/cuemath-partners/index.html" class="cs-next">
-  <div class="cs-next-img" style="background-image: url('../cuemath-partners/assets/cuemath-partners-card-thumbnail.webp');"></div>
-  <div class="cs-next-body">
-    <p class="cs-next-label">Next case study</p>
-    <h2 class="cs-next-title">Cuemath Partners</h2>
-    <p class="cs-next-meta">2025 · Partner Experience</p>
-    <span class="cs-next-arrow">→</span>
-  </div>
-</a>
-
-
-<script>
-  (function () {
-    var dot = document.getElementById('cursor-dot');
-    document.addEventListener('mousemove', function(e) {
-      dot.style.left = e.clientX + 'px';
-      dot.style.top  = e.clientY + 'px';
-    });
-    document.querySelectorAll('a, button, .cs-img').forEach(function(el) {
-      el.addEventListener('mouseenter', function() { dot.classList.add('cursor-hover'); });
-      el.addEventListener('mouseleave', function() { dot.classList.remove('cursor-hover'); });
-    });
+  // lazy ambient video play
+  (function(){
+    var vids=document.querySelectorAll('.video-embed video[loop]');if(!vids.length) return;
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){
+      if(e.isIntersecting)e.target.play().catch(function(){});else if(!document.fullscreenElement)e.target.pause();
+    });},{rootMargin:'300px 0px',threshold:.1});
+    vids.forEach(function(v){io.observe(v);});
   })();
 </script>
-
-<footer class="home-footer">
-  <div class="footer-left">
-    <span class="footer-attribution">© 2026 Aasif Anwar</span>
-  </div>
-  <div class="footer-right">
-    <span class="footer-built">Designed by Aasif · Coded with AI</span>
-  </div>
-</footer>
 
 </body>
 </html>

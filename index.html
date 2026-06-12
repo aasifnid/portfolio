@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, interactive-widget=resizes-content">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Md Aasif Anwar — Product Designer</title>
 <meta name="description" content="Product designer with 5+ years building education and consumer products. Most recently at Cuemath, designing tools used by 30K active students.">
 <link rel="canonical" href="https://aasifanwar.vercel.app/">
@@ -23,515 +23,42 @@
 <meta name="twitter:image:alt" content="Md Aasif Anwar at the National Institute of Design, Gandhinagar.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&family=DM+Sans:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="common-assets/tokens.css">
 <link rel="stylesheet" href="common-assets/typography.css">
 <link rel="stylesheet" href="common-assets/style.css">
-<style>
-  /* Critical navbar CSS - renders immediately */
-  .site-nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: var(--color-ink); height: 64px; display: flex; justify-content: space-between; align-items: center; padding: 0 max(120px, calc((100% - 1000px) / 2)); }
-  @media (max-width: 1100px) { .site-nav { padding: 0 64px; } }
-  @media (max-width: 640px) { .site-nav { padding: 0 24px; } }
-
-  html { overflow-x: clip; }
-  body { overflow-x: hidden; }
-  body {
-    font-family: "DM Sans", sans-serif;
-    color: var(--color-ink);
-    background-color: #FFFFFF;
-    background-image:
-      linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 55%),
-      radial-gradient(circle, #F5F5F5 4px, transparent 4px);
-    background-size: 100% 100%, 50px 50px;
-    background-position: 0 0, 0 0;
-    line-height: 1.6;
-    padding-top: 64px;
-  }
-
-  /* ─── Hero ─── */
-  .home-hero {
-    min-height: calc(100vh - 64px);
-    max-width: 1240px; margin: 0 auto;
-    padding: 80px 120px;
-    display: grid;
-    grid-template-columns: 1fr 256px;
-    gap: 72px;
-    align-items: center;
-  }
-  .hero-content { display: flex; flex-direction: column; }
-  .hero-portrait-col {
-    position: relative;
-    width: 100%;
-    max-width: 256px;
-    margin-left: auto;
-    cursor: pointer;
-  }
-  /* Invisible hover-extender — adds 40px of trigger area in every
-     direction without changing the layout or shifting the bubble. */
-  .hero-portrait-col::before {
-    content: '';
-    position: absolute;
-    inset: -40px;
-    z-index: 0;
-  }
-  .hero-bubble {
-    position: absolute;
-    bottom: calc(100% + 16px);
-    right: -8px;
-    transform: translateY(8px) rotate(-2deg);
-    transform-origin: bottom right;
-    background: var(--color-rec-1-bg);
-    color: var(--color-ink);
-    border: 2px solid var(--color-ink);
-    border-radius: 0;
-    padding: 16px 24px;
-    font-family: var(--font-body);
-    font-size: var(--text-sm);
-    font-weight: var(--fw-semibold);
-    line-height: 1.45;
-    text-align: left;
-    opacity: 0;
-    transition: opacity 0.3s ease, transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
-    z-index: 3;
-    pointer-events: none;
-    box-shadow: 4px 4px 0 var(--color-ink), 0 12px 24px rgba(0,0,0,0.12);
-  }
-  .hero-bubble::before {
-    content: '';
-    position: absolute;
-    top: 100%;
-    left: 24px;
-    width: 0; height: 0;
-    border-left: 12px solid transparent;
-    border-right: 12px solid transparent;
-    border-top: 16px solid var(--color-ink);
-  }
-  .hero-bubble::after {
-    content: '';
-    position: absolute;
-    top: 100%;
-    left: 28px;
-    margin-top: -4px;
-    width: 0; height: 0;
-    border-left: 8px solid transparent;
-    border-right: 8px solid transparent;
-    border-top: 12px solid var(--color-rec-1-bg);
-  }
-  .hero-portrait-col:hover .hero-bubble {
-    opacity: 1;
-    transform: translateY(0) rotate(-2deg);
-  }
-  .hero-portrait {
-    position: relative;
-    width: 100%;
-    max-width: 256px;
-    aspect-ratio: 1 / 1;
-    transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
-  }
-  .hero-portrait img {
-    position: absolute; inset: 0;
-    width: 100%; height: 100%;
-    object-fit: contain;
-    display: block;
-    transition: opacity 0.25s ease;
-  }
-  .hero-portrait img.caricature-wink {
-    opacity: 0;
-  }
-  .hero-portrait-col:hover .hero-portrait {
-    transform: rotate(-5deg);
-  }
-  .hero-portrait-col:hover img.caricature-default {
-    opacity: 0;
-  }
-  .hero-portrait-col:hover img.caricature-wink {
-    opacity: 1;
-  }
-  .hero-status {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    font-family: var(--font-body);
-    font-size: var(--text-sm);
-    font-weight: var(--fw-semibold);
-    letter-spacing: 0.01em;
-    color: var(--color-ink-2);
-    margin: 0 0 24px;
-  }
-  .hero-status-dot {
-    width: 8px; height: 8px;
-    border-radius: 50%;
-    background: #00C853;
-    flex-shrink: 0;
-    animation: statusPulse 1.8s ease-out infinite;
-  }
-  @keyframes statusPulse {
-    0%   { box-shadow: 0 0 0 0 rgba(0, 200, 83, 0.4); }
-    70%  { box-shadow: 0 0 0 7px rgba(0, 200, 83, 0); }
-    100% { box-shadow: 0 0 0 0 rgba(0, 200, 83, 0); }
-  }
-  @media (prefers-reduced-motion: reduce) {
-    .hero-status-dot { animation: none; box-shadow: 0 0 0 4px rgba(0, 200, 83, 0.15); }
-  }
-  .hero-contact {
-    display: flex; align-items: center; gap: 28px;
-    max-width: 560px;
-  }
-  .hero-contact a {
-    display: inline-flex; align-items: center; gap: 8px;
-    font-family: var(--font-body); font-size: var(--text-base); font-weight: var(--fw-regular);
-    color: var(--color-ink-2); text-decoration: none;
-    transition: color var(--ease);
-  }
-  .hero-contact a:hover { color: var(--color-accent); }
-  .hero-contact a svg { width: 16px; height: 16px; }
-  .hero-headline {
-    font-family: "Outfit", sans-serif; font-size: clamp(36px, 3.8vw, 50px);
-    line-height: 1.1; font-weight: var(--fw-bold); letter-spacing: -0.03em;
-    color: var(--color-ink); margin-bottom: 32px; max-width: 820px;
-  }
-  .hero-rule {
-    width: 96px; height: 2px; margin: 48px 0 32px;
-    background: var(--color-ink);
-    opacity: 0;
-    animation: fadeUp 0.5s ease 1000ms forwards;
-  }
-  .hero-sub {
-    font-size: var(--text-lg); line-height: 1.65; color: var(--color-ink-2);
-    font-weight: var(--fw-regular); margin-bottom: 0;
-    text-wrap: balance;
-  }
-
-  /* ─── Sections ─── */
-  .home-section { max-width: 1240px; margin: 0 auto; padding: 80px 120px; }
-
-  @media (max-width: 1100px) {
-    .home-hero { padding-left: 64px; padding-right: 64px; }
-    .home-section { padding-left: 64px; padding-right: 64px; }
-  }
-  #work { padding-bottom: 100px; }
-  .home-section-label {
-    font-family: "Outfit", sans-serif; font-size: var(--text-2xl);
-    font-weight: var(--fw-bold); letter-spacing: -0.01em; text-transform: none;
-    color: var(--color-ink); margin-bottom: 40px;
-    display: flex; align-items: center; gap: 16px;
-  }
-  .home-section-label::after {
-    content: ''; flex: 1; height: 1px; background: var(--color-border);
-  }
-
-  /* ─── Work grid ─── */
-  .work-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
-  .wc-sel { background: #33CCFF; }
-  .wc-trial { background: #FF884C; }
-  .wc-lsa { background: #FFB700; }
-  .wc-aff { background: #00E573; }
-  .work-card {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 340px auto;
-    min-height: 520px;
-    text-decoration: none; color: inherit;
-    background: var(--color-surface);
-    border: 1px solid #DADADA; border-radius: 0;
-    overflow: hidden;
-    transition: border-color 0.2s ease, box-shadow 0.2s ease;
-  }
-  .work-card:hover {
-    border-color: var(--color-ink);
-    box-shadow: 0 20px 48px rgba(0,0,0,0.12), 0 4px 12px rgba(0,0,0,0.06);
-  }
-  /* ─── Card visual panel ─── */
-  .work-card-visual {
-    order: -1;
-    width: 100%; min-height: 340px;
-    display: flex; align-items: flex-end; padding: 0;
-    position: relative; overflow: hidden;
-    transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
-  }
-  .work-card:hover .work-card-visual {
-    transform: scale(1.04);
-  }
-  .work-card-body {
-    padding: 36px 44px;
-    display: flex; flex-direction: column; justify-content: flex-start;
-    overflow: hidden;
-  }
-  .work-card-meta {
-    font-family: var(--font-body); font-size: var(--text-xs);
-    letter-spacing: 0.10em; text-transform: uppercase;
-    color: var(--color-ink-2); margin-bottom: 12px;
-    font-weight: var(--fw-semibold);
-  }
-  .work-card-title {
-    font-family: "Outfit", sans-serif; font-size: 28px;
-    font-weight: var(--fw-bold); letter-spacing: -0.02em; line-height: 1.15;
-    color: var(--color-ink); margin-bottom: 12px;
-  }
-  .work-card-desc {
-    font-size: var(--text-base); line-height: 1.6;
-    color: var(--color-ink-2); margin-bottom: auto;
-  }
-
-  /* Recommendations carousel styles live in common-assets/style.css (.recs-*) */
-
-  /* ─── About ─── */
-  .about-container {
-    display: flex; flex-direction: column; gap: 56px;
-  }
-  .about-section {
-    display: flex; flex-direction: column; gap: 16px;
-  }
-  .about-section-title {
-    font-family: "Outfit", sans-serif; font-size: var(--text-lg); font-weight: var(--fw-bold);
-    letter-spacing: -0.01em; line-height: 1.3;
-    color: var(--color-ink); margin: 0;
-  }
-  .about-text {
-    display: flex; flex-direction: column; gap: 16px;
-    max-width: 760px;
-  }
-  .about-text p {
-    font-size: var(--text-sm); line-height: 26px; color: var(--color-ink-2);
-    margin: 0;
-  }
-  .about-sketch {
-    display: flex; flex-direction: column; align-items: center; gap: 12px;
-    margin: 0;
-  }
-  .sketch-image {
-    max-width: 100%; width: 100%; height: auto;
-    border-radius: 0;
-  }
-  .sketch-caption {
-    font-size: var(--text-xs); color: var(--color-ink-3); text-align: center;
-    margin: 0;
-  }
-  .sketch-caption a {
-    color: var(--color-ink-3); text-decoration: none;
-    border-bottom: 1px solid var(--color-border);
-    transition: color 0.15s ease;
-  }
-  .sketch-caption a:hover {
-    color: var(--color-ink);
-  }
-  .exp-table { width: 100%; max-width: 760px; border-top: 1px solid var(--color-border); }
-  .exp-row {
-    display: grid; grid-template-columns: 130px 1fr auto;
-    align-items: center; gap: 24px;
-    padding: 20px 0; border-bottom: 1px solid var(--color-border);
-  }
-  .exp-year {
-    font-family: "DM Sans", sans-serif; font-size: var(--text-xs);
-    color: var(--color-ink-3); line-height: 1.4;
-  }
-  .exp-role {
-    font-family: "Outfit", sans-serif; font-size: var(--text-base); font-weight: var(--fw-semibold);
-    color: var(--color-ink); line-height: 1.3;
-  }
-  .exp-org {
-    font-family: "DM Sans", sans-serif; font-size: var(--text-xs);
-    color: var(--color-ink-3); text-align: right; line-height: 1.4;
-  }
-  @media (max-width: 600px) {
-    .exp-row { grid-template-columns: 80px 1fr; gap: 12px; align-items: start; }
-    .exp-org { display: block; text-align: left; margin-top: 2px; grid-column: 2; }
-  }
-
-  /* Tablet — stack the hero before the two-column gets cramped */
-  @media (max-width: 1080px) {
-    .home-hero { grid-template-columns: 1fr; gap: 40px; }
-    .hero-portrait-col { margin-left: 0; }
-  }
-
-  /* Chatbot styles now live in shared common-assets/style.css */
-  @media (max-width: 480px) {
-    /* Hero — mobile reset: pack naturally, no forced viewport */
-    .home-hero {
-      min-height: auto;
-      align-items: flex-start;
-      padding: 40px 20px 56px;
-      grid-template-columns: 1fr;
-      gap: 32px;
-    }
-    .hero-headline { font-size: clamp(32px, 7vw, 44px); margin-bottom: 20px; }
-    .hero-rule { width: 56px; margin: 24px 0 20px; }
-    .hero-sub { font-size: var(--text-base); line-height: 1.55; max-width: 100%; }
-    .hero-contact { flex-wrap: wrap; gap: 14px; max-width: 100%; }
-    .hero-contact a { font-size: var(--text-sm); }
-    .hero-portrait { width: 180px; }
-    .hero-portrait-col { width: 180px; margin: 0 auto; }
-    .hero-bubble {
-      font-size: var(--text-xs);
-      padding: 12px 16px;
-      right: -4px;
-    }
-    .hero-headline { font-size: clamp(28px, 6vw, 40px); margin-bottom: 20px; }
-    .hero-rule { width: 36px; margin-bottom: 16px; }
-    .hero-sub { font-size: var(--text-sm); line-height: 1.5; margin-bottom: 28px; }
-
-    /* Work cards */
-    .home-section { padding: 32px 20px; }
-    .home-section-label { font-size: var(--text-2xl); margin-bottom: 28px; }
-    .work-grid { gap: 24px; }
-    .work-card { min-height: auto; }
-    .work-card-body { padding: 20px 16px 24px; }
-    .work-card-meta { font-size: var(--text-xs); }
-    .work-card-title { font-size: var(--text-lg); margin-bottom: 8px; }
-    .work-card-desc { font-size: var(--text-xs); line-height: 20px; }
-    .work-card-visual { min-height: 160px; }
-
-    /* Archive card */
-    .work-card--archive {
-      grid-template-rows: 220px auto;
-      min-height: auto;
-    }
-    .archive-body { padding: 20px 24px; }
-    .archive-meta { font-size: var(--text-xs); }
-    .archive-title { font-size: var(--text-xl); }
-    .archive-desc { font-size: var(--text-sm); }
-
-  }
-
-  /* ─── Footer ─── */
-  .contact-body { font-family: "Outfit", sans-serif; font-size: clamp(34px, 4vw, 44px); font-weight: var(--fw-bold); letter-spacing: -0.02em; line-height: 1.15; color: var(--color-ink); margin-bottom: 24px; max-width: 600px; }
-  .contact-inline {
-    font-family: var(--font-body); font-size: var(--text-base);
-    color: var(--color-ink-2);
-    display: flex; align-items: center; gap: 16px; flex-wrap: wrap;
-    margin: 0;
-  }
-  .contact-inline a {
-    color: var(--color-ink);
-    text-decoration: none;
-    transition: color 0.15s ease;
-    display: inline-flex; align-items: center; gap: 6px;
-  }
-  .contact-inline a:hover {
-    color: var(--color-accent);
-  }
-  .contact-inline a svg { width: 14px; height: 14px; }
-  .contact-divider { color: var(--color-ink-3); }
-
-  /* ─── Archive card: Compact magazine layout with NID photo ─── */
-  .work-card--archive {
-    display: grid; grid-template-rows: 260px auto;
-    min-height: 400px;
-    background: var(--color-surface);
-    border: 1px solid var(--color-border);
-    border-radius: 0;
-    text-decoration: none; color: inherit;
-    overflow: hidden;
-    transition: border-color 0.2s ease, box-shadow 0.2s ease;
-  }
-  .work-card--archive:hover {
-    border-color: var(--color-ink);
-    box-shadow: 0 12px 32px rgba(0,0,0,0.08);
-  }
-  .archive-visual {
-    background-image: url('home/assets/aasif-at-nid.webp');
-    background-size: cover;
-    background-position: center 30%;
-    background-repeat: no-repeat;
-    filter: grayscale(70%) brightness(0.92);
-    transition: filter 0.5s ease;
-  }
-  .work-card--archive:hover .archive-visual {
-    filter: grayscale(0%) brightness(1);
-  }
-  .archive-body { padding: 24px 32px; }
-  .archive-meta {
-    font-family: var(--font-body); font-size: var(--text-xs); font-weight: var(--fw-semibold);
-    letter-spacing: 0.10em; text-transform: uppercase; color: var(--color-ink-2);
-    margin-bottom: 6px;
-  }
-  .archive-title {
-    font-family: "Outfit", sans-serif; font-size: var(--text-xl); font-weight: var(--fw-bold);
-    letter-spacing: -0.02em; color: var(--color-ink);
-    margin-bottom: 8px;
-  }
-  .archive-desc {
-    font-size: var(--text-base); line-height: 1.6; color: var(--color-ink-2);
-  }
-
-  /* ─── Keyframes ─── */
-  @keyframes fadeUp {
-    from { opacity: 0; transform: translateY(16px); }
-    to   { opacity: 1; transform: translateY(0); }
-  }
-  @keyframes shimmer {
-    0%   { background-position: -200% center; }
-    100% { background-position:  200% center; }
-  }
-  .hero-headline .word {
-    display: inline-block; opacity: 0;
-    animation: fadeUp 0.45s ease forwards;
-  }
-  .hero-sub {
-    opacity: 0;
-    animation: fadeUp 0.5s ease 1100ms forwards;
-  }
-
-  /* ─── Section label shimmer line ─── */
-  .home-section-label::after {
-    background: linear-gradient(90deg, var(--color-border) 30%, #E0E0E0 50%, var(--color-border) 70%);
-    background-size: 200% auto;
-    animation: shimmer 5s linear infinite;
-  }
-
-  /* ─── Mobile ─── */
-  @media (max-width: 768px) {
-    .home-hero { padding: 64px 24px 48px; }
-    .hero-headline { letter-spacing: -0.025em; }
-    .home-section { padding: 48px 24px; }
-    .work-grid { grid-template-columns: 1fr; }
-    .work-card {
-      grid-template-columns: 1fr;
-      grid-template-rows: 240px auto;
-      min-height: auto;
-    }
-    .work-card-visual { min-height: 240px; }
-    .work-card-body { padding: 28px 24px; }
-    .work-card-title { font-size: var(--text-2xl); }
-    .work-card-desc { font-size: var(--text-sm); }
-
-    /* Contact section — mobile */
-    .contact-body { margin-bottom: 20px; }
-    .contact-inline { font-size: var(--text-base); gap: 12px; }
-    .contact-inline a svg { width: 16px; height: 16px; }
-    .home-footer .footer-left { flex-wrap: wrap; gap: 8px; }
-  }
-
-</style>
 </head>
 <body>
-<div id="scroll-progress"></div>
-<div id="cursor-dot"></div>
+<div id="cur-dot"></div><div id="cur-ring"></div>
 
 <!-- ══════════════════════════════════════ NAV ══════════════════════════════════════ -->
 <!-- NAV:START - auto-synced from common-assets/navbar.html - run scripts/sync-nav.py to update -->
-<nav class="site-nav">
-  <a href="/" class="nav-name" data-nav-home>Aasif Anwar</a>
-  <div class="nav-links">
-    <a href="/#work" data-nav-link="work">work</a>
-    <a href="/#about" data-nav-link="about">about</a>
-    <a href="/#recommendations" data-nav-link="peers">peers</a>
-    <a href="/#contact" data-nav-link="connect">connect</a>
+<nav class="site-nav" id="site-nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-name" data-nav-home>Aasif Anwar</a>
+    <div class="nav-links">
+      <a href="/#work" data-nav-link="work">Projects</a>
+      <a href="/#peers" data-nav-link="peers">Peers</a>
+      <a href="/#about" data-nav-link="about">About</a>
+      <a href="/#connect" data-nav-link="connect">Connect</a>
+    </div>
+    <button class="nav-burger" id="nav-burger" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
   </div>
-  <button class="nav-burger" id="nav-burger" aria-label="Open menu">
-    <span></span><span></span><span></span>
-  </button>
 </nav>
 <div class="nav-mobile-menu" id="nav-mobile-menu">
-  <a href="/#work" class="nav-mobile-link" data-nav-link="work">work</a>
-  <a href="/#about" class="nav-mobile-link" data-nav-link="about">about</a>
-  <a href="/#recommendations" class="nav-mobile-link" data-nav-link="peers">peers</a>
-  <a href="/#contact" class="nav-mobile-link" data-nav-link="connect">connect</a>
+  <a href="/#work" class="nav-mobile-link" data-nav-link="work">Projects</a>
+  <a href="/#peers" class="nav-mobile-link" data-nav-link="peers">Peers</a>
+  <a href="/#about" class="nav-mobile-link" data-nav-link="about">About</a>
+  <a href="/#connect" class="nav-mobile-link" data-nav-link="connect">Connect</a>
 </div>
 <script>
   (function() {
+    var nav = document.getElementById('site-nav');
     var burger = document.getElementById('nav-burger');
     var menu = document.getElementById('nav-mobile-menu');
+    if (nav) addEventListener('scroll', function() { nav.classList.toggle('scrolled', scrollY > 20); }, { passive: true });
     if (!burger || !menu) return;
     function setOpen(open) {
       burger.classList.toggle('open', open);
@@ -547,322 +74,162 @@
 </script>
 <!-- NAV:END -->
 
-<!-- ══════════════════════════════════════ HERO ══════════════════════════════════════ -->
-<div class="home-hero">
-  <div class="hero-content">
-    <p class="hero-status">Open to full-time roles<span class="hero-status-dot"></span></p>
-    <h1 class="hero-headline">I built learning tools for 30K students and 3K+ tutors.</h1>
-    <p class="hero-sub">Lifted trial-to-paid by 9.6%. Got 75.2% of students into class ready to learn.</p>
-    <div class="hero-rule"></div>
-    <div class="hero-contact">
-      <a href="mailto:aasif.nid@gmail.com">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="0"/><path d="M3 7l9 6 9-6"/></svg>
-        aasif.nid@gmail.com
-      </a>
-      <a href="https://www.linkedin.com/in/aasif-nid/" target="_blank" rel="noopener">
-        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 3H5a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2V5a2 2 0 00-2-2zM8.5 18H6V10h2.5v8zM7.25 8.8a1.45 1.45 0 110-2.9 1.45 1.45 0 010 2.9zM18 18h-2.5v-4.2c0-1.1-.4-1.8-1.4-1.8-.8 0-1.3.5-1.5 1-.1.2-.1.5-.1.7V18H10s.03-7.3 0-8h2.5v1.1c.3-.5 1-1.3 2.4-1.3 1.7 0 3.1 1.1 3.1 3.6V18z"/></svg>
-        LinkedIn
-      </a>
-      <a href="https://drive.google.com/file/d/1WEOEkgUW7NZk5b4zRzuqMfnKv8hcUsir/view?usp=sharing" target="_blank" rel="noopener">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="9" y1="13" x2="15" y2="13"/><line x1="9" y1="17" x2="15" y2="17"/></svg>
-        Resume
-      </a>
+<!-- HERO -->
+<header class="hero" id="top"><div class="wrap">
+  <div>
+    <p class="eyebrow"><span class="dot"></span>Open to product design roles</p>
+    <h1>I designed <span class="grad-text">learning tools</span><br>for 30K students<br>and 3K+ tutors.</h1>
+    <p class="sub">Lifted trial-to-paid by 9.6%. Got 75.2% of students into class ready to learn.</p>
+    <div aria-hidden="true" style="height:56px"></div>
+  </div>
+  <div class="portrait-col">
+    <span class="bubble">Start with Feel Check ↓</span>
+    <div class="portrait">
+      <img class="cari-default" src="home/assets/home-cta.webp" alt="Aasif Anwar" fetchpriority="high" decoding="async">
+      <img class="cari-wink" src="home/assets/home-cta-hover.webp" alt="" aria-hidden="true" loading="lazy" decoding="async">
     </div>
   </div>
-  <div class="hero-portrait-col">
-    <span class="hero-bubble">Start with Feel Check ↓</span>
-    <div class="hero-portrait">
-      <img src="home/assets/home-cta.webp" alt="Aasif Anwar — Product Designer" class="caricature-default" fetchpriority="high" decoding="async">
-      <img src="home/assets/home-cta-hover.webp" alt="" class="caricature-wink" aria-hidden="true" loading="lazy" decoding="async">
-    </div>
-  </div>
-</div>
+</div></header>
 
-<!-- ══════════════════════════════════════ WORK ══════════════════════════════════════ -->
-<section class="home-section" id="work">
-  <p class="home-section-label">Selected Work</p>
-  <div class="work-grid">
-
-    <a href="work/feel-check/index.html" class="work-card">
-      <div class="work-card-body wc-sel">
-        <p class="work-card-meta">2025–26 · Behavior Design</p>
-        <p class="work-card-title">Feel Check: Emotional check-in</p>
-        <p class="work-card-desc">Student-led emotional check-in for live classes. 75.2% of students ready to learn after Feel Check (n=459 tutor observations).</p>
-      </div>
-      <div class="work-card-visual" style="background: url('work/feel-check/assets/feel-check-card-thumbnail.webp') center/cover no-repeat;"></div>
-    </a>
-
-    <a href="work/new-trial-experience/index.html" class="work-card">
-      <div class="work-card-body wc-trial">
-        <p class="work-card-meta">2024 · System Redesign</p>
-        <p class="work-card-title">New Trial Experience: Self-serve funnel</p>
-        <p class="work-card-desc">Trial funnel redesign distributing work across system, teachers, parents. −70% Academic Counselor intervention, +50% qualified leads to trial, +9.6% trial-to-paid.</p>
-      </div>
-      <div class="work-card-visual" style="background: url('work/new-trial-experience/assets/new-trial-experience-card-thumbnail.webp') center/cover no-repeat; padding: 0;"></div>
-    </a>
-
-    <a href="work/tutoring-home-redesign/index.html" class="work-card">
-      <div class="work-card-body wc-lsa">
-        <p class="work-card-meta">2025 · Interaction Design</p>
-        <p class="work-card-title">Tutoring home redesign</p>
-        <p class="work-card-desc">Designed a goal creation flow, homework queue, and surfaced recent chapters. Benefiting 30K active students and 3K+ tutors.</p>
-      </div>
-      <div class="work-card-visual" style="background: url('work/tutoring-home-redesign/assets/tutoring-home-redesign-card-thumbnail.webp') center/cover no-repeat; padding: 0;"></div>
-    </a>
-
-    <a href="work/cuemath-partners/index.html" class="work-card">
-      <div class="work-card-body wc-aff">
-        <p class="work-card-meta">2025 · Platform Design</p>
-        <p class="work-card-title">Cuemath Partners: Affiliate-led event referral</p>
-        <p class="work-card-desc">Partner platform for community influencers tracking event referrals and payouts. 138 onboarded, 3,019 active users.</p>
-      </div>
-      <div class="work-card-visual" style="background: url('work/cuemath-partners/assets/cuemath-partners-card-thumbnail.webp') center/cover no-repeat; padding: 0;"></div>
-    </a>
-
-    <a href="work/earlier-work/index.html" class="work-card--archive">
-      <div class="archive-visual"></div>
-      <div class="archive-body">
-        <p class="archive-meta">2018–21 · Foundation Projects</p>
-        <p class="archive-title">Earlier Work at NID</p>
-        <p class="archive-desc">Game design, physical products, interaction design. Experimented across form, space, play experience.</p>
-      </div>
-    </a>
-
-  </div>
+<!-- WORKED WITH -->
+<section class="worked">
+  <div class="wrap">
+    <p class="worked-label">I've worked with</p>
+    <div class="marquee"><div class="marquee-track">
+    <div class="logo"><img src="home/assets/logos/cuemath.webp" alt="Cuemath"></div>
+    <div class="logo"><img src="home/assets/logos/mastree.webp" alt="Mastree"></div>
+    <div class="logo"><img src="home/assets/logos/nid.webp" alt="National Institute of Design"></div>
+    <div class="logo"><img src="home/assets/logos/ministry-of-ayush.webp" alt="Ministry of AYUSH" style="height:30px"></div>
+    <div class="logo"><img src="home/assets/logos/aga-khan-foundation.webp" alt="Aga Khan Foundation" style="height:30px"></div>
+    <div class="logo"><img src="home/assets/logos/iit-kanpur.webp" alt="IIT Kanpur"></div>
+    <div class="logo"><img src="home/assets/logos/iit-guwahati.webp" alt="IIT Guwahati"></div>
+    <div class="logo" aria-hidden="true"><img src="home/assets/logos/cuemath.webp" alt=""></div>
+    <div class="logo" aria-hidden="true"><img src="home/assets/logos/mastree.webp" alt=""></div>
+    <div class="logo" aria-hidden="true"><img src="home/assets/logos/nid.webp" alt=""></div>
+    <div class="logo" aria-hidden="true"><img src="home/assets/logos/ministry-of-ayush.webp" alt="" style="height:30px"></div>
+    <div class="logo" aria-hidden="true"><img src="home/assets/logos/aga-khan-foundation.webp" alt="" style="height:30px"></div>
+    <div class="logo" aria-hidden="true"><img src="home/assets/logos/iit-kanpur.webp" alt=""></div>
+    <div class="logo" aria-hidden="true"><img src="home/assets/logos/iit-guwahati.webp" alt=""></div>
+  </div></div></div>
 </section>
 
-<!-- ══════════════════════════════════════ ABOUT ══════════════════════════════════════ -->
-<section class="home-section" id="about">
-  <p class="home-section-label">About</p>
-
-  <div class="about-container">
-
-    <!-- Picture — wide banner on top -->
-    <div class="about-sketch">
-      <img src="home/assets/about-me.webp" loading="lazy" alt="Aasif Anwar" class="sketch-image" />
-      <p class="sketch-caption">Created with ❤️ by <a href="https://www.linkedin.com/in/srishti-singh-b3244b12b/" target="_blank" rel="noopener">Srishti Singh</a></p>
-    </div>
-
-    <!-- About me (intro — heading-less, section label does the work) -->
-    <div class="about-section">
-      <div class="about-text">
-        <p>I did my Master's in Toy and Game Design from NID — a discipline most people misread as "design for kids." It's not. It's the design of playful experiences: engagements with games, physical environments, or interactive systems. The medium changes; the principle doesn't.</p>
-
-        <p>I joined Cuemath as a Game Designer. When my manager asked me to take on product, I said yes. The users were still kids; the work, still about engagement — just inside a bigger system now. Five years in, the thing I keep coming back to is simpler than I thought: listen to the person who's stuck, understand the friction, build the thing.</p>
-      </div>
-    </div>
-
-    <!-- How I work -->
-    <div class="about-section">
-      <h3 class="about-section-title">How I work</h3>
-      <div class="about-text">
-        <p>I'm resourceful (jugadu is what my friends at NID call me), because I believe in using what you have: connections, creativity, hustle, to solve real problems. Every turn in my career came through a connection I built or people I valued — I try not to forget that. I stay engaged through implementation because design isn't done at handoff. I ask questions because I'm genuinely curious; listening deeply is how you find the real problem.</p>
-      </div>
-    </div>
-
-    <!-- What's next -->
-    <div class="about-section">
-      <h3 class="about-section-title">What's next</h3>
-      <div class="about-text">
-        <p>I'm looking for product design roles on consumer-facing products at scale, where design has real influence. I want to keep listening deeply, solving thoughtfully, and helping teams ship things that actually matter.</p>
-      </div>
-    </div>
-
-    <!-- Journey so far — table, last -->
-    <div class="about-section">
-      <h3 class="about-section-title">Journey so far</h3>
-      <div class="exp-table">
-        <div class="exp-row">
-          <span class="exp-year">2011 – 15</span>
-          <span class="exp-role">Mechanical Engineering</span>
-          <span class="exp-org">Nalanda College of Engineering</span>
-        </div>
-        <div class="exp-row">
-          <span class="exp-year">2015 – 17</span>
-          <span class="exp-role">Pivot to Design</span>
-          <span class="exp-org">Self-directed exploration</span>
-        </div>
-        <div class="exp-row">
-          <span class="exp-year">2017 – 18</span>
-          <span class="exp-role">Design Associate</span>
-          <span class="exp-org">Department of Design, IIT Kanpur</span>
-        </div>
-        <div class="exp-row">
-          <span class="exp-year">2018 – 21</span>
-          <span class="exp-role">M.Des in Toy and Game Design</span>
-          <span class="exp-org">National Institute of Design</span>
-        </div>
-        <div class="exp-row">
-          <span class="exp-year">2021 – 22</span>
-          <span class="exp-role">Game Design</span>
-          <span class="exp-org">Cuemath</span>
-        </div>
-        <div class="exp-row">
-          <span class="exp-year">2022 – 26</span>
-          <span class="exp-role">Product Design</span>
-          <span class="exp-org">Cuemath</span>
-        </div>
-        <div class="exp-row">
-          <span class="exp-year">What's next</span>
-          <span class="exp-role">Design for consumers at scale</span>
-          <span class="exp-org" style="font-size: 1.5em; line-height: 1;">🤞</span>
-        </div>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<!-- ══════════════════════════════════════ RECOMMENDATIONS ══════════════════════════ -->
-<section class="home-section" id="recommendations">
-  <p class="home-section-label">Words from Peers</p>
-  <div class="recs-pills" id="recs-pills"></div>
-
-  <div class="recs-panel">
-    <span class="recs-mark">“</span>
-    <blockquote class="recs-quote" id="recs-quote"></blockquote>
-    <a class="recs-attr" id="recs-attr" target="_blank" rel="noopener" title="View on LinkedIn">
-      <img id="recs-img" alt="">
-      <div><div class="recs-name" id="recs-name"></div><div class="recs-role" id="recs-role"></div></div>
+<!-- WORK -->
+<section id="work"><div class="wrap">
+  <div class="sec-top"><h2>Projects at Cuemath</h2><span class="lbl">2024 — 26</span></div>
+  <div class="cards">
+    <a class="card" href="/work/feel-check/">
+      <div class="card-img"><img src="work/feel-check/assets/feel-check-card-thumbnail.webp" alt="Feel Check"></div>
+      <div class="card-body"><div><div class="card-meta"><span class="type">Behavior Design</span> · 2025–26</div><h3 class="card-title">Feel Check: Emotional check-in</h3><p class="card-desc">Student-led emotional check-in for live classes. 75.2% of students ready to learn after Feel Check (n=459 tutor observations).</p></div></div>
+    </a>
+    <a class="card" href="/work/new-trial-experience/">
+      <div class="card-img"><img src="work/new-trial-experience/assets/new-trial-experience-card-thumbnail.webp" alt="New Trial Experience"></div>
+      <div class="card-body"><div><div class="card-meta"><span class="type">System Redesign</span> · 2024</div><h3 class="card-title">New Trial Experience: Self-serve funnel</h3><p class="card-desc">Trial funnel redesign distributing work across system, teachers, parents. −70% Academic Counselor intervention, +50% qualified leads to trial, +9.6% trial-to-paid.</p></div></div>
+    </a>
+    <a class="card" href="/work/tutoring-home-redesign/">
+      <div class="card-img"><img src="work/tutoring-home-redesign/assets/tutoring-home-redesign-card-thumbnail.webp" alt="Tutoring home redesign"></div>
+      <div class="card-body"><div><div class="card-meta"><span class="type">Interaction Design</span> · 2025</div><h3 class="card-title">Tutoring home redesign</h3><p class="card-desc">Designed a goal creation flow, homework queue, and surfaced recent chapters. Benefiting 30K active students and 3K+ tutors.</p></div></div>
+    </a>
+    <a class="card" href="/work/cuemath-partners/">
+      <div class="card-img"><img src="work/cuemath-partners/assets/cuemath-partners-card-thumbnail.webp" alt="Cuemath Partners"></div>
+      <div class="card-body"><div><div class="card-meta"><span class="type">Platform Design</span> · 2025</div><h3 class="card-title">Cuemath Partners: Affiliate-led event referral</h3><p class="card-desc">Partner platform for community influencers tracking event referrals and payouts. 138 onboarded, 3,019 active users.</p></div></div>
     </a>
   </div>
+</div></section>
 
-  <div class="recs-ctrls">
-    <div class="recs-count"><span id="recs-count">01</span> / 06</div>
-    <div class="recs-arrows"><button id="recs-prev" aria-label="Previous recommendation">‹</button><button id="recs-next" aria-label="Next recommendation">›</button></div>
+<!-- PROJECTS AT NID -->
+<section class="nid"><div class="wrap">
+  <div class="sec-top"><h2>Projects at NID</h2><span class="lbl">Foundation · 2018–21</span></div>
+  <div class="nid-grid">
+    <a class="nid-card" href="https://www.behance.net/gallery/101254403/System-Design-Project-with-Ministry-of-AYUSH" target="_blank" rel="noopener"><div class="im"><img src="work/earlier-work/assets/ayush-gram.webp" alt="Ayush Gram"></div><div class="bx"><div class="ti">Ayush Gram</div><div class="ds">System design project mapping and reimagining service touchpoints for India's Ministry of AYUSH — a service design and policy lens.</div></div></a>
+    <a class="nid-card" href="https://drive.google.com/file/d/1kS0Z-vo8TuGqVxpX0-cW_G9lTNNhIgkC/view?usp=sharing" target="_blank" rel="noopener"><div class="im"><img src="work/earlier-work/assets/jugnu.webp" alt="Jugnu"></div><div class="bx"><div class="ti">Jugnu</div><div class="ds">An early childhood development (ECD) learning-at-home kit, sponsored by the Aga Khan Foundation.</div></div></a>
+    <a class="nid-card" href="https://www.behance.net/gallery/87420605/Inclusive-Play-Space-Design-for-Passive-Play" target="_blank" rel="noopener"><div class="im"><img src="work/earlier-work/assets/inclusive-play-space.webp" alt="Inclusive Play Space"></div><div class="bx"><div class="ti">Inclusive Play Space</div><div class="ds">Design of a passive play environment accessible to children with varying physical abilities — research-led spatial and sensory planning.</div></div></a>
+    <a class="nid-card" href="https://www.behance.net/gallery/101077351/NUMARIS-Fun-with-Digits" target="_blank" rel="noopener"><div class="im"><img src="work/earlier-work/assets/Numaris.webp" alt="NUMARIS"></div><div class="bx"><div class="ti">NUMARIS</div><div class="ds">A digit-based game designed to build numerical intuition through play — connecting game mechanics to educational outcomes.</div></div></a>
+    <a class="nid-card" href="https://www.behance.net/gallery/78763789/Convolution" target="_blank" rel="noopener"><div class="im"><img src="work/earlier-work/assets/Convolution.webp" alt="Convolution"></div><div class="bx"><div class="ti">Convolution</div><div class="ds">An exploration of layered interaction — how overlapping systems of rules and responses create emergent, unpredictable experiences.</div></div></a>
+    <a class="nid-card" href="https://www.behance.net/gallery/78392203/DHAPPA-A-Tabletop-Game-based-on-HIDE-SEEK" target="_blank" rel="noopener"><div class="im"><img src="work/earlier-work/assets/Dhappa.webp" alt="DHAPPA"></div><div class="bx"><div class="ti">DHAPPA</div><div class="ds">A tabletop game reimagining Hide &amp; Seek as a strategic card and board experience — designed for repeat play and growing complexity.</div></div></a>
   </div>
+</div></section>
 
-</section>
-
-<!-- ══════════════════════════════════════ CONTACT ══════════════════════════════════════ -->
-<section class="home-section" id="contact">
-  <p class="home-section-label">Get in touch</p>
-  <p class="contact-body">Let's build something meaningful at scale.</p>
-  <p class="contact-inline">
-    <a href="mailto:aasif.nid@gmail.com">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="0"/><path d="M3 7l9 6 9-6"/></svg>
-      aasif.nid@gmail.com
-    </a>
-    <span class="contact-divider">·</span>
-    <a href="https://www.linkedin.com/in/aasif-nid/" target="_blank" rel="noopener">
-      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 3H5a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2V5a2 2 0 00-2-2zM8.5 18H6V10h2.5v8zM7.25 8.8a1.45 1.45 0 110-2.9 1.45 1.45 0 010 2.9zM18 18h-2.5v-4.2c0-1.1-.4-1.8-1.4-1.8-.8 0-1.3.5-1.5 1-.1.2-.1.5-.1.7V18H10s.03-7.3 0-8h2.5v1.1c.3-.5 1-1.3 2.4-1.3 1.7 0 3.1 1.1 3.1 3.6V18z"/></svg>
-      LinkedIn
-    </a>
-    <span class="contact-divider">·</span>
-    <a href="https://drive.google.com/file/d/1WEOEkgUW7NZk5b4zRzuqMfnKv8hcUsir/view?usp=sharing" target="_blank" rel="noopener">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="9" y1="13" x2="15" y2="13"/><line x1="9" y1="17" x2="15" y2="17"/></svg>
-      Resume
-    </a>
-  </p>
-</section>
-
-<!-- ══════════════════════════════════════ FOOTER ══════════════════════════════════════ -->
-<footer class="home-footer">
-  <div class="footer-left">
-    <span class="footer-attribution">© 2026 Aasif Anwar</span>
+<!-- PEERS -->
+<section class="peers" id="peers"><div class="wrap">
+  <div class="sec-top"><h2>Words from peers</h2></div>
+  <div class="quote-card">
+    <span class="qmark" aria-hidden="true">“</span>
+    <blockquote class="peer-feat" id="pq"></blockquote>
+    <div class="quote-foot">
+      <a class="peer-by" id="pby" target="_blank" rel="noopener"><img id="pimg" alt=""><div><div class="peer-nm" id="pn"></div><div class="peer-rl" id="pr"></div></div></a>
+      <span class="lbl" id="pcount">01 / 06</span>
+    </div>
   </div>
-  <div class="footer-right">
-    <span class="footer-built">Designed by Aasif · Coded with AI</span>
+  <div class="roster" id="roster"></div>
+</div></section>
+
+<!-- ABOUT -->
+<section class="about" id="about"><div class="wrap">
+  <div class="sec-top"><h2>About</h2></div>
+  <div class="about-photo"><img src="home/assets/about-me.webp" loading="lazy" alt="Aasif Anwar"><p class="about-cap">Created with ❤️ by <a href="https://www.linkedin.com/in/srishti-singh-b3244b12b/" target="_blank" rel="noopener">Srishti Singh</a></p></div>
+  <div class="about-text">
+    <p>I did my Master's in Toy and Game Design from NID — a discipline most people misread as "design for kids." It's not. It's the design of playful experiences: engagements with games, physical environments, or interactive systems. The medium changes; the principle doesn't.</p>
+    <p>I joined Cuemath as a Game Designer. When my manager asked me to take on product, I said yes. The users were still kids; the work, still about engagement — just inside a bigger system now. Five years in, the thing I keep coming back to is simpler than I thought: listen to the person who's stuck, understand the friction, build the thing.</p>
+    <div class="about-sub"><h3>How I work</h3><p>I'm resourceful (jugadu is what my friends at NID call me), because I believe in using what you have: connections, creativity, hustle, to solve real problems. Every turn in my career came through a connection I built or people I valued — I try not to forget that. I stay engaged through implementation because design isn't done at handoff. I ask questions because I'm genuinely curious; listening deeply is how you find the real problem.</p></div>
   </div>
-</footer>
+  <div class="about-sub" style="margin-top:56px"><h3>The journey so far</h3></div>
+  <div class="tl-v">
+    <div class="tl-vrow"><span class="tl-vyr">2011 – 15</span><div><div class="tl-vrole">Mechanical Engineering</div><div class="tl-vorg">Nalanda College of Engineering</div></div></div>
+    <div class="tl-vrow"><span class="tl-vyr">2015 – 17</span><div><div class="tl-vrole">Pivot to Design</div><div class="tl-vorg">Self-directed exploration</div></div></div>
+    <div class="tl-vrow"><span class="tl-vyr">2017 – 18</span><div><div class="tl-vrole">Design Associate</div><div class="tl-vorg">Department of Design, IIT Kanpur</div></div></div>
+    <div class="tl-vrow"><span class="tl-vyr">2018 – 21</span><div><div class="tl-vrole">M.Des in Toy and Game Design</div><div class="tl-vorg">National Institute of Design</div></div></div>
+    <div class="tl-vrow"><span class="tl-vyr">2021 – 22</span><div><div class="tl-vrole">Game Design</div><div class="tl-vorg">Cuemath</div></div></div>
+    <div class="tl-vrow"><span class="tl-vyr">2022 – 26</span><div><div class="tl-vrole">Product Design</div><div class="tl-vorg">Cuemath</div></div></div>
+    <div class="tl-vrow last"><span class="tl-vyr">What's next</span><div><div class="tl-vrole">Design for consumers at scale 🤞</div></div></div>
+  </div>
+</div></section>
+
+<!-- CONTACT -->
+<section class="contact" id="connect"><div class="wrap">
+  <p class="big">Let's build something <span class="grad-text">meaningful</span> at scale.</p>
+  <p class="contact-sub">I'm looking for product design roles on consumer-facing products at scale, where design has real influence. I want to keep listening deeply, solving thoughtfully, and helping teams ship things that actually matter.</p>
+  <div class="contact-rule"></div>
+  <div class="ctas">
+    <a class="cta" href="mailto:aasif.nid@gmail.com"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>aasif.nid@gmail.com</a>
+    <a class="cta" href="https://www.linkedin.com/in/aasif-nid/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 3H5a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2V5a2 2 0 00-2-2zM8.5 18H6V10h2.5v8zM7.25 8.8a1.45 1.45 0 110-2.9 1.45 1.45 0 010 2.9zM18 18h-2.5v-4.2c0-1.1-.4-1.8-1.4-1.8-.8 0-1.3.5-1.5 1-.1.2-.1.5-.1.7V18H10s.03-7.3 0-8h2.5v1.1c.3-.5 1-1.3 2.4-1.3 1.7 0 3.1 1.1 3.1 3.6V18z"/></svg>LinkedIn</a>
+    <a class="cta" href="https://drive.google.com/file/d/1WEOEkgUW7NZk5b4zRzuqMfnKv8hcUsir/view?usp=sharing" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="9" y1="13" x2="15" y2="13"/><line x1="9" y1="17" x2="15" y2="17"/></svg>Resume</a>
+  </div>
+</div></section>
+<div class="wrap"><div class="foot"><span>© 2026 Aasif Anwar</span><span>Designed and built by Aasif</span></div></div>
 
 <script>
-
-  /* ── Nav glass on scroll (cached DOM ref + threshold guard) ── */
-  var siteNav = document.querySelector('.site-nav');
-  var navIsGlass = false;
-  window.addEventListener('scroll', function() {
-    var shouldGlass = window.scrollY > 24;
-    if (shouldGlass === navIsGlass) return;
-    navIsGlass = shouldGlass;
-    if (shouldGlass) {
-      siteNav.style.background = 'rgba(13, 13, 13, 0.95)';
-      siteNav.style.backdropFilter = 'blur(16px)';
-      siteNav.style.webkitBackdropFilter = 'blur(16px)';
-    } else {
-      siteNav.style.background = '';
-      siteNav.style.backdropFilter = '';
-      siteNav.style.webkitBackdropFilter = '';
-    }
-  }, { passive: true });
-
-  /* ── Scroll progress bar (rAF-throttled, cached scrollable height) ── */
-  var progressBar = document.getElementById('scroll-progress');
-  var scrollableHeight = document.body.scrollHeight - window.innerHeight;
-  window.addEventListener('resize', function() {
-    scrollableHeight = document.body.scrollHeight - window.innerHeight;
-  }, { passive: true });
-  var progressTicking = false;
-  window.addEventListener('scroll', function() {
-    if (progressTicking) return;
-    progressTicking = true;
-    requestAnimationFrame(function() {
-      var pct = scrollableHeight > 0 ? (window.scrollY / scrollableHeight) * 100 : 0;
-      progressBar.style.width = Math.min(pct, 100) + '%';
-      progressTicking = false;
-    });
-  }, { passive: true });
-
-  /* ── Custom cursor ── */
-  var dot = document.getElementById('cursor-dot');
-  document.addEventListener('mousemove', function(e) {
-    dot.style.left = e.clientX + 'px';
-    dot.style.top  = e.clientY + 'px';
-  });
-  document.querySelectorAll('a, button, .work-card').forEach(function(el) {
-    el.addEventListener('mouseenter', function() { dot.classList.add('cursor-hover'); });
-    el.addEventListener('mouseleave', function() { dot.classList.remove('cursor-hover'); });
-  });
-  var navLogo = document.querySelector('.nav-name');
-  if (navLogo) {
-    navLogo.addEventListener('mouseenter', function() { dot.style.opacity = '0'; });
-    navLogo.addEventListener('mouseleave', function() { dot.style.opacity = '1'; });
-  }
-
-  /* ── Hero headline word split (preserves <br> line breaks) ── */
-  var headline = document.querySelector('.hero-headline');
-  if (headline) {
-    var lines = headline.innerHTML.split(/<br\s*\/?>/i);
-    var idx = 0;
-    headline.innerHTML = lines.map(function(line) {
-      var words = line.trim().split(/\s+/).filter(Boolean);
-      return words.map(function(w) {
-        var delay = 200 + (idx++) * 70;
-        return '<span class="word" style="animation-delay:' + delay + 'ms">' + w + '</span>';
-      }).join(' ');
-    }).join('<br>');
-  }
-
-  /* ── Card click navigation ── */
-  document.querySelectorAll('.work-card').forEach(function(card) {
-    card.addEventListener('click', function(e) {
-      var href = card.getAttribute('href');
-      window.location.href = href;
-    });
-  });
-
-  /* ── Recommendations carousel ── */
+  // custom cursor — dot tracks instantly; ring trails + focuses over anything clickable
   (function(){
-    var pills = document.getElementById('recs-pills');
-    if (!pills) return;
-    var REC = [
-      {img:"home/assets/Recommendations/Manik.webp",name:"Manik Bansal",role:"Head of Design · Cuemath",linkedin:"https://www.linkedin.com/in/manikbansal/",quote:"He doesn't design in a vacuum — he talks to people, watches how they use the product, and brings it into the next iteration. Any team would be lucky to have him."},
-      {img:"home/assets/Recommendations/Vaibhav.webp",name:"Vaibhav Sawhney",role:"Head of Product · Cuemath",linkedin:"https://www.linkedin.com/in/vaibhavsawhney/",quote:"He takes ownership end-to-end and turns ambiguous briefs into polished, thoughtful outcomes — dependable, and genuinely invested in getting the product right."},
-      {img:"home/assets/Recommendations/Jigar.webp",name:"Jigar Vora",role:"Business Head (India) · Cuemath",linkedin:"https://www.linkedin.com/in/jigarvora01/",quote:"He always understands the 'why' behind a project, so design aligns with business goals and user impact — and he tracks how his work moves engagement and outcomes."},
-      {img:"home/assets/Recommendations/Shubham.webp",name:"Shubham Vats",role:"Tech Lead · Cuemath",linkedin:"https://www.linkedin.com/in/shubham-vats-93172640/",quote:"He doesn't protect his craft — he hunts the right answer. When users hit friction, he'd reach out, understand it, and return with the fix. That follow-through is rare."},
-      {img:"home/assets/Recommendations/Jeetesh.webp",name:"Jeetesh Gulani",role:"Product Manager · Cuemath",linkedin:"https://www.linkedin.com/in/jeeteshgulani/",quote:"His superpower is taking abstract, ambiguous problems and turning them into visually stunning, functional design — responsive and ego-free, no matter the deadline."},
-      {img:"home/assets/Recommendations/Ayush.webp",name:"Ayush Singhal",role:"SDE II · Cuemath",linkedin:"https://www.linkedin.com/in/ayush-singhal-a238b513b/",quote:"One of the most dependable and thoughtful designers I've worked with. He acts on feedback fast, sweats the detail, and steps in to unblock other teams."}
-    ];
-    var i = 0;
-    var q=document.getElementById('recs-quote'),im=document.getElementById('recs-img'),nm=document.getElementById('recs-name'),rl=document.getElementById('recs-role'),ct=document.getElementById('recs-count'),attr=document.getElementById('recs-attr');
-    pills.innerHTML = REC.map(function(o,k){return '<div class="recs-pill'+(k===0?' on':'')+'" data-k="'+k+'"><img src="'+o.img+'" alt=""><div><div class="nm">'+o.name+'</div><div class="rl">'+o.role+'</div></div></div>';}).join('');
-    function render(){var o=REC[i];q.textContent=o.quote+'”';im.src=o.img;nm.textContent=o.name;rl.textContent=o.role;ct.textContent=('0'+(i+1)).slice(-2);if(attr)attr.href=o.linkedin;
-      var ps=pills.children;for(var k=0;k<ps.length;k++){ps[k].classList.toggle('on',k===i);}}
-    var arr=pills.children;for(var k=0;k<arr.length;k++){(function(el){el.addEventListener('click',function(){i=+el.getAttribute('data-k');render();});})(arr[k]);}
-    document.getElementById('recs-prev').addEventListener('click',function(){i=(i-1+REC.length)%REC.length;render();});
-    document.getElementById('recs-next').addEventListener('click',function(){i=(i+1)%REC.length;render();});
-    render();
+    if(!matchMedia('(hover:hover) and (pointer:fine)').matches) return;
+    var dot=document.getElementById('cur-dot'),ring=document.getElementById('cur-ring');
+    var mx=innerWidth/2,my=innerHeight/2,rx=mx,ry=my;
+    var reduce=matchMedia('(prefers-reduced-motion:reduce)').matches;
+    var SEL='a,button,.chip,.portrait-col';
+    addEventListener('mousemove',function(e){
+      mx=e.clientX;my=e.clientY;dot.style.left=mx+'px';dot.style.top=my+'px';
+      if(reduce){ring.style.left=mx+'px';ring.style.top=my+'px';}
+      var on=!!(e.target.closest&&e.target.closest(SEL));
+      ring.classList.toggle('hover',on);dot.classList.toggle('hover',on);
+    });
+    if(!reduce)(function loop(){rx+=(mx-rx)*.2;ry+=(my-ry)*.2;ring.style.left=rx+'px';ring.style.top=ry+'px';requestAnimationFrame(loop);})();
+    document.addEventListener('mouseleave',function(){dot.style.opacity='0';ring.style.opacity='0';});
+    document.addEventListener('mouseenter',function(){dot.style.opacity='';ring.style.opacity='';});
   })();
+
+  // peers — featured pull-quote + chip roster
+  var REC=[
+   {img:'Manik',name:'Manik Bansal',role:'Head of Design · Cuemath',li:'https://www.linkedin.com/in/manikbansal/',q:"He doesn't design in a vacuum — he talks to people, watches how they use the product, and brings it into the next iteration. Any team would be lucky to have him."},
+   {img:'Vaibhav',name:'Vaibhav Sawhney',role:'Head of Product · Cuemath',li:'https://www.linkedin.com/in/vaibhavsawhney/',q:"He takes ownership end-to-end and turns ambiguous briefs into polished, thoughtful outcomes — dependable, and genuinely invested in getting the product right."},
+   {img:'Jigar',name:'Jigar Vora',role:'Business Head (India) · Cuemath',li:'https://www.linkedin.com/in/jigarvora01/',q:"He always understands the 'why' behind a project, so design aligns with business goals and user impact — and he tracks how his work moves engagement and outcomes."},
+   {img:'Shubham',name:'Shubham Vats',role:'Tech Lead · Cuemath',li:'https://www.linkedin.com/in/shubham-vats-93172640/',q:"He doesn't protect his craft — he hunts the right answer. When users hit friction, he'd reach out, understand it, and return with the fix. That follow-through is rare."},
+   {img:'Jeetesh',name:'Jeetesh Gulani',role:'Product Manager · Cuemath',li:'https://www.linkedin.com/in/jeeteshgulani/',q:"His superpower is taking abstract, ambiguous problems and turning them into visually stunning, functional design — responsive and ego-free, no matter the deadline."},
+   {img:'Ayush',name:'Ayush Singhal',role:'SDE II · Cuemath',li:'https://www.linkedin.com/in/ayush-singhal-a238b513b/',q:"One of the most dependable and thoughtful designers I've worked with. He acts on feedback fast, sweats the detail, and steps in to unblock other teams."}
+  ];
+  var i=0,roster=document.getElementById('roster');
+  roster.innerHTML=REC.map(function(o,k){return '<div class="chip'+(k===0?' on':'')+'" data-k="'+k+'"><img src="home/assets/Recommendations/'+o.img+'.webp" alt=""><div><div class="cn">'+o.name+'</div><div class="cr">'+o.role+'</div></div></div>'}).join('');
+  function render(){var o=REC[i];document.getElementById('pq').textContent=o.q;document.getElementById('pimg').src='home/assets/Recommendations/'+o.img+'.webp';document.getElementById('pby').href=o.li;document.getElementById('pn').textContent=o.name;document.getElementById('pr').textContent=o.role;document.getElementById('pcount').textContent=('0'+(i+1)).slice(-2)+' / 06';[].forEach.call(roster.children,function(c,k){c.classList.toggle('on',k===i)})}
+  [].forEach.call(roster.children,function(c){c.onclick=function(){i=+c.dataset.k;render()}});
+  render();
 </script>
 
 </body>
