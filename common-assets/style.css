@@ -19,7 +19,7 @@ img{display:block;max-width:100%}
 .grad-text{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
 .lbl{font-family:var(--disp);font-size:12px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3)}
 @media(max-width:720px){.wrap{padding:0 24px}}
-@media(max-width:640px){.cs{padding:0 24px}}
+@media(max-width:640px){.cs{padding:0 24px}:root{--sp:72px}}   /* home section rhythm drops on mobile */
 
 /* ─── Custom cursor — fine-pointer (mouse) devices only ─── */
 #cur-dot,#cur-ring{display:none}

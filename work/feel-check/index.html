@@ -38,13 +38,20 @@
 <div id="scroll-progress"></div>
 
 <!-- NAV:START - auto-synced from common-assets/navbar-case-study.html - run scripts/sync-nav.py to update -->
-<nav class="site-nav cs-nav">
-  <a href="/#work" class="cs-nav-back"><span class="cs-nav-arrow">←</span>Back to work</a>
-  <div class="cs-nav-actions">
-    <a href="https://drive.google.com/file/d/1WEOEkgUW7NZk5b4zRzuqMfnKv8hcUsir/view?usp=sharing" target="_blank" rel="noopener" class="cs-nav-btn">Resume</a>
-    <a href="/design-system/" class="cs-nav-btn">Design system</a>
+<nav class="site-nav cs-nav" id="site-nav">
+  <div class="nav-inner">
+    <a href="/#work" class="cs-nav-back"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>Back to Projects</a>
+    <div class="cs-nav-actions">
+      <a href="https://drive.google.com/file/d/1WEOEkgUW7NZk5b4zRzuqMfnKv8hcUsir/view?usp=sharing" target="_blank" rel="noopener" class="cs-nav-btn">Resume</a>
+    </div>
   </div>
 </nav>
+<script>
+  (function() {
+    var nav = document.getElementById('site-nav');
+    if (nav) addEventListener('scroll', function() { nav.classList.toggle('scrolled', scrollY > 20); }, { passive: true });
+  })();
+</script>
 <!-- NAV:END -->
 
 <!-- COVER -->
