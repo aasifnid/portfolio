@@ -3,7 +3,6 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="updated" content="2026-05-04">
 <title>Cuemath Partners: Affiliate-led event referral · Md Aasif Anwar</title>
 <meta name="description" content="A three-surface partner system (sign-up, dashboard, admin) for community educators promoting Cuemath's US MathFest. 138 partners onboarded, 3,019 active users on the dashboard across 9 months.">
 <link rel="canonical" href="https://aasifanwar.vercel.app/work/cuemath-partners/">
@@ -18,25 +17,14 @@
 <meta name="twitter:image" content="https://aasifanwar.vercel.app/work/cuemath-partners/assets/cuemath-partners-website.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&family=DM+Sans:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../../common-assets/tokens.css">
 <link rel="stylesheet" href="../../common-assets/typography.css">
 <link rel="stylesheet" href="../../common-assets/style.css">
-<noscript><style>[data-animate]{opacity:1!important;transform:none!important}</style></noscript>
-<style>
-  .img-placeholder { width: 100%; aspect-ratio: 16/9; background: var(--neutral-200); border: 1px dashed var(--neutral-300); border-radius: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; margin: 24px 0; gap: 8px; }
-  .img-placeholder-tag { font-family: var(--font-body); font-size: var(--text-xs); font-weight: var(--fw-semibold); letter-spacing: 0.10em; text-transform: uppercase; color: var(--color-ink); }
-  .img-placeholder-desc { font-size: var(--text-xs); color: var(--neutral-700); text-align: center; max-width: 360px; line-height: 1.5; }
-
-
-
-</style>
 </head>
-<body>
-<div id="cursor-dot"></div>
-
-
-<div id="scroll-progress"></div>
+<body class="page-cs">
+<div id="cur-dot"></div><div id="cur-ring"></div>
+<div id="progress"></div>
 
 <!-- NAV:START - auto-synced from common-assets/navbar-case-study.html - run scripts/sync-nav.py to update -->
 <nav class="site-nav cs-nav" id="site-nav">
@@ -56,65 +44,31 @@
 <!-- NAV:END -->
 
 <!-- COVER -->
-<div class="cover">
-  <h1>Cuemath Partners: Affiliate-led event referral</h1>
+<header class="cs cover">
+  <h1><span class="grad-text">Cuemath Partners</span>: Affiliate-led event referral</h1>
   <p class="lede">Partners promoting Cuemath's <a href="https://www.cuemath.com/events/" target="_blank" rel="noopener">MathFest events</a> had no place to see their work — every referral, registration, enrollment, and payout was tracked manually by Cuemath's business ops team. I designed a three-part system: a sign-up landing page, a mobile dashboard where partners check it all in real time, and an admin tool that replaced the manual workflow — so partners could finally track everything themselves, and trust it without asking.</p>
 
-  <div class="cover-context">
-    <div class="cover-context-item">
-      <span class="cover-context-label">Role</span>
-      <span class="cover-context-value">Product Designer · 0→1</span>
-    </div>
-    <div class="cover-context-item">
-      <span class="cover-context-label">Team</span>
-      <span class="cover-context-value">PM · Engineers · Business ops team</span>
-    </div>
-    <div class="cover-context-item">
-      <span class="cover-context-label">Timeline</span>
-      <span class="cover-context-value">12 weeks · Mid 2025</span>
-    </div>
+  <div class="cover-meta">
+    <div><span class="lab">Role</span><span class="val">Product Designer · 0→1</span></div>
+    <div><span class="lab">Timeline</span><span class="val">12 weeks · Mid 2025</span></div>
+    <div><span class="lab">Team</span><span class="val">PM · Engineers · Business ops team</span></div>
   </div>
 
-  <div class="cover-outcome">
-    <span class="cover-outcome-label">Outcome</span>
-    <div class="cover-outcome-stats">
-      <div>
-        <p class="cover-outcome-num">138</p>
-        <p class="cover-outcome-desc">Partners onboarded across the USA.</p>
-      </div>
-      <div>
-        <p class="cover-outcome-num">3,019</p>
-        <p class="cover-outcome-desc">Active users on the Partner Dashboard across 9 months post-launch.</p>
-      </div>
-    </div>
+  <div class="cover-hero wide">
+    <img src="assets/cuemath-partners-website.webp" fetchpriority="high" alt="Cuemath Partners — three-part system for Cuemath’s partners" class="cs-img no-zoom">
   </div>
+</header>
 
-  <img src="../cuemath-partners/assets/cuemath-partners-website.webp" fetchpriority="high" decoding="async" alt="Cuemath Partners — three-part system for Cuemath’s partners" class="cs-img">
+<article class="cs">
 
-</div>
-
-<div class="page">
-
-  <!-- 01 CONTEXT -->
-  <div class="section-head" id="context" data-animate>
-    <span class="section-num">01</span>
-  </div>
-
-  <h2>The problem</h2>
-
+  <!-- 01 -->
+  <div class="sec-top"><h2>The problem</h2></div>
   <p>Partners drove sign-ups through their referral links — but tracked progress in their head. After every payout, they compared their own count against what landed in their account. When the two didn't match — and they often didn't — they had no way to find out why on their own. The only fix: a ticket to ops, and a wait that could span days.</p>
-
   <p>This worked when the partner community was small. But as Cuemath expanded its events across the USA to bring in new students, a problem that frustrated a handful would become a bigger one as the network grew.</p>
 
-  <!-- 02 ROLE -->
-  <div class="section-head" id="role" data-animate>
-    <span class="section-num">02</span>
-  </div>
-
-  <h2>Role</h2>
-
+  <!-- 02 -->
+  <div class="sec-top"><h2>Role</h2></div>
   <p>I owned the design of Cuemath Partners end-to-end — from the surfaces partners used to the admin tool behind them.</p>
-
   <ul class="cs-list">
     <li><strong>End-to-end UX/UI</strong> — sign-up landing page (web), partner dashboard (mobile), and admin dashboard (web)</li>
     <li><strong>Trust through transparency</strong> — we couldn't pay partners more to earn their trust, so I designed for visibility instead</li>
@@ -122,83 +76,57 @@
   </ul>
 
   <!-- HOW IT WORKS -->
-  <h2>How it works</h2>
+  <div class="sec-top"><h2>How it works</h2></div>
   <p>A partner signs up through a landing page using their name, email, and phone number. Once in, their dashboard shows referrals, direct sign-ups, event-by-event performance, and earnings in one place. A separate admin tool — used only by Cuemath's business ops team — sits behind the scenes to manage the partner network.</p>
 
   <a href="https://www.figma.com/design/k27AzLfhyS7AbuIZhLIFMY/Portfolio-2026?node-id=2-36814&t=KX11oQ6O55UHaJzh-1" target="_blank" rel="noopener" class="figma-link">Open in Figma →</a>
 
-  <!-- 03 PROCESS -->
-  <div class="section-head" id="process" data-animate>
-    <span class="section-num">03</span>
-  </div>
-
-  <h2>Decisions</h2>
-
+  <!-- 03 -->
+  <div class="sec-top"><h2>Decisions</h2></div>
   <p>Three decisions shaped the partner experience: how trust got built before partners signed up, how partners saw their own work afterward, and how the system kept their two types of rewards clear.</p>
 
-  <div class="decisions-list">
+  <div class="decisions">
 
-    <div class="decision-item">
-      <p class="decision-item-title">Decision 1 — Trust as the spine: borrowed Cuemath's credibility, didn't build it from scratch</p>
+    <div class="decision">
+      <p class="d-title"><span class="idx">01</span>Trust as the spine: borrowed Cuemath's credibility, didn't build it from scratch</p>
       <p>Cuemath already had two things partners would trust before signing up: a 4.8+ Trustpilot rating across 80+ countries, and a community of 1,000+ existing volunteers. The landing page used those (Trustpilot reviews on the page, community size stated, brand reach named) rather than new claims I'd have to prove. <strong>The programme didn't have to build trust from scratch; it inherited it from what Cuemath had already earned.</strong></p>
-
       <p>The bet worked: 138 partners signed up across the USA without a single paid ad or brand campaign.</p>
-
-      <img src="../cuemath-partners/assets/D1_Trustpilot.webp" loading="lazy" decoding="async" alt="Landing page trust section — Trustpilot reviews, awards, and mentions surfaced on the partner landing page" class="cs-img">
+      <div class="media"><img src="assets/D1_Trustpilot.webp" loading="lazy" alt="Landing page trust section — Trustpilot reviews, awards, and mentions surfaced on the partner landing page" class="cs-img"></div>
       <p class="caption">Trustpilot reviews, awards and mentions embedded on the landing page — borrowed credibility, not claimed.</p>
     </div>
 
-    <div class="decision-item">
-      <p class="decision-item-title">Decision 2 — Dashboard as the partner's visibility into their own work</p>
+    <div class="decision">
+      <p class="d-title"><span class="idx">02</span>Dashboard as the partner's visibility into their own work</p>
       <p>The landing page brings partners in once; the dashboard is where they live afterward. I designed it around the question they used to ask ops manually: <em>"Where are my referrals, and when do I get paid?"</em> Referral progress (registered → trial → enrolled), redemption status (assigned → verified → processed → paid), and earnings totals — all visible at a glance. <strong>The dashboard replaced the ticket-and-wait cycle with answers partners could check on their own — and they came back for them, month after month.</strong></p>
-
-      <img src="../cuemath-partners/assets/d2-partner-visibility.webp" loading="lazy" decoding="async" alt="Partner dashboard — referral progress, redemption status, and earnings totals visible at a glance" class="cs-img">
+      <div class="media"><img src="assets/d2-partner-visibility.webp" loading="lazy" alt="Partner dashboard — referral progress, redemption status, and earnings totals visible at a glance" class="cs-img"></div>
       <p class="caption">The partner dashboard — referral progress, redemption status, and earnings totals all visible at a glance.</p>
     </div>
 
-    <div class="decision-item">
-      <p class="decision-item-title">Decision 3 — Two-track reward system: events and direct referrals as separate flows</p>
+    <div class="decision">
+      <p class="d-title"><span class="idx">03</span>Two-track reward system: events and direct referrals as separate flows</p>
       <p>Partners did two different kinds of work, and the rewards reflected that. Event registrations paid $2–5 each (small, fast); direct referrals into the tutoring program paid $100–200 each (large, longer wait). The dashboard kept these separate — an Events tab and a Referrals tab, each with its own progress view and payout structure. <strong>Partners could see which kind of work was paying them, and how much, without mixing the two up.</strong></p>
-
       <p>The split also made the high-value work easy to spot — a partner's handful of big referrals no longer buried under hundreds of small event sign-ups.</p>
-
-      <img src="../cuemath-partners/assets/d3-payout-structure.webp" loading="lazy" decoding="async" alt="Dashboard surfacing the two payout structures — events versus direct referrals — as separate tracks" class="cs-img">
+      <div class="media"><img src="assets/d3-payout-structure.webp" loading="lazy" alt="Dashboard surfacing the two payout structures — events versus direct referrals — as separate tracks" class="cs-img"></div>
       <p class="caption">Events and Referrals shown as separate tracks, each with its own progress view and payout structure.</p>
     </div>
 
   </div>
 
-  <!-- 04 OUTCOME -->
-  <div class="section-head" id="outcome" data-animate>
-    <span class="section-num">04</span>
-  </div>
-
-  <h2>Impact</h2>
+  <!-- 04 -->
+  <div class="sec-top"><h2>Impact</h2></div>
 
   <p>Nine months after launch, the program was still in active use — not a launch spike that faded out.</p>
 
-  <div class="impact-metrics-cluster">
-    <div class="cs-stat-hero">
-      <p class="cs-stat-hero-label">Partners onboarded</p>
-      <p class="cs-stat-hero-number">138</p>
-      <p class="cs-stat-hero-desc">Partners onboarded across the USA, without paid ads (Aug 2025 – Apr 2026, via Mixpanel).</p>
+  <div class="impact-cluster">
+    <div class="stat-hero">
+      <p class="lab">Partners onboarded</p>
+      <p class="num">138</p>
+      <p class="desc">Partners onboarded across the USA, without paid ads (Aug 2025 – Apr 2026, via Mixpanel).</p>
     </div>
-    <div class="outcome-stats">
-      <div class="stat">
-        <p class="stat-label">Active users</p>
-        <p class="stat-number">3,019</p>
-        <p class="stat-desc">On the Partner Dashboard across the 9 months — partners, prospective partners, and visitors.</p>
-      </div>
-      <div class="stat">
-        <p class="stat-label">Peak monthly users</p>
-        <p class="stat-number">686</p>
-        <p class="stat-desc">January 2026 — the high point of the nine-month window.</p>
-      </div>
-      <div class="stat">
-        <p class="stat-label">Top partner</p>
-        <p class="stat-number">25</p>
-        <p class="stat-desc">Direct referrals from the single most active partner.</p>
-      </div>
+    <div class="stat-grid">
+      <div class="stat"><p class="lab">Active users</p><p class="num grad-text">3,019</p><p class="desc">On the Partner Dashboard across the 9 months — partners, prospective partners, and visitors.</p></div>
+      <div class="stat"><p class="lab">Peak monthly users</p><p class="num grad-text">686</p><p class="desc">January 2026 — the high point of the nine-month window.</p></div>
+      <div class="stat"><p class="lab">Top partner</p><p class="num grad-text">25</p><p class="desc">Direct referrals from the single most active partner.</p></div>
     </div>
   </div>
 
@@ -206,124 +134,96 @@
 
   <p>One honest gap: the downstream conversion (referral → registration → paid enrollment) sat in a separate business funnel I didn't own. Closing that loop is the v2 I'd build.</p>
 
-  <!-- 05 REFLECTION -->
-  <div class="section-head" id="reflection" data-animate>
-    <span class="section-num">05</span>
+  <!-- 05 -->
+  <div class="sec-top"><h2>Lessons</h2></div>
+  <div class="lessons">
+    <div class="lesson">
+      <span class="l-num">01</span>
+      <div class="l-body">
+        <p class="l-title">Parents disguised as partners</p>
+        <p>I designed Cuemath Partners for community educators — tutors, consultants, homeschool leaders with networks to promote to. After launch, the data showed someone I hadn't planned for: Cuemath parents, signing up as partners to refer themselves and known leads, earning back value on the enrollment they were already making. The system worked exactly as built — the users were just wider than who I'd designed for. <strong>The user you didn't plan for can be hiding inside the audience you did.</strong></p>
+      </div>
+    </div>
+    <div class="lesson">
+      <span class="l-num">02</span>
+      <div class="l-body">
+        <p class="l-title">Design for where the user actually is</p>
+        <p>I built the partner dashboard desktop-first. But partners aren't at desks — they're out in the field between events, checking their phones. We rebuilt it mobile-first, and the rework cost weeks. The miss wasn't effort; it was picturing the wrong moment of use. <strong>Where someone opens a product shapes its design as much as what they do inside it.</strong></p>
+      </div>
+    </div>
+    <div class="lesson">
+      <span class="l-num">03</span>
+      <div class="l-body">
+        <p class="l-title">You can't always buy trust — you design it</p>
+        <p>We couldn't out-pay other programs for partners' loyalty — so instead of buying trust, I built it into the product — partners could check their referrals and earnings without asking anyone. <strong>When you can't out-spend for trust, out-design for it.</strong></p>
+      </div>
+    </div>
   </div>
 
-  <h2>Lessons</h2>
+</article>
 
-  <div class="lessons-list">
-    <div class="lesson">
-      <p class="decision-item-title">Parents disguised as partners</p>
-      <p>I designed Cuemath Partners for community educators — tutors, consultants, homeschool leaders with networks to promote to. After launch, the data showed someone I hadn't planned for: Cuemath parents, signing up as partners to refer themselves and known leads, earning back value on the enrollment they were already making. The system worked exactly as built — the users were just wider than who I'd designed for. <strong>The user you didn't plan for can be hiding inside the audience you did.</strong></p>
+<!-- NEXT -->
+<div class="next-wrap">
+  <a class="next" href="/work/feel-check/">
+    <div class="next-img" style="background-image:url('../feel-check/assets/feel-check-card-thumbnail.webp')"></div>
+    <div class="next-body">
+      <p class="next-lab">Next case study</p>
+      <p class="next-title">Feel Check: Emotional check-in</p>
+      <p class="next-meta">2025–26 · Behavior Design</p>
     </div>
-
-    <div class="lesson">
-      <p class="decision-item-title">Design for where the user actually is</p>
-      <p>I built the partner dashboard desktop-first. But partners aren't at desks — they're out in the field between events, checking their phones. We rebuilt it mobile-first, and the rework cost weeks. The miss wasn't effort; it was picturing the wrong moment of use. <strong>Where someone opens a product shapes its design as much as what they do inside it.</strong></p>
-    </div>
-
-    <div class="lesson">
-      <p class="decision-item-title">You can't always buy trust — you design it</p>
-      <p>We couldn't out-pay other programs for partners' loyalty — so instead of buying trust, I built it into the product — partners could check their referrals and earnings without asking anyone. <strong>When you can't out-spend for trust, out-design for it.</strong></p>
-    </div>
-  </div>
-
+  </a>
 </div>
 
-<div class="lightbox-overlay" id="lightbox-overlay">
-  <span class="lightbox-close" id="lightbox-close" title="Close (Esc)">×</span>
-  <img class="lightbox-img" id="lightbox-img" src="" alt="">
-</div>
+<div class="cs-foot"><span>© 2026 Aasif Anwar</span><span>Designed and built by Aasif</span></div>
 
-<style>
-</style>
+<div class="lightbox" id="lb"><button class="lb-close" id="lb-close" aria-label="Close">×</button><img id="lb-img" alt=""></div>
 
 <script>
+  // scroll progress bar
+  var bar=document.getElementById('progress');
+  addEventListener('scroll',function(){
+    bar.style.width=Math.min(scrollY/(document.body.scrollHeight-innerHeight)*100,100)+'%';
+  },{passive:true});
 
-  (function () {
-    var observer = new IntersectionObserver(function (entries) {
-      entries.forEach(function (entry) {
-        if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); }
-      });
-    }, { threshold: 0.1 });
-    document.querySelectorAll('[data-animate]').forEach(function (el) { observer.observe(el); });
-  })();
-
-  (function () {
-    var lightboxOverlay = document.getElementById('lightbox-overlay');
-    var lightboxImg = document.getElementById('lightbox-img');
-    var lightboxClose = document.getElementById('lightbox-close');
-    var csImages = document.querySelectorAll('.cs-img');
-    if (csImages.length > 0) {
-      csImages.forEach(function(img) {
-        img.addEventListener('click', function() {
-          lightboxImg.src = img.src;
-          lightboxImg.alt = img.alt;
-          lightboxOverlay.classList.add('active');
-        });
-      });
-      lightboxClose.addEventListener('click', function() {
-        lightboxOverlay.classList.remove('active');
-      });
-      lightboxOverlay.addEventListener('click', function(e) {
-        if (e.target === lightboxOverlay) {
-          lightboxOverlay.classList.remove('active');
-        }
-      });
-      document.addEventListener('keydown', function(e) {
-        if (e.key === 'Escape') {
-          lightboxOverlay.classList.remove('active');
-        }
-      });
-    }
-  })();
-
-</script>
-
-<script>
-  var progressBar = document.getElementById('scroll-progress');
-  window.addEventListener('scroll', function() {
-    var pct = window.scrollY / (document.body.scrollHeight - window.innerHeight) * 100;
-    progressBar.style.width = Math.min(pct, 100) + '%';
-  });
-</script>
-
-<!-- Footer -->
-<a href="../../work/earlier-work/index.html" class="cs-next">
-  <div class="cs-next-img" style="background-image: url('../../home/assets/aasif-at-nid.webp'); background-position: center 30%; filter: grayscale(70%) brightness(0.92);"></div>
-  <div class="cs-next-body">
-    <p class="cs-next-label">Next case study</p>
-    <h2 class="cs-next-title">Earlier Work at NID</h2>
-    <p class="cs-next-meta">2018–21 · Foundation Projects</p>
-    <span class="cs-next-arrow">→</span>
-  </div>
-</a>
-
-
-<script>
-  (function () {
-    var dot = document.getElementById('cursor-dot');
-    document.addEventListener('mousemove', function(e) {
-      dot.style.left = e.clientX + 'px';
-      dot.style.top  = e.clientY + 'px';
+  // custom cursor
+  (function(){
+    if(!matchMedia('(hover:hover) and (pointer:fine)').matches) return;
+    var dot=document.getElementById('cur-dot'),ring=document.getElementById('cur-ring');
+    var mx=innerWidth/2,my=innerHeight/2,rx=mx,ry=my;
+    var reduce=matchMedia('(prefers-reduced-motion:reduce)').matches;
+    var SEL='a,button,.cs-img:not(.no-zoom),video';
+    addEventListener('mousemove',function(e){
+      mx=e.clientX;my=e.clientY;dot.style.left=mx+'px';dot.style.top=my+'px';
+      if(reduce){ring.style.left=mx+'px';ring.style.top=my+'px';}
+      var on=!!(e.target.closest&&e.target.closest(SEL));
+      ring.classList.toggle('hover',on);dot.classList.toggle('hover',on);
     });
-    document.querySelectorAll('a, button, .cs-img').forEach(function(el) {
-      el.addEventListener('mouseenter', function() { dot.classList.add('cursor-hover'); });
-      el.addEventListener('mouseleave', function() { dot.classList.remove('cursor-hover'); });
+    if(!reduce)(function loop(){rx+=(mx-rx)*.2;ry+=(my-ry)*.2;ring.style.left=rx+'px';ring.style.top=ry+'px';requestAnimationFrame(loop);})();
+    document.addEventListener('mouseleave',function(){dot.style.opacity='0';ring.style.opacity='0';});
+    document.addEventListener('mouseenter',function(){dot.style.opacity='';ring.style.opacity='';});
+  })();
+
+  // lightbox — click any image to open full screen
+  (function(){
+    var lb=document.getElementById('lb'),img=document.getElementById('lb-img'),close=document.getElementById('lb-close');
+    document.querySelectorAll('.cs-img:not(.no-zoom)').forEach(function(el){
+      el.addEventListener('click',function(){img.src=el.currentSrc||el.src;img.alt=el.alt;lb.classList.add('on');});
     });
+    function hide(){lb.classList.remove('on');img.removeAttribute('src');}
+    lb.addEventListener('click',function(e){if(e.target!==img)hide();});
+    close.addEventListener('click',hide);
+    document.addEventListener('keydown',function(e){if(e.key==='Escape'&&lb.classList.contains('on'))hide();});
+  })();
+
+  // lazy ambient video play
+  (function(){
+    var vids=document.querySelectorAll('.video-embed video[loop]');if(!vids.length) return;
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){
+      if(e.isIntersecting)e.target.play().catch(function(){});else if(!document.fullscreenElement)e.target.pause();
+    });},{rootMargin:'300px 0px',threshold:.1});
+    vids.forEach(function(v){io.observe(v);});
   })();
 </script>
-
-<footer class="home-footer">
-  <div class="footer-left">
-    <span class="footer-attribution">© 2026 Aasif Anwar</span>
-  </div>
-  <div class="footer-right">
-    <span class="footer-built">Designed by Aasif · Coded with AI</span>
-  </div>
-</footer>
 
 </body>
 </html>

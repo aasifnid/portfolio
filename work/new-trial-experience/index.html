@@ -3,7 +3,6 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="updated" content="2026-05-04">
 <title>New Trial Experience — distributing conversion work across system, teachers, and parents · Md Aasif Anwar</title>
 <meta name="description" content="Redesigned Cuemath's trial funnel to cut Academic Counselor intervention by 70% while maintaining lead-to-enrollment conversion. WhatsApp-led, teacher-anchored, parent-self-serve.">
 <link rel="canonical" href="https://aasifanwar.vercel.app/work/new-trial-experience/">
@@ -18,33 +17,14 @@
 <meta name="twitter:image" content="https://aasifanwar.vercel.app/work/new-trial-experience/assets/nte-cover.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&family=DM+Sans:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../../common-assets/tokens.css">
 <link rel="stylesheet" href="../../common-assets/typography.css">
 <link rel="stylesheet" href="../../common-assets/style.css">
-<noscript><style>[data-animate]{opacity:1!important;transform:none!important}</style></noscript>
-<style>
-.outcome-stats { grid-template-columns: repeat(2, 1fr); }
-/* screen-grid-2: remove 36px outer margin that screen-featured adds inside grid cells */
-.screen-grid-2 .screen-featured { margin: 0; }
-/* screen-grid-3: 2-row layout — images bottom-align in row 1, captions in row 2 */
-.screen-grid-3 { grid-template-rows: auto auto; row-gap: 0; }
-.screen-grid-3 .screen-featured { display: contents; }
-.screen-grid-3 .screen-featured:nth-child(1) img,
-.screen-grid-3 .screen-featured:nth-child(1) .caption { grid-column: 1; }
-.screen-grid-3 .screen-featured:nth-child(2) img,
-.screen-grid-3 .screen-featured:nth-child(2) .caption { grid-column: 2; }
-.screen-grid-3 .screen-featured:nth-child(3) img,
-.screen-grid-3 .screen-featured:nth-child(3) .caption { grid-column: 3; }
-.screen-grid-3 .screen-featured img { grid-row: 1; align-self: end; }
-.screen-grid-3 .screen-featured .caption { grid-row: 2; align-self: start; }
-</style>
 </head>
-<body>
-<div id="cursor-dot"></div>
-
-
-<div id="scroll-progress"></div>
+<body class="page-cs">
+<div id="cur-dot"></div><div id="cur-ring"></div>
+<div id="progress"></div>
 
 <!-- NAV:START - auto-synced from common-assets/navbar-case-study.html - run scripts/sync-nav.py to update -->
 <nav class="site-nav cs-nav" id="site-nav">
@@ -64,70 +44,34 @@
 <!-- NAV:END -->
 
 <!-- COVER -->
-<div class="cover">
-  <h1>New Trial Experience: Self-serve funnel</h1>
+<header class="cs cover">
+  <h1><span class="grad-text">New Trial Experience</span>: Self-serve funnel</h1>
   <p class="lede">Cuemath's trial funnel ran entirely through Academic Counselors (ACs) — every step waited on a callback, and parents' interest cooled before they reached a paid plan. I redesigned it to run without that bottleneck: parents self-serve through sign-up and booking, teachers own the trust moments, and the system handles the routine — cutting AC work 70% while conversion held.</p>
 
-  <div class="cover-context">
-    <div class="cover-context-item">
-      <span class="cover-context-label">Role</span>
-      <span class="cover-context-value">Product Designer</span>
-    </div>
-    <div class="cover-context-item">
-      <span class="cover-context-label">Team</span>
-      <span class="cover-context-value">PM (Business Head, India) · Engineers · Tutor operations team</span>
-    </div>
-    <div class="cover-context-item">
-      <span class="cover-context-label">Timeline</span>
-      <span class="cover-context-value">8 weeks · 2024</span>
-    </div>
-  </div>
-  <div class="cover-outcome">
-    <span class="cover-outcome-label">Outcome</span>
-    <div class="cover-outcome-stats cover-outcome-stats--three">
-      <div>
-        <p class="cover-outcome-num">−70%</p>
-        <p class="cover-outcome-desc">AC interventions dropped per parent journey.</p>
-      </div>
-      <div>
-        <p class="cover-outcome-num">+50%</p>
-        <p class="cover-outcome-desc">More qualified leads booked a trial.</p>
-      </div>
-      <div>
-        <p class="cover-outcome-num">+9.6%</p>
-        <p class="cover-outcome-desc">More trial-takers enrolled into a paid plan.</p>
-      </div>
-    </div>
+  <div class="cover-meta">
+    <div><span class="lab">Role</span><span class="val">Product Designer</span></div>
+    <div><span class="lab">Timeline</span><span class="val">8 weeks · 2024</span></div>
+    <div><span class="lab">Team</span><span class="val">PM (Business Head, India) · Engineers · Tutor operations team</span></div>
   </div>
 
-  <img src="../new-trial-experience/assets/nte-cover.webp" fetchpriority="high" decoding="async" alt="New Trial Experience — distributed conversion across system, teachers, and parents" class="cs-img">
-</div>
-
-<div class="page">
-
-  <!-- 01 CONTEXT -->
-  <div class="section-head" id="context" data-animate>
-    <span class="section-num">01</span>
+  <div class="cover-hero wide">
+    <img src="assets/nte-cover.webp" fetchpriority="high" alt="New Trial Experience — distributed conversion across system, teachers, and parents" class="cs-img no-zoom">
   </div>
+</header>
 
-  <h2>The problem</h2>
+<article class="cs">
 
+  <!-- 01 -->
+  <div class="sec-top"><h2>The problem</h2></div>
   <p>A parent's interest in Cuemath had a shelf life — it peaked at sign-up and faded with every wait that followed. But the funnel leaned on an AC at every step: qualification, booking, follow-up, enrollment. The full journey dragged across 2–3 days, and the data showed the cost — 40% of qualified leads didn't book within 24 hours, and 35% of trial-takers didn't enroll within three days, both stuck waiting on a callback.</p>
 
   <p>And it wasn't the team's fault. Every parent was one of dozens an AC juggled that day, and on Cuemath's thin margins, hiring more to move faster wasn't viable. The funnel wasn't failing because the team was — the process put them in too many places at once.</p>
 
-  <div class="screen-featured">
-    <img src="../new-trial-experience/assets/old-vs-new-system.webp" loading="lazy" decoding="async" alt="Old AC-dependent funnel vs. new distributed system comparison" class="cs-img">
-    <p class="caption">Old: every step routed through AC, with 12–24h waits between each. New: work distributed across system, teacher, and parent — ACs handle exceptions only.</p>
-  </div>
+  <div class="media"><img src="assets/old-vs-new-system.webp" loading="lazy" alt="Old AC-dependent funnel vs. new distributed system comparison" class="cs-img"></div>
+  <p class="caption">Old: every step routed through AC, with 12–24h waits between each. New: work distributed across system, teacher, and parent — ACs handle exceptions only.</p>
 
-  <!-- 02 ROLE -->
-  <div class="section-head" id="role" data-animate>
-    <span class="section-num">02</span>
-  </div>
-
-  <h2>Role</h2>
-
+  <!-- 02 -->
+  <div class="sec-top"><h2>Role</h2></div>
   <p>I owned the trial funnel end-to-end — from a parent's first sign-up to their paid enrollment, tied directly to business targets.</p>
 
   <ul class="cs-list">
@@ -137,237 +81,165 @@
   </ul>
 
   <!-- HOW IT WORKS -->
-  <h2 id="flow">How it works</h2>
+  <div class="sec-top"><h2>How it works</h2></div>
   <p>A parent signs up and books a trial slot in minutes, entirely over WhatsApp. Their assigned teacher reaches out the day before, runs the trial, and the moment it ends, the parent enrolls right there on their device — no callback, no queue, no AC in the loop.</p>
 
-  <img src="../new-trial-experience/assets/nte-flow.svg" loading="lazy" decoding="async" alt="The new trial flow — parent signs up and books, teacher reaches out and runs the trial, parent enrolls on the spot; the system handles the routine, no AC in the loop" class="cs-img" style="background:#000;">
-  <p class="caption" style="margin-bottom:var(--space-bond);">The system runs reminders and routing underneath — ACs step in only for exceptions.</p>
+  <div class="media"><img src="assets/nte-flow.svg" loading="lazy" alt="The new trial flow — parent signs up and books, teacher reaches out and runs the trial, parent enrolls on the spot; the system handles the routine, no AC in the loop" class="cs-img" style="background:#000;"></div>
+  <p class="caption">The system runs reminders and routing underneath — ACs step in only for exceptions.</p>
 
   <a href="https://www.figma.com/design/k27AzLfhyS7AbuIZhLIFMY/Portfolio-2026?node-id=85-159677&t=WVNKMLTUG6ayT6fP-1" target="_blank" rel="noopener" class="figma-link">Open in Figma →</a>
 
+  <!-- 03 -->
+  <div class="sec-top"><h2>Decisions</h2></div>
 
+  <div class="decisions">
 
-  <!-- 03 PROCESS -->
-  <div class="section-head" id="process" data-animate>
-    <span class="section-num">03</span>
-  </div>
-
-  <h2>Decisions</h2>
-
-  <div class="decisions-list">
-
-    <div class="decision-item">
-      <p class="decision-item-title">Decision 1 — WhatsApp as the spine, with automated recovery</p>
+    <div class="decision">
+      <p class="d-title"><span class="idx">01</span>WhatsApp as the spine, with automated recovery</p>
       <p>WhatsApp was set by the brief — most teacher-parent conversation already lived there. <strong>The design problem was making it carry the whole funnel.</strong> Every critical step — verification, slot booking, teacher intro, reminders, post-trial enrollment — ran on WhatsApp, with SMS and email as fallbacks. A 5-minute auto-message fired for parents who started booking but didn't finish.</p>
 
-      <div class="screen-grid-2">
-        <div class="screen-featured">
-          <img src="../new-trial-experience/assets/signup-1.webp" loading="lazy" decoding="async" alt="WhatsApp verification step in the sign-up flow" class="cs-img">
-          <p class="caption">WhatsApp verification confirms the parent and sets up the channel.</p>
-        </div>
-        <div class="screen-featured">
-          <img src="../new-trial-experience/assets/signup-2.webp" loading="lazy" decoding="async" alt="Slot picker with teacher names visible" class="cs-img">
-          <p class="caption">Slot selection with teacher names visible. A 5-min auto-reminder fires if abandoned.</p>
-        </div>
+      <div class="cs-img-pair">
+        <figure><img src="assets/signup-1.webp" loading="lazy" alt="WhatsApp verification step in the sign-up flow" class="cs-img"><figcaption>WhatsApp verification confirms the parent and sets up the channel.</figcaption></figure>
+        <figure><img src="assets/signup-2.webp" loading="lazy" alt="Slot picker with teacher names visible" class="cs-img"><figcaption>Slot selection with teacher names visible. A 5-min auto-reminder fires if abandoned.</figcaption></figure>
       </div>
 
       <p>After the trial, teachers shared branded messages covering pricing, formats, and refund policy — post-trial follow-up became teacher-led.</p>
 
-      <div class="screen-grid-3">
-        <div class="screen-featured">
-          <img src="../new-trial-experience/assets/wa1-plan-pricing-total-including-gst.webp" loading="lazy" decoding="async" alt="Plan pricing with taxes" class="cs-img">
-          <p class="caption">Pricing — monthly cost with taxes, no hidden fees.</p>
-        </div>
-        <div class="screen-featured">
-          <img src="../new-trial-experience/assets/wa3-refund-policy.webp" loading="lazy" decoding="async" alt="Refund policy" class="cs-img">
-          <p class="caption">Refund policy — clear exit terms.</p>
-        </div>
-        <div class="screen-featured">
-          <img src="../new-trial-experience/assets/wa4-1-2-vs-1-1-classes.webp" loading="lazy" decoding="async" alt="Class format comparison" class="cs-img">
-          <p class="caption">1:1 solo vs 1:2 pair — format comparison.</p>
-        </div>
+      <div class="cs-img-grid cs-img-grid--3 wide">
+        <figure><img src="assets/wa1-plan-pricing-total-including-gst.webp" loading="lazy" alt="Plan pricing with taxes" class="cs-img"><figcaption>Pricing — monthly cost with taxes, no hidden fees.</figcaption></figure>
+        <figure><img src="assets/wa3-refund-policy.webp" loading="lazy" alt="Refund policy" class="cs-img"><figcaption>Refund policy — clear exit terms.</figcaption></figure>
+        <figure><img src="assets/wa4-1-2-vs-1-1-classes.webp" loading="lazy" alt="Class format comparison" class="cs-img"><figcaption>1:1 solo vs 1:2 pair — format comparison.</figcaption></figure>
       </div>
-
     </div>
 
-    <div class="decision-item">
-      <p class="decision-item-title">Decision 2 — Teacher as trust anchor, before and during the trial</p>
+    <div class="decision">
+      <p class="d-title"><span class="idx">02</span>Teacher as trust anchor, before and during the trial</p>
       <p>The initial direction had teachers owning everything — testing across 22 trials showed it broke lesson quality. So we narrowed their role to the trust moments only. Instead of an AC confirmation, parents got a WhatsApp message from their assigned teacher 24 hours before — name, credentials, sometimes a short video. <strong>Rapport began a day early, not after the session ended.</strong> 89% of teachers sent it in rollout — pre-session trust became the norm.</p>
 
       <p>During the trial, teachers had a reference script — used only when parents asked. The parent pulls; the teacher doesn't push. Class formats came up naturally, never as a pitch.</p>
 
-      <div class="screen-grid-2">
-        <div class="screen-featured">
-          <img src="../new-trial-experience/assets/teacher-goal-handling.webp" loading="lazy" decoding="async" alt="Teacher reference script during the trial class" class="cs-img">
-          <p class="caption">Teacher side — reference script: repeat the goal, let parent talk, validate and explain.</p>
-        </div>
-        <div class="screen-featured">
-          <img src="../new-trial-experience/assets/parent-goal-handling.webp" loading="lazy" decoding="async" alt="Parent surface during the trial class — no script visible" class="cs-img">
-          <p class="caption">Parent side — clean conversation. Parents never see the script.</p>
-        </div>
+      <div class="cs-img-pair">
+        <figure><img src="assets/teacher-goal-handling.webp" loading="lazy" alt="Teacher reference script during the trial class" class="cs-img"><figcaption>Teacher side — reference script: repeat the goal, let parent talk, validate and explain.</figcaption></figure>
+        <figure><img src="assets/parent-goal-handling.webp" loading="lazy" alt="Parent surface during the trial class — no script visible" class="cs-img"><figcaption>Parent side — clean conversation. Parents never see the script.</figcaption></figure>
       </div>
-
     </div>
 
-    <div class="decision-item">
-      <p class="decision-item-title">Decision 3 — Direct enrollment immediately after the trial, with teacher present</p>
+    <div class="decision">
+      <p class="d-title"><span class="idx">03</span>Direct enrollment immediately after the trial, with teacher present</p>
       <p>The moment the session ended, parents saw an enrollment interface on their device — three plan options, pricing visible, one-tap payment. <strong>Captures the decision while they're still in the moment, not days later.</strong> No AC required; the teacher was still there for questions.</p>
 
       <p>A secondary win: removing ACs also removed the ad-hoc discounts (10–25%) they offered when sensing a slipping lead — parents paid standard price, and revenue per enrollment held.</p>
-
     </div>
 
   </div>
 
+  <!-- 04 -->
+  <div class="sec-top"><h2>Impact</h2></div>
 
-
-  <!-- 04 OUTCOME -->
-  <div class="section-head" id="outcome" data-animate>
-    <span class="section-num">04</span>
-  </div>
-
-  <h2>Impact</h2>
-
-  <div class="impact-metrics-cluster">
-    <div class="cs-stat-hero">
-      <p class="cs-stat-hero-label">AC intervention</p>
-      <p class="cs-stat-hero-number">−70%</p>
-      <p class="cs-stat-hero-desc">reduction in AC touchpoints while maintaining lead-to-enrollment conversion — the primary objective of the brief.</p>
+  <div class="impact-cluster">
+    <div class="stat-hero">
+      <p class="lab">AC intervention</p>
+      <p class="num">−70%</p>
+      <p class="desc">reduction in AC touchpoints while maintaining lead-to-enrollment conversion — the primary objective of the brief.</p>
     </div>
-    <div class="outcome-stats">
-      <div class="stat">
-        <p class="stat-label">Lead → Trial</p>
-        <p class="stat-number">+50%</p>
-        <p class="stat-desc">Trial booking collapsed from 48–72h (AC callback) to under 5 min (WhatsApp slot picker). 78% completed slot booking within 24h vs. ~40% before.</p>
-      </div>
-      <div class="stat">
-        <p class="stat-label">Trial → Paid</p>
-        <p class="stat-number">+9.6%</p>
-        <p class="stat-desc">Parents enrolled in the moment with the teacher present, instead of waiting days for an AC callback.</p>
-      </div>
+    <div class="stat-grid">
+      <div class="stat"><p class="lab">Lead → Trial</p><p class="num grad-text">+50%</p><p class="desc">Trial booking collapsed from 48–72h (AC callback) to under 5 min (WhatsApp slot picker). 78% completed slot booking within 24h vs. ~40% before.</p></div>
+      <div class="stat"><p class="lab">Trial → Paid</p><p class="num grad-text">+9.6%</p><p class="desc">Parents enrolled in the moment with the teacher present, instead of waiting days for an AC callback.</p></div>
     </div>
   </div>
-
 
   <p>All three held in the weeks after launch, and the team absorbed rising trial volume without adding ACs. What I didn't get to measure was the longer arc — whether parents who self-served, without an AC's nudge, stayed enrolled as long as the old high-touch funnel kept them. If I ran it again, that's the first thing I'd instrument.</p>
 
-
-  <!-- 05 REFLECTION -->
-  <div class="section-head" id="reflection" data-animate>
-    <span class="section-num">05</span>
+  <!-- 05 -->
+  <div class="sec-top"><h2>Lessons</h2></div>
+  <div class="lessons">
+    <div class="lesson">
+      <span class="l-num">01</span>
+      <div class="l-body">
+        <p class="l-title">The shift was distribution, not optimization</p>
+        <p>The breakthrough wasn't making any one role faster — it was distributing the work so no single role broke under the next. Optimization squeezes the bottleneck; distribution removes it. That's the lens I'd carry into any "do more with less" brief.</p>
+      </div>
+    </div>
+    <div class="lesson">
+      <span class="l-num">02</span>
+      <div class="l-body">
+        <p class="l-title">Validate assumptions before you invest five weeks in design</p>
+        <p>I spent five weeks building the teacher-led hypothesis before testing it — one honest 30-minute conversation in week one would have killed it on the spot. I lost weeks executing something a quick check would have caught. My rule now: any hypothesis that touches live-session behavior gets validated in week one, before any design.</p>
+      </div>
+    </div>
+    <div class="lesson">
+      <span class="l-num">03</span>
+      <div class="l-body">
+        <p class="l-title">The constraint became my filter: build trust, capture intent, or cut it</p>
+        <p>The 70% AC reduction mandate forced clarity: every step in the flow had to either build trust or capture intent. If it did neither, it was friction — cut it. That forced me to stop designing features and start designing a system. I'd take this lens to any optimization brief — translate the constraint into a design question, not a feature list.</p>
+      </div>
+    </div>
   </div>
 
-  <h2>Lessons</h2>
+</article>
 
-  <div class="lessons-list">
-    <div class="lesson">
-      <p class="decision-item-title">The shift was distribution, not optimization</p>
-      <p>The breakthrough wasn't making any one role faster — it was distributing the work so no single role broke under the next. Optimization squeezes the bottleneck; distribution removes it. That's the lens I'd carry into any "do more with less" brief.</p>
+<!-- NEXT -->
+<div class="next-wrap">
+  <a class="next" href="/work/tutoring-home-redesign/">
+    <div class="next-img" style="background-image:url('../tutoring-home-redesign/assets/tutoring-home-redesign-card-thumbnail.webp')"></div>
+    <div class="next-body">
+      <p class="next-lab">Next case study</p>
+      <p class="next-title">Tutoring home redesign</p>
+      <p class="next-meta">2025 · Interaction Design</p>
     </div>
-
-    <div class="lesson">
-      <p class="decision-item-title">Validate assumptions before you invest five weeks in design</p>
-      <p>I spent five weeks building the teacher-led hypothesis before testing it — one honest 30-minute conversation in week one would have killed it on the spot. I lost weeks executing something a quick check would have caught. My rule now: any hypothesis that touches live-session behavior gets validated in week one, before any design.</p>
-    </div>
-
-    <div class="lesson">
-      <p class="decision-item-title">The constraint became my filter: build trust, capture intent, or cut it</p>
-      <p>The 70% AC reduction mandate forced clarity: every step in the flow had to either build trust or capture intent. If it did neither, it was friction — cut it. That forced me to stop designing features and start designing a system. I'd take this lens to any optimization brief — translate the constraint into a design question, not a feature list.</p>
-    </div>
-  </div>
-
+  </a>
 </div>
 
-<div class="lightbox-overlay" id="lightbox-overlay">
-  <span class="lightbox-close" id="lightbox-close" title="Close (Esc)">×</span>
-  <img class="lightbox-img" id="lightbox-img" src="" alt="">
-</div>
+<div class="cs-foot"><span>© 2026 Aasif Anwar</span><span>Designed and built by Aasif</span></div>
+
+<div class="lightbox" id="lb"><button class="lb-close" id="lb-close" aria-label="Close">×</button><img id="lb-img" alt=""></div>
 
 <script>
+  // scroll progress bar
+  var bar=document.getElementById('progress');
+  addEventListener('scroll',function(){
+    bar.style.width=Math.min(scrollY/(document.body.scrollHeight-innerHeight)*100,100)+'%';
+  },{passive:true});
 
-  (function () {
-    var observer = new IntersectionObserver(function (entries) {
-      entries.forEach(function (entry) {
-        if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); }
-      });
-    }, { threshold: 0.1 });
-    document.querySelectorAll('[data-animate]').forEach(function (el) { observer.observe(el); });
+  // custom cursor
+  (function(){
+    if(!matchMedia('(hover:hover) and (pointer:fine)').matches) return;
+    var dot=document.getElementById('cur-dot'),ring=document.getElementById('cur-ring');
+    var mx=innerWidth/2,my=innerHeight/2,rx=mx,ry=my;
+    var reduce=matchMedia('(prefers-reduced-motion:reduce)').matches;
+    var SEL='a,button,.cs-img:not(.no-zoom),video';
+    addEventListener('mousemove',function(e){
+      mx=e.clientX;my=e.clientY;dot.style.left=mx+'px';dot.style.top=my+'px';
+      if(reduce){ring.style.left=mx+'px';ring.style.top=my+'px';}
+      var on=!!(e.target.closest&&e.target.closest(SEL));
+      ring.classList.toggle('hover',on);dot.classList.toggle('hover',on);
+    });
+    if(!reduce)(function loop(){rx+=(mx-rx)*.2;ry+=(my-ry)*.2;ring.style.left=rx+'px';ring.style.top=ry+'px';requestAnimationFrame(loop);})();
+    document.addEventListener('mouseleave',function(){dot.style.opacity='0';ring.style.opacity='0';});
+    document.addEventListener('mouseenter',function(){dot.style.opacity='';ring.style.opacity='';});
   })();
 
-
-  (function () {
-    var lightbox = document.getElementById('lightbox-overlay');
-    var lightboxImg = document.getElementById('lightbox-img');
-    var lightboxClose = document.getElementById('lightbox-close');
-
-    if (!lightbox) return;
-
-    document.querySelectorAll('.cs-img, .screen-featured img').forEach(function(img) {
-      img.style.cursor = 'zoom-in';
-      img.addEventListener('click', function() {
-        lightboxImg.src = img.src;
-        lightboxImg.alt = img.alt;
-        lightbox.classList.add('active');
-      });
+  // lightbox — click any image to open full screen
+  (function(){
+    var lb=document.getElementById('lb'),img=document.getElementById('lb-img'),close=document.getElementById('lb-close');
+    document.querySelectorAll('.cs-img:not(.no-zoom)').forEach(function(el){
+      el.addEventListener('click',function(){img.src=el.currentSrc||el.src;img.alt=el.alt;lb.classList.add('on');});
     });
-
-    function closeLightbox() {
-      lightbox.classList.remove('active');
-    }
-
-    lightboxClose.addEventListener('click', closeLightbox);
-    lightbox.addEventListener('click', function(e) {
-      if (e.target === lightbox) closeLightbox();
-    });
-
-    document.addEventListener('keydown', function(e) {
-      if (e.key === 'Escape') closeLightbox();
-    });
+    function hide(){lb.classList.remove('on');img.removeAttribute('src');}
+    lb.addEventListener('click',function(e){if(e.target!==img)hide();});
+    close.addEventListener('click',hide);
+    document.addEventListener('keydown',function(e){if(e.key==='Escape'&&lb.classList.contains('on'))hide();});
   })();
 
-  /* Scroll progress bar */
-  var progressBar = document.getElementById('scroll-progress');
-  window.addEventListener('scroll', function() {
-    var pct = window.scrollY / (document.body.scrollHeight - window.innerHeight) * 100;
-    progressBar.style.width = Math.min(pct, 100) + '%';
-  });
-</script>
-
-
-<!-- Footer -->
-<a href="../../work/tutoring-home-redesign/index.html" class="cs-next">
-  <div class="cs-next-img" style="background-image: url('../tutoring-home-redesign/assets/tutoring-home-redesign-card-thumbnail.webp');"></div>
-  <div class="cs-next-body">
-    <p class="cs-next-label">Next case study</p>
-    <h2 class="cs-next-title">Tutoring Home Redesign</h2>
-    <p class="cs-next-meta">2025 · Interaction Design</p>
-    <span class="cs-next-arrow">→</span>
-  </div>
-</a>
-
-
-<script>
-  (function () {
-    var dot = document.getElementById('cursor-dot');
-    document.addEventListener('mousemove', function(e) {
-      dot.style.left = e.clientX + 'px';
-      dot.style.top  = e.clientY + 'px';
-    });
-    document.querySelectorAll('a, button, .cs-img').forEach(function(el) {
-      el.addEventListener('mouseenter', function() { dot.classList.add('cursor-hover'); });
-      el.addEventListener('mouseleave', function() { dot.classList.remove('cursor-hover'); });
-    });
+  // lazy ambient video play
+  (function(){
+    var vids=document.querySelectorAll('.video-embed video[loop]');if(!vids.length) return;
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){
+      if(e.isIntersecting)e.target.play().catch(function(){});else if(!document.fullscreenElement)e.target.pause();
+    });},{rootMargin:'300px 0px',threshold:.1});
+    vids.forEach(function(v){io.observe(v);});
   })();
 </script>
-
-<footer class="home-footer">
-  <div class="footer-left">
-    <span class="footer-attribution">© 2026 Aasif Anwar</span>
-  </div>
-  <div class="footer-right">
-    <span class="footer-built">Designed by Aasif · Coded with AI</span>
-  </div>
-</footer>
 
 </body>
 </html>
