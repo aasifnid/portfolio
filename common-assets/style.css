@@ -38,8 +38,8 @@ img{display:block;max-width:100%}
 /* ─── Nav — base bar (home: fixed full-width blur) ───────────────
    Markup is injected from common-assets/navbar.html via sync-nav.py.
 ──────────────────────────────────────────────────────────────── */
-.site-nav{position:fixed;inset:0 0 auto;z-index:30;height:66px;display:flex;align-items:center;background:rgba(250,250,251,.72);backdrop-filter:blur(12px);transition:box-shadow var(--t-base)}
-.site-nav.scrolled{box-shadow:0 1px 0 var(--line)}
+.site-nav{position:fixed;inset:0 0 auto;z-index:30;height:66px;display:flex;align-items:center;background:transparent;transition:background var(--t-base),backdrop-filter var(--t-base),box-shadow var(--t-base)}
+.site-nav.scrolled{background:rgba(250,250,251,.72);backdrop-filter:blur(12px);box-shadow:0 1px 0 var(--line)}
 .nav-inner{display:flex;justify-content:space-between;align-items:center;width:100%;max-width:var(--maxw);margin:0 auto;padding:0 40px}
 .nav-name{font-family:var(--disp);font-weight:600;font-size:16px;letter-spacing:-.01em;color:var(--ink)}
 .nav-links{display:flex;align-items:center;gap:24px;font-size:14px;color:var(--ink-2)}
@@ -75,8 +75,8 @@ img{display:block;max-width:100%}
 /* ════════════════════════════ HOME ════════════════════════════ */
 
 /* ─── Hero ─── */
-.hero{position:relative;padding:calc(var(--sp) + 66px) 0 0;overflow:hidden}
-.hero::before{content:'';position:absolute;top:-40px;right:-5%;width:680px;height:520px;background:radial-gradient(50% 50% at 60% 40%,rgba(155,89,232,.16),rgba(91,108,240,.08) 45%,transparent 70%);filter:blur(8px);z-index:0;pointer-events:none}
+.hero{position:relative;padding:calc(var(--sp) + 66px) 0 0;overflow:hidden;background:radial-gradient(64% 82% at 100% -6%,rgba(240,96,154,.42),transparent 68%),radial-gradient(60% 80% at 58% -14%,rgba(155,89,232,.38),transparent 66%),radial-gradient(66% 84% at -4% 4%,rgba(91,108,240,.36),transparent 68%),radial-gradient(48% 58% at 32% 40%,rgba(240,96,154,.19),transparent 70%),linear-gradient(180deg,transparent 64%,var(--bg) 96%)}
+.hero::before{display:none}   /* superseded by the .hero color spread */
 .hero .wrap{position:relative;z-index:1;width:100%;display:grid;grid-template-columns:1fr 256px;gap:24px;align-items:center}
 .eyebrow{display:inline-flex;align-items:center;gap:8px;font-family:var(--disp);font-size:12px;font-weight:500;color:var(--ink-2);margin-bottom:24px}
 .eyebrow .dot{width:8px;height:8px;border-radius:50%;background:#22C55E;animation:dotPulse 1.9s ease-out infinite}
