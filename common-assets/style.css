@@ -167,7 +167,7 @@ img{display:block;max-width:100%}
 
 /* ─── Peers — editorial pull-quote + chip roster ─── */
 .peers{padding-top:var(--sp)}
-.quote-card{position:relative;padding-top:8px}
+.quote-card{position:relative;margin-top:48px}   /* sits below the chip roster */
 .qmark{display:inline-block;font-family:var(--disp);font-weight:700;font-size:clamp(56px,6vw,84px);line-height:1;height:.5em;overflow:hidden;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;opacity:1;pointer-events:none;user-select:none;margin-bottom:clamp(14px,1.8vw,24px)}
 .peer-feat{font-family:var(--disp);font-weight:500;font-size:clamp(20px,2.4vw,24px);line-height:1.4;letter-spacing:-.02em;max-width:46ch;min-height:3.5em}
 .quote-foot{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-top:32px}
@@ -176,7 +176,7 @@ a.peer-by{display:inline-flex;align-items:center;gap:14px;cursor:pointer}
 .peer-nm{font-weight:600;font-size:14px;transition:color var(--t-fast)}
 .peer-by:hover .peer-nm{color:var(--accent)}
 .peer-rl{font-size:12px;color:var(--ink-3)}
-.roster{display:flex;flex-wrap:wrap;gap:8px;margin-top:40px}
+.roster{display:flex;flex-wrap:wrap;gap:8px}   /* chip roster — now leads the section, 32px below the title via sec-top */
 .chip{display:flex;align-items:center;gap:8px;padding:6px 16px 6px 6px;border:1px solid var(--line);border-radius:var(--radius-pill);cursor:pointer;background:var(--surface);transition:transform var(--t-fast) var(--ease),border-color var(--t-fast),background var(--t-fast),box-shadow var(--t-fast)}
 .chip img{width:32px;height:32px;border-radius:50%;object-fit:cover}
 .chip .cn{font-size:12px;font-weight:600;transition:color var(--t-fast)}
@@ -186,16 +186,29 @@ a.peer-by{display:inline-flex;align-items:center;gap:14px;cursor:pointer}
 .chip.on .cr{color:var(--ink-2)}
 .chip:hover{transform:translateY(-4px);border-color:var(--accent);box-shadow:0 12px 24px -12px rgba(60,40,110,.32)}
 .chip:hover .cn{color:var(--accent)}
+/* carousel control row — counter (left) + prev/next arrows (right) */
+.peer-ctrl{display:flex;align-items:center;gap:16px;margin-top:48px}   /* ‹  2 / 6  › — one tidy cluster, left-aligned */
+.peer-count{font-family:var(--disp);font-weight:700;font-size:14px;letter-spacing:.04em;color:var(--ink-3);min-width:44px;text-align:center}
+.peer-count #pcount{color:var(--ink)}
+.peer-arrow{width:44px;height:44px;border-radius:50%;border:1px solid var(--line);background:var(--surface);color:var(--ink-2);font-family:var(--disp);font-size:20px;line-height:1;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:border-color var(--t-fast),color var(--t-fast)}
+.peer-arrow:hover{border-color:var(--accent);color:var(--accent)}
 
 /* ─── Contact + footer (home) ─── */
-.contact{position:relative;padding:calc(var(--sp) + 56px) 0;overflow:hidden}
+.contact{position:relative;padding:calc(var(--sp) + 56px) 0 var(--sp);overflow:hidden}
 .contact::before{content:'';position:absolute;top:0;left:-5%;width:560px;height:420px;background:radial-gradient(50% 50% at 40% 30%,rgba(91,108,240,.12),transparent 70%);filter:blur(8px);pointer-events:none}
 .contact .wrap{position:relative;z-index:1}
 .contact .big{font-family:var(--disp);font-weight:600;font-size:clamp(32px,6vw,56px);line-height:1.05;letter-spacing:-.02em;max-width:16ch}
 .contact-sub{font-size:clamp(16px,2vw,20px);color:var(--ink-2);line-height:1.6;max-width:48ch;margin-top:24px}
 .contact-rule{width:56px;height:2px;border-radius:2px;background:var(--ink-3);margin:32px 0}
 .contact .ctas{margin-top:32px}
-.foot{padding:24px 0;font-family:var(--disp);font-size:12px;color:var(--ink-3);display:flex;justify-content:space-between}
+.foot{border-top:1px solid var(--line);padding:40px 0}
+.foot-in{display:flex;justify-content:space-between;align-items:center;gap:24px}
+.foot-meta{font-family:var(--disp);font-size:12px;color:var(--ink-3)}
+.foot-top{font-family:var(--disp);font-size:12px;color:var(--ink-3);display:inline-flex;align-items:center;gap:6px;transition:color var(--t-fast)}
+.foot-top span{transition:transform var(--t-fast) var(--ease)}
+.foot-top:hover{color:var(--accent)}
+.foot-top:hover span{transform:translateY(-3px)}
+@media(max-width:560px){.foot-in{flex-direction:column;align-items:flex-start;gap:16px}}
 
 /* ════════════════════════ CASE STUDY ════════════════════════ */
 .page-cs{--sp:80px;overflow-x:clip}                    /* clip (not hidden) so the sticky nav isn't trapped in a scroll container */

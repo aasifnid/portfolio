@@ -35,12 +35,12 @@
 <!-- NAV:START - auto-synced from common-assets/navbar.html - run scripts/sync-nav.py to update -->
 <nav class="site-nav" id="site-nav">
   <div class="nav-inner">
-    <a href="/" class="nav-name" data-nav-home>Aasif Anwar</a>
+    <a href="#top" class="nav-name" data-nav-home>Aasif Anwar</a>
     <div class="nav-links">
-      <a href="/#work" data-nav-link="work">Projects</a>
-      <a href="/#peers" data-nav-link="peers">Peers</a>
-      <a href="/#about" data-nav-link="about">About</a>
-      <a href="/#connect" data-nav-link="connect">Connect</a>
+      <a href="#work" data-nav-link="work">Projects</a>
+      <a href="#peers" data-nav-link="peers">Peers</a>
+      <a href="#about" data-nav-link="about">About</a>
+      <a href="#connect" data-nav-link="connect">Connect</a>
     </div>
     <button class="nav-burger" id="nav-burger" aria-label="Open menu">
       <span></span><span></span><span></span>
@@ -48,10 +48,10 @@
   </div>
 </nav>
 <div class="nav-mobile-menu" id="nav-mobile-menu">
-  <a href="/#work" class="nav-mobile-link" data-nav-link="work">Projects</a>
-  <a href="/#peers" class="nav-mobile-link" data-nav-link="peers">Peers</a>
-  <a href="/#about" class="nav-mobile-link" data-nav-link="about">About</a>
-  <a href="/#connect" class="nav-mobile-link" data-nav-link="connect">Connect</a>
+  <a href="#work" class="nav-mobile-link" data-nav-link="work">Projects</a>
+  <a href="#peers" class="nav-mobile-link" data-nav-link="peers">Peers</a>
+  <a href="#about" class="nav-mobile-link" data-nav-link="about">About</a>
+  <a href="#connect" class="nav-mobile-link" data-nav-link="connect">Connect</a>
 </div>
 <script>
   (function() {
@@ -117,19 +117,19 @@
 <section id="work"><div class="wrap">
   <div class="sec-top"><h2>Projects at Cuemath</h2><span class="lbl">2024 — 26</span></div>
   <div class="cards">
-    <a class="card" href="/work/feel-check/">
+    <a class="card" href="work/feel-check/index.html">
       <div class="card-img"><img src="work/feel-check/assets/feel-check-card-thumbnail.webp" alt="Feel Check"></div>
       <div class="card-body"><div><div class="card-meta"><span class="type">Behavior Design</span> · 2025–26</div><h3 class="card-title">Feel Check: Emotional check-in</h3><p class="card-desc">Student-led emotional check-in for live classes. 75.2% of students ready to learn after Feel Check (n=459 tutor observations).</p></div></div>
     </a>
-    <a class="card" href="/work/new-trial-experience/">
+    <a class="card" href="work/new-trial-experience/index.html">
       <div class="card-img"><img src="work/new-trial-experience/assets/new-trial-experience-card-thumbnail.webp" alt="New Trial Experience"></div>
       <div class="card-body"><div><div class="card-meta"><span class="type">System Redesign</span> · 2024</div><h3 class="card-title">New Trial Experience: Self-serve funnel</h3><p class="card-desc">Trial funnel redesign distributing work across system, teachers, parents. −70% Academic Counselor intervention, +50% qualified leads to trial, +9.6% trial-to-paid.</p></div></div>
     </a>
-    <a class="card" href="/work/tutoring-home-redesign/">
+    <a class="card" href="work/tutoring-home-redesign/index.html">
       <div class="card-img"><img src="work/tutoring-home-redesign/assets/tutoring-home-redesign-card-thumbnail.webp" alt="Tutoring home redesign"></div>
       <div class="card-body"><div><div class="card-meta"><span class="type">Interaction Design</span> · 2025</div><h3 class="card-title">Tutoring home redesign</h3><p class="card-desc">Designed a goal creation flow, homework queue, and surfaced recent chapters. Benefiting 30K active students and 3K+ tutors.</p></div></div>
     </a>
-    <a class="card" href="/work/cuemath-partners/">
+    <a class="card" href="work/cuemath-partners/index.html">
       <div class="card-img"><img src="work/cuemath-partners/assets/cuemath-partners-card-thumbnail.webp" alt="Cuemath Partners"></div>
       <div class="card-body"><div><div class="card-meta"><span class="type">Platform Design</span> · 2025</div><h3 class="card-title">Cuemath Partners: Affiliate-led event referral</h3><p class="card-desc">Partner platform for community influencers tracking event referrals and payouts. 138 onboarded, 3,019 active users.</p></div></div>
     </a>
@@ -152,15 +152,19 @@
 <!-- PEERS -->
 <section class="peers" id="peers"><div class="wrap">
   <div class="sec-top"><h2>Words from peers</h2></div>
+  <div class="roster" id="roster"></div>
   <div class="quote-card">
     <span class="qmark" aria-hidden="true">“</span>
     <blockquote class="peer-feat" id="pq"></blockquote>
     <div class="quote-foot">
       <a class="peer-by" id="pby" target="_blank" rel="noopener"><img id="pimg" alt=""><div><div class="peer-nm" id="pn"></div><div class="peer-rl" id="pr"></div></div></a>
-      <span class="lbl" id="pcount">01 / 06</span>
     </div>
   </div>
-  <div class="roster" id="roster"></div>
+  <div class="peer-ctrl">
+    <button id="pprev" class="peer-arrow" aria-label="Previous recommendation">‹</button>
+    <span class="peer-count"><span id="pcount">1</span> / 6</span>
+    <button id="pnext" class="peer-arrow" aria-label="Next recommendation">›</button>
+  </div>
 </div></section>
 
 <!-- ABOUT -->
@@ -195,7 +199,10 @@
     <a class="cta" href="https://drive.google.com/file/d/1WEOEkgUW7NZk5b4zRzuqMfnKv8hcUsir/view?usp=sharing" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="9" y1="13" x2="15" y2="13"/><line x1="9" y1="17" x2="15" y2="17"/></svg>Resume</a>
   </div>
 </div></section>
-<div class="wrap"><div class="foot"><span>© 2026 Aasif Anwar</span><span>Designed and built by Aasif</span></div></div>
+<footer class="foot"><div class="wrap foot-in">
+  <span class="foot-meta">© 2026 · Designed &amp; built by Aasif</span>
+  <a class="foot-top" href="#top">Back to top <span aria-hidden="true">↑</span></a>
+</div></footer>
 
 <script>
   // custom cursor — dot tracks instantly; ring trails + focuses over anything clickable
@@ -227,8 +234,10 @@
   ];
   var i=0,roster=document.getElementById('roster');
   roster.innerHTML=REC.map(function(o,k){return '<div class="chip'+(k===0?' on':'')+'" data-k="'+k+'"><img src="home/assets/Recommendations/'+o.img+'.webp" alt=""><div><div class="cn">'+o.name+'</div><div class="cr">'+o.role+'</div></div></div>'}).join('');
-  function render(){var o=REC[i];document.getElementById('pq').textContent=o.q;document.getElementById('pimg').src='home/assets/Recommendations/'+o.img+'.webp';document.getElementById('pby').href=o.li;document.getElementById('pn').textContent=o.name;document.getElementById('pr').textContent=o.role;document.getElementById('pcount').textContent=('0'+(i+1)).slice(-2)+' / 06';[].forEach.call(roster.children,function(c,k){c.classList.toggle('on',k===i)})}
+  function render(){var o=REC[i];document.getElementById('pq').textContent=o.q;document.getElementById('pimg').src='home/assets/Recommendations/'+o.img+'.webp';document.getElementById('pby').href=o.li;document.getElementById('pn').textContent=o.name;document.getElementById('pr').textContent=o.role;document.getElementById('pcount').textContent=(i+1);[].forEach.call(roster.children,function(c,k){c.classList.toggle('on',k===i)})}
   [].forEach.call(roster.children,function(c){c.onclick=function(){i=+c.dataset.k;render()}});
+  document.getElementById('pprev').onclick=function(){i=(i-1+REC.length)%REC.length;render();};
+  document.getElementById('pnext').onclick=function(){i=(i+1)%REC.length;render();};
   render();
 </script>
 
