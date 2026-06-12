@@ -45,17 +45,4 @@
   --maxw:1160px;  /* home/showcase content width */
   --read:800px;   /* case-study reading column width */
 
-  /* ─── TEMPORARY back-compat aliases ───────────────────────────
-     Keep the not-yet-rebuilt case-study pages (NTE / Cuemath
-     Partners / Tutoring Home) rendering during the V3 migration.
-     REMOVE after Phase 5 (all case studies rebuilt on V3).
-  ──────────────────────────────────────────────────────────── */
-  --color-bg:var(--bg);       --color-surface:var(--surface);  --color-surface-1:var(--bg);
-  --color-surface-2:var(--line); --color-border:var(--line);   --color-border-2:var(--ink-3);
-  --color-ink:var(--ink);     --color-ink-2:var(--ink-2);      --color-ink-3:var(--ink-3);
-  --color-accent:var(--accent);
-  --neutral-100:var(--bg);    --neutral-200:var(--surface);    --neutral-300:var(--line);
-  --neutral-700:var(--ink-2); --neutral-800:var(--ink-2);      --neutral-900:var(--ink);  --neutral-1000:var(--ink);
-  --font-display:var(--disp); --font-body:var(--sans);
-
 }
