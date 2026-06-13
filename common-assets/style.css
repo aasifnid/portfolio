@@ -75,7 +75,7 @@ img{display:block;max-width:100%}
 /* ════════════════════════════ HOME ════════════════════════════ */
 
 /* ─── Hero ─── */
-.hero{position:relative;padding:calc(var(--sp) + 66px) 0 0;overflow:hidden;background:radial-gradient(64% 82% at 100% -6%,rgba(240,96,154,.42),transparent 68%),radial-gradient(60% 80% at 58% -14%,rgba(155,89,232,.38),transparent 66%),radial-gradient(66% 84% at -4% 4%,rgba(91,108,240,.36),transparent 68%),radial-gradient(48% 58% at 32% 40%,rgba(240,96,154,.19),transparent 70%),linear-gradient(180deg,transparent 64%,var(--bg) 96%)}
+.hero{position:relative;padding:calc(var(--sp) + 66px) 0 0;overflow:hidden;background:radial-gradient(64% 82% at 100% -6%,rgba(240,96,154,.28),transparent 68%),radial-gradient(60% 80% at 58% -14%,rgba(155,89,232,.24),transparent 66%),radial-gradient(66% 84% at -4% 4%,rgba(91,108,240,.22),transparent 68%),radial-gradient(48% 58% at 32% 40%,rgba(240,96,154,.13),transparent 70%),linear-gradient(180deg,transparent 64%,var(--bg) 96%)}
 .hero::before{display:none}   /* superseded by the .hero color spread */
 .hero .wrap{position:relative;z-index:1;width:100%;display:grid;grid-template-columns:1fr 256px;gap:24px;align-items:center}
 .eyebrow{display:inline-flex;align-items:center;gap:8px;font-family:var(--disp);font-size:12px;font-weight:500;color:var(--ink-2);margin-bottom:24px}
@@ -147,7 +147,11 @@ img{display:block;max-width:100%}
 
 /* ─── About + journey timeline ─── */
 .about{padding-top:var(--sp)}
-.about-photo img{width:100%;max-width:760px;border-radius:var(--radius)}
+.about-intro{display:grid;grid-template-columns:1fr 320px;gap:48px;align-items:stretch;margin-top:32px}
+.about-intro .about-text{margin-top:0;max-width:none}
+.about-photo{margin:0;display:flex;flex-direction:column}
+.about-photo img{width:100%;flex:1 1 auto;min-height:0;object-fit:cover;object-position:center;border-radius:var(--radius);display:block}
+@media(max-width:760px){.about-intro{grid-template-columns:1fr;gap:24px}.about-photo img{flex:none;aspect-ratio:4/5}}
 .about-cap{font-size:12px;color:var(--ink-3);margin-top:10px}
 .about-cap a{color:var(--ink-2);text-decoration:underline}
 .about-text{max-width:720px;margin-top:32px}
@@ -169,7 +173,7 @@ img{display:block;max-width:100%}
 .peers{padding-top:var(--sp)}
 .quote-card{position:relative;margin-top:48px}   /* sits below the chip roster */
 .qmark{display:inline-block;font-family:var(--disp);font-weight:700;font-size:clamp(56px,6vw,84px);line-height:1;height:.5em;overflow:hidden;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;opacity:1;pointer-events:none;user-select:none;margin-bottom:clamp(14px,1.8vw,24px)}
-.peer-feat{font-family:var(--disp);font-weight:500;font-size:clamp(20px,2.4vw,24px);line-height:1.4;letter-spacing:-.02em;max-width:46ch;min-height:3.5em}
+.peer-feat{font-family:var(--disp);font-weight:500;font-size:clamp(20px,2.4vw,24px);line-height:1.4;letter-spacing:-.02em;max-width:720px;min-height:5.8em}   /* fixed ~4-line box sized to the longest of the 6 → name + controls never shift */
 .quote-foot{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-top:32px}
 a.peer-by{display:inline-flex;align-items:center;gap:14px;cursor:pointer}
 .peer-by img{width:48px;height:48px;border-radius:50%;object-fit:cover}
@@ -187,7 +191,7 @@ a.peer-by{display:inline-flex;align-items:center;gap:14px;cursor:pointer}
 .chip:hover{transform:translateY(-4px);border-color:var(--accent);box-shadow:0 12px 24px -12px rgba(60,40,110,.32)}
 .chip:hover .cn{color:var(--accent)}
 /* carousel control row — counter (left) + prev/next arrows (right) */
-.peer-ctrl{display:flex;align-items:center;gap:16px;margin-top:48px}   /* ‹  2 / 6  › — one tidy cluster, left-aligned */
+.peer-ctrl{display:flex;align-items:center;gap:16px;margin-top:32px}   /* ‹  2 / 6  › — one tidy cluster, left-aligned */
 .peer-count{font-family:var(--disp);font-weight:700;font-size:14px;letter-spacing:.04em;color:var(--ink-3);min-width:44px;text-align:center}
 .peer-count #pcount{color:var(--ink)}
 .peer-arrow{width:44px;height:44px;border-radius:50%;border:1px solid var(--line);background:var(--surface);color:var(--ink-2);font-family:var(--disp);font-size:20px;line-height:1;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:border-color var(--t-fast),color var(--t-fast)}
