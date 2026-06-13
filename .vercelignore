@@ -1,5 +1,4 @@
 # Dev sources, archives, and data — kept in git, excluded from the live deploy
-mockups/
 archive/
 chatbot/
 scripts/
