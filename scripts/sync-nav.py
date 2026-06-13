@@ -4,7 +4,7 @@ sync-nav.py — Propagates the canonical navbars into every page.
 
 Two variants:
   - common-assets/navbar.html             -> main pages (full menu)
-  - common-assets/navbar-case-study.html  -> case-study pages ("Back to work" + actions)
+  - common-assets/navbar-case-study.html  -> case-study pages ("Back to Projects" + actions)
 
 Replaces content between <!-- NAV:START --> and <!-- NAV:END --> markers.
 Inline static HTML -> zero FOUC, single source of truth per variant.
@@ -25,10 +25,10 @@ GROUPS = {
         "index.html",
     ]),
     "case-study": (NAV_CASE, [
-        "work/feel-check/index.html",
-        "work/cuemath-partners/index.html",
-        "work/new-trial-experience/index.html",
-        "work/tutoring-home-redesign/index.html",
+        "projects/feel-check/index.html",
+        "projects/cuemath-partners/index.html",
+        "projects/new-trial-experience/index.html",
+        "projects/tutoring-home-redesign/index.html",
     ]),
 }
 

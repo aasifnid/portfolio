@@ -2,10 +2,13 @@
   "cleanUrls": true,
   "trailingSlash": true,
   "redirects": [
-    { "source": "/work/affiliate-partnership", "destination": "/work/cuemath-partners", "permanent": true },
-    { "source": "/work/affiliate-partnership/", "destination": "/work/cuemath-partners/", "permanent": true },
-    { "source": "/work/affiliate-partnership/:path+", "destination": "/work/cuemath-partners/:path+", "permanent": true },
+    { "source": "/work/affiliate-partnership", "destination": "/projects/cuemath-partners", "permanent": true },
+    { "source": "/work/affiliate-partnership/", "destination": "/projects/cuemath-partners/", "permanent": true },
+    { "source": "/work/affiliate-partnership/:path+", "destination": "/projects/cuemath-partners/:path+", "permanent": true },
+    { "source": "/projects/affiliate-partnership", "destination": "/projects/cuemath-partners", "permanent": true },
+    { "source": "/projects/affiliate-partnership/", "destination": "/projects/cuemath-partners/", "permanent": true },
     { "source": "/work/earlier-work", "destination": "/", "permanent": true },
-    { "source": "/work/earlier-work/", "destination": "/", "permanent": true }
+    { "source": "/work/earlier-work/", "destination": "/", "permanent": true },
+    { "source": "/work/:path*", "destination": "/projects/:path*", "permanent": true }
   ]
 }

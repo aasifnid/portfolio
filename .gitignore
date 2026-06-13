@@ -1,6 +1,6 @@
 .DS_Store
 portfolio-2026/
-work/*/brief.md
+projects/*/brief.md
 *.pdf.crdownload
 .vercel
 .env*.local
@@ -13,4 +13,4 @@ hero-previews.html
 hero-compare.html
 
 # Old archived work
-work/archive/
+projects/archive/

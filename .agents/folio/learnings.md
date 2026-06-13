@@ -34,7 +34,7 @@ When `.section-label` directly precedes an `h2`, add `.section-label + h2 { marg
 Figma MCP does not export full-screen PNG screenshots — it returns design context and sub-element asset URLs (7-day expiry). For permanent images:
 1. Open Figma file, find the node by ID (shown in each placeholder label)
 2. Export → PNG → 2x
-3. Save to `~/Desktop/portfolio/work/[slug]/images/`
+3. Save to `~/Desktop/portfolio/projects/[slug]/images/`
 4. Replace `<div class="screen-placeholder">` with `<img src="images/[filename]">`
 
 Simple screens (green circles, basic layouts) can be CSS-reconstructed directly in HTML.

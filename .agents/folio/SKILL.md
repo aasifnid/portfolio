@@ -81,7 +81,7 @@ Never ask questions one at a time. Never proceed to Build without answers to Q1,
 3. Asks if there's anything missing before building
 
 ### Output
-Save to: `~/Desktop/portfolio/work/[project-slug]/brief.md`
+Save to: `~/Desktop/portfolio/projects/[project-slug]/brief.md`
 
 ---
 
@@ -96,11 +96,11 @@ Build mode takes a completed brief and produces the full case study package. Fol
 3. **Check for existing Notion draft** — if mentioned, use `mcp__notion__notion-fetch` or `notion-search` to pull raw content as input
 4. **Write the narrative** — senior-level copy following `case-study-template.md`
 5. **Build the HTML** — copy `.agents/folio/templates/case-study.html`, populate all `{{PLACEHOLDER}}` values with project content. Do not regenerate CSS. The template contains all components — read it for component reference.
-6. **Save outputs** — HTML at `~/Desktop/portfolio/work/[slug]/index.html`, brief at `brief.md`
+6. **Save outputs** — HTML at `~/Desktop/portfolio/projects/[slug]/index.html`, brief at `brief.md`
 
 ### Output
 ```
-~/Desktop/portfolio/work/[project-slug]/
+~/Desktop/portfolio/projects/[project-slug]/
 ├── index.html    ← case study page (deployable)
 └── brief.md      ← Source of truth for the project (not committed to GitHub)
 ```
@@ -167,7 +167,7 @@ Direct. No softening. Specific rewrites, not vague suggestions. No portfolio-spe
 **NEVER** embed images as `data:image/...;base64,...` inline in HTML. This inflates a 50KB file to 10MB and consumes millions of tokens per session.
 
 **Always use file references:**
-1. Save image to `~/Desktop/portfolio/work/[slug]/images/filename.jpg`
+1. Save image to `~/Desktop/portfolio/projects/[slug]/images/filename.jpg`
 2. Reference in HTML as `<img src="images/filename.jpg">`
 
 If given an image file or screenshot to include, save it as a file — do NOT convert to base64 and embed.
