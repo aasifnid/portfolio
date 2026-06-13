@@ -215,7 +215,7 @@ a.peer-by{display:inline-flex;align-items:center;gap:14px;cursor:pointer}
 @media(max-width:560px){.foot-in{flex-direction:column;align-items:flex-start;gap:16px}}
 
 /* ════════════════════════ CASE STUDY ════════════════════════ */
-.page-cs{--sp:80px;overflow-x:clip}                    /* clip (not hidden) so the sticky nav isn't trapped in a scroll container */
+.page-cs{--sp:80px;overflow-x:clip;--radius:8px;--radius-sm:8px;--radius-pill:8px}   /* case studies = uniform 8px corners on everything (media, stat boxes, tables, alts, pills); home stays rounded at 16. overflow clip keeps the sticky nav working */
 @media(max-width:640px){.page-cs{--sp:56px}}
 .cs .sec-top{margin-top:var(--sp)}                     /* sections flow in one column → top rhythm here */
 

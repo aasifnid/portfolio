@@ -372,7 +372,7 @@
     <div class="rule"><b>Content width</b>1000px home · 800px case study. One value per page, text + media share it.</div>
     <div class="rule"><b>Section rhythm</b>Two rhythms by page type — <b style="display:inline">home / showcase</b> 104 / 72, <b style="display:inline">case study / reading</b> 80 / 56. One <code>--sp</code> token per page.</div>
     <div class="rule"><b>Media gap</b>48px above any image/video/table.</div>
-    <div class="rule"><b>Radius</b>16px cards/media · 12px small surfaces · 999 pills · 50% circles.</div>
+    <div class="rule"><b>Radius</b>Radius is per surface. <b style="display:inline">Home / landing</b> 16px cards/media · 12px small · 999 pills. <b style="display:inline">Case studies</b> uniform 8px on everything (one <code>.page-cs</code> token override). 50% circles throughout.</div>
     <div class="rule"><b>Shadow</b>One: <code>0 24px 56px -24px rgba(60,40,110,.26)</code> — the hover lift.</div>
   </div>
 </div></section>
@@ -528,7 +528,7 @@
     <div class="c-pair" style="margin-top:32px"><div class="ph" style="aspect-ratio:4/3"></div><div class="ph" style="aspect-ratio:4/3"></div></div>
     <div class="c-video" style="margin-top:32px">VIDEO · 16:9</div>
   </div>
-  <p class="note">Single image, 3-up step grid, image pair, video embed. Radius 16, 1px line border, 48px gap above.</p>
+  <p class="note">Single image, 3-up step grid, image pair, video embed. 1px line border, 48px gap above. Radius follows the surface — 16px on home, 8px inside case studies.</p>
 
   <h3 class="t-h3" style="margin:48px 0 8px">Bulleted list</h3>
   <div class="demo"><ul class="c-list">
