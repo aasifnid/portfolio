@@ -7,6 +7,10 @@
     { "source": "/work/affiliate-partnership/:path+", "destination": "/projects/cuemath-partners/:path+", "permanent": true },
     { "source": "/projects/affiliate-partnership", "destination": "/projects/cuemath-partners", "permanent": true },
     { "source": "/projects/affiliate-partnership/", "destination": "/projects/cuemath-partners/", "permanent": true },
+    { "source": "/work/feel-check/", "destination": "/projects/feel-check/", "permanent": true },
+    { "source": "/work/cuemath-partners/", "destination": "/projects/cuemath-partners/", "permanent": true },
+    { "source": "/work/new-trial-experience/", "destination": "/projects/new-trial-experience/", "permanent": true },
+    { "source": "/work/tutoring-home-redesign/", "destination": "/projects/tutoring-home-redesign/", "permanent": true },
     { "source": "/work/earlier-work", "destination": "/", "permanent": true },
     { "source": "/work/earlier-work/", "destination": "/", "permanent": true },
     { "source": "/work/:path*", "destination": "/projects/:path*", "permanent": true }
