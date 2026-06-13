@@ -18,7 +18,7 @@ img{display:block;max-width:100%}
 .wide{width:100%}
 .grad-text{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
 .lbl{font-family:var(--disp);font-size:12px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3)}
-@media(max-width:720px){.wrap{padding:0 24px}}
+@media(max-width:720px){.wrap{padding:0 24px}.nav-inner{padding:0 24px}}   /* nav gutter tracks the page content gutter on mobile */
 @media(max-width:640px){.cs{padding:0 24px}:root{--sp:72px}}   /* home section rhythm drops on mobile */
 
 /* ─── Custom cursor — fine-pointer (mouse) devices only ─── */
@@ -78,7 +78,7 @@ img{display:block;max-width:100%}
 .hero{position:relative;padding:calc(var(--sp) + 66px) 0 0;overflow:hidden;background:radial-gradient(64% 82% at 100% -6%,rgba(240,96,154,.28),transparent 68%),radial-gradient(60% 80% at 58% -14%,rgba(155,89,232,.24),transparent 66%),radial-gradient(66% 84% at -4% 4%,rgba(91,108,240,.22),transparent 68%),radial-gradient(48% 58% at 32% 40%,rgba(240,96,154,.13),transparent 70%),linear-gradient(180deg,transparent 64%,var(--bg) 96%)}
 .hero::before{display:none}   /* superseded by the .hero color spread */
 .hero .wrap{position:relative;z-index:1;width:100%;display:grid;grid-template-columns:1fr 256px;gap:24px;align-items:center}
-.eyebrow{display:inline-flex;align-items:center;gap:8px;font-family:var(--disp);font-size:12px;font-weight:500;color:var(--ink-2);margin-bottom:24px}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;font-family:var(--sans);font-size:14px;font-weight:500;color:var(--ink-2);margin-bottom:24px}
 .eyebrow .dot{width:8px;height:8px;border-radius:50%;background:#22C55E;animation:dotPulse 1.9s ease-out infinite}
 @keyframes dotPulse{0%{box-shadow:0 0 0 0 rgba(34,197,94,.5)}70%{box-shadow:0 0 0 8px rgba(34,197,94,0)}100%{box-shadow:0 0 0 0 rgba(34,197,94,0)}}
 @media(prefers-reduced-motion:reduce){.eyebrow .dot{animation:none;box-shadow:0 0 0 4px rgba(34,197,94,.18)}}
@@ -110,7 +110,7 @@ img{display:block;max-width:100%}
 .marquee-track .logo img{height:28px;width:auto;object-fit:contain}
 @keyframes scroll-left{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 @media(prefers-reduced-motion:reduce){.marquee-track{animation:none;flex-wrap:wrap;justify-content:center;width:100%}.marquee-track .logo{margin:0 24px 16px}}
-@media(max-width:640px){.marquee-track{animation-duration:24s}}   /* narrower track on mobile → shorten duration so the scroll speed matches desktop */
+@media(max-width:640px){.marquee-track{animation-duration:28s}}   /* narrower track on mobile → shorten duration so the scroll speed matches desktop */
 
 /* ─── Section header (shared home + case study) ─── */
 .sec-top{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:32px;padding-bottom:16px;border-bottom:1px solid var(--line)}
@@ -175,6 +175,7 @@ img{display:block;max-width:100%}
 .quote-card{position:relative;margin-top:48px}   /* sits below the chip roster */
 .qmark{display:inline-block;font-family:var(--disp);font-weight:700;font-size:clamp(56px,6vw,84px);line-height:1;height:.5em;overflow:hidden;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;opacity:1;pointer-events:none;user-select:none;margin-bottom:clamp(14px,1.8vw,24px)}
 .peer-feat{font-family:var(--disp);font-weight:500;font-size:clamp(20px,2.4vw,24px);line-height:1.4;letter-spacing:-.02em;max-width:720px;min-height:5.8em}   /* fixed ~4-line box sized to the longest of the 6 → name + controls never shift */
+@media(max-width:640px){.peer-feat{min-height:12em}}   /* mobile: quote wraps to more lines (viewport-width), so reserve taller to keep name + arrows from shifting */
 .quote-foot{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-top:32px}
 a.peer-by{display:inline-flex;align-items:center;gap:14px;cursor:pointer}
 .peer-by img{width:48px;height:48px;border-radius:50%;object-fit:cover}
