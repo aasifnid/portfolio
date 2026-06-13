@@ -18,7 +18,7 @@ img{display:block;max-width:100%}
 .wide{width:100%}
 .grad-text{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
 .lbl{font-family:var(--disp);font-size:12px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3)}
-@media(max-width:720px){.wrap{padding:0 24px}.nav-inner{padding:0 24px}}   /* nav gutter tracks the page content gutter on mobile */
+@media(max-width:720px){.wrap{padding:0 24px}}
 @media(max-width:640px){.cs{padding:0 24px}:root{--sp:72px}}   /* home section rhythm drops on mobile */
 
 /* ─── Custom cursor — fine-pointer (mouse) devices only ─── */
@@ -54,7 +54,7 @@ img{display:block;max-width:100%}
 .nav-mobile-menu.open{transform:none;opacity:1;pointer-events:auto}
 .nav-mobile-menu a{font-family:var(--disp);font-size:20px;font-weight:500;color:var(--ink);padding:16px 0;border-bottom:1px solid var(--line)}
 .nav-mobile-menu a:last-child{border-bottom:none}
-@media(max-width:720px){.site-nav .nav-links{display:none}.nav-burger{display:flex}.nav-mobile-menu{display:flex}}
+@media(max-width:720px){.site-nav .nav-links{display:none}.nav-burger{display:flex}.nav-mobile-menu{display:flex}.nav-inner{padding:0 24px}}   /* nav gutter matches page content (24px); placed after the base .nav-inner rule so it actually wins */
 
 /* ─── Nav — case-study variant (sticky, Back + actions, aligned to reading column) ─── */
 .site-nav.cs-nav{position:sticky;top:0;height:auto}
