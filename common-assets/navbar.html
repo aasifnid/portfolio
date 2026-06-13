@@ -24,6 +24,26 @@
     var burger = document.getElementById('nav-burger');
     var menu = document.getElementById('nav-mobile-menu');
     if (nav) addEventListener('scroll', function() { nav.classList.toggle('scrolled', scrollY > 20); }, { passive: true });
+
+    // Clean-URL section nav: smooth-scroll without leaving #hash in the address bar
+    function cleanUrl() { history.replaceState(null, '', location.pathname + location.search); }
+    document.querySelectorAll('a[href^="#"]').forEach(function(a) {
+      a.addEventListener('click', function(e) {
+        var id = a.getAttribute('href').slice(1);
+        var el = id && id !== 'top' ? document.getElementById(id) : null;
+        e.preventDefault();
+        if (el) { el.scrollIntoView({ behavior: 'smooth' }); }
+        else { scrollTo({ top: 0, behavior: 'smooth' }); }
+        cleanUrl();
+      });
+    });
+    // Arrived from a case-study link like /index.html#work — scroll there, then strip the hash
+    if (location.hash) {
+      var target = document.getElementById(location.hash.slice(1));
+      if (target) { requestAnimationFrame(function() { target.scrollIntoView(); cleanUrl(); }); }
+      else { cleanUrl(); }
+    }
+
     if (!burger || !menu) return;
     function setOpen(open) {
       burger.classList.toggle('open', open);
