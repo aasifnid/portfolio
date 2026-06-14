@@ -162,3 +162,33 @@ The case study page is the **complete record**; the spoken walkthrough is a **cu
 3. **Want it remembered?** ~20s/item budget — spend on highest signal, put the strongest LAST.
 
 Worked example (Feel Check Lessons): 4 page lessons → 2 spoken. Audio lesson cut (already in D3), the two "delight/agency" lessons merged into one, the "measured ready not learned" honesty lesson kept and placed last. The unspoken items are NOT wasted — they become **probe ammunition** ("any other takeaways?"). General rule: voice carries the *why/story*; page carries the *full evidence + depth*; overlap only where reflection is inherently personal.
+
+---
+
+## Session 5 — 2026-06-14 — Feel Check system diagram (flowchart component)
+
+### Diagrams must read as flowcharts — not styled stacks
+When building a system/architecture diagram, Aasif wants an actual **flowchart**: clear directional connectors with **arrowheads** showing branch and convergence, not a vertical stack of cards with faint divider lines + text labels. First attempt used near-invisible `--line` connectors and tiny "splits into…" captions instead of arrows — rejected as "not clear" / "doesn't look like a flowchart." Use dark right-angle connector lines (~`#2B2B33`) and CSS-triangle arrowheads pointing into each node.
+
+### One consistent box style, differentiate by COLOR not by treatment
+Don't mix box treatments in one diagram (e.g. gradient-fill canvas + plain views + gradient-bar action). That reads as "different styles, not needed." Use **one card pattern** (icon chip + uppercase colored heading + body) and differentiate nodes by **hue** from the data palette (purple / blue / green / amber). Take styling cues from a reference image when given.
+
+### Tokens are not mandatory for one-off diagram components
+Aasif: "it's not mandatory to use our tokens to match this diagram, just pick elements from design system like font, color." For a self-contained case-study visual, hardcoding hex/values pulled from the system (Space Grotesk/Inter, the palette hues) is fine — don't contort the component to thread every value through `var(--token)`. Tokens stay mandatory for shared/site-wide CSS.
+
+### Spacing + density
+Compact the heading→body gap inside nodes (~3px), but add generous space *between* boxes (connector zones ~64–148px). Tight inside, airy between.
+
+### Verify rendering myself — but in the REAL layout context
+Headless Chrome screenshot loop: build a test HTML linking the real `common-assets` CSS, inject the component via `sed`, render desktop + mobile PNGs, Read them. **Critical miss the first time:** I rendered the component on a bare `<body>` (full ~1000px width) and it looked fine — but the real page wraps it in `<article class="cs">` (an 800px reading column) with `.wide{width:100%}`. The narrower real width is what made the layout collapse. ALWAYS wrap the test in `<article class="cs">` so `.wide` resolves to the true width. `.cs` = `max-width:var(--read)` = 800px; `.wide` = 100% of that.
+
+### Flowchart connectors: keep content nodes in normal flow; never absolutely-position a text box
+First flowchart attempt absolutely-positioned the Action box (`position:absolute;top:50%`) to do side-entry convergence (arrows into Action's left/right sides, per the reference). It **overlapped the view cards** the moment text wrapped to 3 lines and the container was narrower than my test — "messy output." Two rules that fixed it:
+1. **Content nodes stay in document flow.** Connectors are the only absolutely-positioned elements. A box whose height depends on text must never be `position:absolute` inside a fixed-height zone.
+2. **Prefer top-entry convergence** (two risers → labeled horizontal bar → center trunk → down-arrow into the next node's top) over side-entry. It's robust to text height and trivial to make responsive. Side-entry looks closer to a hand-drawn reference but is fragile.
+
+### Aligning connectors to columns: calc-key them to a fixed column-gap
+To make branch/converge connectors land dead-center on each card without drift: give `.fc-views` an exact `column-gap` (e.g. 40px) and position drops/risers at `left:calc(25% - 10px)` / `left:calc(75% + 10px)` — where the offset = gap/4. Math: with gap G, column centers sit at `25% - G/4` and `75% + G/4` of the full-width connector row. Cards fill their columns (`align-items:stretch`), so card-center === column-center === connector-x, at any container width. The horizontal bar uses `left:calc(25% - 10px);right:calc(25% - 10px)`. Mask the bar behind a centered label with a white-bg `.fc-lab` so the connector reads "—— LABEL ——".
+
+### The clean target spec (Feel Check system diagram, matched 2026-06-14)
+Gradient-soft canvas (purple→pink) with no icon-circle; blue/green/amber view+action cards each with a soft-tint icon circle. Titles: Space Grotesk 700, **sentence case** (not uppercase), ~21px, colored per node (canvas stays near-black `#15151A`). Body Inter ~15.5px `#3F3F49`, 6px under title. Connector lines `#71717D` with 8px CSS-triangle arrowheads; labels uppercase `#8A8A99` 11px on a white mask. Card radius 16px, padding 22×26.

@@ -94,6 +94,103 @@
 
   <a href="https://www.figma.com/design/k27AzLfhyS7AbuIZhLIFMY/Portfolio-2026?node-id=1-4377&t=M7FOPCoe9mE85zor-1" target="_blank" rel="noopener" class="figma-link">Open in Figma →</a>
 
+  <!-- DESIGNING THE FORM -->
+  <div class="sec-top"><h2>Designing the form</h2></div>
+  <p>The framework was given; the form wasn't. I explored the shape, then the treatment within it.</p>
+
+  <style>
+    .ex-row{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:14px}
+    p.ex-head{font-family:var(--disp);font-weight:500;font-size:14px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3);margin:36px 0 0}
+    p.ex-sub{color:var(--ink-2);margin:6px 0 0}
+    .ex-tile{position:relative;margin:0;display:flex;flex-direction:column;gap:10px}
+    .ex-tile .cs-img{border-radius:10px;border:1px solid var(--line);margin:0}
+    .ex-tile figcaption{font-family:var(--sans);font-weight:500;font-size:12px;color:var(--ink-3);text-align:center}
+    .ex-tile--chosen .cs-img{border-color:transparent;box-shadow:0 0 0 2px var(--accent)}
+    .ex-tile--chosen figcaption{color:#000;font-weight:600}
+    .ex-tile--chosen::after{content:'Chosen';position:absolute;top:8px;right:8px;font-family:var(--sans);font-size:10px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#fff;background:var(--accent);padding:4px 8px;border-radius:var(--radius-pill);box-shadow:0 1px 4px rgba(0,0,0,.25)}
+    @media(max-width:640px){.ex-row{grid-template-columns:1fr}}
+  </style>
+  <p class="ex-head">Shape</p>
+  <p class="ex-sub">Grid, geometric, then circular — I picked the circular wheel, echoing the Wheel of Awareness.</p>
+  <div class="ex-row">
+    <figure class="ex-tile"><img src="assets/form-shape-grid.webp" loading="lazy" alt="Grid layout exploration for the check-in" class="cs-img"><figcaption>Grid</figcaption></figure>
+    <figure class="ex-tile"><img src="assets/form-shape-geometric.webp" loading="lazy" alt="Geometric layout exploration for the check-in" class="cs-img"><figcaption>Geometric</figcaption></figure>
+    <figure class="ex-tile ex-tile--chosen"><img src="assets/form-shape-circular.webp" loading="lazy" alt="Circular wheel exploration for the check-in" class="cs-img"><figcaption>Circular wheel</figcaption></figure>
+  </div>
+  <p class="ex-head">Treatment</p>
+  <p class="ex-sub">Bold and abstract treatments felt too loud — line icons won on legibility and restraint.</p>
+  <div class="ex-row">
+    <figure class="ex-tile"><img src="assets/form-treatment-abstract.webp" loading="lazy" alt="Abstract visual treatment for the wheel" class="cs-img"><figcaption>Abstract visuals</figcaption></figure>
+    <figure class="ex-tile"><img src="assets/form-treatment-bold.webp" loading="lazy" alt="Bold icon treatment for the wheel" class="cs-img"><figcaption>Bold icons</figcaption></figure>
+    <figure class="ex-tile ex-tile--chosen"><img src="assets/form-treatment-line.webp" loading="lazy" alt="Line icon treatment for the wheel" class="cs-img"><figcaption>Line icons</figcaption></figure>
+  </div>
+
+  <!-- ONE SCREEN, TWO ROLES -->
+  <div class="sec-top"><h2>One screen, two roles</h2></div>
+  <p>Roots Consultancy set the clinical spec; my job began where it ended — turning those frameworks into a flow a child could move through, on a screen shared with the tutor. The screen was given; how control moved across it was the design problem.</p>
+  <p>The student leads the check-in; the tutor takes over once the activity starts, and ends it only when they can see the child has settled. So whether a child is ready to learn is a tutor's call — made by watching, not by a timer running out.</p>
+  <style>
+    .fc-ho{display:flex;flex-direction:column;gap:30px;margin-top:32px}
+    .fc-ho__lab{display:flex;align-items:center;gap:10px;margin:0 0 14px;font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:16px;color:#15151A}
+    .fc-ho__num{flex:none;width:24px;height:24px;border-radius:999px;color:#fff;font-family:'Inter',sans-serif;font-size:12px;font-weight:600;display:grid;place-items:center}
+    .fc-ho__stage--student .fc-ho__num{background:#3D6FD0}
+    .fc-ho__stage--tutor .fc-ho__num{background:#1F8A46}
+    .fc-ho__hold{font-family:'Inter',sans-serif;font-weight:400;font-size:12px;color:#8A8A99}
+    .fc-ho__pair{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+    .fc-ho__shot{margin:0}
+    .fc-ho__shot .cs-img{border-radius:12px}
+    .fc-ho__stage--student .fc-ho__shot--active .cs-img{box-shadow:0 0 0 2px #3D6FD0}
+    .fc-ho__stage--tutor .fc-ho__shot--active .cs-img{box-shadow:0 0 0 2px #1F8A46}
+    .fc-ho__cap{margin:9px 0 0;font-family:'Inter',sans-serif;font-size:12px;color:#54545F;display:flex;align-items:center;gap:8px}
+    .fc-ho__role{flex:none;font-family:'Inter',sans-serif;font-weight:600;text-transform:uppercase;letter-spacing:.06em;font-size:10px;padding:2px 8px;border-radius:999px}
+    .fc-ho__role--student{background:rgba(91,141,239,.16);color:#3D6FD0}
+    .fc-ho__role--tutor{background:rgba(52,199,94,.16);color:#1F8A46}
+    @media(max-width:640px){.fc-ho__pair{grid-template-columns:1fr;gap:18px}}
+  </style>
+
+  <div class="fc-ho wide">
+    <div class="fc-ho__stage fc-ho__stage--student">
+      <p class="fc-ho__lab"><span class="fc-ho__num">1</span>The check-in<span class="fc-ho__hold">· student in control</span></p>
+      <div class="fc-ho__pair">
+        <figure class="fc-ho__shot fc-ho__shot--active">
+          <img src="assets/control-select-student.webp" loading="lazy" alt="Student view — picking a regulation activity from the wheel" class="cs-img">
+          <figcaption class="fc-ho__cap"><span class="fc-ho__role fc-ho__role--student">Student</span>Picks the activity</figcaption>
+        </figure>
+        <figure class="fc-ho__shot">
+          <img src="assets/control-select-tutor.webp" loading="lazy" alt="Tutor view — watching the student's selection screen" class="cs-img">
+          <figcaption class="fc-ho__cap"><span class="fc-ho__role fc-ho__role--tutor">Tutor</span>Watches — no control</figcaption>
+        </figure>
+      </div>
+    </div>
+    <div class="fc-ho__stage fc-ho__stage--tutor">
+      <p class="fc-ho__lab"><span class="fc-ho__num">2</span>Regulation activity<span class="fc-ho__hold">· tutor in control</span></p>
+      <div class="fc-ho__pair">
+        <figure class="fc-ho__shot">
+          <img src="assets/control-activity-student.webp" loading="lazy" alt="Student view — inside the activity, no close control" class="cs-img">
+          <figcaption class="fc-ho__cap"><span class="fc-ho__role fc-ho__role--student">Student</span>Follows along — no Close</figcaption>
+        </figure>
+        <figure class="fc-ho__shot fc-ho__shot--active">
+          <img src="assets/control-activity-tutor.webp" loading="lazy" alt="Tutor view — same activity with a Close control" class="cs-img">
+          <figcaption class="fc-ho__cap"><span class="fc-ho__role fc-ho__role--tutor">Tutor</span>Closes when the child has settled</figcaption>
+        </figure>
+      </div>
+    </div>
+    <div class="fc-ho__stage fc-ho__stage--student">
+      <p class="fc-ho__lab"><span class="fc-ho__num">3</span>Control returns<span class="fc-ho__hold">· student decides</span></p>
+      <div class="fc-ho__pair">
+        <figure class="fc-ho__shot fc-ho__shot--active">
+          <img src="assets/control-return-student.webp" loading="lazy" alt="Student view — choosing ready to learn or try one more activity" class="cs-img">
+          <figcaption class="fc-ho__cap"><span class="fc-ho__role fc-ho__role--student">Student</span>Ready to learn, or try one more</figcaption>
+        </figure>
+        <figure class="fc-ho__shot">
+          <img src="assets/control-return-tutor.webp" loading="lazy" alt="Tutor view — watching the student make the choice" class="cs-img">
+          <figcaption class="fc-ho__cap"><span class="fc-ho__role fc-ho__role--tutor">Tutor</span>Watches the choice — control released</figcaption>
+        </figure>
+      </div>
+    </div>
+  </div>
+  <p class="caption">One shared screen — the controls change with who's driving: student, then tutor, then student again. Multi-step activities add a Next; Close shows on the last step.</p>
+
   <!-- 03 -->
   <div class="sec-top"><h2>Decisions</h2></div>
   <p>The spec set the bones — frameworks, sequence, and routing. The challenge was designing the experience within the allotted 5 minutes: how a child would move through it.</p>
@@ -254,7 +351,7 @@
   </a>
 </div>
 
-<div class="cs-foot"><span>© 2026 Aasif Anwar</span><span>Designed and built by Aasif</span></div>
+<footer class="cs-foot"><div class="cs-foot-in"><span class="foot-meta">© 2026 · Designed &amp; built by Aasif</span><a class="foot-top" href="#top">Back to top <span aria-hidden="true">↑</span></a></div></footer>
 
 <div class="lightbox" id="lb"><button class="lb-close" id="lb-close" aria-label="Close">×</button><img id="lb-img" alt=""></div>
 
