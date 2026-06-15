@@ -3,281 +3,219 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>{{PROJECT_TITLE}} — Md Aasif Anwar</title>
+<title>{{PROJECT_TITLE}} — {{TAGLINE}} · Md Aasif Anwar</title>
+<meta name="description" content="{{META_DESCRIPTION}}">
+<link rel="canonical" href="https://aasifanwar.vercel.app/projects/{{SLUG}}/">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://aasifanwar.vercel.app/projects/{{SLUG}}/">
+<meta property="og:title" content="{{PROJECT_TITLE}} — {{TAGLINE}}">
+<meta property="og:description" content="{{META_DESCRIPTION}}">
+<meta property="og:image" content="https://aasifanwar.vercel.app/projects/{{SLUG}}/assets/intro.jpg">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,400&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../../assets/tokens.css">
-<link rel="stylesheet" href="../../assets/style.css">
-<style>
-  /* Page-specific overrides go here */
-</style>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../common-assets/tokens.css">
+<link rel="stylesheet" href="../../common-assets/typography.css">
+<link rel="stylesheet" href="../../common-assets/style.css">
+<!-- Page-specific component styles (flowcharts, exploration rows, etc.) go in a scoped <style> next to the markup that uses them — keep one-off CSS out of the shared stylesheet. -->
 </head>
-<body>
+<body class="page-cs">
+<div id="cur-dot"></div><div id="cur-ring"></div>
+<div id="progress"></div>
 
-<!-- ═══════════════════════════════════════════
-     COVER
-     ═══════════════════════════════════════════ -->
-<div class="cover">
-  <p class="cover-eyebrow">{{YEAR}} · {{ROLE_LABEL}} · Cuemath</p>
-  <h1>{{PROJECT_TITLE}}</h1>
-  <p class="lede">{{ONE_LINE_PROBLEM_STATEMENT}}</p>
+<!-- NAV:START - auto-synced from common-assets/navbar-case-study.html - run scripts/sync-nav.py to update -->
+<nav class="site-nav cs-nav" id="site-nav">
+  <div class="nav-inner">
+    <a href="../../index.html#projects" class="cs-nav-back"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>Back to Projects</a>
+    <div class="cs-nav-actions">
+      <a href="https://drive.google.com/file/d/1WEOEkgUW7NZk5b4zRzuqMfnKv8hcUsir/view?usp=sharing" target="_blank" rel="noopener" class="cs-nav-btn">Resume</a>
+    </div>
+  </div>
+</nav>
+<script>
+  (function() {
+    var nav = document.getElementById('site-nav');
+    if (nav) addEventListener('scroll', function() { nav.classList.toggle('scrolled', scrollY > 20); }, { passive: true });
+  })();
+</script>
+<!-- NAV:END -->
+
+<!-- COVER -->
+<header class="cs cover" id="top">
+  <h1><span class="grad-text">{{PROJECT_TITLE}}</span>: {{TAGLINE}}</h1>
+  <p class="lede">{{LEDE}}</p>
 
   <div class="cover-meta">
-    <div class="cover-meta-item">
-      <span class="cover-meta-label">My role</span>
-      <span class="cover-meta-value">{{ROLE_SHORT}}</span>
+    <div><span class="lab">Role</span><span class="val">{{ROLE_VALUE}}</span></div>
+    <div><span class="lab">Timeline</span><span class="val">{{TIMELINE}}</span></div>
+    <div><span class="lab">Team</span><span class="val">{{TEAM}}</span></div>
+  </div>
+
+  <div class="cover-hero wide">
+    <img src="assets/intro.webp" fetchpriority="high" alt="{{HERO_ALT}}" class="cs-img no-zoom">
+  </div>
+</header>
+
+<article class="cs">
+
+  <!-- 01 — THE PROBLEM -->
+  <div class="sec-top"><h2>The problem</h2></div>
+  <p>{{PROBLEM_PARAGRAPH_1}}</p>
+  <p>{{PROBLEM_PARAGRAPH_2}}</p>
+  <!-- Optional pull-quote one-liner (CAUSE — and CONSEQUENCE, ~20 words):
+  <p class="cs-insight">{{PROBLEM_PULL_QUOTE}}</p> -->
+
+  <!-- 02 — MY ROLE -->
+  <div class="sec-top"><h2>My Role</h2></div>
+  <p>{{ROLE_INTRO}}</p>
+  <ul class="cs-list">
+    <li><strong>{{ROLE_POINT_1_LEAD}}</strong> — {{ROLE_POINT_1_DETAIL}}</li>
+    <li><strong>{{ROLE_POINT_2_LEAD}}</strong> — {{ROLE_POINT_2_DETAIL}}</li>
+    <li><strong>Cross-functional collaboration</strong> — {{COLLABORATORS}}</li>
+  </ul>
+
+  <!-- HOW IT WORKS / OVERVIEW (optional — delete if the product needs no walkthrough) -->
+  <div class="sec-top"><h2>How {{PROJECT_TITLE}} works</h2></div>
+  <p>{{OVERVIEW_PARAGRAPH}}</p>
+  <div class="cs-img-grid cs-img-grid--3 wide">
+    <figure><img src="assets/step-1.webp" loading="lazy" alt="{{STEP_1_ALT}}" class="cs-img"><figcaption>{{STEP_1_CAPTION}}</figcaption></figure>
+    <figure><img src="assets/step-2.webp" loading="lazy" alt="{{STEP_2_ALT}}" class="cs-img"><figcaption>{{STEP_2_CAPTION}}</figcaption></figure>
+    <figure><img src="assets/step-3.webp" loading="lazy" alt="{{STEP_3_ALT}}" class="cs-img"><figcaption>{{STEP_3_CAPTION}}</figcaption></figure>
+  </div>
+  <a href="{{FIGMA_LINK}}" target="_blank" rel="noopener" class="figma-link">Open in Figma →</a>
+
+  <!-- 03 — DECISIONS -->
+  <div class="sec-top"><h2>Decisions</h2></div>
+  <p>{{DECISIONS_INTRO}}</p>
+
+  <div class="decisions">
+    <div class="decision">
+      <p class="d-title"><span class="idx">01</span>{{DECISION_1_TITLE}}</p>
+      <p>{{DECISION_1_BODY}}</p>
+
+      <!-- Optional: options-considered → Chosen component
+      <div class="alts">
+        <p class="alts-lab">{{ALTS_LABEL}}</p>
+        <div class="alts-cards">
+          <div class="alt"><p class="alt-name">{{ALT_1_NAME}}</p><p class="alt-note">{{ALT_1_NOTE}}</p></div>
+          <div class="alt"><p class="alt-name">{{ALT_2_NAME}}</p><p class="alt-note">{{ALT_2_NOTE}}</p></div>
+          <div class="alt alt--picked"><p class="alt-name">{{ALT_3_NAME}}</p><p class="alt-note">{{ALT_3_NOTE}}</p></div>
+        </div>
+      </div> -->
+
+      <!-- Optional media: <div class="media"><img src="assets/d1.webp" loading="lazy" alt="" class="cs-img"></div><p class="caption">{{D1_CAPTION}}</p> -->
     </div>
-    <div class="cover-meta-item">
-      <span class="cover-meta-label">Platform</span>
-      <span class="cover-meta-value">{{PLATFORM}}</span>
+
+    <div class="decision">
+      <p class="d-title"><span class="idx">02</span>{{DECISION_2_TITLE}}</p>
+      <p>{{DECISION_2_BODY}}</p>
     </div>
-    <div class="cover-meta-item">
-      <span class="cover-meta-label">Timeline</span>
-      <span class="cover-meta-value">{{TIMELINE}}</span>
-    </div>
-    <div class="cover-meta-item">
-      <span class="cover-meta-label">Outcome</span>
-      <span class="cover-meta-value">{{OUTCOME_SHORT}}</span>
+
+    <div class="decision">
+      <p class="d-title"><span class="idx">03</span>{{DECISION_3_TITLE}}</p>
+      <p>{{DECISION_3_BODY}}</p>
     </div>
   </div>
 
-  <!-- Hero image — replace placeholder with the strongest final design screen -->
-  <div class="hero">
-    <!-- INSERT: Hero screen — best-looking final design, full width -->
+  <!-- 04 — IMPACT -->
+  <div class="sec-top"><h2>Impact</h2></div>
+  <div class="impact-cluster">
+    <div class="stat-hero">
+      <p class="lab">{{HERO_STAT_LABEL}}</p>
+      <p class="num">{{HERO_STAT_NUMBER}}</p>
+      <p class="desc">{{HERO_STAT_DESC}}</p>
+    </div>
+    <div class="stat-grid">
+      <div class="stat"><p class="lab">{{STAT_2_LABEL}}</p><p class="num grad-text">{{STAT_2_NUMBER}}</p><p class="desc">{{STAT_2_DESC}}</p></div>
+      <div class="stat"><p class="lab">{{STAT_3_LABEL}}</p><p class="num grad-text">{{STAT_3_NUMBER}}</p><p class="desc">{{STAT_3_DESC}}</p></div>
+      <div class="stat"><p class="lab">{{STAT_4_LABEL}}</p><p class="num grad-text">{{STAT_4_NUMBER}}</p><p class="desc">{{STAT_4_DESC}}</p></div>
+      <div class="stat"><p class="lab">{{STAT_5_LABEL}}</p><p class="num grad-text">{{STAT_5_NUMBER}}</p><p class="desc">{{STAT_5_DESC}}</p></div>
+    </div>
   </div>
+  <!-- Optional supporting chart: <div class="media"><img src="assets/impact.webp" loading="lazy" alt="" class="cs-img"></div><p class="caption">{{IMPACT_CAPTION}}</p> -->
+
+  <!-- 05 — LESSONS -->
+  <div class="sec-top"><h2>Lessons</h2></div>
+  <div class="lessons">
+    <div class="lesson">
+      <span class="l-num">01</span>
+      <div class="l-body">
+        <p class="l-title">{{LESSON_1_TITLE}}</p>
+        <p>{{LESSON_1_BODY}}</p>
+      </div>
+    </div>
+    <div class="lesson">
+      <span class="l-num">02</span>
+      <div class="l-body">
+        <p class="l-title">{{LESSON_2_TITLE}}</p>
+        <p>{{LESSON_2_BODY}}</p>
+      </div>
+    </div>
+    <div class="lesson">
+      <span class="l-num">03</span>
+      <div class="l-body">
+        <p class="l-title">{{LESSON_3_TITLE}}</p>
+        <p>{{LESSON_3_BODY}}</p>
+      </div>
+    </div>
+  </div>
+
+</article>
+
+<!-- NEXT -->
+<div class="next-wrap">
+  <a class="next" href="../{{NEXT_SLUG}}/index.html">
+    <div class="next-img" style="background-image:url('../{{NEXT_SLUG}}/assets/{{NEXT_SLUG}}-card-thumbnail.webp')"></div>
+    <div class="next-body">
+      <p class="next-lab">Next case study</p>
+      <p class="next-title">{{NEXT_TITLE}}</p>
+      <p class="next-meta">{{NEXT_META}}</p>
+    </div>
+  </a>
 </div>
 
-<!-- ═══════════════════════════════════════════
-     OVERVIEW
-     ═══════════════════════════════════════════ -->
-<div class="page">
-  <div class="overview">
-    <div class="overview-item">
-      <p class="overview-item-label">The problem</p>
-      <p class="overview-item-value">{{PROBLEM_SUMMARY_SHORT}}</p>
-    </div>
-    <div class="overview-item">
-      <p class="overview-item-label">My role</p>
-      <p class="overview-item-value">{{ROLE_SHORT}}</p>
-      <p class="overview-item-sub">{{TEAM_CONTEXT}}</p>
-    </div>
-    <div class="overview-item">
-      <p class="overview-item-label">Outcome</p>
-      <p class="overview-item-value">{{OUTCOME_SHORT}}</p>
-    </div>
-  </div>
+<footer class="cs-foot"><div class="cs-foot-in"><span class="foot-meta">© 2026 · Designed &amp; built by Aasif</span><a class="foot-top" href="#top">Back to top <span aria-hidden="true">↑</span></a></div></footer>
 
-  <div class="divider"></div>
+<div class="lightbox" id="lb"><button class="lb-close" id="lb-close" aria-label="Close">×</button><img id="lb-img" alt=""></div>
 
-  <!-- ═══════════════════════════════════════════
-       01 — CONTEXT & PROBLEM
-       ═══════════════════════════════════════════ -->
-  <div class="section-head">
-    <span class="section-num">01</span>
-    <span class="section-label">The Problem</span>
-  </div>
-  <h1 class="section-title">{{PROBLEM_SECTION_TITLE}}</h1>
+<script>
+  // scroll progress bar
+  var bar=document.getElementById('progress');
+  addEventListener('scroll',function(){
+    bar.style.width=Math.min(scrollY/(document.body.scrollHeight-innerHeight)*100,100)+'%';
+  },{passive:true});
 
-  <p class="large">{{PROBLEM_OPENING_PARAGRAPH}}</p>
+  // custom cursor
+  (function(){
+    if(!matchMedia('(hover:hover) and (pointer:fine)').matches) return;
+    var dot=document.getElementById('cur-dot'),ring=document.getElementById('cur-ring');
+    var mx=innerWidth/2,my=innerHeight/2,rx=mx,ry=my;
+    var reduce=matchMedia('(prefers-reduced-motion:reduce)').matches;
+    var SEL='a,button,.cs-img:not(.no-zoom),video';
+    addEventListener('mousemove',function(e){
+      mx=e.clientX;my=e.clientY;dot.style.left=mx+'px';dot.style.top=my+'px';
+      if(reduce){ring.style.left=mx+'px';ring.style.top=my+'px';}
+      var on=!!(e.target.closest&&e.target.closest(SEL));
+      ring.classList.toggle('hover',on);dot.classList.toggle('hover',on);
+    });
+    if(!reduce)(function loop(){rx+=(mx-rx)*.2;ry+=(my-ry)*.2;ring.style.left=rx+'px';ring.style.top=ry+'px';requestAnimationFrame(loop);})();
+    document.addEventListener('mouseleave',function(){dot.style.opacity='0';ring.style.opacity='0';});
+    document.addEventListener('mouseenter',function(){dot.style.opacity='';ring.style.opacity='';});
+  })();
 
-  <div class="narrative">
-    <p>{{CONTEXT_PARAGRAPH}}</p>
-    <p>{{PROBLEM_DETAIL_PARAGRAPH}}</p>
-  </div>
-
-  <!-- Supporting data point or observation (optional — delete if not applicable) -->
-  <div class="highlight">
-    <p><strong>{{DATA_POINT_LABEL}}</strong> — {{DATA_POINT_TEXT}}</p>
-  </div>
-
-  <div class="divider-gold"></div>
-
-  <!-- ═══════════════════════════════════════════
-       02 — MY ROLE
-       ═══════════════════════════════════════════ -->
-  <div class="section-head">
-    <span class="section-num">02</span>
-    <span class="section-label">My Role</span>
-  </div>
-  <h2 style="margin-top: 8px;">What I owned</h2>
-
-  <p>{{ROLE_FULL_PARAGRAPH}}</p>
-  <p class="large" style="color: var(--neutral-700); margin-top: 8px;">{{COLLABORATION_CONTEXT}}</p>
-
-  <div class="divider"></div>
-
-  <!-- ═══════════════════════════════════════════
-       03 — RESEARCH & DISCOVERY
-       ═══════════════════════════════════════════ -->
-  <div class="section-head">
-    <span class="section-num">03</span>
-    <span class="section-label">Research & Discovery</span>
-  </div>
-  <h1 class="section-title">{{DISCOVERY_SECTION_TITLE}}</h1>
-
-  <p>{{RESEARCH_METHODS_PARAGRAPH}}</p>
-
-  <!-- Use insight-callout when 2–3 distinct insights; use pull quote for single key insight -->
-
-  <!-- Option A: Single key insight (pull quote) -->
-  <blockquote>"{{KEY_INSIGHT_QUOTE}}"</blockquote>
-  <p>{{INSIGHT_CONSEQUENCE_PARAGRAPH}}</p>
-
-  <!-- Option B: Multiple insights (numbered callouts) — swap in when needed
-  <div class="insight-callout">
-    <span class="insight-number">01</span>
-    <div><strong>Insight headline</strong><p>What this means for the design direction.</p></div>
-  </div>
-  <div class="insight-callout">
-    <span class="insight-number">02</span>
-    <div><strong>Insight headline</strong><p>What this means for the design direction.</p></div>
-  </div>
-  -->
-
-  <!-- Research artifacts -->
-  <div class="screen-grid">
-    <div>
-      <!-- INSERT: Research artifact (affinity map, interview note, analytics screenshot) -->
-      <div class="screen-placeholder-sm"></div>
-      <p class="caption">{{PROCESS_IMAGE_1_CAPTION}}</p>
-    </div>
-    <div>
-      <!-- INSERT: Research artifact or insight visualisation -->
-      <div class="screen-placeholder-sm"></div>
-      <p class="caption">{{PROCESS_IMAGE_2_CAPTION}}</p>
-    </div>
-  </div>
-
-  <div class="divider-gold"></div>
-
-  <!-- ═══════════════════════════════════════════
-       04 — THE DECISION
-       ═══════════════════════════════════════════ -->
-  <div class="section-head">
-    <span class="section-num">04</span>
-    <span class="section-label">The Decision</span>
-  </div>
-  <h1 class="section-title">{{DECISION_SECTION_TITLE}}</h1>
-
-  <p>{{DECISION_CONTEXT_PARAGRAPH}}</p>
-
-  <!-- Decision comparison — use when 2+ real alternatives were considered -->
-  <div class="decision-grid">
-    <div class="decision-card rejected">
-      <span class="decision-label">Considered</span>
-      <strong>{{OPTION_A_NAME}}</strong>
-      <p>{{OPTION_A_DESCRIPTION}} — ruled out because {{OPTION_A_REJECTION_REASON}}.</p>
-    </div>
-    <div class="decision-card chosen">
-      <span class="decision-label">Chosen</span>
-      <strong>{{OPTION_B_NAME}}</strong>
-      <p>{{OPTION_B_DESCRIPTION}}. Trade-off: {{TRADE_OFF}}.</p>
-    </div>
-  </div>
-
-  <div class="narrative">
-    <p>{{DECISION_REASONING_PARAGRAPH}}</p>
-    <p>{{TRADE_OFF_PARAGRAPH}}</p>
-  </div>
-
-  <div class="divider"></div>
-
-  <!-- ═══════════════════════════════════════════
-       05 — THE SOLUTION
-       ═══════════════════════════════════════════ -->
-  <div class="section-head">
-    <span class="section-num">05</span>
-    <span class="section-label">The Solution</span>
-  </div>
-  <h1 class="section-title">{{SOLUTION_SECTION_TITLE}}</h1>
-
-  <p>{{SOLUTION_INTRO_PARAGRAPH}}</p>
-
-  <!-- Featured screen 1 — most important moment in the flow -->
-  <div class="screen-featured">
-    <!-- INSERT: Primary screen — the most important moment in the flow -->
-    <div class="screen-placeholder"></div>
-    <p class="caption">{{FEATURED_SCREEN_1_CAPTION}}</p>
-  </div>
-
-  <p>{{SOLUTION_EXPLANATION_PARAGRAPH}}</p>
-
-  <!-- Process / key screens grid -->
-  <div class="screen-grid">
-    <div>
-      <!-- INSERT: Key screen or state -->
-      <div class="screen-placeholder-sm"></div>
-      <p class="caption">{{SCREEN_GRID_1_CAPTION}}</p>
-    </div>
-    <div>
-      <!-- INSERT: Key screen or state (edge case, error state, or secondary moment) -->
-      <div class="screen-placeholder-sm"></div>
-      <p class="caption">{{SCREEN_GRID_2_CAPTION}}</p>
-    </div>
-  </div>
-
-  <!-- Featured screen 2 — edge case or key secondary moment -->
-  <div class="screen-featured">
-    <!-- INSERT: Edge case, empty state, or important secondary screen -->
-    <div class="screen-placeholder"></div>
-    <p class="caption">{{FEATURED_SCREEN_2_CAPTION}}</p>
-  </div>
-
-  <div class="divider-gold"></div>
-
-  <!-- ═══════════════════════════════════════════
-       06 — OUTCOME
-       ═══════════════════════════════════════════ -->
-  <div class="section-head">
-    <span class="section-num">06</span>
-    <span class="section-label">Outcome</span>
-  </div>
-  <h1 class="section-title">{{OUTCOME_SECTION_TITLE}}</h1>
-
-  <p class="large">{{OUTCOME_OPENING_PARAGRAPH}}</p>
-
-  <!-- Stats grid — use when numbers exist; delete if qualitative only -->
-  <div class="outcome-stats">
-    <div class="stat featured">
-      <p class="stat-number">{{STAT_1_NUMBER}}</p>
-      <p class="stat-label">{{STAT_1_LABEL}}</p>
-    </div>
-    <div class="stat">
-      <p class="stat-number">{{STAT_2_NUMBER}}</p>
-      <p class="stat-label">{{STAT_2_LABEL}}</p>
-    </div>
-  </div>
-
-  <p>{{OUTCOME_DETAIL_PARAGRAPH}}</p>
-
-  <div class="divider"></div>
-
-  <!-- ═══════════════════════════════════════════
-       07 — REFLECTION
-       ═══════════════════════════════════════════ -->
-  <div class="section-head">
-    <span class="section-num">07</span>
-    <span class="section-label">Reflection</span>
-  </div>
-  <h2 style="margin-top: 16px;">What I'd do differently</h2>
-
-  <p>{{REFLECTION_PARAGRAPH}}</p>
-
-  <div class="divider-gold"></div>
-
-  <p style="margin-top: 8px;">
-    <a href="/" class="footer-link">← Back to portfolio</a>
-  </p>
-</div>
-
-<!-- ═══════════════════════════════════════════
-     FOOTER
-     ═══════════════════════════════════════════ -->
-<div class="footer">
-  <span class="footer-name">Md Aasif Anwar</span>
-  <a href="https://aasifanwar.vercel.app" class="footer-link">aasifanwar.vercel.app</a>
-</div>
+  // lightbox — click any image (except .no-zoom) to open full screen
+  (function(){
+    var lb=document.getElementById('lb'),img=document.getElementById('lb-img'),close=document.getElementById('lb-close');
+    document.querySelectorAll('.cs-img:not(.no-zoom)').forEach(function(el){
+      el.addEventListener('click',function(){img.src=el.currentSrc||el.src;img.alt=el.alt;lb.classList.add('on');});
+    });
+    function hide(){lb.classList.remove('on');img.removeAttribute('src');}
+    lb.addEventListener('click',function(e){if(e.target!==img)hide();});
+    close.addEventListener('click',hide);
+    document.addEventListener('keydown',function(e){if(e.key==='Escape'&&lb.classList.contains('on'))hide();});
+  })();
+</script>
 
 </body>
 </html>
