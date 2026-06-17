@@ -192,3 +192,13 @@ To make branch/converge connectors land dead-center on each card without drift: 
 
 ### The clean target spec (Feel Check system diagram, matched 2026-06-14)
 Gradient-soft canvas (purple→pink) with no icon-circle; blue/green/amber view+action cards each with a soft-tint icon circle. Titles: Space Grotesk 700, **sentence case** (not uppercase), ~21px, colored per node (canvas stays near-black `#15151A`). Body Inter ~15.5px `#3F3F49`, 6px under title. Connector lines `#71717D` with 8px CSS-triangle arrowheads; labels uppercase `#8A8A99` 11px on a white mask. Card radius 16px, padding 22×26.
+
+---
+
+## Session 6 — 2026-06-17 — ALWAYS use the design system; never invent a component
+
+**The miss (Aasif called it out, rightly):** asked to make the "Open in Figma" CTA the *primary* CTA, I invented a gradient-filled button instead of opening the design system first. The DS already defined **primary = ink fill → accent hover → 2px accent focus ring** ("Get in touch"). I shipped an off-system third style. Hard rule going forward: **before styling any CTA/component, open `design-system/index.html` and use the documented component. Never create a new visual treatment when one is defined.**
+
+**Root cause worth remembering:** the DS documents `.btn` / `.btn-primary` / `.btn-secondary`, but those styles lived **only inside the design-system page's local `<style>`** — they were never in shared `common-assets/style.css`. So the real pages had no usable primary button, which is how bespoke one-offs (`.figma-link`) crept in. **Fix applied 2026-06-17:** promoted the button component into shared CSS (base `.btn` + `.btn-primary` ink→accent + `.btn-secondary` outline→soft-gradient + `:focus-visible` ring + disabled), added `.cs .btn{margin-top:24px}` for body spacing, switched all four case-study Figma CTAs to `class="btn btn-primary"`, removed `.figma-link`. Note: the DS *labels* "Open in Figma" as the Secondary example — but Aasif's product call is that the case-study Figma CTA is **Primary** (ink fill).
+
+**General principle:** when adding/changing a component, check whether the design system already defines it. If yes → use/extend the shared token/class. If the documented component isn't wired into shared CSS yet → promote it to shared CSS (don't fork a local copy). Keep [[feedback_design_system_sync]] in force.
