@@ -208,12 +208,15 @@ a.peer-by{display:inline-flex;align-items:center;gap:14px;cursor:pointer}
 .contact-sub{font-size:clamp(16px,2vw,20px);color:var(--ink-2);line-height:1.6;max-width:48ch;margin-top:24px}
 .contact-rule{width:56px;height:2px;border-radius:2px;background:var(--ink-3);margin:32px 0}
 .contact .ctas{margin-top:32px}
-.foot{border-top:1px solid var(--line);background:#F1F1F4;padding:40px 0}
+.foot{position:relative;overflow:hidden;background:var(--ink);padding:40px 0}
+.foot::before,.cs-foot::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--grad)}
+.foot::after,.cs-foot::after{content:'';position:absolute;bottom:-50%;right:-4%;width:520px;height:420px;background:radial-gradient(50% 50% at 50% 50%,rgba(155,89,232,.28),rgba(91,108,240,.1) 45%,transparent 72%);pointer-events:none}
+.foot-in,.cs-foot-in{position:relative;z-index:1}
 .foot-in{display:flex;justify-content:space-between;align-items:center;gap:24px}
-.foot-meta{font-family:var(--disp);font-size:12px;color:var(--ink-3)}
-.foot-top{font-family:var(--disp);font-size:12px;color:var(--ink-3);display:inline-flex;align-items:center;gap:6px;transition:color var(--t-fast)}
+.foot-meta{font-family:var(--disp);font-size:12px;color:rgba(255,255,255,.55)}
+.foot-top{font-family:var(--disp);font-size:12px;color:rgba(255,255,255,.78);display:inline-flex;align-items:center;gap:6px;transition:color var(--t-fast)}
 .foot-top span{transition:transform var(--t-fast) var(--ease)}
-.foot-top:hover{color:var(--accent)}
+.foot-top:hover{color:#C9A2F2}
 .foot-top:hover span{transform:translateY(-3px)}
 @media(max-width:560px){.foot-in{flex-direction:column;align-items:flex-start;gap:16px}}
 
@@ -331,7 +334,7 @@ figure{margin:0}
 .next-lab{font-family:var(--disp);font-size:12px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3)}
 .next-title{font-family:var(--disp);font-weight:600;font-size:clamp(20px,2.4vw,24px);letter-spacing:-.02em}
 .next-meta{font-size:12px;color:var(--ink-2)}
-.cs-foot{border-top:1px solid var(--line);background:#F1F1F4;padding:40px 0;margin-top:var(--sp)}
+.cs-foot{position:relative;overflow:hidden;background:var(--ink);padding:40px 0;margin-top:var(--sp)}
 .cs-foot-in{max-width:var(--read);margin:0 auto;padding:0 40px;display:flex;justify-content:space-between;align-items:center;gap:24px}
 @media(max-width:640px){.next-wrap{padding:0 24px}.next-img{width:120px}.next-body{padding:24px}.cs-foot{padding:32px 0}.cs-foot-in{padding:0 24px}}
 
