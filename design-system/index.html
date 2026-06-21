@@ -38,13 +38,12 @@
   .wrap{max-width:1000px;margin:0 auto;padding:0 var(--gutter)}
   @media(max-width:640px){.wrap{padding:0 var(--gutter-m)}}
 
-  /* app shell — global header + sidebar + one panel at a time */
+  /* app shell: global header + sidebar + one panel at a time */
   .ds-top{position:sticky;top:0;z-index:30;background:rgba(250,250,251,.9);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
   .ds-top-in{max-width:1320px;margin:0 auto;height:64px;display:flex;align-items:center;justify-content:space-between;padding:0 28px}
   .ds-brand{display:inline-flex;align-items:center;gap:10px;text-decoration:none}
   .ds-brand .mark{width:24px;height:24px;border-radius:7px;background:var(--grad);flex-shrink:0}
   .ds-brand .bw{font-family:var(--disp);font-weight:600;font-size:16px;letter-spacing:-.02em;color:var(--ink)}
-  .ds-brand .bsub{font-family:var(--disp);font-size:13px;color:var(--ink-3);padding-left:10px;border-left:1px solid var(--line)}
   .ds-back{display:inline-flex;align-items:center;gap:7px;font-family:var(--disp);font-size:13px;font-weight:500;color:var(--ink-3);text-decoration:none;transition:color var(--t-fast)}
   .ds-back:hover{color:var(--ink)}
   .ds-back span{display:inline-block;transition:transform var(--t-fast) var(--ease)}
@@ -63,7 +62,6 @@
   @media(max-width:860px){
     .ds-app{grid-template-columns:1fr}
     .ds-top-in{padding:0 20px}
-    .ds-brand .bsub{display:none}
     .ds-side{position:sticky;top:64px;height:auto;flex-direction:row;align-items:center;gap:8px;overflow-x:auto;border-right:none;border-bottom:1px solid var(--line);padding:12px 20px;background:rgba(250,250,251,.94);backdrop-filter:blur(8px);z-index:20}
     .ds-side .grp{display:none}
     .ds-nav-link{flex-shrink:0;white-space:nowrap}
@@ -287,6 +285,7 @@
   .c-eyebrow{display:inline-flex;align-items:center;gap:8px;font-family:var(--disp);font-size:12px;font-weight:500;color:var(--ink-2)}
   .c-eyebrow .dot{width:8px;height:8px;border-radius:50%;background:#22C55E;animation:ds-pulse 1.9s ease-out infinite}
   @keyframes ds-pulse{0%{box-shadow:0 0 0 0 rgba(34,197,94,.5)}70%{box-shadow:0 0 0 8px rgba(34,197,94,0)}100%{box-shadow:0 0 0 0 rgba(34,197,94,0)}}
+  .c-pulse{width:10px;height:10px;border-radius:50%;background:#22C55E;animation:ds-pulse 1.9s ease-out infinite}
 
   /* cursor + progress + mobile menu */
   .c-cursor{position:relative;width:40px;height:40px;display:flex;align-items:center;justify-content:center}
@@ -392,7 +391,7 @@
   @media(prefers-reduced-motion:reduce){
     html{scroll-behavior:auto}
     .c-mtrack{animation:none}
-    .c-eyebrow .dot{animation:none}
+    .c-eyebrow .dot,.c-pulse{animation:none}
     .c-chatlauncher,.c-card,.c-next,.c-chip,.c-cari .ph,.c-cari .bubble,.c-cur-r{transition:none}
   }
 </style>
@@ -400,8 +399,8 @@
 <body>
 
 <header class="ds-top"><div class="ds-top-in">
-  <a class="ds-brand" href="#principles"><span class="mark"></span><span class="bw">Design System</span><span class="bsub">Aasif Anwar</span></a>
   <a class="ds-back" href="../index.html"><span>←</span> Back to portfolio</a>
+  <a class="ds-brand" href="#principles"><span class="mark"></span><span class="bw">Design System</span></a>
 </div></header>
 
 <div class="ds-app">
@@ -830,7 +829,7 @@
       <a class="lk">Resume</a>
     </div>
     <span class="t-label" style="display:block;margin:24px 0 12px">Mobile · hamburger</span>
-    <div class="c-nav">
+    <div class="c-nav" style="max-width:360px">
       <span class="nm">Aasif Anwar</span>
       <span class="c-burger"><span></span><span></span><span></span></span>
     </div>
@@ -978,6 +977,12 @@
     </div>
   </div>
   <p class="note">A dot tracks the pointer; the ring trails it and tightens over anything clickable. Mouse only.</p>
+
+  <h3 class="t-h3" style="margin:48px 0 8px">Availability pulse</h3>
+  <div class="demo">
+    <span class="c-pulse"></span>
+  </div>
+  <p class="note">The green dot on the status label sends out a soft ripple every couple of seconds, a quiet "available now" signal. Off under reduced-motion.</p>
 
   <h3 class="t-h3" style="margin:48px 0 8px">Scroll progress bar</h3>
   <div class="demo">
