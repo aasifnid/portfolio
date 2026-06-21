@@ -38,15 +38,30 @@
   .wrap{max-width:1000px;margin:0 auto;padding:0 var(--gutter)}
   @media(max-width:640px){.wrap{padding:0 var(--gutter-m)}}
 
-  .ds-hero{padding:var(--section) 0 var(--s-7)}
-  .ds-hero .t-label{display:block;margin-bottom:var(--s-3)}
-  .ds-hero p{max-width:60ch;margin-top:var(--s-4)}
-  .ds-toc{display:flex;flex-wrap:wrap;gap:16px 24px;margin-top:var(--s-6);padding-top:var(--s-5);border-top:1px solid var(--line)}
-  .ds-toc a{font-family:var(--disp);font-size:14px;font-weight:500;color:var(--ink-2);transition:color var(--t-fast);cursor:pointer}
-  .ds-toc a:hover{color:var(--accent)}
-  .ds-toc .grp{font-family:var(--disp);font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3);width:100%;margin-bottom:-4px}
+  /* app layout — sidebar + one panel at a time */
+  .ds-app{display:grid;grid-template-columns:248px 1fr;max-width:1320px;margin:0 auto;min-height:100vh}
+  .ds-side{position:sticky;top:0;align-self:start;height:100vh;overflow-y:auto;border-right:1px solid var(--line);padding:40px 28px;display:flex;flex-direction:column}
+  .ds-side .back{font-size:13px;color:var(--ink-3);display:inline-flex;gap:6px;margin-bottom:24px;transition:color var(--t-fast)}
+  .ds-side .back:hover{color:var(--ink-2)}
+  .ds-side .wordmark{font-family:var(--disp);font-weight:600;font-size:18px;letter-spacing:-.02em;color:var(--ink)}
+  .ds-side .subw{font-size:12px;color:var(--ink-3);margin-top:2px}
+  .ds-side .grp{font-family:var(--disp);font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3);margin:24px 0 6px}
+  .ds-nav-link{display:block;font-family:var(--disp);font-size:14px;font-weight:500;color:var(--ink-2);padding:7px 12px;border-radius:8px;cursor:pointer;transition:background var(--t-fast),color var(--t-fast)}
+  .ds-nav-link:hover{background:var(--grad-soft);color:var(--ink)}
+  .ds-nav-link.on{background:var(--ink);color:#fff}
+  .ds-main{padding:48px 56px;min-width:0;max-width:1040px}
+  .ds-main .wrap{max-width:none;margin:0;padding:0}
+  @media(max-width:860px){
+    .ds-app{grid-template-columns:1fr}
+    .ds-side{position:sticky;top:0;height:auto;flex-direction:row;align-items:center;gap:8px;overflow-x:auto;border-right:none;border-bottom:1px solid var(--line);padding:12px 20px;background:rgba(250,250,251,.94);backdrop-filter:blur(8px);z-index:20}
+    .ds-side .wordmark,.ds-side .subw,.ds-side .grp{display:none}
+    .ds-side .back{margin-bottom:0;flex-shrink:0;white-space:nowrap}
+    .ds-nav-link{flex-shrink:0;white-space:nowrap}
+    .ds-main{padding:32px 24px}
+  }
 
-  .ds-sec{padding-top:var(--section)}
+  .ds-sec{display:none;padding-top:0}
+  .ds-sec.active{display:block}
   .ds-sec-head{display:flex;justify-content:space-between;align-items:baseline;border-bottom:1px solid var(--line);padding-bottom:var(--s-3);margin-bottom:var(--s-6)}
   .ds-intro{max-width:64ch;margin-bottom:var(--s-5)}
 
@@ -362,7 +377,6 @@
   .bstep h4{font-family:var(--disp);font-weight:600;font-size:16px;color:var(--ink);margin:12px 0 6px}
   .bstep p{font-size:13px;color:var(--ink-2);line-height:1.55}
 
-  .ds-sec:last-of-type{padding-bottom:var(--section)}
 
   /* honor reduced-motion: the page's own demos shouldn't force motion */
   @media(prefers-reduced-motion:reduce){
@@ -375,30 +389,28 @@
 </head>
 <body>
 
-<header class="ds-hero"><div class="wrap">
-  <a href="../index.html" style="display:inline-flex;align-items:center;gap:8px;font-family:var(--sans);font-size:14px;color:var(--ink-2);margin-bottom:24px">← Back to portfolio</a>
-  <span class="t-label">Design System</span>
-  <h1 class="t-display"><span class="grad-text">One system</span>, every page.</h1>
-  <p class="t-lede">The colors, type, spacing, and parts behind this portfolio, with simple rules for using them. Organised the way the system is built: foundations, then atoms, molecules, and organisms.</p>
-
-  <nav class="ds-toc">
-    <span class="grp">Principles</span>
-    <a href="#principles">Six rules</a>
-    <span class="grp">Foundations</span>
-    <a href="#color">Color</a>
-    <a href="#type">Typography</a>
-    <a href="#spacing">Spacing &amp; layout</a>
-    <a href="#responsive">Responsive</a>
-    <span class="grp">Library</span>
-    <a href="#atoms">Atoms</a>
-    <a href="#molecules">Molecules</a>
-    <a href="#organisms">Organisms</a>
-    <a href="#graphics">Illustration &amp; graphics</a>
-    <a href="#motion">Motion &amp; effects</a>
-    <span class="grp">Behind it</span>
-    <a href="#built">Built in code</a>
-  </nav>
-</div></header>
+<div class="ds-app">
+<aside class="ds-side">
+  <a class="back" href="../index.html">← Portfolio</a>
+  <div class="wordmark">Design System</div>
+  <div class="subw">Aasif Anwar</div>
+  <div class="grp">Principles</div>
+  <a class="ds-nav-link" data-target="principles">Six rules</a>
+  <div class="grp">Foundations</div>
+  <a class="ds-nav-link" data-target="color">Color</a>
+  <a class="ds-nav-link" data-target="type">Typography</a>
+  <a class="ds-nav-link" data-target="spacing">Spacing &amp; layout</a>
+  <a class="ds-nav-link" data-target="responsive">Responsive</a>
+  <div class="grp">Library</div>
+  <a class="ds-nav-link" data-target="atoms">Atoms</a>
+  <a class="ds-nav-link" data-target="molecules">Molecules</a>
+  <a class="ds-nav-link" data-target="organisms">Organisms</a>
+  <a class="ds-nav-link" data-target="graphics">Illustration &amp; graphics</a>
+  <a class="ds-nav-link" data-target="motion">Motion &amp; effects</a>
+  <div class="grp">Behind it</div>
+  <a class="ds-nav-link" data-target="built">Built in code</a>
+</aside>
+<main class="ds-main">
 
 <!-- PRINCIPLES -->
 <section class="ds-sec" id="principles"><div class="wrap">
@@ -984,6 +996,33 @@
   </div>
   <p class="t-body" style="margin-top:48px;max-width:64ch">It is the same loop a designer runs with an engineer: a clear spec, a quick build, a close review, a shipped change. The difference is the round trip takes minutes, so the work gets tested on the real thing, not a mockup.</p>
 </div></section>
+
+</main>
+</div>
+
+<script>
+  (function () {
+    var links = Array.prototype.slice.call(document.querySelectorAll('.ds-nav-link'));
+    var secs  = Array.prototype.slice.call(document.querySelectorAll('.ds-sec'));
+    function show(id) {
+      if (!document.getElementById(id)) id = 'principles';
+      secs.forEach(function (s) { s.classList.toggle('active', s.id === id); });
+      links.forEach(function (l) { l.classList.toggle('on', l.getAttribute('data-target') === id); });
+      window.scrollTo(0, 0);
+      var on = document.querySelector('.ds-nav-link.on');
+      if (on && on.scrollIntoView) on.scrollIntoView({ block: 'nearest', inline: 'center' });
+    }
+    links.forEach(function (l) {
+      l.addEventListener('click', function (e) {
+        e.preventDefault();
+        var id = l.getAttribute('data-target');
+        history.replaceState(null, '', '#' + id);
+        show(id);
+      });
+    });
+    show((location.hash || '#principles').slice(1));
+  })();
+</script>
 
 </body>
 </html>
