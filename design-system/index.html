@@ -263,7 +263,7 @@
   .c-eyebrow .dot{width:8px;height:8px;border-radius:50%;background:#22C55E;animation:ds-pulse 1.9s ease-out infinite}
   @keyframes ds-pulse{0%{box-shadow:0 0 0 0 rgba(34,197,94,.5)}70%{box-shadow:0 0 0 8px rgba(34,197,94,0)}100%{box-shadow:0 0 0 0 rgba(34,197,94,0)}}
 
-  /* patterns */
+  /* cursor + progress + mobile menu */
   .c-cursor{position:relative;width:40px;height:40px;display:flex;align-items:center;justify-content:center}
   .c-cur-d{width:8px;height:8px;border-radius:50%;background:var(--accent)}
   .c-cur-r{position:absolute;width:30px;height:30px;border-radius:50%;border:1.5px solid var(--accent);opacity:.5;transition:width var(--t-base) var(--ease),height var(--t-base) var(--ease),opacity var(--t-base)}
@@ -290,6 +290,9 @@
   .c-cari.is-hover .default{opacity:0}
   .c-cari.is-hover .wink{opacity:1}
   .c-cari.is-hover .bubble{opacity:1;transform:translateY(0)}
+
+  /* gradient device */
+  .c-grad{height:120px;border-radius:var(--radius);background:var(--grad)}
 
   /* lightbox (shown as a framed panel; the real one is full-screen fixed) */
   .c-lightbox{position:relative;border-radius:var(--radius-sm);background:rgba(12,12,18,.92);min-height:240px;display:flex;align-items:center;justify-content:center;padding:32px;overflow:hidden}
@@ -350,12 +353,6 @@
   .a11y b{color:var(--ink);font-family:var(--disp);font-weight:600}
   .a11y .tag{flex-shrink:0;font-family:var(--disp);font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--accent)}
 
-  /* component family header */
-  .grp-head{margin-top:var(--s-7);padding-bottom:var(--s-2);border-bottom:1px solid var(--line)}
-  .grp-head:first-of-type{margin-top:var(--s-5)}
-  .grp-head .gl{font-family:var(--disp);font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--accent)}
-  .grp-head .gd{font-size:14px;color:var(--ink-3);margin-top:6px;max-width:60ch}
-
   /* built steps */
   .build-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:var(--s-3);margin-top:var(--s-5)}
   @media(max-width:860px){.build-steps{grid-template-columns:1fr 1fr}}
@@ -382,7 +379,7 @@
   <a href="../index.html" style="display:inline-flex;align-items:center;gap:8px;font-family:var(--sans);font-size:14px;color:var(--ink-2);margin-bottom:24px">← Back to portfolio</a>
   <span class="t-label">Design System</span>
   <h1 class="t-display"><span class="grad-text">One system</span>, every page.</h1>
-  <p class="t-lede">The colors, type, spacing, and parts behind this portfolio, with simple rules for using them. Everything here is drawn from the portfolio's real components.</p>
+  <p class="t-lede">The colors, type, spacing, and parts behind this portfolio, with simple rules for using them. Organised the way the system is built: foundations, then atoms, molecules, and organisms.</p>
 
   <nav class="ds-toc">
     <span class="grp">Principles</span>
@@ -393,8 +390,11 @@
     <a href="#spacing">Spacing &amp; layout</a>
     <a href="#responsive">Responsive</a>
     <span class="grp">Library</span>
-    <a href="#components">Components</a>
-    <a href="#patterns">Patterns</a>
+    <a href="#atoms">Atoms</a>
+    <a href="#molecules">Molecules</a>
+    <a href="#organisms">Organisms</a>
+    <a href="#graphics">Illustration &amp; graphics</a>
+    <a href="#motion">Motion &amp; effects</a>
     <span class="grp">Behind it</span>
     <a href="#built">Built in code</a>
   </nav>
@@ -574,7 +574,7 @@
 
   <span class="t-label" style="display:block;margin:48px 0 16px">What changes on a phone</span>
   <ul class="c-list" style="max-width:72ch">
-    <li><strong>Navigation</strong> becomes a hamburger. Tapping it slides down a full-width frosted menu with large links. Shown as Mobile menu in Components.</li>
+    <li><strong>Navigation</strong> becomes a hamburger. Tapping it slides down a full-width frosted menu with large links. Shown as Mobile menu under Organisms.</li>
     <li><strong>Every multi-column grid</strong> drops to a single column: project cards, work cards, stat tiles, image grids and pairs, decision options, the cover meta strip, and the timeline.</li>
     <li><strong>The hero</strong> stacks text above a smaller portrait, and the headline drops its hand-set line breaks so it wraps to fill each line.</li>
     <li><strong>Type</strong> scales down smoothly and never drops below a readable size.</li>
@@ -584,12 +584,10 @@
   <div class="a11y"><span class="tag">Touch</span><div><b>Built for fingers, not just a mouse:</b> hover-only touches like the custom cursor, the card lift, and the portrait reveal are switched off on touch screens, so nothing needs hover to work. The page also avoids any sideways scroll on small widths.</div></div>
 </div></section>
 
-<!-- COMPONENTS -->
-<section class="ds-sec" id="components"><div class="wrap">
-  <div class="ds-sec-head"><h2 class="t-h2">Components</h2><span class="t-label">6 families</span></div>
-  <p class="t-body ds-intro">Every part here is used on a live page, shown in its real states.</p>
-
-  <div class="grp-head"><div class="gl">Actions &amp; inputs</div><div class="gd">Anything a person clicks or toggles.</div></div>
+<!-- ATOMS -->
+<section class="ds-sec" id="atoms"><div class="wrap">
+  <div class="ds-sec-head"><h2 class="t-h2">Atoms</h2><span class="t-label">Building blocks</span></div>
+  <p class="t-body ds-intro">The smallest pieces, used everywhere: buttons, chips, labels, and captions. Each is shown in its real states.</p>
 
   <h3 class="t-h3" style="margin:32px 0 8px">Buttons</h3>
   <div class="demo">
@@ -659,7 +657,28 @@
   </div></div>
   <p class="note">Default, then hover (lifts, accent ring, name turns accent), then selected (gradient fill, dark text, no border).</p>
 
-  <div class="grp-head"><div class="gl">Navigation</div><div class="gd">Moving between pages and sections.</div></div>
+  <h3 class="t-h3" style="margin:48px 0 8px">Status eyebrow</h3>
+  <div class="demo"><span class="c-eyebrow"><span class="dot"></span>Open to Mid-Senior Product Design roles</span></div>
+  <p class="note">A label with a pulsing green dot. The pulse stops when motion is reduced.</p>
+
+  <h3 class="t-h3" style="margin:48px 0 8px">Caption</h3>
+  <div class="demo">
+    <div style="aspect-ratio:16/6;background:var(--grad-soft);border:1px solid var(--line);border-radius:var(--radius)"></div>
+    <p class="t-caption" style="margin-top:16px">One caption style everywhere: 12px Inter, light grey, left-aligned, 16px below the image.</p>
+  </div>
+
+  <h3 class="t-h3" style="margin:48px 0 8px">Bulleted list</h3>
+  <div class="demo"><ul class="c-list">
+    <li><strong>End-to-end design</strong>, the check-in flow and regulation activities.</li>
+    <li><strong>Cross-functional work</strong> with PM, engineering, curriculum, and motion.</li>
+  </ul></div>
+  <p class="note">Gradient bullet, 16px text, even spacing.</p>
+</div></section>
+
+<!-- MOLECULES -->
+<section class="ds-sec" id="molecules"><div class="wrap">
+  <div class="ds-sec-head"><h2 class="t-h2">Molecules</h2><span class="t-label">Atoms combined</span></div>
+  <p class="t-body ds-intro">A few atoms working together as one unit.</p>
 
   <h3 class="t-h3" style="margin:32px 0 8px">Tabs &amp; links</h3>
   <div class="demo"><div class="bm-states">
@@ -669,64 +688,18 @@
   </div></div>
   <p class="note">Grey to ink on hover. The current item gets an accent underline.</p>
 
-  <h3 class="t-h3" style="margin:48px 0 8px">Nav bar</h3>
+  <h3 class="t-h3" style="margin:48px 0 8px">Section header</h3>
   <div class="demo">
-    <span class="t-label" style="display:block;margin-bottom:12px">Home · brand + tabs</span>
-    <div class="c-nav">
-      <span class="nm">Aasif Anwar</span>
-      <div class="c-tabs"><a class="c-tab on">Projects</a><a class="c-tab">About</a><a class="c-tab">Contact</a><a class="c-tab">Design System</a><a class="c-tab">Resume</a></div>
-    </div>
-    <span class="t-label" style="display:block;margin:24px 0 12px">Case study · back + résumé</span>
-    <div class="c-nav">
-      <a class="lk ink"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>Back to Projects</a>
-      <a class="lk">Resume</a>
-    </div>
-    <span class="t-label" style="display:block;margin:24px 0 12px">Mobile · hamburger</span>
-    <div class="c-nav">
-      <span class="nm">Aasif Anwar</span>
-      <span class="c-burger"><span></span><span></span><span></span></span>
-    </div>
+    <div class="c-sec"><span class="t-h2">Impact</span><span class="t-label">Outcome</span></div>
   </div>
-  <p class="note">On home the bar is clear over the hero, then turns into a frosted bar with a thin bottom line on scroll. On case studies it stays at the top with a back link and résumé. Below 720px the tabs collapse into the mobile menu below.</p>
+  <p class="note">A title, an eyebrow label, and a thin rule. Opens every section.</p>
 
-  <h3 class="t-h3" style="margin:48px 0 8px">Mobile menu</h3>
+  <h3 class="t-h3" style="margin:48px 0 8px">Numbered items</h3>
   <div class="demo">
-    <div class="row" style="gap:48px;align-items:flex-start">
-      <div style="display:flex;flex-direction:column;gap:8px;align-items:flex-start"><span class="c-burger"><span></span><span></span><span></span></span><span class="bm-s">Closed</span></div>
-      <div style="display:flex;flex-direction:column;gap:8px;align-items:flex-start"><span class="c-burger open"><span></span><span></span><span></span></span><span class="bm-s">Open</span></div>
-    </div>
-    <div class="c-mmenu" style="margin-top:24px"><a>Projects</a><a>About</a><a>Contact</a><a>Design System</a><a>Resume</a></div>
+    <div class="c-row" style="border-top:1px solid var(--line)"><span class="n">01</span><div><div class="ti">What we called a backup, kids made their favorite.</div><div class="t-small">Students made it their top pick across all four zones.</div></div></div>
+    <div class="c-row"><span class="n">02</span><div><div class="ti">Kids came back for more.</div><div class="t-small">Nearly half chose “try one more” after finishing.</div></div></div>
   </div>
-  <p class="note">Below 720px the bar shows a hamburger. Tapping it animates the icon to an X and slides down a full-width frosted panel with large links. Tapping a link closes it.</p>
-
-  <div class="grp-head"><div class="gl">Content &amp; layout</div><div class="gd">The cards, lists, quotes, and timelines that carry the story.</div></div>
-
-  <h3 class="t-h3" style="margin:32px 0 8px">Caricature</h3>
-  <div class="demo">
-    <div class="bm-states" style="gap:64px;padding-top:56px">
-      <div>
-        <div class="c-cari">
-          <span class="bubble">Start with Feel Check ↓</span>
-          <div class="ph">
-            <img class="default" src="../home/assets/home-cta.webp" alt="Aasif Anwar">
-            <img class="wink" src="../home/assets/home-cta-hover.webp" alt="" aria-hidden="true">
-          </div>
-        </div>
-        <span class="bm-s">Default</span>
-      </div>
-      <div>
-        <div class="c-cari is-hover">
-          <span class="bubble">Start with Feel Check ↓</span>
-          <div class="ph">
-            <img class="default" src="../home/assets/home-cta.webp" alt="Aasif Anwar">
-            <img class="wink" src="../home/assets/home-cta-hover.webp" alt="" aria-hidden="true">
-          </div>
-        </div>
-        <span class="bm-s">Hover</span>
-      </div>
-    </div>
-  </div>
-  <p class="note">A one-off, custom to the home hero, not a reusable part. Default is a static illustration. On hover it tilts, swaps to a wink, and pops a speech bubble. The hover touches are off on touch screens.</p>
+  <p class="note">Two styles, both starting at 01. Lessons use a big grey number with a thin divider. Decisions use a gradient number with more space and no divider.</p>
 
   <h3 class="t-h3" style="margin:48px 0 8px">Project card</h3>
   <div class="demo">
@@ -747,83 +720,11 @@
   </div>
   <p class="note">A smaller card in a three-up grid, for secondary work. 4:3 image, short title, one line of text. Same hover lift as the project card.</p>
 
-  <h3 class="t-h3" style="margin:48px 0 8px">Numbered items</h3>
-  <div class="demo">
-    <div class="c-row" style="border-top:1px solid var(--line)"><span class="n">01</span><div><div class="ti">What we called a backup, kids made their favorite.</div><div class="t-small">Students made it their top pick across all four zones.</div></div></div>
-    <div class="c-row"><span class="n">02</span><div><div class="ti">Kids came back for more.</div><div class="t-small">Nearly half chose “try one more” after finishing.</div></div></div>
-  </div>
-  <p class="note">Two styles, both starting at 01. Lessons use a big grey number with a thin divider. Decisions use a gradient number with more space and no divider.</p>
-
-  <h3 class="t-h3" style="margin:48px 0 8px">Bulleted list</h3>
-  <div class="demo"><ul class="c-list">
-    <li><strong>End-to-end design</strong>, the check-in flow and regulation activities.</li>
-    <li><strong>Cross-functional work</strong> with PM, engineering, curriculum, and motion.</li>
-  </ul></div>
-  <p class="note">Gradient bullet, 16px text, even spacing.</p>
-
-  <h3 class="t-h3" style="margin:48px 0 8px">Caption</h3>
-  <div class="demo">
-    <div style="aspect-ratio:16/6;background:var(--grad-soft);border:1px solid var(--line);border-radius:var(--radius)"></div>
-    <p class="t-caption" style="margin-top:16px">One caption style everywhere: 12px Inter, light grey, left-aligned, 16px below the image.</p>
-  </div>
-
-  <h3 class="t-h3" style="margin:48px 0 8px">Peer quote &amp; carousel</h3>
-  <div class="demo"><div class="c-quote">
-    <span class="qm">“</span>
-    <p class="qt">He doesn't design in a vacuum. He talks to people and brings it into the next round.</p>
-    <div class="qf">
-      <div class="by"><span class="av"></span><div><div style="font-weight:600;font-size:14px;color:var(--ink)">Manik Bansal</div><div class="t-caption">Head of Design · Cuemath</div></div></div>
-      <div class="c-peerctrl">
-        <button class="c-peerarrow" aria-label="Previous">‹</button>
-        <span class="c-peercount"><b>2</b> / 6</span>
-        <button class="c-peerarrow is-hover" aria-label="Next">›</button>
-      </div>
-    </div>
-  </div></div>
-  <p class="note">A pull-quote with no box. Gradient quote mark, the quote, then the person. The round arrows step through the set, and the counter shows the place in it. Arrows turn accent on hover. Names link to LinkedIn.</p>
-
-  <h3 class="t-h3" style="margin:48px 0 8px">Vertical timeline</h3>
-  <div class="demo"><div class="c-tl">
-    <div class="c-tlrow"><span class="yr">2018–21</span><div><div class="rl">M.Des, Toy &amp; Game Design</div><div class="or">National Institute of Design</div></div></div>
-    <div class="c-tlrow"><span class="yr">2022–26</span><div><div class="rl">Product Design</div><div class="or">Cuemath</div></div></div>
-    <div class="c-tlrow last"><span class="yr">What's next</span><div><div class="rl">Design for consumers at scale 🤞</div></div></div>
-  </div></div>
-  <p class="note">Dots on a line, with the last one filled by the gradient.</p>
-
-  <h3 class="t-h3" style="margin:48px 0 8px">Case study cover</h3>
-  <div class="demo">
-    <div class="c-cover">
-      <h2 class="t-h2">Feel Check</h2>
-      <p class="t-lede lede">A student-led emotional check-in before a live class begins.</p>
-      <div class="c-covermeta">
-        <div><span class="lab">Role</span><span class="val">Product Designer, end to end</span></div>
-        <div><span class="lab">Timeline</span><span class="val">2025 · 4 months</span></div>
-        <div><span class="lab">Team</span><span class="val">PM, 2 engineers, curriculum</span></div>
-      </div>
-      <div class="c-coverhero"></div>
-    </div>
-  </div>
-  <p class="note">The top of every case study. Title and intro, then a three-column strip for role, timeline, and team, with the hero image below. A soft gradient glow sits behind it on the live page.</p>
-
   <h3 class="t-h3" style="margin:48px 0 8px">Next-case card</h3>
   <div class="demo">
     <a class="c-next"><div class="im"></div><div class="bx"><span class="t-label">Next case study</span><div class="t-h3">New Trial Experience</div><div class="t-caption">2024 · System Redesign</div></div></a>
   </div>
   <p class="note">A link to the next case study. It sits at the end of a case study, just above the footer. The whole card is the link.</p>
-
-  <h3 class="t-h3" style="margin:48px 0 8px">Footer</h3>
-  <div class="demo">
-    <div class="c-foot"><span>© 2026 · Designed &amp; built by Aasif</span><a href="#top">Back to top ↑</a></div>
-  </div>
-  <p class="note">The same footer on every page: a dark band with a gradient hairline on top, the credit line, and a back-to-top link. It wraps to two lines on very narrow screens.</p>
-
-  <div class="grp-head"><div class="gl">Data &amp; impact</div><div class="gd">How numbers and trade-offs are shown. Numbers are always the gradient.</div></div>
-
-  <h3 class="t-h3" style="margin:32px 0 8px">Section header</h3>
-  <div class="demo">
-    <div class="c-sec"><span class="t-h2">Impact</span><span class="t-label">Outcome</span></div>
-  </div>
-  <p class="note">A title, an eyebrow label, and a thin rule. Opens every section.</p>
 
   <h3 class="t-h3" style="margin:48px 0 8px">Impact metric card</h3>
   <div class="demo">
@@ -863,9 +764,66 @@
   </div>
   <p class="note">The options considered. The chosen one gets an accent border and a Chosen tag.</p>
 
-  <div class="grp-head"><div class="gl">Media</div><div class="gd">How images, video, and logos are framed.</div></div>
+  <h3 class="t-h3" style="margin:48px 0 8px">Peer quote &amp; carousel</h3>
+  <div class="demo"><div class="c-quote">
+    <span class="qm">“</span>
+    <p class="qt">He doesn't design in a vacuum. He talks to people and brings it into the next round.</p>
+    <div class="qf">
+      <div class="by"><span class="av"></span><div><div style="font-weight:600;font-size:14px;color:var(--ink)">Manik Bansal</div><div class="t-caption">Head of Design · Cuemath</div></div></div>
+      <div class="c-peerctrl">
+        <button class="c-peerarrow" aria-label="Previous">‹</button>
+        <span class="c-peercount"><b>2</b> / 6</span>
+        <button class="c-peerarrow is-hover" aria-label="Next">›</button>
+      </div>
+    </div>
+  </div></div>
+  <p class="note">A pull-quote with no box. Gradient quote mark, the quote, then the person. The round arrows step through the set, and the counter shows the place in it. Arrows turn accent on hover. Names link to LinkedIn.</p>
 
-  <h3 class="t-h3" style="margin:32px 0 8px">Media kit</h3>
+  <h3 class="t-h3" style="margin:48px 0 8px">Vertical timeline</h3>
+  <div class="demo"><div class="c-tl">
+    <div class="c-tlrow"><span class="yr">2018–21</span><div><div class="rl">M.Des, Toy &amp; Game Design</div><div class="or">National Institute of Design</div></div></div>
+    <div class="c-tlrow"><span class="yr">2022–26</span><div><div class="rl">Product Design</div><div class="or">Cuemath</div></div></div>
+    <div class="c-tlrow last"><span class="yr">What's next</span><div><div class="rl">Design for consumers at scale 🤞</div></div></div>
+  </div></div>
+  <p class="note">Dots on a line, with the last one filled by the gradient.</p>
+</div></section>
+
+<!-- ORGANISMS -->
+<section class="ds-sec" id="organisms"><div class="wrap">
+  <div class="ds-sec-head"><h2 class="t-h2">Organisms</h2><span class="t-label">Composed sections</span></div>
+  <p class="t-body ds-intro">Larger, self-contained pieces built from molecules and atoms.</p>
+
+  <h3 class="t-h3" style="margin:32px 0 8px">Nav bar</h3>
+  <div class="demo">
+    <span class="t-label" style="display:block;margin-bottom:12px">Home · brand + tabs</span>
+    <div class="c-nav">
+      <span class="nm">Aasif Anwar</span>
+      <div class="c-tabs"><a class="c-tab on">Projects</a><a class="c-tab">About</a><a class="c-tab">Contact</a><a class="c-tab">Design System</a><a class="c-tab">Resume</a></div>
+    </div>
+    <span class="t-label" style="display:block;margin:24px 0 12px">Case study · back + résumé</span>
+    <div class="c-nav">
+      <a class="lk ink"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>Back to Projects</a>
+      <a class="lk">Resume</a>
+    </div>
+    <span class="t-label" style="display:block;margin:24px 0 12px">Mobile · hamburger</span>
+    <div class="c-nav">
+      <span class="nm">Aasif Anwar</span>
+      <span class="c-burger"><span></span><span></span><span></span></span>
+    </div>
+  </div>
+  <p class="note">On home the bar is clear over the hero, then turns into a frosted bar with a thin bottom line on scroll. On case studies it stays at the top with a back link and résumé. Below 720px the tabs collapse into the mobile menu below.</p>
+
+  <h3 class="t-h3" style="margin:48px 0 8px">Mobile menu</h3>
+  <div class="demo">
+    <div class="row" style="gap:48px;align-items:flex-start">
+      <div style="display:flex;flex-direction:column;gap:8px;align-items:flex-start"><span class="c-burger"><span></span><span></span><span></span></span><span class="bm-s">Closed</span></div>
+      <div style="display:flex;flex-direction:column;gap:8px;align-items:flex-start"><span class="c-burger open"><span></span><span></span><span></span></span><span class="bm-s">Open</span></div>
+    </div>
+    <div class="c-mmenu" style="margin-top:24px"><a>Projects</a><a>About</a><a>Contact</a><a>Design System</a><a>Resume</a></div>
+  </div>
+  <p class="note">Below 720px the bar shows a hamburger. Tapping it animates the icon to an X and slides down a full-width frosted panel with large links. Tapping a link closes it.</p>
+
+  <h3 class="t-h3" style="margin:48px 0 8px">Media kit</h3>
   <div class="demo">
     <div class="ph" style="aspect-ratio:16/9"></div>
     <p class="t-caption" style="margin-top:16px">One caption style: 12px Inter, light grey, 16px under the image. Click any image to open it full screen.</p>
@@ -886,13 +844,28 @@
   </div></div></div>
   <p class="note">Logos scroll slowly and loop. The edges fade, and it pauses on hover.</p>
 
-  <div class="grp-head"><div class="gl">Status &amp; feedback</div><div class="gd">Small signals of state, like availability.</div></div>
+  <h3 class="t-h3" style="margin:48px 0 8px">Case study cover</h3>
+  <div class="demo">
+    <div class="c-cover">
+      <h2 class="t-h2">Feel Check</h2>
+      <p class="t-lede lede">A student-led emotional check-in before a live class begins.</p>
+      <div class="c-covermeta">
+        <div><span class="lab">Role</span><span class="val">Product Designer, end to end</span></div>
+        <div><span class="lab">Timeline</span><span class="val">2025 · 4 months</span></div>
+        <div><span class="lab">Team</span><span class="val">PM, 2 engineers, curriculum</span></div>
+      </div>
+      <div class="c-coverhero"></div>
+    </div>
+  </div>
+  <p class="note">The top of every case study. Title and intro, then a three-column strip for role, timeline, and team, with the hero image below. A soft gradient glow sits behind it on the live page.</p>
 
-  <h3 class="t-h3" style="margin:32px 0 8px">Status eyebrow</h3>
-  <div class="demo"><span class="c-eyebrow"><span class="dot"></span>Open to Mid-Senior Product Design roles</span></div>
-  <p class="note">A label with a pulsing green dot. The pulse stops when motion is reduced.</p>
+  <h3 class="t-h3" style="margin:48px 0 8px">Footer</h3>
+  <div class="demo">
+    <div class="c-foot"><span>© 2026 · Designed &amp; built by Aasif</span><a href="#top">Back to top ↑</a></div>
+  </div>
+  <p class="note">The same footer on every page: a dark band with a gradient hairline on top, the credit line, and a back-to-top link. It wraps to two lines on very narrow screens.</p>
 
-  <h3 class="t-h3" style="margin:64px 0 8px">AI Assistant</h3>
+  <h3 class="t-h3" style="margin:48px 0 8px">AI Assistant</h3>
   <div class="demo">
     <button class="c-chatlauncher">
       <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
@@ -929,10 +902,50 @@
   <div class="a11y"><span class="tag">AI</span><div><b>Honest by default:</b> the assistant says it is an AI and can be wrong up front, carries a Beta tag, and invites verification. It is a personality surface, not a hiring funnel.</div></div>
 </div></section>
 
-<!-- PATTERNS -->
-<section class="ds-sec" id="patterns"><div class="wrap">
-  <div class="ds-sec-head"><h2 class="t-h2">Patterns</h2><span class="t-label">Behaviors</span></div>
-  <p class="t-body ds-intro">Behaviors that apply across the site, not single parts. All of them switch off or simplify on touch and when motion is reduced.</p>
+<!-- ILLUSTRATION & GRAPHICS -->
+<section class="ds-sec" id="graphics"><div class="wrap">
+  <div class="ds-sec-head"><h2 class="t-h2">Illustration &amp; graphics</h2><span class="t-label">Brand visuals</span></div>
+  <p class="t-body ds-intro">The one bespoke illustration and the gradient that carries the brand.</p>
+
+  <h3 class="t-h3" style="margin:32px 0 8px">Caricature</h3>
+  <div class="demo">
+    <div class="bm-states" style="gap:64px;padding-top:56px">
+      <div>
+        <div class="c-cari">
+          <span class="bubble">Start with Feel Check ↓</span>
+          <div class="ph">
+            <img class="default" src="../home/assets/home-cta.webp" alt="Aasif Anwar">
+            <img class="wink" src="../home/assets/home-cta-hover.webp" alt="" aria-hidden="true">
+          </div>
+        </div>
+        <span class="bm-s">Default</span>
+      </div>
+      <div>
+        <div class="c-cari is-hover">
+          <span class="bubble">Start with Feel Check ↓</span>
+          <div class="ph">
+            <img class="default" src="../home/assets/home-cta.webp" alt="Aasif Anwar">
+            <img class="wink" src="../home/assets/home-cta-hover.webp" alt="" aria-hidden="true">
+          </div>
+        </div>
+        <span class="bm-s">Hover</span>
+      </div>
+    </div>
+  </div>
+  <p class="note">A one-off, custom to the home hero, not a reusable part. Default is a static illustration. On hover it tilts, swaps to a wink, and pops a speech bubble. The hover touches are off on touch screens.</p>
+
+  <h3 class="t-h3" style="margin:48px 0 8px">Gradient device</h3>
+  <div class="demo">
+    <div class="c-grad"></div>
+    <p class="t-caption" style="margin-top:16px">The signature graphic: a three-stop gradient (blue to purple to pink). Used as one highlight per screen and on every number, never as a page background.</p>
+  </div>
+</div></section>
+
+<!-- MOTION & EFFECTS -->
+<section class="ds-sec" id="motion"><div class="wrap">
+  <div class="ds-sec-head"><h2 class="t-h2">Motion &amp; effects</h2><span class="t-label">Behaviors</span></div>
+  <p class="t-body ds-intro">Motion and interaction that apply across the site. Two eases and three durations (.2 / .3 / .5s); all of it switches off or simplifies on touch and under reduced-motion.</p>
+
   <h3 class="t-h3" style="margin:32px 0 8px">Custom cursor</h3>
   <div class="demo">
     <div class="row" style="gap:48px">
