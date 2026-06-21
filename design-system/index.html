@@ -306,7 +306,7 @@
   .c-chatmsg--disc{background:var(--grad-soft);color:var(--ink-2);align-self:stretch;max-width:100%;font-size:12px}
   .c-chatmsg--bot{background:var(--surface);border:1px solid var(--line);color:var(--ink);align-self:flex-start}
   .c-chatmsg--user{background:var(--ink);color:#fff;align-self:flex-end}
-  .c-chatmsg--typing{background:var(--surface);border:1px solid var(--line);color:var(--ink-3);font-style:italic;align-self:flex-start}
+  .c-chatmsg--typing{background:none;border:none;padding:4px 2px;color:var(--ink-3);font-style:italic;align-self:flex-start}
   .c-chatstarters{display:flex;flex-wrap:wrap;gap:8px;padding:0 16px 12px;background:var(--bg)}
   .c-chatchip{font-family:var(--sans);font-size:12px;color:var(--ink-2);background:var(--surface);border:1px solid var(--line);border-radius:var(--radius-pill);padding:6px 14px;cursor:pointer;transition:border-color var(--t-fast),color var(--t-fast)}
   .c-chatchip:hover{border-color:var(--accent);color:var(--accent)}
@@ -775,12 +775,17 @@
   </div>
   <p class="note">The top of every case study. Title and intro, then a three-column strip for role, timeline, and team, with the hero image below. A soft gradient glow sits behind it on the live page.</p>
 
-  <h3 class="t-h3" style="margin:48px 0 8px">Next-case card &amp; footer</h3>
+  <h3 class="t-h3" style="margin:48px 0 8px">Next-case card</h3>
   <div class="demo">
     <a class="c-next"><div class="im"></div><div class="bx"><span class="t-label">Next case study</span><div class="t-h3">New Trial Experience</div><div class="t-caption">2024 · System Redesign</div></div></a>
-    <div class="c-foot" style="margin-top:32px"><span>© 2026 · Designed &amp; built by Aasif</span><a href="#top">Back to top ↑</a></div>
   </div>
-  <p class="note">A link to the next case study, with the footer below it. The footer is the same on every page.</p>
+  <p class="note">A link to the next case study. It sits at the end of a case study, just above the footer. The whole card is the link.</p>
+
+  <h3 class="t-h3" style="margin:48px 0 8px">Footer</h3>
+  <div class="demo">
+    <div class="c-foot"><span>© 2026 · Designed &amp; built by Aasif</span><a href="#top">Back to top ↑</a></div>
+  </div>
+  <p class="note">The same footer on every page: a dark band with a gradient hairline on top, the credit line, and a back-to-top link. It wraps to two lines on very narrow screens.</p>
 
   <h3 class="t-h3" style="margin:48px 0 8px">Contact block</h3>
   <div class="demo">
