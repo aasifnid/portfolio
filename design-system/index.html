@@ -277,12 +277,7 @@
   .c-mmenu a{display:block;font-family:var(--disp);font-size:20px;font-weight:500;color:var(--ink);padding:16px 24px;border-bottom:1px solid var(--line)}
   .c-mmenu a:last-child{border-bottom:none}
 
-  /* home hero (compact) */
-  .c-hero{display:grid;grid-template-columns:1fr auto;gap:32px;align-items:center}
-  @media(max-width:560px){.c-hero{grid-template-columns:1fr}}
-  .c-hero .portrait{width:120px;height:120px;border-radius:50%;background:var(--grad-soft);border:1px solid var(--line)}
-
-  /* interactive caricature (hover: tilt + wink swap + bubble) */
+  /* caricature (one-off): default + hover states, shown side by side */
   .c-cari{position:relative;width:160px;cursor:pointer}
   .c-cari .ph{position:relative;width:100%;aspect-ratio:1/1;transition:transform var(--t-base) var(--ease-bounce)}
   .c-cari img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;transition:opacity var(--t-fast) ease}
@@ -293,6 +288,11 @@
   .c-cari .bubble{position:absolute;bottom:calc(100% + 4px);right:6px;transform:translateY(8px);opacity:0;pointer-events:none;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius-sm);padding:12px 16px;font-family:var(--disp);font-size:12px;font-weight:500;white-space:nowrap;box-shadow:0 14px 32px -12px rgba(60,40,110,.3);transition:opacity var(--t-base),transform var(--t-base) var(--ease-bounce);z-index:3}
   .c-cari .bubble::after{content:'';position:absolute;top:100%;left:32px;width:12px;height:12px;background:var(--surface);border-right:1px solid var(--line);border-bottom:1px solid var(--line);transform:translateY(-6px) rotate(45deg)}
   .c-cari:hover .bubble{opacity:1;transform:translateY(0)}
+  /* forced hover state, so the doc can show it without a real mouse-over */
+  .c-cari.is-hover .ph{transform:rotate(-5deg)}
+  .c-cari.is-hover .default{opacity:0}
+  .c-cari.is-hover .wink{opacity:1}
+  .c-cari.is-hover .bubble{opacity:1;transform:translateY(0)}
 
   /* about / bio block */
   .c-about{display:grid;grid-template-columns:1fr 200px;gap:32px;align-items:start}
@@ -716,23 +716,32 @@
 
   <div class="grp-head"><div class="gl">Content &amp; layout</div><div class="gd">The cards, lists, quotes, and timelines that carry the story.</div></div>
 
-  <h3 class="t-h3" style="margin:32px 0 8px">Home hero</h3>
+  <h3 class="t-h3" style="margin:32px 0 8px">Caricature</h3>
   <div class="demo">
-    <div class="c-hero">
+    <div class="bm-states" style="gap:64px;padding-top:56px">
       <div>
-        <span class="c-eyebrow" style="margin-bottom:16px"><span class="dot"></span>Open to Mid-Senior Product Design roles</span>
-        <div class="t-display" style="margin-top:12px;font-size:40px">Designing learning tools for 30K students.</div>
-      </div>
-      <div class="c-cari">
-        <span class="bubble">Start with Feel Check ↓</span>
-        <div class="ph">
-          <img class="default" src="../home/assets/home-cta.webp" alt="Aasif Anwar">
-          <img class="wink" src="../home/assets/home-cta-hover.webp" alt="" aria-hidden="true">
+        <div class="c-cari">
+          <span class="bubble">Start with Feel Check ↓</span>
+          <div class="ph">
+            <img class="default" src="../home/assets/home-cta.webp" alt="Aasif Anwar">
+            <img class="wink" src="../home/assets/home-cta-hover.webp" alt="" aria-hidden="true">
+          </div>
         </div>
+        <span class="bm-s">Default</span>
+      </div>
+      <div>
+        <div class="c-cari is-hover">
+          <span class="bubble">Start with Feel Check ↓</span>
+          <div class="ph">
+            <img class="default" src="../home/assets/home-cta.webp" alt="Aasif Anwar">
+            <img class="wink" src="../home/assets/home-cta-hover.webp" alt="" aria-hidden="true">
+          </div>
+        </div>
+        <span class="bm-s">Hover</span>
       </div>
     </div>
   </div>
-  <p class="note">The home opening: a status eyebrow, the big headline, and the caricature. Two columns on desktop, stacked on a phone. Hover the caricature: it tilts, winks, and pops a speech bubble. The caricature itself is a one-off (see Patterns).</p>
+  <p class="note">A one-off, custom to the home hero, not a reusable part. Default is a static illustration. On hover it tilts, swaps to a wink, and pops a speech bubble. The hover touches are off on touch screens.</p>
 
   <h3 class="t-h3" style="margin:48px 0 8px">About block</h3>
   <div class="demo">
@@ -990,8 +999,6 @@
   </div>
   <p class="note">Click any image to open it full screen on a dark, blurred overlay. A round close button sits top-right; pressing Escape or clicking outside also closes it.</p>
   <div class="a11y"><span class="tag">A11y</span><div><b>Motion is optional:</b> the cursor, marquee, status pulse, and scroll effects all respect reduced-motion and pointer type. They switch off or simplify rather than force motion on anyone.</div></div>
-
-  <p class="t-small" style="margin-top:48px;color:var(--ink-3)"><strong style="color:var(--ink)">One off:</strong> the hero caricature is custom to the home page, not a reusable part. Hover it in the Home hero above to see it tilt, wink, and pop a speech bubble. These hover touches are off on touch screens.</p>
 </div></section>
 
 <!-- BUILT IN CODE -->
