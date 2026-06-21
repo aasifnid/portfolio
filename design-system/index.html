@@ -172,7 +172,10 @@
   .c-nav .lk{display:inline-flex;align-items:center;gap:8px;font-size:14px;color:var(--ink-2);cursor:pointer}
   .c-nav .lk.ink{color:var(--ink);font-family:var(--disp);font-weight:500}
   .c-burger{display:flex;flex-direction:column;gap:4px;cursor:pointer}
-  .c-burger span{width:22px;height:2px;background:var(--ink);border-radius:2px}
+  .c-burger span{width:22px;height:2px;background:var(--ink);border-radius:2px;transition:transform var(--t-base),opacity var(--t-fast)}
+  .c-burger.open span:nth-child(1){transform:translateY(6px) rotate(45deg)}
+  .c-burger.open span:nth-child(2){opacity:0}
+  .c-burger.open span:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
 
   /* case study cover */
   .c-cover{position:relative;border:1px solid var(--line);border-radius:var(--radius);padding:32px;background:var(--surface);overflow:hidden}
@@ -333,6 +336,7 @@
     <a href="#color">Color</a>
     <a href="#type">Typography</a>
     <a href="#spacing">Spacing &amp; layout</a>
+    <a href="#responsive">Responsive</a>
     <span class="grp">Library</span>
     <a href="#components">Components</a>
     <a href="#patterns">Patterns</a>
@@ -493,6 +497,31 @@
   </div>
 </div></section>
 
+<!-- RESPONSIVE -->
+<section class="ds-sec" id="responsive"><div class="wrap">
+  <div class="ds-sec-head"><h2 class="t-h2">Responsive &amp; mobile</h2><span class="t-label">One layout, a few breaks</span></div>
+  <p class="t-body ds-intro">One layout that adapts at a few widths. The phone view is not an afterthought. Some parts change shape on purpose, and the navigation changes the most.</p>
+
+  <span class="t-label" style="display:block;margin:8px 0 16px">Breakpoints</span>
+  <div class="rules">
+    <div class="rule"><b>720px and below</b>Navigation switches from a row of links to a hamburger. The menu opens as a full-width panel.</div>
+    <div class="rule"><b>640px and below</b>The main phone break. Page gutters go from 40 to 24. Section spacing tightens (home 104 to 72, case study 80 to 56). Most multi-column grids drop to one column.</div>
+    <div class="rule"><b>480 to 560px</b>Small-phone tuning. The last two-column grids (work cards, stats) stack, and the hero portrait and big numbers step down a size.</div>
+    <div class="rule"><b>820px (hero only)</b>The two-column hero, text beside the caricature, stacks into one column and the portrait shrinks.</div>
+  </div>
+
+  <span class="t-label" style="display:block;margin:48px 0 16px">What changes on a phone</span>
+  <ul class="c-list" style="max-width:72ch">
+    <li><strong>Navigation</strong> becomes a hamburger. Tapping it slides down a full-width frosted menu with large links. Shown as Mobile menu in Components.</li>
+    <li><strong>Every multi-column grid</strong> drops to a single column: project cards, work cards, stat tiles, image grids and pairs, decision options, the cover meta strip, and the timeline.</li>
+    <li><strong>The hero</strong> stacks text above a smaller portrait, and the headline drops its hand-set line breaks so it wraps to fill each line.</li>
+    <li><strong>Type</strong> scales down smoothly and never drops below a readable size.</li>
+    <li><strong>Gutters and spacing</strong> tighten so the page does not feel cramped on a narrow screen.</li>
+  </ul>
+
+  <div class="a11y"><span class="tag">Touch</span><div><b>Built for fingers, not just a mouse:</b> hover-only touches like the custom cursor, the card lift, and the portrait reveal are switched off on touch screens, so nothing needs hover to work. The page also avoids any sideways scroll on small widths.</div></div>
+</div></section>
+
 <!-- COMPONENTS -->
 <section class="ds-sec" id="components"><div class="wrap">
   <div class="ds-sec-head"><h2 class="t-h2">Components</h2><span class="t-label">6 families</span></div>
@@ -583,7 +612,7 @@
     <span class="t-label" style="display:block;margin-bottom:12px">Home · brand + tabs</span>
     <div class="c-nav">
       <span class="nm">Aasif Anwar</span>
-      <div class="c-tabs"><a class="c-tab on">Projects</a><a class="c-tab">About</a><a class="c-tab">Contact</a><a class="c-tab">Resume</a></div>
+      <div class="c-tabs"><a class="c-tab on">Projects</a><a class="c-tab">About</a><a class="c-tab">Contact</a><a class="c-tab">Design System</a><a class="c-tab">Resume</a></div>
     </div>
     <span class="t-label" style="display:block;margin:24px 0 12px">Case study · back + résumé</span>
     <div class="c-nav">
@@ -596,7 +625,17 @@
       <span class="c-burger"><span></span><span></span><span></span></span>
     </div>
   </div>
-  <p class="note">On home the bar is clear over the hero, then turns into a frosted bar with a thin bottom line on scroll. On case studies it stays at the top with a back link and résumé. Below 720px the tabs become a hamburger.</p>
+  <p class="note">On home the bar is clear over the hero, then turns into a frosted bar with a thin bottom line on scroll. On case studies it stays at the top with a back link and résumé. Below 720px the tabs collapse into the mobile menu below.</p>
+
+  <h3 class="t-h3" style="margin:48px 0 8px">Mobile menu</h3>
+  <div class="demo">
+    <div class="row" style="gap:48px;align-items:flex-start">
+      <div style="display:flex;flex-direction:column;gap:8px;align-items:flex-start"><span class="c-burger"><span></span><span></span><span></span></span><span class="bm-s">Closed</span></div>
+      <div style="display:flex;flex-direction:column;gap:8px;align-items:flex-start"><span class="c-burger open"><span></span><span></span><span></span></span><span class="bm-s">Open</span></div>
+    </div>
+    <div class="c-mmenu" style="margin-top:24px"><a>Projects</a><a>About</a><a>Contact</a><a>Design System</a><a>Resume</a></div>
+  </div>
+  <p class="note">Below 720px the bar shows a hamburger. Tapping it animates the icon to an X and slides down a full-width frosted panel with large links. Tapping a link closes it.</p>
 
   <div class="grp-head"><div class="gl">Content &amp; layout</div><div class="gd">The cards, lists, quotes, and timelines that carry the story.</div></div>
 
@@ -770,8 +809,6 @@
     <div class="c-cursor"><span class="c-cur-r"></span><span class="c-cur-d"></span></div>
     <span class="t-label" style="display:block;margin:24px 0 12px">Scroll progress bar</span>
     <div class="c-prog-wrap"><div class="c-prog"></div></div>
-    <span class="t-label" style="display:block;margin:24px 0 12px">Mobile menu (open)</span>
-    <div class="c-mmenu"><a>Projects</a><a>About</a><a>Peers</a><a>Connect</a></div>
   </div>
   <p class="note">The cursor and scroll bar are for mouse and scroll. Any image opens full screen on a dark overlay; press Escape or click outside to close.</p>
   <div class="a11y"><span class="tag">A11y</span><div><b>Motion is optional:</b> the cursor, marquee, status pulse, and scroll effects all respect reduced-motion and pointer type. They switch off or simplify rather than force motion on anyone.</div></div>
