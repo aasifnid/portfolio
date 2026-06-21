@@ -276,6 +276,46 @@
   .c-mmenu a{display:block;font-family:var(--disp);font-size:20px;font-weight:500;color:var(--ink);padding:16px 24px;border-bottom:1px solid var(--line)}
   .c-mmenu a:last-child{border-bottom:none}
 
+  /* home hero (compact) */
+  .c-hero{display:grid;grid-template-columns:1fr auto;gap:32px;align-items:center}
+  @media(max-width:560px){.c-hero{grid-template-columns:1fr}}
+  .c-hero .portrait{width:120px;height:120px;border-radius:50%;background:var(--grad-soft);border:1px solid var(--line)}
+
+  /* contact rule */
+  .c-contactrule{width:56px;height:2px;border-radius:2px;background:var(--ink-3);margin:24px 0}
+
+  /* lightbox (shown as a framed panel; the real one is full-screen fixed) */
+  .c-lightbox{position:relative;border-radius:var(--radius-sm);background:rgba(12,12,18,.92);min-height:240px;display:flex;align-items:center;justify-content:center;padding:32px;overflow:hidden}
+  .c-lightbox .lbimg{width:55%;aspect-ratio:16/10;background:var(--grad-soft);border-radius:var(--radius-sm)}
+  .c-lbclose{position:absolute;top:16px;right:16px;width:42px;height:42px;border:none;background:rgba(255,255,255,.14);color:#fff;border-radius:50%;font-size:22px;line-height:1;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:background var(--t-fast)}
+  .c-lbclose:hover{background:rgba(255,255,255,.26)}
+
+  /* AI assistant (chatbot), re-themed to v3 */
+  .c-chatlauncher{display:inline-flex;align-items:center;gap:10px;background:var(--ink);color:#fff;border:none;cursor:pointer;padding:12px 18px;border-radius:var(--radius-pill);font-family:var(--disp);font-weight:600;font-size:14px;box-shadow:var(--shadow);transition:transform var(--t-fast) var(--ease)}
+  .c-chatlauncher:hover{transform:translateY(-2px)}
+  .c-chatlauncher svg{width:18px;height:18px}
+  .c-chatpanel{width:360px;max-width:100%;border:1px solid var(--line);border-radius:var(--radius);background:var(--surface);overflow:hidden;box-shadow:var(--shadow)}
+  .c-chathead{background:var(--ink);color:#fff;padding:14px 18px;display:flex;align-items:flex-start;justify-content:space-between}
+  .c-chathead .ti{font-family:var(--disp);font-weight:700;font-size:14px;display:flex;align-items:center;gap:8px}
+  .c-chathead .sub{font-size:12px;color:rgba(255,255,255,.5);margin-top:2px}
+  .c-chathead .beta{font-family:var(--disp);font-size:10px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;background:var(--grad);color:#fff;padding:3px 8px;border-radius:var(--radius-pill)}
+  .c-chathead .acts{display:flex;gap:10px;color:rgba(255,255,255,.6);padding-top:2px}
+  .c-chathead .acts svg{width:16px;height:16px}
+  .c-chatbody{padding:16px;display:flex;flex-direction:column;gap:12px;background:var(--bg)}
+  .c-chatmsg{font-size:14px;line-height:1.55;padding:10px 14px;border-radius:var(--radius-sm);max-width:88%}
+  .c-chatmsg--disc{background:var(--grad-soft);color:var(--ink-2);align-self:stretch;max-width:100%;font-size:12px}
+  .c-chatmsg--bot{background:var(--surface);border:1px solid var(--line);color:var(--ink);align-self:flex-start}
+  .c-chatmsg--user{background:var(--ink);color:#fff;align-self:flex-end}
+  .c-chatmsg--typing{background:var(--surface);border:1px solid var(--line);color:var(--ink-3);font-style:italic;align-self:flex-start}
+  .c-chatstarters{display:flex;flex-wrap:wrap;gap:8px;padding:0 16px 12px;background:var(--bg)}
+  .c-chatchip{font-family:var(--sans);font-size:12px;color:var(--ink-2);background:var(--surface);border:1px solid var(--line);border-radius:var(--radius-pill);padding:6px 14px;cursor:pointer;transition:border-color var(--t-fast),color var(--t-fast)}
+  .c-chatchip:hover{border-color:var(--accent);color:var(--accent)}
+  .c-chatinput{display:flex;gap:8px;padding:12px 14px;border-top:1px solid var(--line);background:var(--surface)}
+  .c-chatinput input{flex:1;border:1px solid var(--line);border-radius:var(--radius-sm);padding:9px 12px;font-family:var(--sans);font-size:14px;color:var(--ink);outline:none}
+  .c-chatinput input:focus{border-color:var(--accent)}
+  .c-chatsend{background:var(--ink);color:#fff;border:none;border-radius:var(--radius-sm);padding:0 16px;font-family:var(--disp);font-weight:500;font-size:14px;cursor:pointer;transition:background var(--t-fast)}
+  .c-chatsend:hover{background:var(--accent)}
+
   /* principles */
   .principles{display:grid;grid-template-columns:1fr 1fr;gap:var(--s-3);margin-top:var(--s-5)}
   @media(max-width:720px){.principles{grid-template-columns:1fr}}
@@ -318,7 +358,7 @@
   .bstep h4{font-family:var(--disp);font-weight:600;font-size:16px;color:var(--ink);margin:12px 0 6px}
   .bstep p{font-size:13px;color:var(--ink-2);line-height:1.55}
 
-  .doc-foot{padding:var(--section) 0 var(--s-7)}
+  .ds-sec:last-of-type{padding-bottom:var(--section)}
 </style>
 </head>
 <body>
@@ -327,7 +367,7 @@
   <a href="../index.html" style="display:inline-flex;align-items:center;gap:8px;font-family:var(--sans);font-size:14px;color:var(--ink-2);margin-bottom:24px">← Back to portfolio</a>
   <span class="t-label">Design System</span>
   <h1 class="t-display"><span class="grad-text">One system</span>, every page.</h1>
-  <p class="t-lede">The colors, type, spacing, and parts behind this portfolio, with simple rules for using them. Everything here is used live on the site.</p>
+  <p class="t-lede">The colors, type, spacing, and parts behind this portfolio, with simple rules for using them. Everything here is drawn from the portfolio's real components.</p>
 
   <nav class="ds-toc">
     <span class="grp">Principles</span>
@@ -479,6 +519,13 @@
     <div class="rule"><b>Media gap</b>48px above any image, video, or table.</div>
     <div class="rule"><b>Radius</b>Home: 16px on cards and media, 12px on small parts, full round on pills. Case studies: 8px on everything. Circles stay 50%.</div>
     <div class="rule"><b>Shadow</b>One shadow, used for the hover lift.</div>
+  </div>
+
+  <span class="t-label" style="display:block;margin:48px 0 16px">Layout utilities</span>
+  <div class="rules">
+    <div class="rule"><b>Reading column</b>Case-study text and media sit in an 800px column for easy reading. The class is <code>.cs</code>.</div>
+    <div class="rule"><b>Full-bleed</b>A block can break out to the full page width with <code>.wide</code>, used for large media.</div>
+    <div class="rule"><b>Page scope</b>Case-study pages carry <code>.page-cs</code>, which switches radius to 8px and tightens the section rhythm. One scope, many overrides.</div>
   </div>
 
   <div class="usage">
@@ -639,7 +686,19 @@
 
   <div class="grp-head"><div class="gl">Content &amp; layout</div><div class="gd">The cards, lists, quotes, and timelines that carry the story.</div></div>
 
-  <h3 class="t-h3" style="margin:32px 0 8px">Project card</h3>
+  <h3 class="t-h3" style="margin:32px 0 8px">Home hero</h3>
+  <div class="demo">
+    <div class="c-hero">
+      <div>
+        <span class="c-eyebrow" style="margin-bottom:16px"><span class="dot"></span>Open to product design roles</span>
+        <div class="t-display" style="margin-top:12px;font-size:40px">Designing learning tools for 30K students.</div>
+      </div>
+      <div class="portrait"></div>
+    </div>
+  </div>
+  <p class="note">The home opening: a status eyebrow, the big headline, and the caricature portrait. Two columns on desktop, stacked on a phone. The caricature itself is a one-off (see Patterns).</p>
+
+  <h3 class="t-h3" style="margin:48px 0 8px">Project card</h3>
   <div class="demo">
     <a class="c-card">
       <div class="im"></div>
@@ -723,6 +782,19 @@
   </div>
   <p class="note">A link to the next case study, with the footer below it. The footer is the same on every page.</p>
 
+  <h3 class="t-h3" style="margin:48px 0 8px">Contact block</h3>
+  <div class="demo">
+    <div class="t-h2">Let's build something <span class="grad-text">millions</span> will rely on.</div>
+    <p class="t-lede" style="margin-top:16px;max-width:48ch">I'm looking for product design roles on consumer products at scale, where design has real influence.</p>
+    <div class="c-contactrule"></div>
+    <div class="row" style="gap:24px">
+      <a class="cta"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>aasif.nid@gmail.com</a>
+      <a class="cta"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 3H5a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2V5a2 2 0 00-2-2zM8.5 18H6V10h2.5v8zM7.25 8.8a1.45 1.45 0 110-2.9 1.45 1.45 0 010 2.9zM18 18h-2.5v-4.2c0-1.1-.4-1.8-1.4-1.8-.8 0-1.3.5-1.5 1-.1.2-.1.5-.1.7V18H10s.03-7.3 0-8h2.5v1.1c.3-.5 1-1.3 2.4-1.3 1.7 0 3.1 1.1 3.1 3.6V18z"/></svg>LinkedIn</a>
+      <a class="cta"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="9" y1="13" x2="15" y2="13"/><line x1="9" y1="17" x2="15" y2="17"/></svg>Resume</a>
+    </div>
+  </div>
+  <p class="note">The closing block on the home page: a big headline, a short line, a small divider, and a row of icon CTAs (email, LinkedIn, résumé).</p>
+
   <div class="grp-head"><div class="gl">Data &amp; impact</div><div class="gd">How numbers and trade-offs are shown. Numbers are always the gradient.</div></div>
 
   <h3 class="t-h3" style="margin:32px 0 8px">Stat tile &amp; section header</h3>
@@ -798,6 +870,49 @@
   <h3 class="t-h3" style="margin:32px 0 8px">Status eyebrow</h3>
   <div class="demo"><span class="c-eyebrow"><span class="dot"></span>Open to product design roles</span></div>
   <p class="note">A label with a pulsing green dot. The pulse stops when motion is reduced.</p>
+
+  <div class="grp-head"><div class="gl">AI assistant</div><div class="gd">The "Ask about Aasif" chatbot, shown in the v3 theme: rounded corners, the two fonts, and the accent and gradient where they earn attention.</div></div>
+
+  <h3 class="t-h3" style="margin:32px 0 8px">Launcher</h3>
+  <div class="demo">
+    <button class="c-chatlauncher">
+      <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+      Ask about Aasif
+    </button>
+  </div>
+  <p class="note">A pill that sits bottom-right of the page. It lifts on hover and opens the panel.</p>
+
+  <h3 class="t-h3" style="margin:48px 0 8px">Chat panel</h3>
+  <div class="demo">
+    <div class="c-chatpanel">
+      <div class="c-chathead">
+        <div>
+          <div class="ti">AI Assistant <span class="beta">Beta</span></div>
+          <div class="sub">Trained on Aasif's work</div>
+        </div>
+        <div class="acts">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 4v6h-6"/><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/></svg>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </div>
+      </div>
+      <div class="c-chatbody">
+        <div class="c-chatmsg c-chatmsg--disc">I'm an AI trained on Aasif's work. I can make mistakes, so verify anything important with him.</div>
+        <div class="c-chatmsg c-chatmsg--user">What has he shipped?</div>
+        <div class="c-chatmsg c-chatmsg--bot">Four case studies, including Feel Check and the New Trial Experience, designed for around 30K students at Cuemath.</div>
+        <div class="c-chatmsg c-chatmsg--typing">Thinking…</div>
+      </div>
+      <div class="c-chatstarters">
+        <button class="c-chatchip">What is his design superpower?</button>
+        <button class="c-chatchip">What has he shipped?</button>
+      </div>
+      <div class="c-chatinput">
+        <input type="text" placeholder="Ask a question…">
+        <button class="c-chatsend">Send</button>
+      </div>
+    </div>
+  </div>
+  <p class="note">Header carries the name, a Beta tag, and reset and close icons. Messages come in four kinds: a grey disclaimer, the dark user message on the right, the bordered bot reply on the left, and an italic "Thinking…" state while it waits. Starter chips offer first questions; the input row sends a message.</p>
+  <div class="a11y"><span class="tag">AI</span><div><b>Honest by default:</b> the assistant says it is an AI and can be wrong up front, carries a Beta tag, and invites verification. It is a personality surface, not a hiring funnel.</div></div>
 </div></section>
 
 <!-- PATTERNS -->
@@ -810,10 +925,19 @@
     <span class="t-label" style="display:block;margin:24px 0 12px">Scroll progress bar</span>
     <div class="c-prog-wrap"><div class="c-prog"></div></div>
   </div>
-  <p class="note">The cursor and scroll bar are for mouse and scroll. Any image opens full screen on a dark overlay; press Escape or click outside to close.</p>
+  <p class="note">The cursor and scroll bar are for mouse and scroll only.</p>
+
+  <h3 class="t-h3" style="margin:48px 0 8px">Lightbox</h3>
+  <div class="demo">
+    <div class="c-lightbox">
+      <button class="c-lbclose" aria-label="Close">×</button>
+      <div class="lbimg"></div>
+    </div>
+  </div>
+  <p class="note">Click any image to open it full screen on a dark, blurred overlay. A round close button sits top-right; pressing Escape or clicking outside also closes it.</p>
   <div class="a11y"><span class="tag">A11y</span><div><b>Motion is optional:</b> the cursor, marquee, status pulse, and scroll effects all respect reduced-motion and pointer type. They switch off or simplify rather than force motion on anyone.</div></div>
 
-  <p class="t-small" style="margin-top:48px;color:var(--ink-3)"><strong style="color:var(--ink)">One off:</strong> the hero caricature and speech bubble are custom to the home page, not a reusable part.</p>
+  <p class="t-small" style="margin-top:48px;color:var(--ink-3)"><strong style="color:var(--ink)">One off:</strong> the hero caricature is custom to the home page, not a reusable part. On hover it tilts, swaps to a wink, and pops a small speech bubble. These hover touches are off on touch screens.</p>
 </div></section>
 
 <!-- BUILT IN CODE -->
@@ -828,10 +952,6 @@
   </div>
   <p class="t-body" style="margin-top:48px;max-width:64ch">It is the same loop a designer runs with an engineer: a clear spec, a quick build, a close review, a shipped change. The difference is the round trip takes minutes, so the work gets tested on the real thing, not a mockup.</p>
 </div></section>
-
-<footer class="doc-foot"><div class="wrap">
-  <div class="c-foot"><span>Design System · Aasif Anwar</span><a href="#top">Back to top ↑</a></div>
-</div></footer>
 
 </body>
 </html>
