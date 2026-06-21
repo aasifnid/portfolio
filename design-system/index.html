@@ -294,18 +294,6 @@
   .c-cari.is-hover .wink{opacity:1}
   .c-cari.is-hover .bubble{opacity:1;transform:translateY(0)}
 
-  /* about / bio block */
-  .c-about{display:grid;grid-template-columns:1fr 200px;gap:32px;align-items:start}
-  @media(max-width:560px){.c-about{grid-template-columns:1fr}}
-  .c-about .bio p{font-size:14px;color:var(--ink-2);line-height:1.7;margin-bottom:12px}
-  .c-about .sub{font-family:var(--disp);font-weight:600;font-size:16px;color:var(--ink);margin:8px 0 6px}
-  .c-about .photo{aspect-ratio:4/5;background:var(--grad-soft);border:1px solid var(--line);border-radius:var(--radius)}
-  .c-about .cap{font-size:12px;color:var(--ink-3);margin-top:8px}
-  .c-about .cap a{color:var(--ink-2);text-decoration:underline}
-
-  /* contact rule */
-  .c-contactrule{width:56px;height:2px;border-radius:2px;background:var(--ink-3);margin:24px 0}
-
   /* lightbox (shown as a framed panel; the real one is full-screen fixed) */
   .c-lightbox{position:relative;border-radius:var(--radius-sm);background:rgba(12,12,18,.92);min-height:240px;display:flex;align-items:center;justify-content:center;padding:32px;overflow:hidden}
   .c-lightbox .lbimg{width:55%;aspect-ratio:16/10;background:var(--grad-soft);border-radius:var(--radius-sm)}
@@ -743,23 +731,6 @@
   </div>
   <p class="note">A one-off, custom to the home hero, not a reusable part. Default is a static illustration. On hover it tilts, swaps to a wink, and pops a speech bubble. The hover touches are off on touch screens.</p>
 
-  <h3 class="t-h3" style="margin:48px 0 8px">About block</h3>
-  <div class="demo">
-    <div class="c-about">
-      <div class="bio">
-        <p>I did my Master's in Toy and Game Design at NID, the design of playful experiences across games, spaces, and interactive systems.</p>
-        <p>I joined Cuemath as a Game Designer, then moved into product. The users were still kids; the work, still about engagement.</p>
-        <div class="sub">How I work</div>
-        <p>I stay engaged through build, because design isn't done at handoff. I ask questions because listening deeply is how you find the real problem.</p>
-      </div>
-      <figure style="margin:0">
-        <div class="photo"></div>
-        <figcaption class="cap">Portrayed by <a href="#">Srishti Singh</a></figcaption>
-      </figure>
-    </div>
-  </div>
-  <p class="note">The bio: two columns of text beside a portrait with a credit caption, plus a titled "How I work" sub-block. Stacks to one column on a phone.</p>
-
   <h3 class="t-h3" style="margin:48px 0 8px">Project card</h3>
   <div class="demo">
     <a class="c-card">
@@ -848,19 +819,6 @@
     <div class="c-foot"><span>© 2026 · Designed &amp; built by Aasif</span><a href="#top">Back to top ↑</a></div>
   </div>
   <p class="note">The same footer on every page: a dark band with a gradient hairline on top, the credit line, and a back-to-top link. It wraps to two lines on very narrow screens.</p>
-
-  <h3 class="t-h3" style="margin:48px 0 8px">Contact block</h3>
-  <div class="demo">
-    <div class="t-h2">Let's build something <span class="grad-text">millions</span> will rely on.</div>
-    <p class="t-lede" style="margin-top:16px;max-width:48ch">I'm looking for product design roles on consumer products at scale, where design has real influence.</p>
-    <div class="c-contactrule"></div>
-    <div class="row" style="gap:24px">
-      <a class="cta"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>aasif.nid@gmail.com</a>
-      <a class="cta"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 3H5a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2V5a2 2 0 00-2-2zM8.5 18H6V10h2.5v8zM7.25 8.8a1.45 1.45 0 110-2.9 1.45 1.45 0 010 2.9zM18 18h-2.5v-4.2c0-1.1-.4-1.8-1.4-1.8-.8 0-1.3.5-1.5 1-.1.2-.1.5-.1.7V18H10s.03-7.3 0-8h2.5v1.1c.3-.5 1-1.3 2.4-1.3 1.7 0 3.1 1.1 3.1 3.6V18z"/></svg>LinkedIn</a>
-      <a class="cta"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="9" y1="13" x2="15" y2="13"/><line x1="9" y1="17" x2="15" y2="17"/></svg>Resume</a>
-    </div>
-  </div>
-  <p class="note">The closing block on the home page: a big headline, a short line, a small divider, and a row of icon CTAs (email, LinkedIn, résumé).</p>
 
   <div class="grp-head"><div class="gl">Data &amp; impact</div><div class="gd">How numbers and trade-offs are shown. Numbers are always the gradient.</div></div>
 
