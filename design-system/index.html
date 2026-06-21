@@ -194,12 +194,9 @@
   .c-step{font-family:var(--disp);font-size:12px;font-weight:600;letter-spacing:.08em;color:var(--ink-3);text-align:center;margin-top:8px}
   @media(max-width:640px){.c-grid3,.c-pair{grid-template-columns:1fr}}
 
-  /* impact cluster */
-  .c-impact{display:grid;grid-template-columns:1fr 1.1fr;gap:24px}
-  @media(max-width:640px){.c-impact{grid-template-columns:1fr}}
+  /* featured (hero) metric card */
   .c-stathero{background:var(--grad-soft);border:1px solid var(--line);border-radius:var(--radius);padding:32px;display:flex;flex-direction:column;justify-content:center}
   .c-stathero .num{font-family:var(--disp);font-weight:700;font-size:48px;line-height:1;margin:12px 0;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
-  .c-statgrid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
 
   /* decision alternatives */
   .c-alts{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
@@ -822,15 +819,26 @@
 
   <div class="grp-head"><div class="gl">Data &amp; impact</div><div class="gd">How numbers and trade-offs are shown. Numbers are always the gradient.</div></div>
 
-  <h3 class="t-h3" style="margin:32px 0 8px">Stat tile &amp; section header</h3>
+  <h3 class="t-h3" style="margin:32px 0 8px">Section header</h3>
   <div class="demo">
-    <div class="c-sec" style="margin-bottom:32px"><span class="t-h2">Impact</span><span class="t-label">Outcome</span></div>
-    <div class="row" style="align-items:stretch">
-      <div class="c-stat"><span class="t-label">Ready to learn</span><div class="num grad-text">75.2%</div><div class="ds">Tutor-observed (n=459).</div></div>
-      <div class="c-stat"><span class="t-label">Worked independently</span><div class="num grad-text">89.1%</div><div class="ds">Student-led design held.</div></div>
+    <div class="c-sec"><span class="t-h2">Impact</span><span class="t-label">Outcome</span></div>
+  </div>
+  <p class="note">A title, an eyebrow label, and a thin rule. Opens every section.</p>
+
+  <h3 class="t-h3" style="margin:48px 0 8px">Impact metric card</h3>
+  <div class="demo">
+    <div class="bm-states" style="gap:24px;align-items:stretch">
+      <div>
+        <div class="c-stathero" style="max-width:280px"><span class="t-label">Ready to learn</span><div class="num">75.2%</div><div class="t-small" style="color:var(--ink-2)">of students ready (n=459).</div></div>
+        <span class="bm-s">Featured</span>
+      </div>
+      <div>
+        <div class="c-stat"><span class="t-label">Worked independently</span><div class="num grad-text">89.1%</div><div class="ds">Student-led design held.</div></div>
+        <span class="bm-s">Default</span>
+      </div>
     </div>
   </div>
-  <p class="note">A section header is a title, a label, and a thin line. Stat numbers are always the gradient.</p>
+  <p class="note">Two kinds. Featured sits on a soft-gradient bed with a larger number; default is a bordered tile. The number is always the gradient.</p>
 
   <h3 class="t-h3" style="margin:48px 0 8px">Data table</h3>
   <div class="demo">
@@ -843,18 +851,6 @@
     </table></div>
   </div>
   <p class="note">Plain rows, with one optional highlighted row (soft gradient) for the key line.</p>
-
-  <h3 class="t-h3" style="margin:48px 0 8px">Impact cluster</h3>
-  <div class="demo"><div class="c-impact">
-    <div class="c-stathero"><span class="t-label">Ready to learn</span><div class="num">75.2%</div><div class="t-small" style="color:var(--ink-2)">of students ready after Feel Check (n=459).</div></div>
-    <div class="c-statgrid">
-      <div class="c-stat"><span class="t-label">Independent</span><div class="num grad-text">89.1%</div><div class="ds">Student-led held.</div></div>
-      <div class="c-stat"><span class="t-label">Duration</span><div class="num grad-text">3.4 min</div><div class="ds">Within the 5-min spec.</div></div>
-      <div class="c-stat"><span class="t-label">Feedback rate</span><div class="num grad-text">98.6%</div><div class="ds">~4 sec per response.</div></div>
-      <div class="c-stat"><span class="t-label">Validation</span><div class="num grad-text">2,060</div><div class="ds">Sessions · 4 phases.</div></div>
-    </div>
-  </div></div>
-  <p class="note">One big stat on a soft gradient, with a grid of smaller stats beside it.</p>
 
   <h3 class="t-h3" style="margin:48px 0 8px">Decision alternatives</h3>
   <div class="demo">
@@ -937,16 +933,20 @@
 <section class="ds-sec" id="patterns"><div class="wrap">
   <div class="ds-sec-head"><h2 class="t-h2">Patterns</h2><span class="t-label">Behaviors</span></div>
   <p class="t-body ds-intro">Behaviors that apply across the site, not single parts. All of them switch off or simplify on touch and when motion is reduced.</p>
-  <div class="demo" style="margin-top:32px">
-    <span class="t-label" style="display:block;margin-bottom:12px">Custom cursor · a dot tracks the pointer; the ring trails it and tightens over anything clickable</span>
+  <h3 class="t-h3" style="margin:32px 0 8px">Custom cursor</h3>
+  <div class="demo">
     <div class="row" style="gap:48px">
       <div style="display:flex;flex-direction:column;gap:8px;align-items:center"><div class="c-cursor"><span class="c-cur-r"></span><span class="c-cur-d"></span></div><span class="bm-s">Default</span></div>
       <div style="display:flex;flex-direction:column;gap:8px;align-items:center"><div class="c-cursor"><span class="c-cur-r tight"></span><span class="c-cur-d"></span></div><span class="bm-s">Over a link</span></div>
     </div>
-    <span class="t-label" style="display:block;margin:24px 0 12px">Scroll progress bar</span>
+  </div>
+  <p class="note">A dot tracks the pointer; the ring trails it and tightens over anything clickable. Mouse only.</p>
+
+  <h3 class="t-h3" style="margin:48px 0 8px">Scroll progress bar</h3>
+  <div class="demo">
     <div class="c-prog-wrap"><div class="c-prog"></div></div>
   </div>
-  <p class="note">The cursor and scroll bar are for mouse and scroll only.</p>
+  <p class="note">A thin gradient bar across the top of the page, filling as you scroll.</p>
 
   <h3 class="t-h3" style="margin:48px 0 8px">Lightbox</h3>
   <div class="demo">
