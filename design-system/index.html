@@ -281,6 +281,15 @@
   @media(max-width:560px){.c-hero{grid-template-columns:1fr}}
   .c-hero .portrait{width:120px;height:120px;border-radius:50%;background:var(--grad-soft);border:1px solid var(--line)}
 
+  /* about / bio block */
+  .c-about{display:grid;grid-template-columns:1fr 200px;gap:32px;align-items:start}
+  @media(max-width:560px){.c-about{grid-template-columns:1fr}}
+  .c-about .bio p{font-size:14px;color:var(--ink-2);line-height:1.7;margin-bottom:12px}
+  .c-about .sub{font-family:var(--disp);font-weight:600;font-size:16px;color:var(--ink);margin:8px 0 6px}
+  .c-about .photo{aspect-ratio:4/5;background:var(--grad-soft);border:1px solid var(--line);border-radius:var(--radius)}
+  .c-about .cap{font-size:12px;color:var(--ink-3);margin-top:8px}
+  .c-about .cap a{color:var(--ink-2);text-decoration:underline}
+
   /* contact rule */
   .c-contactrule{width:56px;height:2px;border-radius:2px;background:var(--ink-3);margin:24px 0}
 
@@ -290,7 +299,7 @@
   .c-lbclose{position:absolute;top:16px;right:16px;width:42px;height:42px;border:none;background:rgba(255,255,255,.14);color:#fff;border-radius:50%;font-size:22px;line-height:1;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:background var(--t-fast)}
   .c-lbclose:hover{background:rgba(255,255,255,.26)}
 
-  /* AI chatbot */
+  /* AI assistant */
   .c-chatlauncher{display:inline-flex;align-items:center;gap:10px;background:var(--ink);color:#fff;border:none;cursor:pointer;padding:12px 18px;border-radius:var(--radius-pill);font-family:var(--disp);font-weight:600;font-size:14px;box-shadow:var(--shadow);transition:transform var(--t-fast) var(--ease)}
   .c-chatlauncher:hover{transform:translateY(-2px)}
   .c-chatlauncher svg{width:18px;height:18px}
@@ -359,6 +368,14 @@
   .bstep p{font-size:13px;color:var(--ink-2);line-height:1.55}
 
   .ds-sec:last-of-type{padding-bottom:var(--section)}
+
+  /* honor reduced-motion: the page's own demos shouldn't force motion */
+  @media(prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto}
+    .c-mtrack{animation:none}
+    .c-eyebrow .dot{animation:none}
+    .c-chatlauncher,.c-card,.c-next,.c-chip{transition:none}
+  }
 </style>
 </head>
 <body>
@@ -690,13 +707,30 @@
   <div class="demo">
     <div class="c-hero">
       <div>
-        <span class="c-eyebrow" style="margin-bottom:16px"><span class="dot"></span>Open to product design roles</span>
+        <span class="c-eyebrow" style="margin-bottom:16px"><span class="dot"></span>Open to Mid-Senior Product Design roles</span>
         <div class="t-display" style="margin-top:12px;font-size:40px">Designing learning tools for 30K students.</div>
       </div>
       <div class="portrait"></div>
     </div>
   </div>
   <p class="note">The home opening: a status eyebrow, the big headline, and the caricature portrait. Two columns on desktop, stacked on a phone. The caricature itself is a one-off (see Patterns).</p>
+
+  <h3 class="t-h3" style="margin:48px 0 8px">About block</h3>
+  <div class="demo">
+    <div class="c-about">
+      <div class="bio">
+        <p>I did my Master's in Toy and Game Design at NID, the design of playful experiences across games, spaces, and interactive systems.</p>
+        <p>I joined Cuemath as a Game Designer, then moved into product. The users were still kids; the work, still about engagement.</p>
+        <div class="sub">How I work</div>
+        <p>I stay engaged through build, because design isn't done at handoff. I ask questions because listening deeply is how you find the real problem.</p>
+      </div>
+      <figure style="margin:0">
+        <div class="photo"></div>
+        <figcaption class="cap">Portrayed by <a href="#">Srishti Singh</a></figcaption>
+      </figure>
+    </div>
+  </div>
+  <p class="note">The bio: two columns of text beside a portrait with a credit caption, plus a titled "How I work" sub-block. Stacks to one column on a phone.</p>
 
   <h3 class="t-h3" style="margin:48px 0 8px">Project card</h3>
   <div class="demo">
@@ -873,10 +907,10 @@
   <div class="grp-head"><div class="gl">Status &amp; feedback</div><div class="gd">Small signals of state, like availability.</div></div>
 
   <h3 class="t-h3" style="margin:32px 0 8px">Status eyebrow</h3>
-  <div class="demo"><span class="c-eyebrow"><span class="dot"></span>Open to product design roles</span></div>
+  <div class="demo"><span class="c-eyebrow"><span class="dot"></span>Open to Mid-Senior Product Design roles</span></div>
   <p class="note">A label with a pulsing green dot. The pulse stops when motion is reduced.</p>
 
-  <h3 class="t-h3" style="margin:64px 0 8px">AI Chatbot</h3>
+  <h3 class="t-h3" style="margin:64px 0 8px">AI Assistant</h3>
   <div class="demo">
     <button class="c-chatlauncher">
       <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
