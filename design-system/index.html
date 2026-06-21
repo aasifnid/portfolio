@@ -3,33 +3,21 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Design System — Aasif Anwar Portfolio</title>
+<title>Design System · Aasif Anwar</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-<!-- Design tokens linked LIVE from the site — single source of truth; edits to tokens.css flow straight into this doc -->
 <link rel="stylesheet" href="../common-assets/tokens.css">
 <style>
-  /* ============================================================
-     DESIGN TOKENS — single source of truth
-     Rules: minimal fonts + colors · no decimal font sizes ·
-     every size/space even, multiples of 8 (4 only when needed)
-     ============================================================ */
   :root{
-    /* Color, type, radius, shadow + motion tokens are linked LIVE from
-       common-assets/tokens.css above — single source of truth. Only the
-       doc-specific spacing scale lives here (the live pages use the raw
-       8-grid values + the --sp section token). */
     --s-1:4px; --s-2:8px; --s-3:16px; --s-4:24px; --s-5:32px; --s-6:48px; --s-7:64px;
-    --gutter:40px;        /* page side padding (desktop) */
-    --gutter-m:24px;      /* page side padding (mobile) */
-    --section:104px;      /* vertical rhythm between sections (desktop) */
-    --section-m:72px;     /* (mobile) */
+    --gutter:40px;
+    --gutter-m:24px;
+    --section:104px;
+    --section-m:72px;
   }
 
-  /* ============================================================
-     TYPE ROLES — the entire scale (sizes: 56 32 24 20 16 14 12)
-     ============================================================ */
+  /* TYPE ROLES · 56 32 24 20 16 14 12 */
   .t-display{font-family:var(--disp);font-weight:600;font-size:clamp(32px,6vw,56px);line-height:1.05;letter-spacing:-.02em;color:var(--ink)}
   .t-h2{font-family:var(--disp);font-weight:600;font-size:clamp(24px,4vw,32px);line-height:1.1;letter-spacing:-.02em;color:var(--ink)}
   .t-h3{font-family:var(--disp);font-weight:600;font-size:clamp(20px,2.4vw,24px);line-height:1.2;letter-spacing:-.02em;color:var(--ink)}
@@ -41,13 +29,12 @@
   .t-num{font-family:var(--disp);font-weight:700;font-size:clamp(40px,7vw,64px);line-height:1;letter-spacing:-.02em;color:var(--ink)}
   .grad-text{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
 
-  /* ============================================================
-     PAGE CHROME (this doc only)
-     ============================================================ */
+  /* PAGE CHROME */
   *{box-sizing:border-box;margin:0;padding:0}
   html{scroll-behavior:smooth}
   body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
   a{color:inherit}
+  code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12px;background:var(--bg);padding:2px 6px;border-radius:4px;color:var(--ink)}
   .wrap{max-width:1000px;margin:0 auto;padding:0 var(--gutter)}
   @media(max-width:640px){.wrap{padding:0 var(--gutter-m)}}
 
@@ -61,6 +48,7 @@
 
   .ds-sec{padding-top:var(--section)}
   .ds-sec-head{display:flex;justify-content:space-between;align-items:baseline;border-bottom:1px solid var(--line);padding-bottom:var(--s-3);margin-bottom:var(--s-6)}
+  .ds-intro{max-width:64ch;margin-bottom:var(--s-5)}
 
   .rules{display:grid;grid-template-columns:1fr 1fr;gap:var(--s-3);margin-top:var(--s-5)}
   @media(max-width:640px){.rules{grid-template-columns:1fr}}
@@ -79,7 +67,7 @@
   .brand-tile{height:120px;border-radius:var(--radius);border:1px solid var(--line);display:flex;align-items:flex-end;padding:var(--s-3)}
   .brand-tile span{font-family:var(--disp);font-size:12px;font-weight:600;color:#fff;mix-blend-mode:difference}
 
-  /* type specimen rows */
+  /* type specimen */
   .spec{border-bottom:1px solid var(--line);padding:var(--s-4) 0;display:grid;grid-template-columns:160px 1fr;gap:var(--s-4);align-items:baseline}
   @media(max-width:640px){.spec{grid-template-columns:1fr;gap:var(--s-2)}}
   .spec .meta{font-family:var(--disp);font-size:12px;color:var(--ink-3);line-height:1.6}
@@ -90,12 +78,11 @@
   .space-bar{height:16px;background:var(--grad-soft);border:1px solid var(--line);border-radius:4px}
   .space-row .lbl{font-family:var(--disp);font-size:12px;color:var(--ink-2);width:120px;flex-shrink:0}
 
-  /* component demo frame */
+  /* demo frame */
   .demo{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:var(--s-6);margin-top:var(--s-4)}
   .demo + .note{font-size:12px;color:var(--ink-3);margin-top:var(--s-2)}
   .row{display:flex;flex-wrap:wrap;gap:var(--s-3);align-items:center}
 
-  /* ---- the actual components (canonical) ---- */
   /* buttons */
   .btn{display:inline-flex;align-items:center;gap:8px;font-family:var(--disp);font-weight:500;font-size:14px;border-radius:var(--radius-sm);padding:12px 20px;cursor:pointer;transition:all var(--t-fast) var(--ease);border:1.5px solid transparent}
   .btn-primary{background:var(--ink);color:var(--surface)}
@@ -105,15 +92,12 @@
   .btn:focus-visible,.btn.is-focus{outline:2px solid var(--accent);outline-offset:2px}
   .btn-primary.is-disabled,.btn-primary:disabled{background:var(--line);color:var(--ink-3);cursor:not-allowed}
   .btn-secondary.is-disabled,.btn-secondary:disabled{color:var(--ink-3);border-color:var(--line);background:var(--surface);opacity:.6;cursor:not-allowed}
-  /* text link */
   .btn-text{display:inline-flex;align-items:center;gap:8px;font-family:var(--disp);font-weight:500;font-size:14px;color:var(--ink-2);transition:color var(--t-fast);cursor:pointer}
   .btn-text:hover,.btn-text.is-hover{color:var(--ink)}
   .btn-text:focus-visible,.btn-text.is-focus{outline:2px solid var(--accent);outline-offset:2px;border-radius:4px}
-  /* icon CTA (hero / contact) */
   .cta{display:inline-flex;align-items:center;gap:8px;font-size:14px;color:var(--ink-2);border-bottom:1px solid transparent;padding-bottom:4px;transition:color var(--t-fast),border-color var(--t-fast);cursor:pointer}
   .cta svg{width:16px;height:16px;flex-shrink:0}
   .cta:hover,.cta.is-hover{color:var(--ink);border-bottom-color:var(--ink)}
-  /* button-state matrix (doc only) */
   .btn-matrix{display:flex;flex-direction:column;gap:var(--s-5)}
   .bm-row{display:grid;grid-template-columns:110px 1fr;gap:var(--s-4);align-items:start}
   .bm-states{display:flex;flex-wrap:wrap;gap:var(--s-4)}
@@ -128,6 +112,16 @@
   .c-card .bx{padding:var(--s-4)}
   .c-card .ti{font-family:var(--disp);font-weight:600;font-size:20px;letter-spacing:-.02em;color:var(--ink)}
   .c-card .ds{font-size:14px;color:var(--ink-2);line-height:1.5;margin-top:8px}
+
+  /* nid work card */
+  .c-nidgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+  @media(max-width:720px){.c-nidgrid{grid-template-columns:1fr 1fr}}
+  @media(max-width:480px){.c-nidgrid{grid-template-columns:1fr}}
+  .c-nidcard{display:block;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden}
+  .c-nidcard .im{aspect-ratio:4/3;background:var(--grad-soft)}
+  .c-nidcard .bx{padding:20px}
+  .c-nidcard .ti{font-family:var(--disp);font-weight:600;font-size:16px;letter-spacing:-.01em;color:var(--ink)}
+  .c-nidcard .ds{font-size:12px;color:var(--ink-2);line-height:1.5;margin-top:8px}
 
   /* stat */
   .c-stat{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius-sm);padding:var(--s-4);max-width:240px}
@@ -147,11 +141,12 @@
   .c-table th{font-family:var(--disp);font-weight:600;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3);text-align:left;padding:16px;background:var(--bg);border-bottom:1px solid var(--line)}
   .c-table td{padding:16px;color:var(--ink-2);border-bottom:1px solid var(--line)}
   .c-table tr:last-child td{border-bottom:none}
+  .c-table tr.hi td{background:var(--grad-soft);color:var(--ink);font-weight:500}
 
   /* section header */
   .c-sec{display:flex;justify-content:space-between;align-items:baseline;border-bottom:1px solid var(--line);padding-bottom:16px}
 
-  /* numbered row (lessons/decisions) */
+  /* numbered row */
   .c-row{display:grid;grid-template-columns:48px 1fr;gap:var(--s-4);padding:var(--s-5) 0;border-bottom:1px solid var(--line)}
   .c-row .n{font-family:var(--disp);font-weight:700;font-size:40px;line-height:1;color:var(--ink-3)}
   .c-row .ti{font-family:var(--disp);font-weight:600;font-size:20px;letter-spacing:-.02em;color:var(--ink);margin-bottom:8px}
@@ -165,7 +160,7 @@
   .c-chip .av{width:32px;height:32px;border-radius:50%;background:var(--grad-soft)}
   .c-chip .cn{font-size:12px;font-weight:600;color:var(--ink);transition:color var(--t-fast)}
 
-  /* tabs / nav links */
+  /* tabs */
   .c-tabs{display:flex;gap:24px;font-family:var(--sans);font-size:14px}
   .c-tab{color:var(--ink-2);cursor:pointer;transition:color var(--t-fast);padding-bottom:4px;border-bottom:2px solid transparent}
   .c-tab:hover,.c-tab.is-hover{color:var(--ink)}
@@ -179,20 +174,31 @@
   .c-burger{display:flex;flex-direction:column;gap:4px;cursor:pointer}
   .c-burger span{width:22px;height:2px;background:var(--ink);border-radius:2px}
 
-  /* ── media kit ── */
+  /* case study cover */
+  .c-cover{position:relative;border:1px solid var(--line);border-radius:var(--radius);padding:32px;background:var(--surface);overflow:hidden}
+  .c-cover .lede{margin-top:12px;max-width:52ch}
+  .c-covermeta{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:24px;padding-top:24px;border-top:1px solid var(--line)}
+  @media(max-width:560px){.c-covermeta{grid-template-columns:1fr;gap:16px}}
+  .c-covermeta .lab{font-family:var(--disp);font-size:12px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3);display:block;margin-bottom:8px}
+  .c-covermeta .val{font-size:14px;color:var(--ink);line-height:1.45}
+  .c-coverhero{aspect-ratio:16/8;background:var(--grad-soft);border:1px solid var(--line);border-radius:var(--radius-sm);margin-top:24px}
+
+  /* media kit */
   .ph{width:100%;border:1px solid var(--line);border-radius:var(--radius);background:var(--grad-soft);display:block}
   .c-grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
   .c-pair{display:grid;grid-template-columns:1fr 1fr;gap:16px}
   .c-video{aspect-ratio:16/9;border:1px solid var(--line);border-radius:var(--radius);background:#0E0E14;display:flex;align-items:center;justify-content:center;color:#fff;font-family:var(--disp);font-size:12px;letter-spacing:.08em}
   .c-step{font-family:var(--disp);font-size:12px;font-weight:600;letter-spacing:.08em;color:var(--ink-3);text-align:center;margin-top:8px}
   @media(max-width:640px){.c-grid3,.c-pair{grid-template-columns:1fr}}
-  /* ── impact cluster ── */
+
+  /* impact cluster */
   .c-impact{display:grid;grid-template-columns:1fr 1.1fr;gap:24px}
   @media(max-width:640px){.c-impact{grid-template-columns:1fr}}
   .c-stathero{background:var(--grad-soft);border:1px solid var(--line);border-radius:var(--radius);padding:32px;display:flex;flex-direction:column;justify-content:center}
   .c-stathero .num{font-family:var(--disp);font-weight:700;font-size:48px;line-height:1;margin:12px 0;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
   .c-statgrid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-  /* ── decision alternatives ── */
+
+  /* decision alternatives */
   .c-alts{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
   @media(max-width:640px){.c-alts{grid-template-columns:1fr}}
   .c-alt{position:relative;display:flex;flex-direction:column;justify-content:center;border:1px solid var(--line);border-radius:var(--radius-sm);padding:16px;background:var(--bg)}
@@ -201,37 +207,48 @@
   .c-alt.picked{border-color:transparent;box-shadow:0 0 0 2px var(--accent)}
   .c-alt.picked .nm{padding-right:64px;color:#000}
   .c-alt.picked::after{content:'Chosen';position:absolute;top:10px;right:10px;font-family:var(--sans);font-size:10px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#fff;background:var(--accent);padding:4px 8px;border-radius:var(--radius-pill)}
-  /* ── bulleted list ── */
+
+  /* bulleted list */
   .c-list{list-style:none;display:flex;flex-direction:column;gap:16px;max-width:60ch}
   .c-list li{position:relative;padding-left:24px;font-size:16px;color:var(--ink-2);line-height:1.6}
   .c-list li::before{content:'';position:absolute;left:0;top:8px;width:8px;height:8px;border-radius:50%;background:var(--grad)}
   .c-list strong{color:var(--ink);font-weight:600}
-  /* ── next-case card ── */
+
+  /* next-case card */
   .c-next{display:flex;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;transition:transform var(--t-base) var(--ease),box-shadow var(--t-base),border-color var(--t-base);max-width:480px}
   .c-next:hover{transform:translateY(-6px);box-shadow:var(--shadow);border-color:transparent}
   .c-next .im{width:160px;flex-shrink:0;background:var(--grad-soft)}
   .c-next .bx{padding:24px;display:flex;flex-direction:column;justify-content:center;gap:8px}
-  /* ── footer ── */
+
+  /* footer */
   .c-foot{position:relative;overflow:hidden;background:var(--ink);border-radius:8px;padding:32px;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:16px 24px}
   .c-foot::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--grad)}
   .c-foot::after{content:'';position:absolute;bottom:-60%;right:-6%;width:280px;height:240px;background:radial-gradient(50% 50% at 50% 50%,rgba(155,89,232,.28),rgba(91,108,240,.1) 45%,transparent 72%);pointer-events:none}
   .c-foot span,.c-foot a{position:relative;z-index:1;font-family:var(--disp);font-size:12px}
   .c-foot span{color:rgba(255,255,255,.55)}
   .c-foot a{color:rgba(255,255,255,.78);text-decoration:none}
-  /* ── logo marquee ── */
+
+  /* logo marquee */
   .c-marquee{position:relative;overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
   .c-mtrack{display:flex;align-items:center;gap:48px;width:max-content;animation:ds-scroll 20s linear infinite}
   .c-marquee:hover .c-mtrack{animation-play-state:paused}
   .c-logo{flex-shrink:0;height:24px;width:88px;background:var(--ink-3);opacity:.22;border-radius:4px}
   @keyframes ds-scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
-  /* ── peer quote card ── */
+
+  /* peer quote card + carousel controls */
   .c-quote{position:relative}
   .c-quote .qm{display:inline-block;font-family:var(--disp);font-weight:700;font-size:56px;line-height:1;height:.5em;overflow:hidden;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;opacity:1;margin-bottom:16px}
   .c-quote .qt{font-family:var(--disp);font-weight:500;font-size:24px;line-height:1.4;letter-spacing:-.02em;color:var(--ink)}
-  .c-quote .qf{display:flex;justify-content:space-between;align-items:center;margin-top:32px}
+  .c-quote .qf{display:flex;justify-content:space-between;align-items:center;margin-top:32px;flex-wrap:wrap;gap:24px}
   .c-quote .by{display:flex;align-items:center;gap:12px}
   .c-quote .av{width:48px;height:48px;border-radius:50%;background:var(--grad-soft);flex-shrink:0}
-  /* ── vertical timeline ── */
+  .c-peerctrl{display:flex;align-items:center;gap:16px}
+  .c-peerarrow{width:44px;height:44px;border-radius:50%;border:1px solid var(--line);background:var(--surface);color:var(--ink-2);font-family:var(--disp);font-size:20px;line-height:1;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:border-color var(--t-fast),color var(--t-fast)}
+  .c-peerarrow:hover,.c-peerarrow.is-hover{border-color:var(--accent);color:var(--accent)}
+  .c-peercount{font-family:var(--disp);font-weight:700;font-size:14px;letter-spacing:.04em;color:var(--ink-3);min-width:44px;text-align:center}
+  .c-peercount b{color:var(--ink);font-weight:700}
+
+  /* vertical timeline */
   .c-tl{border-left:2px solid var(--line);max-width:480px}
   .c-tlrow{position:relative;display:grid;grid-template-columns:96px 1fr;gap:24px;padding:0 0 32px 24px}
   .c-tlrow:last-child{padding-bottom:0}
@@ -240,11 +257,13 @@
   .c-tl .yr{font-family:var(--disp);font-size:12px;font-weight:500;color:var(--ink-3)}
   .c-tl .rl{font-weight:600;font-size:16px;color:var(--ink)}
   .c-tl .or{font-size:12px;color:var(--ink-3);margin-top:4px}
-  /* ── status eyebrow ── */
+
+  /* status eyebrow */
   .c-eyebrow{display:inline-flex;align-items:center;gap:8px;font-family:var(--disp);font-size:12px;font-weight:500;color:var(--ink-2)}
   .c-eyebrow .dot{width:8px;height:8px;border-radius:50%;background:#22C55E;animation:ds-pulse 1.9s ease-out infinite}
   @keyframes ds-pulse{0%{box-shadow:0 0 0 0 rgba(34,197,94,.5)}70%{box-shadow:0 0 0 8px rgba(34,197,94,0)}100%{box-shadow:0 0 0 0 rgba(34,197,94,0)}}
-  /* ── patterns: cursor / progress / mobile menu ── */
+
+  /* patterns */
   .c-cursor{display:flex;align-items:center;gap:24px}
   .c-cur-d{width:8px;height:8px;border-radius:50%;background:var(--accent)}
   .c-cur-r{width:30px;height:30px;border-radius:50%;border:1.5px solid var(--accent);opacity:.5}
@@ -254,35 +273,111 @@
   .c-mmenu a{display:block;font-family:var(--disp);font-size:20px;font-weight:500;color:var(--ink);padding:16px 24px;border-bottom:1px solid var(--line)}
   .c-mmenu a:last-child{border-bottom:none}
 
-  .footer{padding:var(--section) 0 var(--s-6);color:var(--ink-3);font-family:var(--disp);font-size:12px}
+  /* principles */
+  .principles{display:grid;grid-template-columns:1fr 1fr;gap:var(--s-3);margin-top:var(--s-5)}
+  @media(max-width:720px){.principles{grid-template-columns:1fr}}
+  .principle{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius-sm);padding:var(--s-5)}
+  .principle .pn{font-family:var(--disp);font-weight:700;font-size:14px;color:var(--accent);margin-bottom:var(--s-3)}
+  .principle h3{font-family:var(--disp);font-weight:600;font-size:20px;letter-spacing:-.02em;color:var(--ink);margin-bottom:var(--s-2)}
+  .principle p{font-size:14px;color:var(--ink-2);line-height:1.6}
+
+  /* usage do / don't */
+  .usage{display:grid;grid-template-columns:1fr 1fr;gap:var(--s-3);margin-top:var(--s-4)}
+  @media(max-width:640px){.usage{grid-template-columns:1fr}}
+  .use{border:1px solid var(--line);border-radius:var(--radius-sm);padding:var(--s-4);background:var(--surface)}
+  .use .hd{display:flex;align-items:center;gap:8px;font-family:var(--disp);font-weight:600;font-size:12px;letter-spacing:.06em;text-transform:uppercase;margin-bottom:var(--s-3)}
+  .use.do .hd{color:#16A34A}
+  .use.dont .hd{color:#DC2626}
+  .use .ic{width:18px;height:18px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;color:#fff;flex-shrink:0}
+  .use.do .ic{background:#16A34A}
+  .use.dont .ic{background:#DC2626}
+  .use ul{list-style:none;display:flex;flex-direction:column;gap:10px}
+  .use li{font-size:14px;color:var(--ink-2);line-height:1.5;padding-left:16px;position:relative}
+  .use li::before{content:'';position:absolute;left:0;top:8px;width:4px;height:4px;border-radius:50%;background:var(--ink-3)}
+
+  /* accessibility note */
+  .a11y{display:flex;gap:12px;align-items:flex-start;margin-top:var(--s-3);padding:var(--s-3) var(--s-4);background:var(--grad-soft);border-radius:var(--radius-sm);font-size:13px;color:var(--ink-2);line-height:1.55}
+  .a11y b{color:var(--ink);font-family:var(--disp);font-weight:600}
+  .a11y .tag{flex-shrink:0;font-family:var(--disp);font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--accent)}
+
+  /* component family header */
+  .grp-head{margin-top:var(--s-7);padding-bottom:var(--s-2);border-bottom:1px solid var(--line)}
+  .grp-head:first-of-type{margin-top:var(--s-5)}
+  .grp-head .gl{font-family:var(--disp);font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--accent)}
+  .grp-head .gd{font-size:14px;color:var(--ink-3);margin-top:6px;max-width:60ch}
+
+  /* built steps */
+  .build-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:var(--s-3);margin-top:var(--s-5)}
+  @media(max-width:860px){.build-steps{grid-template-columns:1fr 1fr}}
+  @media(max-width:480px){.build-steps{grid-template-columns:1fr}}
+  .bstep{border:1px solid var(--line);border-radius:var(--radius-sm);padding:var(--s-4);background:var(--surface)}
+  .bstep .sn{font-family:var(--disp);font-weight:700;font-size:24px;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;line-height:1}
+  .bstep h4{font-family:var(--disp);font-weight:600;font-size:16px;color:var(--ink);margin:12px 0 6px}
+  .bstep p{font-size:13px;color:var(--ink-2);line-height:1.55}
+
+  .doc-foot{padding:var(--section) 0 var(--s-7)}
 </style>
 </head>
 <body>
 
 <header class="ds-hero"><div class="wrap">
   <a href="/" style="display:inline-flex;align-items:center;gap:8px;font-family:var(--sans);font-size:14px;color:var(--ink-2);margin-bottom:24px">← Back to portfolio</a>
-  <span class="t-label">Design System · v3</span>
+  <span class="t-label">Design System</span>
   <h1 class="t-display"><span class="grad-text">One system</span>, every page.</h1>
-  <p class="t-lede">The single source of truth for the gradient theme. Built from the components in the home and case-study pages, rationalized to a strict grid so every page stays uniform on migration.</p>
-
-  <div class="rules">
-    <div class="rule"><b>Type</b>7 sizes only — 56 / 32 / 24 / 20 / 16 / 14 / 12. Two families: Space Grotesk (display) + Inter (body). Two weights each.</div>
-    <div class="rule"><b>Color</b>6 neutrals + 1 accent + 1 gradient. A separate 4-color data set for charts only.</div>
-    <div class="rule"><b>No decimals</b>Every font size is a whole, even number. No 12.5, no 17, no 15.5.</div>
-    <div class="rule"><b>8-grid</b>Sizes, spacing and radius are multiples of 8 — 4 only where 8 is too coarse. Never odd.</div>
-    <div class="rule"><b>One padding math</b>Page gutter 40 / 24. Section rhythm 104/72 (home) · 80/56 (case study). Cards 24 or 32.</div>
-    <div class="rule"><b>Motion</b>Two eases, three durations (.2 / .3 / .5s). The bounce ease is reserved for the caricature.</div>
-  </div>
+  <p class="t-lede">The colors, type, spacing, and parts behind this portfolio, with simple rules for using them. Everything here is used live on the site.</p>
 
   <nav class="ds-toc">
-    <span class="grp">Jump to</span>
+    <span class="grp">Principles</span>
+    <a href="#principles">Six rules</a>
+    <span class="grp">Foundations</span>
     <a href="#color">Color</a>
     <a href="#type">Typography</a>
     <a href="#spacing">Spacing &amp; layout</a>
+    <span class="grp">Library</span>
     <a href="#components">Components</a>
-    <a href="#migration">Migration notes</a>
+    <a href="#patterns">Patterns</a>
+    <span class="grp">Behind it</span>
+    <a href="#built">Built in code</a>
   </nav>
 </div></header>
+
+<!-- PRINCIPLES -->
+<section class="ds-sec" id="principles"><div class="wrap">
+  <div class="ds-sec-head"><h2 class="t-h2">Principles</h2><span class="t-label">Why before what</span></div>
+  <p class="t-body ds-intro">Six rules sit behind every choice below. When two options both look fine, the rule decides.</p>
+  <div class="principles">
+    <div class="principle">
+      <div class="pn">01</div>
+      <h3>Clarity over cleverness</h3>
+      <p>If a simple option and a clever one both work, pick the simple one. The main action is the most visible thing on a page. A label always beats an icon on its own.</p>
+    </div>
+    <div class="principle">
+      <div class="pn">02</div>
+      <h3>Few choices, used well</h3>
+      <p>Seven type sizes, one 8-point grid, even numbers, one accent. A small set of choices is what makes five pages feel like one site.</p>
+    </div>
+    <div class="principle">
+      <div class="pn">03</div>
+      <h3>Defined once</h3>
+      <p>Every color, size, and shared part is set in one place, so every page stays in step. Nothing is copied by hand.</p>
+    </div>
+    <div class="principle">
+      <div class="pn">04</div>
+      <h3>Plain words</h3>
+      <p>The writing is part of the design. No jargon, no acronyms a reader has to decode. Clear beats short.</p>
+    </div>
+    <div class="principle">
+      <div class="pn">05</div>
+      <h3>Color, used sparingly</h3>
+      <p>One gradient, saved for a single highlight per screen, never as a background. The solid accent is only for places a gradient cannot go, like icons and small text. Numbers are always the gradient.</p>
+    </div>
+    <div class="principle">
+      <div class="pn">06</div>
+      <h3>Works for everyone</h3>
+      <p>Every clickable thing has a clear focus state. Every animation can be turned off. Text stays readable on its background.</p>
+    </div>
+  </div>
+</div></section>
 
 <!-- COLOR -->
 <section class="ds-sec" id="color"><div class="wrap">
@@ -304,15 +399,31 @@
     <div class="brand-tile" style="background:var(--grad)"><span>gradient</span></div>
     <div class="brand-tile" style="background:var(--grad-soft)"><span style="color:var(--ink-2);mix-blend-mode:normal">gradient-soft (.12)</span></div>
   </div>
-  <p class="t-caption" style="margin-top:16px">Accent is the only solid brand color (for icons/text where gradient can't apply). The gradient is the hero device; gradient-soft is its 12% fill for tints and active states.</p>
+  <p class="t-caption" style="margin-top:16px">The accent is the only solid brand color, for icons and text where the gradient cannot apply. The gradient is the highlight. Gradient-soft is its 12% tint, for fills and active states.</p>
 
-  <span class="t-label" style="display:block;margin:48px 0 16px">Data — charts &amp; zone pills only</span>
+  <span class="t-label" style="display:block;margin:48px 0 16px">Data · charts &amp; zone pills only</span>
   <div class="row">
     <span class="rz rz-blue">Blue zone</span>
     <span class="rz rz-green">Green zone</span>
     <span class="rz rz-yellow">Yellow zone</span>
     <span class="rz rz-red">Red zone</span>
   </div>
+
+  <div class="usage">
+    <div class="use do"><div class="hd"><span class="ic">✓</span>Do</div><ul>
+      <li>Use neutrals for most of a page.</li>
+      <li>Use the gradient for one highlight per screen, and for numbers.</li>
+      <li>Use the solid accent only for icons, links, and small colored text.</li>
+      <li>Keep the four data colors for charts and zone pills.</li>
+    </ul></div>
+    <div class="use dont"><div class="hd"><span class="ic">✕</span>Don't</div><ul>
+      <li>Spread the gradient across cards or backgrounds.</li>
+      <li>Add a new color. Map a missing shade to the closest token.</li>
+      <li>Mix data colors into the brand UI.</li>
+      <li>Set long text in the lightest grey.</li>
+    </ul></div>
+  </div>
+  <div class="a11y"><span class="tag">A11y</span><div><b>Contrast:</b> ink and ink-2 pass for body text on the light backgrounds. The lightest grey (ink-3) is only for labels and captions. Color is never the only signal: zone pills always carry a text label too.</div></div>
 </div></section>
 
 <!-- TYPE -->
@@ -323,11 +434,27 @@
   <div class="spec"><div class="meta"><b>Heading (H2)</b>Space Grotesk 600<br>32 / 24 · -.02em</div><div class="t-h2">The problem</div></div>
   <div class="spec"><div class="meta"><b>Title (H3)</b>Space Grotesk 600<br>24 / 20 · -.02em</div><div class="t-h3">Make Unsure a state, not a fallback</div></div>
   <div class="spec"><div class="meta"><b>Lede</b>Inter 400<br>20 / 16</div><div class="t-lede">A student-led check-in before class begins.</div></div>
-  <div class="spec"><div class="meta"><b>Body</b>Inter 400<br>16</div><div class="t-body">Students rarely arrive with a clear head — a tough exam or a long day can leave them distracted.</div></div>
+  <div class="spec"><div class="meta"><b>Body</b>Inter 400<br>16</div><div class="t-body">Students rarely arrive with a clear head. A tough exam or a long day can leave them distracted.</div></div>
   <div class="spec"><div class="meta"><b>Small</b>Inter 400<br>14</div><div class="t-small">Secondary and in-card body text.</div></div>
   <div class="spec"><div class="meta"><b>Caption</b>Inter 400<br>12 · ink-3</div><div class="t-caption">Image and chart captions sit here.</div></div>
   <div class="spec"><div class="meta"><b>Label</b>Space Grotesk 600<br>12 · .08em · UPPER</div><div class="t-label">Role · Timeline · Team</div></div>
   <div class="spec"><div class="meta"><b>Number</b>Space Grotesk 700<br>64 / 40</div><div class="t-num grad-text">75.2%</div></div>
+
+  <div class="usage">
+    <div class="use do"><div class="hd"><span class="ic">✓</span>Do</div><ul>
+      <li>Pick a role by its job (lede, body, caption), not by guessing a size.</li>
+      <li>Use Space Grotesk for headings and labels, Inter for anything you read.</li>
+      <li>One title, then body, per block.</li>
+      <li>Show every number in the Number style.</li>
+    </ul></div>
+    <div class="use dont"><div class="hd"><span class="ic">✕</span>Don't</div><ul>
+      <li>Invent an in-between size. There are seven.</li>
+      <li>Use an odd or decimal size.</li>
+      <li>Set captions in Space Grotesk. They are Inter.</li>
+      <li>Stack a label, sub-label, and title to fake hierarchy.</li>
+    </ul></div>
+  </div>
+  <div class="a11y"><span class="tag">A11y</span><div><b>Sizing:</b> 16px body, 1.6 line height, line length capped near 60 to 64 characters. Sizes scale down on small screens but never below a readable minimum.</div></div>
 </div></section>
 
 <!-- SPACING -->
@@ -342,20 +469,38 @@
   <div class="space-row"><span class="lbl">s-7 · 64</span><div class="space-bar" style="width:64px"></div></div>
   <div class="space-row"><span class="lbl">section · 104</span><div class="space-bar" style="width:104px"></div></div>
   <div class="rules">
-    <div class="rule"><b>Page gutter</b>40px desktop · 24px mobile (the side padding of every content column).</div>
-    <div class="rule"><b>Content width</b>1000px home · 800px case study. One value per page, text + media share it.</div>
-    <div class="rule"><b>Section rhythm</b>Two rhythms by page type — <b style="display:inline">home / showcase</b> 104 / 72, <b style="display:inline">case study / reading</b> 80 / 56. One <code>--sp</code> token per page.</div>
-    <div class="rule"><b>Media gap</b>48px above any image/video/table.</div>
-    <div class="rule"><b>Radius</b>Radius is per surface. <b style="display:inline">Home / landing</b> 16px cards/media · 12px small · 999 pills. <b style="display:inline">Case studies</b> uniform 8px on everything (one <code>.page-cs</code> token override). 50% circles throughout.</div>
-    <div class="rule"><b>Shadow</b>One: <code>0 24px 56px -24px rgba(60,40,110,.26)</code> — the hover lift.</div>
+    <div class="rule"><b>Page gutter</b>40px on desktop, 24px on mobile. The side padding of every column.</div>
+    <div class="rule"><b>Content width</b>1000px on home, 800px on a case study. One value per page; text and media share it.</div>
+    <div class="rule"><b>Section rhythm</b>104 / 72 on home, 80 / 56 on a case study. One value per page.</div>
+    <div class="rule"><b>Media gap</b>48px above any image, video, or table.</div>
+    <div class="rule"><b>Radius</b>Home: 16px on cards and media, 12px on small parts, full round on pills. Case studies: 8px on everything. Circles stay 50%.</div>
+    <div class="rule"><b>Shadow</b>One shadow, used for the hover lift.</div>
+  </div>
+
+  <div class="usage">
+    <div class="use do"><div class="hd"><span class="ic">✓</span>Do</div><ul>
+      <li>Build every gap from the scale: 8, 16, 24, 32, 48, 64.</li>
+      <li>Use 4 only for tight pairs, like a label and its value.</li>
+      <li>Leave 48 above any image, video, or table.</li>
+      <li>Let the page set its rhythm with one value.</li>
+    </ul></div>
+    <div class="use dont"><div class="hd"><span class="ic">✕</span>Don't</div><ul>
+      <li>Use 6, 10, or 14 to nudge something.</li>
+      <li>Mix corner radii on one surface.</li>
+      <li>Hand-tune gaps page by page.</li>
+      <li>Add a second shadow. There is one.</li>
+    </ul></div>
   </div>
 </div></section>
 
 <!-- COMPONENTS -->
 <section class="ds-sec" id="components"><div class="wrap">
-  <div class="ds-sec-head"><h2 class="t-h2">Components</h2><span class="t-label">Canonical</span></div>
+  <div class="ds-sec-head"><h2 class="t-h2">Components</h2><span class="t-label">6 families</span></div>
+  <p class="t-body ds-intro">Every part here is used on a live page, shown in its real states.</p>
 
-  <h3 class="t-h3" style="margin-bottom:8px">Buttons — types &amp; states</h3>
+  <div class="grp-head"><div class="gl">Actions &amp; inputs</div><div class="gd">Anything a person clicks or toggles.</div></div>
+
+  <h3 class="t-h3" style="margin:32px 0 8px">Buttons</h3>
   <div class="demo">
     <div class="btn-matrix">
 
@@ -398,33 +543,158 @@
 
     </div>
   </div>
-  <p class="note">Primary (ink → accent), Secondary (outline → soft-gradient fill), Text link (ink-2 → ink), Icon CTA (icon + label, underline on hover — used on hero &amp; contact). Focus = 2px accent outline everywhere; disabled = muted, non-interactive.</p>
+  <p class="note">Primary fills with the accent on hover. Secondary is an outline that fills softly. Text link goes from grey to ink. Icon CTA pairs an icon with a label and underlines on hover. Focus is a 2px accent outline. Disabled is muted.</p>
+  <div class="usage">
+    <div class="use do"><div class="hd"><span class="ic">✓</span>Do</div><ul>
+      <li>One primary action per screen.</li>
+      <li>Always pair an icon with a label.</li>
+      <li>Keep the label plain, like Open in Figma.</li>
+      <li>Use the text link for low-key back navigation.</li>
+    </ul></div>
+    <div class="use dont"><div class="hd"><span class="ic">✕</span>Don't</div><ul>
+      <li>Place two primary buttons together.</li>
+      <li>Ship an icon-only button for a real action.</li>
+      <li>Write a vague label like Let's go.</li>
+      <li>Remove the focus outline.</li>
+    </ul></div>
+  </div>
+  <div class="a11y"><span class="tag">A11y</span><div><b>Built in:</b> hover, a 2px accent focus ring, and a muted disabled state. Targets are at least 44px tall. Labels are real text, so keyboards and screen readers work without extra setup.</div></div>
 
-  <h3 class="t-h3" style="margin:48px 0 8px">Project card</h3>
+  <h3 class="t-h3" style="margin:48px 0 8px">Chip</h3>
+  <div class="demo"><div class="bm-states">
+    <div><div class="c-chip"><span class="av"></span><span class="cn">Manik Bansal</span></div><span class="bm-s">Default</span></div>
+    <div><div class="c-chip is-hover"><span class="av"></span><span class="cn">Vaibhav Sawhney</span></div><span class="bm-s">Hover</span></div>
+    <div><div class="c-chip on"><span class="av"></span><span class="cn">Jigar Vora</span></div><span class="bm-s">Selected</span></div>
+  </div></div>
+  <p class="note">Default, then hover (lifts, accent ring, name turns accent), then selected (gradient fill, dark text, no border).</p>
+
+  <div class="grp-head"><div class="gl">Navigation</div><div class="gd">Moving between pages and sections.</div></div>
+
+  <h3 class="t-h3" style="margin:32px 0 8px">Tabs &amp; links</h3>
+  <div class="demo"><div class="bm-states">
+    <div><a class="c-tab">Projects</a><span class="bm-s">Default</span></div>
+    <div><a class="c-tab is-hover">About</a><span class="bm-s">Hover</span></div>
+    <div><a class="c-tab on">Peers</a><span class="bm-s">Active</span></div>
+  </div></div>
+  <p class="note">Grey to ink on hover. The current item gets an accent underline.</p>
+
+  <h3 class="t-h3" style="margin:48px 0 8px">Nav bar</h3>
+  <div class="demo">
+    <span class="t-label" style="display:block;margin-bottom:12px">Home · brand + tabs</span>
+    <div class="c-nav">
+      <span class="nm">Aasif Anwar</span>
+      <div class="c-tabs"><a class="c-tab on">Projects</a><a class="c-tab">About</a><a class="c-tab">Contact</a><a class="c-tab">Resume</a></div>
+    </div>
+    <span class="t-label" style="display:block;margin:24px 0 12px">Case study · back + résumé</span>
+    <div class="c-nav">
+      <a class="lk ink"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>Back to Projects</a>
+      <a class="lk">Resume</a>
+    </div>
+    <span class="t-label" style="display:block;margin:24px 0 12px">Mobile · hamburger</span>
+    <div class="c-nav">
+      <span class="nm">Aasif Anwar</span>
+      <span class="c-burger"><span></span><span></span><span></span></span>
+    </div>
+  </div>
+  <p class="note">On home the bar is clear over the hero, then turns into a frosted bar with a thin bottom line on scroll. On case studies it stays at the top with a back link and résumé. Below 720px the tabs become a hamburger.</p>
+
+  <div class="grp-head"><div class="gl">Content &amp; layout</div><div class="gd">The cards, lists, quotes, and timelines that carry the story.</div></div>
+
+  <h3 class="t-h3" style="margin:32px 0 8px">Project card</h3>
   <div class="demo">
     <a class="c-card">
       <div class="im"></div>
       <div class="bx"><div class="ti">Feel Check</div><div class="ds">Student-led emotional check-in for live classes.</div></div>
     </a>
   </div>
-  <p class="note">Hover: lift −6px + shadow + border fades + image zoom. The whole card is the click target — no arrow. Image sits on a grad-soft bed.</p>
+  <p class="note">On hover the card lifts, shows a shadow, and the image zooms. The whole card is the link.</p>
 
-  <h3 class="t-h3" style="margin:48px 0 8px">Stat tile &amp; section header</h3>
+  <h3 class="t-h3" style="margin:48px 0 8px">Work card (3-up)</h3>
   <div class="demo">
-    <div class="c-sec" style="margin-bottom:32px"><h2 class="t-h2">Impact</h2><span class="t-label">Outcome</span></div>
+    <div class="c-nidgrid">
+      <a class="c-nidcard"><div class="im"></div><div class="bx"><div class="ti">Toy &amp; Game Design</div><div class="ds">Play-based learning kits.</div></div></a>
+      <a class="c-nidcard"><div class="im"></div><div class="bx"><div class="ti">Service Design</div><div class="ds">A field study for transit.</div></div></a>
+      <a class="c-nidcard"><div class="im"></div><div class="bx"><div class="ti">Systems Project</div><div class="ds">A degree capstone.</div></div></a>
+    </div>
+  </div>
+  <p class="note">A smaller card in a three-up grid, for secondary work. 4:3 image, short title, one line of text. Same hover lift as the project card.</p>
+
+  <h3 class="t-h3" style="margin:48px 0 8px">Numbered items</h3>
+  <div class="demo">
+    <div class="c-row" style="border-top:1px solid var(--line)"><span class="n">01</span><div><div class="ti">What we called a backup, kids made their favorite.</div><div class="t-small">Students made it their top pick across all four zones.</div></div></div>
+    <div class="c-row"><span class="n">02</span><div><div class="ti">Kids came back for more.</div><div class="t-small">Nearly half chose “try one more” after finishing.</div></div></div>
+  </div>
+  <p class="note">Two styles, both starting at 01. Lessons use a big grey number with a thin divider. Decisions use a gradient number with more space and no divider.</p>
+
+  <h3 class="t-h3" style="margin:48px 0 8px">Bulleted list</h3>
+  <div class="demo"><ul class="c-list">
+    <li><strong>End-to-end design</strong>, the check-in flow and regulation activities.</li>
+    <li><strong>Cross-functional work</strong> with PM, engineering, curriculum, and motion.</li>
+  </ul></div>
+  <p class="note">Gradient bullet, 16px text, even spacing.</p>
+
+  <h3 class="t-h3" style="margin:48px 0 8px">Caption</h3>
+  <div class="demo">
+    <div style="aspect-ratio:16/6;background:var(--grad-soft);border:1px solid var(--line);border-radius:var(--radius)"></div>
+    <p class="t-caption" style="margin-top:16px">One caption style everywhere: 12px Inter, light grey, left-aligned, 16px below the image.</p>
+  </div>
+
+  <h3 class="t-h3" style="margin:48px 0 8px">Peer quote &amp; carousel</h3>
+  <div class="demo"><div class="c-quote">
+    <span class="qm">“</span>
+    <p class="qt">He doesn't design in a vacuum. He talks to people and brings it into the next round.</p>
+    <div class="qf">
+      <div class="by"><span class="av"></span><div><div style="font-weight:600;font-size:14px;color:var(--ink)">Manik Bansal</div><div class="t-caption">Head of Design · Cuemath</div></div></div>
+      <div class="c-peerctrl">
+        <button class="c-peerarrow" aria-label="Previous">‹</button>
+        <span class="c-peercount"><b>2</b> / 6</span>
+        <button class="c-peerarrow is-hover" aria-label="Next">›</button>
+      </div>
+    </div>
+  </div></div>
+  <p class="note">A pull-quote with no box. Gradient quote mark, the quote, then the person. The round arrows step through the set, and the counter shows the place in it. Arrows turn accent on hover. Names link to LinkedIn.</p>
+
+  <h3 class="t-h3" style="margin:48px 0 8px">Vertical timeline</h3>
+  <div class="demo"><div class="c-tl">
+    <div class="c-tlrow"><span class="yr">2018–21</span><div><div class="rl">M.Des, Toy &amp; Game Design</div><div class="or">National Institute of Design</div></div></div>
+    <div class="c-tlrow"><span class="yr">2022–26</span><div><div class="rl">Product Design</div><div class="or">Cuemath</div></div></div>
+    <div class="c-tlrow last"><span class="yr">What's next</span><div><div class="rl">Design for consumers at scale 🤞</div></div></div>
+  </div></div>
+  <p class="note">Dots on a line, with the last one filled by the gradient.</p>
+
+  <h3 class="t-h3" style="margin:48px 0 8px">Case study cover</h3>
+  <div class="demo">
+    <div class="c-cover">
+      <h2 class="t-h2">Feel Check</h2>
+      <p class="t-lede lede">A student-led emotional check-in before a live class begins.</p>
+      <div class="c-covermeta">
+        <div><span class="lab">Role</span><span class="val">Product Designer, end to end</span></div>
+        <div><span class="lab">Timeline</span><span class="val">2025 · 4 months</span></div>
+        <div><span class="lab">Team</span><span class="val">PM, 2 engineers, curriculum</span></div>
+      </div>
+      <div class="c-coverhero"></div>
+    </div>
+  </div>
+  <p class="note">The top of every case study. Title and intro, then a three-column strip for role, timeline, and team, with the hero image below. A soft gradient glow sits behind it on the live page.</p>
+
+  <h3 class="t-h3" style="margin:48px 0 8px">Next-case card &amp; footer</h3>
+  <div class="demo">
+    <a class="c-next"><div class="im"></div><div class="bx"><span class="t-label">Next case study</span><div class="t-h3">New Trial Experience</div><div class="t-caption">2024 · System Redesign</div></div></a>
+    <div class="c-foot" style="margin-top:32px"><span>© 2026 · Designed &amp; built by Aasif</span><a href="#top">Back to top ↑</a></div>
+  </div>
+  <p class="note">A link to the next case study, with the footer below it. The footer is the same on every page.</p>
+
+  <div class="grp-head"><div class="gl">Data &amp; impact</div><div class="gd">How numbers and trade-offs are shown. Numbers are always the gradient.</div></div>
+
+  <h3 class="t-h3" style="margin:32px 0 8px">Stat tile &amp; section header</h3>
+  <div class="demo">
+    <div class="c-sec" style="margin-bottom:32px"><span class="t-h2">Impact</span><span class="t-label">Outcome</span></div>
     <div class="row" style="align-items:stretch">
       <div class="c-stat"><span class="t-label">Ready to learn</span><div class="num grad-text">75.2%</div><div class="ds">Tutor-observed (n=459).</div></div>
       <div class="c-stat"><span class="t-label">Worked independently</span><div class="num grad-text">89.1%</div><div class="ds">Student-led design held.</div></div>
     </div>
   </div>
-  <p class="note">Section header = H2 + label + 1px line. Stat number always gradient.</p>
-
-  <h3 class="t-h3" style="margin:48px 0 8px">Numbered items — lessons &amp; decisions</h3>
-  <div class="demo">
-    <div class="c-row" style="border-top:1px solid var(--line)"><span class="n">01</span><div><div class="ti">What we called a backup, kids made their favorite.</div><div class="t-small">Students made it their top pick across all four zones.</div></div></div>
-    <div class="c-row"><span class="n">02</span><div><div class="ti">Kids came back for more.</div><div class="t-small">Nearly half chose “try one more” after finishing.</div></div></div>
-  </div>
-  <p class="note">Two flavors, both counting from 01. <b style="display:inline">Lessons</b> (shown above): a big muted index in a left column, hairline dividers between rows. <b style="display:inline">Decisions</b>: larger blocks that can hold media — led by a <em>gradient inline number</em>, separated by a 64px gap, <em>no divider</em> (the number does the separating).</p>
+  <p class="note">A section header is a title, a label, and a thin line. Stat numbers are always the gradient.</p>
 
   <h3 class="t-h3" style="margin:48px 0 8px">Data table</h3>
   <div class="demo">
@@ -432,84 +702,11 @@
       <thead><tr><th>Body</th><th>Heart</th><th>Mind</th><th>Routes to</th></tr></thead>
       <tbody>
         <tr><td>Tight breath</td><td>Heavy</td><td>Few thoughts</td><td><span class="rz rz-blue">Blue zone</span></td></tr>
-        <tr><td>Relaxed</td><td>Sparkling</td><td>Full</td><td><span class="rz rz-yellow">Yellow zone</span></td></tr>
+        <tr class="hi"><td>Relaxed</td><td>Sparkling</td><td>Full</td><td><span class="rz rz-yellow">Yellow zone</span></td></tr>
       </tbody>
     </table></div>
   </div>
-
-  <h3 class="t-h3" style="margin:48px 0 8px">Chip (peer selector) — states</h3>
-  <div class="demo"><div class="bm-states">
-    <div><div class="c-chip"><span class="av"></span><span class="cn">Manik Bansal</span></div><span class="bm-s">Default</span></div>
-    <div><div class="c-chip is-hover"><span class="av"></span><span class="cn">Vaibhav Sawhney</span></div><span class="bm-s">Hover</span></div>
-    <div><div class="c-chip on"><span class="av"></span><span class="cn">Jigar Vora</span></div><span class="bm-s">Selected</span></div>
-  </div></div>
-  <p class="note">Default → Hover (lift −2px + accent ring + shadow + name accent) → Selected (saturated gradient fill, dark text for legibility, borderless).</p>
-
-  <h3 class="t-h3" style="margin:48px 0 8px">Tabs / nav links — states</h3>
-  <div class="demo"><div class="bm-states">
-    <div><a class="c-tab">Projects</a><span class="bm-s">Default</span></div>
-    <div><a class="c-tab is-hover">About</a><span class="bm-s">Hover</span></div>
-    <div><a class="c-tab on">Peers</a><span class="bm-s">Active</span></div>
-  </div></div>
-  <p class="note">Text links: ink-2 → ink on hover; active/current gets an accent underline.</p>
-
-  <h3 class="t-h3" style="margin:48px 0 8px">Nav bar</h3>
-  <div class="demo">
-    <span class="t-label" style="display:block;margin-bottom:12px">Home — brand + tabs (hamburger on mobile)</span>
-    <div class="c-nav">
-      <span class="nm">Aasif Anwar</span>
-      <div class="c-tabs"><a class="c-tab on">Projects</a><a class="c-tab">About</a><a class="c-tab">Contact</a><a class="c-tab">Resume</a></div>
-    </div>
-    <span class="t-label" style="display:block;margin:24px 0 12px">Case study — back + résumé</span>
-    <div class="c-nav">
-      <a class="lk ink"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>Back to Projects</a>
-      <a class="lk">Resume</a>
-    </div>
-    <span class="t-label" style="display:block;margin:24px 0 12px">Mobile — hamburger</span>
-    <div class="c-nav">
-      <span class="nm">Aasif Anwar</span>
-      <span class="c-burger"><span></span><span></span><span></span></span>
-    </div>
-  </div>
-  <p class="note">Home nav is transparent over the hero, then frosts into a blurred bar with a bottom hairline on scroll; case-study nav is sticky (back + résumé). Home tabs: Projects · About · Contact · Resume (Resume opens the PDF in a new tab); they collapse to a hamburger below 720px. Nav gutter matches the page content — 40px desktop, 24px mobile.</p>
-
-  <h3 class="t-h3" style="margin:48px 0 8px">Caption</h3>
-  <div class="demo">
-    <div style="aspect-ratio:16/6;background:var(--grad-soft);border:1px solid var(--line);border-radius:var(--radius)"></div>
-    <p class="t-caption" style="margin-top:16px">One caption style everywhere — 12px Inter regular, ink-3, left-aligned, 16px below the media. Same for single images, 3-up grids, and paired figcaptions.</p>
-  </div>
-
-  <h3 class="t-h3" style="margin:48px 0 8px">Status eyebrow</h3>
-  <div class="demo"><span class="c-eyebrow"><span class="dot"></span>Open to product design roles</span></div>
-  <p class="note">Label + pulsing green availability dot. Pulse disabled under reduced-motion.</p>
-
-  <h3 class="t-h3" style="margin:48px 0 8px">Logo marquee</h3>
-  <div class="demo"><div class="c-marquee"><div class="c-mtrack">
-    <span class="c-logo"></span><span class="c-logo"></span><span class="c-logo"></span><span class="c-logo"></span><span class="c-logo"></span><span class="c-logo"></span>
-    <span class="c-logo"></span><span class="c-logo"></span><span class="c-logo"></span><span class="c-logo"></span><span class="c-logo"></span><span class="c-logo"></span>
-  </div></div></div>
-  <p class="note">Right→left auto-scroll, duplicated set for a seamless loop, edges faded with a mask, pauses on hover. Logos at a uniform 28px height.</p>
-
-  <h3 class="t-h3" style="margin:48px 0 8px">Media kit</h3>
-  <div class="demo">
-    <div class="ph" style="aspect-ratio:16/9"></div>
-    <p class="t-caption" style="margin-top:16px">Caption — one style: 12px Inter regular, ink-3, left-aligned, 16px under its media (single + grid/pair figcaptions); no margin below. Click any image → lightbox.</p>
-    <div class="c-grid3" style="margin-top:32px">
-      <div><div class="ph" style="aspect-ratio:4/3"></div><div class="c-step">Step 1</div></div>
-      <div><div class="ph" style="aspect-ratio:4/3"></div><div class="c-step">Step 2</div></div>
-      <div><div class="ph" style="aspect-ratio:4/3"></div><div class="c-step">Step 3</div></div>
-    </div>
-    <div class="c-pair" style="margin-top:32px"><div class="ph" style="aspect-ratio:4/3"></div><div class="ph" style="aspect-ratio:4/3"></div></div>
-    <div class="c-video" style="margin-top:32px">VIDEO · 16:9</div>
-  </div>
-  <p class="note">Single image, 3-up step grid, image pair, video embed. 1px line border, 48px gap above. Radius follows the surface — 16px on home, 8px inside case studies.</p>
-
-  <h3 class="t-h3" style="margin:48px 0 8px">Bulleted list</h3>
-  <div class="demo"><ul class="c-list">
-    <li><strong>End-to-end design</strong> — the check-in flow and regulation activities.</li>
-    <li><strong>Cross-functional collaboration</strong> — PM, engineering, curriculum, motion.</li>
-  </ul></div>
-  <p class="note">Gradient bullet, 16px body, 16px gap, 8px-grid alignment.</p>
+  <p class="note">Plain rows, with one optional highlighted row (soft gradient) for the key line.</p>
 
   <h3 class="t-h3" style="margin:48px 0 8px">Impact cluster</h3>
   <div class="demo"><div class="c-impact">
@@ -521,7 +718,7 @@
       <div class="c-stat"><span class="t-label">Validation</span><div class="num grad-text">2,060</div><div class="ds">Sessions · 4 phases.</div></div>
     </div>
   </div></div>
-  <p class="note">Hero stat (soft-gradient bed, big gradient number) + a 2×2 tile grid. Numbers always gradient.</p>
+  <p class="note">One big stat on a soft gradient, with a grid of smaller stats beside it.</p>
 
   <h3 class="t-h3" style="margin:48px 0 8px">Decision alternatives</h3>
   <div class="demo">
@@ -532,63 +729,72 @@
       <div class="c-alt picked"><div class="nm">Shared ambient tracks</div><div class="nt">Grouped activities. 1.9 min.</div></div>
     </div>
   </div>
-  <p class="note">Options considered; the chosen one gets a solid accent stroke + a “Chosen” tag.</p>
+  <p class="note">The options considered. The chosen one gets an accent border and a Chosen tag.</p>
 
-  <h3 class="t-h3" style="margin:48px 0 8px">Peer quote card</h3>
-  <div class="demo"><div class="c-quote">
-    <span class="qm">“</span>
-    <p class="qt">He doesn't design in a vacuum — he talks to people and brings it into the next iteration.</p>
-    <div class="qf">
-      <div class="by"><span class="av"></span><div><div style="font-weight:600;font-size:14px;color:var(--ink)">Manik Bansal</div><div class="t-caption">Head of Design · Cuemath</div></div></div>
-      <span class="t-label">01 / 06</span>
+  <div class="grp-head"><div class="gl">Media</div><div class="gd">How images, video, and logos are framed.</div></div>
+
+  <h3 class="t-h3" style="margin:32px 0 8px">Media kit</h3>
+  <div class="demo">
+    <div class="ph" style="aspect-ratio:16/9"></div>
+    <p class="t-caption" style="margin-top:16px">One caption style: 12px Inter, light grey, 16px under the image. Click any image to open it full screen.</p>
+    <div class="c-grid3" style="margin-top:32px">
+      <div><div class="ph" style="aspect-ratio:4/3"></div><div class="c-step">Step 1</div></div>
+      <div><div class="ph" style="aspect-ratio:4/3"></div><div class="c-step">Step 2</div></div>
+      <div><div class="ph" style="aspect-ratio:4/3"></div><div class="c-step">Step 3</div></div>
     </div>
-  </div></div>
-  <p class="note">Editorial pull-quote — no box. Full-gradient quote mark, attribution links to LinkedIn (name → accent on hover), counter top-right; chips below drive it. (Section header keeps its underline; the card border was removed.)</p>
-
-  <h3 class="t-h3" style="margin:48px 0 8px">Vertical timeline</h3>
-  <div class="demo"><div class="c-tl">
-    <div class="c-tlrow"><span class="yr">2018 – 21</span><div><div class="rl">M.Des, Toy &amp; Game Design</div><div class="or">National Institute of Design</div></div></div>
-    <div class="c-tlrow"><span class="yr">2022 – 26</span><div><div class="rl">Product Design</div><div class="or">Cuemath</div></div></div>
-    <div class="c-tlrow last"><span class="yr">What's next</span><div><div class="rl">Design for consumers at scale 🤞</div></div></div>
-  </div></div>
-  <p class="note">Dots centered on a 2px rail (box-sizing fixed), last node fills with gradient.</p>
-
-  <h3 class="t-h3" style="margin:48px 0 8px">Next-case card &amp; footer</h3>
-  <div class="demo">
-    <a class="c-next"><div class="im"></div><div class="bx"><span class="t-label">Next case study</span><div class="t-h3">New Trial Experience</div><div class="t-caption">2024 · System Redesign</div></div></a>
-    <div class="c-foot" style="margin-top:32px"><span>© 2026 · Designed &amp; built by Aasif</span><a href="#top">Back to top ↑</a></div>
+    <div class="c-pair" style="margin-top:32px"><div class="ph" style="aspect-ratio:4/3"></div><div class="ph" style="aspect-ratio:4/3"></div></div>
+    <div class="c-video" style="margin-top:32px">VIDEO · 16:9</div>
   </div>
-  <p class="note">One footer component (<code>.foot</code> / <code>.foot-in</code>) used on every page — home and case studies. Inner width follows the page: <code>--maxw</code> on home, <code>--read</code> under <code>.page-cs</code>. Wraps to two lines on very narrow screens instead of clipping.</p>
+  <p class="note">Single image, three-up step grid, image pair, and video. Thin border, 48px of space above. Radius follows the page: 16px on home, 8px in case studies.</p>
 
-  <h3 class="t-h3" style="margin:48px 0 8px">Patterns &amp; utilities</h3>
-  <div class="demo">
-    <span class="t-label" style="display:block;margin-bottom:12px">Custom cursor — dot tracks instantly, ring trails &amp; tightens over clickables</span>
+  <h3 class="t-h3" style="margin:48px 0 8px">Logo marquee</h3>
+  <div class="demo"><div class="c-marquee"><div class="c-mtrack">
+    <span class="c-logo"></span><span class="c-logo"></span><span class="c-logo"></span><span class="c-logo"></span><span class="c-logo"></span><span class="c-logo"></span>
+    <span class="c-logo"></span><span class="c-logo"></span><span class="c-logo"></span><span class="c-logo"></span><span class="c-logo"></span><span class="c-logo"></span>
+  </div></div></div>
+  <p class="note">Logos scroll slowly and loop. The edges fade, and it pauses on hover.</p>
+
+  <div class="grp-head"><div class="gl">Status &amp; feedback</div><div class="gd">Small signals of state, like availability.</div></div>
+
+  <h3 class="t-h3" style="margin:32px 0 8px">Status eyebrow</h3>
+  <div class="demo"><span class="c-eyebrow"><span class="dot"></span>Open to product design roles</span></div>
+  <p class="note">A label with a pulsing green dot. The pulse stops when motion is reduced.</p>
+</div></section>
+
+<!-- PATTERNS -->
+<section class="ds-sec" id="patterns"><div class="wrap">
+  <div class="ds-sec-head"><h2 class="t-h2">Patterns</h2><span class="t-label">Behaviors</span></div>
+  <p class="t-body ds-intro">Behaviors that apply across the site, not single parts. All of them switch off or simplify on touch and when motion is reduced.</p>
+  <div class="demo" style="margin-top:32px">
+    <span class="t-label" style="display:block;margin-bottom:12px">Custom cursor · dot tracks the pointer, ring trails and tightens over links</span>
     <div class="c-cursor"><span class="c-cur-r"></span><span class="c-cur-d"></span></div>
     <span class="t-label" style="display:block;margin:24px 0 12px">Scroll progress bar</span>
     <div class="c-prog-wrap"><div class="c-prog"></div></div>
-    <span class="t-label" style="display:block;margin:24px 0 12px">Mobile menu (hamburger open)</span>
+    <span class="t-label" style="display:block;margin:24px 0 12px">Mobile menu (open)</span>
     <div class="c-mmenu"><a>Projects</a><a>About</a><a>Peers</a><a>Connect</a></div>
   </div>
-  <p class="note">Cursor + progress bar are fine-pointer / scroll utilities. Lightbox: any image opens full-screen on a dark blurred overlay (Esc / click-out to close). All disabled or simplified under reduced-motion / touch.</p>
+  <p class="note">The cursor and scroll bar are for mouse and scroll. Any image opens full screen on a dark overlay; press Escape or click outside to close.</p>
+  <div class="a11y"><span class="tag">A11y</span><div><b>Motion is optional:</b> the cursor, marquee, status pulse, and scroll effects all respect reduced-motion and pointer type. They switch off or simplify rather than force motion on anyone.</div></div>
 
-  <p class="t-small" style="margin-top:48px;color:var(--ink-3)"><strong style="color:var(--ink)">Signature one-off:</strong> the hero caricature + speech bubble (hover tilt, wink swap, left-notched bubble) is intentionally bespoke to the home hero — not a reusable component.</p>
+  <p class="t-small" style="margin-top:48px;color:var(--ink-3)"><strong style="color:var(--ink)">One off:</strong> the hero caricature and speech bubble are custom to the home page, not a reusable part.</p>
 </div></section>
 
-<!-- MIGRATION -->
-<section class="ds-sec" id="migration"><div class="wrap">
-  <div class="ds-sec-head"><h2 class="t-h2">Migration notes</h2><span class="t-label">Current → system</span></div>
-  <div class="rules">
-    <div class="rule"><b>Radius</b>18 → 16 · 14 → 12</div>
-    <div class="rule"><b>Media gap</b>44 → 48</div>
-    <div class="rule"><b>Mobile gutter</b>22 → 24</div>
-    <div class="rule"><b>Type — drop odds/decimals</b>17→16 · 15/15.5→14 · 13→12 · 11→12 · 26→24 · 21→20 · 30→24 · 68→64 · 42→40</div>
-    <div class="rule"><b>Color — fold one-offs</b>#C9C9D2 → ink-3 · caption rgba → ink-3 · #FBFBFD → bg</div>
-    <div class="rule"><b>Durations</b>.35 → .30</div>
-    <div class="rule"><b>Letter-spacing labels</b>.04 / .06 / .1 → .08 everywhere</div>
+<!-- BUILT IN CODE -->
+<section class="ds-sec" id="built"><div class="wrap">
+  <div class="ds-sec-head"><h2 class="t-h2">Built in code</h2><span class="t-label">How it ships</span></div>
+  <p class="t-lede ds-intro">This portfolio and its design system were designed and built directly in code, then shipped to production. An AI coding assistant helped with the build. The design calls and the quality checks are mine.</p>
+  <div class="build-steps">
+    <div class="bstep"><div class="sn">01</div><h4>Write the spec</h4><p>Describe the part in plain words: the rule, the size, the states.</p></div>
+    <div class="bstep"><div class="sn">02</div><h4>Build it</h4><p>Turn the spec into real HTML and CSS against these tokens.</p></div>
+    <div class="bstep"><div class="sn">03</div><h4>Review</h4><p>Check it in the browser on desktop and a narrow phone, then fix.</p></div>
+    <div class="bstep"><div class="sn">04</div><h4>Ship</h4><p>Send it through a pull request; it deploys to the live site.</p></div>
   </div>
+  <p class="t-body" style="margin-top:48px;max-width:64ch">It is the same loop a designer runs with an engineer: a clear spec, a quick build, a close review, a shipped change. The difference is the round trip takes minutes, so the work gets tested on the real thing, not a mockup.</p>
 </div></section>
 
-<div class="footer"><div class="wrap">Design System v3 · Aasif Anwar — source of truth for the gradient theme.</div></div>
+<footer class="doc-foot"><div class="wrap">
+  <div class="c-foot"><span>Design System · Aasif Anwar</span><a href="#top">Back to top ↑</a></div>
+</div></footer>
 
 </body>
 </html>
