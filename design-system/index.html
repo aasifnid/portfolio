@@ -377,6 +377,15 @@
   .a11y b{color:var(--ink);font-family:var(--disp);font-weight:600}
   .a11y .tag{flex-shrink:0;font-family:var(--disp);font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--accent)}
 
+  /* token reference table */
+  .tok-wrap{overflow-x:auto}
+  .tok{width:100%;border-collapse:collapse;font-size:14px;min-width:520px;max-width:760px}
+  .tok th{text-align:left;font-family:var(--disp);font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-3);padding:0 16px 10px 0;border-bottom:1px solid var(--line)}
+  .tok td{padding:12px 16px 12px 0;border-bottom:1px solid var(--line);vertical-align:middle;color:var(--ink-2);line-height:1.45}
+  .tok tr:last-child td{border-bottom:none}
+  .tok td:first-child,.tok td:nth-child(2){white-space:nowrap}
+  .tok .sw{width:18px;height:18px;border-radius:5px;border:1px solid var(--line);display:inline-block;vertical-align:middle;margin-right:8px}
+
   /* built steps */
   .build-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:var(--s-3);margin-top:var(--s-5)}
   @media(max-width:860px){.build-steps{grid-template-columns:1fr 1fr}}
@@ -408,6 +417,7 @@
   <div class="grp">Principles</div>
   <a class="ds-nav-link" data-target="principles">Six rules</a>
   <div class="grp">Foundations</div>
+  <a class="ds-nav-link" data-target="tokens">Tokens</a>
   <a class="ds-nav-link" data-target="color">Color</a>
   <a class="ds-nav-link" data-target="type">Typography</a>
   <a class="ds-nav-link" data-target="spacing">Spacing &amp; layout</a>
@@ -459,6 +469,65 @@
       <p>Every clickable thing has a clear focus state. Every animation can be turned off. Text stays readable on its background.</p>
     </div>
   </div>
+</div></section>
+
+<!-- TOKENS -->
+<section class="ds-sec" id="tokens"><div class="wrap">
+  <div class="ds-sec-head"><h2 class="t-h2">Tokens</h2><span class="t-label">The contract</span></div>
+  <p class="t-body ds-intro">Every value in the system has a name. Components reference these tokens, never a raw hex or pixel, so changing one here updates every page. This is the source of truth the rest of the system is built on. The sections that follow show how each set is applied.</p>
+
+  <span class="t-label" style="display:block;margin:8px 0 12px">Color</span>
+  <div class="tok-wrap"><table class="tok"><thead><tr><th>Token</th><th>Value</th><th>Used for</th></tr></thead><tbody>
+    <tr><td><span class="sw" style="background:var(--bg)"></span><code>--bg</code></td><td><code>#FAFAFB</code></td><td>Page background</td></tr>
+    <tr><td><span class="sw" style="background:var(--surface)"></span><code>--surface</code></td><td><code>#FFFFFF</code></td><td>Cards, panels, nav</td></tr>
+    <tr><td><span class="sw" style="background:var(--ink)"></span><code>--ink</code></td><td><code>#15151A</code></td><td>Primary text</td></tr>
+    <tr><td><span class="sw" style="background:var(--ink-2)"></span><code>--ink-2</code></td><td><code>#54545F</code></td><td>Secondary text</td></tr>
+    <tr><td><span class="sw" style="background:var(--ink-3)"></span><code>--ink-3</code></td><td><code>#9A9AA6</code></td><td>Muted text, labels, captions</td></tr>
+    <tr><td><span class="sw" style="background:var(--line)"></span><code>--line</code></td><td><code>#ECECF1</code></td><td>Hairlines and borders</td></tr>
+    <tr><td><span class="sw" style="background:var(--accent)"></span><code>--accent</code></td><td><code>#9B59E8</code></td><td>Solid brand color, where a gradient can't go</td></tr>
+    <tr><td><span class="sw" style="background:var(--grad)"></span><code>--grad</code></td><td><code>110° gradient</code></td><td>The one highlight per screen, and every number</td></tr>
+    <tr><td><span class="sw" style="background:var(--grad-soft)"></span><code>--grad-soft</code></td><td><code>12% tint</code></td><td>Soft fills and active states</td></tr>
+  </tbody></table></div>
+
+  <span class="t-label" style="display:block;margin:32px 0 12px">Data · charts and zone pills only</span>
+  <div class="tok-wrap"><table class="tok"><thead><tr><th>Token</th><th>Value</th><th>Used for</th></tr></thead><tbody>
+    <tr><td><span class="sw" style="background:var(--data-blue)"></span><code>--data-blue</code></td><td><code>#3D6FD0</code></td><td>Blue zone</td></tr>
+    <tr><td><span class="sw" style="background:var(--data-green)"></span><code>--data-green</code></td><td><code>#1F9E50</code></td><td>Green zone</td></tr>
+    <tr><td><span class="sw" style="background:var(--data-yellow)"></span><code>--data-yellow</code></td><td><code>#B97E16</code></td><td>Yellow zone</td></tr>
+    <tr><td><span class="sw" style="background:var(--data-red)"></span><code>--data-red</code></td><td><code>#D0405E</code></td><td>Red zone</td></tr>
+  </tbody></table></div>
+
+  <span class="t-label" style="display:block;margin:32px 0 12px">Type</span>
+  <div class="tok-wrap"><table class="tok"><thead><tr><th>Token</th><th>Value</th><th>Used for</th></tr></thead><tbody>
+    <tr><td><code>--disp</code></td><td><code>Space Grotesk</code></td><td>Display, headings, labels, numbers</td></tr>
+    <tr><td><code>--sans</code></td><td><code>Inter</code></td><td>Body and UI text</td></tr>
+  </tbody></table></div>
+  <p class="t-caption" style="margin-top:12px">The 7-size scale (56 / 32 / 24 / 20 / 16 / 14 / 12) lives in Typography.</p>
+
+  <span class="t-label" style="display:block;margin:32px 0 12px">Layout</span>
+  <div class="tok-wrap"><table class="tok"><thead><tr><th>Token</th><th>Value</th><th>Used for</th></tr></thead><tbody>
+    <tr><td><code>--sp</code></td><td><code>104px</code></td><td>Section rhythm (case studies override to 80px)</td></tr>
+    <tr><td><code>--maxw</code></td><td><code>1160px</code></td><td>Home content width</td></tr>
+    <tr><td><code>--read</code></td><td><code>800px</code></td><td>Case-study reading column</td></tr>
+  </tbody></table></div>
+  <p class="t-caption" style="margin-top:12px">Spacing uses an 8-point scale (4 / 8 / 16 / 24 / 32 / 48 / 64); see Spacing &amp; layout.</p>
+
+  <span class="t-label" style="display:block;margin:32px 0 12px">Radius</span>
+  <div class="tok-wrap"><table class="tok"><thead><tr><th>Token</th><th>Value</th><th>Used for</th></tr></thead><tbody>
+    <tr><td><code>--radius</code></td><td><code>16px</code></td><td>Cards and media (8px on case studies)</td></tr>
+    <tr><td><code>--radius-sm</code></td><td><code>12px</code></td><td>Small parts and inputs</td></tr>
+    <tr><td><code>--radius-pill</code></td><td><code>999px</code></td><td>Pills and chips</td></tr>
+  </tbody></table></div>
+
+  <span class="t-label" style="display:block;margin:32px 0 12px">Elevation &amp; motion</span>
+  <div class="tok-wrap"><table class="tok"><thead><tr><th>Token</th><th>Value</th><th>Used for</th></tr></thead><tbody>
+    <tr><td><code>--shadow</code></td><td><code>0 24px 56px -24px</code></td><td>The single hover lift</td></tr>
+    <tr><td><code>--t-fast</code></td><td><code>.2s</code></td><td>Hovers and small state changes</td></tr>
+    <tr><td><code>--t-base</code></td><td><code>.3s</code></td><td>Cards and panels</td></tr>
+    <tr><td><code>--t-slow</code></td><td><code>.5s</code></td><td>Larger reveals</td></tr>
+    <tr><td><code>--ease</code></td><td><code>cubic-bezier(.2,1,.3,1)</code></td><td>Standard UI ease-out</td></tr>
+    <tr><td><code>--ease-bounce</code></td><td><code>cubic-bezier(.34,1.56,.64,1)</code></td><td>The caricature only</td></tr>
+  </tbody></table></div>
 </div></section>
 
 <!-- COLOR -->
