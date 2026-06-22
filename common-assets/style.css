@@ -147,6 +147,14 @@ img{display:block;max-width:100%}
 @media(max-width:900px){.nid-grid{grid-template-columns:1fr 1fr}}
 @media(max-width:560px){.nid-grid{grid-template-columns:1fr}}
 
+/* AI Playground */
+.playground{padding-top:var(--sp)}
+.play-intro{font-size:16px;color:var(--ink-2);line-height:1.6;max-width:60ch;margin-top:16px}
+.play-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:32px}
+@media(max-width:640px){.play-grid{grid-template-columns:1fr}}
+.playground .nid-card .im{position:relative}
+.wip-tag{position:absolute;top:12px;left:12px;z-index:1;font-family:var(--disp);font-size:12px;font-weight:600;letter-spacing:.02em;background:#fff;color:var(--ink);padding:6px 13px;border-radius:var(--radius-pill);box-shadow:0 6px 18px -6px rgba(0,0,0,.45)}
+
 /* ─── About + journey timeline ─── */
 .about{padding-top:var(--sp)}
 .about-intro{display:grid;grid-template-columns:1fr 320px;gap:48px;align-items:stretch;margin-top:32px}
