@@ -104,7 +104,7 @@
 <header class="hero" id="top"><div class="wrap">
   <div>
     <p class="eyebrow"><span class="dot"></span>Open to Mid-Senior Product Design roles</p>
-    <h1>I designed products that <br class="hbr">helped <span class="grad-text">30K+ students, <br class="hbr">3K+ tutors,</span> and parents.</h1>
+    <h1>I designed products that <br class="hbr">helped <span class="grad-text"><span class="cnt" data-to="30">30</span>K+ students, <br class="hbr"><span class="cnt" data-to="3">3</span>K+ tutors,</span> and parents.</h1>
     <p class="sub">Lifted trial-to-paid by 9.6%. Got 75.2% of students into class ready to learn.</p>
     <div aria-hidden="true" style="height:56px"></div>
   </div>
@@ -290,6 +290,19 @@
   document.getElementById('pprev').onclick=function(){i=(i-1+REC.length)%REC.length;render();};
   document.getElementById('pnext').onclick=function(){i=(i+1)%REC.length;render();};
   render();
+
+  // hero scale count-up on first load (after the entrance begins); static under reduced-motion
+  (function(){
+    var els=document.querySelectorAll('.hero .cnt');
+    if(!els.length || matchMedia('(prefers-reduced-motion:reduce)').matches) return;
+    [].forEach.call(els,function(el){
+      var to=+el.getAttribute('data-to'); if(!to) return;
+      el.textContent='0';
+      var dur=1100,start=null;
+      function step(ts){ if(start===null)start=ts; var p=Math.min((ts-start)/dur,1); var e=1-Math.pow(1-p,3); el.textContent=String(Math.round(e*to)); if(p<1) requestAnimationFrame(step); else el.textContent=String(to); }
+      setTimeout(function(){ requestAnimationFrame(step); }, 550);
+    });
+  })();
 </script>
 
 </body>

@@ -362,6 +362,7 @@ figure{margin:0}
 .hero h1{animation:heroRise .85s var(--ease) .14s both}
 .hero .sub{animation:heroRise .85s var(--ease) .28s both}
 .hero .portrait-col{animation:heroRise .9s var(--ease) .42s both}
+.hero .cnt{font-variant-numeric:tabular-nums}   /* count-up: equal-width digits so the line doesn't jiggle */
 
 /* Hero — two soft lights drifting behind the headline (composited transform, no repaint) */
 .hero::before{content:'';display:block;position:absolute;inset:-18% auto auto -14%;width:78%;height:88%;z-index:0;pointer-events:none;background:radial-gradient(50% 50% at 42% 38%,rgba(155,89,232,.26),transparent 70%);animation:heroDrift 19s ease-in-out infinite alternate}
