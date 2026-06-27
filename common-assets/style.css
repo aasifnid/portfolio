@@ -121,10 +121,10 @@ img{display:block;max-width:100%}
 /* ─── Work — full-width stacked image cards ─── */
 .cards{display:flex;flex-direction:column;gap:32px}
 .card{display:block;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;transition:transform var(--t-base) var(--ease),box-shadow var(--t-base),border-color var(--t-base)}
-.card:hover{transform:translateY(-6px);box-shadow:var(--shadow);border-color:transparent}
+.card:hover{transform:translateY(-10px);box-shadow:0 0 0 1px rgba(155,89,232,.35),0 28px 56px -20px rgba(120,80,200,.34);border-color:transparent}
 .card-img{position:relative;overflow:hidden;aspect-ratio:16/8;background:var(--grad-soft)}
 .card-img img{width:100%;height:100%;object-fit:cover;transition:transform var(--t-slow) var(--ease)}
-.card:hover .card-img img{transform:scale(1.05)}
+.card:hover .card-img img{transform:scale(1.08)}
 .card-body{padding:28px 32px}
 .card-meta{font-family:var(--disp);font-size:12px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;margin-bottom:12px}
 .card-meta .type{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
@@ -137,10 +137,10 @@ img{display:block;max-width:100%}
 .nid{padding-top:var(--sp)}
 .nid-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
 .nid-card{display:block;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;transition:transform var(--t-base) var(--ease),box-shadow var(--t-base),border-color var(--t-base)}
-.nid-card:hover{transform:translateY(-6px);box-shadow:var(--shadow);border-color:transparent}
+.nid-card:hover{transform:translateY(-8px);box-shadow:0 0 0 1px rgba(155,89,232,.35),0 22px 44px -18px rgba(120,80,200,.32);border-color:transparent}
 .nid-card .im{aspect-ratio:4/3;overflow:hidden;background:var(--grad-soft)}
 .nid-card .im img{width:100%;height:100%;object-fit:cover;transition:transform var(--t-slow) var(--ease)}
-.nid-card:hover .im img{transform:scale(1.05)}
+.nid-card:hover .im img{transform:scale(1.08)}
 .nid-card .bx{padding:20px}
 .nid-card .ti{font-family:var(--disp);font-weight:600;font-size:16px;letter-spacing:-.01em;display:flex;align-items:center;gap:8px;color:var(--ink)}
 .nid-card .ds{font-size:12px;color:var(--ink-2);line-height:1.5;margin-top:8px}
@@ -352,3 +352,62 @@ figure{margin:0}
 .lightbox img{max-width:100%;max-height:100%;border-radius:var(--radius-sm);box-shadow:0 30px 80px -20px rgba(0,0,0,.6)}
 .lb-close{position:absolute;top:24px;right:26px;width:42px;height:42px;border:none;background:rgba(255,255,255,.14);color:#fff;border-radius:50%;font-size:24px;line-height:1;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:background var(--t-fast)}
 .lb-close:hover{background:rgba(255,255,255,.26)}
+
+/* ════════════════ MOTION LAYER — homepage entrance + scroll reveal ════════════════ */
+/* Additive and reversible. Scroll-reveal hidden states are gated behind .js-motion, set pre-paint (no flash) only when motion is allowed. Hero entrance/drift are pure CSS and disabled under reduced-motion. */
+
+/* Hero — staggered rise-in on load */
+@keyframes heroRise{from{opacity:0;transform:translateY(34px) scale(.985)}to{opacity:1;transform:none}}
+.hero .eyebrow{animation:heroRise .8s var(--ease) both}
+.hero h1{animation:heroRise .85s var(--ease) .14s both}
+.hero .sub{animation:heroRise .85s var(--ease) .28s both}
+.hero .portrait-col{animation:heroRise .9s var(--ease) .42s both}
+
+/* Hero — two soft lights drifting behind the headline (composited transform, no repaint) */
+.hero::before{content:'';display:block;position:absolute;inset:-18% auto auto -14%;width:78%;height:88%;z-index:0;pointer-events:none;background:radial-gradient(50% 50% at 42% 38%,rgba(155,89,232,.26),transparent 70%);animation:heroDrift 19s ease-in-out infinite alternate}
+.hero::after{content:'';display:block;position:absolute;inset:auto -12% -22% auto;width:74%;height:84%;z-index:0;pointer-events:none;background:radial-gradient(50% 50% at 60% 60%,rgba(240,96,154,.22),transparent 70%);animation:heroDrift2 24s ease-in-out infinite alternate}
+@keyframes heroDrift{from{transform:translate3d(-6%,-4%,0) scale(1)}to{transform:translate3d(12%,9%,0) scale(1.28)}}
+@keyframes heroDrift2{from{transform:translate3d(6%,5%,0) scale(1.22)}to{transform:translate3d(-9%,-7%,0) scale(1)}}
+
+/* Scroll reveal — rise + fade as elements enter. Uses animation (not transition) so existing hover transitions stay untouched. */
+@keyframes rvIn{from{opacity:0;transform:translateY(40px) scale(.97)}to{opacity:1;transform:none}}
+.js-motion .worked-label,
+.js-motion .worked .marquee,
+.js-motion .sec-top,
+.js-motion .cards .card,
+.js-motion .play-intro,
+.js-motion .play-grid .nid-card,
+.js-motion .nid-grid .nid-card,
+.js-motion #roster,
+.js-motion .quote-card,
+.js-motion .peer-ctrl,
+.js-motion .about-intro,
+.js-motion .about > .wrap > .about-sub,
+.js-motion .tl-v,
+.js-motion .contact .big,
+.js-motion .contact-sub,
+.js-motion .contact-rule,
+.js-motion .ctas,
+.js-motion .cs-list,
+.js-motion .cs-img-grid,
+.js-motion .cs-img-pair,
+.js-motion .cs-table-wrap,
+.js-motion article.cs .media{opacity:0}
+.js-motion .in{animation:rvIn .7s var(--ease) both}
+/* cards fade only (no transform in keyframe) so :hover lift stays free */
+@keyframes rvFade{from{opacity:0}to{opacity:1}}
+.js-motion .cards .card.in,
+.js-motion .nid-grid .nid-card.in,
+.js-motion .play-grid .nid-card.in{animation-name:rvFade}
+
+/* Case-study cover — staggered rise-in on load */
+.cover h1{animation:heroRise .8s var(--ease) both}
+.cover .lede{animation:heroRise .8s var(--ease) .12s both}
+.cover .cover-meta{animation:heroRise .8s var(--ease) .24s both}
+.cover .cover-hero{animation:heroRise .85s var(--ease) .36s both}
+
+@media(prefers-reduced-motion:reduce){
+  .hero .eyebrow,.hero h1,.hero .sub,.hero .portrait-col,
+  .cover h1,.cover .lede,.cover .cover-meta,.cover .cover-hero{animation:none}
+  .hero::before,.hero::after{display:none}
+}
