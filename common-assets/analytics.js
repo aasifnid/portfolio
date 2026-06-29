@@ -58,3 +58,16 @@
     cari.addEventListener('mouseenter', function () { if (hovered) return; hovered = true; track('caricature_hover', {}); });
   }
 })();
+
+/* Capture campaign source from UTM tags as a custom event.
+   Vercel's native UTM breakdown is a paid (Web Analytics Plus) feature, but custom
+   events are free — so a tagged visit shows up under Events as `visit_source`. */
+(function () {
+  try {
+    var q = new URLSearchParams(location.search);
+    var s = q.get('utm_source'), c = q.get('utm_campaign'), m = q.get('utm_medium');
+    if (!(s || c || m)) return;
+    window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+    window.va('event', { name: 'visit_source', source: s || '(none)', campaign: c || '(none)', medium: m || '(none)' });
+  } catch (e) {}
+})();
