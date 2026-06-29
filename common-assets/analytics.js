@@ -67,7 +67,9 @@
     var q = new URLSearchParams(location.search);
     var s = q.get('utm_source'), c = q.get('utm_campaign'), m = q.get('utm_medium');
     if (!(s || c || m)) return;
+    // encode source + campaign into the event NAME (name counts are free; property breakdowns may be paywalled)
+    var name = ('visit_' + (s || 'src') + (c ? '_' + c : '')).replace(/[^a-z0-9_]/gi, '').slice(0, 48);
     window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
-    window.va('event', { name: 'visit_source', source: s || '(none)', campaign: c || '(none)', medium: m || '(none)' });
+    window.va('event', { name: name, source: s || '(none)', campaign: c || '(none)', medium: m || '(none)' });
   } catch (e) {}
 })();
