@@ -75,7 +75,7 @@ img{display:block;max-width:100%}
 /* ════════════════════════════ HOME ════════════════════════════ */
 
 /* ─── Hero ─── */
-.hero{position:relative;padding:calc(var(--sp) + 66px) 0 0;overflow:hidden;background:radial-gradient(64% 82% at 100% -6%,rgba(240,96,154,.28),transparent 68%),radial-gradient(60% 80% at 58% -14%,rgba(155,89,232,.24),transparent 66%),radial-gradient(66% 84% at -4% 4%,rgba(91,108,240,.22),transparent 68%),radial-gradient(48% 58% at 32% 40%,rgba(240,96,154,.13),transparent 70%),linear-gradient(180deg,transparent 64%,var(--bg) 96%)}
+.hero{position:relative;padding:calc(var(--sp) + 66px) 0 0;overflow:hidden;background:radial-gradient(64% 82% at 100% -6%,rgba(240,96,154,.20),transparent 68%),radial-gradient(60% 80% at 58% -14%,rgba(155,89,232,.17),transparent 66%),radial-gradient(66% 84% at -4% 4%,rgba(91,108,240,.15),transparent 68%),radial-gradient(48% 58% at 32% 40%,rgba(240,96,154,.09),transparent 70%),linear-gradient(180deg,transparent 64%,var(--bg) 96%)}
 .hero::before{display:none}   /* superseded by the .hero color spread */
 .hero .wrap{position:relative;z-index:1;width:100%;display:grid;grid-template-columns:1fr 256px;gap:24px;align-items:center}
 .eyebrow{display:inline-flex;align-items:center;gap:8px;font-family:var(--sans);font-size:14px;font-weight:500;color:var(--ink-2);margin-bottom:24px}
@@ -365,10 +365,8 @@ figure{margin:0}
 .hero .cnt{font-variant-numeric:tabular-nums}   /* count-up: equal-width digits so the line doesn't jiggle */
 
 /* Hero — two soft lights drifting behind the headline (composited transform, no repaint) */
-.hero::before{content:'';display:block;position:absolute;inset:-18% auto auto -14%;width:78%;height:88%;z-index:0;pointer-events:none;background:radial-gradient(50% 50% at 42% 38%,rgba(155,89,232,.26),transparent 70%);animation:heroDrift 19s ease-in-out infinite alternate}
-.hero::after{content:'';display:block;position:absolute;inset:auto -12% -22% auto;width:74%;height:84%;z-index:0;pointer-events:none;background:radial-gradient(50% 50% at 60% 60%,rgba(240,96,154,.22),transparent 70%);animation:heroDrift2 24s ease-in-out infinite alternate}
+.hero::before{content:'';display:block;position:absolute;inset:-18% auto auto -14%;width:78%;height:88%;z-index:0;pointer-events:none;background:radial-gradient(50% 50% at 42% 38%,rgba(155,89,232,.18),transparent 70%);animation:heroDrift 19s ease-in-out infinite alternate}
 @keyframes heroDrift{from{transform:translate3d(-6%,-4%,0) scale(1)}to{transform:translate3d(12%,9%,0) scale(1.28)}}
-@keyframes heroDrift2{from{transform:translate3d(6%,5%,0) scale(1.22)}to{transform:translate3d(-9%,-7%,0) scale(1)}}
 
 /* Scroll reveal — rise + fade as elements enter. Uses animation (not transition) so existing hover transitions stay untouched. */
 @keyframes rvIn{from{opacity:0;transform:translateY(40px) scale(.97)}to{opacity:1;transform:none}}
@@ -410,5 +408,5 @@ figure{margin:0}
 @media(prefers-reduced-motion:reduce){
   .hero .eyebrow,.hero h1,.hero .sub,.hero .portrait-col,
   .cover h1,.cover .lede,.cover .cover-meta,.cover .cover-hero{animation:none}
-  .hero::before,.hero::after{display:none}
+  .hero::before{display:none}
 }
