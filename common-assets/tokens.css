@@ -26,7 +26,7 @@
   --data-green:#1F9E50;  --data-green-bg:rgba(52,199,94,.16);
 
   /* ─── Type families (scale lives in typography.css + component CSS) ─── */
-  --disp: 'Space Grotesk', -apple-system, system-ui, sans-serif;  /* display / headings */
+  --disp: 'Geist', -apple-system, system-ui, sans-serif;  /* display / headings */
   --sans: 'Inter', -apple-system, system-ui, sans-serif;          /* body / UI */
 
   /* ─── Radius ─── */
