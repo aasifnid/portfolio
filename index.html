@@ -2,6 +2,7 @@
 <html lang="en" data-theme="dark">
 <head>
 <script>document.documentElement.setAttribute("data-theme",localStorage.getItem("theme")||"dark");</script>
+<script>(function(){try{if(!matchMedia('(prefers-reduced-motion:reduce)').matches && document.createElement('canvas').getContext) document.documentElement.classList.add('js-particles');}catch(e){}})();</script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Md Aasif Anwar — Product Designer</title>
@@ -121,7 +122,7 @@
 <!-- NAV:END -->
 
 <!-- HERO -->
-<header class="hero" id="top"><div class="wrap">
+<header class="hero" id="top"><canvas id="hero-particles"></canvas><div class="wrap">
   <div>
     <p class="eyebrow"><span class="dot"></span>Open to full time opportunities</p>
     <h1>I designed products that <br class="hbr">helped <span class="grad-text"><span class="cnt" data-to="30">30</span>K+ students, <br class="hbr"><span class="cnt" data-to="3">3</span>K+ tutors,</span> and parents.</h1>
@@ -323,6 +324,60 @@
       setTimeout(function(){ requestAnimationFrame(step); }, 550);
     });
   })();
+</script>
+
+<!-- Hero particle assemble — one-shot on load; progressive enhancement -->
+<script>
+(function(){
+  var root=document.documentElement;
+  if(!root.classList.contains('js-particles')) return;
+  var hero=document.getElementById('top');
+  var portrait=document.querySelector('.hero .portrait');
+  var canvas=document.getElementById('hero-particles');
+  if(!hero||!portrait||!canvas||!canvas.getContext){ if(portrait) portrait.style.opacity='1'; return; }
+  var ctx=canvas.getContext('2d');
+  var dpr=Math.min(window.devicePixelRatio||1,2);
+  var W,H,ox,oy,pw,ph,samples=[],parts=[],raf;
+  var GAP=3, SIZE=1.6, DUR=1500;
+  var def=portrait.querySelector('.cari-default');
+  var img=new Image(); img.crossOrigin='anonymous'; img.src=(def&&(def.currentSrc||def.src))||'home/assets/home-cta.webp';
+
+  function show(){ portrait.style.opacity='1'; canvas.classList.add('hide'); }
+  function measure(){
+    W=hero.clientWidth; H=hero.clientHeight;
+    canvas.width=W*dpr; canvas.height=H*dpr; ctx.setTransform(dpr,0,0,dpr,0,0);
+    var hr=hero.getBoundingClientRect(), pr=portrait.getBoundingClientRect();
+    ox=pr.left-hr.left; oy=pr.top-hr.top; pw=pr.width; ph=pr.height;
+  }
+  function sample(){
+    var S=Math.max(160,Math.min(Math.round(Math.min(pw,ph))||200,260));
+    var off=document.createElement('canvas'); off.width=S; off.height=S;
+    var o=off.getContext('2d');
+    var sc=Math.min(S/img.width,S/img.height), dw=img.width*sc, dh=img.height*sc;
+    o.drawImage(img,(S-dw)/2,(S-dh)/2,dw,dh);
+    var d; try{ d=o.getImageData(0,0,S,S).data; }catch(e){ return false; }
+    samples=[];
+    for(var y=0;y<S;y+=GAP) for(var x=0;x<S;x+=GAP){ var i=(y*S+x)*4; if(d[i+3]>130) samples.push({u:x/S,v:y/S,r:d[i],g:d[i+1],b:d[i+2],a:d[i+3]/255}); }
+    return samples.length>0;
+  }
+  function build(){ parts=samples.map(function(s){ return {tx:ox+s.u*pw,ty:oy+s.v*ph,sx:Math.random()*W,sy:Math.random()*H,r:s.r,g:s.g,b:s.b,a:s.a,d:Math.random()*0.4}; }); }
+  function ease(t){ return 1-Math.pow(1-t,3); }
+  function run(){
+    measure();
+    if(!sample()){ show(); return; }
+    build();
+    var start=performance.now();
+    (function frame(now){
+      var gp=Math.min((now-start)/DUR,1);
+      ctx.clearRect(0,0,W,H);
+      for(var k=0;k<parts.length;k++){ var p=parts[k]; var lp=(gp-p.d)/(1-p.d); lp=lp<0?0:lp>1?1:lp; var e=ease(lp);
+        ctx.fillStyle='rgba('+p.r+','+p.g+','+p.b+','+(p.a*e).toFixed(3)+')';
+        ctx.fillRect(p.sx+(p.tx-p.sx)*e, p.sy+(p.ty-p.sy)*e, SIZE, SIZE); }
+      if(gp<1) raf=requestAnimationFrame(frame); else show();
+    })(start);
+  }
+  if(img.complete && img.naturalWidth) run(); else { img.onload=run; img.onerror=show; }
+})();
 </script>
 
 </body>
