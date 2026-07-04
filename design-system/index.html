@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../common-assets/tokens.css">
-<script>var r=document.documentElement;r.setAttribute('data-theme',localStorage.getItem('ds-theme-v2')||'dark');r.setAttribute('data-section',(location.hash||'').replace('#','')||'overview');</script>
+<script>var r=document.documentElement;r.setAttribute('data-theme',localStorage.getItem('theme')||'dark');r.setAttribute('data-section',(location.hash||'').replace('#','')||'overview');</script>
 <style>
   /* ══ DARK THEME OVERRIDES (candidate for tokens.css [data-theme=dark]) ══ */
   /* light extras first — dark block MUST come after (equal specificity, source order wins) */
@@ -1256,7 +1256,7 @@
   toggle.addEventListener('click', function(){
     var next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
     root.setAttribute('data-theme', next);
-    localStorage.setItem('ds-theme-v2', next);
+    localStorage.setItem('theme', next);
   });
 
   var views = document.querySelectorAll('.ds-view');

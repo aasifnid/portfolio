@@ -410,3 +410,29 @@ figure{margin:0}
   .cover h1,.cover .lede,.cover .cover-meta,.cover .cover-hero{animation:none}
   .hero::before{display:none}
 }
+
+/* ═══════════════════════ DARK THEME ADJUSTMENTS ═══════════════════════
+   Base rules above stay light. These apply only under [data-theme="dark"]
+   and fix spots that hardcode light values or need to flip.
+   ══════════════════════════════════════════════════════════════════════ */
+[data-theme="dark"] .site-nav.scrolled{background:rgba(12,12,15,.72)}
+[data-theme="dark"] .nav-mobile-menu{background:rgba(12,12,15,.98)}
+[data-theme="dark"] .eyebrow{border-color:var(--line)}
+[data-theme="dark"] .wip-tag{color:#15151A}
+[data-theme="dark"] .tl-vrow::before{border-color:var(--ink-3)}
+[data-theme="dark"] .alt--picked .alt-name{color:var(--ink)}
+/* footer flips to a light bar → flip its text dark */
+[data-theme="dark"] .foot-meta{color:rgba(21,21,26,.55)}
+[data-theme="dark"] .foot-top{color:rgba(21,21,26,.8)}
+[data-theme="dark"] .foot-top:hover{color:var(--accent)}
+/* logo marquee → faded monochrome white marks (pending white logo assets) */
+[data-theme="dark"] .marquee-track .logo img{filter:brightness(0) invert(1);opacity:.55;transition:opacity var(--t-base)}
+[data-theme="dark"] .worked:hover .marquee-track .logo img{opacity:.85}
+
+/* ─── Theme toggle (in nav) ─── */
+.nav-actions{display:flex;align-items:center;gap:16px}
+.theme-toggle{width:36px;height:36px;border-radius:var(--radius-pill);border:1px solid var(--line);background:transparent;color:var(--ink-2);cursor:pointer;display:grid;place-items:center;flex:none;transition:border-color var(--t-fast),color var(--t-fast)}
+.theme-toggle:hover{color:var(--ink);border-color:var(--ink-3)}
+.theme-toggle svg{width:18px;height:18px;grid-area:1/1;transition:transform var(--t-slow) var(--ease-bounce),opacity var(--t-base) var(--ease)}
+[data-theme="light"] .theme-toggle .i-moon{opacity:0;transform:rotate(-90deg) scale(.3)}
+[data-theme="dark"] .theme-toggle .i-sun{opacity:0;transform:rotate(90deg) scale(.3)}

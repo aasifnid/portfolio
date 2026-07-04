@@ -46,3 +46,19 @@
   --read:800px;   /* case-study reading column width */
 
 }
+
+/* ═══════════════════════════════════════════════════════════════
+   Dark theme — applied when <html data-theme="dark">. Site default.
+   Only the surface/ink/line/shadow scale flips; accent, gradient,
+   data colours, type, radius and motion stay identical.
+   ═══════════════════════════════════════════════════════════════ */
+[data-theme="dark"] {
+  --bg:        #0C0C0F;   /* page background — near-black */
+  --surface:   #16161C;   /* cards, panels, nav */
+  --ink:       #F5F5F7;   /* primary text */
+  --ink-2:     #ADADB8;   /* secondary text */
+  --ink-3:     #6C6C78;   /* muted text */
+  --line:      #26262F;   /* hairlines, borders */
+  --grad-soft: linear-gradient(110deg,rgba(91,108,240,.18),rgba(240,96,154,.18));
+  --shadow:    0 24px 56px -24px rgba(0,0,0,.6);
+}
