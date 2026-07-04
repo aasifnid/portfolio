@@ -446,5 +446,5 @@ figure{margin:0}
 /* per-theme logo variants — colour .webp in light, white .svg in dark (no filter blob) */
 
 /* hero stat row (scale + metrics, one line) */
-.hero-stats{font-family:var(--disp);font-size:16px;color:var(--ink-2);margin-top:28px;max-width:30rem;line-height:1.5}
+.hero-stats{font-family:var(--disp);font-size:16px;color:var(--ink-2);margin-top:28px;max-width:34rem;line-height:1.5;text-wrap:balance}
 .hero-stats b{color:var(--ink);font-weight:600}

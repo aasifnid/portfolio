@@ -124,9 +124,9 @@
 <!-- HERO -->
 <header class="hero" id="top"><canvas id="hero-particles"></canvas><div class="wrap">
   <div>
-    <p class="eyebrow"><span class="dot"></span>Open to full time opportunities</p>
+    <p class="eyebrow"><span class="dot"></span>Open to full-time roles · NID graduate</p>
     <h1>A product designer <br class="hbr">obsessed with <span class="grad-text">user insights</span> and <span class="grad-text">feedback</span>.</h1>
-    <p class="hero-stats">Designed for <b><span class="cnt" data-to="30">30</span>K+</b> students and <b><span class="cnt" data-to="3">3</span>K+</b> tutors. Lifted trial-to-paid by <b>10%</b> and got <b>75%</b> of students emotionally ready before class.</p>
+    <p class="hero-stats"><b><span class="cnt" data-to="5">5</span> years</b> designing for <b><span class="cnt" data-to="30">30</span>K+</b> students and <b><span class="cnt" data-to="3">3</span>K+</b> tutors. Lifted trial-to-paid by <b><span class="cnt" data-to="10">10</span>%</b> and got <b><span class="cnt" data-to="75">75</span>%</b> of students emotionally ready before class starts.</p>
     <div aria-hidden="true" style="height:56px"></div>
   </div>
   <div class="portrait-col">
@@ -312,17 +312,28 @@
   document.getElementById('pnext').onclick=function(){i=(i+1)%REC.length;render();};
   render();
 
-  // hero scale count-up on first load (after the entrance begins); static under reduced-motion
+  // hero scale count-up; static under reduced-motion.
+  // When the particle assemble is running, hold the digits at 0 and let the
+  // particle script trigger the count (window.__heroCount) once the caricature
+  // has settled — so the numbers get their own beat instead of competing with
+  // the larger particle motion for attention.
   (function(){
     var els=document.querySelectorAll('.hero .cnt');
     if(!els.length || matchMedia('(prefers-reduced-motion:reduce)').matches) return;
-    [].forEach.call(els,function(el){
-      var to=+el.getAttribute('data-to'); if(!to) return;
-      el.textContent='0';
-      var dur=1100,start=null;
-      function step(ts){ if(start===null)start=ts; var p=Math.min((ts-start)/dur,1); var e=1-Math.pow(1-p,3); el.textContent=String(Math.round(e*to)); if(p<1) requestAnimationFrame(step); else el.textContent=String(to); }
-      setTimeout(function(){ requestAnimationFrame(step); }, 550);
-    });
+    [].forEach.call(els,function(el){ if(+el.getAttribute('data-to')) el.textContent='0'; });
+    function run(){
+      [].forEach.call(els,function(el){
+        var to=+el.getAttribute('data-to'); if(!to) return;
+        var dur=1100,start=null;
+        function step(ts){ if(start===null)start=ts; var p=Math.min((ts-start)/dur,1); var e=1-Math.pow(1-p,3); el.textContent=String(Math.round(e*to)); if(p<1) requestAnimationFrame(step); else el.textContent=String(to); }
+        requestAnimationFrame(step);
+      });
+    }
+    if(document.documentElement.classList.contains('js-particles')){
+      window.__heroCount=run;          // particle script fires this after the caricature settles
+    } else {
+      setTimeout(run, 550);            // no particles: keep the original quick entrance
+    }
   })();
 </script>
 
@@ -334,7 +345,7 @@
   var hero=document.getElementById('top');
   var portrait=document.querySelector('.hero .portrait');
   var canvas=document.getElementById('hero-particles');
-  if(!hero||!portrait||!canvas||!canvas.getContext){ if(portrait) portrait.style.opacity='1'; return; }
+  if(!hero||!portrait||!canvas||!canvas.getContext){ if(portrait) portrait.style.opacity='1'; if(window.__heroCount){ var f0=window.__heroCount; window.__heroCount=null; setTimeout(f0,300); } return; }
   var ctx=canvas.getContext('2d');
   var dpr=Math.min(window.devicePixelRatio||1,2);
   var W,H,ox,oy,pw,ph,samples=[],parts=[],raf;
@@ -342,7 +353,7 @@
   var def=portrait.querySelector('.cari-default');
   var img=new Image(); img.crossOrigin='anonymous'; img.src=(def&&(def.currentSrc||def.src))||'home/assets/home-cta.webp';
 
-  function show(){ portrait.style.opacity='1'; canvas.classList.add('hide'); }
+  function show(){ portrait.style.opacity='1'; canvas.classList.add('hide'); if(window.__heroCount){ var f=window.__heroCount; window.__heroCount=null; setTimeout(f,900); } }
   function measure(){
     W=hero.clientWidth; H=hero.clientHeight;
     canvas.width=W*dpr; canvas.height=H*dpr; ctx.setTransform(dpr,0,0,dpr,0,0);
