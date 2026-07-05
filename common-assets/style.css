@@ -67,7 +67,7 @@ img{display:block;max-width:100%}
 .cs-nav-btn:hover{color:var(--ink)}
 
 /* ─── Icon + text link CTAs (hero + contact) ─── */
-.ctas{display:flex;gap:24px;flex-wrap:wrap}
+.ctas{display:flex;gap:40px;flex-wrap:wrap}
 .cta{display:inline-flex;align-items:center;gap:8px;font-size:14px;color:var(--ink-2);border-bottom:1px solid transparent;padding-bottom:4px;transition:color var(--t-fast),border-color var(--t-fast)}
 .cta svg{width:16px;height:16px;flex-shrink:0}
 .cta:hover{color:var(--ink);border-bottom-color:var(--ink)}
@@ -122,16 +122,31 @@ img{display:block;max-width:100%}
 .cards{display:flex;flex-direction:column;gap:32px}
 .card{display:block;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;transition:transform var(--t-base) var(--ease),box-shadow var(--t-base),border-color var(--t-base)}
 .card:hover{transform:translateY(-10px);box-shadow:0 0 0 1px rgba(155,89,232,.35),0 28px 56px -20px rgba(120,80,200,.34);border-color:transparent}
-.card-img{position:relative;overflow:hidden;aspect-ratio:16/8;background:var(--grad-soft)}
-.card-img img{width:100%;height:100%;object-fit:cover;transition:transform var(--t-slow) var(--ease)}
-.card:hover .card-img img{transform:scale(1.08)}
+.card-img{position:relative;overflow:hidden;width:100%;height:440px;background:var(--grad-soft)}
+.card-img img{width:100%;height:100%;object-fit:contain;object-position:center;box-sizing:border-box;padding:96px 40px 48px;transition:transform var(--t-slow) var(--ease)}
+.card:hover .card-img img{transform:scale(1.05)}
 .card-body{padding:28px 32px}
 .card-meta{font-family:var(--disp);font-size:12px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;margin-bottom:12px}
 .card-meta .type{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
 .card-title{font-family:var(--disp);font-weight:600;font-size:clamp(20px,2.4vw,24px);letter-spacing:-.02em;line-height:1.2}
 .card-desc{font-size:14px;color:var(--ink-2);line-height:1.55;max-width:60ch;margin-top:12px}
+/* card anatomy: tags overlaid on image (separate solid pills) · title · context · metric row */
+.card-tags{position:absolute;top:20px;left:24px;z-index:2;display:flex;gap:8px;flex-wrap:wrap;font-family:var(--disp);font-size:12px;font-weight:500;letter-spacing:.08em;text-transform:uppercase}
+.card-tag{background:rgba(16,16,22,.72);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);color:#fff;border:1px solid rgba(255,255,255,.14);border-radius:var(--radius-pill);padding:6px 12px}
+.card-context{font-size:14px;color:var(--ink-2);line-height:1.55;margin-top:8px}
+.card-metric{margin-top:32px;display:flex;gap:60px;flex-wrap:wrap;align-items:flex-start}
+.card-stat .stat-top{display:flex;align-items:center;gap:8px}
+.card-stat .num{font-family:var(--disp);font-size:20px;font-weight:700;line-height:1;color:var(--ink)}
+.card-stat .arw{font-family:var(--disp);font-size:12px;line-height:1;color:var(--positive)}
+.card-stat .stat-lbl{font-size:14px;color:var(--ink-3);margin-top:8px}
+.card-stat .note{color:var(--ink-3)}
 @media(max-width:720px){.card-body{padding:24px}}
-@media(max-width:640px){.card-img{aspect-ratio:16/10}}
+@media(max-width:640px){
+  .card-img{height:300px}
+  .card-img img{padding:72px 24px 32px}       /* top clearance for the (possibly wrapped) tags; bottom breathing echoes desktop */
+  .card-tags{top:16px;left:16px}
+  .card-metric{flex-direction:column;gap:20px;margin-top:24px}   /* stack the two stats instead of a cramped row */
+}
 
 /* ─── Projects at NID — smaller grid ─── */
 .nid{padding-top:var(--sp)}
@@ -149,7 +164,7 @@ img{display:block;max-width:100%}
 
 /* AI Playground */
 .playground{padding-top:var(--sp)}
-.play-intro{font-size:16px;color:var(--ink-2);line-height:1.6;max-width:60ch;margin-top:16px}
+.play-intro{font-size:16px;color:var(--ink-2);line-height:1.6;max-width:none;margin-top:16px}
 .play-grid{display:flex;flex-wrap:wrap;gap:24px;margin-top:32px}
 .play-grid > .nid-card{flex:1 1 320px;max-width:520px}
 @media(max-width:640px){.play-grid > .nid-card{max-width:none}}
@@ -173,7 +188,7 @@ img{display:block;max-width:100%}
 .tl-v{margin-top:56px;max-width:640px;border-left:2px solid var(--line)}
 .tl-vrow{position:relative;display:grid;grid-template-columns:104px 1fr;gap:24px;padding:0 0 32px 28px}
 .tl-vrow:last-child{padding-bottom:0}
-.tl-vrow::before{content:'';position:absolute;box-sizing:border-box;left:-8px;top:4px;width:14px;height:14px;border-radius:50%;background:var(--bg);border:2px solid #C9C9D2}
+.tl-vrow::before{content:'';position:absolute;box-sizing:border-box;left:-8px;top:4px;width:14px;height:14px;border-radius:50%;background:var(--bg);border:2px solid var(--ink-3)}
 .tl-vrow.last::before{border:none;background:var(--grad)}
 .tl-vyr{font-family:var(--disp);font-size:12px;font-weight:500;color:var(--ink-3);padding-top:2px}
 .tl-vrole{font-weight:600;font-size:16px;line-height:1.25}
@@ -183,7 +198,7 @@ img{display:block;max-width:100%}
 /* ─── Peers — editorial pull-quote + chip roster ─── */
 .peers{padding-top:var(--sp)}
 .quote-card{position:relative;margin-top:48px}   /* sits below the chip roster */
-.qmark{display:inline-block;font-family:var(--disp);font-weight:700;font-size:clamp(56px,6vw,84px);line-height:1;height:.5em;overflow:hidden;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;opacity:1;pointer-events:none;user-select:none;margin-bottom:clamp(14px,1.8vw,24px)}
+.qmark{display:inline-block;font-family:var(--disp);font-weight:700;font-size:clamp(40px,6vw,64px);line-height:1;height:.5em;overflow:hidden;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;opacity:1;pointer-events:none;user-select:none;margin-bottom:clamp(14px,1.8vw,24px)}
 .peer-feat{font-family:var(--disp);font-weight:500;font-size:clamp(20px,2.4vw,24px);line-height:1.4;letter-spacing:-.02em;max-width:720px;min-height:5.8em}   /* fixed ~4-line box sized to the longest of the 6 → name + controls never shift */
 @media(max-width:640px){.peer-feat{min-height:12em}}   /* mobile: quote wraps to more lines (viewport-width), so reserve taller to keep name + arrows from shifting */
 .quote-foot{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-top:32px}
@@ -214,7 +229,7 @@ a.peer-by{display:inline-flex;align-items:center;gap:14px;cursor:pointer}
 .contact::before{content:'';position:absolute;top:0;left:-5%;width:560px;height:420px;background:radial-gradient(50% 50% at 40% 30%,rgba(91,108,240,.12),transparent 70%);filter:blur(8px);pointer-events:none}
 .contact .wrap{position:relative;z-index:1}
 .contact .big{font-family:var(--disp);font-weight:600;font-size:clamp(32px,6vw,56px);line-height:1.05;letter-spacing:-.02em;max-width:16ch}
-.contact-sub{font-size:clamp(16px,2vw,20px);color:var(--ink-2);line-height:1.6;max-width:48ch;margin-top:24px}
+.contact-sub{font-size:20px;color:var(--ink-2);line-height:1.6;max-width:48ch;margin-top:24px}
 .contact-rule{width:56px;height:2px;border-radius:2px;background:var(--ink-3);margin:32px 0}
 .contact .ctas{margin-top:32px}
 .foot{position:relative;overflow:hidden;background:var(--ink);padding:40px 0}
@@ -224,7 +239,7 @@ a.peer-by{display:inline-flex;align-items:center;gap:14px;cursor:pointer}
 .page-cs .foot{margin-top:var(--sp)}
 .page-cs .foot-in{max-width:var(--read)}
 .foot-meta{font-family:var(--disp);font-size:12px;color:rgba(255,255,255,.55)}
-.foot-top{font-family:var(--disp);font-size:12px;color:rgba(255,255,255,.78);display:inline-flex;align-items:center;gap:6px;transition:color var(--t-fast)}
+.foot-top{font-family:var(--disp);font-size:12px;color:rgba(255,255,255,.78);display:inline-flex;align-items:center;gap:8px;transition:color var(--t-fast)}
 .foot-top span{transition:transform var(--t-fast) var(--ease)}
 .foot-top:hover{color:#C9A2F2}
 .foot-top:hover span{transform:translateY(-3px)}
@@ -446,5 +461,5 @@ figure{margin:0}
 /* per-theme logo variants — colour .webp in light, white .svg in dark (no filter blob) */
 
 /* hero stat row (scale + metrics, one line) */
-.hero-stats{font-family:var(--disp);font-size:16px;color:var(--ink-2);margin-top:28px;max-width:34rem;line-height:1.5;text-wrap:balance}
+.hero-stats{font-family:var(--disp);font-size:20px;color:var(--ink-2);margin-top:28px;max-width:34rem;line-height:1.5;text-wrap:pretty}
 .hero-stats b{color:var(--ink);font-weight:600}

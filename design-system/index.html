@@ -447,6 +447,21 @@
   .gcol.do li::before{background:var(--data-green);-webkit-mask:url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2024%2024'%20fill='none'%20stroke='black'%20stroke-width='3'%20stroke-linecap='round'%20stroke-linejoin='round'%3E%3Cpath%20d='M5%2013l4%204L19%207'/%3E%3C/svg%3E");mask:url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2024%2024'%20fill='none'%20stroke='black'%20stroke-width='3'%20stroke-linecap='round'%20stroke-linejoin='round'%3E%3Cpath%20d='M5%2013l4%204L19%207'/%3E%3C/svg%3E")}
   .gcol.dont li::before{background:var(--data-red);-webkit-mask:url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2024%2024'%20fill='none'%20stroke='black'%20stroke-width='3'%20stroke-linecap='round'%3E%3Cpath%20d='M6%206l12%2012M18%206L6%2018'/%3E%3C/svg%3E");mask:url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2024%2024'%20fill='none'%20stroke='black'%20stroke-width='3'%20stroke-linecap='round'%3E%3Cpath%20d='M6%206l12%2012M18%206L6%2018'/%3E%3C/svg%3E")}
 
+  /* ── Case study card (organism) — mirrors the live home Projects card ── */
+  .cscard{display:block;max-width:580px;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;text-decoration:none;transition:transform var(--t-base) var(--ease),box-shadow var(--t-base)}
+  .cscard:hover{transform:translateY(-6px);box-shadow:var(--shadow)}
+  .cscard .cimg{position:relative;overflow:hidden;width:100%;height:260px;background:#D6F5FF}
+  .cscard .cimg img{width:100%;height:100%;object-fit:contain;object-position:center;box-sizing:border-box;padding:56px 40px 32px;transition:transform var(--t-slow) var(--ease)}
+  .cscard:hover .cimg img{transform:scale(1.05)}
+  .cscard .ctags{position:absolute;top:16px;left:16px;display:flex;gap:8px;flex-wrap:wrap;font-family:var(--disp);font-size:12px;font-weight:500;letter-spacing:.08em;text-transform:uppercase}
+  .cscard .ctag{background:rgba(16,16,22,.72);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);color:#fff;border:1px solid rgba(255,255,255,.14);border-radius:var(--radius-pill);padding:6px 12px}
+  .cscard .cbody{padding:24px 28px}
+  .cscard .ctitle{font-family:var(--disp);font-weight:600;font-size:22px;letter-spacing:-.02em;line-height:1.2;color:var(--ink);margin:0}
+  .cscard .cctx{font-size:14px;color:var(--ink-2);line-height:1.55;margin:8px 0 0}
+  .cscard .cmetric{display:flex;gap:40px;flex-wrap:wrap;margin-top:20px}
+  .cscard .cnum{font-family:var(--disp);font-size:20px;font-weight:700;line-height:1;color:var(--ink);display:flex;align-items:center;gap:8px}
+  .cscard .cnum .arw{font-size:12px;color:var(--positive)}
+  .cscard .clbl{font-size:14px;color:var(--ink-3);margin-top:8px}
 </style>
 </head>
 <body>
@@ -566,6 +581,13 @@
               <div class="sw-card"><div class="box" style="background:var(--accent)"></div><span class="nm">--accent</span><div class="rl">Solid brand</div><div class="vl"><i>L/D</i>#9B59E8</div></div>
               <div class="sw-card"><div class="box" style="background:var(--grad)"></div><span class="nm">--grad</span><div class="rl">The highlight</div><div class="vl"><i>L/D</i>110° · 3-stop</div></div>
               <div class="sw-card"><div class="box" style="background:var(--grad-soft)"></div><span class="nm">--grad-soft</span><div class="rl">Soft tint</div><div class="vl"><i>L</i>12% · <i>D</i>18%</div></div>
+            </div>
+          </div>
+
+          <div class="tok-group">
+            <div class="gh"><b>Status</b><span>1 token</span><em>Positive signal on metrics — upward stat arrows.</em></div>
+            <div class="sw-grid">
+              <div class="sw-card"><div class="box" style="background:var(--positive)"></div><span class="nm">--positive</span><div class="rl">Success / positive</div><div class="vl"><i>L/D</i>#5FD08A</div></div>
             </div>
           </div>
 
@@ -844,8 +866,7 @@
     <p class="view-intro">Atoms combined into reusable pieces. Seven patterns that show up across the site.</p>
     <div class="layout">
       <nav class="subnav csub">
-        <a data-p="m-card" class="active">Work card</a>
-        <a data-p="m-project">Project card</a>
+        <a data-p="m-project" class="active">Project card</a>
         <a data-p="m-table">Table</a>
         <a data-p="m-stats">Impact stats</a>
         <a data-p="m-rec">Recommendation</a>
@@ -854,26 +875,7 @@
       </nav>
       <div class="cpanels">
 
-        <div class="cpanel on" id="m-card">
-          <h3 class="f-title">Work card</h3>
-          <p class="f-lead">The full-width case-study card on the home page. A cover image, a gradient type label, the title and one line. The whole card lifts on hover.</p>
-          <div class="demo">
-            <a class="card">
-              <div class="card-img"><svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="8.5" cy="10" r="1.6"/><path d="m4 17 5-4 4 3 3-2 4 3"/></svg></div>
-              <div class="card-body">
-                <div class="card-meta"><span class="type">Behavioural design</span></div>
-                <div class="card-title">Feel Check</div>
-                <p class="card-desc">A student-led emotional check-in built into the start of every live class.</p>
-              </div>
-            </a>
-          </div>
-          <div class="guide">
-            <div class="gcol do"><h4>When to use</h4><ul><li>One card per case study on the home page.</li><li>Lead the meta with the problem type in gradient.</li><li>Keep the description to one line.</li></ul></div>
-            <div class="gcol dont"><h4>When not to use</h4><ul><li>Do not crowd the card with extra stats.</li><li>Do not use more than one gradient element.</li><li>Do not change the corner radius per card.</li></ul></div>
-          </div>
-        </div>
-
-        <div class="cpanel" id="m-project">
+        <div class="cpanel on" id="m-project">
           <h3 class="f-title">Project card</h3>
           <p class="f-lead">A smaller card for NID projects and the AI Playground. A square-ish image, a title with an optional icon, and a short line. Sits in a grid of three.</p>
           <div class="demo">
@@ -1001,6 +1003,7 @@
         <a data-p="o-nav" class="active">Navigation</a>
         <a data-p="o-menu">Mobile menu</a>
         <a data-p="o-cover">Case-study cover</a>
+        <a data-p="o-card">Case study card</a>
         <a data-p="o-marquee">Logo marquee</a>
         <a data-p="o-footer">Footer</a>
         <a data-p="o-ai">AI assistant</a>
@@ -1073,6 +1076,32 @@
           <div class="guide">
             <div class="gcol do"><h4>When to use</h4><ul><li>Lead with an outcome-focused title.</li><li>Keep the lede to one or two lines.</li><li>Fill all three meta fields.</li></ul></div>
             <div class="gcol dont"><h4>When not to use</h4><ul><li>Do not add a category eyebrow above the title.</li><li>Do not exceed three meta fields.</li><li>Do not bury the title under a large image.</li></ul></div>
+          </div>
+        </div>
+
+        <div class="cpanel" id="o-card">
+          <h3 class="f-title">Case study card</h3>
+          <p class="f-lead">The full-width project card in the home Projects list. A colour-filled image band carries the transparent product graphic with overlaid tag pills, then a title, one line of context, and up to three stat metrics. The whole card lifts and the graphic zooms on hover.</p>
+          <div class="demo">
+            <a class="cscard" href="../projects/feel-check/index.html" target="_blank" rel="noopener">
+              <div class="cimg" style="background:#D6F5FF">
+                <img src="../projects/feel-check/assets/feel-check-card-thumbnail.webp" alt="">
+                <div class="ctags"><span class="ctag">Behavioral design</span><span class="ctag">0&rarr;1</span><span class="ctag">Lead Designer</span></div>
+              </div>
+              <div class="cbody">
+                <h4 class="ctitle">Getting students emotionally ready before a live class</h4>
+                <p class="cctx">Feel Check, a check-in that shows tutors how each student is feeling and helps them settle in and focus.</p>
+                <div class="cmetric">
+                  <div><div class="cnum">75.2%<span class="arw">&#8593;</span></div><div class="clbl">of students got ready to learn</div></div>
+                  <div><div class="cnum">98.6%<span class="arw">&#8593;</span></div><div class="clbl">tutor feedback rate</div></div>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="frame-lbl">Live on the home page: <a href="../index.html#projects" target="_blank" rel="noopener" style="color:var(--accent)">Projects &rarr; Cuemath</a>. Background colour is set per card (palette level-1); the category tag leads.</div>
+          <div class="guide">
+            <div class="gcol do"><h4>When to use</h4><ul><li>One per case study in the home Projects list.</li><li>Tags read Category, Stage, Role.</li><li>Use one to three verified stat metrics; keep exact figures.</li></ul></div>
+            <div class="gcol dont"><h4>When not to use</h4><ul><li>Do not invent a metric to fill the row. One real stat beats three vague ones.</li><li>Do not repeat the client name on every card.</li><li>Do not bake the background into the image; use a transparent graphic on a colour token.</li></ul></div>
           </div>
         </div>
 

@@ -16,6 +16,7 @@
 
   /* ─── Accent + gradient (brand) ─── */
   --accent:    #9B59E8;   /* solid accent — icons/text where gradient can't apply */
+  --positive:  #5FD08A;   /* success/positive — availability dot, upward metric arrows */
   --grad:      linear-gradient(110deg,#5B6CF0 0%,#9B59E8 48%,#F0609A 100%);
   --grad-soft: linear-gradient(110deg,rgba(91,108,240,.12),rgba(240,96,154,.12));
 
