@@ -456,9 +456,10 @@
 </script>
 
 <script>
-// hero caricature bubble — rotate hint messages, alternating
+// hero caricature bubble — advance to the next hint on each new hover (not on a timer)
 (function(){
-  var b=document.querySelector('.hero .bubble'); if(!b) return;
+  var col=document.querySelector('.hero .portrait-col');
+  var b=col && col.querySelector('.bubble'); if(!b) return;
   var msgs=[
     function(){ return 'Start with Feel Check ↓'; },
     function(){ return 'Switch to ' + (document.documentElement.getAttribute('data-theme') === 'dark' ? 'Light' : 'Dark') + ' mode ↑'; },
@@ -466,14 +467,12 @@
     function(){ return 'See what I built with AI ↓'; }
   ];
   var i=0;
-  setInterval(function(){
+  // Set the message the instant hover begins — the bubble is still transparent, so no flash —
+  // then queue the next one for the following hover. It stays put while the cursor rests.
+  col.addEventListener('mouseenter', function(){
+    b.textContent=msgs[i]();
     i=(i+1)%msgs.length;
-    b.style.opacity='0';                 // fade out via the existing CSS transition
-    setTimeout(function(){
-      b.textContent=msgs[i]();           // resolve live (theme line adapts to current mode)
-      b.style.removeProperty('opacity'); // hand opacity back to CSS (1 on hover, 0 otherwise)
-    },300);
-  },3200);
+  });
 })();
 </script>
 
