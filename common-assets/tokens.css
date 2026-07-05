@@ -44,7 +44,7 @@
   /* ─── Layout ─── */
   --sp:104px;     /* section rhythm — home/showcase default; case study overrides to 80 */
   --maxw:1160px;  /* home/showcase content width */
-  --read:800px;   /* case-study reading column width */
+  --read:880px;   /* case-study reading column — 800px readable text inside 40px padding */
 
 }
 

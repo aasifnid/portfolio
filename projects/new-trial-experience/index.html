@@ -63,11 +63,11 @@
 
 <!-- COVER -->
 <header class="cs cover">
-  <h1><span class="grad-text">New Trial Experience</span>: Self-serve funnel</h1>
-  <p class="lede">Cuemath's trial funnel ran entirely through Academic Counselors (ACs) — every step waited on a callback, and parents' interest cooled before they reached a paid plan. I redesigned it to run without that bottleneck: parents self-serve through sign-up and booking, teachers own the trust moments, and the system handles the routine — cutting AC work 70% while conversion held.</p>
+  <h1><span class="grad-text">New Trial Experience</span>: Turning counselor-led into self-serve</h1>
+  <p class="lede">Cuemath's trial funnel ran entirely through Academic Counselors (ACs). Every step waited on a callback, and parents' interest cooled before they reached a paid plan. I redesigned it to run without that bottleneck: parents self-serve through sign-up and booking, teachers own the trust moments, and the system handles the routine, cutting AC work 70% while conversion held.</p>
 
   <div class="cover-meta">
-    <div><span class="lab">Role</span><span class="val">Product Designer</span></div>
+    <div><span class="lab">Role</span><span class="val">Sole Designer</span></div>
     <div><span class="lab">Timeline</span><span class="val">8 weeks · 2024</span></div>
     <div><span class="lab">Team</span><span class="val">PM (Business Head, India) · Engineers · Tutor operations team</span></div>
   </div>
@@ -80,85 +80,136 @@
 <article class="cs">
 
   <!-- 01 -->
-  <div class="sec-top"><h2>The problem</h2></div>
-  <p>A parent's interest in Cuemath had a shelf life — it peaked at sign-up and faded with every wait that followed. But the funnel leaned on an AC at every step: qualification, booking, follow-up, enrollment. The full journey dragged across 2–3 days, and the data showed the cost — 40% of qualified leads didn't book within 24 hours, and 35% of trial-takers didn't enroll within three days, both stuck waiting on a callback.</p>
+  <div class="sec-top"><span class="cs-eyebrow">The problem</span><h2>A parent's interest had a shelf life.</h2></div>
+  <p>It peaked the moment a parent signed up, then cooled with every wait that followed. The funnel leaned on an AC at every step: qualification, booking, follow-up, enrollment. The full journey dragged across two to three days, and the data showed the cost. 40% of qualified leads didn't book within 24 hours, and 35% of trial-takers didn't enroll within three days, both stuck waiting on a callback.</p>
 
-  <p>And it wasn't the team's fault. Every parent was one of dozens an AC juggled that day, and on Cuemath's thin margins, hiring more to move faster wasn't viable. The funnel wasn't failing because the team was — the process put them in too many places at once.</p>
+  <p>And it wasn't the team's fault. Every parent was one of dozens an AC juggled that day, and on Cuemath's thin margins, hiring more to move faster wasn't viable. The funnel wasn't failing because the team was failing. The process put them in too many places at once.</p>
 
   <div class="media"><img src="assets/old-vs-new-system.webp" loading="lazy" alt="Old AC-dependent funnel vs. new distributed system comparison" class="cs-img"></div>
-  <p class="caption">Old: every step routed through AC, with 12–24h waits between each. New: work distributed across system, teacher, and parent — ACs handle exceptions only.</p>
+  <p class="caption">Old: every step routed through AC, with 12–24h waits between each. New: work distributed across system, teacher, and parent, so ACs handle exceptions only.</p>
 
   <!-- 02 -->
-  <div class="sec-top"><h2>Role</h2></div>
-  <p>I owned the trial funnel end-to-end — from a parent's first sign-up to their paid enrollment, tied directly to business targets.</p>
+  <div class="sec-top"><span class="cs-eyebrow">Role</span><h2>I owned the funnel from sign-up to paid enrollment.</h2></div>
+  <p>Tied directly to business targets, the work spanned:</p>
 
   <ul class="cs-list">
-    <li><strong>End-to-end UX/UI</strong> — sign-up form, slot booking, teacher intro flow, in-trial parent surface, post-trial enrollment, feedback flows</li>
-    <li><strong>Communication design</strong> — the WhatsApp-led messaging system and the post-trial collateral</li>
-    <li><strong>Cross-functional collaboration</strong> — PM (Business Head, India) on scope and metrics, FE + BE engineers on build; tutor matching algorithm sat under a separate team, I designed around it</li>
+    <li><strong>End-to-end UX/UI:</strong> sign-up form, slot booking, teacher intro flow, in-trial parent surface, post-trial enrollment, feedback flows</li>
+    <li><strong>Communication design:</strong> the WhatsApp-led messaging system and the post-trial collateral</li>
+    <li><strong>Cross-functional collaboration:</strong> PM (Business Head, India) on scope and metrics, FE + BE engineers on build; tutor matching algorithm sat under a separate team, I designed around it</li>
   </ul>
 
   <!-- HOW IT WORKS -->
-  <div class="sec-top"><h2>How it works</h2></div>
-  <p>A parent signs up and books a trial slot in minutes, entirely over WhatsApp. Their assigned teacher reaches out the day before, runs the trial, and the moment it ends, the parent enrolls right there on their device — no callback, no queue, no AC in the loop.</p>
+  <div class="sec-top"><span class="cs-eyebrow">How it works</span><h2>The funnel runs while the interest is still hot.</h2></div>
+  <p>A parent signs up and books a trial slot in minutes, entirely over WhatsApp. Their assigned teacher reaches out the day before, runs the trial, and the moment it ends, the parent enrolls right there on their device. No callback, no queue, no AC in the loop.</p>
 
-  <div class="media"><img src="assets/nte-flow.svg" loading="lazy" alt="The new trial flow — parent signs up and books, teacher reaches out and runs the trial, parent enrolls on the spot; the system handles the routine, no AC in the loop" class="cs-img" style="background:#000;"></div>
-  <p class="caption">The system runs reminders and routing underneath — ACs step in only for exceptions.</p>
+  <div class="media" style="background:var(--grad-soft);border-radius:var(--radius);overflow:hidden">
+    <svg class="nte-flow" viewBox="0 0 920 250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="The new trial flow: the parent signs up and books a slot in minutes on WhatsApp; the assigned teacher reaches out a day before and runs the trial; the parent enrolls on the spot, one tap on their device. The system runs reminders and routing underneath, and ACs step in only for exceptions." style="display:block;width:100%;height:auto">
+      <defs>
+        <marker id="nteArrow" markerWidth="9" markerHeight="9" refX="6.5" refY="4.5" orient="auto">
+          <path d="M0 0 L9 4.5 L0 9 Z" fill="#FF80F4"/>
+        </marker>
+      </defs>
+      <style>
+        .nte-flow text  { font-family: var(--sans); }
+        .nte-flow .owner{ font-size:11px; font-weight:700; letter-spacing:.1em; fill:#1A1A1A; font-family:var(--disp); }
+        .nte-flow .title{ font-size:17px; font-weight:600; fill:var(--ink); font-family:var(--disp); }
+        .nte-flow .sub  { font-size:12.5px; font-weight:400; fill:var(--ink-3); }
+      </style>
+
+      <!-- Step 1 · Parent -->
+      <rect x="20" y="55" width="190" height="128" rx="10" fill="var(--surface)" stroke="var(--line)"/>
+      <rect x="38" y="74" width="68" height="22" rx="4" fill="#FFE0FD"/>
+      <text x="48" y="89" class="owner">PARENT</text>
+      <text x="38" y="125" class="title">Sign up</text>
+      <text x="38" y="147" class="title">&amp; book a slot</text>
+      <text x="38" y="170" class="sub">In minutes, on WhatsApp</text>
+
+      <line x1="212" y1="119" x2="246" y2="119" stroke="#FF80F4" stroke-width="2" marker-end="url(#nteArrow)"/>
+
+      <!-- Step 2 · Teacher -->
+      <rect x="250" y="55" width="190" height="128" rx="10" fill="var(--surface)" stroke="var(--line)"/>
+      <rect x="268" y="74" width="78" height="22" rx="4" fill="#FFE0FD"/>
+      <text x="278" y="89" class="owner">TEACHER</text>
+      <text x="268" y="125" class="title">Teacher</text>
+      <text x="268" y="147" class="title">reaches out</text>
+      <text x="268" y="170" class="sub">A day before the trial</text>
+
+      <line x1="442" y1="119" x2="476" y2="119" stroke="#FF80F4" stroke-width="2" marker-end="url(#nteArrow)"/>
+
+      <!-- Step 3 · Teacher -->
+      <rect x="480" y="55" width="190" height="128" rx="10" fill="var(--surface)" stroke="var(--line)"/>
+      <rect x="498" y="74" width="78" height="22" rx="4" fill="#FFE0FD"/>
+      <text x="508" y="89" class="owner">TEACHER</text>
+      <text x="498" y="137" class="title">Trial class</text>
+      <text x="498" y="170" class="sub">Rapport already built</text>
+
+      <line x1="672" y1="119" x2="706" y2="119" stroke="#FF80F4" stroke-width="2" marker-end="url(#nteArrow)"/>
+
+      <!-- Step 4 · Parent -->
+      <rect x="710" y="55" width="190" height="128" rx="10" fill="var(--surface)" stroke="var(--line)"/>
+      <rect x="728" y="74" width="68" height="22" rx="4" fill="#FFE0FD"/>
+      <text x="738" y="89" class="owner">PARENT</text>
+      <text x="728" y="125" class="title">Enroll</text>
+      <text x="728" y="147" class="title">on the spot</text>
+      <text x="728" y="170" class="sub">One tap, on device</text>
+    </svg>
+  </div>
+  <p class="caption">The system runs reminders and routing underneath, and ACs step in only for exceptions.</p>
 
   <a href="https://www.figma.com/design/k27AzLfhyS7AbuIZhLIFMY/Portfolio-2026?node-id=85-159677&t=WVNKMLTUG6ayT6fP-1" target="_blank" rel="noopener" class="btn btn-primary">Open in Figma →</a>
 
   <!-- 03 -->
-  <div class="sec-top"><h2>Decisions</h2></div>
+  <div class="sec-top"><span class="cs-eyebrow">Decisions</span><h2>Three calls that made self-serve work.</h2></div>
 
   <div class="decisions">
 
     <div class="decision">
       <p class="d-title"><span class="idx">01</span>WhatsApp as the spine, with automated recovery</p>
-      <p>WhatsApp was set by the brief — most teacher-parent conversation already lived there. <strong>The design problem was making it carry the whole funnel.</strong> Every critical step — verification, slot booking, teacher intro, reminders, post-trial enrollment — ran on WhatsApp, with SMS and email as fallbacks. A 5-minute auto-message fired for parents who started booking but didn't finish.</p>
+      <p>WhatsApp was set by the brief, since most teacher-parent conversation already lived there. <strong>The design problem was making it carry the whole funnel.</strong> Every critical step ran on WhatsApp: verification, slot booking, teacher intro, reminders, and post-trial enrollment, with SMS and email as fallbacks. A 5-minute auto-message fired for parents who started booking but didn't finish.</p>
 
       <div class="cs-img-pair">
         <figure><img src="assets/signup-1.webp" loading="lazy" alt="WhatsApp verification step in the sign-up flow" class="cs-img"><figcaption>WhatsApp verification confirms the parent and sets up the channel.</figcaption></figure>
         <figure><img src="assets/signup-2.webp" loading="lazy" alt="Slot picker with teacher names visible" class="cs-img"><figcaption>Slot selection with teacher names visible. A 5-min auto-reminder fires if abandoned.</figcaption></figure>
       </div>
 
-      <p>After the trial, teachers shared branded messages covering pricing, formats, and refund policy — post-trial follow-up became teacher-led.</p>
+      <p>After the trial, teachers shared branded messages covering pricing, formats, and refund policy, so post-trial follow-up became teacher-led.</p>
 
       <div class="cs-img-grid cs-img-grid--3 wide">
-        <figure><img src="assets/wa1-plan-pricing-total-including-gst.webp" loading="lazy" alt="Plan pricing with taxes" class="cs-img"><figcaption>Pricing — monthly cost with taxes, no hidden fees.</figcaption></figure>
-        <figure><img src="assets/wa3-refund-policy.webp" loading="lazy" alt="Refund policy" class="cs-img"><figcaption>Refund policy — clear exit terms.</figcaption></figure>
-        <figure><img src="assets/wa4-1-2-vs-1-1-classes.webp" loading="lazy" alt="Class format comparison" class="cs-img"><figcaption>1:1 solo vs 1:2 pair — format comparison.</figcaption></figure>
+        <figure><img src="assets/wa1-plan-pricing-total-including-gst.webp" loading="lazy" alt="Plan pricing with taxes" class="cs-img"><figcaption>Pricing: monthly cost with taxes, no hidden fees.</figcaption></figure>
+        <figure><img src="assets/wa3-refund-policy.webp" loading="lazy" alt="Refund policy" class="cs-img"><figcaption>Refund policy: clear exit terms.</figcaption></figure>
+        <figure><img src="assets/wa4-1-2-vs-1-1-classes.webp" loading="lazy" alt="Class format comparison" class="cs-img"><figcaption>1:1 solo vs 1:2 pair, format comparison.</figcaption></figure>
       </div>
     </div>
 
     <div class="decision">
       <p class="d-title"><span class="idx">02</span>Teacher as trust anchor, before and during the trial</p>
-      <p>The initial direction had teachers owning everything — testing across 22 trials showed it broke lesson quality. So we narrowed their role to the trust moments only. Instead of an AC confirmation, parents got a WhatsApp message from their assigned teacher 24 hours before — name, credentials, sometimes a short video. <strong>Rapport began a day early, not after the session ended.</strong> 89% of teachers sent it in rollout — pre-session trust became the norm.</p>
+      <p>The initial direction had teachers owning everything, but testing across 22 trials showed it broke lesson quality. So we narrowed their role to the trust moments only. Instead of an AC confirmation, parents got a WhatsApp message from their assigned teacher 24 hours before, with name, credentials, sometimes a short video. <strong>Rapport began a day early, not after the session ended.</strong> 89% of teachers sent it in rollout, and pre-session trust became the norm.</p>
 
-      <p>During the trial, teachers had a reference script — used only when parents asked. The parent pulls; the teacher doesn't push. Class formats came up naturally, never as a pitch.</p>
+      <p>During the trial, teachers had a reference script, used only when parents asked. The parent pulls; the teacher doesn't push. Class formats came up naturally, never as a pitch.</p>
 
       <div class="cs-img-pair">
-        <figure><img src="assets/teacher-goal-handling.webp" loading="lazy" alt="Teacher reference script during the trial class" class="cs-img"><figcaption>Teacher side — reference script: repeat the goal, let parent talk, validate and explain.</figcaption></figure>
-        <figure><img src="assets/parent-goal-handling.webp" loading="lazy" alt="Parent surface during the trial class — no script visible" class="cs-img"><figcaption>Parent side — clean conversation. Parents never see the script.</figcaption></figure>
+        <figure><img src="assets/teacher-goal-handling.webp" loading="lazy" alt="Teacher reference script during the trial class" class="cs-img"><figcaption>Teacher side, reference script: repeat the goal, let parent talk, validate and explain.</figcaption></figure>
+        <figure><img src="assets/parent-goal-handling.webp" loading="lazy" alt="Parent surface during the trial class, no script visible" class="cs-img"><figcaption>Parent side, clean conversation. Parents never see the script.</figcaption></figure>
       </div>
     </div>
 
     <div class="decision">
       <p class="d-title"><span class="idx">03</span>Direct enrollment immediately after the trial, with teacher present</p>
-      <p>The moment the session ended, parents saw an enrollment interface on their device — three plan options, pricing visible, one-tap payment. <strong>Captures the decision while they're still in the moment, not days later.</strong> No AC required; the teacher was still there for questions.</p>
+      <p>The moment the session ended, parents saw an enrollment interface on their device: three plan options, pricing visible, one-tap payment. <strong>Captures the decision while they're still in the moment, not days later.</strong> No AC required, and the teacher was still there for questions.</p>
 
-      <p>A secondary win: removing ACs also removed the ad-hoc discounts (10–25%) they offered when sensing a slipping lead — parents paid standard price, and revenue per enrollment held.</p>
+      <p>A secondary win: removing ACs also removed the ad-hoc discounts (10–25%) they offered when sensing a slipping lead. Parents paid standard price, and revenue per enrollment held.</p>
     </div>
 
   </div>
 
   <!-- 04 -->
-  <div class="sec-top"><h2>Impact</h2></div>
+  <div class="sec-top"><span class="cs-eyebrow">Impact</span><h2>Less AC work, the same conversion.</h2></div>
 
   <div class="impact-cluster">
     <div class="stat-hero">
       <p class="lab">AC intervention</p>
       <p class="num">−70%</p>
-      <p class="desc">reduction in AC touchpoints while maintaining lead-to-enrollment conversion — the primary objective of the brief.</p>
+      <p class="desc">reduction in AC touchpoints while maintaining lead-to-enrollment conversion, the primary objective of the brief.</p>
     </div>
     <div class="stat-grid">
       <div class="stat"><p class="lab">Lead → Trial</p><p class="num grad-text">+50%</p><p class="desc">Trial booking collapsed from 48–72h (AC callback) to under 5 min (WhatsApp slot picker). 78% completed slot booking within 24h vs. ~40% before.</p></div>
@@ -166,30 +217,30 @@
     </div>
   </div>
 
-  <p>All three held in the weeks after launch, and the team absorbed rising trial volume without adding ACs. What I didn't get to measure was the longer arc — whether parents who self-served, without an AC's nudge, stayed enrolled as long as the old high-touch funnel kept them. If I ran it again, that's the first thing I'd instrument.</p>
+  <p>All three stuck through the weeks after launch, and the team absorbed rising trial volume without adding ACs. What I didn't get to measure was the longer arc: whether parents who self-served, without an AC's nudge, stayed enrolled as long as the old high-touch funnel kept them. If I ran it again, that's the first thing I'd instrument.</p>
 
   <!-- 05 -->
-  <div class="sec-top"><h2>Lessons</h2></div>
+  <div class="sec-top"><span class="cs-eyebrow">Lessons</span><h2>What I'd keep, and what I'd do differently.</h2></div>
   <div class="lessons">
     <div class="lesson">
       <span class="l-num">01</span>
       <div class="l-body">
         <p class="l-title">The shift was distribution, not optimization</p>
-        <p>The breakthrough wasn't making any one role faster — it was distributing the work so no single role broke under the next. Optimization squeezes the bottleneck; distribution removes it. That's the lens I'd carry into any "do more with less" brief.</p>
+        <p>The breakthrough wasn't making any one role faster. It was distributing the work so no single role broke under the next. Optimization squeezes the bottleneck; distribution removes it. That's the lens I'd carry into any "do more with less" brief.</p>
       </div>
     </div>
     <div class="lesson">
       <span class="l-num">02</span>
       <div class="l-body">
         <p class="l-title">Validate assumptions before you invest five weeks in design</p>
-        <p>I spent five weeks building the teacher-led hypothesis before testing it — one honest 30-minute conversation in week one would have killed it on the spot. I lost weeks executing something a quick check would have caught. My rule now: any hypothesis that touches live-session behavior gets validated in week one, before any design.</p>
+        <p>I spent five weeks building the teacher-led hypothesis before testing it. One honest 30-minute conversation in week one would have killed it on the spot. I lost weeks executing something a quick check would have caught. My rule now: any hypothesis that touches live-session behavior gets validated in week one, before any design.</p>
       </div>
     </div>
     <div class="lesson">
       <span class="l-num">03</span>
       <div class="l-body">
         <p class="l-title">The constraint became my filter: build trust, capture intent, or cut it</p>
-        <p>The 70% AC reduction mandate forced clarity: every step in the flow had to either build trust or capture intent. If it did neither, it was friction — cut it. That forced me to stop designing features and start designing a system. I'd take this lens to any optimization brief — translate the constraint into a design question, not a feature list.</p>
+        <p>The 70% AC reduction mandate forced clarity: every step in the flow had to either build trust or capture intent. If it did neither, it was friction, so I cut it. That forced me to stop designing features and start designing a system. I'd take this lens to any optimization brief: translate the constraint into a design question, not a feature list.</p>
       </div>
     </div>
   </div>
@@ -199,7 +250,7 @@
 <!-- NEXT -->
 <div class="next-wrap">
   <a class="next" href="../tutoring-home-redesign/index.html">
-    <div class="next-img" style="background-image:url('../tutoring-home-redesign/assets/tutoring-home-redesign-card-thumbnail.webp')"></div>
+    <div class="next-img" style="background-color:#FFF1CC;background-image:url('../tutoring-home-redesign/assets/tutoring-home-redesign-card-thumbnail.webp')"></div>
     <div class="next-body">
       <p class="next-lab">Next case study</p>
       <p class="next-title">Tutoring home redesign</p>

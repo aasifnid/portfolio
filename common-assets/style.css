@@ -33,7 +33,7 @@ img{display:block;max-width:100%}
 }
 
 /* ─── Scroll progress (case study) ─── */
-#progress{position:fixed;top:0;left:0;height:4px;width:0;background:var(--grad);z-index:40}
+#progress{position:fixed;top:0;left:0;height:2px;width:0;background:var(--grad);z-index:40}
 
 /* ─── Nav — base bar (home: fixed full-width blur) ───────────────
    Markup is injected from common-assets/navbar.html via sync-partials.py.
@@ -248,7 +248,8 @@ a.peer-by{display:inline-flex;align-items:center;gap:14px;cursor:pointer}
 /* ════════════════════════ CASE STUDY ════════════════════════ */
 .page-cs{--sp:80px;overflow-x:clip;--radius:8px;--radius-sm:8px;--radius-pill:8px}   /* case studies = uniform 8px corners on everything (media, stat boxes, tables, alts, pills); home stays rounded at 16. overflow clip keeps the sticky nav working */
 @media(max-width:640px){.page-cs{--sp:56px}}
-.cs .sec-top{margin-top:var(--sp)}                     /* sections flow in one column → top rhythm here */
+.cs .sec-top{margin-top:var(--sp);flex-direction:column;align-items:flex-start;gap:8px}   /* stack eyebrow + story headline */
+.cs-eyebrow{font-family:var(--disp);font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;width:fit-content}
 
 /* ─── Cover ─── */
 .cover{padding-top:40px;position:relative}
@@ -354,12 +355,12 @@ figure{margin:0}
 .next-wrap{max-width:var(--read);margin:var(--sp) auto 0;padding:0 40px}
 .next{display:flex;align-items:stretch;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;transition:transform var(--t-base) var(--ease),box-shadow var(--t-base),border-color var(--t-base)}
 .next:hover{transform:translateY(-6px);box-shadow:var(--shadow);border-color:transparent}
-.next-img{width:280px;flex-shrink:0;background-size:cover;background-position:center}
+.next-img{width:280px;flex-shrink:0;background-size:contain;background-repeat:no-repeat;background-position:center;background-origin:content-box;box-sizing:border-box;padding:16px}
 .next-body{padding:30px 34px;display:flex;flex-direction:column;justify-content:center;gap:6px}
 .next-lab{font-family:var(--disp);font-size:12px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3)}
 .next-title{font-family:var(--disp);font-weight:600;font-size:clamp(20px,2.4vw,24px);letter-spacing:-.02em}
 .next-meta{font-size:12px;color:var(--ink-2)}
-@media(max-width:640px){.next-wrap{padding:0 24px}.next-img{width:120px}.next-body{padding:24px}}
+@media(max-width:640px){.next-wrap{padding:0 24px}.next-img{width:120px;padding:8px}.next-body{padding:24px}}
 
 /* ─── Lightbox ─── */
 .lightbox{position:fixed;inset:0;z-index:1000;background:rgba(12,12,18,.92);backdrop-filter:blur(4px);display:none;align-items:center;justify-content:center;padding:clamp(20px,5vw,64px)}
