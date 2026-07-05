@@ -64,7 +64,7 @@
 <!-- COVER -->
 <header class="cs cover">
   <h1><span class="grad-text">New Tutoring Home</span>: From rigid programs to custom learning</h1>
-  <p class="lede">Cuemath's tutors couldn't customize learning for their students — programs were rigid chapter lists, homework was buried two layers deep, and workarounds broke progress tracking. I redesigned the tutoring home: a goal creation flow across curricula, a homework queue surfaced at the top, and a visual system that makes 13 content types readable at a glance.</p>
+  <p class="lede">Cuemath's tutors couldn't customize learning for their students. Programs were rigid chapter lists, homework was buried two layers deep, and workarounds broke progress tracking. I redesigned the tutoring home: a goal creation flow across curricula, a homework queue surfaced at the top, and a visual system that makes 13 content types readable at a glance.</p>
 
   <div class="cover-meta">
     <div><span class="lab">Role</span><span class="val">Product Designer</span></div>
@@ -80,21 +80,21 @@
 <article class="cs">
 
   <!-- 01 -->
-  <div class="sec-top"><h2>The problem</h2></div>
-  <p>When a tutor wanted to build a custom learning plan, the only option was to layer full curriculum programs on top of each other — assign one, then another, sometimes a third. Every chapter came along, including ones that didn't apply. Within days, progress totals stopped meaning anything, homework lists became unreadable, and tracking broke.</p>
+  <div class="sec-top"><span class="cs-eyebrow">The problem</span><h2>To customize, tutors had to break the system.</h2></div>
+  <p>When a tutor wanted to build a custom learning plan, the only option was to layer full curriculum programs on top of each other: assign one, then another, sometimes a third. Every chapter came along, including ones that didn't apply. Within days, progress totals stopped meaning anything, homework lists became unreadable, and tracking fell apart.</p>
   <p>For students, homework was hidden. To see what was due, they had to open a chapter, scroll past everything else, and find it at the bottom. Most never did. Tutors checking who'd done what had to dig into each chapter, item by item.</p>
 
   <!-- 02 -->
-  <div class="sec-top"><h2>Role</h2></div>
-  <p>I owned the design of the tutoring home end-to-end — one shared surface with role-aware controls for both tutors and students.</p>
+  <div class="sec-top"><span class="cs-eyebrow">Role</span><h2>One shared surface, with role-aware controls.</h2></div>
+  <p>I owned the design of the tutoring home end-to-end, for both tutors and students.</p>
   <ul class="cs-list">
-    <li><strong>Goal creation and homepage</strong> — goal creation flow, homework queue, and chapter UX for both tutor and student views</li>
-    <li><strong>Visual system</strong> — content type hierarchy (Lessons vs Resources), state visuals, and motion across cards and state changes</li>
+    <li><strong>Goal creation and homepage:</strong> goal creation flow, homework queue, and chapter UX for both tutor and student views</li>
+    <li><strong>Visual system:</strong> content type hierarchy (Lessons vs Resources), state visuals, and motion across cards and state changes</li>
   </ul>
 
   <!-- HOW IT WORKS -->
-  <div class="sec-top"><h2>How it works</h2></div>
-  <p>A tutor selects chapters from any curriculum and composes a custom goal in minutes. The student opens their home and sees exactly what's due — today, this week, overdue — without digging. The chapter page shows content in a clear hierarchy: mandatory lessons first, optional resources below, each with a visual state that holds up at a glance.</p>
+  <div class="sec-top"><span class="cs-eyebrow">How it works</span><h2>Built by the tutor, clear to the student.</h2></div>
+  <p>A tutor selects chapters from any curriculum and composes a custom goal in minutes. The student opens their home and sees exactly what's due today, this week, or overdue, without digging. The chapter page shows content in a clear hierarchy: mandatory lessons first, optional resources below, each with a visual state that holds up at a glance.</p>
 
   <div class="video-embed">
     <video id="flow-video" muted loop playsinline preload="none" poster="assets/tutoring-home-redesign-flow-poster.webp" title="Click to play fullscreen">
@@ -106,14 +106,14 @@
   <a href="https://www.figma.com/design/k27AzLfhyS7AbuIZhLIFMY/Portfolio-2026?node-id=2-28574&t=M7FOPCoe9mE85zor-1" target="_blank" rel="noopener" class="btn btn-primary">Open in Figma →</a>
 
   <!-- 03 -->
-  <div class="sec-top"><h2>Decisions</h2></div>
-  <p>Three decisions shaped the redesign — how learning plans are built, how urgency reaches the student, and how a chapter page holds 13 content types without collapsing.</p>
+  <div class="sec-top"><span class="cs-eyebrow">Decisions</span><h2>The three parts I had to get right.</h2></div>
+  <p>Each came down to a different question: how learning plans are built, how urgency reaches the student, and how a chapter page holds 13 content types without collapsing.</p>
 
   <div class="decisions">
 
     <div class="decision">
       <p class="d-title"><span class="idx">01</span>Replace program stacking with goal-based composition</p>
-      <p>The fix was a goal-based model. A tutor picks a goal type — School Success, Test Prep, or Enrichment — then composes a plan from individual chapters across any of the 10 curricula. Nothing is assigned by default. The goal types gave tutors a frame for decisions that used to be implicit and gave students clearer context for what they were working toward.</p>
+      <p>The fix was a goal-based model. A tutor picks a goal type (School Success, Test Prep, or Enrichment), then composes a plan from individual chapters across any of the 10 curricula. Nothing is assigned by default. The goal types gave tutors a frame for decisions that used to be implicit and gave students clearer context for what they were working toward.</p>
 
       <div class="cs-img-grid cs-img-grid--3 wide">
         <figure>
@@ -133,9 +133,9 @@
 
     <div class="decision">
       <p class="d-title"><span class="idx">02</span>Surface time, not just status</p>
-      <p>Homework had no urgency signal — a card due tomorrow looked identical to one due next week. The fix was a countdown badge — "3d", "7d" — on every active card, so time remaining was readable at a glance. Six states covered the full lifecycle: locked, active with countdown, partially done (as a percentage), completed, overdue, and needs-attention. Each used a distinct shape and icon rather than color alone — cards already carried their own visual backgrounds, and color-only urgency would have collapsed against them.</p>
+      <p>Homework had no urgency signal. A card due tomorrow looked identical to one due next week. The fix was a countdown badge ("3d", "7d") on every active card, so time remaining was readable at a glance. Six states covered the full lifecycle: locked, active with countdown, partially done (as a percentage), completed, overdue, and needs-attention. Each used a distinct shape and icon rather than color alone, because cards already carried their own visual backgrounds, and color-only urgency would have collapsed against them.</p>
 
-      <p>Overdue was designed to break pattern — a solid red pill, the most visually heavy state on the card. Two empty states shipped alongside — <em>No homework assigned</em> and <em>All homework done</em> — keeping Goals and Recent Chapters visible so an empty queue didn't mean an empty home.</p>
+      <p>Overdue was designed to break pattern: a solid red pill, the most visually heavy state on the card. Two empty states shipped alongside, <em>No homework assigned</em> and <em>All homework done</em>, keeping Goals and Recent Chapters visible so an empty queue didn't mean an empty home.</p>
 
       <div class="cs-img-pair">
         <figure>
@@ -151,23 +151,23 @@
 
     <div class="decision">
       <p class="d-title"><span class="idx">03</span>A chapter page that holds 13 content types without breaking</p>
-      <p>The chapter page was the hardest surface. Thirteen content types — lessons, practice, videos, puzzles, and more — had to coexist on one screen, each with four states (locked, unlocked, in-progress, completed). Lessons (mandatory, count toward progress) had to read as clearly distinct from Resources (optional enrichment).</p>
+      <p>The chapter page was the hardest surface. Thirteen content types (lessons, practice, videos, puzzles, and more) had to coexist on one screen, each with four states (locked, unlocked, in-progress, completed). Lessons (mandatory, count toward progress) had to read as clearly distinct from Resources (optional enrichment).</p>
 
       <div class="media"><img src="assets/nodes-and-HW-cards.webp" loading="lazy" alt="All 13 content type cards — each with distinct illustration, icon, color, and visual treatment" class="cs-img"></div>
-      <p class="caption">13 content types — each with its own visual identity.</p>
+      <p class="caption">13 content types, each with its own visual identity.</p>
 
-      <p>We presented the first version to stakeholders. They approved it. My design manager and I weren't convinced — hierarchy felt collapsed, states didn't pop, everything lived at the same visual level. We sat together one night, started over, and shipped the new version the next day. The shift was treating Lessons and Resources as distinct categories with their own background field, not just different card styles. State visuals got iconography paired with color so each state read at a glance. The system scaled: new content types could slot in without redesigning the page.</p>
+      <p>We presented the first version to stakeholders. They approved it. My design manager and I weren't convinced. Hierarchy felt collapsed, states didn't pop, everything lived at the same visual level. We sat together one night, started over, and shipped the new version the next day. The shift was treating Lessons and Resources as distinct categories with their own background field, not just different card styles. State visuals got iconography paired with color so each state read at a glance. The system scaled: new content types could slot in without redesigning the page.</p>
 
       <p>Stakeholders approved the version we didn't ship. The one we rebuilt overnight is the one I remember most.</p>
 
       <div class="cs-img-pair">
         <figure>
           <img src="assets/discarded-student-view.webp" loading="lazy" alt="Discarded chapter page — hierarchy collapsed, all content types at the same visual level" class="cs-img">
-          <figcaption>PM-approved, ready to ship — we weren't satisfied</figcaption>
+          <figcaption>PM-approved and ready to ship, but we weren't satisfied</figcaption>
         </figure>
         <figure>
           <img src="assets/final-student-view.webp" loading="lazy" alt="Final chapter page — Lessons and Resources as distinct categories, each content type with its own visual identity" class="cs-img">
-          <figcaption>Rebuilt overnight — what actually shipped</figcaption>
+          <figcaption>Rebuilt overnight: what actually shipped</figcaption>
         </figure>
       </div>
     </div>
@@ -175,7 +175,7 @@
   </div>
 
   <!-- 04 -->
-  <div class="sec-top"><h2>Impact</h2></div>
+  <div class="sec-top"><span class="cs-eyebrow">Impact</span><h2>Personalization stopped being a workaround.</h2></div>
 
   <div class="impact-cluster">
     <div class="stat-hero">
@@ -184,44 +184,44 @@
       <p class="desc">moved onto the redesigned home across all regions and grades.</p>
     </div>
     <div class="stat-grid">
-      <div class="stat"><p class="lab">Tutors</p><p class="num grad-text">3,353</p><p class="desc">Active tutors globally on the redesigned home — NAM, ISC, IME, APAC, EUK, EMEA.</p></div>
-      <div class="stat"><p class="lab">New goal types</p><p class="num grad-text">3</p><p class="desc">School Success, Test Prep, and Enrichment — replacing all-or-nothing program assignment.</p></div>
-      <div class="stat"><p class="lab">Curricula covered</p><p class="num grad-text">10</p><p class="desc">Tutors can compose goals across all 10 curricula — CBSE, ICSE, Common Core, and more.</p></div>
+      <div class="stat"><p class="lab">Tutors</p><p class="num grad-text">3,353</p><p class="desc">Active tutors globally on the redesigned home: NAM, ISC, IME, APAC, EUK, EMEA.</p></div>
+      <div class="stat"><p class="lab">New goal types</p><p class="num grad-text">3</p><p class="desc">School Success, Test Prep, and Enrichment, replacing all-or-nothing program assignment.</p></div>
+      <div class="stat"><p class="lab">Curricula covered</p><p class="num grad-text">10</p><p class="desc">Tutors can compose goals across all 10 curricula: CBSE, ICSE, Common Core, and more.</p></div>
     </div>
   </div>
 
-  <p>Custom goals became the default. Cleaner plans meant cleaner homework lists — progress tracking meant something again instead of a count no one trusted. The behavior shift held.</p>
+  <p>Custom goals became the default. Cleaner plans meant cleaner homework lists, and progress tracking meant something again instead of a count no one trusted. The behavior shift held.</p>
 
-  <p>Feedback from the internal tutor cohort came back clean after launch. The channel was thin and self-selected, so the silence is a signal, not a verdict. Milestones (exams, medals, competitions) and the 50+ overdue edge case were deferred to V2 — both needed real usage data before designing for them.</p>
+  <p>Feedback from the internal tutor cohort came back clean after launch. The channel was thin and self-selected, so the silence is a signal, not a verdict. Milestones (exams, medals, competitions) and the 50+ overdue edge case were deferred to V2, since both needed real usage data before designing for them.</p>
 
   <!-- 05 -->
-  <div class="sec-top"><h2>Lessons</h2></div>
+  <div class="sec-top"><span class="cs-eyebrow">Lessons</span><h2>What pushback and one long night taught me.</h2></div>
   <div class="lessons">
     <div class="lesson">
       <span class="l-num">01</span>
       <div class="l-body">
         <p class="l-title">One animation draws attention. Many animations create noise.</p>
-        <p>I designed a stroke animation to draw students' attention to the sheet they should focus on next — one glowing card standing out from the rest. The problem was that the animation was assigned to all core sheets and all work-in-progress sheets on the page. In practice, a student's page could have five or six of these running at once, all pulsing for attention at the same time. The page already made it clear what was locked, in-progress, or done — and students already knew the order sheets unlock in. The animation was adding noise on top of a system that was already working. We piloted it with our in-house teachers, got strong pushback, and pulled it immediately.</p>
+        <p>I designed a stroke animation to draw students' attention to the sheet they should focus on next, one glowing card standing out from the rest. The problem was that the animation was assigned to all core sheets and all work-in-progress sheets on the page. In practice, a student's page could have five or six of these running at once, all pulsing for attention at the same time. The page already made it clear what was locked, in-progress, or done, and students already knew the order sheets unlock in. The animation was adding noise on top of a system that was already working. We piloted it with our in-house teachers, got strong pushback, and pulled it immediately.</p>
         <div class="video-embed">
           <video id="lesson-video" muted loop playsinline preload="none" poster="assets/lesson-3-poster.webp" title="Click to play fullscreen">
             <source src="assets/lesson-3.mp4" type="video/mp4">
           </video>
         </div>
-        <p class="caption">State transitions — animation in the chapter page.</p>
+        <p class="caption">State transitions in the chapter page.</p>
       </div>
     </div>
     <div class="lesson">
       <span class="l-num">02</span>
       <div class="l-body">
         <p class="l-title">There is almost always more room than you think</p>
-        <p>This was one of my first projects end-to-end, and when my design manager asked what I thought of the approved design, I defaulted to "we're out of time" — I couldn't articulate what felt wrong, so I didn't push back. He didn't accept that. We sat down that evening with no plan, just Figma open, iterating side by side and sharing ideas as they came. By 2am we had something we were both comfortable shipping — far better than what was approved, with no extra brief and no time formally blocked. Just two people deciding to figure it out. What I carried from that night: there is almost always more room to improve than you think, if you commit to using whatever time is left.</p>
+        <p>This was one of my first projects end-to-end, and when my design manager asked what I thought of the approved design, I defaulted to "we're out of time." I couldn't articulate what felt wrong, so I didn't push back. He didn't accept that. We sat down that evening with no plan, just Figma open, iterating side by side and sharing ideas as they came. By 2am we had something we were both comfortable shipping, far better than what was approved, with no extra brief and no time formally blocked. Just two people deciding to figure it out. What I carried from that night: there is almost always more room to improve than you think, if you commit to using whatever time is left.</p>
       </div>
     </div>
     <div class="lesson">
       <span class="l-num">03</span>
       <div class="l-body">
         <p class="l-title">The pushback that derailed our scope became the next project</p>
-        <p>Cutting the puzzle sections looked like easy cleanup — until the experienced tutors pushed back hard. Those puzzles weren't filler, they said; they were how they reset a distracted kid mid-class. That one conversation became a project of its own — Feel Check, a check-in flow that helps kids settle before class begins. The lesson I carry: the user pushback that derails your current scope is often the start of your next one.</p>
+        <p>Cutting the puzzle sections looked like easy cleanup, until the experienced tutors pushed back hard. Those puzzles weren't filler, they said; they were how they reset a distracted kid mid-class. That one conversation became a project of its own: Feel Check, a check-in flow that helps kids settle before class begins. The lesson I carry: the user pushback that derails your current scope is often the start of your next one.</p>
       </div>
     </div>
   </div>
@@ -235,7 +235,7 @@
     <div class="next-body">
       <p class="next-lab">Next case study</p>
       <p class="next-title">Cuemath Partners</p>
-      <p class="next-meta">2025 · Platform Design</p>
+      <p class="next-meta">2025 · Referral · Brand promotion</p>
     </div>
   </a>
 </div>
