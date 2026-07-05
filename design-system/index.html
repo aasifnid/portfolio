@@ -274,6 +274,37 @@
   @media(max-width:760px){.impact-cluster{grid-template-columns:1fr}}
   @media(max-width:480px){.stat-grid{grid-template-columns:1fr}}
 
+  /* section header — gradient eyebrow + story headline (real .cs-eyebrow) */
+  .cs-eyebrow{font-family:var(--disp);font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;width:fit-content}
+  .ds-sechead{display:flex;flex-direction:column;gap:8px}
+  .ds-sechead-h{font-family:var(--disp);font-weight:600;font-size:clamp(24px,3vw,32px);letter-spacing:-.02em;line-height:1.2;color:var(--ink);margin:0}
+
+  /* decisions — numbered decision blocks (real .decisions/.decision) */
+  .decisions{display:flex;flex-direction:column;gap:48px}
+  .decision .d-title{font-family:var(--disp);font-weight:600;font-size:clamp(20px,2.4vw,24px);letter-spacing:-.02em;line-height:1.25;color:var(--ink);margin:0 0 4px}
+  .decision .idx{font-family:var(--disp);font-weight:700;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;margin-right:12px}
+  .decision p{font-family:var(--sans);font-size:14px;line-height:1.6;color:var(--ink-2);margin:0}
+  .decision p strong{color:var(--ink);font-weight:600}
+
+  /* lessons — numbered lessons list (real .lessons/.lesson) */
+  .lessons{display:flex;flex-direction:column}
+  .lesson{display:grid;grid-template-columns:minmax(48px,auto) 1fr;gap:clamp(24px,4vw,48px);padding:32px 0;border-bottom:1px solid var(--line)}
+  .lesson:first-child{padding-top:8px}
+  .l-num{font-family:var(--disp);font-weight:700;font-size:clamp(24px,4vw,40px);line-height:1;color:var(--ink-3)}
+  .l-body p{font-family:var(--sans);font-size:14px;color:var(--ink-2);line-height:1.6;margin:0}
+  .l-body p strong{color:var(--ink);font-weight:600}
+  .l-body p.l-title{font-family:var(--disp);font-weight:600;font-size:clamp(16px,2vw,20px);line-height:1.3;letter-spacing:-.02em;color:var(--ink);margin:0 0 8px}
+
+  /* next case study (real .next) */
+  .next{display:flex;align-items:stretch;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;text-decoration:none;transition:transform var(--t-base) var(--ease),box-shadow var(--t-base),border-color var(--t-base)}
+  .next:hover{transform:translateY(-6px);box-shadow:var(--shadow);border-color:transparent}
+  .next-img{width:200px;flex-shrink:0;background-size:contain;background-repeat:no-repeat;background-position:center;background-origin:content-box;box-sizing:border-box;padding:16px}
+  .next-body{padding:24px 28px;display:flex;flex-direction:column;justify-content:center;gap:6px}
+  .next-lab{font-family:var(--disp);font-size:12px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3)}
+  .next-title{font-family:var(--disp);font-weight:600;font-size:clamp(20px,2.4vw,24px);letter-spacing:-.02em;color:var(--ink)}
+  .next-meta{font-family:var(--sans);font-size:12px;color:var(--ink-2)}
+  @media(max-width:560px){.next-img{width:120px;padding:8px}.next-body{padding:20px}}
+
   /* recommendation (real roster + quote card + controls) */
   .roster{display:flex;flex-wrap:wrap;gap:8px}
   .chip{display:flex;align-items:center;gap:8px;padding:6px 16px 6px 6px;border:1px solid var(--line);border-radius:var(--radius-pill);cursor:pointer;background:var(--surface);transition:transform var(--t-fast) var(--ease),border-color var(--t-fast),background var(--t-fast),box-shadow var(--t-fast)}
@@ -867,6 +898,7 @@
     <div class="layout">
       <nav class="subnav csub">
         <a data-p="m-project" class="active">Project card</a>
+        <a data-p="m-eyebrow">Section header</a>
         <a data-p="m-table">Table</a>
         <a data-p="m-stats">Impact stats</a>
         <a data-p="m-rec">Recommendation</a>
@@ -890,6 +922,21 @@
           <div class="guide">
             <div class="gcol do"><h4>When to use</h4><ul><li>In a grid of three for lighter work.</li><li>Keep the description to one or two lines.</li><li>Use for side projects and playground pieces.</li></ul></div>
             <div class="gcol dont"><h4>When not to use</h4><ul><li>Do not mix it with the full work card in one row.</li><li>Do not use for primary case studies.</li><li>Do not overload the title.</li></ul></div>
+          </div>
+        </div>
+
+        <div class="cpanel" id="m-eyebrow">
+          <h3 class="f-title">Section header</h3>
+          <p class="f-lead">Every case-study section opens with a gradient eyebrow that names the section and a story headline that states the takeaway, not the topic. The headline never repeats a line from the body below it.</p>
+          <div class="demo">
+            <div class="ds-sechead">
+              <span class="cs-eyebrow">The problem</span>
+              <h2 class="ds-sechead-h">Half the class was gone before the learning began.</h2>
+            </div>
+          </div>
+          <div class="guide">
+            <div class="gcol do"><h4>When to use</h4><ul><li>Open every case-study section with it.</li><li>Eyebrow names the section; headline carries the idea.</li><li>Keep the headline out of the body, no repeats.</li></ul></div>
+            <div class="gcol dont"><h4>When not to use</h4><ul><li>Do not gradient the headline, only the eyebrow.</li><li>Do not use a generic label as the headline.</li><li>Do not restate the headline in the first sentence.</li></ul></div>
           </div>
         </div>
 
@@ -997,13 +1044,16 @@
   <!-- ══ ORGANISMS ══ -->
   <section id="view-organisms" class="ds-view">
     <h2 class="view-title">organisms</h2>
-    <p class="view-intro">Fully composed sections. Six reusable building blocks that make up a page.</p>
+    <p class="view-intro">Fully composed sections that make up a page.</p>
     <div class="layout">
       <nav class="subnav csub">
         <a data-p="o-nav" class="active">Navigation</a>
         <a data-p="o-menu">Mobile menu</a>
         <a data-p="o-cover">Case-study cover</a>
         <a data-p="o-card">Case study card</a>
+        <a data-p="o-decisions">Decisions</a>
+        <a data-p="o-lessons">Lessons</a>
+        <a data-p="o-next">Next case study</a>
         <a data-p="o-marquee">Logo marquee</a>
         <a data-p="o-footer">Footer</a>
         <a data-p="o-ai">AI assistant</a>
@@ -1102,6 +1152,73 @@
           <div class="guide">
             <div class="gcol do"><h4>When to use</h4><ul><li>One per case study in the home Projects list.</li><li>Tags read Category, Stage, Role.</li><li>Use one to three verified stat metrics; keep exact figures.</li></ul></div>
             <div class="gcol dont"><h4>When not to use</h4><ul><li>Do not invent a metric to fill the row. One real stat beats three vague ones.</li><li>Do not repeat the client name on every card.</li><li>Do not bake the background into the image; use a transparent graphic on a colour token.</li></ul></div>
+          </div>
+        </div>
+
+        <div class="cpanel" id="o-decisions">
+          <h3 class="f-title">Decisions</h3>
+          <p class="f-lead">The core of a case study: a short intro, then numbered decision blocks. Each has a gradient index, a headline stating the call, and the reasoning with the key line in bold.</p>
+          <div class="demo">
+            <div class="decisions">
+              <div class="decision">
+                <p class="d-title"><span class="idx">01</span>One tap, not a typed note</p>
+                <p>A free-text check-in was honest but slow, and it broke the class flow. <strong>A single tap on a feeling kept it fast and private, with no pause.</strong></p>
+              </div>
+              <div class="decision">
+                <p class="d-title"><span class="idx">02</span>Ready to learn is the tutor's call</p>
+                <p>The screen never auto-advances. The tutor reads the room and decides when the class is set, not a timer.</p>
+              </div>
+            </div>
+          </div>
+          <div class="guide">
+            <div class="gcol do"><h4>When to use</h4><ul><li>For the two to three calls that shaped the work.</li><li>Number them and lead each with the decision.</li><li>Bold the one line that carries the insight.</li></ul></div>
+            <div class="gcol dont"><h4>When not to use</h4><ul><li>Do not list every small choice.</li><li>Do not bold more than one line per block.</li><li>Do not use it for a step-by-step flow.</li></ul></div>
+          </div>
+        </div>
+
+        <div class="cpanel" id="o-lessons">
+          <h3 class="f-title">Lessons</h3>
+          <p class="f-lead">Closing reflections. A large muted number per row, a headline, and a short honest takeaway, divided by hairlines.</p>
+          <div class="demo">
+            <div class="lessons">
+              <div class="lesson">
+                <span class="l-num">01</span>
+                <div class="l-body">
+                  <p class="l-title">One animation draws attention. Many create noise.</p>
+                  <p>Five cards pulsing at once cancelled each other out. We piloted it, got pushback, and pulled it. <strong>Restraint was the fix.</strong></p>
+                </div>
+              </div>
+              <div class="lesson">
+                <span class="l-num">02</span>
+                <div class="l-body">
+                  <p class="l-title">Design for where the user actually is</p>
+                  <p>Built desktop-first; partners were on phones in the field. The miss was picturing the wrong moment of use.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="guide">
+            <div class="gcol do"><h4>When to use</h4><ul><li>For honest, first-person takeaways.</li><li>Lead each with the lesson as a headline.</li><li>Keep two to three, divided by hairlines.</li></ul></div>
+            <div class="gcol dont"><h4>When not to use</h4><ul><li>Do not turn it into a highlight reel.</li><li>Do not write a paragraph per number.</li><li>Do not repeat a decision as a lesson.</li></ul></div>
+          </div>
+        </div>
+
+        <div class="cpanel" id="o-next">
+          <h3 class="f-title">Next case study</h3>
+          <p class="f-lead">The footer link at the end of every case study. A thumbnail on its palette color, the short project name, and the year with its tags. Lifts on hover.</p>
+          <div class="demo">
+            <a class="next">
+              <div class="next-img" style="background-color:#D6F5FF;background-image:url('../projects/feel-check/assets/feel-check-card-thumbnail.webp')"></div>
+              <div class="next-body">
+                <p class="next-lab">Next case study</p>
+                <p class="next-title">Feel Check</p>
+                <p class="next-meta">2025–26 · Product thinking · System mapping · 0→1</p>
+              </div>
+            </a>
+          </div>
+          <div class="guide">
+            <div class="gcol do"><h4>When to use</h4><ul><li>At the end of every case study, linking to the next.</li><li>Use the short project name, not the full title.</li><li>Match the thumbnail's palette color behind it.</li></ul></div>
+            <div class="gcol dont"><h4>When not to use</h4><ul><li>Do not crop the thumbnail with cover.</li><li>Do not use the full headline here.</li><li>Do not link anywhere but the next study.</li></ul></div>
           </div>
         </div>
 
