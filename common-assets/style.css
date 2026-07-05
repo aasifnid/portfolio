@@ -137,7 +137,7 @@ img{display:block;max-width:100%}
 .card-metric{margin-top:32px;display:flex;gap:60px;flex-wrap:wrap;align-items:flex-start}
 .card-stat .stat-top{display:flex;align-items:center;gap:8px}
 .card-stat .num{font-family:var(--disp);font-size:20px;font-weight:700;line-height:1;color:var(--ink)}
-.card-stat .arw{font-family:var(--disp);font-size:12px;line-height:1;color:var(--positive)}
+.card-stat .arw{font-family:var(--disp);font-size:20px;line-height:1;color:var(--positive)}
 .card-stat .stat-lbl{font-size:14px;color:var(--ink-3);margin-top:8px}
 .card-stat .note{color:var(--ink-3)}
 @media(max-width:720px){.card-body{padding:24px}}
@@ -446,7 +446,7 @@ figure{margin:0}
 
 /* ─── Theme toggle (in nav) ─── */
 .nav-actions{display:flex;align-items:center;gap:16px}
-.theme-toggle{width:36px;height:36px;border-radius:var(--radius-pill);border:1px solid var(--line);background:transparent;color:var(--ink-2);cursor:pointer;display:grid;place-items:center;flex:none;transition:border-color var(--t-fast),color var(--t-fast)}
+.theme-toggle{width:36px;height:36px;border-radius:50%;border:1px solid var(--line);background:transparent;color:var(--ink-2);cursor:pointer;display:grid;place-items:center;flex:none;transition:border-color var(--t-fast),color var(--t-fast)}
 .theme-toggle:hover{color:var(--ink);border-color:var(--ink-3)}
 .theme-toggle svg{width:18px;height:18px;grid-area:1/1;transition:transform var(--t-slow) var(--ease-bounce),opacity var(--t-base) var(--ease)}
 [data-theme="light"] .theme-toggle .i-moon{opacity:0;transform:rotate(-90deg) scale(.3)}
