@@ -283,6 +283,7 @@ figure{margin:0}
 .cs .caption + p:not(.caption){margin-top:32px}   /* body after a media+caption unit gets the same 32px the media has above it — keeps the caption glued to its image but separates the next thought */
 .cs-img-grid{display:grid;gap:16px;margin-top:32px}
 .cs-img-grid--3{grid-template-columns:repeat(3,1fr)}
+.cs-img-grid:not(.cs-img-grid--3){gap:48px}   /* stacked single-column screens need more breathing room */
 .cs-img-grid figcaption,.cs-img-pair figcaption{font-size:12px;color:var(--ink-3);line-height:1.5;margin-top:16px;text-align:left}   /* same caption style + gap as .caption — 12px Inter regular, muted, 16px above */
 .cs-img-pair{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:32px}
 @media(max-width:640px){.cs-img-grid--3,.cs-img-pair{grid-template-columns:1fr}}
@@ -328,13 +329,13 @@ figure{margin:0}
 .rz-green{background:var(--data-green-bg);color:var(--data-green)}
 
 /* ─── Impact ─── */
-.impact-cluster{margin-top:24px;display:grid;grid-template-columns:1fr 1.1fr;gap:24px}
-.stat-hero{background:var(--grad-soft);border:1px solid var(--line);border-radius:var(--radius);padding:32px;display:flex;flex-direction:column;justify-content:center}
+.impact-cluster{margin-top:24px;display:grid;grid-template-columns:1fr 1.1fr;gap:16px}
+.stat-hero{background:var(--grad-soft);border:1px solid var(--line);border-radius:var(--radius);padding:24px;display:flex;flex-direction:column;justify-content:center}
 .stat-hero .lab{font-family:var(--disp);font-size:12px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3)}
 .stat-hero .num{font-family:var(--disp);font-weight:700;font-size:clamp(40px,7vw,64px);line-height:1;margin:12px 0;letter-spacing:-.02em;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
 .stat-hero .desc{font-size:14px;line-height:1.55;color:var(--ink-2)}
-.stat-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-.stat{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius-sm);padding:20px}
+.stat-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.stat{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius-sm);padding:24px}
 .stat .lab{font-family:var(--disp);font-size:12px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3)}
 .stat .num{font-family:var(--disp);font-weight:600;font-size:clamp(24px,3vw,32px);letter-spacing:-.02em;margin:8px 0}
 .stat .desc{font-size:12px;color:var(--ink-2);line-height:1.45}
