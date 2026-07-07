@@ -150,7 +150,7 @@ img{display:block;max-width:100%}
 
 /* ─── Projects at NID — smaller grid ─── */
 .nid{padding-top:var(--sp)}
-.nid-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.nid-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
 .nid-card{display:block;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;transition:transform var(--t-base) var(--ease),box-shadow var(--t-base),border-color var(--t-base)}
 .nid-card:hover{transform:translateY(-8px);box-shadow:0 0 0 1px rgba(155,89,232,.35),0 22px 44px -18px rgba(120,80,200,.32);border-color:transparent}
 .nid-card .im{aspect-ratio:4/3;overflow:hidden;background:var(--grad-soft)}
@@ -159,8 +159,13 @@ img{display:block;max-width:100%}
 .nid-card .bx{padding:20px}
 .nid-card .ti{font-family:var(--disp);font-weight:600;font-size:16px;letter-spacing:-.01em;display:flex;align-items:center;gap:8px;color:var(--ink)}
 .nid-card .ds{font-size:12px;color:var(--ink-2);line-height:1.5;margin-top:8px}
-@media(max-width:900px){.nid-grid{grid-template-columns:1fr 1fr}}
-@media(max-width:560px){.nid-grid{grid-template-columns:1fr}}
+/* NID grid = smaller, 4-up (foundation work, subordinate to the Playground) */
+.nid-grid .nid-card .bx{padding:16px}
+.nid-grid .nid-card .ti{font-size:14px}
+.nid-grid .nid-card .ds{line-height:1.45}
+@media(max-width:1100px){.nid-grid{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:820px){.nid-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:520px){.nid-grid{grid-template-columns:1fr}}
 
 /* AI Playground */
 .playground{padding-top:var(--sp)}
@@ -169,6 +174,9 @@ img{display:block;max-width:100%}
 .play-grid > .nid-card{flex:1 1 320px;max-width:520px}
 @media(max-width:640px){.play-grid > .nid-card{max-width:none}}
 .playground .nid-card .im{position:relative}
+/* external-link cue on cards that open in a new tab (sample — internal cards like EnglishYaari are skipped) */
+a.nid-card[target="_blank"]{position:relative}
+a.nid-card[target="_blank"]::after{content:'\2197';position:absolute;top:8px;right:8px;width:26px;height:26px;display:flex;align-items:center;justify-content:center;border-radius:50%;font-family:var(--disp);font-size:13px;font-weight:600;line-height:1;background:rgba(16,16,22,.55);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);color:#fff;border:1px solid rgba(255,255,255,.16);z-index:3;pointer-events:none}
 .wip-tag{position:absolute;top:12px;left:12px;z-index:1;font-family:var(--disp);font-size:12px;font-weight:600;letter-spacing:.02em;background:#fff;color:var(--ink);padding:6px 13px;border-radius:var(--radius-pill);box-shadow:0 6px 18px -6px rgba(0,0,0,.45)}
 
 /* ─── About + journey timeline ─── */
