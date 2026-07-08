@@ -4,3 +4,4 @@ chatbot/
 scripts/
 mixpanel-data/
 *.md
+api/

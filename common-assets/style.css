@@ -177,7 +177,6 @@ img{display:block;max-width:100%}
 /* external-link cue on cards that open in a new tab (sample — internal cards like EnglishYaari are skipped) */
 a.nid-card[target="_blank"]{position:relative}
 a.nid-card[target="_blank"]::after{content:'\2197';position:absolute;top:8px;right:8px;width:26px;height:26px;display:flex;align-items:center;justify-content:center;border-radius:50%;font-family:var(--disp);font-size:13px;font-weight:600;line-height:1;background:rgba(16,16,22,.55);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);color:#fff;border:1px solid rgba(255,255,255,.16);z-index:3;pointer-events:none}
-.wip-tag{position:absolute;top:12px;left:12px;z-index:1;font-family:var(--disp);font-size:12px;font-weight:600;letter-spacing:.02em;background:#fff;color:var(--ink);padding:6px 13px;border-radius:var(--radius-pill);box-shadow:0 6px 18px -6px rgba(0,0,0,.45)}
 
 /* ─── About + journey timeline ─── */
 .about{padding-top:var(--sp)}
@@ -443,7 +442,6 @@ figure{margin:0}
 [data-theme="dark"] .site-nav.scrolled{background:rgba(12,12,15,.72)}
 [data-theme="dark"] .nav-mobile-menu{background:rgba(12,12,15,.98)}
 [data-theme="dark"] .eyebrow{border-color:var(--line)}
-[data-theme="dark"] .wip-tag{color:#15151A}
 [data-theme="dark"] .tl-vrow::before{border-color:var(--ink-3)}
 [data-theme="dark"] .alt--picked .alt-name{color:var(--ink)}
 /* footer flips to a light bar → flip its text dark */
