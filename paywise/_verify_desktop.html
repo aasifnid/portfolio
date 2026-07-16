@@ -162,12 +162,13 @@
 <div style="display:flex;gap:12px;align-items:flex-start"><div style="width:24px;height:24px;flex:none;border-radius:999px;background:#E6F5EE;display:flex;align-items:center;justify-content:center"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#047857" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"></path></svg></div><span style="font-size:15.5px;line-height:1.5">All from <b>₹18/day</b> — about one auto ride</span></div>
 </div>
 </div>
-<div style="background:{{aiBg}};border:1px solid #E2D6FA;border-radius:22px;padding:22px;overflow:hidden">
+<div style="background:url('uploads/ai-illustration.png') right -18px center/contain no-repeat,#F3EEFD;border:1px solid #E2D6FA;border-radius:22px;padding:22px;overflow:hidden">
 <span style="display:inline-flex;align-items:center;gap:6px;background:#7C3AED;color:#fff;font-size:12px;font-weight:700;border-radius:999px;padding:6px 13px">✨ AI recommends</span>
 <div style="font-size:12px;font-weight:700;letter-spacing:.08em;color:#5B21B6;text-transform:uppercase;margin-top:16px">Recommended cover</div>
 <div style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:34px;margin-top:4px">₹10 Lakhs</div>
 <div style="font-size:14.5px;color:#5B21B6;font-weight:600;margin-top:2px">Best fit based on your profile.</div>
 <div style="display:flex;flex-direction:column;gap:8px;margin-top:14px;font-size:14.5px;color:#3C4656"><span>• 2 dependents in the family</span><span>• Healthcare costs in Mumbai</span><span>• Your financial profile</span><span>• Monthly affordability</span></div>
+<div style="font-size:13.5px;color:#4C5666;margin-top:14px;line-height:1.5">Share your exact dependents, spending, or income to make this even more precise.</div>
 <div onClick="{{openAI}}" style="display:flex;align-items:center;gap:10px;background:#fff;border:1px solid #D9CBF7;border-radius:999px;padding:8px 8px 8px 18px;margin-top:14px;cursor:pointer" style-hover="border-color:#7C3AED"><span style="flex:1;color:#4C5666;font-size:14.5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">Ask ✨ AI about this recommendation</span><div style="width:38px;height:38px;border-radius:999px;background:#7C3AED;display:flex;align-items:center;justify-content:center;flex:none"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M6 11l6-6 6 6"></path></svg></div></div>
 </div>
 </div>
@@ -475,9 +476,9 @@
 </div>
 </div>
 </x-dc>
-<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1280,&quot;height&quot;:900},&quot;defaultView&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;mobile&quot;,&quot;desktop&quot;],&quot;default&quot;:&quot;mobile&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Prototype&quot;},&quot;coverDefault&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;5L&quot;,&quot;10L&quot;,&quot;25L&quot;],&quot;default&quot;:&quot;10L&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Prototype&quot;}}">
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1280,&quot;height&quot;:900},&quot;defaultView&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;mobile&quot;,&quot;desktop&quot;],&quot;default&quot;:&quot;desktop&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Prototype&quot;},&quot;coverDefault&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;5L&quot;,&quot;10L&quot;,&quot;25L&quot;],&quot;default&quot;:&quot;10L&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Prototype&quot;}}">
 class Component extends DCLogic {
-  state={view:null,screen:'home',sheet:null,cover:null,tob:false,alc:false,cond:false,spouse:false,child:false,pay:'upi',autopay:true,purchased:false,termsOpen:true};
+  state={view:null,screen:'why',sheet:null,cover:null,tob:false,alc:false,cond:false,spouse:false,child:false,pay:'upi',autopay:true,purchased:false,termsOpen:true};
   scrollRef=React.createRef();
   go(s,extra){this.setState(Object.assign({screen:s,sheet:null},extra||{}));try{this.scrollRef.current&&this.scrollRef.current.scrollTo({top:0})}catch(e){}}
   renderVals(){
@@ -496,7 +497,7 @@ class Component extends DCLogic {
     const flip=k=>()=>this.setState({[k]:!this.state[k]});
     const set=(k,v)=>()=>this.setState({[k]:v});
     return {
-      isMobile:mob,isDesktop:!mob,scrollRef:this.scrollRef,devH:mob?'844px':'88vh',statusBg:st.screen==='home'?'#B7CFF7':'#FCFDFE',sheetJust:mob?'flex-end':'center',sheetRad:mob?'28px 28px 0 0':'24px',maxW:mob?'414px':'1120px',sheetW:mob?'414px':'640px',sheetMaxH:mob?null:'80%',handleS:mob?'display:block':'display:none',sheetTopPad:mob?'display:none':'height:14px',profilePadTop:mob?'6px':'22px',aiBg:mob?"url('uploads/ai-illustration.png') right -4px bottom 78px/auto 40% no-repeat,#F3EEFD":"url('uploads/ai-illustration.png') right -85px bottom 68px/auto 78% no-repeat,#F3EEFD",heroBg:mob?"url('uploads/pasted-1784108807706-0.png') right center/contain no-repeat,linear-gradient(180deg,#B7CFFD 0%,#C5D8FE 48%,#B3CBFC 100%)":"url('uploads/bg-banner-wide.png') right center/cover no-repeat #C3D6FD",heroMinH:mob?'190px':'200px',riskCardsMT:mob?'-14px':'-72px',devRad:mob?'44px':'20px',devBorder:mob?'9px solid #0B1220':'1px solid #C7D0DC',
+      isMobile:mob,isDesktop:!mob,scrollRef:this.scrollRef,devH:mob?'844px':'88vh',statusBg:st.screen==='home'?'#B7CFF7':'#FCFDFE',sheetJust:mob?'flex-end':'center',sheetRad:mob?'28px 28px 0 0':'24px',maxW:mob?'414px':'1120px',sheetW:mob?'414px':'640px',sheetMaxH:mob?null:'80%',handleS:mob?'display:block':'display:none',sheetTopPad:mob?'display:none':'height:14px',profilePadTop:mob?'6px':'22px',heroBg:mob?"url('uploads/pasted-1784108807706-0.png') right center/contain no-repeat,linear-gradient(180deg,#B7CFFD 0%,#C5D8FE 48%,#B3CBFC 100%)":"url('uploads/bg-banner-wide.png') right center/cover no-repeat #C3D6FD",heroMinH:mob?'190px':'200px',riskCardsMT:mob?'-14px':'-72px',devRad:mob?'44px':'20px',devBorder:mob?'9px solid #0B1220':'1px solid #C7D0DC',
       setMobile:set('view','mobile'),setDesktop:set('view','desktop'),mobTabS:tab(mob),deskTabS:tab(!mob),
       sHome:st.screen==='home',sWhy:st.screen==='why',sPlans:st.screen==='plans',sCompare:st.screen==='compare',sDetails:st.screen==='details',sPay:st.screen==='pay',sConfirm:st.screen==='confirm',sPolicy:st.screen==='policy',
       goHome:g('home'),goWhy:g('why'),goPlans:g('plans'),goCompare:g('compare'),goDetails:g('details'),goPay:g('pay'),goPolicy:g('policy'),
