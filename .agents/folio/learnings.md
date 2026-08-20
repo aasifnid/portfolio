@@ -174,7 +174,7 @@ When building a system/architecture diagram, Aasif wants an actual **flowchart**
 Don't mix box treatments in one diagram (e.g. gradient-fill canvas + plain views + gradient-bar action). That reads as "different styles, not needed." Use **one card pattern** (icon chip + uppercase colored heading + body) and differentiate nodes by **hue** from the data palette (purple / blue / green / amber). Take styling cues from a reference image when given.
 
 ### Tokens are not mandatory for one-off diagram components
-Aasif: "it's not mandatory to use our tokens to match this diagram, just pick elements from design system like font, color." For a self-contained case-study visual, hardcoding hex/values pulled from the system (Space Grotesk/Inter, the palette hues) is fine — don't contort the component to thread every value through `var(--token)`. Tokens stay mandatory for shared/site-wide CSS.
+Aasif: "it's not mandatory to use our tokens to match this diagram, just pick elements from design system like font, color." For a self-contained case-study visual, hardcoding hex/values pulled from the system (Geist/Inter, the palette hues) is fine — don't contort the component to thread every value through `var(--token)`. Tokens stay mandatory for shared/site-wide CSS.
 
 ### Spacing + density
 Compact the heading→body gap inside nodes (~3px), but add generous space *between* boxes (connector zones ~64–148px). Tight inside, airy between.
@@ -191,7 +191,7 @@ First flowchart attempt absolutely-positioned the Action box (`position:absolute
 To make branch/converge connectors land dead-center on each card without drift: give `.fc-views` an exact `column-gap` (e.g. 40px) and position drops/risers at `left:calc(25% - 10px)` / `left:calc(75% + 10px)` — where the offset = gap/4. Math: with gap G, column centers sit at `25% - G/4` and `75% + G/4` of the full-width connector row. Cards fill their columns (`align-items:stretch`), so card-center === column-center === connector-x, at any container width. The horizontal bar uses `left:calc(25% - 10px);right:calc(25% - 10px)`. Mask the bar behind a centered label with a white-bg `.fc-lab` so the connector reads "—— LABEL ——".
 
 ### The clean target spec (Feel Check system diagram, matched 2026-06-14)
-Gradient-soft canvas (purple→pink) with no icon-circle; blue/green/amber view+action cards each with a soft-tint icon circle. Titles: Space Grotesk 700, **sentence case** (not uppercase), ~21px, colored per node (canvas stays near-black `#15151A`). Body Inter ~15.5px `#3F3F49`, 6px under title. Connector lines `#71717D` with 8px CSS-triangle arrowheads; labels uppercase `#8A8A99` 11px on a white mask. Card radius 16px, padding 22×26.
+Gradient-soft canvas (purple→pink) with no icon-circle; blue/green/amber view+action cards each with a soft-tint icon circle. Titles: Geist 700, **sentence case** (not uppercase), ~21px, colored per node (canvas stays near-black `#15151A`). Body Inter ~15.5px `#3F3F49`, 6px under title. Connector lines `#71717D` with 8px CSS-triangle arrowheads; labels uppercase `#8A8A99` 11px on a white mask. Card radius 16px, padding 22×26.
 
 ---
 
@@ -202,3 +202,13 @@ Gradient-soft canvas (purple→pink) with no icon-circle; blue/green/amber view+
 **Root cause worth remembering:** the DS documents `.btn` / `.btn-primary` / `.btn-secondary`, but those styles lived **only inside the design-system page's local `<style>`** — they were never in shared `common-assets/style.css`. So the real pages had no usable primary button, which is how bespoke one-offs (`.figma-link`) crept in. **Fix applied 2026-06-17:** promoted the button component into shared CSS (base `.btn` + `.btn-primary` ink→accent + `.btn-secondary` outline→soft-gradient + `:focus-visible` ring + disabled), added `.cs .btn{margin-top:24px}` for body spacing, switched all four case-study Figma CTAs to `class="btn btn-primary"`, removed `.figma-link`. Note: the DS *labels* "Open in Figma" as the Secondary example — but Aasif's product call is that the case-study Figma CTA is **Primary** (ink fill).
 
 **General principle:** when adding/changing a component, check whether the design system already defines it. If yes → use/extend the shared token/class. If the documented component isn't wired into shared CSS yet → promote it to shared CSS (don't fork a local copy). Keep [[feedback_design_system_sync]] in force.
+
+---
+
+## Session 7 — 2026-07-03 — Never judge visual craft from a text extraction
+
+**The miss (Aasif called it, rightly):** during the portfolio competitive research I used WebFetch to "assess" a senior designer's portfolio (Anagh Sharma, a Framer Site of the Year 2023 honoree) and called it "minimal / non-animated / simple." WebFetch converts a page to text — it discards motion, interaction, typography detail, spacing, and the entire craft layer. So that read was the tool's blindness, not the site. I then built a "don't overhaul look-and-feel" verdict partly on that false read.
+
+**Hard rule:** WebFetch/text extraction is valid for COPY and STRUCTURE (headlines, card descriptors, tags, stated metrics, positioning keywords) — never for VISUAL QUALITY. To judge craft, look at actual pixels (screenshots). If no browser/screenshot tool is available in the environment (as here — WebFetch is text-only, no Playwright), say so plainly and ask for screenshots or the user's read. Do NOT infer a visual verdict from text and present it with confidence.
+
+**Related:** keeps [[feedback_verify_against_live]] honest — verify against what's actually rendered; when the tooling can't, name the limit instead of faking the check.

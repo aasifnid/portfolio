@@ -5,3 +5,9 @@ scripts/
 mixpanel-data/
 *.md
 api/
+node_modules/
+package.json
+package-lock.json
+.agents/
+.claude/
+.rtk/
